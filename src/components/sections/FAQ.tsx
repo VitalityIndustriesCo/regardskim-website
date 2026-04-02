@@ -64,7 +64,11 @@ export default function FAQ() {
             const isOpen = open === idx;
             return (
               <FadeIn key={faq.q} delay={idx * 0.02}>
-                <article className="overflow-hidden rounded-2xl border border-warm-taupe/35 bg-off-white-paper">
+                <article className={`overflow-hidden rounded-2xl border bg-off-white-paper transition-all duration-300 ${
+                  isOpen
+                    ? "border-warm-coral/45 shadow-[0_0_0_1px_rgba(233,124,107,0.2),0_10px_22px_rgba(233,124,107,0.14)]"
+                    : "border-warm-taupe/35"
+                }`}>
                   <button
                     type="button"
                     onClick={() => setOpen(isOpen ? null : idx)}
@@ -84,7 +88,7 @@ export default function FAQ() {
                         initial={{ height: 0, opacity: 0 }}
                         animate={{ height: "auto", opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.25, ease: "easeInOut" }}
+                        transition={{ duration: 0.32, ease: [0.22, 1, 0.36, 1] }}
                       >
                         <p className="px-5 pb-5 text-ink-navy/80 md:px-6">{faq.a}</p>
                       </motion.div>
