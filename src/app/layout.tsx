@@ -1,20 +1,21 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Fraunces, Inter } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const fraunces = Fraunces({
   subsets: ["latin"],
+  variable: "--font-fraunces",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const inter = Inter({
   subsets: ["latin"],
+  variable: "--font-inter",
 });
 
 export const metadata: Metadata = {
-  title: "RegardsKim — Your ecommerce support team",
-  description: "Post-purchase customer support that works while you sleep. $49/mo.",
+  title: "RegardsKim — Post-purchase emails, handled.",
+  description:
+    "RegardsKim helps Shopify stores stay on top of order updates, tracking questions, returns, refunds, and exchanges with polished draft replies ready for approval in Gmail.",
 };
 
 export default function RootLayout({
@@ -25,9 +26,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${fraunces.variable} ${inter.variable} h-full scroll-smooth antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full bg-cream text-ink-navy font-sans">{children}</body>
     </html>
   );
 }
