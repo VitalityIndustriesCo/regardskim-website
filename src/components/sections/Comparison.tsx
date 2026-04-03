@@ -1,87 +1,65 @@
 "use client";
 
-import { motion, useInView, useReducedMotion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import FadeIn from "@/components/ui/FadeIn";
-import { useRef } from "react";
 
-const usualWay = [
-  "Founder checks inbox between everything else",
-  "Repetitive replies eat hours each week",
-  "Hiring help gets expensive fast",
-  "Response quality varies when things get busy",
+const oldWay = [
+  "Check the inbox between everything else",
+  "Re-answer the same post-purchase questions by hand",
+  "Lose time finding order details before replying",
+  "Let support pile up on busy days",
+  "Hire help earlier than you want to",
 ];
 
-const withKim = [
-  "Incoming post-purchase emails are organised",
-  "Replies are prepared for review",
-  "Support stays prompt and polished",
-  "The workload drops without extra payroll",
+const kimWay = [
+  "Incoming support is reviewed promptly",
+  "Repetitive replies are prepared for you",
+  "The key details are pulled into the workflow",
+  "The inbox feels more orderly day to day",
+  "You keep support moving for $49/month",
 ];
 
 export default function Comparison() {
-  const ref = useRef<HTMLDivElement | null>(null);
-  const inView = useInView(ref, { once: true, amount: 0.3 });
   const prefersReducedMotion = useReducedMotion();
 
   return (
-    <section className="paper-grain py-20 md:py-24">
+    <section className="py-20 md:py-24">
       <div className="section-shell">
         <FadeIn>
-          <h2 className="font-display text-4xl tracking-tight md:text-5xl">A smarter way to handle support after the sale</h2>
-          <p className="mt-4 max-w-3xl text-lg text-ink-navy/80">
-            Kim helps with the repetitive post-purchase work that usually ends up on a founder, ops lead, or VA.
+          <h2 className="font-display text-4xl tracking-tight text-forest md:text-5xl">
+            The old way vs the Kim way
+          </h2>
+          <p className="mt-4 max-w-3xl text-lg text-slate">
+            Less chasing. Less context-switching. More replies ready when you need them.
           </p>
         </FadeIn>
 
-        <div ref={ref} className="mt-8 rounded-2xl border border-warm-taupe/30 bg-off-white-paper p-5 md:p-6">
-          <p className="text-sm text-ink-navy/70">Typical support setup:</p>
-          <div className="mt-2 flex items-end gap-3">
-            <div className="relative text-2xl font-semibold text-ink-navy/80 md:text-3xl">
-              $200-500/month
-              <motion.span
-                className="absolute left-0 top-1/2 h-0.5 w-full origin-left bg-warm-coral"
-                initial={{ scaleX: 0 }}
-                animate={inView ? { scaleX: 1 } : { scaleX: 0 }}
-                transition={{ duration: prefersReducedMotion ? 0 : 0.7, delay: 0.4 }}
-              />
-            </div>
-            <motion.p
-              className="text-3xl font-display text-warm-coral md:text-5xl"
-              initial={{ scale: 0.75, opacity: 0 }}
-              animate={inView ? { scale: 1, opacity: 1 } : { scale: 0.75, opacity: 0 }}
-              transition={{ type: "spring", stiffness: 240, damping: 15, delay: prefersReducedMotion ? 0 : 0.9 }}
-            >
-              $49/month
-            </motion.p>
-          </div>
-        </div>
-
         <div className="mt-10 grid gap-6 md:grid-cols-2">
           <motion.article
-            initial={{ x: -30, opacity: 0 }}
+            initial={{ x: prefersReducedMotion ? 0 : -28, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: prefersReducedMotion ? 0 : 0.45 }}
-            className="rounded-3xl border border-warm-taupe/35 bg-off-white-paper p-7"
+            transition={{ duration: 0.45 }}
+            className="rounded-3xl border border-oxblood/25 bg-paper p-7"
           >
-            <h3 className="font-display text-2xl tracking-tight">The usual way</h3>
-            <ul className="mt-5 space-y-3 text-ink-navy/80">
-              {usualWay.map((item) => (
+            <h3 className="font-display text-3xl text-oxblood">The old way</h3>
+            <ul className="mt-5 space-y-3 text-slate">
+              {oldWay.map((item) => (
                 <li key={item}>• {item}</li>
               ))}
             </ul>
           </motion.article>
 
           <motion.article
-            initial={{ x: 30, opacity: 0 }}
+            initial={{ x: prefersReducedMotion ? 0 : 28, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: prefersReducedMotion ? 0 : 0.45, delay: prefersReducedMotion ? 0 : 0.08 }}
-            className="rounded-3xl border border-warm-coral/35 bg-soft-peach p-7 shadow-[0_10px_24px_rgba(233,124,107,0.14)]"
+            transition={{ duration: 0.45, delay: 0.05 }}
+            className="rounded-3xl border border-forest/20 bg-mist p-7"
           >
-            <h3 className="font-display text-2xl tracking-tight">With Kim</h3>
-            <ul className="mt-5 space-y-3 text-ink-navy/85">
-              {withKim.map((item) => (
+            <h3 className="font-display text-3xl text-forest">The Kim way</h3>
+            <ul className="mt-5 space-y-3 text-slate">
+              {kimWay.map((item) => (
                 <li key={item}>• {item}</li>
               ))}
             </ul>

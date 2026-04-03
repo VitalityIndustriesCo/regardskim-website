@@ -7,44 +7,44 @@ import FadeIn from "@/components/ui/FadeIn";
 
 const faqs = [
   {
-    q: "What does RegardsKim do?",
-    a: "RegardsKim helps Shopify stores handle post-purchase customer emails. Kim prepares draft replies for order status, tracking, returns, refunds, and exchanges, so you can review and send them faster.",
-  },
-  {
-    q: "Does Kim send emails automatically?",
-    a: "Not at the moment. Kim prepares the reply and leaves it ready for your approval in Gmail, so you stay in control of what gets sent.",
+    q: "What does Regards Kim do?",
+    a: "Regards Kim helps Shopify merchants handle post-purchase support emails. Kim reviews incoming messages, prepares thoughtful draft replies, and leaves them ready for approval.",
   },
   {
     q: "What kinds of emails can Kim help with?",
-    a: "Kim is built for post-purchase support, including order updates, tracking questions, returns, refunds, and exchanges.",
+    a: "Kim is focused on post-purchase support: order updates, tracking questions, returns, refunds, and exchanges.",
   },
   {
-    q: "Does RegardsKim work with Shopify?",
-    a: "Yes. RegardsKim is designed for Shopify stores and uses your store information to help prepare accurate post-purchase replies.",
+    q: "Does Kim send replies automatically?",
+    a: "No. Kim prepares the reply for your review in Gmail. You approve what gets sent.",
   },
   {
-    q: "Do I need to switch email platforms?",
-    a: "No. Kim works with Gmail, so your support workflow can stay in the inbox you already use.",
+    q: "Does Regards Kim work with Shopify?",
+    a: "Yes. Regards Kim is designed for Shopify stores and uses store context to help prepare accurate replies.",
+  },
+  {
+    q: "Do I need to change email platforms?",
+    a: "No. Kim works with Gmail, so your team can stay in the inbox you already use.",
   },
   {
     q: "Is this a chatbot?",
-    a: "No. RegardsKim is focused on handling post-purchase support email workflow behind the scenes, not adding a chatbot to your storefront.",
+    a: "No. Regards Kim is built to help with the inbox behind the scenes. It prepares support replies for review rather than adding a chat widget to your storefront.",
   },
   {
-    q: "How much does it cost?",
-    a: "RegardsKim is $49 per month for one simple plan.",
+    q: "Will replies still sound like my brand?",
+    a: "That is the goal. Kim prepares clear, thoughtful replies for your review, so you can keep your tone consistent and make edits before sending.",
+  },
+  {
+    q: "How much does Regards Kim cost?",
+    a: "There is one simple plan: $49 per month.",
   },
   {
     q: "How does this compare to hiring a VA?",
-    a: "A part-time VA for inbox support often costs $200 to $500 per month, before training and oversight. RegardsKim helps with the repetitive post-purchase workload for $49/month.",
+    a: "A VA can be helpful, but it also comes with cost, training, and management. Regards Kim helps with repetitive inbox load for $49/month, often far less than the $200 to $500 merchants commonly spend on part-time inbox support.",
   },
   {
-    q: "Will the replies still sound like my brand?",
-    a: "Kim is designed to prepare clear, polished replies for your review. You can check each draft before sending and make edits as needed.",
-  },
-  {
-    q: "Who is RegardsKim best for?",
-    a: "RegardsKim is best for small to mid-sized Shopify stores that want customer support emails handled more efficiently without hiring extra admin help.",
+    q: "Who is Regards Kim best suited to?",
+    a: "Regards Kim is ideal for small to medium Shopify stores that want customer support to feel more organised without adding full-time headcount.",
   },
 ];
 
@@ -55,8 +55,9 @@ export default function FAQ() {
     <section id="faq" className="py-20 md:py-24">
       <div className="section-shell">
         <FadeIn>
-          <h2 className="font-display text-4xl tracking-tight md:text-5xl">Frequently asked, neatly answered</h2>
-          <p className="mt-4 text-lg text-ink-navy/80">Review every reply before it goes out. Kim prepares the response, you approve the final send.</p>
+          <h2 className="font-display text-4xl tracking-tight text-forest md:text-5xl">
+            Frequently asked, neatly answered
+          </h2>
         </FadeIn>
 
         <div className="mt-10 space-y-3">
@@ -64,11 +65,13 @@ export default function FAQ() {
             const isOpen = open === idx;
             return (
               <FadeIn key={faq.q} delay={idx * 0.02}>
-                <article className={`overflow-hidden rounded-2xl border bg-off-white-paper transition-all duration-300 ${
-                  isOpen
-                    ? "border-warm-coral/45 shadow-[0_0_0_1px_rgba(233,124,107,0.2),0_10px_22px_rgba(233,124,107,0.14)]"
-                    : "border-warm-taupe/35"
-                }`}>
+                <article
+                  className={`overflow-hidden rounded-2xl border bg-paper transition-all duration-300 ${
+                    isOpen
+                      ? "border-forest/30 shadow-[0_0_0_1px_rgba(32,53,43,0.18),0_10px_22px_rgba(32,53,43,0.12)]"
+                      : "border-forest/15"
+                  }`}
+                >
                   <button
                     type="button"
                     onClick={() => setOpen(isOpen ? null : idx)}
@@ -76,10 +79,7 @@ export default function FAQ() {
                     aria-expanded={isOpen}
                   >
                     <h3 className="font-medium md:text-lg">{faq.q}</h3>
-                    <ChevronDown
-                      className={`shrink-0 transition-transform ${isOpen ? "rotate-180" : "rotate-0"}`}
-                      size={18}
-                    />
+                    <ChevronDown className={`shrink-0 transition-transform ${isOpen ? "rotate-180" : "rotate-0"}`} size={18} />
                   </button>
 
                   <AnimatePresence initial={false}>
@@ -88,9 +88,9 @@ export default function FAQ() {
                         initial={{ height: 0, opacity: 0 }}
                         animate={{ height: "auto", opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.32, ease: [0.22, 1, 0.36, 1] }}
+                        transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
                       >
-                        <p className="px-5 pb-5 text-ink-navy/80 md:px-6">{faq.a}</p>
+                        <p className="px-5 pb-5 text-slate md:px-6">{faq.a}</p>
                       </motion.div>
                     )}
                   </AnimatePresence>

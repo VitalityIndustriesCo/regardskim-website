@@ -1,26 +1,25 @@
 "use client";
 
-import FadeIn from "@/components/ui/FadeIn";
-import { Check } from "lucide-react";
-import { motion, useInView, useMotionValue, useReducedMotion, useSpring, useTransform } from "framer-motion";
 import { useEffect, useRef } from "react";
+import { motion, useInView, useMotionValue, useSpring, useTransform } from "framer-motion";
+import { Check } from "lucide-react";
+import FadeIn from "@/components/ui/FadeIn";
 
 const DASHBOARD_URL = "https://dashboard-three-indol-14.vercel.app";
 
 const inclusions = [
   "Shopify connection",
   "Gmail integration",
-  "Draft replies for post-purchase support emails",
-  "Help with order status and tracking questions",
+  "Draft replies prepared for review",
+  "Help with order updates and tracking emails",
   "Help with returns, refunds, and exchanges",
-  "Merchant review before anything is sent",
+  "Approval before anything is sent",
   "One simple monthly plan",
 ];
 
 export default function Pricing() {
   const ref = useRef<HTMLDivElement | null>(null);
   const inView = useInView(ref, { once: true, amount: 0.35 });
-  const prefersReducedMotion = useReducedMotion();
 
   const count = useMotionValue(0);
   const spring = useSpring(count, { stiffness: 120, damping: 20 });
@@ -34,51 +33,61 @@ export default function Pricing() {
     <section id="pricing" className="py-20 md:py-24">
       <div className="section-shell">
         <FadeIn>
-          <h2 className="font-display text-4xl tracking-tight md:text-5xl">Simple pricing for busy Shopify stores</h2>
-          <p className="mt-4 max-w-3xl text-lg text-ink-navy/80">Start small, stay in control, and let Kim handle the busywork.</p>
+          <h2 className="font-display text-4xl tracking-tight text-forest md:text-5xl">
+            Simple pricing for busy Shopify stores
+          </h2>
         </FadeIn>
 
-        <motion.div
-          ref={ref}
-          className="mt-10 rounded-[2rem] border border-warm-taupe/35 bg-off-white-paper p-8 shadow-[0_16px_32px_rgba(35,53,71,0.07)] md:p-10"
-          animate={prefersReducedMotion ? undefined : { y: [0, -5, 0] }}
-          transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-        >
-          <p className="text-sm uppercase tracking-[0.16em] text-ink-navy/60">RegardsKim</p>
-          <div className="mt-3 flex items-end gap-2">
+        <div ref={ref} className="mt-10 rounded-[2rem] border border-forest/15 bg-paper p-8 shadow-[0_16px_30px_rgba(32,53,43,0.09)] md:p-10">
+          <p className="text-sm uppercase tracking-[0.16em] text-slate">Regards Kim</p>
+          <div className="mt-3 flex items-end gap-2 text-forest">
             <span className="font-display text-6xl leading-none">
               $<motion.span>{display}</motion.span>
             </span>
-            <span className="mb-2 text-ink-navy/70">/month</span>
+            <span className="mb-2 text-slate">/month</span>
           </div>
-          <p className="mt-4 text-ink-navy/80">A tidy post-purchase support desk for your Shopify store.</p>
+          <p className="mt-4 max-w-2xl text-slate">
+            One straightforward plan for post-purchase support that is reviewed and ready.
+          </p>
 
-          <motion.a whileHover={{ scale: 1.03, y: -1 }} whileTap={{ scale: 0.98 }} href={DASHBOARD_URL} target="_blank" rel="noreferrer" className="btn-coral mt-7">
-            Start with Kim
-          </motion.a>
+          <div className="mt-7 flex flex-wrap gap-3">
+            <a href={DASHBOARD_URL} target="_blank" rel="noreferrer" className="btn-primary">
+              See Kim in action
+            </a>
+            <a href={DASHBOARD_URL} target="_blank" rel="noreferrer" className="btn-secondary">
+              Get started
+            </a>
+          </div>
 
           <ul className="mt-8 grid gap-3 md:grid-cols-2">
             {inclusions.map((item, idx) => (
               <motion.li
                 key={item}
-                className="flex items-start gap-2 text-ink-navy/85"
+                className="flex items-start gap-2 text-slate"
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: prefersReducedMotion ? 0 : 0.3, delay: prefersReducedMotion ? 0 : idx * 0.08 }}
+                transition={{ duration: 0.3, delay: idx * 0.08 }}
               >
-                <Check size={18} className="mt-0.5 shrink-0 text-muted-teal" />
+                <Check size={18} className="mt-0.5 shrink-0 text-brass" />
                 <span>{item}</span>
               </motion.li>
             ))}
           </ul>
-        </motion.div>
+        </div>
 
-        <FadeIn delay={0.1} className="mt-6 rounded-2xl border border-warm-taupe/35 bg-soft-peach p-5 md:p-6">
-          <div className="grid gap-3 md:grid-cols-2">
-            <p><strong>Hiring a VA:</strong> $200–$500/month, plus training, management, and handoff time</p>
-            <p><strong>RegardsKim:</strong> $49/month, connected to your store and inbox, with drafts ready to approve</p>
+        <FadeIn delay={0.08} className="mt-6 rounded-2xl border border-brass/25 bg-mist p-5 md:p-6">
+          <div className="grid gap-4 md:grid-cols-2">
+            <p>
+              <strong>Hiring a VA:</strong> $200 to $500/month, plus training, oversight, and
+              handoff time
+            </p>
+            <p>
+              <strong>Regards Kim:</strong> $49/month, connected to Shopify and Gmail, with replies
+              ready for approval
+            </p>
           </div>
+          <p className="mt-3 text-slate">Start with a calmer inbox before you start hiring around it.</p>
         </FadeIn>
       </div>
     </section>

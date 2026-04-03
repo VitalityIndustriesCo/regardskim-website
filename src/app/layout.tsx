@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
-import { Fraunces, Inter } from "next/font/google";
+import { Instrument_Serif, Inter } from "next/font/google";
 import "./globals.css";
 
-const fraunces = Fraunces({
+const instrumentSerif = Instrument_Serif({
   subsets: ["latin"],
-  variable: "--font-fraunces",
+  variable: "--font-instrument-serif",
+  weight: "400",
 });
 
 const inter = Inter({
@@ -13,9 +14,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "RegardsKim — Post-purchase emails, handled.",
+  title: "RegardsKim — Your inbox, handled.",
   description:
-    "RegardsKim helps Shopify stores stay on top of order updates, tracking questions, returns, refunds, and exchanges with polished draft replies ready for approval in Gmail.",
+    "RegardsKim reviews post-purchase support emails for Shopify merchants, drafts thoughtful replies, and leaves everything ready for approval in Gmail.",
 };
 
 export default function RootLayout({
@@ -26,9 +27,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${fraunces.variable} ${inter.variable} h-full scroll-smooth antialiased`}
+      className={`${instrumentSerif.variable} ${inter.variable} h-full scroll-smooth antialiased`}
     >
-      <body className="min-h-full bg-cream text-ink-navy font-sans">{children}</body>
+      <body className="min-h-full bg-cream font-sans text-ink">{children}</body>
     </html>
   );
 }
