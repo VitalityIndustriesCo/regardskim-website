@@ -1,36 +1,10 @@
 "use client";
 
 import FadeIn from "@/components/ui/FadeIn";
-import { Store, Mail, ClipboardList, Inbox } from "lucide-react";
+import { ShopifyLogo, GmailLogo, OutlookLogo } from "@/components/ui/BrandLogos";
+import { ClipboardList, Inbox, UserPen } from "lucide-react";
 
 const DASHBOARD_URL = "https://dashboard-three-indol-14.vercel.app";
-
-const steps = [
-  {
-    num: "01",
-    icon: Store,
-    title: "Install the app",
-    body: "Connect your Shopify store in one click.",
-  },
-  {
-    num: "02",
-    icon: Mail,
-    title: "Connect Gmail or Outlook",
-    body: "Authorise your support inbox and Kim starts reading immediately.",
-  },
-  {
-    num: "03",
-    icon: ClipboardList,
-    title: "Set your policies",
-    body: "Refund window, processing time, return address — Kim uses these to draft accurate replies.",
-  },
-  {
-    num: "04",
-    icon: Inbox,
-    title: "Open your inbox",
-    body: "By the time you're done, Kim already has drafts waiting.",
-  },
-];
 
 export default function GettingStarted() {
   return (
@@ -45,33 +19,96 @@ export default function GettingStarted() {
           </h2>
         </FadeIn>
 
-        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {steps.map((step, i) => {
-            const Icon = step.icon;
-            return (
-              <FadeIn key={step.num} delay={i * 0.08}>
-                <div className="flex h-full flex-col rounded-2xl border border-forest/10 bg-paper p-6 shadow-sm">
-                  <div className="flex items-center gap-3">
-                    <span className="font-display text-sm font-bold text-brass">
-                      {step.num}
-                    </span>
-                    <div className="rounded-lg bg-mist p-2 text-forest">
-                      <Icon size={18} />
-                    </div>
-                  </div>
-                  <h3 className="mt-4 font-display text-xl font-bold text-forest">
-                    {step.title}
-                  </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-slate">
-                    {step.body}
-                  </p>
+        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
+          {/* Step 01 — Install */}
+          <FadeIn delay={0}>
+            <div className="flex h-full flex-col rounded-2xl border border-forest/10 bg-paper p-6 shadow-sm">
+              <div className="flex items-center gap-3">
+                <span className="font-display text-sm font-bold text-brass">01</span>
+                <ShopifyLogo className="h-7 w-7" />
+              </div>
+              <h3 className="mt-4 font-display text-xl font-bold text-forest">
+                Install the app
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-slate">
+                Connect your Shopify store in one click.
+              </p>
+            </div>
+          </FadeIn>
+
+          {/* Step 02 — Connect email */}
+          <FadeIn delay={0.08}>
+            <div className="flex h-full flex-col rounded-2xl border border-forest/10 bg-paper p-6 shadow-sm">
+              <div className="flex items-center gap-3">
+                <span className="font-display text-sm font-bold text-brass">02</span>
+                <GmailLogo className="h-7 w-7" />
+                <OutlookLogo className="h-7 w-7" />
+              </div>
+              <h3 className="mt-4 font-display text-xl font-bold text-forest">
+                Connect your email
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-slate">
+                Authorise Gmail or Outlook and Kim starts reading immediately.
+              </p>
+            </div>
+          </FadeIn>
+
+          {/* Step 03 — Policies */}
+          <FadeIn delay={0.16}>
+            <div className="flex h-full flex-col rounded-2xl border border-forest/10 bg-paper p-6 shadow-sm">
+              <div className="flex items-center gap-3">
+                <span className="font-display text-sm font-bold text-brass">03</span>
+                <div className="rounded-lg bg-mist p-2 text-forest">
+                  <ClipboardList size={18} />
                 </div>
-              </FadeIn>
-            );
-          })}
+              </div>
+              <h3 className="mt-4 font-display text-xl font-bold text-forest">
+                Set your policies
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-slate">
+                Refund window, processing time, return address — Kim uses these to draft accurate replies.
+              </p>
+            </div>
+          </FadeIn>
+
+          {/* Step 04 — Personalise */}
+          <FadeIn delay={0.24}>
+            <div className="flex h-full flex-col rounded-2xl border border-forest/10 bg-paper p-6 shadow-sm">
+              <div className="flex items-center gap-3">
+                <span className="font-display text-sm font-bold text-brass">04</span>
+                <div className="rounded-lg bg-mist p-2 text-forest">
+                  <UserPen size={18} />
+                </div>
+              </div>
+              <h3 className="mt-4 font-display text-xl font-bold text-forest">
+                Make Kim yours
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-slate">
+                Choose your agent&apos;s name, set the tone, and add your email signature.
+              </p>
+            </div>
+          </FadeIn>
+
+          {/* Step 05 — Go */}
+          <FadeIn delay={0.32}>
+            <div className="flex h-full flex-col rounded-2xl border border-forest/10 bg-paper p-6 shadow-sm">
+              <div className="flex items-center gap-3">
+                <span className="font-display text-sm font-bold text-brass">05</span>
+                <div className="rounded-lg bg-mist p-2 text-forest">
+                  <Inbox size={18} />
+                </div>
+              </div>
+              <h3 className="mt-4 font-display text-xl font-bold text-forest">
+                Open your inbox
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-slate">
+                By the time you&apos;re done, Kim already has drafts waiting.
+              </p>
+            </div>
+          </FadeIn>
         </div>
 
-        <FadeIn delay={0.3}>
+        <FadeIn delay={0.4}>
           <div className="mt-10 text-center">
             <a href={DASHBOARD_URL} target="_blank" rel="noreferrer" className="btn-primary">
               Get started with Shopify
