@@ -23,7 +23,7 @@ export default function Navbar() {
       }`}
     >
       <nav className="section-shell flex h-20 items-center justify-between" aria-label="Primary">
-        <a href="#top" className="font-display font-bold text-3xl tracking-tight text-forest">
+        <a href="#top" className="font-display font-bold text-3xl tracking-normal text-forest">
           RegardsKim
         </a>
 

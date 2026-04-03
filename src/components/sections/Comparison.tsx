@@ -26,7 +26,7 @@ export default function Comparison() {
     <section className="py-20 md:py-24">
       <div className="section-shell">
         <FadeIn>
-          <h2 className="font-display font-bold text-4xl tracking-tight text-forest md:text-5xl">
+          <h2 className="font-display font-bold text-4xl tracking-normal text-forest md:text-5xl">
             The old way vs the Kim way
           </h2>
           <p className="mt-4 max-w-3xl text-lg text-slate">

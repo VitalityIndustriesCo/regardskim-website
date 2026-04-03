@@ -39,7 +39,7 @@ export default function FAQ() {
     <section id="faq" className="py-16 md:py-24">
       <div className="section-shell">
         <FadeIn>
-          <h2 className="font-display font-bold text-4xl tracking-tight text-forest md:text-5xl">FAQ</h2>
+          <h2 className="font-display font-bold text-4xl tracking-normal text-forest md:text-5xl">FAQ</h2>
         </FadeIn>
 
         <div className="mt-10 space-y-4 md:space-y-5">

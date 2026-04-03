@@ -17,7 +17,7 @@ export default function Pricing() {
       <div className="section-shell text-center">
         <FadeIn>
           <p className="text-xs uppercase tracking-[0.16em] text-slate">PRICING</p>
-          <h2 className="mt-4 font-display font-bold text-4xl tracking-tight text-forest md:text-6xl">
+          <h2 className="mt-4 font-display font-bold text-4xl tracking-normal text-forest md:text-6xl">
             Simple pricing for busy stores
           </h2>
         </FadeIn>

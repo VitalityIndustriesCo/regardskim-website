@@ -11,7 +11,7 @@ export default function Hero() {
           <p className="mb-6 text-xs uppercase tracking-[0.16em] text-slate">
             POST-PURCHASE SUPPORT FOR SHOPIFY
           </p>
-          <h1 className="font-display font-bold text-5xl leading-[1.02] tracking-tight text-forest md:text-8xl">
+          <h1 className="font-display font-bold text-5xl leading-[1.02] tracking-normal text-forest md:text-8xl">
             Your inbox, handled.
           </h1>
           <p className="mt-6 max-w-xl text-base text-slate md:text-lg">
