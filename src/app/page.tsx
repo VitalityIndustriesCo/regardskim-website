@@ -1,6 +1,7 @@
 import Navbar from "@/components/sections/Navbar";
 import Hero from "@/components/sections/Hero";
 import Tagline from "@/components/sections/Tagline";
+import VideoDemo from "@/components/sections/VideoDemo";
 import HowItWorks from "@/components/sections/HowItWorks";
 import Benefits from "@/components/sections/Benefits";
 import Pricing from "@/components/sections/Pricing";
@@ -17,6 +18,7 @@ export default function Home() {
       <main>
         <Hero />
         <Tagline />
+        <VideoDemo />
         <HowItWorks />
         <Benefits />
         <Pricing />

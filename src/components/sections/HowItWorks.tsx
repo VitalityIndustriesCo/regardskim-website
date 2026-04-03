@@ -1,22 +1,44 @@
 import FadeIn from "@/components/ui/FadeIn";
-
-const DASHBOARD_URL = "https://dashboard-three-indol-14.vercel.app";
+import MockupWindow from "@/components/ui/MockupWindow";
+import MockupInbox from "@/components/ui/MockupInbox";
+import MockupDetail from "@/components/ui/MockupDetail";
 
 const steps = [
   {
     number: "01",
-    title: "Connect Shopify & Gmail",
-    body: "One setup, and Kim starts reviewing your inbox.",
+    title: "Kim reviews your inbox",
+    body: "Every customer email is triaged and prioritised in one clean queue.",
+    mockup: (
+      <MockupWindow title="Inbox">
+        <div className="p-3 md:p-4">
+          <MockupInbox />
+        </div>
+      </MockupWindow>
+    ),
   },
   {
     number: "02",
-    title: "Kim drafts replies",
-    body: "Order updates, tracking, returns — handled with care.",
+    title: "Thoughtful replies, drafted",
+    body: "Kim writes context-aware responses from your brand voice and order data.",
+    mockup: (
+      <MockupWindow title="Draft composer">
+        <div className="p-3 md:p-4">
+          <MockupDetail mode="draft" />
+        </div>
+      </MockupWindow>
+    ),
   },
   {
     number: "03",
-    title: "You review and approve",
-    body: "Nothing sends without your say-so.",
+    title: "You approve, Kim sends",
+    body: "Approve in one click and Kim sends polished replies instantly.",
+    mockup: (
+      <MockupWindow title="Approval">
+        <div className="p-3 md:p-4">
+          <MockupDetail mode="approval" />
+        </div>
+      </MockupWindow>
+    ),
   },
 ];
 
@@ -31,23 +53,20 @@ export default function HowItWorks() {
           </h2>
         </FadeIn>
 
-        <div className="mt-12 grid gap-5 md:grid-cols-3">
+        <div className="mt-12 space-y-10 md:space-y-14">
           {steps.map((step, idx) => (
-            <FadeIn key={step.number} delay={idx * 0.05}>
-              <article className="h-full rounded-3xl border border-forest/15 bg-paper p-8">
-                <p className="text-sm font-semibold tracking-[0.12em] text-slate">{step.number}</p>
-                <h3 className="mt-4 font-display text-3xl tracking-tight text-forest">{step.title}</h3>
-                <p className="mt-3 text-sm text-slate md:text-base">{step.body}</p>
+            <FadeIn key={step.number} delay={idx * 0.06}>
+              <article className="rounded-3xl border border-forest/15 bg-paper p-5 md:p-7">
+                <div className="mb-5 md:mb-6">
+                  <p className="text-sm font-semibold tracking-[0.12em] text-slate">{step.number}</p>
+                  <h3 className="mt-3 font-display text-3xl tracking-tight text-forest md:text-4xl">{step.title}</h3>
+                  <p className="mt-2 text-sm text-slate md:text-base">{step.body}</p>
+                </div>
+                {step.mockup}
               </article>
             </FadeIn>
           ))}
         </div>
-
-        <FadeIn className="mt-10 text-center">
-          <a href={DASHBOARD_URL} target="_blank" rel="noreferrer" className="btn-primary">
-            See Kim in action
-          </a>
-        </FadeIn>
       </div>
     </section>
   );
