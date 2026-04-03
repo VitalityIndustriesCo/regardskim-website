@@ -4,6 +4,7 @@ import Tagline from "@/components/sections/Tagline";
 import VideoDemo from "@/components/sections/VideoDemo";
 import HowItWorks from "@/components/sections/HowItWorks";
 import Benefits from "@/components/sections/Benefits";
+import GettingStarted from "@/components/sections/GettingStarted";
 import Pricing from "@/components/sections/Pricing";
 import FAQ from "@/components/sections/FAQ";
 import FinalCTA from "@/components/sections/FinalCTA";
@@ -21,6 +22,7 @@ export default function Home() {
         <VideoDemo />
         <HowItWorks />
         <Benefits />
+        <GettingStarted />
         <Pricing />
         <FAQ />
         <FinalCTA />
