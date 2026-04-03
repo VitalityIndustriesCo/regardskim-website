@@ -1,4 +1,4 @@
-import { Mailbox, PenLine, ShieldCheck } from "lucide-react";
+import { Mailbox, PenLine, ShieldCheck, Sparkles } from "lucide-react";
 import FadeIn from "@/components/ui/FadeIn";
 
 const benefits = [
@@ -17,13 +17,18 @@ const benefits = [
     body: "Every reply is a draft until you approve it.",
     icon: ShieldCheck,
   },
+  {
+    title: "Gets better with every edit",
+    body: "Kim learns from your changes and adapts to match your voice over time.",
+    icon: Sparkles,
+  },
 ];
 
 export default function Benefits() {
   return (
     <section className="paper-grain py-16 md:py-24">
       <div className="section-shell">
-        <div className="grid gap-5 md:grid-cols-3">
+        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
           {benefits.map((item, idx) => {
             const Icon = item.icon;
             return (
