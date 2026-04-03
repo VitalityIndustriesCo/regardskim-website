@@ -3,7 +3,6 @@ import Hero from "@/components/sections/Hero";
 import Tagline from "@/components/sections/Tagline";
 import HowItWorks from "@/components/sections/HowItWorks";
 import Benefits from "@/components/sections/Benefits";
-import Comparison from "@/components/sections/Comparison";
 import Pricing from "@/components/sections/Pricing";
 import FAQ from "@/components/sections/FAQ";
 import FinalCTA from "@/components/sections/FinalCTA";
@@ -20,7 +19,6 @@ export default function Home() {
         <Tagline />
         <HowItWorks />
         <Benefits />
-        <Comparison />
         <Pricing />
         <FAQ />
         <FinalCTA />
