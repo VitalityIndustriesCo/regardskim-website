@@ -17,7 +17,7 @@ export default function Pricing() {
       <div className="section-shell text-center">
         <FadeIn>
           <p className="text-xs uppercase tracking-[0.16em] text-slate">PRICING</p>
-          <h2 className="mt-4 font-display text-4xl tracking-tight text-forest md:text-6xl">
+          <h2 className="mt-4 font-display font-bold text-4xl tracking-tight text-forest md:text-6xl">
             Simple pricing for busy stores
           </h2>
         </FadeIn>
@@ -25,7 +25,7 @@ export default function Pricing() {
         <FadeIn delay={0.06} className="mx-auto mt-10 w-full max-w-md rounded-[2rem] border border-forest/15 bg-paper p-8 text-left md:p-10">
           <p className="text-sm uppercase tracking-[0.16em] text-slate">RegardsKim</p>
           <div className="mt-4 flex items-end gap-2 text-forest">
-            <span className="font-display text-7xl leading-none">$49</span>
+            <span className="font-display font-bold text-7xl leading-none">$49</span>
             <span className="mb-2 text-slate">/month</span>
           </div>
 

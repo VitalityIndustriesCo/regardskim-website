@@ -26,7 +26,7 @@ export default function Comparison() {
     <section className="py-20 md:py-24">
       <div className="section-shell">
         <FadeIn>
-          <h2 className="font-display text-4xl tracking-tight text-forest md:text-5xl">
+          <h2 className="font-display font-bold text-4xl tracking-tight text-forest md:text-5xl">
             The old way vs the Kim way
           </h2>
           <p className="mt-4 max-w-3xl text-lg text-slate">
@@ -42,7 +42,7 @@ export default function Comparison() {
             transition={{ duration: 0.45 }}
             className="rounded-3xl border border-oxblood/25 bg-paper p-7"
           >
-            <h3 className="font-display text-3xl text-oxblood">The old way</h3>
+            <h3 className="font-display font-bold text-3xl text-oxblood">The old way</h3>
             <ul className="mt-5 space-y-3 text-slate">
               {oldWay.map((item) => (
                 <li key={item}>• {item}</li>
@@ -57,7 +57,7 @@ export default function Comparison() {
             transition={{ duration: 0.45, delay: 0.05 }}
             className="rounded-3xl border border-forest/20 bg-mist p-7"
           >
-            <h3 className="font-display text-3xl text-forest">The Kim way</h3>
+            <h3 className="font-display font-bold text-3xl text-forest">The Kim way</h3>
             <ul className="mt-5 space-y-3 text-slate">
               {kimWay.map((item) => (
                 <li key={item}>• {item}</li>

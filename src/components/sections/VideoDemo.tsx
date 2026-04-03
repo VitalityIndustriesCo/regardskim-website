@@ -9,7 +9,7 @@ export default function VideoDemo() {
           <span className="inline-flex rounded-full border border-brass/30 bg-paper px-3 py-1 text-xs uppercase tracking-[0.16em] text-slate">
             1 Minute Demo
           </span>
-          <h2 className="mt-4 font-display text-4xl tracking-tight text-forest md:text-6xl">See Kim in action</h2>
+          <h2 className="mt-4 font-display font-bold text-4xl tracking-tight text-forest md:text-6xl">See Kim in action</h2>
         </FadeIn>
 
         <FadeIn delay={0.06} className="mx-auto mt-8 max-w-4xl">

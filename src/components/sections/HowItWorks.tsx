@@ -48,7 +48,7 @@ export default function HowItWorks() {
       <div className="section-shell">
         <FadeIn className="text-center">
           <p className="text-xs uppercase tracking-[0.16em] text-slate">HOW IT WORKS</p>
-          <h2 className="mt-4 font-display text-4xl tracking-tight text-forest md:text-6xl">
+          <h2 className="mt-4 font-display font-bold text-4xl tracking-tight text-forest md:text-6xl">
             Up and running in minutes
           </h2>
         </FadeIn>
@@ -59,7 +59,7 @@ export default function HowItWorks() {
               <article className="rounded-3xl border border-forest/15 bg-paper p-5 md:p-7">
                 <div className="mb-5 md:mb-6">
                   <p className="text-sm font-semibold tracking-[0.12em] text-slate">{step.number}</p>
-                  <h3 className="mt-3 font-display text-3xl tracking-tight text-forest md:text-4xl">{step.title}</h3>
+                  <h3 className="mt-3 font-display font-bold text-3xl tracking-tight text-forest md:text-4xl">{step.title}</h3>
                   <p className="mt-2 text-sm text-slate md:text-base">{step.body}</p>
                 </div>
                 {step.mockup}

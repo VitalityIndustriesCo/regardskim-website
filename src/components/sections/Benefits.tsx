@@ -32,7 +32,7 @@ export default function Benefits() {
                   <div className="mb-4 w-fit rounded-xl bg-mist p-2.5 text-forest">
                     <Icon size={20} />
                   </div>
-                  <h3 className="font-display text-2xl tracking-tight text-forest">{item.title}</h3>
+                  <h3 className="font-display font-bold text-2xl tracking-tight text-forest">{item.title}</h3>
                   <p className="mt-3 text-sm text-slate md:text-base">{item.body}</p>
                 </article>
               </FadeIn>

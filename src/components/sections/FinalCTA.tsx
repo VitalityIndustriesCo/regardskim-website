@@ -7,7 +7,7 @@ export default function FinalCTA() {
     <section className="py-16 md:py-24">
       <div className="section-shell">
         <FadeIn className="mx-auto max-w-3xl rounded-[2rem] border border-forest/15 bg-mist px-8 py-12 text-center md:px-12 md:py-16">
-          <h2 className="font-display text-4xl tracking-tight text-forest md:text-5xl">Ready to try Kim?</h2>
+          <h2 className="font-display font-bold text-4xl tracking-tight text-forest md:text-5xl">Ready to try Kim?</h2>
           <a href={DASHBOARD_URL} target="_blank" rel="noreferrer" className="btn-primary mt-8 inline-flex">
             Get started with Shopify
           </a>

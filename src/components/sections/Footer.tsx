@@ -3,7 +3,7 @@ export default function Footer() {
     <footer className="border-t border-forest/15 bg-paper py-12">
       <div className="section-shell grid gap-8 md:grid-cols-3 md:items-start">
         <div>
-          <p className="font-display text-2xl text-forest">RegardsKim</p>
+          <p className="font-display font-bold text-2xl text-forest">RegardsKim</p>
           <p className="mt-3 text-sm text-slate">Post-purchase support for Shopify, prepared with care.</p>
         </div>
 
@@ -17,7 +17,7 @@ export default function Footer() {
         </nav>
 
         <div className="md:text-right">
-          <p className="font-display text-2xl text-forest">Your inbox, handled.</p>
+          <p className="font-display font-bold text-2xl text-forest">Your inbox, handled.</p>
           <p className="mt-3 text-sm text-slate">Kind regards, Kim</p>
           <p className="mt-6 text-sm text-slate/80">© RegardsKim 2026. All rights reserved.</p>
         </div>

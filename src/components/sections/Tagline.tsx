@@ -5,7 +5,7 @@ export default function Tagline() {
     <section className="py-16 md:py-24">
       <div className="section-shell">
         <FadeIn className="text-center">
-          <h2 className="font-display text-4xl tracking-tight text-forest md:text-6xl">
+          <h2 className="font-display font-bold text-4xl tracking-tight text-forest md:text-6xl">
             Shopify helps them buy. Kim helps them stay.
           </h2>
         </FadeIn>
