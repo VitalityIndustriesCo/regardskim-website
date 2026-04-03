@@ -15,7 +15,7 @@ const steps = [
   {
     num: "02",
     icon: Mail,
-    title: "Connect Gmail",
+    title: "Connect Gmail or Outlook",
     body: "Authorise your support inbox and Kim starts reading immediately.",
   },
   {

@@ -4,7 +4,7 @@ import FadeIn from "@/components/ui/FadeIn";
 const DASHBOARD_URL = "https://dashboard-three-indol-14.vercel.app";
 
 const inclusions = [
-  "Shopify + Gmail integration",
+  "Shopify + Gmail & Outlook integration",
   "Draft replies for post-purchase emails",
   "Order, tracking & return support",
   "Review before anything sends",
