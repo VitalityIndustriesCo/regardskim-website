@@ -9,7 +9,7 @@ export default function Hero() {
       <div className="section-shell grid items-center gap-14 md:grid-cols-2">
         <FadeIn>
           <p className="mb-6 text-xs uppercase tracking-[0.16em] text-slate">
-            POST-PURCHASE SUPPORT FOR SHOPIFY
+            POST-PURCHASE SUPPORT FOR ECOMMERCE
           </p>
           <h1 className="font-display font-bold text-5xl leading-[1.02] tracking-normal text-forest md:text-8xl">
             Your inbox, handled.

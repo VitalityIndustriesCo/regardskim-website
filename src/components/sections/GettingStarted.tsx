@@ -38,7 +38,7 @@ export default function GettingStarted() {
             </div>
           </FadeIn>
 
-          {/* Step 02 — Connect Shopify */}
+          {/* Step 02 — Connect store */}
           <FadeIn delay={0.08}>
             <div className="flex h-full flex-col rounded-2xl border border-forest/10 bg-paper p-6 shadow-sm">
               <div className="flex items-center gap-3">
@@ -46,10 +46,10 @@ export default function GettingStarted() {
                 <ShopifyLogo className="h-7 w-7" />
               </div>
               <h3 className="mt-4 font-display text-xl font-bold text-forest">
-                Connect Shopify
+                Connect your store
               </h3>
               <p className="mt-2 text-sm leading-relaxed text-slate">
-                Link your store so Kim can access orders, tracking, and policies.
+                Shopify today — WooCommerce and more coming soon.
               </p>
             </div>
           </FadeIn>

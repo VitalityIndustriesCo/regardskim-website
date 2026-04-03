@@ -4,7 +4,7 @@ export default function Footer() {
       <div className="section-shell grid gap-8 md:grid-cols-3 md:items-start">
         <div>
           <p className="font-display font-bold text-2xl text-forest">RegardsKim</p>
-          <p className="mt-3 text-sm text-slate">Post-purchase support for Shopify, prepared with care.</p>
+          <p className="mt-3 text-sm text-slate">Post-purchase support for ecommerce, prepared with care.</p>
         </div>
 
         <nav aria-label="Footer" className="grid grid-cols-2 gap-x-6 gap-y-2 text-sm text-slate">

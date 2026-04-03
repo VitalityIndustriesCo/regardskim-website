@@ -28,7 +28,7 @@ const faqs = [
   },
   {
     q: "Who is Regards Kim best for?",
-    a: "Small to mid-sized Shopify stores that want cleaner support operations without adding headcount.",
+    a: "Small to mid-sized ecommerce stores that want cleaner support operations without adding headcount.",
   },
 ];
 

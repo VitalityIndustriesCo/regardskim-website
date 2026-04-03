@@ -10,7 +10,7 @@ const plusJakarta = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   title: "RegardsKim — Your inbox, handled.",
   description:
-    "RegardsKim reviews post-purchase support emails for Shopify merchants, drafts thoughtful replies, and leaves everything ready for approval.",
+    "RegardsKim reviews post-purchase support emails for ecommerce stores, drafts thoughtful replies, and leaves everything ready for approval.",
 };
 
 export default function RootLayout({
