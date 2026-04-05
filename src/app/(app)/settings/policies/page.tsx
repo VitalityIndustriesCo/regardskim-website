@@ -132,8 +132,28 @@ export default function PoliciesSettingsPage() {
 
       <Card>
         <CardHeader>
-          <CardTitle>Core policies</CardTitle>
-          <CardDescription>Keep your shipping, refunds, and reference links up to date.</CardDescription>
+          <CardTitle>Policy links</CardTitle>
+          <CardDescription>
+            <span className="font-medium text-foreground">* Essential</span> — Kim reads these pages to learn your store rules.
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="grid gap-6 md:grid-cols-2">
+          <div className="space-y-2">
+            <Label htmlFor="shipping-url">Shipping policy URL</Label>
+            <Input id="shipping-url" value={shippingPolicyUrl} onChange={(e) => setShippingPolicyUrl(e.target.value)} placeholder="https://yourstore.com/policies/shipping" />
+          </div>
+
+          <div className="space-y-2">
+            <Label htmlFor="refund-url">Refund policy URL</Label>
+            <Input id="refund-url" value={refundPolicyUrl} onChange={(e) => setRefundPolicyUrl(e.target.value)} placeholder="https://yourstore.com/policies/refund" />
+          </div>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>Additional details</CardTitle>
+          <CardDescription>Helps Kim give more specific answers to customers.</CardDescription>
         </CardHeader>
         <CardContent className="grid gap-6 md:grid-cols-2">
           <div className="space-y-2">
@@ -156,16 +176,6 @@ export default function PoliciesSettingsPage() {
           <div className="space-y-2 md:col-span-2">
             <Label htmlFor="return-address">Return address</Label>
             <Textarea id="return-address" rows={3} value={returnAddress} onChange={(e) => setReturnAddress(e.target.value)} />
-          </div>
-
-          <div className="space-y-2">
-            <Label htmlFor="shipping-url">Shipping policy URL</Label>
-            <Input id="shipping-url" value={shippingPolicyUrl} onChange={(e) => setShippingPolicyUrl(e.target.value)} />
-          </div>
-
-          <div className="space-y-2">
-            <Label htmlFor="refund-url">Refund policy URL</Label>
-            <Input id="refund-url" value={refundPolicyUrl} onChange={(e) => setRefundPolicyUrl(e.target.value)} />
           </div>
         </CardContent>
       </Card>
