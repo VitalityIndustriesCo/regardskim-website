@@ -30,7 +30,6 @@ export default function SettingsPage() {
               <CardTitle>{section.label}</CardTitle>
               <CardDescription>
                 {section.href === "/settings/agent" && "Set your agent's name and email signature."}
-                {section.href === "/settings/filtering" && "Define tag filters and domain-specific rules for routing."}
                 {section.href === "/settings/policies" && "Keep shipping, refund, and policy rules in one place."}
                 {section.href === "/settings/store" && "Update the store details used across support workflows."}
               </CardDescription>

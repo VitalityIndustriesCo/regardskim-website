@@ -2,14 +2,13 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Bot, Filter, FileText, Settings2, Store } from "lucide-react";
+import { Bot, FileText, Settings2, Store } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const settingsItems = [
   { href: "/settings", label: "Overview", icon: Settings2, value: "overview" },
   { href: "/settings/agent", label: "Agent Name & Email Signature", icon: Bot, value: "agent" },
-  { href: "/settings/filtering", label: "Filtering", icon: Filter, value: "filtering" },
   { href: "/settings/policies", label: "Policies", icon: FileText, value: "policies" },
   { href: "/settings/store", label: "Store", icon: Store, value: "store" },
 ] as const;
