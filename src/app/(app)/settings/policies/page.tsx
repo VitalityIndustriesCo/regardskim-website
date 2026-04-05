@@ -98,7 +98,7 @@ export default function PoliciesSettingsPage() {
       <section className="space-y-6">
         <div className="space-y-2">
           <h1 className="text-2xl font-semibold tracking-tight md:text-3xl">Policy settings</h1>
-          <p className="text-sm text-muted-foreground">Centralise the operational rules and visible support identity used in customer replies.</p>
+          <p className="text-sm text-muted-foreground">Your shipping, refund, and return rules — Kim uses these to answer customers accurately.</p>
         </div>
         <SettingsNav />
         <LoadingState message="Loading policy settings…" />
@@ -111,7 +111,7 @@ export default function PoliciesSettingsPage() {
       <section className="space-y-6">
         <div className="space-y-2">
           <h1 className="text-2xl font-semibold tracking-tight md:text-3xl">Policy settings</h1>
-          <p className="text-sm text-muted-foreground">Centralise the operational rules and visible support identity used in customer replies.</p>
+          <p className="text-sm text-muted-foreground">Your shipping, refund, and return rules — Kim uses these to answer customers accurately.</p>
         </div>
         <SettingsNav />
         <ErrorState message={error} onRetry={fetchStoreFile} />
@@ -124,7 +124,7 @@ export default function PoliciesSettingsPage() {
       <div className="space-y-2">
         <h1 className="text-2xl font-semibold tracking-tight md:text-3xl">Policy settings</h1>
         <p className="text-sm text-muted-foreground">
-          Centralise the operational rules and visible support identity used in customer replies.
+          Your shipping, refund, and return rules — Kim uses these to answer customers accurately.
         </p>
       </div>
 
