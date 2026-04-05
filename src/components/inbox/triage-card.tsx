@@ -144,7 +144,7 @@ export function TriageCard({ email, checked, onCheckedChange, onActionComplete }
         {/* Main content: email left, draft right */}
         <div className="flex flex-col lg:flex-row">
           {/* Left: customer email (40%) */}
-          <div className="border-b p-4 lg:w-[40%] lg:border-b-0 lg:border-r">
+          <div className="min-w-0 border-b p-4 lg:w-[40%] lg:border-b-0 lg:border-r">
             <div className="mb-2 flex items-start justify-between gap-2">
               <div className="min-w-0 flex-1">
                 <Link
@@ -228,7 +228,7 @@ export function TriageCard({ email, checked, onCheckedChange, onActionComplete }
           </div>
 
           {/* Right: Kim's draft or note (60%) */}
-          <div className="flex-1 p-4">
+          <div className="min-w-0 flex-1 p-4">
             {isRead ? (
               <div className="flex h-full items-center justify-center">
                 <p className="text-sm text-muted-foreground italic">
