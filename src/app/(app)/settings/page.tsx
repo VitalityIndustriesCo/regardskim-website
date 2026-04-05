@@ -35,11 +35,7 @@ export default function SettingsPage() {
                 {section.href === "/settings/store" && "Update the store details used across support workflows."}
               </CardDescription>
             </CardHeader>
-            <CardContent>
-              <p className="text-sm text-muted-foreground">
-                Configure this section to match your workflow.
-              </p>
-            </CardContent>
+
             <CardFooter>
               <Button asChild variant="outline" className="ml-auto">
                 <Link href={section.href}>

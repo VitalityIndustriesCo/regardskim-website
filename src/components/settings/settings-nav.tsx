@@ -8,7 +8,7 @@ import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const settingsItems = [
   { href: "/settings", label: "Overview", icon: Settings2, value: "overview" },
-  { href: "/settings/agent", label: "Name & Signature", icon: Bot, value: "agent" },
+  { href: "/settings/agent", label: "Agent Name & Email Signature", icon: Bot, value: "agent" },
   { href: "/settings/filtering", label: "Filtering", icon: Filter, value: "filtering" },
   { href: "/settings/policies", label: "Policies", icon: FileText, value: "policies" },
   { href: "/settings/store", label: "Store", icon: Store, value: "store" },
