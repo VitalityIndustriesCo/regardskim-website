@@ -6,7 +6,7 @@ const DASHBOARD_URL = "https://dashboard-three-indol-14.vercel.app";
 const inclusions = [
   "Integrates with Shopify, Gmail & Outlook",
   "Add WooCommerce, BigCommerce & more — coming soon",
-  "Draft replies for post-purchase emails",
+  "Draft replies for customer emails",
   "Order, tracking & return support",
   "Review before anything sends",
   "Invite your team with separate logins",

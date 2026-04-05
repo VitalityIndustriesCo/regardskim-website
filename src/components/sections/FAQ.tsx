@@ -8,7 +8,7 @@ import FadeIn from "@/components/ui/FadeIn";
 const faqs = [
   {
     q: "What does Regards Kim do?",
-    a: "Regards Kim reviews post-purchase emails, drafts thoughtful replies, and leaves everything ready for approval.",
+    a: "Kim reads your customer emails, writes helpful replies, and leaves everything ready for you to approve.",
   },
   {
     q: "Does Kim send replies automatically?",
@@ -28,7 +28,7 @@ const faqs = [
   },
   {
     q: "Who is Regards Kim best for?",
-    a: "Small to mid-sized ecommerce stores that want cleaner support operations without adding headcount.",
+    a: "Small and growing ecommerce stores where the owner is still answering customer emails, or paying someone else to.",
   },
 ];
 

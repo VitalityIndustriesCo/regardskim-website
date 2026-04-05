@@ -1,5 +1,9 @@
 import type { Metadata } from "next";
+import localFont from "next/font/local";
 import { Plus_Jakarta_Sans } from "next/font/google";
+import { Toaster } from "sonner";
+import { ChatWidget } from "@/components/support/chat-widget";
+import { cn } from "@/lib/utils";
 import "./globals.css";
 
 const plusJakarta = Plus_Jakarta_Sans({
@@ -7,10 +11,16 @@ const plusJakarta = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta",
 });
 
+const geistMono = localFont({
+  src: "./fonts/GeistMonoVF.woff",
+  variable: "--font-geist-mono",
+  weight: "100 900",
+});
+
 export const metadata: Metadata = {
   title: "RegardsKim — Your inbox, handled.",
   description:
-    "RegardsKim reviews post-purchase support emails for ecommerce stores, drafts thoughtful replies, and leaves everything ready for approval.",
+    "Kim answers your customer emails so you don't have to. Tracking questions, returns, order updates — handled for $49/mo.",
 };
 
 export default function RootLayout({
@@ -23,7 +33,11 @@ export default function RootLayout({
       lang="en"
       className={`${plusJakarta.variable} h-full scroll-smooth antialiased`}
     >
-      <body className="min-h-full bg-cream font-sans text-ink">{children}</body>
+      <body className={cn("min-h-full font-sans", plusJakarta.className, geistMono.variable)}>
+        {children}
+        <ChatWidget />
+        <Toaster richColors />
+      </body>
     </html>
   );
 }

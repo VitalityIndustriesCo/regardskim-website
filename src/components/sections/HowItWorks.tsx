@@ -7,7 +7,7 @@ const steps = [
   {
     number: "01",
     title: "Kim reviews your inbox",
-    body: "Every customer email is triaged and prioritised in one clean queue.",
+    body: "Every customer email is sorted and ready in one clean queue.",
     mockup: (
       <MockupWindow title="Inbox">
         <div className="p-3 md:p-4">
@@ -19,7 +19,7 @@ const steps = [
   {
     number: "02",
     title: "Thoughtful replies, drafted",
-    body: "Kim writes context-aware responses from your brand voice and order data.",
+    body: "Kim writes replies using your store info, order details, and policies.",
     mockup: (
       <MockupWindow title="Draft composer">
         <div className="p-3 md:p-4">

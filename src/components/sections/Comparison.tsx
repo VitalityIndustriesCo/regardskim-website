@@ -5,7 +5,7 @@ import FadeIn from "@/components/ui/FadeIn";
 
 const oldWay = [
   "Check the inbox between everything else",
-  "Re-answer the same post-purchase questions by hand",
+  "Re-answer the same customer questions by hand",
   "Lose time finding order details before replying",
   "Let support pile up on busy days",
   "Hire help earlier than you want to",
