@@ -2,8 +2,6 @@
 
 import { useEffect, useState } from "react";
 
-const DASHBOARD_URL = "https://dashboard-three-indol-14.vercel.app";
-
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
 
@@ -39,9 +37,14 @@ export default function Navbar() {
           </a>
         </div>
 
-        <a href={DASHBOARD_URL} target="_blank" rel="noreferrer" className="btn-primary">
-          See Kim in action
-        </a>
+        <div className="flex items-center gap-4">
+          <a href="/login" className="text-sm text-slate transition-colors hover:text-forest">
+            Log in
+          </a>
+          <a href="/login" className="btn-primary">
+            Get started
+          </a>
+        </div>
       </nav>
     </header>
   );

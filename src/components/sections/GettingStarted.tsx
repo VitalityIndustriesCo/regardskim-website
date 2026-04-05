@@ -4,7 +4,7 @@ import FadeIn from "@/components/ui/FadeIn";
 import { ShopifyLogo, GmailLogo, OutlookLogo } from "@/components/ui/BrandLogos";
 import { ClipboardList, Inbox, UserPen } from "lucide-react";
 
-const DASHBOARD_URL = "https://dashboard-three-indol-14.vercel.app";
+const DASHBOARD_URL = "/login";
 
 export default function GettingStarted() {
   return (
@@ -110,7 +110,7 @@ export default function GettingStarted() {
 
         <FadeIn delay={0.4}>
           <div className="mt-10 text-center">
-            <a href={DASHBOARD_URL} target="_blank" rel="noreferrer" className="btn-primary">
+            <a href={DASHBOARD_URL} className="btn-primary">
               Create your account
             </a>
           </div>

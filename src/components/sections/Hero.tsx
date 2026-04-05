@@ -1,7 +1,7 @@
 import FadeIn from "@/components/ui/FadeIn";
 import InboxDemo from "@/components/ui/InboxDemo";
 
-const DASHBOARD_URL = "https://dashboard-three-indol-14.vercel.app";
+const DASHBOARD_URL = "/login";
 
 export default function Hero() {
   return (
@@ -19,10 +19,10 @@ export default function Hero() {
           </p>
 
           <div className="mt-10 flex flex-wrap gap-4">
-            <a href={DASHBOARD_URL} target="_blank" rel="noreferrer" className="btn-primary">
-              See Kim in action
+            <a href={DASHBOARD_URL} className="btn-primary">
+              Get started
             </a>
-            <a href={DASHBOARD_URL} target="_blank" rel="noreferrer" className="btn-secondary">
+            <a href="#pricing" className="btn-secondary">
               View pricing
             </a>
           </div>

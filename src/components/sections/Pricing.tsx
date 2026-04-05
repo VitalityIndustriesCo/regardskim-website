@@ -1,7 +1,7 @@
 import { Check } from "lucide-react";
 import FadeIn from "@/components/ui/FadeIn";
 
-const DASHBOARD_URL = "https://dashboard-three-indol-14.vercel.app";
+const DASHBOARD_URL = "/login";
 
 const inclusions = [
   "Integrates with Shopify, Gmail & Outlook",
@@ -40,7 +40,7 @@ export default function Pricing() {
             ))}
           </ul>
 
-          <a href={DASHBOARD_URL} target="_blank" rel="noreferrer" className="btn-primary mt-8 inline-flex">
+          <a href={DASHBOARD_URL} className="btn-primary mt-8 inline-flex">
             Get started
           </a>
         </FadeIn>
