@@ -16,6 +16,7 @@ interface StoreFile {
   supportName: string;
   refundWindowDays: number | null;
   processingTime: string;
+  shippingTime: string;
   returnAddress: string | null;
   shippingPolicyUrl: string | null;
   refundPolicyUrl: string | null;
@@ -31,6 +32,7 @@ export default function PoliciesSettingsPage() {
 
   const [refundWindow, setRefundWindow] = useState("30");
   const [processingTime, setProcessingTime] = useState("1-3 business days");
+  const [shippingTime, setShippingTime] = useState("");
   const [returnAddress, setReturnAddress] = useState("");
   const [shippingPolicyUrl, setShippingPolicyUrl] = useState("");
   const [refundPolicyUrl, setRefundPolicyUrl] = useState("");
@@ -46,6 +48,7 @@ export default function PoliciesSettingsPage() {
       if (sf) {
         setRefundWindow(sf.refundWindowDays?.toString() || "30");
         setProcessingTime(sf.processingTime || "1-3 business days");
+        setShippingTime(sf.shippingTime || "");
         setReturnAddress(sf.returnAddress || "");
         setShippingPolicyUrl(sf.shippingPolicyUrl || "");
         setRefundPolicyUrl(sf.refundPolicyUrl || "");
@@ -73,6 +76,7 @@ export default function PoliciesSettingsPage() {
         body: JSON.stringify({
           refundWindowDays: parseInt(refundWindow, 10) || 30,
           processingTime,
+          shippingTime,
           returnAddress,
           shippingPolicyUrl,
           refundPolicyUrl,
@@ -139,7 +143,14 @@ export default function PoliciesSettingsPage() {
 
           <div className="space-y-2">
             <Label htmlFor="processing-time">Processing time</Label>
-            <Input id="processing-time" value={processingTime} onChange={(e) => setProcessingTime(e.target.value)} />
+            <Input id="processing-time" value={processingTime} onChange={(e) => setProcessingTime(e.target.value)} placeholder="1-3 business days" />
+            <p className="text-xs text-muted-foreground">How long before an order ships.</p>
+          </div>
+
+          <div className="space-y-2">
+            <Label htmlFor="shipping-time">Shipping time</Label>
+            <Input id="shipping-time" value={shippingTime} onChange={(e) => setShippingTime(e.target.value)} placeholder="5-10 business days" />
+            <p className="text-xs text-muted-foreground">How long delivery takes once shipped.</p>
           </div>
 
           <div className="space-y-2 md:col-span-2">
