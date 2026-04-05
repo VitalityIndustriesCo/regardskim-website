@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState, useCallback } from "react";
+import Link from "next/link";
 import { EmailList } from "@/components/inbox/email-list";
 import { type InboxEmail } from "@/components/inbox/email-row";
 import {
@@ -11,11 +12,51 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
-import { api } from "@/lib/api";
+import { api, API_URL } from "@/lib/api";
 import { LoadingState } from "@/components/ui/loading-state";
 import { ErrorState } from "@/components/ui/error-state";
 import { EmptyState } from "@/components/ui/empty-state";
-import { Mail, ChevronLeft, ChevronRight } from "lucide-react";
+import { Mail, ChevronLeft, ChevronRight, MailPlus } from "lucide-react";
+
+interface GmailStatus {
+  connected: boolean;
+  email?: string;
+  expired: boolean;
+}
+
+interface StoreData {
+  id?: string;
+  supportEmail?: string;
+  emailProvider?: string;
+}
+
+function ConnectEmailPrompt({ storeId }: { storeId: string | null }) {
+  const handleConnectGmail = () => {
+    if (!storeId) return;
+    window.location.href = `${API_URL}/auth/gmail/connect?storeId=${storeId}`;
+  };
+
+  return (
+    <div className="flex min-h-[60vh] flex-col items-center justify-center text-center">
+      <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-muted">
+        <MailPlus className="h-8 w-8 text-muted-foreground" />
+      </div>
+      <h2 className="text-xl font-semibold tracking-tight">Connect your email to get started</h2>
+      <p className="mt-2 max-w-md text-sm text-muted-foreground">
+        Kim needs access to your support email to start reading customer messages and drafting replies.
+      </p>
+      <div className="mt-6 flex flex-wrap justify-center gap-3">
+        <Button onClick={handleConnectGmail} disabled={!storeId}>
+          <Mail className="mr-2 h-4 w-4" />
+          Connect Gmail
+        </Button>
+        <Button variant="outline" asChild>
+          <Link href="/connections">Manage connections</Link>
+        </Button>
+      </div>
+    </div>
+  );
+}
 
 export default function InboxPage() {
   const [emails, setEmails] = useState<InboxEmail[]>([]);
@@ -25,6 +66,31 @@ export default function InboxPage() {
   const [limit, setLimit] = useState("20");
   const [page, setPage] = useState(1);
   const [total, setTotal] = useState(0);
+  const [emailConnected, setEmailConnected] = useState<boolean | null>(null);
+  const [storeId, setStoreId] = useState<string | null>(null);
+
+  // Check email connection status first
+  useEffect(() => {
+    async function checkEmailStatus() {
+      try {
+        const [gmailRes, storeRes] = await Promise.all([
+          api<{ success: boolean; data: GmailStatus }>("/api/gmail/status").catch(() => null),
+          api<{ success: boolean; data: StoreData }>("/api/store").catch(() => null),
+        ]);
+
+        setStoreId(storeRes?.data?.id || null);
+
+        const gmailOk = gmailRes?.data?.connected && !gmailRes?.data?.expired;
+        const imapOk = storeRes?.data?.supportEmail && storeRes?.data?.emailProvider === "imap";
+
+        setEmailConnected(Boolean(gmailOk || imapOk));
+      } catch {
+        // If we can't check, assume connected and let emails load (graceful fallback)
+        setEmailConnected(true);
+      }
+    }
+    checkEmailStatus();
+  }, []);
 
   const fetchEmails = useCallback(async () => {
     setLoading(true);
@@ -42,7 +108,6 @@ export default function InboxPage() {
       if (typeof res.total === "number") {
         setTotal(res.total);
       } else {
-        // If API doesn't return total, estimate from data length
         setTotal(res.data.length < Number(limit) ? (page - 1) * Number(limit) + res.data.length : (page + 1) * Number(limit));
       }
     } catch (err) {
@@ -53,8 +118,10 @@ export default function InboxPage() {
   }, [status, limit, page]);
 
   useEffect(() => {
-    fetchEmails();
-  }, [fetchEmails]);
+    if (emailConnected) {
+      fetchEmails();
+    }
+  }, [fetchEmails, emailConnected]);
 
   // Reset page when filters change
   useEffect(() => {
@@ -62,6 +129,28 @@ export default function InboxPage() {
   }, [status, limit]);
 
   const hasMore = emails.length === Number(limit);
+
+  // Still checking email status
+  if (emailConnected === null) {
+    return <LoadingState message="Checking connections…" />;
+  }
+
+  // Email not connected — show connect prompt instead of stale emails
+  if (!emailConnected) {
+    return (
+      <section className="space-y-6">
+        <div>
+          <h1 className="text-2xl font-semibold tracking-tight md:text-3xl">
+            📨 Inbox
+          </h1>
+          <p className="text-sm text-muted-foreground">
+            Your support inbox — review, approve, and send.
+          </p>
+        </div>
+        <ConnectEmailPrompt storeId={storeId} />
+      </section>
+    );
+  }
 
   return (
     <section className="space-y-6">
