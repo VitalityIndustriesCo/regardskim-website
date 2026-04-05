@@ -14,7 +14,7 @@ export default function SettingsPage() {
       <div className="space-y-2">
         <h1 className="text-2xl font-semibold tracking-tight md:text-3xl">Settings</h1>
         <p className="text-sm text-muted-foreground">
-          Configure how Kim sounds, what gets filtered, and when approvals are required.
+          Configure how Kim works for your store.
         </p>
       </div>
 
@@ -29,9 +29,8 @@ export default function SettingsPage() {
               </div>
               <CardTitle>{section.label}</CardTitle>
               <CardDescription>
-                {section.href === "/settings/agent" && "Set your agent identity, tone, and sign-off style."}
+                {section.href === "/settings/agent" && "Set your agent's name and email signature."}
                 {section.href === "/settings/filtering" && "Define tag filters and domain-specific rules for routing."}
-                {section.href === "/settings/approval" && "Choose which replies can auto-send and which need review."}
                 {section.href === "/settings/policies" && "Keep shipping, refund, and policy rules in one place."}
                 {section.href === "/settings/store" && "Update the store details used across support workflows."}
               </CardDescription>
