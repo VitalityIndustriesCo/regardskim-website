@@ -29,7 +29,6 @@ export default function PoliciesSettingsPage() {
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState(false);
 
-  const [supportName, setSupportName] = useState("Kim");
   const [refundWindow, setRefundWindow] = useState("30");
   const [processingTime, setProcessingTime] = useState("1-3 business days");
   const [returnAddress, setReturnAddress] = useState("");
@@ -45,7 +44,6 @@ export default function PoliciesSettingsPage() {
       const res = await api<{ success: boolean; data: { storeFile: StoreFile | null } }>("/api/store");
       const sf = res.data.storeFile;
       if (sf) {
-        setSupportName(sf.supportName || "Kim");
         setRefundWindow(sf.refundWindowDays?.toString() || "30");
         setProcessingTime(sf.processingTime || "1-3 business days");
         setReturnAddress(sf.returnAddress || "");
@@ -73,7 +71,6 @@ export default function PoliciesSettingsPage() {
       await api("/api/store/store-file", {
         method: "PATCH",
         body: JSON.stringify({
-          supportName,
           refundWindowDays: parseInt(refundWindow, 10) || 30,
           processingTime,
           returnAddress,
@@ -135,11 +132,6 @@ export default function PoliciesSettingsPage() {
           <CardDescription>Keep your shipping, refunds, and reference links up to date.</CardDescription>
         </CardHeader>
         <CardContent className="grid gap-6 md:grid-cols-2">
-          <div className="space-y-2">
-            <Label htmlFor="support-name">Agent name shown to customers</Label>
-            <Input id="support-name" value={supportName} onChange={(e) => setSupportName(e.target.value)} placeholder="Kim" />
-          </div>
-
           <div className="space-y-2">
             <Label htmlFor="refund-window">Refund window (days)</Label>
             <Input id="refund-window" type="number" value={refundWindow} onChange={(e) => setRefundWindow(e.target.value)} />
