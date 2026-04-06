@@ -14,26 +14,29 @@ export default function Navbar() {
 
   return (
     <header
-      className={`sticky top-0 z-50 border-b transition-all duration-300 ${
+      className={`sticky top-0 z-50 border-b border-forest/10 bg-white/95 transition-all duration-300 ${
         scrolled
-          ? "border-forest/15 bg-paper/85 shadow-[0_6px_22px_rgba(32,53,43,0.08)] backdrop-blur-md"
-          : "border-transparent bg-transparent"
+          ? "shadow-[0_6px_22px_rgba(26,26,26,0.06)] backdrop-blur-md"
+          : ""
       }`}
     >
       <nav className="section-shell flex h-20 items-center justify-between" aria-label="Primary">
-        <a href="#top" className="font-display font-bold text-3xl tracking-normal text-forest">
+        <a href="/" className="font-display font-bold text-3xl tracking-normal text-forest">
           RegardsKim
         </a>
 
         <div className="hidden items-center gap-8 text-sm text-slate md:flex">
-          <a href="#how-it-works" className="transition-colors hover:text-forest">
+          <a href="/#how-it-works" className="transition-colors hover:text-forest">
             How it works
           </a>
-          <a href="#pricing" className="transition-colors hover:text-forest">
+          <a href="/#pricing" className="transition-colors hover:text-forest">
             Pricing
           </a>
-          <a href="#faq" className="transition-colors hover:text-forest">
+          <a href="/#faq" className="transition-colors hover:text-forest">
             FAQ
+          </a>
+          <a href="/blog" className="transition-colors hover:text-forest">
+            Blog
           </a>
         </div>
 
@@ -41,7 +44,7 @@ export default function Navbar() {
           <a href="/login" className="text-sm text-slate transition-colors hover:text-forest">
             Log in
           </a>
-          <a href="/login" className="btn-primary">
+          <a href="/signup" className="btn-primary">
             Get started
           </a>
         </div>

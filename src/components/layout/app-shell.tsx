@@ -5,7 +5,7 @@ import { Sidebar } from "@/components/layout/sidebar";
 import { usePathname } from "next/navigation";
 import type { ReactNode } from "react";
 
-const authRoutes = new Set(["/login"]);
+const authRoutes = new Set(["/login", "/signup"]);
 
 type AppShellProps = {
   children: ReactNode;

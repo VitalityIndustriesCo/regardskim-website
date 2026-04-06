@@ -1,12 +1,12 @@
 import FadeIn from "@/components/ui/FadeIn";
 
-const DASHBOARD_URL = "/login";
+const DASHBOARD_URL = "/signup";
 
 export default function FinalCTA() {
   return (
-    <section className="py-16 md:py-24">
+    <section className="bg-cream py-16 md:py-24">
       <div className="section-shell">
-        <FadeIn className="mx-auto max-w-3xl rounded-[2rem] border border-forest/15 bg-mist px-8 py-12 text-center md:px-12 md:py-16">
+        <FadeIn className="mx-auto max-w-3xl rounded-[2rem] border border-brass/15 bg-paper px-8 py-12 text-center md:px-12 md:py-16">
           <h2 className="font-display font-bold text-4xl tracking-normal text-forest md:text-5xl">Ready to try Kim?</h2>
           <a href={DASHBOARD_URL} className="btn-primary mt-8 inline-flex">
             Create your account

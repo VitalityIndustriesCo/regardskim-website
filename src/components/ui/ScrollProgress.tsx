@@ -14,7 +14,7 @@ export default function ScrollProgress() {
   return (
     <motion.div
       style={{ scaleX, transformOrigin: "0% 50%" }}
-      className="fixed inset-x-0 top-0 z-[70] h-1 bg-forest"
+      className="fixed inset-x-0 top-0 z-[70] h-1 bg-brass"
       aria-hidden
     />
   );

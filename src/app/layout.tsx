@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import { Toaster } from "sonner";
-import { ChatWidget } from "@/components/support/chat-widget";
 import { cn } from "@/lib/utils";
 import "./globals.css";
 
@@ -35,7 +34,6 @@ export default function RootLayout({
     >
       <body className={cn("min-h-full font-sans", plusJakarta.className, geistMono.variable)}>
         {children}
-        <ChatWidget />
         <Toaster richColors />
       </body>
     </html>

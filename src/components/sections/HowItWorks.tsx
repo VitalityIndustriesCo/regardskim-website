@@ -9,7 +9,7 @@ const steps = [
     title: "Kim reviews your inbox",
     body: "Every customer email is sorted and ready in one clean queue.",
     mockup: (
-      <MockupWindow title="Inbox">
+      <MockupWindow title="Inbox" className="bg-cream">
         <div className="p-3 md:p-4">
           <MockupInbox />
         </div>
@@ -21,7 +21,7 @@ const steps = [
     title: "Thoughtful replies, drafted",
     body: "Kim writes replies using your store info, order details, and policies.",
     mockup: (
-      <MockupWindow title="Draft composer">
+      <MockupWindow title="Draft composer" className="bg-cream">
         <div className="p-3 md:p-4">
           <MockupDetail mode="draft" />
         </div>
@@ -33,7 +33,7 @@ const steps = [
     title: "You approve, Kim sends",
     body: "Approve in one click and Kim sends polished replies instantly.",
     mockup: (
-      <MockupWindow title="Approval">
+      <MockupWindow title="Approval" className="bg-cream">
         <div className="p-3 md:p-4">
           <MockupDetail mode="approval" />
         </div>
@@ -44,23 +44,16 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section id="how-it-works" className="py-16 md:py-28">
+    <section id="how-it-works" className="paper-grain bg-cream py-16 md:py-24">
       <div className="section-shell">
-        <FadeIn className="text-center">
-          <p className="text-xs uppercase tracking-[0.16em] text-slate">HOW IT WORKS</p>
-          <h2 className="mt-4 font-display font-bold text-4xl tracking-normal text-forest md:text-6xl">
-            Up and running in minutes
-          </h2>
-        </FadeIn>
-
-        <div className="mt-12 space-y-10 md:space-y-14">
+        <div className="mt-10 space-y-6 md:mt-14 md:space-y-8">
           {steps.map((step, idx) => (
             <FadeIn key={step.number} delay={idx * 0.06}>
-              <article className="rounded-3xl border border-forest/15 bg-paper p-5 md:p-7">
-                <div className="mb-5 md:mb-6">
-                  <p className="text-sm font-semibold tracking-[0.12em] text-slate">{step.number}</p>
-                  <h3 className="mt-3 font-display font-bold text-3xl tracking-normal text-forest md:text-4xl">{step.title}</h3>
-                  <p className="mt-2 text-sm text-slate md:text-base">{step.body}</p>
+              <article className="rounded-[2rem] border border-forest/15 bg-paper p-5 shadow-sm md:p-7 lg:p-8">
+                <div className="mb-6 md:mb-7">
+                  <p className="text-sm font-semibold tracking-[0.12em] text-brass">{step.number}</p>
+                  <h3 className="mt-2 font-display text-3xl font-bold tracking-normal text-forest md:text-4xl">{step.title}</h3>
+                  <p className="mt-3 max-w-2xl text-sm text-slate md:text-base">{step.body}</p>
                 </div>
                 {step.mockup}
               </article>

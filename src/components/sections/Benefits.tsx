@@ -1,15 +1,15 @@
-import { Mailbox, PenLine, ShieldCheck, Sparkles } from "lucide-react";
+import { BookOpen, PenLine, ShieldCheck } from "lucide-react";
 import FadeIn from "@/components/ui/FadeIn";
 
 const benefits = [
   {
     title: "Less inbox, more focus",
-    body: "Kim takes the first pass so support stops sitting in your head.",
-    icon: Mailbox,
+    body: "Kim takes care of your inbox so you can focus on growing your store.",
+    icon: BookOpen,
   },
   {
     title: "Replies that sound right",
-    body: "Clear, thoughtful responses that keep your brand polished.",
+    body: "Clear, thoughtful responses that keep your brand polished. Kim learns, improves, and adapts to your style over time.",
     icon: PenLine,
   },
   {
@@ -17,28 +17,25 @@ const benefits = [
     body: "Every reply is a draft until you approve it.",
     icon: ShieldCheck,
   },
-  {
-    title: "Gets better with every edit",
-    body: "Kim learns from your changes and adapts to match your voice over time.",
-    icon: Sparkles,
-  },
 ];
 
 export default function Benefits() {
   return (
-    <section className="paper-grain py-16 md:py-24">
+    <section className="paper-grain bg-cream py-16 md:py-24">
       <div className="section-shell">
-        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-5 md:grid-cols-3">
           {benefits.map((item, idx) => {
             const Icon = item.icon;
             return (
-              <FadeIn key={item.title} delay={idx * 0.05}>
-                <article className="h-full rounded-3xl border border-forest/15 bg-paper p-7">
-                  <div className="mb-4 w-fit rounded-xl bg-mist p-2.5 text-forest">
+              <FadeIn key={item.title} delay={idx * 0.06}>
+                <article className="h-full rounded-3xl border border-forest/15 bg-paper p-7 md:p-8">
+                  <div className="mb-6 w-fit rounded-xl bg-mist p-2.5 text-forest">
                     <Icon size={20} />
                   </div>
-                  <h3 className="font-display font-bold text-2xl tracking-normal text-forest">{item.title}</h3>
-                  <p className="mt-3 text-sm text-slate md:text-base">{item.body}</p>
+                  <h3 className="font-display text-2xl font-bold tracking-normal text-forest md:text-3xl">
+                    {item.title}
+                  </h3>
+                  <p className="mt-3 max-w-xl text-sm text-slate md:text-base">{item.body}</p>
                 </article>
               </FadeIn>
             );

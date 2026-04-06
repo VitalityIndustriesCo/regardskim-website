@@ -38,7 +38,7 @@ export default function SettingsPage() {
             <CardFooter>
               <Button asChild variant="outline" className="ml-auto">
                 <Link href={section.href}>
-                  Open {section.label}
+                  Edit {section.label}
                   <ArrowRight className="h-4 w-4" />
                 </Link>
               </Button>

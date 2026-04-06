@@ -1,28 +1,33 @@
+import { Play } from "lucide-react";
 import FadeIn from "@/components/ui/FadeIn";
-import MockupWindow from "@/components/ui/MockupWindow";
 
 export default function VideoDemo() {
   return (
-    <section className="texture-mist py-16 md:py-24">
+    <section className="bg-paper py-16 md:py-24">
       <div className="section-shell">
-        <FadeIn className="mx-auto max-w-4xl text-center">
-          <span className="inline-flex rounded-full border border-brass/30 bg-paper px-3 py-1 text-xs uppercase tracking-[0.16em] text-slate">
-            1 Minute Demo
-          </span>
-          <h2 className="mt-4 font-display font-bold text-4xl tracking-normal text-forest md:text-6xl">See Kim in action</h2>
+        <FadeIn className="mx-auto max-w-3xl text-center">
+          <h2 className="font-display text-4xl font-bold tracking-normal text-forest md:text-6xl">
+            See how Kim works
+          </h2>
+          <p className="mt-4 text-sm text-slate md:text-base">
+            A quick walkthrough is on the way. For now, here&apos;s where the demo will live.
+          </p>
         </FadeIn>
 
-        <FadeIn delay={0.06} className="mx-auto mt-8 max-w-4xl">
-          <MockupWindow title="Product demo">
-            <div className="relative aspect-video bg-mist">
-              <div className="absolute inset-0 flex flex-col items-center justify-center gap-3">
-                <div className="flex h-16 w-16 items-center justify-center rounded-full border border-forest/20 bg-paper/90 shadow-sm">
-                  <div className="ml-1 h-0 w-0 border-y-[10px] border-y-transparent border-l-[16px] border-l-forest" />
+        <FadeIn delay={0.06} className="mx-auto mt-8 max-w-5xl">
+          <div className="overflow-hidden rounded-[2rem] border border-forest/15 bg-paper p-3 shadow-sm md:p-4">
+            <div className="relative aspect-video rounded-[1.5rem] border border-dashed border-forest/15 bg-mist/70">
+              <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 px-6 text-center">
+                <div className="flex h-18 w-18 items-center justify-center rounded-full border border-forest/15 bg-paper text-forest shadow-sm md:h-20 md:w-20">
+                  <Play size={28} className="ml-1 fill-current" />
                 </div>
-                <p className="text-sm font-medium text-slate">Demo video coming soon</p>
+                <div>
+                  <p className="font-display text-2xl font-bold text-forest md:text-3xl">Product Demo</p>
+                  <p className="mt-2 text-sm text-slate md:text-base">Video coming soon</p>
+                </div>
               </div>
             </div>
-          </MockupWindow>
+          </div>
         </FadeIn>
       </div>
     </section>

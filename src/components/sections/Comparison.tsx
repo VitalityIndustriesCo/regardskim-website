@@ -23,7 +23,7 @@ export default function Comparison() {
   const prefersReducedMotion = useReducedMotion();
 
   return (
-    <section className="py-20 md:py-24">
+    <section className="bg-paper py-20 md:py-24">
       <div className="section-shell">
         <FadeIn>
           <h2 className="font-display font-bold text-4xl tracking-normal text-forest md:text-5xl">
@@ -40,9 +40,9 @@ export default function Comparison() {
             whileInView={{ x: 0, opacity: 1 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.45 }}
-            className="rounded-3xl border border-oxblood/25 bg-paper p-7"
+            className="rounded-3xl border border-forest/12 bg-paper p-7"
           >
-            <h3 className="font-display font-bold text-3xl text-oxblood">The old way</h3>
+            <h3 className="font-display font-bold text-3xl text-forest">The old way</h3>
             <ul className="mt-5 space-y-3 text-slate">
               {oldWay.map((item) => (
                 <li key={item}>• {item}</li>
@@ -55,7 +55,7 @@ export default function Comparison() {
             whileInView={{ x: 0, opacity: 1 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.45, delay: 0.05 }}
-            className="rounded-3xl border border-forest/20 bg-mist p-7"
+            className="rounded-3xl border border-brass/15 bg-mist p-7"
           >
             <h3 className="font-display font-bold text-3xl text-forest">The Kim way</h3>
             <ul className="mt-5 space-y-3 text-slate">

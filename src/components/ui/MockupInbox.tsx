@@ -7,7 +7,7 @@ type InboxRow = {
 };
 
 const ROWS: InboxRow[] = [
-  { sender: "Sarah M.", subject: "Where is my order?", status: "Pending" },
+  { sender: "Sarah M.", subject: "Where is my order?", status: "Draft Ready" },
   { sender: "James T.", subject: "Return request", status: "Draft Ready" },
   { sender: "Order #1847 shipped", subject: "Shipping update", status: "Read" },
   { sender: "Michael R.", subject: "Refund for damaged item", status: "Action Required" },

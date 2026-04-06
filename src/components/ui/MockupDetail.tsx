@@ -9,7 +9,7 @@ type MockupDetailProps = {
 };
 
 const badgeClass = {
-  draft: "bg-forest/15 text-forest border-forest/30",
+  draft: "bg-brass/15 text-brass border-brass/30",
   sent: "bg-badge-green/15 text-badge-green border-badge-green/35",
 };
 
@@ -62,7 +62,7 @@ export default function MockupDetail({ mode = "draft" }: MockupDetailProps) {
                   <motion.button
                     key="approve"
                     type="button"
-                    className="rounded-full bg-forest px-3.5 py-1.5 text-xs font-medium text-paper"
+                    className="rounded-full bg-brass px-3.5 py-1.5 text-xs font-medium text-paper"
                     animate={prefersReducedMotion ? undefined : { scale: [1, 1.04, 0.98, 1] }}
                     transition={{ duration: 0.6, repeat: Infinity, repeatDelay: 1.6 }}
                   >

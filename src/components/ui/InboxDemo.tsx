@@ -110,10 +110,10 @@ export default function InboxDemo() {
   const selectedRow = step >= 1 && step <= 2;
 
   return (
-    <div className="rounded-[2rem] border border-forest/15 bg-paper p-4 shadow-[0_18px_42px_rgba(32,53,43,0.16)] sm:p-5">
+    <div className="rounded-[2rem] border border-forest/12 bg-paper p-4 shadow-[0_18px_42px_rgba(26,26,26,0.08)] sm:p-5">
       <div className="mb-3 flex items-center justify-between border-b border-forest/10 pb-3">
         <p className="text-xs uppercase tracking-[0.16em] text-slate">Inbox dashboard</p>
-        <span className="rounded-full border border-brass/35 bg-mist px-2.5 py-1 text-xs text-slate">Live demo</span>
+        <span className="rounded-full border border-brass/35 bg-brass/10 px-2.5 py-1 text-xs text-brass">Live demo</span>
       </div>
 
       {!showDetail ? (
@@ -137,7 +137,7 @@ export default function InboxDemo() {
                 }`}
               >
                 <span className="inline-flex h-4 w-4 items-center justify-center rounded border border-slate/35 bg-paper text-[10px]">
-                  {highlighted ? <Check size={12} className="text-forest" /> : null}
+                  {highlighted ? <Check size={12} className="text-brass" /> : null}
                 </span>
                 <span className="min-w-0">
                   <span className="block truncate text-xs font-medium text-ink">{email.sender}</span>
@@ -183,7 +183,7 @@ export default function InboxDemo() {
             <div className="mt-3 flex flex-wrap gap-2">
               <motion.button
                 type="button"
-                className="rounded-full bg-forest px-4 py-2 text-xs font-medium text-paper"
+                className="rounded-full bg-brass px-4 py-2 text-xs font-medium text-paper"
                 animate={prefersReducedMotion ? undefined : { scale: [1, 1.04, 0.98, 1] }}
                 transition={{ duration: 0.7, delay: 2.6 }}
               >
@@ -194,7 +194,7 @@ export default function InboxDemo() {
               <button type="button" className="rounded-full border border-forest/20 bg-paper px-4 py-2 text-xs text-slate">Ignore</button>
             </div>
 
-            <div className="mt-3 rounded-xl border border-brass/30 bg-mist p-3 text-xs text-slate">
+            <div className="mt-3 rounded-xl border border-brass/30 bg-brass/10 p-3 text-xs text-slate">
               <p>
                 <strong>Order:</strong> #1842
               </p>

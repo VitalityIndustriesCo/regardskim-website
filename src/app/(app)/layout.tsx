@@ -1,5 +1,6 @@
 import { Header } from "@/components/layout/header";
 import { Sidebar } from "@/components/layout/sidebar";
+import { ChatWidget } from "@/components/support/chat-widget";
 
 export default function DashboardLayout({
   children,
@@ -13,6 +14,7 @@ export default function DashboardLayout({
         <Header />
         <main className="flex-1 overflow-x-hidden p-4 md:p-6">{children}</main>
       </div>
+      <ChatWidget />
     </div>
   );
 }
