@@ -22,7 +22,7 @@ export default function Pricing() {
   const billingNote = annual ? "Billed annually" : "Billed monthly";
 
   return (
-    <section id="pricing" className="bg-paper py-16 md:py-28">
+    <section id="pricing" className="bg-cream py-16 md:py-28">
       <div className="section-shell text-center">
         <FadeIn>
           <h2 className="font-display font-bold text-4xl tracking-normal text-forest md:text-6xl">
@@ -31,16 +31,12 @@ export default function Pricing() {
           <p className="mt-4 text-base text-slate md:text-lg">
             You handle the sales. Kim handles the support.
           </p>
-          <p className="mt-2 text-sm font-semibold uppercase tracking-[0.16em] text-slate">
-            Starting with a 7-day free trial
-          </p>
           <p className="mt-2 text-sm font-semibold uppercase tracking-[0.16em] text-brass">
             Save up to 25% with annual
           </p>
         </FadeIn>
 
-        {/* Annual / Monthly toggle */}
-        <FadeIn delay={0.03} className="mt-8 flex items-center justify-center gap-3">
+        <FadeIn delay={0.03} className="mt-8 flex flex-wrap items-center justify-center gap-3 px-4 sm:px-0">
           <span className={`text-sm font-semibold ${!annual ? "text-forest" : "text-slate"}`}>
             Monthly
           </span>
@@ -64,15 +60,15 @@ export default function Pricing() {
           </span>
         </FadeIn>
 
-        <FadeIn delay={0.06} className="mx-auto mt-10 w-full max-w-md rounded-[2rem] border border-forest/15 bg-paper p-8 text-left md:p-10">
+        <FadeIn delay={0.06} className="mx-auto mt-10 w-full max-w-md rounded-[1.5rem] border border-forest/15 bg-paper p-5 text-left md:rounded-[2rem] md:p-10">
           <p className="text-sm uppercase tracking-[0.16em] text-slate">RegardsKim</p>
           <div className="mt-4 flex items-end gap-2 text-forest">
-            <span className="font-display font-bold text-7xl leading-none">${price}</span>
-            <span className="mb-2 text-slate">{period}</span>
+            <span className="font-display font-bold text-5xl leading-none sm:text-6xl md:text-7xl">${price}</span>
+            <span className="mb-1.5 text-sm text-slate sm:mb-2 sm:text-base">{period}</span>
           </div>
           <p className="mt-1 text-xs text-slate">{billingNote}</p>
 
-          <ul className="mt-8 space-y-3">
+          <ul className="mt-6 space-y-3 md:mt-8">
             {inclusions.map((item) => (
               <li key={item} className="flex items-start gap-2 text-sm text-slate md:text-base">
                 <Check size={18} className="mt-0.5 shrink-0 text-brass" />
@@ -81,9 +77,15 @@ export default function Pricing() {
             ))}
           </ul>
 
-          <a href={DASHBOARD_URL} className="btn-primary mt-8 inline-flex">
+          <a href={DASHBOARD_URL} className="btn-primary mt-8 inline-flex w-full justify-center sm:w-auto">
             Get started for free
           </a>
+        </FadeIn>
+
+        <FadeIn delay={0.09}>
+          <p className="mt-6 text-sm font-semibold uppercase tracking-[0.16em] text-slate">
+            Starting with a 7-day free trial
+          </p>
         </FadeIn>
       </div>
     </section>

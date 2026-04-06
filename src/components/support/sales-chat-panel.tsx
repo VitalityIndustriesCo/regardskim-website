@@ -128,7 +128,7 @@ function SalesMessageBubble({ message }: { message: SalesChatMessage }) {
     <div className={cn("flex w-full", isUser ? "justify-end" : "justify-start")}>
       <div
         className={cn(
-          "max-w-[86%] rounded-2xl px-3 py-2 text-sm leading-relaxed shadow-sm",
+          "max-w-[88%] rounded-2xl px-3 py-2 text-sm leading-relaxed shadow-sm sm:max-w-[86%]",
           isUser ? "bg-brass text-paper" : "bg-cream text-ink"
         )}
       >
@@ -233,10 +233,10 @@ export function SalesChatPanel({ onClose }: Props) {
   };
 
   return (
-    <Card className="fixed right-4 bottom-20 z-50 h-[560px] w-[380px] max-w-[calc(100vw-2rem)] border border-forest/10 bg-paper shadow-[0_24px_60px_rgba(26,26,26,0.16)]">
-      <CardHeader className="border-b border-forest/10 bg-paper pb-3">
+    <Card className="fixed inset-x-3 bottom-3 z-50 flex h-[min(75vh,560px)] w-auto max-w-none flex-col border border-forest/10 bg-paper shadow-[0_24px_60px_rgba(26,26,26,0.16)] sm:right-4 sm:bottom-20 sm:left-auto sm:h-[560px] sm:w-[380px] sm:max-w-[calc(100vw-2rem)]">
+      <CardHeader className="border-b border-forest/10 bg-paper px-4 pb-3 sm:px-6">
         <div className="flex items-center justify-between gap-3">
-          <div>
+          <div className="min-w-0">
             <CardTitle className="text-sm font-semibold text-forest">Sales support</CardTitle>
             <p className="text-xs text-slate">Ask about pricing, setup, or how Kim works</p>
           </div>
@@ -246,7 +246,7 @@ export function SalesChatPanel({ onClose }: Props) {
         </div>
       </CardHeader>
 
-      <CardContent className="flex-1 py-3">
+      <CardContent className="min-h-0 flex-1 px-4 py-3 sm:px-6">
         <div ref={scrollRef} className="flex h-full flex-col gap-3 overflow-y-auto pr-1">
           {messages.map((message) => (
             <SalesMessageBubble key={message.id} message={message} />
@@ -268,13 +268,13 @@ export function SalesChatPanel({ onClose }: Props) {
                   value={email}
                   onChange={(event) => setEmail(event.target.value)}
                   placeholder="you@example.com"
-                  className="h-10 rounded-xl border-forest/15 bg-paper"
+                  className="h-11 rounded-xl border-forest/15 bg-paper"
                 />
                 <Button
                   type="button"
                   onClick={submitEmail}
                   disabled={!email.trim()}
-                  className="h-10 rounded-xl bg-brass px-4 text-paper hover:bg-oxblood"
+                  className="h-11 rounded-xl bg-brass px-4 text-paper hover:bg-oxblood sm:self-auto"
                 >
                   Send
                 </Button>
@@ -284,7 +284,7 @@ export function SalesChatPanel({ onClose }: Props) {
         </div>
       </CardContent>
 
-      <CardFooter className="flex-col gap-3 border-t border-forest/10 bg-paper">
+      <CardFooter className="flex-col gap-3 border-t border-forest/10 bg-paper px-4 py-4 sm:px-6">
         <div className="flex w-full items-center gap-2">
           <Input
             value={input}
@@ -296,21 +296,21 @@ export function SalesChatPanel({ onClose }: Props) {
               }
             }}
             placeholder={reachedLimit ? "Message limit reached" : "Ask about pricing, setup, integrations..."}
-            className="h-11 rounded-full border-forest/15 bg-paper px-4"
+            className="h-11 min-w-0 rounded-full border-forest/15 bg-paper px-4"
             disabled={isTyping || reachedLimit}
           />
           <Button
             size="lg"
             onClick={send}
             disabled={isTyping || reachedLimit || !input.trim()}
-            className="h-11 rounded-full bg-brass px-4 text-paper hover:bg-oxblood"
+            className="h-11 shrink-0 rounded-full bg-brass px-4 text-paper hover:bg-oxblood"
             aria-label="Send message"
           >
             <SendHorizontal className="h-4 w-4" />
           </Button>
         </div>
 
-        <div className="flex w-full items-center justify-between gap-3 text-[11px] text-slate">
+        <div className="flex w-full flex-col gap-1 text-[11px] text-slate sm:flex-row sm:items-center sm:justify-between sm:gap-3">
           <span>Session-only chat • {userMessageCount}/{MAX_MESSAGES}</span>
           <span className="font-medium text-forest">Powered by Kim</span>
         </div>

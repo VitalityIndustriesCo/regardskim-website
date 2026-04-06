@@ -4,17 +4,17 @@ import FadeIn from "@/components/ui/FadeIn";
 const benefits = [
   {
     title: "Less inbox, more focus",
-    body: "Kim takes care of your inbox so you can focus on growing your store.",
+    body: "Kim handles your inbox so you can focus on growing your store.",
     icon: BookOpen,
   },
   {
-    title: "Replies that sound right",
-    body: "Clear, thoughtful responses that keep your brand polished. Kim learns, improves, and adapts to your style over time.",
+    title: "Replies that sound like you",
+    body: "Thoughtful, on-brand replies tailored to your style and ready for approval.",
     icon: PenLine,
   },
   {
     title: "You stay in control",
-    body: "Every reply is a draft until you approve it.",
+    body: "Nothing gets sent until you approve it.",
     icon: ShieldCheck,
   },
 ];

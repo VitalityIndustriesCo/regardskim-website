@@ -31,10 +31,12 @@ export default function MockupDetail({ mode = "draft" }: MockupDetailProps) {
   const isDraft = mode === "draft" || !sent;
 
   return (
-    <div className="rounded-2xl border border-forest/12 bg-paper p-3 md:p-4">
-      <div className="mb-3 flex items-center justify-between border-b border-forest/10 pb-3">
-        <p className="text-xs uppercase tracking-[0.12em] text-slate">Email thread</p>
-        <span className={`inline-flex rounded-full border px-2.5 py-1 text-[11px] font-medium ${isDraft ? badgeClass.draft : badgeClass.sent}`}>
+    <div className="rounded-2xl border border-forest/12 bg-paper p-3 sm:p-4">
+      <div className="mb-3 flex flex-col gap-2 border-b border-forest/10 pb-3 sm:flex-row sm:items-center sm:justify-between">
+        <p className="text-[11px] uppercase tracking-[0.12em] text-slate sm:text-xs">Email thread</p>
+        <span
+          className={`inline-flex w-fit rounded-full border px-2.5 py-1 text-[11px] font-medium ${isDraft ? badgeClass.draft : badgeClass.sent}`}
+        >
           {isDraft ? "Draft Ready" : "Sent"}
         </span>
       </div>
@@ -43,16 +45,16 @@ export default function MockupDetail({ mode = "draft" }: MockupDetailProps) {
         <div className="rounded-xl border border-forest/12 bg-mist/70 p-3">
           <p className="text-[11px] uppercase tracking-[0.08em] text-slate">From Sarah M.</p>
           <p className="mt-1 text-xs font-medium text-ink">Where is my order?</p>
-          <p className="mt-2 text-xs text-slate">
+          <p className="mt-2 text-xs leading-5 text-slate">
             Hi, I ordered a blanket last week and haven&apos;t received tracking...
           </p>
         </div>
 
         <div className="rounded-xl border border-forest/12 bg-paper p-3">
           <p className="text-[11px] uppercase tracking-[0.08em] text-slate">Kim&apos;s reply</p>
-          <p className="mt-2 text-xs text-slate">
-            Hi Sarah, Thanks for reaching out! Your order #1842 shipped yesterday via Australia Post.
-            Your tracking number is AP4821...
+          <p className="mt-2 text-xs leading-5 text-slate">
+            Hi Sarah, Thanks for reaching out! Your order #1842 shipped yesterday via Australia Post. Your tracking
+            number is AP4821...
           </p>
 
           {mode === "approval" && (

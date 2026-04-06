@@ -23,20 +23,27 @@ const badgeClass: Record<Status, string> = {
 export default function MockupInbox() {
   return (
     <div className="overflow-hidden rounded-2xl border border-forest/12 bg-paper">
-      <div className="grid grid-cols-[1.1fr_1.4fr_130px] gap-2 border-b border-forest/10 bg-mist px-3 py-2 text-[11px] uppercase tracking-[0.1em] text-slate">
+      <div className="grid grid-cols-[minmax(0,0.9fr)_minmax(0,1.4fr)] gap-2 border-b border-forest/10 bg-mist px-3 py-2 text-[10px] uppercase tracking-[0.1em] text-slate sm:grid-cols-[1.1fr_1.4fr_130px] sm:text-[11px]">
         <span>Sender</span>
         <span>Subject</span>
-        <span>Status</span>
+        <span className="hidden sm:block">Status</span>
       </div>
 
       {ROWS.map((row) => (
         <div
           key={`${row.sender}-${row.subject}`}
-          className="grid grid-cols-[1.1fr_1.4fr_130px] gap-2 border-b border-forest/8 px-3 py-3 last:border-b-0"
+          className="grid grid-cols-[minmax(0,0.9fr)_minmax(0,1.4fr)] gap-2 border-b border-forest/8 px-3 py-3 last:border-b-0 sm:grid-cols-[1.1fr_1.4fr_130px]"
         >
           <span className="truncate text-xs font-medium text-ink">{row.sender}</span>
-          <span className="truncate text-xs text-slate">{row.subject}</span>
-          <span>
+          <div className="min-w-0 space-y-1 sm:space-y-0">
+            <span className="block truncate text-xs text-slate">{row.subject}</span>
+            <span className="sm:hidden">
+              <span className={`inline-flex rounded-full border px-2 py-0.5 text-[10px] font-medium ${badgeClass[row.status]}`}>
+                {row.status}
+              </span>
+            </span>
+          </div>
+          <span className="hidden sm:block">
             <span className={`inline-flex rounded-full border px-2 py-0.5 text-[11px] font-medium ${badgeClass[row.status]}`}>
               {row.status}
             </span>

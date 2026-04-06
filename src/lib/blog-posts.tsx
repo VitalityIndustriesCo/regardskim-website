@@ -756,6 +756,283 @@ export const blogPosts: BlogPost[] = [
       </>
     ),
   },
+  {
+    slug: "why-kim-is-different",
+    title: "Why Generic AI Email Tools Fall Short for Ecommerce Support",
+    date: "April 1, 2026",
+    image: "/blog/why-different.png",
+    meta:
+      "Generic AI email tools help with inbox clutter. Kim is different because it is built for Shopify support, real store data, and approved drafts.",
+    content: (
+      <>
+        <p>
+          There is no shortage of AI email tools right now.
+        </p>
+        <p>
+          Every week, it feels like another product promises a cleaner inbox, faster replies, better summaries,
+          or less time spent triaging messages. And to be fair, a lot of these tools are useful. If your
+          problem is general inbox overload, they can help.
+        </p>
+        <p>
+          But ecommerce support is not just “email.”
+        </p>
+        <p>
+          That is the gap.
+        </p>
+        <p>
+          A general-purpose AI email assistant sees an inbox full of messages. Kim sees a Shopify store, real
+          customers, real orders, real policies, and the kinds of support questions that show up every single
+          day.
+        </p>
+        <p>
+          That difference matters more than people think.
+        </p>
+        <p>
+          If you run an ecommerce store, your customer emails are not random. They follow patterns.
+        </p>
+        <p>
+          Customers ask where their order is. They want to change an address. They ask for a return. They want
+          to know if a damaged item can be replaced. They are confused about shipping times. They need help
+          choosing between products. Sometimes they are upset, but usually they just want a clear answer from
+          someone who actually knows what is going on.
+        </p>
+        <p>
+          That is where generic AI tools start to break down.
+        </p>
+        <p>
+          They are built horizontally. They are designed to help everyone with all kinds of email. That makes
+          them good at broad tasks like summarizing threads, suggesting polished replies, or helping you get to
+          inbox zero. But ecommerce support is not a broad task. It is a very specific workflow.
+        </p>
+        <p>
+          A customer support reply is only useful if it is accurate.
+        </p>
+        <p>
+          And accuracy in ecommerce depends on context.
+        </p>
+
+        <h2>Ecommerce support needs more than a clever draft</h2>
+        <p>
+          Imagine a customer emails and says:
+        </p>
+        <blockquote>
+          <p>
+            Hi, just checking on order #4721 — the tracking link has not updated in three days. Has it actually
+            shipped?
+          </p>
+        </blockquote>
+        <p>
+          A generic AI email tool can read that message and produce something that sounds decent. It might
+          draft a reply like this:
+        </p>
+        <blockquote>
+          <p>
+            Hi there, thanks for reaching out. I’m sorry for the confusion. Shipping updates can sometimes take
+            a little longer than expected. Please keep an eye on your tracking link, and if it still does not
+            update soon, contact the shipping carrier or reply here for further help.
+          </p>
+        </blockquote>
+        <p>
+          That sounds polite. It also does not answer the real question.
+        </p>
+        <p>
+          It cannot see whether the order shipped. It cannot check if the label was created but the parcel was
+          not scanned. It cannot tell whether the customer is still inside the normal delivery window. It does
+          not know your shipping policy. It does not know if this customer already had a previous support issue
+          last week.
+        </p>
+        <p>
+          So it fills the gaps with generic language.
+        </p>
+        <p>
+          Now compare that with a Kim-style draft:
+        </p>
+        <blockquote>
+          <p>
+            Hey Sarah, thanks for checking in. I looked up order #4721 and can confirm it shipped on March 29
+            via Australia Post. Right now the tracking is showing label created, which usually means the parcel
+            has been packed and is waiting for the next carrier scan. Tracking can sometimes take 24–48 hours to
+            update after handoff, but three days is longer than usual. If it has not moved by tomorrow
+            afternoon, we’ll investigate it from our side. Here is your tracking link again: [tracking link].
+          </p>
+        </blockquote>
+        <p>
+          That reply is better for one simple reason: it is grounded in reality.
+        </p>
+        <p>
+          It uses actual order data. It reflects the real shipping status. It sets the right expectation. It
+          gives the customer a clear next step.
+        </p>
+        <p>
+          That is what ecommerce support needs.
+        </p>
+
+        <h2>Kim is built specifically for ecommerce stores</h2>
+        <p>
+          Kim is not trying to be an AI assistant for every kind of inbox.
+        </p>
+        <p>
+          It is built specifically for Shopify and ecommerce support.
+        </p>
+        <p>
+          That focus changes everything.
+        </p>
+        <p>
+          Instead of trying to be broadly helpful across sales emails, investor updates, meeting invites,
+          internal chatter, and newsletters, Kim is built around the emails ecommerce stores actually receive.
+          That means it understands the shape of support work: order questions, returns, refunds, delivery
+          delays, damaged items, product questions, and all the other repeat issues that eat time every week.
+        </p>
+        <p>
+          These are not edge cases. They are the job.
+        </p>
+        <p>
+          When a product is built for that world from the start, it does not need to guess what matters. It
+          already knows.
+        </p>
+
+        <h2>Kim understands the kinds of emails your customers send</h2>
+        <p>
+          One of the biggest mistakes in AI email is treating every message like a blank slate.
+        </p>
+        <p>
+          In ecommerce, most support conversations are not blank slates. They are recurring patterns.
+        </p>
+        <p>
+          That is good news, because recurring patterns are exactly where the right kind of AI can help.
+        </p>
+        <p>
+          Kim is designed around the most common support flows Shopify stores deal with:
+        </p>
+        <ul>
+          <li>Where is my order?</li>
+          <li>Can I return this?</li>
+          <li>Can I get a refund?</li>
+          <li>My item arrived damaged</li>
+          <li>My order is delayed</li>
+          <li>Can I change my shipping address?</li>
+          <li>Will this product work for me?</li>
+          <li>When will this be back in stock?</li>
+        </ul>
+        <p>
+          A general inbox tool may recognize that these are customer service emails. Kim recognizes them as
+          ecommerce support situations with specific facts, policies, and actions behind them.
+        </p>
+        <p>
+          That means the draft is not just smoother. It is more useful.
+        </p>
+
+        <h2>Kim uses your real store data</h2>
+        <p>
+          This is the big one.
+        </p>
+        <p>
+          Generic AI email tools mostly work from the text inside the email thread. That is inherently
+          limiting.
+        </p>
+        <p>
+          If a customer asks about an order, the answer is usually not sitting in the email itself. The answer
+          lives in your store.
+        </p>
+        <p>
+          Kim connects to Shopify and uses real store data like:
+        </p>
+        <ul>
+          <li>order details</li>
+          <li>tracking numbers</li>
+          <li>fulfillment status</li>
+          <li>shipping updates</li>
+          <li>product information</li>
+          <li>customer history</li>
+        </ul>
+        <p>
+          That is what allows Kim to draft replies that are actually informed.
+        </p>
+        <p>
+          Without that, an AI tool is guessing from context clues. With it, the tool can respond based on
+          facts.
+        </p>
+        <p>
+          That difference is the difference between “hopefully helpful” and genuinely trustworthy.
+        </p>
+
+        <h2>Kim uses your policies too</h2>
+        <p>
+          Good support is not just about sounding nice.
+        </p>
+        <p>
+          It is about being right according to how your store operates.
+        </p>
+        <p>
+          Every store has its own return rules, shipping windows, refund policies, and support boundaries. A
+          reply that sounds great but contradicts your actual policy creates more work, not less.
+        </p>
+        <p>
+          Kim uses your policies when drafting replies, so the response is not just friendly. It is aligned
+          with how your business actually works.
+        </p>
+        <p>
+          That means fewer awkward follow-up emails, fewer manual corrections, and less risk of accidentally
+          promising something you do not offer.
+        </p>
+
+        <h2>You stay in control</h2>
+        <p>
+          A lot of founders are open to AI help but nervous about handing over the customer relationship.
+        </p>
+        <p>
+          Fair enough.
+        </p>
+        <p>
+          Kim is built with that in mind. Every reply is a draft until you approve it.
+        </p>
+        <p>
+          Nothing gets sent without your say-so.
+        </p>
+        <p>
+          That matters because trust is not just about accuracy. It is also about control. You can move faster
+          without giving up oversight. You can review what goes out, step in when nuance matters, and stay
+          confident that your support voice is still yours.
+        </p>
+
+        <h2>Not a robot. A useful extension of your store</h2>
+        <p>
+          The goal is not to make customer support sound automated.
+        </p>
+        <p>
+          The goal is to make support feel faster, clearer, and more helpful for the customer, while giving you
+          back hours you would otherwise spend writing the same replies over and over.
+        </p>
+        <p>
+          When Kim works well, it does not feel like a generic AI layer pasted over your inbox. It feels like a
+          trusted extension of your store. One that knows your products, knows your policies, knows your
+          customers, and helps you handle support with more speed and less mental load.
+        </p>
+        <p>
+          That is the difference between a tool built for everyone and a tool built for your actual workflow.
+        </p>
+        <p>
+          General AI email tools can be great for inbox management.
+        </p>
+        <p>
+          But ecommerce support is not really an inbox management problem.
+        </p>
+        <p>
+          It is an operations problem, a customer trust problem, and a store knowledge problem.
+        </p>
+        <p>
+          That is why general purpose does not cut it.
+        </p>
+        <p>
+          And that is why Kim is different.
+        </p>
+        <p>
+          If you run a Shopify store and want help with support without losing accuracy or control, Kim is built
+          for exactly that.
+        </p>
+      </>
+    ),
+  },
 ];
 
 export function getBlogPost(slug: string) {

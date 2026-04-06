@@ -13,8 +13,8 @@ export default function Footer() {
           <a href="/#pricing" className="hover:text-forest">Pricing</a>
           <a href="/#faq" className="hover:text-forest">FAQ</a>
           <a href="/blog" className="hover:text-forest">Blog</a>
-          <a href="#" className="hover:text-forest">Privacy Policy</a>
-          <a href="#" className="hover:text-forest">Terms of Service</a>
+          <a href="/privacy" className="hover:text-forest">Privacy Policy</a>
+          <a href="/terms" className="hover:text-forest">Terms of Service</a>
         </nav>
 
         <div className="md:text-right">
