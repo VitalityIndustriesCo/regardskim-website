@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Check } from "lucide-react";
 import FadeIn from "@/components/ui/FadeIn";
 
-const DASHBOARD_URL = "/signup";
+const INSTALL_URL = "/#install";
 
 const inclusions = [
   "Integrates with Shopify, Gmail & Outlook",
@@ -77,8 +77,8 @@ export default function Pricing() {
             ))}
           </ul>
 
-          <a href={DASHBOARD_URL} className="btn-primary mt-8 inline-flex w-full justify-center sm:w-auto">
-            Get started for free
+          <a href={INSTALL_URL} className="btn-primary mt-8 inline-flex w-full justify-center sm:w-auto">
+            Get started on Shopify
           </a>
         </FadeIn>
 

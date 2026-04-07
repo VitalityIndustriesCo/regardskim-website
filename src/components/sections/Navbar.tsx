@@ -63,11 +63,8 @@ export default function Navbar() {
           </div>
 
           <div className="hidden items-center gap-4 md:flex">
-            <a href="/login" className="text-sm text-slate transition-colors hover:text-forest">
-              Log in
-            </a>
-            <a href="/signup" className="btn-primary">
-              Get started
+            <a href="/#install" className="btn-primary">
+              Install on Shopify
             </a>
           </div>
 
@@ -143,15 +140,8 @@ export default function Navbar() {
           </div>
 
           <div className="mt-8 flex flex-col gap-3 border-t border-forest/10 pt-6">
-            <a
-              href="/login"
-              className="rounded-2xl px-4 py-3 text-base font-medium text-slate transition-colors hover:bg-cream hover:text-forest"
-              onClick={closeMobileMenu}
-            >
-              Log in
-            </a>
-            <a href="/signup" className="btn-primary w-full" onClick={closeMobileMenu}>
-              Get started
+            <a href="/#install" className="btn-primary w-full" onClick={closeMobileMenu}>
+              Install on Shopify
             </a>
           </div>
         </div>

@@ -2,7 +2,7 @@ import FadeIn from "@/components/ui/FadeIn";
 import HeroInboxPreview from "@/components/ui/HeroInboxPreview";
 import { ShopifyLogo } from "@/components/ui/BrandLogos";
 
-const DASHBOARD_URL = "/signup";
+const INSTALL_URL = "/#install";
 
 export default function Hero() {
   return (
@@ -20,10 +20,10 @@ export default function Hero() {
               </p>
 
               <div className="mt-10 flex flex-col items-center gap-4">
-                <a href={DASHBOARD_URL} className="btn-primary">
-                  START FREE TRIAL
+                <a href={INSTALL_URL} className="btn-primary">
+                  Install on Shopify
                 </a>
-                <p className="text-sm text-slate">7-day free trial • Cancel anytime</p>
+                <p className="text-sm text-slate">Install from the Shopify App Store and get set up in minutes.</p>
               </div>
 
               {/* Shopify trust block */}
