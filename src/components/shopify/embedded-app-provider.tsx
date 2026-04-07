@@ -1,9 +1,8 @@
 "use client";
 
-import { createContext, useContext, useEffect, useMemo, type ReactNode } from "react";
+import { createContext, useContext, useMemo, type ReactNode } from "react";
 import {
   getEmbeddedHost,
-  getShopifyApp,
   isShopifyEmbedded,
   redirectToAppPath,
   redirectToRemote,
@@ -34,11 +33,6 @@ const EmbeddedAppContext = createContext<EmbeddedAppContextValue>({
 export function EmbeddedAppProvider({ children }: { children: ReactNode }) {
   const embedded = useMemo(() => isShopifyEmbedded(), []);
   const host = useMemo(() => getEmbeddedHost(), []);
-
-  useEffect(() => {
-    if (!embedded) return;
-    getShopifyApp();
-  }, [embedded]);
 
   const value = useMemo<EmbeddedAppContextValue>(
     () => ({

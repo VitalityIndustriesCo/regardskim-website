@@ -1,19 +1,17 @@
 "use client";
 
-import createApp, { type ClientApplication } from "@shopify/app-bridge";
-import { Redirect, SessionToken } from "@shopify/app-bridge/actions";
-
-const SHOPIFY_API_KEY = "327e4daf19a338e5b04707172c2b39bc";
-const HOST_STORAGE_KEY = "shopify-host";
-
-type ShopifyWindow = Window & {
-  __REGARDSKIM_APP_BRIDGE__?: ClientApplication;
-};
-
-function getShopifyWindow(): ShopifyWindow | null {
-  if (typeof window === "undefined") return null;
-  return window as ShopifyWindow;
+declare global {
+  interface Window {
+    shopify?: {
+      idToken(): Promise<string>;
+      toast?: {
+        show(message: string, options?: { isError?: boolean }): void;
+      };
+    };
+  }
 }
+
+const HOST_STORAGE_KEY = "shopify-host";
 
 function readHostFromUrl(): string | null {
   if (typeof window === "undefined") return null;
@@ -40,68 +38,46 @@ export function isShopifyEmbedded(): boolean {
   if (params.get("embedded") === "1") return true;
   if (params.has("host")) return true;
 
+  // Check for new App Bridge presence or iframe context
+  if (typeof window.shopify !== "undefined") return true;
+
   return window.self !== window.top && Boolean(getEmbeddedHost());
 }
 
-export function getShopifyApp(): ClientApplication | null {
-  const shopifyWindow = getShopifyWindow();
-  const host = getEmbeddedHost();
-
-  if (!shopifyWindow || !host) return null;
-  if (shopifyWindow.__REGARDSKIM_APP_BRIDGE__) {
-    return shopifyWindow.__REGARDSKIM_APP_BRIDGE__;
-  }
-
-  shopifyWindow.__REGARDSKIM_APP_BRIDGE__ = createApp({
-    apiKey: SHOPIFY_API_KEY,
-    host,
-    forceRedirect: true,
-  });
-
-  return shopifyWindow.__REGARDSKIM_APP_BRIDGE__;
-}
-
+/**
+ * Get a Shopify session token using the new App Bridge (window.shopify).
+ * The CDN script at https://cdn.shopify.com/shopifycloud/app-bridge.js
+ * injects window.shopify automatically when the app is embedded.
+ */
 export async function getShopifySessionToken(): Promise<string | null> {
-  const app = getShopifyApp();
-  if (!app) return null;
+  if (typeof window === "undefined" || !window.shopify) return null;
 
-  return new Promise<string>((resolve, reject) => {
-    const unsubscribe = app.subscribe(SessionToken.Action.RESPOND, (payload) => {
-      unsubscribe();
-
-      const token = payload?.sessionToken;
-      if (typeof token === "string" && token.length > 0) {
-        resolve(token);
-        return;
-      }
-
-      reject(new Error("Shopify session token was not returned."));
-    });
-
-    app.dispatch(SessionToken.request());
-  });
+  try {
+    return await window.shopify.idToken();
+  } catch {
+    return null;
+  }
 }
 
+/**
+ * Redirect to a remote URL.
+ * newContext=true opens in a new tab; false breaks out of the iframe.
+ */
 export function redirectToRemote(url: string, newContext = true) {
-  const app = getShopifyApp();
-
-  if (!app) {
-    window.location.assign(url);
-    return;
+  if (newContext) {
+    window.open(url, "_blank");
+  } else {
+    window.open(url, "_top");
   }
-
-  const redirect = Redirect.create(app);
-  redirect.dispatch(Redirect.Action.REMOTE, { url, newContext });
 }
 
+/**
+ * Navigate within the embedded app.
+ * New App Bridge automatically syncs the iframe URL — just use the
+ * browser history API and let Next.js router handle the rest.
+ */
 export function redirectToAppPath(path: string) {
-  const app = getShopifyApp();
-
-  if (!app) {
-    window.location.assign(path);
-    return;
+  if (typeof window !== "undefined") {
+    window.history.pushState(null, "", path);
   }
-
-  const redirect = Redirect.create(app);
-  redirect.dispatch(Redirect.Action.APP, path);
 }
