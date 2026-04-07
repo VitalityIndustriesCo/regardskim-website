@@ -1,7 +1,7 @@
 "use client";
 
-import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { AppLink } from "@/components/shopify/app-link";
 import { Bot, FileText, Settings2, Store } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -27,10 +27,10 @@ export function SettingsNav() {
       <TabsList variant="line" className="w-full justify-start overflow-x-auto rounded-none border-b p-0 scrollbar-none">
         {settingsItems.map((item) => (
           <TabsTrigger key={item.href} value={item.value} asChild className="shrink-0 rounded-none px-3 py-2">
-            <Link href={item.href} className={cn("inline-flex items-center gap-2") }>
+            <AppLink href={item.href} className={cn("inline-flex items-center gap-2")}>
               <item.icon className="h-4 w-4" />
               <span>{item.label}</span>
-            </Link>
+            </AppLink>
           </TabsTrigger>
         ))}
       </TabsList>

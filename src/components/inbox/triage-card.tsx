@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import { toast } from "sonner";
+import { AppLink, ExternalAppLink } from "@/components/shopify/app-link";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -147,12 +147,12 @@ export function TriageCard({ email, checked, onCheckedChange, onActionComplete }
           <div className="min-w-0 border-b p-4 lg:w-[40%] lg:border-b-0 lg:border-r">
             <div className="mb-2 flex items-start justify-between gap-2">
               <div className="min-w-0 flex-1">
-                <Link
+                <AppLink
                   href={`/inbox/${email.id}`}
                   className="font-semibold text-foreground transition-colors hover:text-primary"
                 >
                   {displayName}
-                </Link>
+                </AppLink>
                 <p className="truncate text-xs text-muted-foreground">{displayEmail}</p>
               </div>
               <div className="flex shrink-0 items-center gap-2">
@@ -160,12 +160,12 @@ export function TriageCard({ email, checked, onCheckedChange, onActionComplete }
               </div>
             </div>
 
-            <Link
+            <AppLink
               href={`/inbox/${email.id}`}
               className="mb-2 line-clamp-1 text-sm font-medium text-foreground transition-colors hover:text-primary"
             >
               {email.subject}
-            </Link>
+            </AppLink>
 
             <p className="text-xs text-muted-foreground">{received}</p>
 
@@ -191,10 +191,10 @@ export function TriageCard({ email, checked, onCheckedChange, onActionComplete }
                         variant="outline"
                         className="h-7 gap-1.5 border-amber-300 bg-amber-50 px-2.5 text-xs text-amber-900 hover:bg-amber-100 dark:border-amber-800 dark:bg-amber-950/30 dark:text-amber-200"
                       >
-                        <a href={email.order.shopifyLinks.orderAdminUrl} target="_blank" rel="noreferrer noopener">
+                        <ExternalAppLink href={email.order.shopifyLinks.orderAdminUrl}>
                           View in Shopify →
                           <ExternalLink className="size-3" />
-                        </a>
+                        </ExternalAppLink>
                       </Button>
                     )}
 
@@ -205,10 +205,10 @@ export function TriageCard({ email, checked, onCheckedChange, onActionComplete }
                         variant="outline"
                         className="h-7 gap-1.5 border-amber-300 bg-amber-50 px-2.5 text-xs text-amber-900 hover:bg-amber-100 dark:border-amber-800 dark:bg-amber-950/30 dark:text-amber-200"
                       >
-                        <a href={email.order.shopifyLinks.customerAdminUrl} target="_blank" rel="noreferrer noopener">
+                        <ExternalAppLink href={email.order.shopifyLinks.customerAdminUrl}>
                           View customer →
                           <ExternalLink className="size-3" />
-                        </a>
+                        </ExternalAppLink>
                       </Button>
                     )}
                   </div>

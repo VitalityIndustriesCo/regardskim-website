@@ -1,7 +1,8 @@
 "use client";
 
-import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { AppLink } from "@/components/shopify/app-link";
+import { useEmbeddedApp } from "@/components/shopify/embedded-app-provider";
 import { BarChart3, CreditCard, Inbox, Link2, Settings } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -26,7 +27,7 @@ function SidebarNav({ onNavigate }: SidebarNavProps) {
         const active = pathname === item.href || pathname.startsWith(`${item.href}/`);
 
         return (
-          <Link
+          <AppLink
             key={item.href}
             href={item.href}
             onClick={onNavigate}
@@ -39,7 +40,7 @@ function SidebarNav({ onNavigate }: SidebarNavProps) {
           >
             <item.icon className="h-4 w-4" />
             <span>{item.label}</span>
-          </Link>
+          </AppLink>
         );
       })}
     </nav>
@@ -61,6 +62,12 @@ export function SidebarContent({ onNavigate }: SidebarNavProps) {
 }
 
 export function Sidebar() {
+  const { embedded } = useEmbeddedApp();
+
+  if (embedded) {
+    return null;
+  }
+
   return (
     <aside className="hidden w-64 shrink-0 border-r border-sidebar-border md:block">
       <SidebarContent />

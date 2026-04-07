@@ -10,13 +10,20 @@ const PROTECTED_PREFIXES = [
 ];
 
 export function middleware(request: NextRequest) {
-  const { pathname } = request.nextUrl;
+  const { pathname, searchParams } = request.nextUrl;
 
   const needsAuth = PROTECTED_PREFIXES.some(
     (prefix) => pathname === prefix || pathname.startsWith(`${prefix}/`)
   );
 
   if (!needsAuth) {
+    return NextResponse.next();
+  }
+
+  const isEmbeddedRequest =
+    searchParams.get("embedded") === "1" || searchParams.has("host");
+
+  if (isEmbeddedRequest) {
     return NextResponse.next();
   }
 

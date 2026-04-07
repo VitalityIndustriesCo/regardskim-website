@@ -24,6 +24,7 @@ import { LoadingState } from "@/components/ui/loading-state";
 import { ErrorState } from "@/components/ui/error-state";
 import { EmptyState } from "@/components/ui/empty-state";
 import { toast } from "sonner";
+import { useEmbeddedApp } from "@/components/shopify/embedded-app-provider";
 import { api, API_URL } from "@/lib/api";
 
 interface StoreData {
@@ -144,6 +145,7 @@ function ConnectionsContent() {
   const [disconnecting, setDisconnecting] = useState(false);
   const [disconnectingShopify, setDisconnectingShopify] = useState(false);
   const searchParams = useSearchParams();
+  const { redirect } = useEmbeddedApp();
 
   const fetchStore = useCallback(async () => {
     setLoading(true);
@@ -215,7 +217,7 @@ function ConnectionsContent() {
       toast.error("Store not loaded");
       return;
     }
-    window.location.href = `${API_URL}/auth/gmail/connect?storeId=${storeId}`;
+    redirect(`${API_URL}/auth/gmail/connect?storeId=${storeId}`);
   };
 
   const handleDisconnectGmail = async () => {

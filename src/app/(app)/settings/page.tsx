@@ -1,7 +1,7 @@
 "use client";
 
-import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { AppLink } from "@/components/shopify/app-link";
 import { SettingsNav, settingsItems } from "@/components/settings/settings-nav";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
@@ -37,10 +37,10 @@ export default function SettingsPage() {
 
             <CardFooter>
               <Button asChild variant="outline" className="ml-auto">
-                <Link href={section.href}>
+                <AppLink href={section.href}>
                   Edit {section.label}
                   <ArrowRight className="h-4 w-4" />
-                </Link>
+                </AppLink>
               </Button>
             </CardFooter>
           </Card>

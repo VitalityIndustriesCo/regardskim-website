@@ -1,3 +1,5 @@
+import { getShopifySessionToken, isShopifyEmbedded } from "@/lib/shopify-app-bridge";
+
 export const API_URL =
   process.env.NEXT_PUBLIC_API_URL ||
   "https://regardskim-app-production.up.railway.app";
@@ -8,29 +10,47 @@ export class ApiError extends Error {
   }
 }
 
+export async function getAuthHeaders(
+  headers: Record<string, string> = {}
+): Promise<Record<string, string>> {
+  const nextHeaders = { ...headers };
+
+  if (typeof window === "undefined") {
+    return nextHeaders;
+  }
+
+  if (isShopifyEmbedded()) {
+    const sessionToken = await getShopifySessionToken();
+    if (sessionToken) {
+      nextHeaders.Authorization = `Bearer ${sessionToken}`;
+    }
+    return nextHeaders;
+  }
+
+  const token = localStorage.getItem("token");
+  if (token) {
+    nextHeaders.Authorization = `Bearer ${token}`;
+  }
+
+  return nextHeaders;
+}
+
 export async function api<T = unknown>(
   path: string,
   options: RequestInit = {}
 ): Promise<T> {
-  const token =
-    typeof window !== "undefined" ? localStorage.getItem("token") : null;
-
   const headers: Record<string, string> = {
-    "Content-Type": "application/json",
+    ...(options.body instanceof FormData ? {} : { "Content-Type": "application/json" }),
     ...(options.headers as Record<string, string>),
   };
 
-  if (token) {
-    headers.Authorization = `Bearer ${token}`;
-  }
-
   const res = await fetch(`${API_URL}${path}`, {
     ...options,
-    headers,
+    headers: await getAuthHeaders(headers),
   });
 
   if (res.status === 401) {
-    if (typeof window !== "undefined") {
+    if (typeof window !== "undefined" && !isShopifyEmbedded()) {
       localStorage.removeItem("token");
       document.cookie = "token=; path=/; max-age=0; samesite=lax";
       window.location.href = "/login";

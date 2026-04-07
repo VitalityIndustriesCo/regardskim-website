@@ -10,8 +10,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { LoadingState } from "@/components/ui/loading-state";
 import { ErrorState } from "@/components/ui/error-state";
-import { api, API_URL } from "@/lib/api";
-import { getToken } from "@/lib/auth";
+import { api, API_URL, getAuthHeaders } from "@/lib/api";
 import { ImagePlus, X } from "lucide-react";
 
 interface StoreFile {
@@ -218,10 +217,9 @@ export default function AgentSettingsPage() {
                 try {
                   const formData = new FormData();
                   formData.append("file", file);
-                  const token = getToken();
                   const res = await fetch(`${API_URL}/api/store/signature-image`, {
                     method: "POST",
-                    headers: token ? { Authorization: `Bearer ${token}` } : {},
+                    headers: await getAuthHeaders(),
                     body: formData,
                   });
                   if (!res.ok) throw new Error("Upload failed");

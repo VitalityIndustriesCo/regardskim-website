@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState, useCallback } from "react";
-import Link from "next/link";
 import { useParams } from "next/navigation";
 import { toast } from "sonner";
 import { DraftEditor } from "@/components/inbox/draft-editor";
@@ -9,6 +8,7 @@ import { EmailDetail } from "@/components/inbox/email-detail";
 import { ThreadView } from "@/components/inbox/thread-view";
 import { type InboxEmail } from "@/components/inbox/email-row";
 import { formatStatus } from "@/components/inbox/status-badge";
+import { AppLink, ExternalAppLink } from "@/components/shopify/app-link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
@@ -135,10 +135,10 @@ export default function InboxDetailPage() {
             variant="ghost"
             className="w-fit gap-2 px-0 hover:bg-transparent"
           >
-            <Link href="/inbox">
+            <AppLink href="/inbox">
               <ArrowLeft className="size-4" />
               Back to inbox
-            </Link>
+            </AppLink>
           </Button>
           <div>
             <h1 className="text-2xl font-semibold tracking-tight md:text-3xl">
@@ -231,18 +231,18 @@ export default function InboxDetailPage() {
                 <div className="flex flex-wrap gap-2">
                   {email.order?.shopifyLinks?.orderAdminUrl && (
                     <Button asChild size="sm" variant="outline" className="gap-1.5">
-                      <a href={email.order.shopifyLinks.orderAdminUrl} target="_blank" rel="noreferrer noopener">
+                      <ExternalAppLink href={email.order.shopifyLinks.orderAdminUrl}>
                         View in Shopify →
                         <ExternalLink className="size-3.5" />
-                      </a>
+                      </ExternalAppLink>
                     </Button>
                   )}
                   {email.order?.shopifyLinks?.customerAdminUrl && (
                     <Button asChild size="sm" variant="outline" className="gap-1.5">
-                      <a href={email.order.shopifyLinks.customerAdminUrl} target="_blank" rel="noreferrer noopener">
+                      <ExternalAppLink href={email.order.shopifyLinks.customerAdminUrl}>
                         View customer →
                         <ExternalLink className="size-3.5" />
-                      </a>
+                      </ExternalAppLink>
                     </Button>
                   )}
                 </div>

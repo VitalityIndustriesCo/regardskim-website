@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { LoadingState } from "@/components/ui/loading-state";
 import { ErrorState } from "@/components/ui/error-state";
+import { useEmbeddedApp } from "@/components/shopify/embedded-app-provider";
 import { EmptyState } from "@/components/ui/empty-state";
 import { api } from "@/lib/api";
 
@@ -32,6 +33,7 @@ export default function BillingPage() {
   const [billingData, setBillingData] = useState<BillingStatus | null>(null);
   const [checkoutLoading, setCheckoutLoading] = useState(false);
   const [portalLoading, setPortalLoading] = useState(false);
+  const { redirect } = useEmbeddedApp();
 
   const fetchBilling = useCallback(async () => {
     setLoading(true);
@@ -57,7 +59,7 @@ export default function BillingPage() {
         method: "POST",
         body: JSON.stringify({}),
       });
-      window.location.href = res.data.url;
+      redirect(res.data.url);
     } catch (err) {
       setError(err instanceof Error ? err.message : "Failed to start checkout");
       setCheckoutLoading(false);
@@ -70,7 +72,7 @@ export default function BillingPage() {
       const res = await api<{ success: boolean; data: { url: string } }>("/api/billing/portal", {
         method: "POST",
       });
-      window.location.href = res.data.url;
+      redirect(res.data.url);
     } catch (err) {
       setError(err instanceof Error ? err.message : "Failed to open billing portal");
       setPortalLoading(false);
