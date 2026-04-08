@@ -56,7 +56,7 @@ function waitForShopifyBridge(timeoutMs = 3000): Promise<boolean> {
   });
 }
 
-async function fetchStoreWithToken(token: string) {
+async function fetchStoreWithToken(token: string): Promise<{ store: Store | null; billingRequired: boolean }> {
   const res = await fetch(`${API_URL}/api/store`, {
     headers: {
       Authorization: `Bearer ${token}`,
@@ -64,12 +64,29 @@ async function fetchStoreWithToken(token: string) {
     },
   });
 
+  if (res.status === 402) {
+    // Auth succeeded but no active subscription — need billing
+    // Fetch store info from billing status endpoint instead (not billing-gated)
+    const billingRes = await fetch(`${API_URL}/api/billing/status`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+    });
+    if (billingRes.ok) {
+      const billingBody = (await billingRes.json()) as { data?: { plan?: { id?: string }; subscription?: { status?: string } } };
+      // Return a minimal store object so auth is considered successful
+      return { store: { id: "billing-pending" } as Store, billingRequired: true };
+    }
+    throw new Error(`AUTH_FAILED_402`);
+  }
+
   if (!res.ok) {
     throw new Error(`AUTH_FAILED_${res.status}`);
   }
 
   const body = (await res.json()) as { data?: Store };
-  return body.data || null;
+  return { store: body.data || null, billingRequired: false };
 }
 
 async function fetchBillingStatusWithToken(token: string) {
@@ -212,56 +229,46 @@ export function AppAuthProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     let active = true;
 
+    async function tryAuthWithToken(token: string): Promise<boolean> {
+      const result = await fetchStoreWithToken(token);
+      if (!active) return false;
+
+      if (result.billingRequired) {
+        setStore(result.store);
+        setAuthenticated(true);
+        setBillingRequired(true);
+        return true;
+      }
+
+      setStore(result.store);
+      setAuthenticated(true);
+      setBillingRequired(false);
+      setShowOnboarding(!hasSeenOnboarding(result.store?.id as string | null | undefined));
+      return true;
+    }
+
     async function runAuthCheck() {
       setLoading(true);
       try {
         if (embedded) {
+          // Strategy 1: Use id_token from URL params
           const params = new URLSearchParams(window.location.search);
           const urlIdToken = params.get("id_token");
           if (urlIdToken) {
             try {
-              const hasActiveSubscription = await fetchBillingStatusWithToken(urlIdToken);
-              if (!hasActiveSubscription) {
-                if (!active) return;
-                setStore(null);
-                setAuthenticated(true);
-                setBillingRequired(true);
-                return;
-              }
-
-              const storeData = await fetchStoreWithToken(urlIdToken);
-              if (!active) return;
-              setStore(storeData);
-              setAuthenticated(true);
-              setBillingRequired(false);
-              setShowOnboarding(!hasSeenOnboarding(storeData?.id as string | null | undefined));
-              return;
+              if (await tryAuthWithToken(urlIdToken)) return;
             } catch {
               // URL token failed, fall through to App Bridge
             }
           }
 
+          // Strategy 2: Wait for App Bridge
           const bridgeReady = await waitForShopifyBridge(5000);
           if (bridgeReady && window.shopify) {
             const sessionToken = await getShopifySessionToken();
             if (sessionToken) {
               try {
-                const hasActiveSubscription = await fetchBillingStatusWithToken(sessionToken);
-                if (!hasActiveSubscription) {
-                  if (!active) return;
-                  setStore(null);
-                  setAuthenticated(true);
-                  setBillingRequired(true);
-                  return;
-                }
-
-                const storeData = await fetchStoreWithToken(sessionToken);
-                if (!active) return;
-                setStore(storeData);
-                setAuthenticated(true);
-                setBillingRequired(false);
-                setShowOnboarding(!hasSeenOnboarding(storeData?.id as string | null | undefined));
-                return;
+                if (await tryAuthWithToken(sessionToken)) return;
               } catch {
                 // Session token auth failed too
               }
@@ -275,6 +282,7 @@ export function AppAuthProvider({ children }: { children: ReactNode }) {
           return;
         }
 
+        // Standalone JWT flow
         const jwtToken = window.localStorage.getItem("token");
         if (!jwtToken) {
           if (!active) return;
@@ -284,21 +292,11 @@ export function AppAuthProvider({ children }: { children: ReactNode }) {
           return;
         }
 
-        const hasActiveSubscription = await fetchBillingStatusWithToken(jwtToken);
-        if (!hasActiveSubscription) {
-          if (!active) return;
-          setStore(null);
-          setAuthenticated(true);
-          setBillingRequired(true);
-          return;
+        try {
+          await tryAuthWithToken(jwtToken);
+        } catch {
+          // JWT auth failed
         }
-
-        const storeData = await fetchStoreWithToken(jwtToken);
-        if (!active) return;
-        setStore(storeData);
-        setAuthenticated(true);
-        setBillingRequired(false);
-        setShowOnboarding(!hasSeenOnboarding(storeData?.id as string | null | undefined));
       } catch {
         if (!active) return;
         setAuthenticated(false);
