@@ -1,10 +1,6 @@
 "use client";
 
-import { useState } from "react";
-import { Check, CreditCard, Loader2 } from "lucide-react";
-import { api, ApiError } from "@/lib/api";
-import { redirectToRemote } from "@/lib/shopify-app-bridge";
-import { Button } from "@/components/ui/button";
+import { Check, CreditCard } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 type SubscriptionStepProps = {
@@ -20,34 +16,6 @@ const FEATURES = [
 ];
 
 export function SubscriptionStep({ isExempt }: SubscriptionStepProps) {
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
-
-  const handleApprove = async () => {
-    setIsLoading(true);
-    setError(null);
-
-    try {
-      const response = await api<{ success: boolean; data?: { confirmationUrl?: string; url?: string; exempt?: boolean } }>("/api/billing/subscribe", {
-        method: "POST",
-      });
-
-      const targetUrl = response.data?.confirmationUrl || response.data?.url;
-      if (!targetUrl) {
-        throw new Error("Shopify didn’t return a billing approval link.");
-      }
-
-      redirectToRemote(targetUrl, false);
-    } catch (err) {
-      if (err instanceof ApiError || err instanceof Error) {
-        setError(err.message);
-      } else {
-        setError("Couldn’t open Shopify billing right now.");
-      }
-      setIsLoading(false);
-    }
-  };
-
   return (
     <div className="space-y-4">
       <Card className="border-[#1A1A1A]/10 bg-white shadow-sm">
@@ -57,9 +25,9 @@ export function SubscriptionStep({ isExempt }: SubscriptionStepProps) {
               <CreditCard className="h-5 w-5 text-[#E85D3A]" />
             </div>
             <div>
-              <CardTitle className="text-[#1A1A1A]">Approve your Shopify subscription</CardTitle>
+              <CardTitle className="text-[#1A1A1A]">Subscription is managed by Shopify</CardTitle>
               <CardDescription>
-                RegardsKim billing is managed by Shopify. Approve the app subscription once, then continue setup.
+                RegardsKim uses Shopify Managed App Pricing. Plan approval happens during app installation in Shopify.
               </CardDescription>
             </div>
           </div>
@@ -90,22 +58,9 @@ export function SubscriptionStep({ isExempt }: SubscriptionStepProps) {
           </div>
 
           <div className="space-y-3 text-sm text-[#1A1A1A]/65">
-            <p>Shopify will show the approval screen inside admin. Once you confirm the plan, RegardsKim will continue your setup automatically.</p>
-            <p>Development stores are exempt and can continue without being charged.</p>
+            <p>To activate your plan, install RegardsKim from the Shopify App Store and open it from Shopify Admin.</p>
+            <p>Development stores are billing-exempt and can continue without charge.</p>
           </div>
-
-          <Button
-            type="button"
-            onClick={() => void handleApprove()}
-            disabled={isLoading}
-            size="lg"
-            className="bg-[#E85D3A] text-white hover:bg-[#d34f2f]"
-          >
-            {isLoading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <CreditCard className="mr-2 h-4 w-4" />}
-            Open Shopify approval
-          </Button>
-
-          {error ? <p className="text-sm text-destructive">{error}</p> : null}
         </CardContent>
       </Card>
     </div>

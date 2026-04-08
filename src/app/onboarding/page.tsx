@@ -2,17 +2,16 @@
 
 import { Suspense, useCallback, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
-import { useRouter, useSearchParams } from "next/navigation";
-import { AlertCircle, Check, ChevronLeft, ChevronRight, CreditCard, Inbox, Loader2, Lock, Settings2, Store } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { AlertCircle, Check, ChevronLeft, ChevronRight, Inbox, Lock, Settings2, Store } from "lucide-react";
 import { ConfirmPolicies } from "@/components/onboarding/steps/confirm-policies";
 import { ConnectEmail } from "@/components/onboarding/steps/connect-email";
-import { SubscriptionStep } from "@/components/onboarding/steps/subscription-step";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { GmailLogo } from "@/components/ui/gmail-logo";
-import { api, ApiError } from "@/lib/api";
+import { api } from "@/lib/api";
 import { OnboardingStatusResponse, SetupState } from "@/lib/onboarding";
-import { buildEmbeddedAppPath, redirectToRemote } from "@/lib/shopify-app-bridge";
+import { buildEmbeddedAppPath } from "@/lib/shopify-app-bridge";
 import { cn } from "@/lib/utils";
 
 type WizardState = {
@@ -31,7 +30,17 @@ type PolicyPrefillResponse = {
   };
 };
 
-type StepId = "overview" | "subscription" | "connect-email" | "confirm-policies";
+type BillingStatusResponse = {
+  success?: boolean;
+  data?: {
+    subscription?: {
+      active?: boolean;
+      exempt?: boolean;
+    };
+  };
+};
+
+type StepId = "overview" | "connect-email" | "confirm-policies";
 
 type OnboardingStatus = {
   storeId: string | null;
@@ -66,12 +75,9 @@ const initialState: WizardState = {
 
 function OnboardingContent() {
   const router = useRouter();
-  const searchParams = useSearchParams();
   const [activeView, setActiveView] = useState<StepId>("overview");
   const [isLoading, setIsLoading] = useState(true);
   const [isFinishing, setIsFinishing] = useState(false);
-  const [isAutoLaunchingBilling, setIsAutoLaunchingBilling] = useState(false);
-  const [billingLaunchError, setBillingLaunchError] = useState<string | null>(null);
   const [status, setStatus] = useState<OnboardingStatus>({
     storeId: null,
     setupState: "needsSubscription",
@@ -89,16 +95,21 @@ function OnboardingContent() {
     setIsLoading(true);
 
     try {
-      const [statusRes, policyRes] = await Promise.all([
+      const [statusRes, policyRes, billingRes] = await Promise.all([
         api<OnboardingStatusResponse>("/api/onboarding/status"),
         api<PolicyPrefillResponse>("/api/onboarding/policies").catch(() => null),
+        api<BillingStatusResponse>("/api/billing/status").catch(() => null),
       ]);
 
       const nextStatus: OnboardingStatus = {
         storeId: statusRes?.data?.storeId || null,
         setupState: statusRes?.data?.setupState || "needsSubscription",
-        subscriptionComplete: Boolean(statusRes?.data?.steps?.subscription?.complete),
-        subscriptionExempt: Boolean(statusRes?.data?.steps?.subscription?.exempt),
+        subscriptionComplete:
+          Boolean(billingRes?.data?.subscription?.active)
+          || Boolean(statusRes?.data?.steps?.subscription?.complete),
+        subscriptionExempt:
+          Boolean(billingRes?.data?.subscription?.exempt)
+          || Boolean(statusRes?.data?.steps?.subscription?.exempt),
         gmailStepComplete: Boolean(statusRes?.data?.steps?.connectGmail?.complete),
         connectedEmail: statusRes?.data?.steps?.connectGmail?.connectedEmail || null,
         hasActiveGmailConnection: Boolean(statusRes?.data?.steps?.connectGmail?.hasActiveGmailConnection),
@@ -126,68 +137,18 @@ function OnboardingContent() {
   }, [refreshStatus]);
 
   const gatedProgress = useMemo(() => getGatedProgress(status), [status]);
-  const billingCanceled = searchParams.get("canceled") === "true";
-  const billingSuccess = searchParams.get("success") === "true";
-  const billingError = searchParams.get("error");
-
-  const launchBillingApproval = useCallback(async () => {
-    setIsAutoLaunchingBilling(true);
-    setBillingLaunchError(null);
-
-    try {
-      const response = await api<{ success: boolean; data?: { confirmationUrl?: string; url?: string } }>("/api/billing/subscribe", {
-        method: "POST",
-      });
-
-      const targetUrl = response.data?.confirmationUrl || response.data?.url;
-      if (!targetUrl) {
-        throw new Error("Shopify didn’t return a billing approval link.");
-      }
-
-      redirectToRemote(targetUrl, false);
-    } catch (err) {
-      if (err instanceof ApiError || err instanceof Error) {
-        setBillingLaunchError(err.message);
-      } else {
-        setBillingLaunchError("Couldn’t open Shopify billing right now.");
-      }
-      setIsAutoLaunchingBilling(false);
-    }
-  }, []);
+  const installActivated = gatedProgress.subscriptionComplete;
 
   const completedCount = useMemo(() => {
-    return [true, gatedProgress.subscriptionComplete, gatedProgress.gmailStepComplete, gatedProgress.policiesConfirmed].filter(Boolean).length;
-  }, [gatedProgress]);
+    return [installActivated, gatedProgress.gmailStepComplete, gatedProgress.policiesConfirmed].filter(Boolean).length;
+  }, [gatedProgress.gmailStepComplete, gatedProgress.policiesConfirmed, installActivated]);
 
   const currentStepNumber = useMemo(() => {
-    if (!gatedProgress.subscriptionComplete) return 2;
-    if (!gatedProgress.gmailStepComplete) return 3;
-    if (!gatedProgress.policiesConfirmed) return 4;
-    return 5;
-  }, [gatedProgress]);
-
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-    if (isLoading) return;
-    if (gatedProgress.subscriptionComplete) return;
-    if (status.setupState !== "needsSubscription") return;
-    if (billingCanceled || billingError) return;
-
-    const launchKey = `rk:auto-billing:${status.storeId || "unknown"}`;
-    const hasAttempted = window.sessionStorage.getItem(launchKey) === "1";
-    if (hasAttempted) return;
-
-    window.sessionStorage.setItem(launchKey, "1");
-    void launchBillingApproval();
-  }, [billingCanceled, billingError, gatedProgress.subscriptionComplete, isLoading, launchBillingApproval, status.setupState, status.storeId, status.subscriptionExempt]);
-
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-    if (!status.storeId) return;
-    if (!gatedProgress.subscriptionComplete) return;
-
-    window.sessionStorage.removeItem(`rk:auto-billing:${status.storeId}`);
-  }, [gatedProgress.subscriptionComplete, status.storeId]);
+    if (!installActivated) return 1;
+    if (!gatedProgress.gmailStepComplete) return 2;
+    if (!gatedProgress.policiesConfirmed) return 3;
+    return 4;
+  }, [gatedProgress.gmailStepComplete, gatedProgress.policiesConfirmed, installActivated]);
 
   const updatePoliciesForm = useCallback(
     (nextValue: {
@@ -220,74 +181,40 @@ function OnboardingContent() {
     {
       number: 1,
       title: "Install RegardsKim",
-      subtitle: "You’ve installed Kim on your Shopify store.",
+      subtitle: "Install from the Shopify App Store. Shopify handles plan selection and billing during install.",
       icon: Store,
-      state: "completed" as const,
+      state: installActivated ? ("completed" as const) : ("active" as const),
       onClick: undefined,
-      cta: undefined,
+      cta: installActivated ? undefined : "Activate in Shopify",
     },
     {
       number: 2,
-      title: "Approve subscription",
-      subtitle: status.subscriptionExempt
-        ? "Development store detected — billing is exempt for this store."
-        : "Approve your Shopify-managed plan before Kim unlocks the inbox.",
-      icon: CreditCard,
-      state: gatedProgress.subscriptionComplete ? ("completed" as const) : currentStepNumber === 2 ? ("active" as const) : ("locked" as const),
-      onClick: currentStepNumber === 2 ? () => setActiveView("subscription") : undefined,
-      cta: gatedProgress.subscriptionComplete ? undefined : "Open Shopify",
-    },
-    {
-      number: 3,
       title: "Connect your email",
       subtitle: "Connect your Gmail so Kim can read customer emails and draft replies.",
       icon: GmailLogo,
-      state: gatedProgress.gmailStepComplete ? ("completed" as const) : currentStepNumber === 3 ? ("active" as const) : ("locked" as const),
-      onClick: currentStepNumber === 3 ? () => setActiveView("connect-email") : undefined,
-      cta: gatedProgress.gmailStepComplete ? undefined : gatedProgress.subscriptionComplete ? "Start" : undefined,
+      state: gatedProgress.gmailStepComplete ? ("completed" as const) : currentStepNumber === 2 ? ("active" as const) : ("locked" as const),
+      onClick: currentStepNumber === 2 ? () => setActiveView("connect-email") : undefined,
+      cta: gatedProgress.gmailStepComplete ? undefined : installActivated ? "Start" : undefined,
     },
     {
-      number: 4,
+      number: 3,
       title: "Confirm your store policies",
       subtitle: "Add the two policy links Kim should use as source references.",
       icon: Settings2,
-      state: gatedProgress.policiesConfirmed ? ("completed" as const) : currentStepNumber === 4 ? ("active" as const) : ("locked" as const),
-      onClick: currentStepNumber === 4 ? () => setActiveView("confirm-policies") : undefined,
+      state: gatedProgress.policiesConfirmed ? ("completed" as const) : currentStepNumber === 3 ? ("active" as const) : ("locked" as const),
+      onClick: currentStepNumber === 3 ? () => setActiveView("confirm-policies") : undefined,
       cta: gatedProgress.policiesConfirmed ? undefined : gatedProgress.gmailStepComplete ? "Continue" : undefined,
     },
     {
-      number: 5,
+      number: 4,
       title: "Go to your inbox",
       subtitle: "See Kim’s drafted replies and start approving them.",
       icon: Inbox,
-      state: currentStepNumber === 5 ? ("active" as const) : ("locked" as const),
-      onClick: currentStepNumber === 5 ? () => void handleFinish() : undefined,
-      cta: currentStepNumber === 5 ? "Open inbox" : undefined,
+      state: currentStepNumber === 4 ? ("active" as const) : ("locked" as const),
+      onClick: currentStepNumber === 4 ? () => void handleFinish() : undefined,
+      cta: currentStepNumber === 4 ? "Open inbox" : undefined,
     },
   ];
-
-  if (activeView === "subscription") {
-    return (
-      <main className="min-h-screen bg-[#FFF8F3] px-4 py-8 sm:px-6 lg:px-8">
-        <div className="mx-auto flex w-full max-w-4xl flex-col gap-6">
-          <Button type="button" variant="ghost" className="w-fit text-[#1A1A1A] hover:bg-white/70" onClick={() => setActiveView("overview")}>
-            <ChevronLeft className="mr-2 h-4 w-4" />
-            Back to overview
-          </Button>
-
-          <div className="space-y-2">
-            <p className="text-sm font-medium uppercase tracking-[0.2em] text-[#1A1A1A]/45">Step 2</p>
-            <h1 className="text-3xl font-semibold tracking-tight text-[#1A1A1A]">Approve your subscription</h1>
-            <p className="max-w-2xl text-sm text-[#1A1A1A]/65">
-              Shopify manages billing approval for RegardsKim. Confirm the plan there, then continue setup here.
-            </p>
-          </div>
-
-          <SubscriptionStep isExempt={status.subscriptionExempt} />
-        </div>
-      </main>
-    );
-  }
 
   if (activeView === "connect-email") {
     return (
@@ -299,7 +226,7 @@ function OnboardingContent() {
           </Button>
 
           <div className="space-y-2">
-            <p className="text-sm font-medium uppercase tracking-[0.2em] text-[#1A1A1A]/45">Step 3</p>
+            <p className="text-sm font-medium uppercase tracking-[0.2em] text-[#1A1A1A]/45">Step 2</p>
             <h1 className="text-3xl font-semibold tracking-tight text-[#1A1A1A]">Connect your email</h1>
             <p className="max-w-2xl text-sm text-[#1A1A1A]/65">
               Connect your Gmail so Kim can read customer emails and draft replies for approval.
@@ -322,7 +249,7 @@ function OnboardingContent() {
           </Button>
 
           <div className="space-y-2">
-            <p className="text-sm font-medium uppercase tracking-[0.2em] text-[#1A1A1A]/45">Step 4</p>
+            <p className="text-sm font-medium uppercase tracking-[0.2em] text-[#1A1A1A]/45">Step 3</p>
             <h1 className="text-3xl font-semibold tracking-tight text-[#1A1A1A]">Confirm your store policies</h1>
             <p className="max-w-2xl text-sm text-[#1A1A1A]/65">
               Add the two policy links Kim should use as source references, plus the agent name customers will see.
@@ -358,32 +285,14 @@ function OnboardingContent() {
           </div>
         </div>
 
-        {billingCanceled || billingError || billingLaunchError || billingSuccess ? (
-          <div
-            className={cn(
-              "flex items-start gap-3 rounded-2xl border px-4 py-3 text-sm",
-              billingSuccess
-                ? "border-emerald-200 bg-emerald-50 text-emerald-800"
-                : "border-[#E85D3A]/20 bg-white text-[#1A1A1A]/75",
-            )}
-          >
-            {billingSuccess ? <Check className="mt-0.5 h-4 w-4 shrink-0" /> : <AlertCircle className="mt-0.5 h-4 w-4 shrink-0 text-[#E85D3A]" />}
+        {!installActivated ? (
+          <div className="flex items-start gap-3 rounded-2xl border border-[#E85D3A]/20 bg-white px-4 py-3 text-sm text-[#1A1A1A]/75">
+            <AlertCircle className="mt-0.5 h-4 w-4 shrink-0 text-[#E85D3A]" />
             <div>
-              {billingSuccess ? (
-                <p>Subscription approved. Continuing setup.</p>
-              ) : billingCanceled ? (
-                <p>Shopify billing approval was canceled. Click the subscription step whenever you’re ready to continue.</p>
-              ) : (
-                <p>{billingLaunchError || billingError || "Couldn’t open Shopify billing right now."}</p>
-              )}
+              <p>
+                Please install RegardsKim from the Shopify App Store to activate your subscription, then reopen the app from Shopify Admin.
+              </p>
             </div>
-          </div>
-        ) : null}
-
-        {isAutoLaunchingBilling && !billingCanceled && !billingError ? (
-          <div className="flex items-center gap-2 rounded-2xl border border-[#E85D3A]/20 bg-white px-4 py-3 text-sm text-[#1A1A1A]/75">
-            <Loader2 className="h-4 w-4 animate-spin text-[#E85D3A]" />
-            Opening Shopify billing approval…
           </div>
         ) : null}
 
@@ -468,11 +377,11 @@ function OnboardingContent() {
         </div>
 
         <div className="flex items-center justify-between rounded-2xl border border-[#1A1A1A]/10 bg-white/70 px-4 py-3 text-sm text-[#1A1A1A]/70">
-          <span>{completedCount} of 5 complete</span>
+          <span>{completedCount} of 4 complete</span>
           {isLoading ? (
             <span>Refreshing status…</span>
-          ) : status.setupState === "needsSubscription" ? (
-            <span>{status.subscriptionExempt ? "Development store exempt" : "Waiting on Shopify plan approval"}</span>
+          ) : !installActivated ? (
+            <span>Waiting on Shopify App Store activation</span>
           ) : gatedProgress.gmailStepComplete ? (
             <span>Gmail confirmed</span>
           ) : status.hasActiveGmailConnection ? (
@@ -482,7 +391,7 @@ function OnboardingContent() {
           )}
         </div>
 
-        {currentStepNumber === 5 ? (
+        {currentStepNumber === 4 ? (
           <div className="rounded-2xl border border-[#E85D3A]/15 bg-white p-5 shadow-sm">
             <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
               <div className="space-y-1">
