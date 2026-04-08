@@ -61,6 +61,50 @@ export function getStoredIdToken(): string | null {
   return window.sessionStorage.getItem(ID_TOKEN_STORAGE_KEY);
 }
 
+export function clearStoredIdToken() {
+  if (typeof window !== "undefined") {
+    window.sessionStorage.removeItem(ID_TOKEN_STORAGE_KEY);
+  }
+}
+
+export async function waitForShopifyBridge(timeoutMs = 5000): Promise<boolean> {
+  if (typeof window === "undefined") return false;
+  if (window.shopify) return true;
+
+  const startedAt = Date.now();
+
+  while (Date.now() - startedAt < timeoutMs) {
+    if (window.shopify) {
+      return true;
+    }
+
+    await new Promise((resolve) => window.setTimeout(resolve, 150));
+  }
+
+  return false;
+}
+
+export async function getFreshShopifySessionToken(timeoutMs = 5000): Promise<string | null> {
+  if (typeof window === "undefined") return null;
+
+  const bridgeReady = await waitForShopifyBridge(timeoutMs);
+  if (!bridgeReady || !window.shopify) {
+    return null;
+  }
+
+  try {
+    const token = await window.shopify.idToken();
+    if (token) {
+      storeIdToken(token);
+      return token;
+    }
+  } catch {
+    // Fall through to stored token as a last resort.
+  }
+
+  return getStoredIdToken();
+}
+
 export async function getShopifySessionToken(): Promise<string | null> {
   if (typeof window === "undefined") return null;
 

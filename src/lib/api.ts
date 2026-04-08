@@ -1,4 +1,8 @@
-import { getShopifySessionToken, getStoredIdToken, waitForShopifySessionToken } from "@/lib/shopify-app-bridge";
+import {
+  clearStoredIdToken,
+  getFreshShopifySessionToken,
+  waitForShopifySessionToken,
+} from "@/lib/shopify-app-bridge";
 
 export const API_URL =
   process.env.NEXT_PUBLIC_API_URL ||
@@ -21,9 +25,7 @@ export async function getAuthHeaders(
   }
 
   const sessionToken = forceFresh
-    ? (typeof window !== "undefined" && window.shopify
-        ? await window.shopify.idToken().catch(() => getStoredIdToken())
-        : await waitForShopifySessionToken())
+    ? await getFreshShopifySessionToken()
     : await waitForShopifySessionToken();
 
   if (sessionToken) {
@@ -63,6 +65,7 @@ export async function api<T = unknown>(
   let res = await doFetch();
 
   if (res.status === 401) {
+    clearStoredIdToken();
     res = await doFetch(true);
   }
 
