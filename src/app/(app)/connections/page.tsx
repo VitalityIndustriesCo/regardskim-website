@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState, useCallback, type ComponentType } from "react";
 import { useSearchParams } from "next/navigation";
 import {
   CheckCircle2,
@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { GmailLogo } from "@/components/ui/gmail-logo";
 import {
   Card,
   CardContent,
@@ -56,7 +57,7 @@ interface Connection {
   description: string;
   status: "Connected" | "Disconnected" | "Expired";
   detail: string;
-  icon: typeof Store;
+  icon: ComponentType<{ className?: string }>;
   provider?: string;
   syncInfo?: {
     orderCount: number;
@@ -128,7 +129,7 @@ function deriveConnections(
       description: "Pull support conversations and send approved drafts.",
       status: emailStatus,
       detail: emailDetail,
-      icon: Mail,
+      icon: GmailLogo,
       provider: emailProvider,
     },
   ];
@@ -367,7 +368,7 @@ function ConnectionsContent() {
                   {isEmail && !isConnected && !isExpired && (
                     <>
                       <Button onClick={handleConnectGmail}>
-                        <Mail className="mr-2 h-4 w-4" />
+                        <GmailLogo className="mr-2" />
                         Connect Gmail
                       </Button>
                       <Button variant="outline" onClick={handleConnectOutlook}>

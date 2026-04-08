@@ -12,6 +12,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
+import { GmailLogo } from "@/components/ui/gmail-logo";
 import { api, API_URL } from "@/lib/api";
 import { LoadingState } from "@/components/ui/loading-state";
 import { ErrorState } from "@/components/ui/error-state";
@@ -47,7 +48,7 @@ function ConnectEmailPrompt({ storeId }: { storeId: string | null }) {
       </p>
       <div className="mt-6 flex flex-wrap justify-center gap-3">
         <Button onClick={handleConnectGmail} disabled={!storeId}>
-          <Mail className="mr-2 h-4 w-4" />
+          <GmailLogo className="mr-2" />
           Connect Gmail
         </Button>
         <Button variant="outline" asChild>

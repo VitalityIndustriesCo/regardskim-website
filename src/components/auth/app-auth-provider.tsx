@@ -1,13 +1,13 @@
 "use client";
 
 import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
+import { useRouter } from "next/navigation";
 import { AlertTriangle, ExternalLink, Loader2 } from "lucide-react";
 import { API_URL } from "@/lib/api";
 import { hasSeenOnboarding } from "@/lib/onboarding";
 import { getShopifySessionToken, storeIdToken } from "@/lib/shopify-app-bridge";
 import { useEmbeddedApp } from "@/components/shopify/embedded-app-provider";
 import { Button } from "@/components/ui/button";
-import { OnboardingGuide } from "@/components/onboarding/onboarding-guide";
 
 type Store = {
   id?: string;
@@ -128,6 +128,7 @@ function InstallPrompt({ embedded }: { embedded: boolean }) {
 
 export function AppAuthProvider({ children }: { children: ReactNode }) {
   const { embedded } = useEmbeddedApp();
+  const router = useRouter();
   const [store, setStore] = useState<Store | null>(null);
   const [loading, setLoading] = useState(true);
   const [authenticated, setAuthenticated] = useState(false);
@@ -233,6 +234,12 @@ export function AppAuthProvider({ children }: { children: ReactNode }) {
     };
   }, []);
 
+  useEffect(() => {
+    if (showOnboarding) {
+      router.replace("/onboarding");
+    }
+  }, [router, showOnboarding]);
+
   const value = useMemo<AppAuthContextValue>(
     () => ({ store, loading, authenticated, embedded, billingRequired: false }),
     [store, loading, authenticated, embedded]
@@ -266,7 +273,10 @@ export function AppAuthProvider({ children }: { children: ReactNode }) {
   if (showOnboarding) {
     return (
       <AppAuthContext.Provider value={value}>
-        <OnboardingGuide initialStoreId={(store?.id as string | null | undefined) || null} />
+        <div className="flex min-h-[70vh] items-center justify-center text-sm text-muted-foreground">
+          <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+          Opening onboarding…
+        </div>
       </AppAuthContext.Provider>
     );
   }
