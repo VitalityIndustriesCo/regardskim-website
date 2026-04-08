@@ -2,13 +2,22 @@
 
 import { ArrowRight } from "lucide-react";
 import { AppLink } from "@/components/shopify/app-link";
+import { useAppAuth } from "@/components/auth/app-auth-provider";
 import { SettingsNav, settingsItems } from "@/components/settings/settings-nav";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { resetOnboardingSeen } from "@/lib/onboarding";
 
 const sections = settingsItems.filter((item) => item.href !== "/settings");
 
 export default function SettingsPage() {
+  const { store } = useAppAuth();
+
+  const restartGuide = () => {
+    resetOnboardingSeen((store?.id as string | null | undefined) || null);
+    window.dispatchEvent(new CustomEvent("app:onboarding-restart"));
+  };
+
   return (
     <section className="space-y-6">
       <div className="space-y-2">
@@ -19,6 +28,16 @@ export default function SettingsPage() {
       </div>
 
       <SettingsNav />
+
+      <Card>
+        <CardHeader>
+          <CardTitle>Setup guide</CardTitle>
+          <CardDescription>Need to run through setup again? Open the step-by-step onboarding guide.</CardDescription>
+        </CardHeader>
+        <CardFooter>
+          <Button onClick={restartGuide} className="bg-[#E85D3A] hover:bg-[#d34f2f]">Open setup guide</Button>
+        </CardFooter>
+      </Card>
 
       <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
         {sections.map((section) => (

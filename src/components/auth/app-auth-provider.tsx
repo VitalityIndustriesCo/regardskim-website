@@ -3,9 +3,11 @@
 import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
 import { AlertTriangle, Check, ExternalLink, Loader2, Sparkles } from "lucide-react";
 import { API_URL, getAuthHeaders } from "@/lib/api";
+import { hasSeenOnboarding } from "@/lib/onboarding";
 import { getShopifySessionToken } from "@/lib/shopify-app-bridge";
 import { useEmbeddedApp } from "@/components/shopify/embedded-app-provider";
 import { Button } from "@/components/ui/button";
+import { OnboardingGuide } from "@/components/onboarding/onboarding-guide";
 
 type Store = {
   id?: string;
@@ -205,6 +207,7 @@ export function AppAuthProvider({ children }: { children: ReactNode }) {
   const [loading, setLoading] = useState(true);
   const [authenticated, setAuthenticated] = useState(false);
   const [billingRequired, setBillingRequired] = useState(false);
+  const [showOnboarding, setShowOnboarding] = useState(false);
 
   useEffect(() => {
     let active = true;
@@ -231,6 +234,7 @@ export function AppAuthProvider({ children }: { children: ReactNode }) {
               setStore(storeData);
               setAuthenticated(true);
               setBillingRequired(false);
+              setShowOnboarding(!hasSeenOnboarding(storeData?.id as string | null | undefined));
               return;
             } catch {
               // URL token failed, fall through to App Bridge
@@ -256,6 +260,7 @@ export function AppAuthProvider({ children }: { children: ReactNode }) {
                 setStore(storeData);
                 setAuthenticated(true);
                 setBillingRequired(false);
+                setShowOnboarding(!hasSeenOnboarding(storeData?.id as string | null | undefined));
                 return;
               } catch {
                 // Session token auth failed too
@@ -293,11 +298,13 @@ export function AppAuthProvider({ children }: { children: ReactNode }) {
         setStore(storeData);
         setAuthenticated(true);
         setBillingRequired(false);
+        setShowOnboarding(!hasSeenOnboarding(storeData?.id as string | null | undefined));
       } catch {
         if (!active) return;
         setAuthenticated(false);
         setStore(null);
         setBillingRequired(false);
+        setShowOnboarding(false);
       } finally {
         if (active) {
           setLoading(false);
@@ -316,11 +323,24 @@ export function AppAuthProvider({ children }: { children: ReactNode }) {
     const onBillingRequired = () => {
       setAuthenticated(true);
       setBillingRequired(true);
+      setShowOnboarding(false);
+    };
+
+    const onOnboardingCompleted = () => {
+      setShowOnboarding(false);
+    };
+
+    const onOnboardingRestart = () => {
+      setShowOnboarding(true);
     };
 
     window.addEventListener("app:billing-required", onBillingRequired);
+    window.addEventListener("app:onboarding-completed", onOnboardingCompleted);
+    window.addEventListener("app:onboarding-restart", onOnboardingRestart);
     return () => {
       window.removeEventListener("app:billing-required", onBillingRequired);
+      window.removeEventListener("app:onboarding-completed", onOnboardingCompleted);
+      window.removeEventListener("app:onboarding-restart", onOnboardingRestart);
     };
   }, []);
 
@@ -350,6 +370,14 @@ export function AppAuthProvider({ children }: { children: ReactNode }) {
     return (
       <AppAuthContext.Provider value={value}>
         <BillingGate />
+      </AppAuthContext.Provider>
+    );
+  }
+
+  if (showOnboarding) {
+    return (
+      <AppAuthContext.Provider value={value}>
+        <OnboardingGuide initialStoreId={(store?.id as string | null | undefined) || null} />
       </AppAuthContext.Provider>
     );
   }
