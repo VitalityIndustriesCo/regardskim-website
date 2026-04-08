@@ -2,22 +2,13 @@
 
 import { Header } from "@/components/layout/header";
 import { Sidebar } from "@/components/layout/sidebar";
-import { usePathname } from "next/navigation";
 import type { ReactNode } from "react";
-
-const authRoutes = new Set(["/login", "/signup"]);
 
 type AppShellProps = {
   children: ReactNode;
 };
 
 export function AppShell({ children }: AppShellProps) {
-  const pathname = usePathname();
-
-  if (authRoutes.has(pathname)) {
-    return <>{children}</>;
-  }
-
   return (
     <div className="min-h-screen bg-muted/30 md:flex">
       <Sidebar />

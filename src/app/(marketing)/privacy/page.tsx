@@ -200,18 +200,14 @@ export default function PrivacyPage() {
         <li>Draft and approval status</li>
       </ul>
 
-      <h3>6.4 Stripe</h3>
+      <h3>6.4 Shopify Billing</h3>
       <p>
-        We use Stripe to manage payments, subscriptions, and billing. Data that may be processed
-        by Stripe includes:
+        Subscription billing for RegardsKim is managed directly through Shopify’s built-in
+        billing system (Shopify Managed Pricing). Payment details are processed by Shopify
+        and are subject to{" "}
+        <a href="https://www.shopify.com/legal/privacy" target="_blank" rel="noreferrer noopener">Shopify’s Privacy Policy</a>.
+        We do not collect or store payment card details.
       </p>
-      <ul>
-        <li>Billing name</li>
-        <li>Billing email</li>
-        <li>Payment method details</li>
-        <li>Subscription and invoice records</li>
-      </ul>
-      <p>We do not store full payment card details on our own servers.</p>
 
       <h3>6.5 Vercel and Railway</h3>
       <p>

@@ -3,22 +3,13 @@
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { useEmbeddedApp } from "@/components/shopify/embedded-app-provider";
-import { removeToken } from "@/lib/auth";
-import { LogOut, Menu } from "lucide-react";
-import { useRouter } from "next/navigation";
+import { Menu } from "lucide-react";
 import { useState } from "react";
 import { SidebarContent } from "./sidebar";
 
 export function Header() {
-  const router = useRouter();
   const { embedded } = useEmbeddedApp();
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
-
-  const handleLogout = () => {
-    removeToken();
-    router.push("/login");
-    router.refresh();
-  };
 
   return (
     <header className="sticky top-0 z-30 flex h-16 items-center justify-between border-b bg-background/95 px-4 backdrop-blur md:px-6">
@@ -42,13 +33,7 @@ export function Header() {
         </div>
       </div>
 
-      {!embedded ? (
-        <Button variant="outline" size="sm" onClick={handleLogout}>
-          <LogOut className="mr-2 h-4 w-4" />
-          <span className="hidden sm:inline">Logout</span>
-          <span className="sr-only">Logout</span>
-        </Button>
-      ) : null}
+      {/* No logout in embedded mode — session is controlled by Shopify */}
     </header>
   );
 }

@@ -24,7 +24,7 @@ const STANDARD_FEATURES = [
 interface BillingStatus {
   plan: { id: string; name: string; features: string[] };
   usage: { currentMonthEmails: number; emailLimit: number | null; remainingEmails: number | null; billingCycleStart: string };
-  subscription: { stripeSubscriptionId: string | null; status: string };
+  subscription: { shopifySubscriptionId: string | null; status: string; active: boolean };
 }
 
 export default function BillingPage() {

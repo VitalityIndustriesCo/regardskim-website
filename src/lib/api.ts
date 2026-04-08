@@ -1,4 +1,4 @@
-import { getShopifySessionToken, isShopifyEmbedded } from "@/lib/shopify-app-bridge";
+import { getShopifySessionToken } from "@/lib/shopify-app-bridge";
 
 export const API_URL =
   process.env.NEXT_PUBLIC_API_URL ||
@@ -19,17 +19,10 @@ export async function getAuthHeaders(
     return nextHeaders;
   }
 
-  if (isShopifyEmbedded()) {
-    const sessionToken = await getShopifySessionToken();
-    if (sessionToken) {
-      nextHeaders.Authorization = `Bearer ${sessionToken}`;
-    }
-    return nextHeaders;
-  }
-
-  const token = localStorage.getItem("token");
-  if (token) {
-    nextHeaders.Authorization = `Bearer ${token}`;
+  // Only embedded Shopify sessions are supported
+  const sessionToken = await getShopifySessionToken();
+  if (sessionToken) {
+    nextHeaders.Authorization = `Bearer ${sessionToken}`;
   }
 
   return nextHeaders;
@@ -50,11 +43,6 @@ export async function api<T = unknown>(
   });
 
   if (res.status === 401) {
-    if (typeof window !== "undefined" && !isShopifyEmbedded()) {
-      localStorage.removeItem("token");
-      document.cookie = "token=; path=/; max-age=0; samesite=lax";
-      window.location.href = "/login";
-    }
     throw new ApiError(401, "Unauthorized");
   }
 

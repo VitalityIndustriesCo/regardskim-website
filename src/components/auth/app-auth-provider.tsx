@@ -120,11 +120,7 @@ function InstallPrompt({ embedded }: { embedded: boolean }) {
               <ExternalLink className="ml-2 h-4 w-4" />
             </a>
           </Button>
-        ) : (
-          <Button asChild>
-            <a href="/login">Go to login</a>
-          </Button>
-        )}
+        ) : null}
       </div>
     </div>
   );
@@ -194,25 +190,12 @@ export function AppAuthProvider({ children }: { children: ReactNode }) {
           return;
         }
 
-        const jwtToken = window.localStorage.getItem("token");
-        if (!jwtToken) {
-          if (!active) return;
-          setAuthenticated(false);
-          setStore(null);
-          setSubscriptionInactive(false);
-          setShowOnboarding(false);
-          return;
-        }
-
-        try {
-          await tryAuthWithToken(jwtToken);
-        } catch {
-          if (!active) return;
-          setAuthenticated(false);
-          setStore(null);
-          setSubscriptionInactive(false);
-          setShowOnboarding(false);
-        }
+        // Non-embedded: not supported. Middleware should have redirected away.
+        if (!active) return;
+        setAuthenticated(false);
+        setStore(null);
+        setSubscriptionInactive(false);
+        setShowOnboarding(false);
       } catch {
         if (!active) return;
         setAuthenticated(false);

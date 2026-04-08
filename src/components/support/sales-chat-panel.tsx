@@ -218,7 +218,7 @@ export function SalesChatPanel({ onClose }: Props) {
     const trimmedEmail = email.trim();
     if (!trimmedEmail) return;
 
-    console.log("Sales chat lead captured:", trimmedEmail);
+    // Lead captured — email submitted by visitor
     setEmail("");
     setShowEmailCapture(false);
     setEmailSubmitted(true);

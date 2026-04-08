@@ -119,9 +119,10 @@ export default function TermsPage() {
 
       <h3>6.1 Payment Processor</h3>
       <p>
-        We use <strong>Stripe</strong> to process payments, subscriptions, invoices, and related
-        billing functions. By subscribing, you authorise Stripe and us to charge the applicable
-        fees using your selected payment method.
+        Billing for RegardsKim is managed by <strong>Shopify</strong> through its built-in
+        subscription billing system. Payment processing is handled by Shopify and subject to
+        Shopify’s own terms and policies. By subscribing, you authorise Shopify to charge the
+        applicable fees to your payment method on file with Shopify.
       </p>
 
       <h3>6.2 Recurring Billing</h3>
@@ -230,7 +231,6 @@ export default function TermsPage() {
         <li>Shopify</li>
         <li>Gmail and/or Outlook</li>
         <li>OpenAI</li>
-        <li>Stripe</li>
         <li>Vercel</li>
         <li>Railway</li>
       </ul>
