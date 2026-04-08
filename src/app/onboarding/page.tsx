@@ -269,16 +269,10 @@ function OnboardingContent() {
           </div>
 
           <ConnectEmail
-            connectedEmail={status.connectedEmail}
             onConnected={(supportEmail) => {
               setState((current) => ({ ...current, supportEmail }));
               markEmailConfirmed(true);
               void completeAndReturn();
-            }}
-            onConfirmExisting={(supportEmail) => {
-              setState((current) => ({ ...current, supportEmail }));
-              markEmailConfirmed(true);
-              setActiveView("overview");
             }}
           />
         </div>

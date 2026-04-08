@@ -1,7 +1,7 @@
 "use client";
 
-import { useMemo, useState } from "react";
-import { Loader2, ShieldCheck } from "lucide-react";
+import { useState } from "react";
+import { Loader2 } from "lucide-react";
 import { api, ApiError } from "@/lib/api";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -14,16 +14,12 @@ type EmailConnection = {
 };
 
 type ConnectEmailProps = {
-  connectedEmail?: string | null;
   onConnected: (email: string) => void;
-  onConfirmExisting: (email: string) => void;
 };
 
-export function ConnectEmail({ connectedEmail, onConnected, onConfirmExisting }: ConnectEmailProps) {
+export function ConnectEmail({ onConnected }: ConnectEmailProps) {
   const [error, setError] = useState<string | null>(null);
   const [isGmailLoading, setIsGmailLoading] = useState(false);
-
-  const isConnected = useMemo(() => Boolean(connectedEmail), [connectedEmail]);
 
   const handleGmailConnect = async () => {
     setIsGmailLoading(true);
@@ -47,11 +43,11 @@ export function ConnectEmail({ connectedEmail, onConnected, onConfirmExisting }:
       throw new Error("Gmail connection did not return the expected inbox details.");
     } catch (err) {
       if (err instanceof ApiError) {
-        setError(err.message || "Couldn’t connect Gmail right now.");
+        setError(err.message || "Couldn't connect Gmail right now.");
       } else if (err instanceof Error) {
         setError(err.message);
       } else {
-        setError("Couldn’t connect Gmail right now.");
+        setError("Couldn't connect Gmail right now.");
       }
     } finally {
       setIsGmailLoading(false);
@@ -67,79 +63,46 @@ export function ConnectEmail({ connectedEmail, onConnected, onConfirmExisting }:
               <GmailLogo className="h-6 w-6" imageClassName="h-6 w-6" />
             </div>
             <div>
-              <CardTitle className="text-[#1A1A1A]">Connect Gmail</CardTitle>
+              <CardTitle className="text-[#1A1A1A]">Connect your Gmail</CardTitle>
               <CardDescription>
-                One clean click and Kim can start reading customer emails and drafting replies.
+                Kim needs access to your support inbox to read customer emails and draft replies for you.
               </CardDescription>
             </div>
           </div>
         </CardHeader>
 
         <CardContent className="space-y-4">
-          <div className="rounded-2xl border border-[#1A1A1A]/8 bg-[#FFF8F3]/70 p-4">
-            <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-              <div className="space-y-1">
-                <p className="text-sm font-medium text-[#1A1A1A]">Gmail only, for now</p>
-                <p className="text-sm text-[#1A1A1A]/65">
-                  Fastest setup with secure Google OAuth. No passwords or manual server settings.
-                </p>
-              </div>
-
-              {isConnected ? (
-                <div className="flex w-full flex-col gap-2 sm:w-auto sm:flex-row">
-                  <Button
-                    type="button"
-                    onClick={() => connectedEmail && onConfirmExisting(connectedEmail)}
-                    size="lg"
-                    className="w-full bg-[#E85D3A] text-white hover:bg-[#d34f2f] sm:w-auto"
-                  >
-                    Keep this email
-                  </Button>
-                  <Button
-                    type="button"
-                    variant="outline"
-                    onClick={handleGmailConnect}
-                    disabled={isGmailLoading}
-                    size="lg"
-                    className="w-full sm:w-auto"
-                  >
-                    {isGmailLoading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <GmailLogo className="mr-2" />}
-                    Connect a different Gmail
-                  </Button>
-                </div>
-              ) : (
-                <Button
-                  type="button"
-                  onClick={handleGmailConnect}
-                  disabled={isGmailLoading}
-                  size="lg"
-                  className="w-full bg-[#E85D3A] text-white hover:bg-[#d34f2f] sm:w-auto"
-                >
-                  {isGmailLoading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <GmailLogo className="mr-2" />}
-                  Connect Gmail
-                </Button>
-              )}
+          <div className="rounded-2xl border border-[#1A1A1A]/8 bg-[#FFF8F3]/70 p-6 text-center">
+            <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-white shadow-sm ring-1 ring-[#1A1A1A]/8">
+              <GmailLogo className="h-8 w-8" imageClassName="h-8 w-8" />
             </div>
+
+            <p className="mb-1 text-sm font-medium text-[#1A1A1A]">
+              Connect the Gmail you use for customer support
+            </p>
+            <p className="mb-5 text-sm text-[#1A1A1A]/60">
+              Secure Google OAuth — no passwords, no manual settings.
+            </p>
+
+            <Button
+              type="button"
+              onClick={handleGmailConnect}
+              disabled={isGmailLoading}
+              size="lg"
+              className="bg-[#E85D3A] text-white hover:bg-[#d34f2f]"
+            >
+              {isGmailLoading ? (
+                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+              ) : (
+                <GmailLogo className="mr-2 h-5 w-5" imageClassName="h-5 w-5" />
+              )}
+              Connect Gmail
+            </Button>
           </div>
 
-          <Card className="border-emerald-500/20 bg-emerald-500/5 shadow-none">
-            <CardContent className="flex flex-col gap-3 p-6 sm:flex-row sm:items-center sm:justify-between">
-              <div className="space-y-1">
-                <p className="flex items-center gap-2 text-sm font-medium text-emerald-700">
-                  <ShieldCheck className="h-4 w-4" />
-                  Inbox status
-                </p>
-                <p className="text-lg font-semibold text-[#1A1A1A]">
-                  {connectedEmail ? `Currently connected: ${connectedEmail}` : "No Gmail account connected yet"}
-                </p>
-                <p className="text-sm text-[#1A1A1A]/65">
-                  {connectedEmail
-                    ? "Confirm this Gmail to continue, or connect a different one for support."
-                    : "Once connected, customer emails will start flowing into your inbox view."}
-                </p>
-              </div>
-            </CardContent>
-          </Card>
+          <p className="text-center text-xs text-[#1A1A1A]/50">
+            Kim only reads incoming emails. Nothing is ever sent without your approval.
+          </p>
 
           {error ? <p className="text-sm text-destructive">{error}</p> : null}
         </CardContent>
