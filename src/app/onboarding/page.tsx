@@ -3,14 +3,14 @@
 import { Suspense, useCallback, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { AlertCircle, Check, ChevronLeft, ChevronRight, Inbox, Lock, Settings2, Store } from "lucide-react";
+import { Check, ChevronLeft, ChevronRight, Inbox, Lock, Settings2 } from "lucide-react";
 import { ConfirmPolicies } from "@/components/onboarding/steps/confirm-policies";
 import { ConnectEmail } from "@/components/onboarding/steps/connect-email";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { GmailLogo } from "@/components/ui/gmail-logo";
 import { api } from "@/lib/api";
-import { OnboardingStatusResponse, SetupState } from "@/lib/onboarding";
+import { OnboardingStatusResponse } from "@/lib/onboarding";
 import { buildEmbeddedAppPath } from "@/lib/shopify-app-bridge";
 import { cn } from "@/lib/utils";
 
@@ -30,41 +30,16 @@ type PolicyPrefillResponse = {
   };
 };
 
-type BillingStatusResponse = {
-  success?: boolean;
-  data?: {
-    subscription?: {
-      active?: boolean;
-      exempt?: boolean;
-    };
-  };
-};
-
 type StepId = "overview" | "connect-email" | "confirm-policies";
 
 type OnboardingStatus = {
   storeId: string | null;
-  setupState: SetupState;
-  subscriptionComplete: boolean;
-  subscriptionExempt: boolean;
   gmailStepComplete: boolean;
   connectedEmail: string | null;
   hasActiveGmailConnection: boolean;
   policiesConfirmed: boolean;
   onboardingCompleted: boolean;
 };
-
-function getGatedProgress(status: OnboardingStatus) {
-  const subscriptionComplete = status.subscriptionComplete;
-  const gmailStepComplete = subscriptionComplete && status.gmailStepComplete;
-  const policiesConfirmed = subscriptionComplete && status.gmailStepComplete && status.policiesConfirmed;
-
-  return {
-    subscriptionComplete,
-    gmailStepComplete,
-    policiesConfirmed,
-  };
-}
 
 const initialState: WizardState = {
   supportEmail: null,
@@ -80,9 +55,6 @@ function OnboardingContent() {
   const [isFinishing, setIsFinishing] = useState(false);
   const [status, setStatus] = useState<OnboardingStatus>({
     storeId: null,
-    setupState: "needsSubscription",
-    subscriptionComplete: false,
-    subscriptionExempt: false,
     gmailStepComplete: false,
     connectedEmail: null,
     hasActiveGmailConnection: false,
@@ -95,21 +67,13 @@ function OnboardingContent() {
     setIsLoading(true);
 
     try {
-      const [statusRes, policyRes, billingRes] = await Promise.all([
+      const [statusRes, policyRes] = await Promise.all([
         api<OnboardingStatusResponse>("/api/onboarding/status"),
         api<PolicyPrefillResponse>("/api/onboarding/policies").catch(() => null),
-        api<BillingStatusResponse>("/api/billing/status").catch(() => null),
       ]);
 
       const nextStatus: OnboardingStatus = {
         storeId: statusRes?.data?.storeId || null,
-        setupState: statusRes?.data?.setupState || "needsSubscription",
-        subscriptionComplete:
-          Boolean(billingRes?.data?.subscription?.active)
-          || Boolean(statusRes?.data?.steps?.subscription?.complete),
-        subscriptionExempt:
-          Boolean(billingRes?.data?.subscription?.exempt)
-          || Boolean(statusRes?.data?.steps?.subscription?.exempt),
         gmailStepComplete: Boolean(statusRes?.data?.steps?.connectGmail?.complete),
         connectedEmail: statusRes?.data?.steps?.connectGmail?.connectedEmail || null,
         hasActiveGmailConnection: Boolean(statusRes?.data?.steps?.connectGmail?.hasActiveGmailConnection),
@@ -136,19 +100,15 @@ function OnboardingContent() {
     void refreshStatus();
   }, [refreshStatus]);
 
-  const gatedProgress = useMemo(() => getGatedProgress(status), [status]);
-  const installActivated = gatedProgress.subscriptionComplete;
-
   const completedCount = useMemo(() => {
-    return [installActivated, gatedProgress.gmailStepComplete, gatedProgress.policiesConfirmed].filter(Boolean).length;
-  }, [gatedProgress.gmailStepComplete, gatedProgress.policiesConfirmed, installActivated]);
+    return [status.gmailStepComplete, status.policiesConfirmed].filter(Boolean).length;
+  }, [status.gmailStepComplete, status.policiesConfirmed]);
 
   const currentStepNumber = useMemo(() => {
-    if (!installActivated) return 1;
-    if (!gatedProgress.gmailStepComplete) return 2;
-    if (!gatedProgress.policiesConfirmed) return 3;
-    return 4;
-  }, [gatedProgress.gmailStepComplete, gatedProgress.policiesConfirmed, installActivated]);
+    if (!status.gmailStepComplete) return 1;
+    if (!status.policiesConfirmed) return 2;
+    return 3;
+  }, [status.gmailStepComplete, status.policiesConfirmed]);
 
   const updatePoliciesForm = useCallback(
     (nextValue: {
@@ -180,39 +140,30 @@ function OnboardingContent() {
   const steps = [
     {
       number: 1,
-      title: "Install RegardsKim",
-      subtitle: "Install from the Shopify App Store. Shopify handles plan selection and billing during install.",
-      icon: Store,
-      state: installActivated ? ("completed" as const) : ("active" as const),
-      onClick: undefined,
-      cta: installActivated ? undefined : "Activate in Shopify",
-    },
-    {
-      number: 2,
       title: "Connect your email",
       subtitle: "Connect your Gmail so Kim can read customer emails and draft replies.",
       icon: GmailLogo,
-      state: gatedProgress.gmailStepComplete ? ("completed" as const) : currentStepNumber === 2 ? ("active" as const) : ("locked" as const),
-      onClick: currentStepNumber === 2 ? () => setActiveView("connect-email") : undefined,
-      cta: gatedProgress.gmailStepComplete ? undefined : installActivated ? "Start" : undefined,
+      state: status.gmailStepComplete ? ("completed" as const) : ("active" as const),
+      onClick: !status.gmailStepComplete ? () => setActiveView("connect-email") : undefined,
+      cta: status.gmailStepComplete ? undefined : "Start",
     },
     {
-      number: 3,
+      number: 2,
       title: "Confirm your store policies",
       subtitle: "Add the two policy links Kim should use as source references.",
       icon: Settings2,
-      state: gatedProgress.policiesConfirmed ? ("completed" as const) : currentStepNumber === 3 ? ("active" as const) : ("locked" as const),
-      onClick: currentStepNumber === 3 ? () => setActiveView("confirm-policies") : undefined,
-      cta: gatedProgress.policiesConfirmed ? undefined : gatedProgress.gmailStepComplete ? "Continue" : undefined,
+      state: status.policiesConfirmed ? ("completed" as const) : currentStepNumber === 2 ? ("active" as const) : ("locked" as const),
+      onClick: currentStepNumber === 2 ? () => setActiveView("confirm-policies") : undefined,
+      cta: status.policiesConfirmed ? undefined : status.gmailStepComplete ? "Continue" : undefined,
     },
     {
-      number: 4,
+      number: 3,
       title: "Go to your inbox",
-      subtitle: "See Kim’s drafted replies and start approving them.",
+      subtitle: "See Kim's drafted replies and start approving them.",
       icon: Inbox,
-      state: currentStepNumber === 4 ? ("active" as const) : ("locked" as const),
-      onClick: currentStepNumber === 4 ? () => void handleFinish() : undefined,
-      cta: currentStepNumber === 4 ? "Open inbox" : undefined,
+      state: currentStepNumber === 3 ? ("active" as const) : ("locked" as const),
+      onClick: currentStepNumber === 3 ? () => void handleFinish() : undefined,
+      cta: currentStepNumber === 3 ? "Open inbox" : undefined,
     },
   ];
 
@@ -226,7 +177,7 @@ function OnboardingContent() {
           </Button>
 
           <div className="space-y-2">
-            <p className="text-sm font-medium uppercase tracking-[0.2em] text-[#1A1A1A]/45">Step 2</p>
+            <p className="text-sm font-medium uppercase tracking-[0.2em] text-[#1A1A1A]/45">Step 1</p>
             <h1 className="text-3xl font-semibold tracking-tight text-[#1A1A1A]">Connect your email</h1>
             <p className="max-w-2xl text-sm text-[#1A1A1A]/65">
               Connect your Gmail so Kim can read customer emails and draft replies for approval.
@@ -249,7 +200,7 @@ function OnboardingContent() {
           </Button>
 
           <div className="space-y-2">
-            <p className="text-sm font-medium uppercase tracking-[0.2em] text-[#1A1A1A]/45">Step 3</p>
+            <p className="text-sm font-medium uppercase tracking-[0.2em] text-[#1A1A1A]/45">Step 2</p>
             <h1 className="text-3xl font-semibold tracking-tight text-[#1A1A1A]">Confirm your store policies</h1>
             <p className="max-w-2xl text-sm text-[#1A1A1A]/65">
               Add the two policy links Kim should use as source references, plus the agent name customers will see.
@@ -284,17 +235,6 @@ function OnboardingContent() {
             </p>
           </div>
         </div>
-
-        {!installActivated ? (
-          <div className="flex items-start gap-3 rounded-2xl border border-[#E85D3A]/20 bg-white px-4 py-3 text-sm text-[#1A1A1A]/75">
-            <AlertCircle className="mt-0.5 h-4 w-4 shrink-0 text-[#E85D3A]" />
-            <div>
-              <p>
-                Please install RegardsKim from the Shopify App Store to activate your subscription, then reopen the app from Shopify Admin.
-              </p>
-            </div>
-          </div>
-        ) : null}
 
         <div className="space-y-4">
           {steps.map((step) => {
@@ -377,12 +317,10 @@ function OnboardingContent() {
         </div>
 
         <div className="flex items-center justify-between rounded-2xl border border-[#1A1A1A]/10 bg-white/70 px-4 py-3 text-sm text-[#1A1A1A]/70">
-          <span>{completedCount} of 4 complete</span>
+          <span>{completedCount} of 3 complete</span>
           {isLoading ? (
             <span>Refreshing status…</span>
-          ) : !installActivated ? (
-            <span>Waiting on Shopify App Store activation</span>
-          ) : gatedProgress.gmailStepComplete ? (
+          ) : status.gmailStepComplete ? (
             <span>Gmail confirmed</span>
           ) : status.hasActiveGmailConnection ? (
             <span>Gmail connected — confirm it in setup</span>
@@ -391,13 +329,13 @@ function OnboardingContent() {
           )}
         </div>
 
-        {currentStepNumber === 4 ? (
+        {currentStepNumber === 3 ? (
           <div className="rounded-2xl border border-[#E85D3A]/15 bg-white p-5 shadow-sm">
             <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
               <div className="space-y-1">
-                <h2 className="text-lg font-semibold text-[#1A1A1A]">Everything’s ready</h2>
+                <h2 className="text-lg font-semibold text-[#1A1A1A]">Everything's ready</h2>
                 <p className="text-sm text-[#1A1A1A]/65">
-                  Open your inbox to review Kim’s drafted replies and start approving them.
+                  Open your inbox to review Kim's drafted replies and start approving them.
                 </p>
               </div>
               <Button className="bg-[#E85D3A] text-white hover:bg-[#d34f2f]" onClick={() => void handleFinish()} disabled={isFinishing}>

@@ -1,4 +1,4 @@
-export type SetupState = "needsSubscription" | "needsGmail" | "needsPolicies" | "ready";
+export type SetupState = "needsGmail" | "needsPolicies" | "ready";
 
 export type OnboardingStepStatus = {
   complete: boolean;

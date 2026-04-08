@@ -21,7 +21,7 @@ type AppAuthContextValue = {
   loading: boolean;
   authenticated: boolean;
   embedded: boolean;
-  billingRequired: boolean;
+
 };
 
 const AppAuthContext = createContext<AppAuthContextValue>({
@@ -29,7 +29,7 @@ const AppAuthContext = createContext<AppAuthContextValue>({
   loading: true,
   authenticated: false,
   embedded: false,
-  billingRequired: false,
+
 });
 
 function waitForShopifyBridge(timeoutMs = 3000): Promise<boolean> {
@@ -86,7 +86,7 @@ async function fetchOnboardingStatusWithToken(token: string): Promise<{ setupSta
 
   const body = (await res.json()) as OnboardingStatusResponse;
   return {
-    setupState: body.data?.setupState || "needsSubscription",
+    setupState: body.data?.setupState || "needsGmail",
     onboardingCompleted: Boolean(body.data?.onboardingCompleted),
   };
 }
@@ -124,7 +124,7 @@ export function AppAuthProvider({ children }: { children: ReactNode }) {
   const [store, setStore] = useState<Store | null>(null);
   const [loading, setLoading] = useState(true);
   const [authenticated, setAuthenticated] = useState(false);
-  const [setupState, setSetupState] = useState<SetupState>("needsSubscription");
+  const [setupState, setSetupState] = useState<SetupState>("needsGmail");
 
   useEffect(() => {
     let active = true;
@@ -197,7 +197,7 @@ export function AppAuthProvider({ children }: { children: ReactNode }) {
     };
 
     const onOnboardingRestart = () => {
-      setSetupState("needsSubscription");
+      setSetupState("needsGmail");
     };
 
     window.addEventListener("app:onboarding-completed", onOnboardingCompleted);
@@ -222,7 +222,7 @@ export function AppAuthProvider({ children }: { children: ReactNode }) {
   }, [authenticated, loading, pathname, router, setupState]);
 
   const value = useMemo<AppAuthContextValue>(
-    () => ({ store, loading, authenticated, embedded, billingRequired: setupState === "needsSubscription" }),
+    () => ({ store, loading, authenticated, embedded }),
     [store, loading, authenticated, embedded, setupState],
   );
 
