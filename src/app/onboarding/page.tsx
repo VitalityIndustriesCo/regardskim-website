@@ -1,18 +1,18 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { Suspense, useCallback, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { Check, ChevronLeft, ChevronRight, CreditCard, Inbox, Lock, Settings2, Store } from "lucide-react";
+import { useRouter, useSearchParams } from "next/navigation";
+import { AlertCircle, Check, ChevronLeft, ChevronRight, CreditCard, Inbox, Loader2, Lock, Settings2, Store } from "lucide-react";
 import { ConfirmPolicies } from "@/components/onboarding/steps/confirm-policies";
 import { ConnectEmail } from "@/components/onboarding/steps/connect-email";
 import { SubscriptionStep } from "@/components/onboarding/steps/subscription-step";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { GmailLogo } from "@/components/ui/gmail-logo";
-import { api } from "@/lib/api";
+import { api, ApiError } from "@/lib/api";
 import { OnboardingStatusResponse, SetupState } from "@/lib/onboarding";
-import { buildEmbeddedAppPath } from "@/lib/shopify-app-bridge";
+import { buildEmbeddedAppPath, redirectToRemote } from "@/lib/shopify-app-bridge";
 import { cn } from "@/lib/utils";
 
 type WizardState = {
@@ -66,9 +66,12 @@ const initialState: WizardState = {
 
 function OnboardingContent() {
   const router = useRouter();
+  const searchParams = useSearchParams();
   const [activeView, setActiveView] = useState<StepId>("overview");
   const [isLoading, setIsLoading] = useState(true);
   const [isFinishing, setIsFinishing] = useState(false);
+  const [isAutoLaunchingBilling, setIsAutoLaunchingBilling] = useState(false);
+  const [billingLaunchError, setBillingLaunchError] = useState<string | null>(null);
   const [status, setStatus] = useState<OnboardingStatus>({
     storeId: null,
     setupState: "needsSubscription",
@@ -123,6 +126,34 @@ function OnboardingContent() {
   }, [refreshStatus]);
 
   const gatedProgress = useMemo(() => getGatedProgress(status), [status]);
+  const billingCanceled = searchParams.get("canceled") === "true";
+  const billingSuccess = searchParams.get("success") === "true";
+  const billingError = searchParams.get("error");
+
+  const launchBillingApproval = useCallback(async () => {
+    setIsAutoLaunchingBilling(true);
+    setBillingLaunchError(null);
+
+    try {
+      const response = await api<{ success: boolean; data?: { confirmationUrl?: string; url?: string } }>("/api/billing/subscribe", {
+        method: "POST",
+      });
+
+      const targetUrl = response.data?.confirmationUrl || response.data?.url;
+      if (!targetUrl) {
+        throw new Error("Shopify didn’t return a billing approval link.");
+      }
+
+      redirectToRemote(targetUrl, false);
+    } catch (err) {
+      if (err instanceof ApiError || err instanceof Error) {
+        setBillingLaunchError(err.message);
+      } else {
+        setBillingLaunchError("Couldn’t open Shopify billing right now.");
+      }
+      setIsAutoLaunchingBilling(false);
+    }
+  }, []);
 
   const completedCount = useMemo(() => {
     return [true, gatedProgress.subscriptionComplete, gatedProgress.gmailStepComplete, gatedProgress.policiesConfirmed].filter(Boolean).length;
@@ -134,6 +165,29 @@ function OnboardingContent() {
     if (!gatedProgress.policiesConfirmed) return 4;
     return 5;
   }, [gatedProgress]);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    if (isLoading) return;
+    if (status.subscriptionExempt || gatedProgress.subscriptionComplete) return;
+    if (status.setupState !== "needsSubscription") return;
+    if (billingCanceled || billingError) return;
+
+    const launchKey = `rk:auto-billing:${status.storeId || "unknown"}`;
+    const hasAttempted = window.sessionStorage.getItem(launchKey) === "1";
+    if (hasAttempted) return;
+
+    window.sessionStorage.setItem(launchKey, "1");
+    void launchBillingApproval();
+  }, [billingCanceled, billingError, gatedProgress.subscriptionComplete, isLoading, launchBillingApproval, status.setupState, status.storeId, status.subscriptionExempt]);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    if (!status.storeId) return;
+    if (!gatedProgress.subscriptionComplete) return;
+
+    window.sessionStorage.removeItem(`rk:auto-billing:${status.storeId}`);
+  }, [gatedProgress.subscriptionComplete, status.storeId]);
 
   const updatePoliciesForm = useCallback(
     (nextValue: {
@@ -304,6 +358,35 @@ function OnboardingContent() {
           </div>
         </div>
 
+        {billingCanceled || billingError || billingLaunchError || billingSuccess ? (
+          <div
+            className={cn(
+              "flex items-start gap-3 rounded-2xl border px-4 py-3 text-sm",
+              billingSuccess
+                ? "border-emerald-200 bg-emerald-50 text-emerald-800"
+                : "border-[#E85D3A]/20 bg-white text-[#1A1A1A]/75",
+            )}
+          >
+            {billingSuccess ? <Check className="mt-0.5 h-4 w-4 shrink-0" /> : <AlertCircle className="mt-0.5 h-4 w-4 shrink-0 text-[#E85D3A]" />}
+            <div>
+              {billingSuccess ? (
+                <p>Subscription approved. Continuing setup.</p>
+              ) : billingCanceled ? (
+                <p>Shopify billing approval was canceled. Click the subscription step whenever you’re ready to continue.</p>
+              ) : (
+                <p>{billingLaunchError || billingError || "Couldn’t open Shopify billing right now."}</p>
+              )}
+            </div>
+          </div>
+        ) : null}
+
+        {isAutoLaunchingBilling && !billingCanceled && !billingError ? (
+          <div className="flex items-center gap-2 rounded-2xl border border-[#E85D3A]/20 bg-white px-4 py-3 text-sm text-[#1A1A1A]/75">
+            <Loader2 className="h-4 w-4 animate-spin text-[#E85D3A]" />
+            Opening Shopify billing approval…
+          </div>
+        ) : null}
+
         <div className="space-y-4">
           {steps.map((step) => {
             const isCompleted = step.state === "completed";
@@ -428,5 +511,9 @@ function OnboardingContent() {
 }
 
 export default function OnboardingPage() {
-  return <OnboardingContent />;
+  return (
+    <Suspense fallback={null}>
+      <OnboardingContent />
+    </Suspense>
+  );
 }
