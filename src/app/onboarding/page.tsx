@@ -45,6 +45,18 @@ type OnboardingStatus = {
   onboardingCompleted: boolean;
 };
 
+function getGatedProgress(status: OnboardingStatus) {
+  const subscriptionComplete = status.subscriptionComplete;
+  const gmailStepComplete = subscriptionComplete && status.gmailStepComplete;
+  const policiesConfirmed = subscriptionComplete && status.gmailStepComplete && status.policiesConfirmed;
+
+  return {
+    subscriptionComplete,
+    gmailStepComplete,
+    policiesConfirmed,
+  };
+}
+
 const initialState: WizardState = {
   supportEmail: null,
   shippingPolicyUrl: "",
@@ -110,16 +122,18 @@ function OnboardingContent() {
     void refreshStatus();
   }, [refreshStatus]);
 
+  const gatedProgress = useMemo(() => getGatedProgress(status), [status]);
+
   const completedCount = useMemo(() => {
-    return [true, status.subscriptionComplete, status.gmailStepComplete, status.policiesConfirmed].filter(Boolean).length;
-  }, [status.subscriptionComplete, status.gmailStepComplete, status.policiesConfirmed]);
+    return [true, gatedProgress.subscriptionComplete, gatedProgress.gmailStepComplete, gatedProgress.policiesConfirmed].filter(Boolean).length;
+  }, [gatedProgress]);
 
   const currentStepNumber = useMemo(() => {
-    if (!status.subscriptionComplete) return 2;
-    if (!status.gmailStepComplete) return 3;
-    if (!status.policiesConfirmed) return 4;
+    if (!gatedProgress.subscriptionComplete) return 2;
+    if (!gatedProgress.gmailStepComplete) return 3;
+    if (!gatedProgress.policiesConfirmed) return 4;
     return 5;
-  }, [status.subscriptionComplete, status.gmailStepComplete, status.policiesConfirmed]);
+  }, [gatedProgress]);
 
   const updatePoliciesForm = useCallback(
     (nextValue: {
@@ -165,27 +179,27 @@ function OnboardingContent() {
         ? "Development store detected — billing is exempt for this store."
         : "Approve your Shopify-managed plan before Kim unlocks the inbox.",
       icon: CreditCard,
-      state: status.subscriptionComplete ? ("completed" as const) : currentStepNumber === 2 ? ("active" as const) : ("locked" as const),
+      state: gatedProgress.subscriptionComplete ? ("completed" as const) : currentStepNumber === 2 ? ("active" as const) : ("locked" as const),
       onClick: currentStepNumber === 2 ? () => setActiveView("subscription") : undefined,
-      cta: status.subscriptionComplete ? undefined : "Open Shopify",
+      cta: gatedProgress.subscriptionComplete ? undefined : "Open Shopify",
     },
     {
       number: 3,
       title: "Connect your email",
       subtitle: "Connect your Gmail so Kim can read customer emails and draft replies.",
       icon: GmailLogo,
-      state: status.gmailStepComplete ? ("completed" as const) : currentStepNumber === 3 ? ("active" as const) : ("locked" as const),
+      state: gatedProgress.gmailStepComplete ? ("completed" as const) : currentStepNumber === 3 ? ("active" as const) : ("locked" as const),
       onClick: currentStepNumber === 3 ? () => setActiveView("connect-email") : undefined,
-      cta: status.gmailStepComplete ? undefined : status.subscriptionComplete ? "Start" : undefined,
+      cta: gatedProgress.gmailStepComplete ? undefined : gatedProgress.subscriptionComplete ? "Start" : undefined,
     },
     {
       number: 4,
       title: "Confirm your store policies",
       subtitle: "Add the two policy links Kim should use as source references.",
       icon: Settings2,
-      state: status.policiesConfirmed ? ("completed" as const) : currentStepNumber === 4 ? ("active" as const) : ("locked" as const),
+      state: gatedProgress.policiesConfirmed ? ("completed" as const) : currentStepNumber === 4 ? ("active" as const) : ("locked" as const),
       onClick: currentStepNumber === 4 ? () => setActiveView("confirm-policies") : undefined,
-      cta: status.policiesConfirmed ? undefined : status.gmailStepComplete ? "Continue" : undefined,
+      cta: gatedProgress.policiesConfirmed ? undefined : gatedProgress.gmailStepComplete ? "Continue" : undefined,
     },
     {
       number: 5,
@@ -376,7 +390,7 @@ function OnboardingContent() {
             <span>Refreshing status…</span>
           ) : status.setupState === "needsSubscription" ? (
             <span>{status.subscriptionExempt ? "Development store exempt" : "Waiting on Shopify plan approval"}</span>
-          ) : status.gmailStepComplete ? (
+          ) : gatedProgress.gmailStepComplete ? (
             <span>Gmail confirmed</span>
           ) : status.hasActiveGmailConnection ? (
             <span>Gmail connected — confirm it in setup</span>
