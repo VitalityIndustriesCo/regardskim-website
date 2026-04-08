@@ -81,6 +81,23 @@ export async function getShopifySessionToken(): Promise<string | null> {
   return getStoredIdToken();
 }
 
+export async function waitForShopifySessionToken(timeoutMs = 5000): Promise<string | null> {
+  if (typeof window === "undefined") return null;
+
+  const startedAt = Date.now();
+
+  while (Date.now() - startedAt < timeoutMs) {
+    const token = await getShopifySessionToken();
+    if (token) {
+      return token;
+    }
+
+    await new Promise((resolve) => window.setTimeout(resolve, 150));
+  }
+
+  return getStoredIdToken();
+}
+
 /**
  * Redirect to a remote URL.
  * newContext=true opens in a new tab; false breaks out of the iframe.

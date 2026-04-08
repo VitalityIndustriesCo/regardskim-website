@@ -1,4 +1,4 @@
-import { getShopifySessionToken, getStoredIdToken } from "@/lib/shopify-app-bridge";
+import { getShopifySessionToken, getStoredIdToken, waitForShopifySessionToken } from "@/lib/shopify-app-bridge";
 
 export const API_URL =
   process.env.NEXT_PUBLIC_API_URL ||
@@ -23,8 +23,8 @@ export async function getAuthHeaders(
   const sessionToken = forceFresh
     ? (typeof window !== "undefined" && window.shopify
         ? await window.shopify.idToken().catch(() => getStoredIdToken())
-        : getStoredIdToken())
-    : await getShopifySessionToken();
+        : await waitForShopifySessionToken())
+    : await waitForShopifySessionToken();
 
   if (sessionToken) {
     nextHeaders.Authorization = `Bearer ${sessionToken}`;
@@ -55,12 +55,18 @@ export async function api<T = unknown>(
   }
 
   if (res.status === 401) {
-    throw new ApiError(401, "Unauthorized");
+    throw new ApiError(401, "Your Shopify session expired. Please reopen RegardsKim from Shopify Admin and try again.");
   }
 
   if (!res.ok) {
-    const body = await res.text();
-    throw new ApiError(res.status, body || "Request failed");
+    const contentType = res.headers.get("content-type") || "";
+
+    if (contentType.includes("application/json")) {
+      const body = (await res.json().catch(() => null)) as { error?: string; message?: string } | null;
+      throw new ApiError(res.status, body?.message || body?.error || "Request failed");
+    }
+
+    throw new ApiError(res.status, "Request failed");
   }
 
   const contentType = res.headers.get("content-type") || "";
