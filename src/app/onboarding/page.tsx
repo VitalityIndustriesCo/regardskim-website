@@ -112,13 +112,14 @@ function OnboardingContent() {
       const policiesConfirmed = isPoliciesConfirmed(policyRes);
 
       const storeId = storeRes?.data?.id || null;
-
-      setStatus({
+      const nextStatus = {
         storeId,
         gmailConnected,
         connectedEmail,
         policiesConfirmed,
-      });
+      };
+
+      setStatus(nextStatus);
 
       if (typeof window !== "undefined") {
         const storedEmailConfirmed = window.sessionStorage.getItem(getEmailConfirmedStorageKey(storeId)) === "true";
@@ -135,6 +136,8 @@ function OnboardingContent() {
         supportName: policyRes?.supportName ?? current.supportName,
         policies: policyRes?.policies ?? current.policies,
       }));
+
+      return nextStatus;
     } finally {
       setIsLoading(false);
     }
@@ -175,27 +178,42 @@ function OnboardingContent() {
     setActiveView(step);
   };
 
-  const markEmailConfirmed = useCallback(
-    (confirmed: boolean) => {
-      if (typeof window !== "undefined") {
-        window.sessionStorage.setItem(getEmailConfirmedStorageKey(status.storeId), String(confirmed));
-      }
-
-      setEmailConfirmed(confirmed);
-    },
-    [status.storeId]
-  );
-
   useEffect(() => {
     const gmailResult = searchParams.get("gmail");
     const email = searchParams.get("email");
 
-    if (gmailResult === "success" || email) {
-      markEmailConfirmed(true);
-      void refreshStatus();
-      setActiveView("overview");
+    if (gmailResult !== "success" && !email) {
+      return;
     }
-  }, [markEmailConfirmed, refreshStatus, searchParams]);
+
+    let cancelled = false;
+
+    const handleGmailCallback = async () => {
+      const nextStatus = await refreshStatus();
+
+      if (cancelled) return;
+
+      const confirmedStoreId = nextStatus?.storeId ?? status.storeId;
+
+      if (typeof window !== "undefined") {
+        if (confirmedStoreId) {
+          window.sessionStorage.setItem(getEmailConfirmedStorageKey(confirmedStoreId), "true");
+        }
+
+        window.sessionStorage.setItem(getEmailConfirmedStorageKey(null), "true");
+        window.history.replaceState({}, "", "/onboarding");
+      }
+
+      setEmailConfirmed(true);
+      setActiveView("overview");
+    };
+
+    void handleGmailCallback();
+
+    return () => {
+      cancelled = true;
+    };
+  }, [refreshStatus, searchParams, status.storeId]);
 
   const completeAndReturn = async () => {
     await refreshStatus();
