@@ -111,26 +111,41 @@ export function AppAuthProvider({ children }: { children: ReactNode }) {
       setLoading(true);
       try {
         if (embedded) {
-          const bridgeReady = await waitForShopifyBridge();
-          if (!bridgeReady || !window.shopify) {
-            if (!active) return;
-            setAuthenticated(false);
-            setStore(null);
-            return;
+          // Strategy 1: Use id_token from URL params (Shopify sends this on initial load)
+          const params = new URLSearchParams(window.location.search);
+          const urlIdToken = params.get("id_token");
+          if (urlIdToken) {
+            try {
+              const storeData = await fetchStoreWithToken(urlIdToken);
+              if (!active) return;
+              setStore(storeData);
+              setAuthenticated(true);
+              return;
+            } catch {
+              // URL token failed, fall through to App Bridge
+            }
           }
 
-          const sessionToken = await getShopifySessionToken();
-          if (!sessionToken) {
-            if (!active) return;
-            setAuthenticated(false);
-            setStore(null);
-            return;
+          // Strategy 2: Wait for App Bridge and get a fresh session token
+          const bridgeReady = await waitForShopifyBridge(5000);
+          if (bridgeReady && window.shopify) {
+            const sessionToken = await getShopifySessionToken();
+            if (sessionToken) {
+              try {
+                const storeData = await fetchStoreWithToken(sessionToken);
+                if (!active) return;
+                setStore(storeData);
+                setAuthenticated(true);
+                return;
+              } catch {
+                // Session token auth failed too
+              }
+            }
           }
 
-          const storeData = await fetchStoreWithToken(sessionToken);
           if (!active) return;
-          setStore(storeData);
-          setAuthenticated(true);
+          setAuthenticated(false);
+          setStore(null);
           return;
         }
 
