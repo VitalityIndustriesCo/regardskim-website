@@ -1,8 +1,8 @@
 "use client";
 
 import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
-import { AlertTriangle, Check, ExternalLink, Loader2, Sparkles } from "lucide-react";
-import { API_URL, getAuthHeaders } from "@/lib/api";
+import { AlertTriangle, ExternalLink, Loader2 } from "lucide-react";
+import { API_URL } from "@/lib/api";
 import { hasSeenOnboarding } from "@/lib/onboarding";
 import { getShopifySessionToken, storeIdToken } from "@/lib/shopify-app-bridge";
 import { useEmbeddedApp } from "@/components/shopify/embedded-app-provider";
@@ -56,7 +56,7 @@ function waitForShopifyBridge(timeoutMs = 3000): Promise<boolean> {
   });
 }
 
-async function fetchStoreWithToken(token: string): Promise<{ store: Store | null; billingRequired: boolean }> {
+async function fetchStoreWithToken(token: string): Promise<{ store: Store | null; subscriptionInactive: boolean }> {
   const res = await fetch(`${API_URL}/api/store`, {
     headers: {
       Authorization: `Bearer ${token}`,
@@ -65,20 +65,7 @@ async function fetchStoreWithToken(token: string): Promise<{ store: Store | null
   });
 
   if (res.status === 402) {
-    // Auth succeeded but no active subscription — need billing
-    // Fetch store info from billing status endpoint instead (not billing-gated)
-    const billingRes = await fetch(`${API_URL}/api/billing/status`, {
-      headers: {
-        Authorization: `Bearer ${token}`,
-        "Content-Type": "application/json",
-      },
-    });
-    if (billingRes.ok) {
-      const billingBody = (await billingRes.json()) as { data?: { plan?: { id?: string }; subscription?: { status?: string } } };
-      // Return a minimal store object so auth is considered successful
-      return { store: { id: "billing-pending" } as Store, billingRequired: true };
-    }
-    throw new Error(`AUTH_FAILED_402`);
+    return { store: { id: "subscription-inactive" } as Store, subscriptionInactive: true };
   }
 
   if (!res.ok) {
@@ -86,103 +73,28 @@ async function fetchStoreWithToken(token: string): Promise<{ store: Store | null
   }
 
   const body = (await res.json()) as { data?: Store };
-  return { store: body.data || null, billingRequired: false };
+  return { store: body.data || null, subscriptionInactive: false };
 }
 
-async function fetchBillingStatusWithToken(token: string) {
-  const res = await fetch(`${API_URL}/api/billing/status`, {
-    headers: {
-      Authorization: `Bearer ${token}`,
-      "Content-Type": "application/json",
-    },
-  });
-
-  if (!res.ok) {
-    throw new Error(`BILLING_FAILED_${res.status}`);
-  }
-
-  const body = (await res.json()) as {
-    data?: {
-      subscription?: {
-        active?: boolean;
-      };
-    };
-  };
-
-  return Boolean(body.data?.subscription?.active);
-}
-
-const BILLING_FEATURES = [
-  "Unlimited customer emails",
-  "AI-powered drafts using your store data",
-  "You approve every reply before it sends",
-  "Works with Gmail (Outlook coming soon)",
-  "Cancel anytime",
-];
-
-function BillingGate() {
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
-
-  const startTrial = async () => {
-    setLoading(true);
-    setError(null);
-    try {
-      const res = await fetch(`${API_URL}/api/billing/checkout`, {
-        method: "POST",
-        headers: await getAuthHeaders({ "Content-Type": "application/json" }),
-        body: JSON.stringify({}),
-      });
-
-      if (!res.ok) {
-        throw new Error(`CHECKOUT_FAILED_${res.status}`);
-      }
-
-      const body = (await res.json()) as { data?: { confirmationUrl?: string; url?: string } };
-      const confirmationUrl = body.data?.confirmationUrl || body.data?.url;
-      if (!confirmationUrl) {
-        throw new Error("CHECKOUT_URL_MISSING");
-      }
-
-      window.open(confirmationUrl, "_top");
-    } catch {
-      setError("Couldn’t start billing approval. Please try again.");
-      setLoading(false);
-    }
-  };
-
+function SubscriptionInactivePrompt({ embedded }: { embedded: boolean }) {
   return (
-    <div className="mx-auto flex min-h-[75vh] w-full max-w-3xl items-center px-6 py-10">
-      <div className="w-full rounded-3xl border border-foreground/10 bg-cream/60 p-7 shadow-sm md:p-10">
-        <p className="mb-3 inline-flex items-center rounded-full border border-primary/25 bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
-          <Sparkles className="mr-1.5 h-3.5 w-3.5" />
-          7-day free trial
-        </p>
-        <h1 className="text-2xl font-semibold tracking-tight text-foreground md:text-3xl">RegardsKim Standard — $49/mo</h1>
-        <p className="mt-3 text-sm text-muted-foreground md:text-base">
-          Start your trial to unlock the full app for this store.
-        </p>
-
-        <div className="mt-6 space-y-2.5">
-          {BILLING_FEATURES.map((feature) => (
-            <div key={feature} className="flex items-center gap-3 rounded-xl border border-foreground/10 bg-background/70 px-3.5 py-3">
-              <div className="rounded-full bg-primary/10 p-1 text-primary">
-                <Check className="h-3.5 w-3.5" />
-              </div>
-              <span className="text-sm text-foreground">{feature}</span>
-            </div>
-          ))}
-        </div>
-
-        {error ? <p className="mt-4 text-sm text-destructive">{error}</p> : null}
-
-        <div className="mt-7 flex flex-wrap items-center gap-3">
-          <Button onClick={startTrial} disabled={loading} className="min-w-[240px]">
-            {loading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : null}
-            Start your 7-day free trial
+    <div className="mx-auto flex min-h-[70vh] w-full max-w-2xl flex-col items-center justify-center px-6 text-center">
+      <div className="mb-4 rounded-full bg-destructive/10 p-3 text-destructive">
+        <AlertTriangle className="h-6 w-6" />
+      </div>
+      <h2 className="text-2xl font-semibold tracking-tight">Subscription inactive</h2>
+      <p className="mt-2 text-sm text-muted-foreground">
+        We couldn't verify an active Shopify subscription for this store. Please open billing in Shopify Admin and confirm your app subscription.
+      </p>
+      <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
+        {embedded ? (
+          <Button asChild>
+            <a href="https://admin.shopify.com/store" target="_top" rel="noreferrer noopener">
+              Open Shopify Admin
+              <ExternalLink className="ml-2 h-4 w-4" />
+            </a>
           </Button>
-          <p className="text-xs text-muted-foreground">You’ll approve billing in Shopify, then return here automatically.</p>
-        </div>
+        ) : null}
       </div>
     </div>
   );
@@ -223,7 +135,7 @@ export function AppAuthProvider({ children }: { children: ReactNode }) {
   const [store, setStore] = useState<Store | null>(null);
   const [loading, setLoading] = useState(true);
   const [authenticated, setAuthenticated] = useState(false);
-  const [billingRequired, setBillingRequired] = useState(false);
+  const [subscriptionInactive, setSubscriptionInactive] = useState(false);
   const [showOnboarding, setShowOnboarding] = useState(false);
 
   useEffect(() => {
@@ -233,33 +145,16 @@ export function AppAuthProvider({ children }: { children: ReactNode }) {
       const result = await fetchStoreWithToken(token);
       if (!active) return false;
 
-      if (result.billingRequired) {
-        setStore(result.store);
-        setAuthenticated(true);
-        setBillingRequired(true);
-        return true;
-      }
-
-      // Auth succeeded — now check billing status
-      try {
-        const hasActiveSub = await fetchBillingStatusWithToken(token);
-        if (!hasActiveSub) {
-          setStore(result.store);
-          setAuthenticated(true);
-          setBillingRequired(true);
-          return true;
-        }
-      } catch {
-        // Billing check failed — show billing gate to be safe
-        setStore(result.store);
-        setAuthenticated(true);
-        setBillingRequired(true);
-        return true;
-      }
-
       setStore(result.store);
       setAuthenticated(true);
-      setBillingRequired(false);
+
+      if (result.subscriptionInactive) {
+        setSubscriptionInactive(true);
+        setShowOnboarding(false);
+        return true;
+      }
+
+      setSubscriptionInactive(false);
       setShowOnboarding(!hasSeenOnboarding(result.store?.id as string | null | undefined));
       return true;
     }
@@ -268,7 +163,6 @@ export function AppAuthProvider({ children }: { children: ReactNode }) {
       setLoading(true);
       try {
         if (embedded) {
-          // Strategy 1: Use id_token from URL params
           const params = new URLSearchParams(window.location.search);
           const urlIdToken = params.get("id_token");
           if (urlIdToken) {
@@ -280,7 +174,6 @@ export function AppAuthProvider({ children }: { children: ReactNode }) {
             }
           }
 
-          // Strategy 2: Wait for App Bridge
           const bridgeReady = await waitForShopifyBridge(5000);
           if (bridgeReady && window.shopify) {
             const sessionToken = await getShopifySessionToken();
@@ -296,30 +189,35 @@ export function AppAuthProvider({ children }: { children: ReactNode }) {
           if (!active) return;
           setAuthenticated(false);
           setStore(null);
-          setBillingRequired(false);
+          setSubscriptionInactive(false);
+          setShowOnboarding(false);
           return;
         }
 
-        // Standalone JWT flow
         const jwtToken = window.localStorage.getItem("token");
         if (!jwtToken) {
           if (!active) return;
           setAuthenticated(false);
           setStore(null);
-          setBillingRequired(false);
+          setSubscriptionInactive(false);
+          setShowOnboarding(false);
           return;
         }
 
         try {
           await tryAuthWithToken(jwtToken);
         } catch {
-          // JWT auth failed
+          if (!active) return;
+          setAuthenticated(false);
+          setStore(null);
+          setSubscriptionInactive(false);
+          setShowOnboarding(false);
         }
       } catch {
         if (!active) return;
         setAuthenticated(false);
         setStore(null);
-        setBillingRequired(false);
+        setSubscriptionInactive(false);
         setShowOnboarding(false);
       } finally {
         if (active) {
@@ -336,12 +234,6 @@ export function AppAuthProvider({ children }: { children: ReactNode }) {
   }, [embedded]);
 
   useEffect(() => {
-    const onBillingRequired = () => {
-      setAuthenticated(true);
-      setBillingRequired(true);
-      setShowOnboarding(false);
-    };
-
     const onOnboardingCompleted = () => {
       setShowOnboarding(false);
     };
@@ -350,19 +242,17 @@ export function AppAuthProvider({ children }: { children: ReactNode }) {
       setShowOnboarding(true);
     };
 
-    window.addEventListener("app:billing-required", onBillingRequired);
     window.addEventListener("app:onboarding-completed", onOnboardingCompleted);
     window.addEventListener("app:onboarding-restart", onOnboardingRestart);
     return () => {
-      window.removeEventListener("app:billing-required", onBillingRequired);
       window.removeEventListener("app:onboarding-completed", onOnboardingCompleted);
       window.removeEventListener("app:onboarding-restart", onOnboardingRestart);
     };
   }, []);
 
   const value = useMemo<AppAuthContextValue>(
-    () => ({ store, loading, authenticated, embedded, billingRequired }),
-    [store, loading, authenticated, embedded, billingRequired]
+    () => ({ store, loading, authenticated, embedded, billingRequired: false }),
+    [store, loading, authenticated, embedded]
   );
 
   if (loading) {
@@ -382,10 +272,10 @@ export function AppAuthProvider({ children }: { children: ReactNode }) {
     );
   }
 
-  if (billingRequired) {
+  if (subscriptionInactive) {
     return (
       <AppAuthContext.Provider value={value}>
-        <BillingGate />
+        <SubscriptionInactivePrompt embedded={embedded} />
       </AppAuthContext.Provider>
     );
   }

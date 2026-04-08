@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState, useCallback } from "react";
-import { Check, CreditCard, Sparkles, Loader2 } from "lucide-react";
+import { Check, CreditCard, ExternalLink, Loader2 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
@@ -31,7 +31,6 @@ export default function BillingPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [billingData, setBillingData] = useState<BillingStatus | null>(null);
-  const [checkoutLoading, setCheckoutLoading] = useState(false);
   const [portalLoading, setPortalLoading] = useState(false);
   const { redirect } = useEmbeddedApp();
 
@@ -52,19 +51,6 @@ export default function BillingPage() {
     fetchBilling();
   }, [fetchBilling]);
 
-  const handleCheckout = async () => {
-    setCheckoutLoading(true);
-    try {
-      const res = await api<{ success: boolean; data: { url: string } }>("/api/billing/checkout", {
-        method: "POST",
-        body: JSON.stringify({}),
-      });
-      redirect(res.data.url);
-    } catch (err) {
-      setError(err instanceof Error ? err.message : "Failed to start checkout");
-      setCheckoutLoading(false);
-    }
-  };
 
   const handlePortal = async () => {
     setPortalLoading(true);
@@ -146,7 +132,7 @@ export default function BillingPage() {
             <CardDescription>
               {isActive
                 ? "Your store is live — Kim is handling your inbox."
-                : "Subscribe to activate Kim for your store."}
+                : "Your subscription looks inactive. Open Shopify billing to reactivate."}
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-5">
@@ -171,9 +157,9 @@ export default function BillingPage() {
                 Manage Billing
               </Button>
             ) : (
-              <Button onClick={handleCheckout} disabled={checkoutLoading}>
-                {checkoutLoading ? <Loader2 className="h-4 w-4 animate-spin mr-1" /> : <Sparkles className="h-4 w-4 mr-1" />}
-                Subscribe — $49/mo
+              <Button variant="outline" onClick={handlePortal} disabled={portalLoading}>
+                {portalLoading ? <Loader2 className="h-4 w-4 animate-spin" /> : <ExternalLink className="h-4 w-4" />}
+                Open Shopify Billing
               </Button>
             )}
           </CardFooter>
