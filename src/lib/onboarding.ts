@@ -1,17 +1,41 @@
-export const onboardingStorageKey = (storeId?: string | null) =>
-  `regardskim.hasSeenOnboarding:${storeId || "unknown"}`;
+export type SetupState = "needsSubscription" | "needsGmail" | "needsPolicies" | "ready";
 
-export function hasSeenOnboarding(storeId?: string | null): boolean {
-  if (typeof window === "undefined") return true;
-  return window.localStorage.getItem(onboardingStorageKey(storeId)) === "true";
-}
+export type OnboardingStepStatus = {
+  complete: boolean;
+  completedAt?: string | null;
+};
 
-export function markOnboardingSeen(storeId?: string | null) {
-  if (typeof window === "undefined") return;
-  window.localStorage.setItem(onboardingStorageKey(storeId), "true");
-}
-
-export function resetOnboardingSeen(storeId?: string | null) {
-  if (typeof window === "undefined") return;
-  window.localStorage.removeItem(onboardingStorageKey(storeId));
-}
+export type OnboardingStatusResponse = {
+  success?: boolean;
+  data?: {
+    storeId?: string | null;
+    setupState?: SetupState;
+    onboardingCompleted?: boolean;
+    onboardingCompletedAt?: string | null;
+    allComplete?: boolean;
+    currentStep?: "subscription" | "connectGmail" | "confirmPolicies" | "complete";
+    steps?: {
+      installApp?: { complete: boolean };
+      subscription?: {
+        complete: boolean;
+        exempt?: boolean;
+        reason?: string | null;
+        status?: string | null;
+        shopifySubscriptionId?: string | null;
+        subscription?: {
+          id?: string | null;
+          status?: string | null;
+          test?: boolean;
+          currentPeriodEnd?: string | null;
+        } | null;
+      };
+      connectGmail?: {
+        complete: boolean;
+        completedAt?: string | null;
+        connectedEmail?: string | null;
+        hasActiveGmailConnection?: boolean;
+      };
+      confirmPolicies?: OnboardingStepStatus;
+    };
+  };
+};

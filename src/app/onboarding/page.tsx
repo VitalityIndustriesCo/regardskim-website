@@ -3,13 +3,15 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Check, ChevronLeft, ChevronRight, Inbox, Lock, Settings2, Store } from "lucide-react";
+import { Check, ChevronLeft, ChevronRight, CreditCard, Inbox, Lock, Settings2, Store } from "lucide-react";
 import { ConfirmPolicies } from "@/components/onboarding/steps/confirm-policies";
 import { ConnectEmail } from "@/components/onboarding/steps/connect-email";
+import { SubscriptionStep } from "@/components/onboarding/steps/subscription-step";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { GmailLogo } from "@/components/ui/gmail-logo";
 import { api } from "@/lib/api";
+import { OnboardingStatusResponse, SetupState } from "@/lib/onboarding";
 import { buildEmbeddedAppPath } from "@/lib/shopify-app-bridge";
 import { cn } from "@/lib/utils";
 
@@ -18,29 +20,6 @@ type WizardState = {
   shippingPolicyUrl: string;
   refundPolicyUrl: string;
   supportName: string;
-};
-
-type OnboardingStatusResponse = {
-  success?: boolean;
-  data?: {
-    storeId?: string | null;
-    onboardingCompleted?: boolean;
-    steps?: {
-      installApp?: { complete: boolean };
-      connectGmail?: {
-        complete: boolean;
-        completedAt?: string | null;
-        connectedEmail?: string | null;
-        hasActiveGmailConnection?: boolean;
-      };
-      confirmPolicies?: {
-        complete: boolean;
-        completedAt?: string | null;
-      };
-    };
-    allComplete?: boolean;
-    currentStep?: "connectGmail" | "confirmPolicies" | "complete";
-  };
 };
 
 type PolicyPrefillResponse = {
@@ -52,10 +31,13 @@ type PolicyPrefillResponse = {
   };
 };
 
-type StepId = "overview" | "connect-email" | "confirm-policies";
+type StepId = "overview" | "subscription" | "connect-email" | "confirm-policies";
 
 type OnboardingStatus = {
   storeId: string | null;
+  setupState: SetupState;
+  subscriptionComplete: boolean;
+  subscriptionExempt: boolean;
   gmailStepComplete: boolean;
   connectedEmail: string | null;
   hasActiveGmailConnection: boolean;
@@ -77,6 +59,9 @@ function OnboardingContent() {
   const [isFinishing, setIsFinishing] = useState(false);
   const [status, setStatus] = useState<OnboardingStatus>({
     storeId: null,
+    setupState: "needsSubscription",
+    subscriptionComplete: false,
+    subscriptionExempt: false,
     gmailStepComplete: false,
     connectedEmail: null,
     hasActiveGmailConnection: false,
@@ -96,6 +81,9 @@ function OnboardingContent() {
 
       const nextStatus: OnboardingStatus = {
         storeId: statusRes?.data?.storeId || null,
+        setupState: statusRes?.data?.setupState || "needsSubscription",
+        subscriptionComplete: Boolean(statusRes?.data?.steps?.subscription?.complete),
+        subscriptionExempt: Boolean(statusRes?.data?.steps?.subscription?.exempt),
         gmailStepComplete: Boolean(statusRes?.data?.steps?.connectGmail?.complete),
         connectedEmail: statusRes?.data?.steps?.connectGmail?.connectedEmail || null,
         hasActiveGmailConnection: Boolean(statusRes?.data?.steps?.connectGmail?.hasActiveGmailConnection),
@@ -123,14 +111,15 @@ function OnboardingContent() {
   }, [refreshStatus]);
 
   const completedCount = useMemo(() => {
-    return [true, status.gmailStepComplete, status.policiesConfirmed].filter(Boolean).length;
-  }, [status.gmailStepComplete, status.policiesConfirmed]);
+    return [true, status.subscriptionComplete, status.gmailStepComplete, status.policiesConfirmed].filter(Boolean).length;
+  }, [status.subscriptionComplete, status.gmailStepComplete, status.policiesConfirmed]);
 
   const currentStepNumber = useMemo(() => {
-    if (!status.gmailStepComplete) return 2;
-    if (!status.policiesConfirmed) return 3;
-    return 4;
-  }, [status.gmailStepComplete, status.policiesConfirmed]);
+    if (!status.subscriptionComplete) return 2;
+    if (!status.gmailStepComplete) return 3;
+    if (!status.policiesConfirmed) return 4;
+    return 5;
+  }, [status.subscriptionComplete, status.gmailStepComplete, status.policiesConfirmed]);
 
   const updatePoliciesForm = useCallback(
     (nextValue: {
@@ -142,10 +131,6 @@ function OnboardingContent() {
     },
     [],
   );
-
-  const openStep = (step: StepId) => {
-    setActiveView(step);
-  };
 
   const completeAndReturn = async () => {
     await refreshStatus();
@@ -175,49 +160,78 @@ function OnboardingContent() {
     },
     {
       number: 2,
-      title: "Connect your email",
-      subtitle: "Connect your Gmail so Kim can read customer emails and draft replies.",
-      icon: GmailLogo,
-      state: status.gmailStepComplete ? ("completed" as const) : currentStepNumber === 2 ? ("active" as const) : ("locked" as const),
-      onClick: currentStepNumber === 2 ? () => openStep("connect-email") : undefined,
-      cta: status.gmailStepComplete ? undefined : "Start",
+      title: "Approve subscription",
+      subtitle: status.subscriptionExempt
+        ? "Development store detected — billing is exempt for this store."
+        : "Approve your Shopify-managed plan before Kim unlocks the inbox.",
+      icon: CreditCard,
+      state: status.subscriptionComplete ? ("completed" as const) : currentStepNumber === 2 ? ("active" as const) : ("locked" as const),
+      onClick: currentStepNumber === 2 ? () => setActiveView("subscription") : undefined,
+      cta: status.subscriptionComplete ? undefined : "Open Shopify",
     },
     {
       number: 3,
-      title: "Confirm your store policies",
-      subtitle: "Add the two policy links Kim should use as source references.",
-      icon: Settings2,
-      state: status.policiesConfirmed ? ("completed" as const) : currentStepNumber === 3 ? ("active" as const) : ("locked" as const),
-      onClick: currentStepNumber === 3 ? () => openStep("confirm-policies") : undefined,
-      cta: status.policiesConfirmed ? undefined : status.gmailStepComplete ? "Continue" : undefined,
+      title: "Connect your email",
+      subtitle: "Connect your Gmail so Kim can read customer emails and draft replies.",
+      icon: GmailLogo,
+      state: status.gmailStepComplete ? ("completed" as const) : currentStepNumber === 3 ? ("active" as const) : ("locked" as const),
+      onClick: currentStepNumber === 3 ? () => setActiveView("connect-email") : undefined,
+      cta: status.gmailStepComplete ? undefined : status.subscriptionComplete ? "Start" : undefined,
     },
     {
       number: 4,
+      title: "Confirm your store policies",
+      subtitle: "Add the two policy links Kim should use as source references.",
+      icon: Settings2,
+      state: status.policiesConfirmed ? ("completed" as const) : currentStepNumber === 4 ? ("active" as const) : ("locked" as const),
+      onClick: currentStepNumber === 4 ? () => setActiveView("confirm-policies") : undefined,
+      cta: status.policiesConfirmed ? undefined : status.gmailStepComplete ? "Continue" : undefined,
+    },
+    {
+      number: 5,
       title: "Go to your inbox",
       subtitle: "See Kim’s drafted replies and start approving them.",
       icon: Inbox,
-      state: currentStepNumber === 4 ? ("active" as const) : ("locked" as const),
-      onClick: currentStepNumber === 4 ? () => void handleFinish() : undefined,
-      cta: currentStepNumber === 4 ? "Open inbox" : undefined,
+      state: currentStepNumber === 5 ? ("active" as const) : ("locked" as const),
+      onClick: currentStepNumber === 5 ? () => void handleFinish() : undefined,
+      cta: currentStepNumber === 5 ? "Open inbox" : undefined,
     },
   ];
 
-  if (activeView === "connect-email") {
+  if (activeView === "subscription") {
     return (
       <main className="min-h-screen bg-[#FFF8F3] px-4 py-8 sm:px-6 lg:px-8">
         <div className="mx-auto flex w-full max-w-4xl flex-col gap-6">
-          <Button
-            type="button"
-            variant="ghost"
-            className="w-fit text-[#1A1A1A] hover:bg-white/70"
-            onClick={() => setActiveView("overview")}
-          >
+          <Button type="button" variant="ghost" className="w-fit text-[#1A1A1A] hover:bg-white/70" onClick={() => setActiveView("overview")}>
             <ChevronLeft className="mr-2 h-4 w-4" />
             Back to overview
           </Button>
 
           <div className="space-y-2">
             <p className="text-sm font-medium uppercase tracking-[0.2em] text-[#1A1A1A]/45">Step 2</p>
+            <h1 className="text-3xl font-semibold tracking-tight text-[#1A1A1A]">Approve your subscription</h1>
+            <p className="max-w-2xl text-sm text-[#1A1A1A]/65">
+              Shopify manages billing approval for RegardsKim. Confirm the plan there, then continue setup here.
+            </p>
+          </div>
+
+          <SubscriptionStep isExempt={status.subscriptionExempt} />
+        </div>
+      </main>
+    );
+  }
+
+  if (activeView === "connect-email") {
+    return (
+      <main className="min-h-screen bg-[#FFF8F3] px-4 py-8 sm:px-6 lg:px-8">
+        <div className="mx-auto flex w-full max-w-4xl flex-col gap-6">
+          <Button type="button" variant="ghost" className="w-fit text-[#1A1A1A] hover:bg-white/70" onClick={() => setActiveView("overview")}>
+            <ChevronLeft className="mr-2 h-4 w-4" />
+            Back to overview
+          </Button>
+
+          <div className="space-y-2">
+            <p className="text-sm font-medium uppercase tracking-[0.2em] text-[#1A1A1A]/45">Step 3</p>
             <h1 className="text-3xl font-semibold tracking-tight text-[#1A1A1A]">Connect your email</h1>
             <p className="max-w-2xl text-sm text-[#1A1A1A]/65">
               Connect your Gmail so Kim can read customer emails and draft replies for approval.
@@ -234,18 +248,13 @@ function OnboardingContent() {
     return (
       <main className="min-h-screen bg-[#FFF8F3] px-4 py-8 sm:px-6 lg:px-8">
         <div className="mx-auto flex w-full max-w-5xl flex-col gap-6">
-          <Button
-            type="button"
-            variant="ghost"
-            className="w-fit text-[#1A1A1A] hover:bg-white/70"
-            onClick={() => setActiveView("overview")}
-          >
+          <Button type="button" variant="ghost" className="w-fit text-[#1A1A1A] hover:bg-white/70" onClick={() => setActiveView("overview")}>
             <ChevronLeft className="mr-2 h-4 w-4" />
             Back to overview
           </Button>
 
           <div className="space-y-2">
-            <p className="text-sm font-medium uppercase tracking-[0.2em] text-[#1A1A1A]/45">Step 3</p>
+            <p className="text-sm font-medium uppercase tracking-[0.2em] text-[#1A1A1A]/45">Step 4</p>
             <h1 className="text-3xl font-semibold tracking-tight text-[#1A1A1A]">Confirm your store policies</h1>
             <p className="max-w-2xl text-sm text-[#1A1A1A]/65">
               Add the two policy links Kim should use as source references, plus the agent name customers will see.
@@ -326,11 +335,9 @@ function OnboardingContent() {
                     <div className="min-w-0 flex-1 space-y-1">
                       <div className="flex flex-wrap items-center gap-2">
                         <h2 className="text-lg font-semibold text-[#1A1A1A]">{step.title}</h2>
-                        {isCompleted && (
-                          <span className="rounded-full bg-emerald-100 px-2.5 py-1 text-xs font-medium text-emerald-700">
-                            Complete
-                          </span>
-                        )}
+                        {isCompleted ? (
+                          <span className="rounded-full bg-emerald-100 px-2.5 py-1 text-xs font-medium text-emerald-700">Complete</span>
+                        ) : null}
                       </div>
                       <p className="text-sm text-[#1A1A1A]/65">{step.subtitle}</p>
                     </div>
@@ -364,21 +371,21 @@ function OnboardingContent() {
         </div>
 
         <div className="flex items-center justify-between rounded-2xl border border-[#1A1A1A]/10 bg-white/70 px-4 py-3 text-sm text-[#1A1A1A]/70">
-          <span>{completedCount} of 4 complete</span>
+          <span>{completedCount} of 5 complete</span>
           {isLoading ? (
             <span>Refreshing status…</span>
+          ) : status.setupState === "needsSubscription" ? (
+            <span>{status.subscriptionExempt ? "Development store exempt" : "Waiting on Shopify plan approval"}</span>
+          ) : status.gmailStepComplete ? (
+            <span>Gmail confirmed</span>
+          ) : status.hasActiveGmailConnection ? (
+            <span>Gmail connected — confirm it in setup</span>
           ) : (
-            <span>
-              {status.gmailStepComplete
-                ? "Gmail confirmed"
-                : status.hasActiveGmailConnection
-                  ? "Gmail connected — confirm it in setup"
-                  : "Waiting on Gmail"}
-            </span>
+            <span>Waiting on Gmail</span>
           )}
         </div>
 
-        {currentStepNumber === 4 ? (
+        {currentStepNumber === 5 ? (
           <div className="rounded-2xl border border-[#E85D3A]/15 bg-white p-5 shadow-sm">
             <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
               <div className="space-y-1">

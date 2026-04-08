@@ -1,10 +1,11 @@
 "use client";
 
 import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { AlertTriangle, ExternalLink, Loader2 } from "lucide-react";
 import { API_URL } from "@/lib/api";
-import { getShopifySessionToken, storeIdToken } from "@/lib/shopify-app-bridge";
+import { OnboardingStatusResponse, SetupState } from "@/lib/onboarding";
+import { buildEmbeddedAppPath, getShopifySessionToken, storeIdToken } from "@/lib/shopify-app-bridge";
 import { useEmbeddedApp } from "@/components/shopify/embedded-app-provider";
 import { Button } from "@/components/ui/button";
 
@@ -55,7 +56,7 @@ function waitForShopifyBridge(timeoutMs = 3000): Promise<boolean> {
   });
 }
 
-async function fetchStoreWithToken(token: string): Promise<{ store: Store | null; subscriptionInactive: boolean }> {
+async function fetchStoreWithToken(token: string): Promise<Store | null> {
   const res = await fetch(`${API_URL}/api/store`, {
     headers: {
       Authorization: `Bearer ${token}`,
@@ -63,19 +64,15 @@ async function fetchStoreWithToken(token: string): Promise<{ store: Store | null
     },
   });
 
-  if (res.status === 402) {
-    return { store: { id: "subscription-inactive" } as Store, subscriptionInactive: true };
-  }
-
   if (!res.ok) {
     throw new Error(`AUTH_FAILED_${res.status}`);
   }
 
   const body = (await res.json()) as { data?: Store };
-  return { store: body.data || null, subscriptionInactive: false };
+  return body.data || null;
 }
 
-async function fetchOnboardingStatusWithToken(token: string): Promise<{ onboardingCompleted: boolean }> {
+async function fetchOnboardingStatusWithToken(token: string): Promise<{ setupState: SetupState; onboardingCompleted: boolean }> {
   const res = await fetch(`${API_URL}/api/onboarding/status`, {
     headers: {
       Authorization: `Bearer ${token}`,
@@ -87,32 +84,11 @@ async function fetchOnboardingStatusWithToken(token: string): Promise<{ onboardi
     throw new Error(`ONBOARDING_STATUS_FAILED_${res.status}`);
   }
 
-  const body = (await res.json()) as { data?: { onboardingCompleted?: boolean } };
-  return { onboardingCompleted: Boolean(body.data?.onboardingCompleted) };
-}
-
-function SubscriptionInactivePrompt({ embedded }: { embedded: boolean }) {
-  return (
-    <div className="mx-auto flex min-h-[70vh] w-full max-w-2xl flex-col items-center justify-center px-6 text-center">
-      <div className="mb-4 rounded-full bg-destructive/10 p-3 text-destructive">
-        <AlertTriangle className="h-6 w-6" />
-      </div>
-      <h2 className="text-2xl font-semibold tracking-tight">Subscription inactive</h2>
-      <p className="mt-2 text-sm text-muted-foreground">
-        We couldn't verify an active Shopify subscription for this store. Please open billing in Shopify Admin and confirm your app subscription.
-      </p>
-      <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
-        {embedded ? (
-          <Button asChild>
-            <a href="https://admin.shopify.com/store" target="_top" rel="noreferrer noopener">
-              Open Shopify Admin
-              <ExternalLink className="ml-2 h-4 w-4" />
-            </a>
-          </Button>
-        ) : null}
-      </div>
-    </div>
-  );
+  const body = (await res.json()) as OnboardingStatusResponse;
+  return {
+    setupState: body.data?.setupState || "needsSubscription",
+    onboardingCompleted: Boolean(body.data?.onboardingCompleted),
+  };
 }
 
 function InstallPrompt({ embedded }: { embedded: boolean }) {
@@ -144,33 +120,25 @@ function InstallPrompt({ embedded }: { embedded: boolean }) {
 export function AppAuthProvider({ children }: { children: ReactNode }) {
   const { embedded } = useEmbeddedApp();
   const router = useRouter();
+  const pathname = usePathname();
   const [store, setStore] = useState<Store | null>(null);
   const [loading, setLoading] = useState(true);
   const [authenticated, setAuthenticated] = useState(false);
-  const [subscriptionInactive, setSubscriptionInactive] = useState(false);
-  const [showOnboarding, setShowOnboarding] = useState(false);
+  const [setupState, setSetupState] = useState<SetupState>("needsSubscription");
 
   useEffect(() => {
     let active = true;
 
     async function tryAuthWithToken(token: string): Promise<boolean> {
-      const result = await fetchStoreWithToken(token);
+      const nextStore = await fetchStoreWithToken(token);
       if (!active) return false;
-
-      setStore(result.store);
-      setAuthenticated(true);
-
-      if (result.subscriptionInactive) {
-        setSubscriptionInactive(true);
-        setShowOnboarding(false);
-        return true;
-      }
 
       const onboarding = await fetchOnboardingStatusWithToken(token);
       if (!active) return false;
 
-      setSubscriptionInactive(false);
-      setShowOnboarding(!onboarding.onboardingCompleted);
+      setStore(nextStore);
+      setAuthenticated(true);
+      setSetupState(onboarding.setupState);
       return true;
     }
 
@@ -200,27 +168,15 @@ export function AppAuthProvider({ children }: { children: ReactNode }) {
               }
             }
           }
-
-          if (!active) return;
-          setAuthenticated(false);
-          setStore(null);
-          setSubscriptionInactive(false);
-          setShowOnboarding(false);
-          return;
         }
 
-        // Non-embedded: not supported. Middleware should have redirected away.
         if (!active) return;
         setAuthenticated(false);
         setStore(null);
-        setSubscriptionInactive(false);
-        setShowOnboarding(false);
       } catch {
         if (!active) return;
         setAuthenticated(false);
         setStore(null);
-        setSubscriptionInactive(false);
-        setShowOnboarding(false);
       } finally {
         if (active) {
           setLoading(false);
@@ -237,11 +193,11 @@ export function AppAuthProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     const onOnboardingCompleted = () => {
-      setShowOnboarding(false);
+      setSetupState("ready");
     };
 
     const onOnboardingRestart = () => {
-      setShowOnboarding(true);
+      setSetupState("needsSubscription");
     };
 
     window.addEventListener("app:onboarding-completed", onOnboardingCompleted);
@@ -253,14 +209,21 @@ export function AppAuthProvider({ children }: { children: ReactNode }) {
   }, []);
 
   useEffect(() => {
-    if (showOnboarding) {
-      router.replace("/onboarding");
+    if (!authenticated || loading) return;
+
+    if (setupState !== "ready" && pathname !== "/onboarding") {
+      router.replace(buildEmbeddedAppPath("/onboarding"));
+      return;
     }
-  }, [router, showOnboarding]);
+
+    if (setupState === "ready" && pathname === "/onboarding") {
+      router.replace(buildEmbeddedAppPath("/inbox"));
+    }
+  }, [authenticated, loading, pathname, router, setupState]);
 
   const value = useMemo<AppAuthContextValue>(
-    () => ({ store, loading, authenticated, embedded, billingRequired: false }),
-    [store, loading, authenticated, embedded]
+    () => ({ store, loading, authenticated, embedded, billingRequired: setupState === "needsSubscription" }),
+    [store, loading, authenticated, embedded, setupState],
   );
 
   if (loading) {
@@ -280,20 +243,12 @@ export function AppAuthProvider({ children }: { children: ReactNode }) {
     );
   }
 
-  if (subscriptionInactive) {
-    return (
-      <AppAuthContext.Provider value={value}>
-        <SubscriptionInactivePrompt embedded={embedded} />
-      </AppAuthContext.Provider>
-    );
-  }
-
-  if (showOnboarding) {
+  if (setupState !== "ready" && pathname !== "/onboarding") {
     return (
       <AppAuthContext.Provider value={value}>
         <div className="flex min-h-[70vh] items-center justify-center text-sm text-muted-foreground">
           <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-          Opening onboarding…
+          Opening setup…
         </div>
       </AppAuthContext.Provider>
     );

@@ -24,7 +24,7 @@ const STANDARD_FEATURES = [
 interface BillingStatus {
   plan: { id: string; name: string; features: string[] };
   usage: { currentMonthEmails: number; emailLimit: number | null; remainingEmails: number | null; billingCycleStart: string };
-  subscription: { shopifySubscriptionId: string | null; status: string; active: boolean };
+  subscription: { shopifySubscriptionId: string | null; status: string; active: boolean; exempt?: boolean; exemptReason?: string | null };
 }
 
 export default function BillingPage() {
@@ -65,7 +65,7 @@ export default function BillingPage() {
     }
   };
 
-  const isActive = billingData?.plan?.id === "standard";
+  const isActive = Boolean(billingData?.subscription?.active);
   const usage = billingData?.usage;
 
   if (loading) {
@@ -130,9 +130,11 @@ export default function BillingPage() {
               )}
             </div>
             <CardDescription>
-              {isActive
-                ? "Your store is live — Kim is handling your inbox."
-                : "Your subscription looks inactive. Open Shopify billing to reactivate."}
+              {billingData.subscription.exempt
+                ? "This development store is billing-exempt, so Kim is unlocked without a paid subscription."
+                : isActive
+                  ? "Your store is live — Kim is handling your inbox."
+                  : "Your subscription looks inactive. Open Shopify billing to reactivate."}
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-5">
