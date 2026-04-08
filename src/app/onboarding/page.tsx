@@ -169,7 +169,7 @@ function OnboardingContent() {
   useEffect(() => {
     if (typeof window === "undefined") return;
     if (isLoading) return;
-    if (status.subscriptionExempt || gatedProgress.subscriptionComplete) return;
+    if (gatedProgress.subscriptionComplete) return;
     if (status.setupState !== "needsSubscription") return;
     if (billingCanceled || billingError) return;
 
