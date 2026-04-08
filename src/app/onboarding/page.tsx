@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { GmailLogo } from "@/components/ui/gmail-logo";
 import { api } from "@/lib/api";
+import { buildEmbeddedAppPath } from "@/lib/shopify-app-bridge";
 import { cn } from "@/lib/utils";
 
 type WizardState = {
@@ -156,7 +157,7 @@ function OnboardingContent() {
     try {
       await api("/api/onboarding/complete", { method: "POST" });
       window.dispatchEvent(new CustomEvent("app:onboarding-completed"));
-      router.push("/inbox");
+      router.push(buildEmbeddedAppPath("/inbox"));
     } finally {
       setIsFinishing(false);
     }

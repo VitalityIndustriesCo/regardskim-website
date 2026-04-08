@@ -32,6 +32,29 @@ export function getEmbeddedHost(): string | null {
   return window.sessionStorage.getItem(HOST_STORAGE_KEY);
 }
 
+export function buildEmbeddedAppPath(path: string): string {
+  if (typeof window === "undefined") return path;
+
+  const url = new URL(path, window.location.origin);
+  const currentParams = new URLSearchParams(window.location.search);
+  const host = getEmbeddedHost();
+
+  if (host && !url.searchParams.has("host")) {
+    url.searchParams.set("host", host);
+  }
+
+  if (currentParams.get("embedded") === "1" && !url.searchParams.has("embedded")) {
+    url.searchParams.set("embedded", "1");
+  }
+
+  const shop = currentParams.get("shop");
+  if (shop && !url.searchParams.has("shop")) {
+    url.searchParams.set("shop", shop);
+  }
+
+  return `${url.pathname}${url.search}${url.hash}`;
+}
+
 export function isShopifyEmbedded(): boolean {
   if (typeof window === "undefined") return false;
 
@@ -161,6 +184,6 @@ export function redirectToRemote(url: string, newContext = true) {
  */
 export function redirectToAppPath(path: string) {
   if (typeof window !== "undefined") {
-    window.history.pushState(null, "", path);
+    window.history.pushState(null, "", buildEmbeddedAppPath(path));
   }
 }

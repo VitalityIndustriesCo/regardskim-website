@@ -4,6 +4,7 @@ import Link, { type LinkProps } from "next/link";
 import { useRouter } from "next/navigation";
 import { type MouseEvent, type ReactNode } from "react";
 import { useEmbeddedApp } from "@/components/shopify/embedded-app-provider";
+import { buildEmbeddedAppPath } from "@/lib/shopify-app-bridge";
 
 type AppLinkProps = LinkProps & {
   children: ReactNode;
@@ -15,6 +16,7 @@ export function AppLink({ children, href, className, onClick, ...props }: AppLin
   const router = useRouter();
   const { embedded, navigate } = useEmbeddedApp();
   const hrefString = typeof href === "string" ? href : href.pathname || "/";
+  const destination = embedded ? buildEmbeddedAppPath(hrefString) : hrefString;
 
   const handleClick = (event: MouseEvent<HTMLAnchorElement>) => {
     onClick?.();
@@ -24,12 +26,12 @@ export function AppLink({ children, href, className, onClick, ...props }: AppLin
     }
 
     event.preventDefault();
-    navigate(hrefString);
-    router.push(hrefString);
+    navigate(destination);
+    router.push(destination);
   };
 
   return (
-    <Link {...props} href={href} className={className} onClick={handleClick}>
+    <Link {...props} href={destination} className={className} onClick={handleClick}>
       {children}
     </Link>
   );
