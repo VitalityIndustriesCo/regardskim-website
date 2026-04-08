@@ -58,6 +58,10 @@ export async function api<T = unknown>(
     throw new ApiError(401, "Unauthorized");
   }
 
+  if (res.status === 402 && typeof window !== "undefined") {
+    window.dispatchEvent(new CustomEvent("app:billing-required"));
+  }
+
   if (!res.ok) {
     const body = await res.text();
     throw new ApiError(res.status, body || "Request failed");
