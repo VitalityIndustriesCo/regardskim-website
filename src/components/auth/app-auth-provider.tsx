@@ -240,6 +240,23 @@ export function AppAuthProvider({ children }: { children: ReactNode }) {
         return true;
       }
 
+      // Auth succeeded — now check billing status
+      try {
+        const hasActiveSub = await fetchBillingStatusWithToken(token);
+        if (!hasActiveSub) {
+          setStore(result.store);
+          setAuthenticated(true);
+          setBillingRequired(true);
+          return true;
+        }
+      } catch {
+        // Billing check failed — show billing gate to be safe
+        setStore(result.store);
+        setAuthenticated(true);
+        setBillingRequired(true);
+        return true;
+      }
+
       setStore(result.store);
       setAuthenticated(true);
       setBillingRequired(false);
