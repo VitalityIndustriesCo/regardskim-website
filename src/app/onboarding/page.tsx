@@ -144,16 +144,6 @@ function OnboardingContent() {
     void refreshStatus();
   }, [refreshStatus]);
 
-  useEffect(() => {
-    const gmailResult = searchParams.get("gmail");
-    const email = searchParams.get("email");
-
-    if (gmailResult === "success" || email) {
-      void refreshStatus();
-      setActiveView("overview");
-    }
-  }, [refreshStatus, searchParams]);
-
   const isEmailStepComplete = useMemo(() => {
     return status.gmailConnected && emailConfirmed;
   }, [emailConfirmed, status.gmailConnected]);
@@ -195,6 +185,17 @@ function OnboardingContent() {
     },
     [status.storeId]
   );
+
+  useEffect(() => {
+    const gmailResult = searchParams.get("gmail");
+    const email = searchParams.get("email");
+
+    if (gmailResult === "success" || email) {
+      markEmailConfirmed(true);
+      void refreshStatus();
+      setActiveView("overview");
+    }
+  }, [markEmailConfirmed, refreshStatus, searchParams]);
 
   const completeAndReturn = async () => {
     await refreshStatus();
@@ -268,13 +269,7 @@ function OnboardingContent() {
             </p>
           </div>
 
-          <ConnectEmail
-            onConnected={(supportEmail) => {
-              setState((current) => ({ ...current, supportEmail }));
-              markEmailConfirmed(true);
-              void completeAndReturn();
-            }}
-          />
+          <ConnectEmail storeId={status.storeId} />
         </div>
       </main>
     );

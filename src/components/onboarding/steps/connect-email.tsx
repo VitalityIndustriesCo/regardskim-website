@@ -2,56 +2,30 @@
 
 import { useState } from "react";
 import { Loader2 } from "lucide-react";
-import { api, ApiError } from "@/lib/api";
+import { API_URL } from "@/lib/api";
+import { redirectToRemote } from "@/lib/shopify-app-bridge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { GmailLogo } from "@/components/ui/gmail-logo";
 
-type EmailConnection = {
-  connected: boolean;
-  email?: string;
-  authUrl?: string;
-};
-
 type ConnectEmailProps = {
-  onConnected: (email: string) => void;
+  storeId: string | null;
 };
 
-export function ConnectEmail({ onConnected }: ConnectEmailProps) {
+export function ConnectEmail({ storeId }: ConnectEmailProps) {
   const [error, setError] = useState<string | null>(null);
   const [isGmailLoading, setIsGmailLoading] = useState(false);
 
-  const handleGmailConnect = async () => {
+  const handleGmailConnect = () => {
+    if (!storeId) {
+      setError("Store not loaded yet. Please wait a moment and try again.");
+      return;
+    }
+
     setIsGmailLoading(true);
     setError(null);
 
-    try {
-      const response = await api<EmailConnection>("/api/onboarding/email/gmail", {
-        method: "POST",
-      });
-
-      if (response.authUrl && typeof window !== "undefined") {
-        window.location.href = response.authUrl;
-        return;
-      }
-
-      if (response.connected && response.email) {
-        onConnected(response.email);
-        return;
-      }
-
-      throw new Error("Gmail connection did not return the expected inbox details.");
-    } catch (err) {
-      if (err instanceof ApiError) {
-        setError(err.message || "Couldn't connect Gmail right now.");
-      } else if (err instanceof Error) {
-        setError(err.message);
-      } else {
-        setError("Couldn't connect Gmail right now.");
-      }
-    } finally {
-      setIsGmailLoading(false);
-    }
+    redirectToRemote(`${API_URL}/auth/gmail/connect?storeId=${encodeURIComponent(storeId)}`, false);
   };
 
   return (
