@@ -12,13 +12,7 @@ export function ShopifyLogo({ className = "w-8 h-8" }: { className?: string }) {
 
 export function GmailLogo({ className = "w-8 h-8" }: { className?: string }) {
   return (
-    <svg className={className} viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-      <path fill="#4caf50" d="M45,16.2l-5,2.75l-5,4.75L35,40h7c1.657,0,3-1.343,3-3V16.2z"/>
-      <path fill="#1e88e5" d="M3,16.2l3.614,1.71L13,23.7V40H6c-1.657,0-3-1.343-3-3V16.2z"/>
-      <path fill="#e53935" d="M35,11.2L24,19.45L13,11.2V8c0-1.657,1.343-3,3-3h16c1.657,0,3,1.343,3,3V11.2z"/>
-      <path fill="#c62828" d="M3,12.298V16.2l10,7.5V11.2L9.876,8.859C8.47,7.89,6.58,7.672,4.934,8.459C3.665,9.063,3,10.282,3,12.298z"/>
-      <path fill="#fbc02d" d="M45,12.298V16.2l-10,7.5V11.2l3.124-2.341C39.53,7.89,41.42,7.672,43.066,8.459C44.335,9.063,45,10.282,45,12.298z"/>
-    </svg>
+    <img src="/gmail-logo.png" alt="Gmail" className={className} />
   );
 }
 
