@@ -23,12 +23,15 @@ type PolicyFormState = {
 };
 
 type PolicyPrefillResponse = {
-  refundWindowDays?: number;
-  processingTime?: string;
-  returnAddress?: string;
-  signature?: string;
-  supportName?: string;
-  policies?: ShopifyPolicyCard[];
+  success?: boolean;
+  data?: {
+    refundWindowDays?: number;
+    processingTime?: string;
+    returnAddress?: string;
+    signature?: string;
+    supportName?: string;
+    policies?: ShopifyPolicyCard[];
+  };
 };
 
 type ConfirmPoliciesProps = {
@@ -62,14 +65,14 @@ export function ConfirmPolicies({
         const response = await api<PolicyPrefillResponse>("/api/onboarding/policies");
 
         onChange({
-          refundWindowDays: String(response.refundWindowDays ?? value.refundWindowDays ?? 30),
-          processingTime: response.processingTime ?? value.processingTime,
-          returnAddress: response.returnAddress ?? value.returnAddress,
-          signature: response.signature ?? value.signature,
-          supportName: response.supportName ?? value.supportName,
+          refundWindowDays: String(response.data?.refundWindowDays ?? value.refundWindowDays ?? 30),
+          processingTime: response.data?.processingTime ?? value.processingTime,
+          returnAddress: response.data?.returnAddress ?? value.returnAddress,
+          signature: response.data?.signature ?? value.signature,
+          supportName: response.data?.supportName ?? value.supportName,
         });
 
-        onPoliciesLoaded(response.policies ?? []);
+        onPoliciesLoaded(response.data?.policies ?? []);
         setHasLoaded(true);
       } catch (err) {
         setHasLoaded(true);

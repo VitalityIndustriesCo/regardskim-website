@@ -3,9 +3,8 @@
 import { usePathname } from "next/navigation";
 import { AppLink } from "@/components/shopify/app-link";
 import { useEmbeddedApp } from "@/components/shopify/embedded-app-provider";
-import { useAppAuth } from "@/components/auth/app-auth-provider";
 import { BarChart3, CreditCard, Inbox, Link2, Settings } from "lucide-react";
-import { resetOnboardingSeen } from "@/lib/onboarding";
+import { api } from "@/lib/api";
 import { cn } from "@/lib/utils";
 
 export const navItems = [
@@ -22,10 +21,8 @@ type SidebarNavProps = {
 
 function SidebarNav({ onNavigate }: SidebarNavProps) {
   const pathname = usePathname();
-  const { store } = useAppAuth();
-
-  const handleResetGuide = () => {
-    resetOnboardingSeen((store?.id as string | null | undefined) || null);
+  const handleResetGuide = async () => {
+    await api("/api/onboarding/reset", { method: "POST" });
     window.dispatchEvent(new CustomEvent("app:onboarding-restart"));
     onNavigate?.();
   };
@@ -55,7 +52,7 @@ function SidebarNav({ onNavigate }: SidebarNavProps) {
 
       <button
         type="button"
-        onClick={handleResetGuide}
+        onClick={() => void handleResetGuide()}
         className="mt-3 w-full rounded-lg border border-sidebar-foreground/20 px-3 py-2 text-left text-sm font-medium text-sidebar-foreground/80 transition-colors hover:bg-sidebar-accent hover:text-sidebar-accent-foreground"
       >
         Setup guide

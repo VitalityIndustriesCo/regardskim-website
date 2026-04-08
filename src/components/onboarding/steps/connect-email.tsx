@@ -25,7 +25,10 @@ export function ConnectEmail({ storeId }: ConnectEmailProps) {
     setIsGmailLoading(true);
     setError(null);
 
-    redirectToRemote(`${API_URL}/auth/gmail/connect?storeId=${encodeURIComponent(storeId)}`, false);
+    redirectToRemote(
+      `${API_URL}/auth/gmail/connect?storeId=${encodeURIComponent(storeId)}&context=onboarding`,
+      false,
+    );
   };
 
   return (

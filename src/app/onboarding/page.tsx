@@ -1,8 +1,8 @@
 "use client";
 
-import { Suspense, useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { Check, ChevronLeft, ChevronRight, Inbox, Lock, Settings2, Store } from "lucide-react";
 import { ConfirmPolicies } from "@/components/onboarding/steps/confirm-policies";
 import { ConnectEmail } from "@/components/onboarding/steps/connect-email";
@@ -10,7 +10,6 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { GmailLogo } from "@/components/ui/gmail-logo";
 import { api } from "@/lib/api";
-import { markOnboardingSeen } from "@/lib/onboarding";
 import { cn } from "@/lib/utils";
 
 type WizardState = {
@@ -23,28 +22,38 @@ type WizardState = {
   policies: Array<{ title: string; content: string }>;
 };
 
-type GmailStatusResponse = {
+type OnboardingStatusResponse = {
   success?: boolean;
   data?: {
-    connected: boolean;
-    email?: string;
-    expired: boolean;
+    storeId?: string | null;
+    onboardingCompleted?: boolean;
+    steps?: {
+      installApp?: { complete: boolean };
+      connectGmail?: {
+        complete: boolean;
+        completedAt?: string | null;
+        connectedEmail?: string | null;
+        hasActiveGmailConnection?: boolean;
+      };
+      confirmPolicies?: {
+        complete: boolean;
+        completedAt?: string | null;
+      };
+    };
+    allComplete?: boolean;
+    currentStep?: "connectGmail" | "confirmPolicies" | "complete";
   };
 };
 
 type PolicyPrefillResponse = {
-  refundWindowDays?: number;
-  processingTime?: string;
-  returnAddress?: string;
-  signature?: string;
-  supportName?: string;
-  policies?: Array<{ title: string; content: string }>;
-};
-
-type StoreResponse = {
   success?: boolean;
   data?: {
-    id?: string;
+    refundWindowDays?: number;
+    processingTime?: string;
+    returnAddress?: string;
+    signature?: string;
+    supportName?: string;
+    policies?: Array<{ title: string; content: string }>;
   };
 };
 
@@ -52,16 +61,12 @@ type StepId = "overview" | "connect-email" | "confirm-policies";
 
 type OnboardingStatus = {
   storeId: string | null;
-  gmailConnected: boolean;
+  gmailStepComplete: boolean;
   connectedEmail: string | null;
+  hasActiveGmailConnection: boolean;
   policiesConfirmed: boolean;
+  onboardingCompleted: boolean;
 };
-
-const EMAIL_CONFIRMED_STORAGE_KEY = "onboarding:email-confirmed";
-
-function getEmailConfirmedStorageKey(storeId: string | null) {
-  return storeId ? `${EMAIL_CONFIRMED_STORAGE_KEY}:${storeId}` : EMAIL_CONFIRMED_STORAGE_KEY;
-}
 
 const initialState: WizardState = {
   supportEmail: null,
@@ -73,68 +78,49 @@ const initialState: WizardState = {
   policies: [],
 };
 
-function isPoliciesConfirmed(response: PolicyPrefillResponse | null) {
-  if (!response) return false;
-
-  return Boolean(
-    String(response.processingTime || "").trim() &&
-      String(response.supportName || "").trim() &&
-      String(response.signature || "").trim()
-  );
-}
-
 function OnboardingContent() {
   const router = useRouter();
-  const searchParams = useSearchParams();
   const [activeView, setActiveView] = useState<StepId>("overview");
   const [isLoading, setIsLoading] = useState(true);
+  const [isFinishing, setIsFinishing] = useState(false);
   const [status, setStatus] = useState<OnboardingStatus>({
     storeId: null,
-    gmailConnected: false,
+    gmailStepComplete: false,
     connectedEmail: null,
+    hasActiveGmailConnection: false,
     policiesConfirmed: false,
+    onboardingCompleted: false,
   });
   const [state, setState] = useState<WizardState>(initialState);
-  const [emailConfirmed, setEmailConfirmed] = useState(false);
 
   const refreshStatus = useCallback(async () => {
     setIsLoading(true);
 
     try {
-      const [storeRes, gmailRes, policyRes] = await Promise.all([
-        api<StoreResponse>("/api/store").catch(() => null),
-        api<GmailStatusResponse>("/api/gmail/status").catch(() => null),
+      const [statusRes, policyRes] = await Promise.all([
+        api<OnboardingStatusResponse>("/api/onboarding/status"),
         api<PolicyPrefillResponse>("/api/onboarding/policies").catch(() => null),
       ]);
 
-      const gmailConnected = Boolean(gmailRes?.data?.connected && !gmailRes?.data?.expired);
-      const connectedEmail = gmailRes?.data?.email || null;
-      const policiesConfirmed = isPoliciesConfirmed(policyRes);
-
-      const storeId = storeRes?.data?.id || null;
-      const nextStatus = {
-        storeId,
-        gmailConnected,
-        connectedEmail,
-        policiesConfirmed,
+      const nextStatus: OnboardingStatus = {
+        storeId: statusRes?.data?.storeId || null,
+        gmailStepComplete: Boolean(statusRes?.data?.steps?.connectGmail?.complete),
+        connectedEmail: statusRes?.data?.steps?.connectGmail?.connectedEmail || null,
+        hasActiveGmailConnection: Boolean(statusRes?.data?.steps?.connectGmail?.hasActiveGmailConnection),
+        policiesConfirmed: Boolean(statusRes?.data?.steps?.confirmPolicies?.complete),
+        onboardingCompleted: Boolean(statusRes?.data?.onboardingCompleted),
       };
 
       setStatus(nextStatus);
-
-      if (typeof window !== "undefined") {
-        const storedEmailConfirmed = window.sessionStorage.getItem(getEmailConfirmedStorageKey(storeId)) === "true";
-        setEmailConfirmed(storedEmailConfirmed);
-      }
-
       setState((current) => ({
         ...current,
-        supportEmail: connectedEmail || current.supportEmail,
-        refundWindowDays: String(policyRes?.refundWindowDays ?? current.refundWindowDays ?? 30),
-        processingTime: policyRes?.processingTime ?? current.processingTime,
-        returnAddress: policyRes?.returnAddress ?? current.returnAddress,
-        signature: policyRes?.signature ?? current.signature,
-        supportName: policyRes?.supportName ?? current.supportName,
-        policies: policyRes?.policies ?? current.policies,
+        supportEmail: nextStatus.connectedEmail || current.supportEmail,
+        refundWindowDays: String(policyRes?.data?.refundWindowDays ?? current.refundWindowDays ?? 30),
+        processingTime: policyRes?.data?.processingTime ?? current.processingTime,
+        returnAddress: policyRes?.data?.returnAddress ?? current.returnAddress,
+        signature: policyRes?.data?.signature ?? current.signature,
+        supportName: policyRes?.data?.supportName ?? current.supportName,
+        policies: policyRes?.data?.policies ?? current.policies,
       }));
 
       return nextStatus;
@@ -147,19 +133,15 @@ function OnboardingContent() {
     void refreshStatus();
   }, [refreshStatus]);
 
-  const isEmailStepComplete = useMemo(() => {
-    return status.gmailConnected && emailConfirmed;
-  }, [emailConfirmed, status.gmailConnected]);
-
   const completedCount = useMemo(() => {
-    return [true, isEmailStepComplete, status.policiesConfirmed].filter(Boolean).length;
-  }, [isEmailStepComplete, status.policiesConfirmed]);
+    return [true, status.gmailStepComplete, status.policiesConfirmed].filter(Boolean).length;
+  }, [status.gmailStepComplete, status.policiesConfirmed]);
 
   const currentStepNumber = useMemo(() => {
-    if (!isEmailStepComplete) return 2;
+    if (!status.gmailStepComplete) return 2;
     if (!status.policiesConfirmed) return 3;
     return 4;
-  }, [isEmailStepComplete, status.policiesConfirmed]);
+  }, [status.gmailStepComplete, status.policiesConfirmed]);
 
   const updatePoliciesForm = useCallback(
     (nextValue: {
@@ -171,59 +153,27 @@ function OnboardingContent() {
     }) => {
       setState((current) => ({ ...current, ...nextValue }));
     },
-    []
+    [],
   );
 
   const openStep = (step: StepId) => {
     setActiveView(step);
   };
 
-  useEffect(() => {
-    const gmailResult = searchParams.get("gmail");
-    const email = searchParams.get("email");
-
-    if (gmailResult !== "success" && !email) {
-      return;
-    }
-
-    let cancelled = false;
-
-    const handleGmailCallback = async () => {
-      const nextStatus = await refreshStatus();
-
-      if (cancelled) return;
-
-      const confirmedStoreId = nextStatus?.storeId ?? status.storeId;
-
-      if (typeof window !== "undefined") {
-        if (confirmedStoreId) {
-          window.sessionStorage.setItem(getEmailConfirmedStorageKey(confirmedStoreId), "true");
-        }
-
-        window.sessionStorage.setItem(getEmailConfirmedStorageKey(null), "true");
-        window.history.replaceState({}, "", "/onboarding");
-      }
-
-      setEmailConfirmed(true);
-      setActiveView("overview");
-    };
-
-    void handleGmailCallback();
-
-    return () => {
-      cancelled = true;
-    };
-  }, [refreshStatus, searchParams, status.storeId]);
-
   const completeAndReturn = async () => {
     await refreshStatus();
     setActiveView("overview");
   };
 
-  const handleFinish = () => {
-    markOnboardingSeen(status.storeId);
-    window.dispatchEvent(new CustomEvent("app:onboarding-completed"));
-    router.push("/inbox");
+  const handleFinish = async () => {
+    setIsFinishing(true);
+    try {
+      await api("/api/onboarding/complete", { method: "POST" });
+      window.dispatchEvent(new CustomEvent("app:onboarding-completed"));
+      router.push("/inbox");
+    } finally {
+      setIsFinishing(false);
+    }
   };
 
   const steps = [
@@ -241,9 +191,9 @@ function OnboardingContent() {
       title: "Connect your email",
       subtitle: "Connect your Gmail so Kim can read customer emails and draft replies.",
       icon: GmailLogo,
-      state: isEmailStepComplete ? ("completed" as const) : currentStepNumber === 2 ? ("active" as const) : ("locked" as const),
+      state: status.gmailStepComplete ? ("completed" as const) : currentStepNumber === 2 ? ("active" as const) : ("locked" as const),
       onClick: currentStepNumber === 2 ? () => openStep("connect-email") : undefined,
-      cta: isEmailStepComplete ? undefined : "Start",
+      cta: status.gmailStepComplete ? undefined : "Start",
     },
     {
       number: 3,
@@ -252,7 +202,7 @@ function OnboardingContent() {
       icon: Settings2,
       state: status.policiesConfirmed ? ("completed" as const) : currentStepNumber === 3 ? ("active" as const) : ("locked" as const),
       onClick: currentStepNumber === 3 ? () => openStep("confirm-policies") : undefined,
-      cta: status.policiesConfirmed ? undefined : isEmailStepComplete ? "Continue" : undefined,
+      cta: status.policiesConfirmed ? undefined : status.gmailStepComplete ? "Continue" : undefined,
     },
     {
       number: 4,
@@ -260,7 +210,7 @@ function OnboardingContent() {
       subtitle: "See Kim’s drafted replies and start approving them.",
       icon: Inbox,
       state: currentStepNumber === 4 ? ("active" as const) : ("locked" as const),
-      onClick: currentStepNumber === 4 ? handleFinish : undefined,
+      onClick: currentStepNumber === 4 ? () => void handleFinish() : undefined,
       cta: currentStepNumber === 4 ? "Open inbox" : undefined,
     },
   ];
@@ -367,7 +317,7 @@ function OnboardingContent() {
                   : {})}
                 className={cn(
                   "block w-full text-left transition-transform duration-150",
-                  step.onClick ? "cursor-pointer hover:-translate-y-0.5" : "cursor-default"
+                  step.onClick ? "cursor-pointer hover:-translate-y-0.5" : "cursor-default",
                 )}
               >
                 <Card
@@ -375,7 +325,7 @@ function OnboardingContent() {
                     "border bg-white py-0 shadow-sm transition-colors",
                     isCompleted && "border-emerald-500/25 bg-emerald-50/70",
                     isActive && "border-[#E85D3A]/25 ring-1 ring-[#E85D3A]/10",
-                    isLocked && "border-[#1A1A1A]/10 opacity-60"
+                    isLocked && "border-[#1A1A1A]/10 opacity-60",
                   )}
                 >
                   <CardContent className="flex items-center gap-4 p-4 sm:gap-5 sm:p-5">
@@ -384,7 +334,7 @@ function OnboardingContent() {
                         "flex h-12 w-12 shrink-0 items-center justify-center rounded-full text-base font-semibold text-white",
                         isCompleted && "bg-emerald-500",
                         isActive && "bg-[#E85D3A]",
-                        isLocked && "bg-[#D9D3CD] text-[#6B675F]"
+                        isLocked && "bg-[#D9D3CD] text-[#6B675F]",
                       )}
                     >
                       {isCompleted ? <Check className="h-5 w-5" /> : isLocked ? <Lock className="h-4 w-4" /> : step.number}
@@ -407,7 +357,7 @@ function OnboardingContent() {
                         <span
                           className={cn(
                             "inline-flex items-center rounded-full px-3 py-1.5 text-sm font-medium",
-                            isActive ? "bg-[#E85D3A] text-white" : "bg-[#1A1A1A]/6 text-[#1A1A1A]/60"
+                            isActive ? "bg-[#E85D3A] text-white" : "bg-[#1A1A1A]/6 text-[#1A1A1A]/60",
                           )}
                         >
                           {step.cta}
@@ -436,10 +386,10 @@ function OnboardingContent() {
             <span>Refreshing status…</span>
           ) : (
             <span>
-              {isEmailStepComplete
+              {status.gmailStepComplete
                 ? "Gmail confirmed"
-                : status.gmailConnected
-                  ? "Waiting on email confirmation"
+                : status.hasActiveGmailConnection
+                  ? "Gmail connected — confirm it in setup"
                   : "Waiting on Gmail"}
             </span>
           )}
@@ -454,16 +404,15 @@ function OnboardingContent() {
                   Open your inbox to review Kim’s drafted replies and start approving them.
                 </p>
               </div>
-              <Button className="bg-[#E85D3A] text-white hover:bg-[#d34f2f]" onClick={handleFinish}>
-                Go to inbox
+              <Button className="bg-[#E85D3A] text-white hover:bg-[#d34f2f]" onClick={() => void handleFinish()} disabled={isFinishing}>
+                {isFinishing ? "Opening…" : "Go to inbox"}
               </Button>
             </div>
           </div>
         ) : null}
 
         <p className="text-center text-xs text-[#1A1A1A]/45">
-          Need to adjust something later? You can always update settings from your app once setup is done.
-          {" "}
+          Need to adjust something later? You can always update settings from your app once setup is done.{" "}
           <Link href="/settings" className="underline underline-offset-4">
             Open settings
           </Link>
@@ -475,9 +424,5 @@ function OnboardingContent() {
 }
 
 export default function OnboardingPage() {
-  return (
-    <Suspense fallback={<div className="flex items-center justify-center py-24 text-muted-foreground">Loading…</div>}>
-      <OnboardingContent />
-    </Suspense>
-  );
+  return <OnboardingContent />;
 }

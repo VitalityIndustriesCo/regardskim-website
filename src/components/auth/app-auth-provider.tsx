@@ -4,7 +4,6 @@ import { createContext, useContext, useEffect, useMemo, useState, type ReactNode
 import { useRouter } from "next/navigation";
 import { AlertTriangle, ExternalLink, Loader2 } from "lucide-react";
 import { API_URL } from "@/lib/api";
-import { hasSeenOnboarding } from "@/lib/onboarding";
 import { getShopifySessionToken, storeIdToken } from "@/lib/shopify-app-bridge";
 import { useEmbeddedApp } from "@/components/shopify/embedded-app-provider";
 import { Button } from "@/components/ui/button";
@@ -74,6 +73,22 @@ async function fetchStoreWithToken(token: string): Promise<{ store: Store | null
 
   const body = (await res.json()) as { data?: Store };
   return { store: body.data || null, subscriptionInactive: false };
+}
+
+async function fetchOnboardingStatusWithToken(token: string): Promise<{ onboardingCompleted: boolean }> {
+  const res = await fetch(`${API_URL}/api/onboarding/status`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+      "Content-Type": "application/json",
+    },
+  });
+
+  if (!res.ok) {
+    throw new Error(`ONBOARDING_STATUS_FAILED_${res.status}`);
+  }
+
+  const body = (await res.json()) as { data?: { onboardingCompleted?: boolean } };
+  return { onboardingCompleted: Boolean(body.data?.onboardingCompleted) };
 }
 
 function SubscriptionInactivePrompt({ embedded }: { embedded: boolean }) {
@@ -151,8 +166,11 @@ export function AppAuthProvider({ children }: { children: ReactNode }) {
         return true;
       }
 
+      const onboarding = await fetchOnboardingStatusWithToken(token);
+      if (!active) return false;
+
       setSubscriptionInactive(false);
-      setShowOnboarding(!hasSeenOnboarding(result.store?.id as string | null | undefined));
+      setShowOnboarding(!onboarding.onboardingCompleted);
       return true;
     }
 
