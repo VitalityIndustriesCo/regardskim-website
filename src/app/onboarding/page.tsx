@@ -14,12 +14,9 @@ import { cn } from "@/lib/utils";
 
 type WizardState = {
   supportEmail: string | null;
-  refundWindowDays: string;
-  processingTime: string;
-  returnAddress: string;
-  signature: string;
+  shippingPolicyUrl: string;
+  refundPolicyUrl: string;
   supportName: string;
-  policies: Array<{ title: string; content: string }>;
 };
 
 type OnboardingStatusResponse = {
@@ -48,12 +45,9 @@ type OnboardingStatusResponse = {
 type PolicyPrefillResponse = {
   success?: boolean;
   data?: {
-    refundWindowDays?: number;
-    processingTime?: string;
-    returnAddress?: string;
-    signature?: string;
+    shippingPolicyUrl?: string | null;
+    refundPolicyUrl?: string | null;
     supportName?: string;
-    policies?: Array<{ title: string; content: string }>;
   };
 };
 
@@ -70,12 +64,9 @@ type OnboardingStatus = {
 
 const initialState: WizardState = {
   supportEmail: null,
-  refundWindowDays: "30",
-  processingTime: "1-2 business days",
-  returnAddress: "",
-  signature: "Kind regards,\nKim",
+  shippingPolicyUrl: "",
+  refundPolicyUrl: "",
   supportName: "Kim",
-  policies: [],
 };
 
 function OnboardingContent() {
@@ -115,12 +106,9 @@ function OnboardingContent() {
       setState((current) => ({
         ...current,
         supportEmail: nextStatus.connectedEmail || current.supportEmail,
-        refundWindowDays: String(policyRes?.data?.refundWindowDays ?? current.refundWindowDays ?? 30),
-        processingTime: policyRes?.data?.processingTime ?? current.processingTime,
-        returnAddress: policyRes?.data?.returnAddress ?? current.returnAddress,
-        signature: policyRes?.data?.signature ?? current.signature,
+        shippingPolicyUrl: policyRes?.data?.shippingPolicyUrl ?? current.shippingPolicyUrl,
+        refundPolicyUrl: policyRes?.data?.refundPolicyUrl ?? current.refundPolicyUrl,
         supportName: policyRes?.data?.supportName ?? current.supportName,
-        policies: policyRes?.data?.policies ?? current.policies,
       }));
 
       return nextStatus;
@@ -145,10 +133,8 @@ function OnboardingContent() {
 
   const updatePoliciesForm = useCallback(
     (nextValue: {
-      refundWindowDays: string;
-      processingTime: string;
-      returnAddress: string;
-      signature: string;
+      shippingPolicyUrl: string;
+      refundPolicyUrl: string;
       supportName: string;
     }) => {
       setState((current) => ({ ...current, ...nextValue }));
@@ -198,7 +184,7 @@ function OnboardingContent() {
     {
       number: 3,
       title: "Confirm your store policies",
-      subtitle: "Review your shipping times, return policy, and reply settings.",
+      subtitle: "Add the two policy links Kim should use as source references.",
       icon: Settings2,
       state: status.policiesConfirmed ? ("completed" as const) : currentStepNumber === 3 ? ("active" as const) : ("locked" as const),
       onClick: currentStepNumber === 3 ? () => openStep("confirm-policies") : undefined,
@@ -261,21 +247,17 @@ function OnboardingContent() {
             <p className="text-sm font-medium uppercase tracking-[0.2em] text-[#1A1A1A]/45">Step 3</p>
             <h1 className="text-3xl font-semibold tracking-tight text-[#1A1A1A]">Confirm your store policies</h1>
             <p className="max-w-2xl text-sm text-[#1A1A1A]/65">
-              Review the core details Kim uses when drafting replies so customers get accurate answers.
+              Add the two policy links Kim should use as source references, plus the agent name customers will see.
             </p>
           </div>
 
           <ConfirmPolicies
             value={{
-              refundWindowDays: state.refundWindowDays,
-              processingTime: state.processingTime,
-              returnAddress: state.returnAddress,
-              signature: state.signature,
+              shippingPolicyUrl: state.shippingPolicyUrl,
+              refundPolicyUrl: state.refundPolicyUrl,
               supportName: state.supportName,
             }}
-            policies={state.policies}
             onChange={updatePoliciesForm}
-            onPoliciesLoaded={(policies) => setState((current) => ({ ...current, policies }))}
             onConfirmed={() => {
               void completeAndReturn();
             }}

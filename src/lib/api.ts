@@ -1,4 +1,4 @@
-import { getShopifySessionToken } from "@/lib/shopify-app-bridge";
+import { getShopifySessionToken, getStoredIdToken } from "@/lib/shopify-app-bridge";
 
 export const API_URL =
   process.env.NEXT_PUBLIC_API_URL ||
@@ -11,7 +11,8 @@ export class ApiError extends Error {
 }
 
 export async function getAuthHeaders(
-  headers: Record<string, string> = {}
+  headers: Record<string, string> = {},
+  forceFresh = false,
 ): Promise<Record<string, string>> {
   const nextHeaders = { ...headers };
 
@@ -19,8 +20,12 @@ export async function getAuthHeaders(
     return nextHeaders;
   }
 
-  // Only embedded Shopify sessions are supported
-  const sessionToken = await getShopifySessionToken();
+  const sessionToken = forceFresh
+    ? (typeof window !== "undefined" && window.shopify
+        ? await window.shopify.idToken().catch(() => getStoredIdToken())
+        : getStoredIdToken())
+    : await getShopifySessionToken();
+
   if (sessionToken) {
     nextHeaders.Authorization = `Bearer ${sessionToken}`;
   }
@@ -37,15 +42,21 @@ export async function api<T = unknown>(
     ...(options.headers as Record<string, string>),
   };
 
-  const res = await fetch(`${API_URL}${path}`, {
-    ...options,
-    headers: await getAuthHeaders(headers),
-  });
+  const doFetch = async (forceFreshAuth = false) =>
+    fetch(`${API_URL}${path}`, {
+      ...options,
+      headers: await getAuthHeaders(headers, forceFreshAuth),
+    });
+
+  let res = await doFetch();
+
+  if (res.status === 401) {
+    res = await doFetch(true);
+  }
 
   if (res.status === 401) {
     throw new ApiError(401, "Unauthorized");
   }
-
 
   if (!res.ok) {
     const body = await res.text();

@@ -67,13 +67,17 @@ export async function getShopifySessionToken(): Promise<string | null> {
   // Try App Bridge first
   if (window.shopify) {
     try {
-      return await window.shopify.idToken();
+      const token = await window.shopify.idToken();
+      if (token) {
+        storeIdToken(token);
+        return token;
+      }
     } catch {
       // Fall through to stored token
     }
   }
 
-  // Fall back to stored id_token from URL
+  // Fall back to stored id_token from URL / last successful App Bridge token
   return getStoredIdToken();
 }
 
