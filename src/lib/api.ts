@@ -4,9 +4,21 @@ import {
   waitForShopifySessionToken,
 } from "@/lib/shopify-app-bridge";
 
-export const API_URL =
+const RAW_API_URL =
   process.env.NEXT_PUBLIC_API_URL ||
   "https://regardskim-app-production.up.railway.app";
+
+export const API_URL = RAW_API_URL
+  .trim()
+  .replace(/\/+$/, "")
+  // Guard against accidentally setting NEXT_PUBLIC_API_URL with a trailing /api
+  // (which would otherwise generate /api/api/... paths and 404s).
+  .replace(/\/api$/i, "");
+
+export function buildApiUrl(path: string): string {
+  const normalizedPath = path.startsWith("/") ? path : `/${path}`;
+  return `${API_URL}${normalizedPath}`;
+}
 
 export class ApiError extends Error {
   constructor(public status: number, message: string) {
@@ -46,7 +58,7 @@ export async function api<T = unknown>(
 
   const doFetch = async (forceFreshAuth = false) => {
     try {
-      return await fetch(`${API_URL}${path}`, {
+      return await fetch(buildApiUrl(path), {
         ...options,
         headers: await getAuthHeaders(headers, forceFreshAuth),
       });

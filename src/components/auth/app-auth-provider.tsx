@@ -3,7 +3,7 @@
 import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { AlertTriangle, ExternalLink, Loader2 } from "lucide-react";
-import { API_URL } from "@/lib/api";
+import { buildApiUrl } from "@/lib/api";
 import { OnboardingStatusResponse, SetupState } from "@/lib/onboarding";
 import { buildEmbeddedAppPath, getShopifySessionToken, storeIdToken } from "@/lib/shopify-app-bridge";
 import { useEmbeddedApp } from "@/components/shopify/embedded-app-provider";
@@ -57,7 +57,7 @@ function waitForShopifyBridge(timeoutMs = 3000): Promise<boolean> {
 }
 
 async function fetchStoreWithToken(token: string): Promise<Store | null> {
-  const res = await fetch(`${API_URL}/api/store`, {
+  const res = await fetch(buildApiUrl("/api/store"), {
     headers: {
       Authorization: `Bearer ${token}`,
       "Content-Type": "application/json",
@@ -73,7 +73,7 @@ async function fetchStoreWithToken(token: string): Promise<Store | null> {
 }
 
 async function fetchOnboardingStatusWithToken(token: string): Promise<{ setupState: SetupState; onboardingCompleted: boolean }> {
-  const res = await fetch(`${API_URL}/api/onboarding/status`, {
+  const res = await fetch(buildApiUrl("/api/onboarding/status"), {
     headers: {
       Authorization: `Bearer ${token}`,
       "Content-Type": "application/json",
