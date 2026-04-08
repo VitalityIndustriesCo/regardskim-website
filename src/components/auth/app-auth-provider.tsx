@@ -4,7 +4,7 @@ import { createContext, useContext, useEffect, useMemo, useState, type ReactNode
 import { AlertTriangle, Check, ExternalLink, Loader2, Sparkles } from "lucide-react";
 import { API_URL, getAuthHeaders } from "@/lib/api";
 import { hasSeenOnboarding } from "@/lib/onboarding";
-import { getShopifySessionToken } from "@/lib/shopify-app-bridge";
+import { getShopifySessionToken, storeIdToken } from "@/lib/shopify-app-bridge";
 import { useEmbeddedApp } from "@/components/shopify/embedded-app-provider";
 import { Button } from "@/components/ui/button";
 import { OnboardingGuide } from "@/components/onboarding/onboarding-guide";
@@ -272,6 +272,7 @@ export function AppAuthProvider({ children }: { children: ReactNode }) {
           const params = new URLSearchParams(window.location.search);
           const urlIdToken = params.get("id_token");
           if (urlIdToken) {
+            storeIdToken(urlIdToken);
             try {
               if (await tryAuthWithToken(urlIdToken)) return;
             } catch {

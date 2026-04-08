@@ -12,6 +12,7 @@ declare global {
 }
 
 const HOST_STORAGE_KEY = "shopify-host";
+const ID_TOKEN_STORAGE_KEY = "shopify-id-token";
 
 function readHostFromUrl(): string | null {
   if (typeof window === "undefined") return null;
@@ -49,14 +50,31 @@ export function isShopifyEmbedded(): boolean {
  * The CDN script at https://cdn.shopify.com/shopifycloud/app-bridge.js
  * injects window.shopify automatically when the app is embedded.
  */
-export async function getShopifySessionToken(): Promise<string | null> {
-  if (typeof window === "undefined" || !window.shopify) return null;
-
-  try {
-    return await window.shopify.idToken();
-  } catch {
-    return null;
+export function storeIdToken(token: string) {
+  if (typeof window !== "undefined") {
+    window.sessionStorage.setItem(ID_TOKEN_STORAGE_KEY, token);
   }
+}
+
+export function getStoredIdToken(): string | null {
+  if (typeof window === "undefined") return null;
+  return window.sessionStorage.getItem(ID_TOKEN_STORAGE_KEY);
+}
+
+export async function getShopifySessionToken(): Promise<string | null> {
+  if (typeof window === "undefined") return null;
+
+  // Try App Bridge first
+  if (window.shopify) {
+    try {
+      return await window.shopify.idToken();
+    } catch {
+      // Fall through to stored token
+    }
+  }
+
+  // Fall back to stored id_token from URL
+  return getStoredIdToken();
 }
 
 /**
