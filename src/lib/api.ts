@@ -42,11 +42,23 @@ export async function api<T = unknown>(
     ...(options.headers as Record<string, string>),
   };
 
-  const doFetch = async (forceFreshAuth = false) =>
-    fetch(`${API_URL}${path}`, {
-      ...options,
-      headers: await getAuthHeaders(headers, forceFreshAuth),
-    });
+  const doFetch = async (forceFreshAuth = false) => {
+    try {
+      return await fetch(`${API_URL}${path}`, {
+        ...options,
+        headers: await getAuthHeaders(headers, forceFreshAuth),
+      });
+    } catch (error) {
+      if (error instanceof ApiError) {
+        throw error;
+      }
+
+      throw new ApiError(
+        0,
+        "We couldn’t reach RegardsKim right now. Please try again in a moment.",
+      );
+    }
+  };
 
   let res = await doFetch();
 
