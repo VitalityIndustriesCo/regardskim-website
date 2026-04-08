@@ -57,6 +57,12 @@ type OnboardingStatus = {
   policiesConfirmed: boolean;
 };
 
+const EMAIL_CONFIRMED_STORAGE_KEY = "onboarding:email-confirmed";
+
+function getEmailConfirmedStorageKey(storeId: string | null) {
+  return storeId ? `${EMAIL_CONFIRMED_STORAGE_KEY}:${storeId}` : EMAIL_CONFIRMED_STORAGE_KEY;
+}
+
 const initialState: WizardState = {
   supportEmail: null,
   refundWindowDays: "30",
@@ -89,6 +95,7 @@ function OnboardingContent() {
     policiesConfirmed: false,
   });
   const [state, setState] = useState<WizardState>(initialState);
+  const [emailConfirmed, setEmailConfirmed] = useState(false);
 
   const refreshStatus = useCallback(async () => {
     setIsLoading(true);
@@ -104,12 +111,19 @@ function OnboardingContent() {
       const connectedEmail = gmailRes?.data?.email || null;
       const policiesConfirmed = isPoliciesConfirmed(policyRes);
 
+      const storeId = storeRes?.data?.id || null;
+
       setStatus({
-        storeId: storeRes?.data?.id || null,
+        storeId,
         gmailConnected,
         connectedEmail,
         policiesConfirmed,
       });
+
+      if (typeof window !== "undefined") {
+        const storedEmailConfirmed = window.sessionStorage.getItem(getEmailConfirmedStorageKey(storeId)) === "true";
+        setEmailConfirmed(storedEmailConfirmed);
+      }
 
       setState((current) => ({
         ...current,
@@ -140,15 +154,19 @@ function OnboardingContent() {
     }
   }, [refreshStatus, searchParams]);
 
+  const isEmailStepComplete = useMemo(() => {
+    return status.gmailConnected && emailConfirmed;
+  }, [emailConfirmed, status.gmailConnected]);
+
   const completedCount = useMemo(() => {
-    return [true, status.gmailConnected, status.policiesConfirmed].filter(Boolean).length;
-  }, [status.gmailConnected, status.policiesConfirmed]);
+    return [true, isEmailStepComplete, status.policiesConfirmed].filter(Boolean).length;
+  }, [isEmailStepComplete, status.policiesConfirmed]);
 
   const currentStepNumber = useMemo(() => {
-    if (!status.gmailConnected) return 2;
+    if (!isEmailStepComplete) return 2;
     if (!status.policiesConfirmed) return 3;
     return 4;
-  }, [status.gmailConnected, status.policiesConfirmed]);
+  }, [isEmailStepComplete, status.policiesConfirmed]);
 
   const updatePoliciesForm = useCallback(
     (nextValue: {
@@ -166,6 +184,17 @@ function OnboardingContent() {
   const openStep = (step: StepId) => {
     setActiveView(step);
   };
+
+  const markEmailConfirmed = useCallback(
+    (confirmed: boolean) => {
+      if (typeof window !== "undefined") {
+        window.sessionStorage.setItem(getEmailConfirmedStorageKey(status.storeId), String(confirmed));
+      }
+
+      setEmailConfirmed(confirmed);
+    },
+    [status.storeId]
+  );
 
   const completeAndReturn = async () => {
     await refreshStatus();
@@ -193,9 +222,9 @@ function OnboardingContent() {
       title: "Connect your email",
       subtitle: "Connect your Gmail so Kim can read customer emails and draft replies.",
       icon: GmailLogo,
-      state: status.gmailConnected ? ("completed" as const) : currentStepNumber === 2 ? ("active" as const) : ("locked" as const),
+      state: isEmailStepComplete ? ("completed" as const) : currentStepNumber === 2 ? ("active" as const) : ("locked" as const),
       onClick: currentStepNumber === 2 ? () => openStep("connect-email") : undefined,
-      cta: status.gmailConnected ? undefined : "Start",
+      cta: isEmailStepComplete ? undefined : "Start",
     },
     {
       number: 3,
@@ -204,7 +233,7 @@ function OnboardingContent() {
       icon: Settings2,
       state: status.policiesConfirmed ? ("completed" as const) : currentStepNumber === 3 ? ("active" as const) : ("locked" as const),
       onClick: currentStepNumber === 3 ? () => openStep("confirm-policies") : undefined,
-      cta: status.policiesConfirmed ? undefined : status.gmailConnected ? "Continue" : undefined,
+      cta: status.policiesConfirmed ? undefined : isEmailStepComplete ? "Continue" : undefined,
     },
     {
       number: 4,
@@ -243,7 +272,13 @@ function OnboardingContent() {
             connectedEmail={status.connectedEmail}
             onConnected={(supportEmail) => {
               setState((current) => ({ ...current, supportEmail }));
+              markEmailConfirmed(true);
               void completeAndReturn();
+            }}
+            onConfirmExisting={(supportEmail) => {
+              setState((current) => ({ ...current, supportEmail }));
+              markEmailConfirmed(true);
+              setActiveView("overview");
             }}
           />
         </div>
@@ -390,7 +425,17 @@ function OnboardingContent() {
 
         <div className="flex items-center justify-between rounded-2xl border border-[#1A1A1A]/10 bg-white/70 px-4 py-3 text-sm text-[#1A1A1A]/70">
           <span>{completedCount} of 4 complete</span>
-          {isLoading ? <span>Refreshing status…</span> : <span>{status.gmailConnected ? "Gmail connected" : "Waiting on Gmail"}</span>}
+          {isLoading ? (
+            <span>Refreshing status…</span>
+          ) : (
+            <span>
+              {isEmailStepComplete
+                ? "Gmail confirmed"
+                : status.gmailConnected
+                  ? "Waiting on email confirmation"
+                  : "Waiting on Gmail"}
+            </span>
+          )}
         </div>
 
         {currentStepNumber === 4 ? (

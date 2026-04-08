@@ -16,9 +16,10 @@ type EmailConnection = {
 type ConnectEmailProps = {
   connectedEmail?: string | null;
   onConnected: (email: string) => void;
+  onConfirmExisting: (email: string) => void;
 };
 
-export function ConnectEmail({ connectedEmail, onConnected }: ConnectEmailProps) {
+export function ConnectEmail({ connectedEmail, onConnected, onConfirmExisting }: ConnectEmailProps) {
   const [error, setError] = useState<string | null>(null);
   const [isGmailLoading, setIsGmailLoading] = useState(false);
 
@@ -84,16 +85,40 @@ export function ConnectEmail({ connectedEmail, onConnected }: ConnectEmailProps)
                 </p>
               </div>
 
-              <Button
-                type="button"
-                onClick={handleGmailConnect}
-                disabled={isGmailLoading || isConnected}
-                size="lg"
-                className="w-full bg-[#E85D3A] text-white hover:bg-[#d34f2f] sm:w-auto"
-              >
-                {isGmailLoading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <GmailLogo className="mr-2" />}
-                {isConnected ? "Inbox connected" : "Connect Gmail"}
-              </Button>
+              {isConnected ? (
+                <div className="flex w-full flex-col gap-2 sm:w-auto sm:flex-row">
+                  <Button
+                    type="button"
+                    onClick={() => connectedEmail && onConfirmExisting(connectedEmail)}
+                    size="lg"
+                    className="w-full bg-[#E85D3A] text-white hover:bg-[#d34f2f] sm:w-auto"
+                  >
+                    Keep this email
+                  </Button>
+                  <Button
+                    type="button"
+                    variant="outline"
+                    onClick={handleGmailConnect}
+                    disabled={isGmailLoading}
+                    size="lg"
+                    className="w-full sm:w-auto"
+                  >
+                    {isGmailLoading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <GmailLogo className="mr-2" />}
+                    Connect a different Gmail
+                  </Button>
+                </div>
+              ) : (
+                <Button
+                  type="button"
+                  onClick={handleGmailConnect}
+                  disabled={isGmailLoading}
+                  size="lg"
+                  className="w-full bg-[#E85D3A] text-white hover:bg-[#d34f2f] sm:w-auto"
+                >
+                  {isGmailLoading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <GmailLogo className="mr-2" />}
+                  Connect Gmail
+                </Button>
+              )}
             </div>
           </div>
 
@@ -105,10 +130,12 @@ export function ConnectEmail({ connectedEmail, onConnected }: ConnectEmailProps)
                   Inbox status
                 </p>
                 <p className="text-lg font-semibold text-[#1A1A1A]">
-                  {connectedEmail ? `Kim is now monitoring ${connectedEmail}` : "No Gmail account connected yet"}
+                  {connectedEmail ? `Currently connected: ${connectedEmail}` : "No Gmail account connected yet"}
                 </p>
                 <p className="text-sm text-[#1A1A1A]/65">
-                  Once connected, customer emails will start flowing into your inbox view.
+                  {connectedEmail
+                    ? "Confirm this Gmail to continue, or connect a different one for support."
+                    : "Once connected, customer emails will start flowing into your inbox view."}
                 </p>
               </div>
             </CardContent>
