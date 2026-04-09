@@ -196,6 +196,9 @@ export function AppAuthProvider({ children }: { children: ReactNode }) {
           setBillingRedirectPending(false);
         } else if (checkout.planSelectionUrl) {
           window.open(checkout.planSelectionUrl, "_top");
+          // Keep loading state — page is navigating away to Shopify billing
+          // Return a promise that never resolves to prevent falling through
+          await new Promise(() => {});
           return false;
         } else {
           throw new Error("BILLING_CHECKOUT_MISSING_PLAN_SELECTION_URL");
