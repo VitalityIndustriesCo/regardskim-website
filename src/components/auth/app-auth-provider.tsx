@@ -3,9 +3,9 @@
 import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { AlertTriangle, ExternalLink, Loader2 } from "lucide-react";
-import { buildApiUrl } from "@/lib/api";
+import { api, ApiError } from "@/lib/api";
 import { OnboardingStatusResponse, SetupState } from "@/lib/onboarding";
-import { buildEmbeddedAppPath, getShopifySessionToken, storeIdToken } from "@/lib/shopify-app-bridge";
+import { buildEmbeddedAppPath } from "@/lib/shopify-app-bridge";
 import { useEmbeddedApp } from "@/components/shopify/embedded-app-provider";
 import { Button } from "@/components/ui/button";
 
@@ -55,41 +55,6 @@ function waitForShopifyBridge(timeoutMs = 3000): Promise<boolean> {
   });
 }
 
-async function fetchStoreWithToken(token: string): Promise<Store | null> {
-  const res = await fetch(buildApiUrl("/api/store"), {
-    headers: {
-      Authorization: `Bearer ${token}`,
-      "Content-Type": "application/json",
-    },
-  });
-
-  if (!res.ok) {
-    throw new Error(`AUTH_FAILED_${res.status}`);
-  }
-
-  const body = (await res.json()) as { data?: Store };
-  return body.data || null;
-}
-
-async function fetchOnboardingStatusWithToken(token: string): Promise<{ setupState: SetupState; onboardingCompleted: boolean }> {
-  const res = await fetch(buildApiUrl("/api/onboarding/status"), {
-    headers: {
-      Authorization: `Bearer ${token}`,
-      "Content-Type": "application/json",
-    },
-  });
-
-  if (!res.ok) {
-    throw new Error(`ONBOARDING_STATUS_FAILED_${res.status}`);
-  }
-
-  const body = (await res.json()) as OnboardingStatusResponse;
-  return {
-    setupState: body.data?.setupState || "needsGmail",
-    onboardingCompleted: Boolean(body.data?.onboardingCompleted),
-  };
-}
-
 function InstallPrompt({ embedded }: { embedded: boolean }) {
   return (
     <div className="mx-auto flex min-h-[70vh] w-full max-w-2xl flex-col items-center justify-center px-6 text-center">
@@ -128,16 +93,16 @@ export function AppAuthProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     let active = true;
 
-    async function tryAuthWithToken(token: string): Promise<boolean> {
-      const nextStore = await fetchStoreWithToken(token);
+    async function tryAuth(): Promise<boolean> {
+      const storeResponse = await api<{ data?: Store }>("/api/store");
       if (!active) return false;
 
-      const onboarding = await fetchOnboardingStatusWithToken(token);
+      const onboardingResponse = await api<OnboardingStatusResponse>("/api/onboarding/status");
       if (!active) return false;
 
-      setStore(nextStore);
+      setStore(storeResponse.data || null);
       setAuthenticated(true);
-      setSetupState(onboarding.setupState);
+      setSetupState(onboardingResponse.data?.setupState || "needsGmail");
       return true;
     }
 
@@ -145,37 +110,25 @@ export function AppAuthProvider({ children }: { children: ReactNode }) {
       setLoading(true);
       try {
         if (embedded) {
-          const params = new URLSearchParams(window.location.search);
-          const urlIdToken = params.get("id_token");
-          if (urlIdToken) {
-            storeIdToken(urlIdToken);
-            try {
-              if (await tryAuthWithToken(urlIdToken)) return;
-            } catch {
-              // URL token failed, fall through to App Bridge
-            }
-          }
-
           const bridgeReady = await waitForShopifyBridge(5000);
           if (bridgeReady && window.shopify) {
-            const sessionToken = await getShopifySessionToken();
-            if (sessionToken) {
-              try {
-                if (await tryAuthWithToken(sessionToken)) return;
-              } catch {
-                // Session token auth failed too
-              }
-            }
+            if (await tryAuth()) return;
           }
         }
 
         if (!active) return;
         setAuthenticated(false);
         setStore(null);
-      } catch {
+      } catch (error) {
         if (!active) return;
-        setAuthenticated(false);
-        setStore(null);
+
+        if (error instanceof ApiError && error.status === 401) {
+          setAuthenticated(false);
+          setStore(null);
+        } else {
+          setAuthenticated(false);
+          setStore(null);
+        }
       } finally {
         if (active) {
           setLoading(false);
