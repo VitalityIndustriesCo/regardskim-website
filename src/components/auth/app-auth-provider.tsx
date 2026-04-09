@@ -21,7 +21,6 @@ type AppAuthContextValue = {
   loading: boolean;
   authenticated: boolean;
   embedded: boolean;
-
 };
 
 const AppAuthContext = createContext<AppAuthContextValue>({
@@ -91,6 +90,56 @@ async function fetchOnboardingStatusWithToken(token: string): Promise<{ setupSta
   };
 }
 
+type BillingStatusResponse = {
+  data?: {
+    subscription?: {
+      active?: boolean;
+      exempt?: boolean;
+    };
+  };
+};
+
+type BillingCheckoutResponse = {
+  success?: boolean;
+  active?: boolean;
+  confirmationUrl?: string;
+};
+
+async function fetchBillingStatusWithToken(token: string): Promise<{ active: boolean; exempt: boolean }> {
+  const res = await fetch(buildApiUrl("/api/billing/status"), {
+    headers: {
+      Authorization: `Bearer ${token}`,
+      "Content-Type": "application/json",
+    },
+  });
+
+  if (!res.ok) {
+    throw new Error(`BILLING_STATUS_FAILED_${res.status}`);
+  }
+
+  const body = (await res.json()) as BillingStatusResponse;
+  return {
+    active: Boolean(body.data?.subscription?.active),
+    exempt: Boolean(body.data?.subscription?.exempt),
+  };
+}
+
+async function createBillingCheckoutWithToken(token: string): Promise<BillingCheckoutResponse> {
+  const res = await fetch(buildApiUrl("/api/billing/checkout"), {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${token}`,
+      "Content-Type": "application/json",
+    },
+  });
+
+  if (!res.ok) {
+    throw new Error(`BILLING_CHECKOUT_FAILED_${res.status}`);
+  }
+
+  return (await res.json()) as BillingCheckoutResponse;
+}
+
 function InstallPrompt({ embedded }: { embedded: boolean }) {
   return (
     <div className="mx-auto flex min-h-[70vh] w-full max-w-2xl flex-col items-center justify-center px-6 text-center">
@@ -125,6 +174,7 @@ export function AppAuthProvider({ children }: { children: ReactNode }) {
   const [loading, setLoading] = useState(true);
   const [authenticated, setAuthenticated] = useState(false);
   const [setupState, setSetupState] = useState<SetupState>("needsGmail");
+  const [billingRedirectPending, setBillingRedirectPending] = useState(false);
 
   useEffect(() => {
     let active = true;
@@ -133,12 +183,32 @@ export function AppAuthProvider({ children }: { children: ReactNode }) {
       const nextStore = await fetchStoreWithToken(token);
       if (!active) return false;
 
+      const billing = await fetchBillingStatusWithToken(token);
+      if (!active) return false;
+
+      if (!billing.active && !billing.exempt) {
+        setBillingRedirectPending(true);
+
+        const checkout = await createBillingCheckoutWithToken(token);
+        if (!active) return false;
+
+        if (checkout.active) {
+          setBillingRedirectPending(false);
+        } else if (checkout.confirmationUrl) {
+          window.open(checkout.confirmationUrl, "_top");
+          return false;
+        } else {
+          throw new Error("BILLING_CHECKOUT_MISSING_CONFIRMATION_URL");
+        }
+      }
+
       const onboarding = await fetchOnboardingStatusWithToken(token);
       if (!active) return false;
 
       setStore(nextStore);
       setAuthenticated(true);
       setSetupState(onboarding.setupState);
+      setBillingRedirectPending(false);
       return true;
     }
 
@@ -230,7 +300,7 @@ export function AppAuthProvider({ children }: { children: ReactNode }) {
     return (
       <div className="flex min-h-[70vh] items-center justify-center text-sm text-muted-foreground">
         <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-        Verifying session…
+        {billingRedirectPending ? "Opening Shopify billing approval…" : "Verifying session…"}
       </div>
     );
   }
