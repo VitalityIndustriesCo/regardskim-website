@@ -2,6 +2,7 @@ import Script from "next/script";
 import { AppAuthProvider } from "@/components/auth/app-auth-provider";
 import { DashboardShell } from "@/components/layout/dashboard-shell";
 import { EmbeddedAppProvider } from "@/components/shopify/embedded-app-provider";
+import { ShopifyAppNav } from "@/components/shopify/app-nav";
 
 export default function DashboardLayout({
   children,
@@ -14,6 +15,7 @@ export default function DashboardLayout({
       <Script src="https://cdn.shopify.com/shopifycloud/app-bridge.js" strategy="beforeInteractive" />
       <EmbeddedAppProvider>
         <AppAuthProvider>
+          <ShopifyAppNav />
           <DashboardShell>{children}</DashboardShell>
         </AppAuthProvider>
       </EmbeddedAppProvider>
