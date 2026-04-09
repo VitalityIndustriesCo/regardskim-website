@@ -4,10 +4,8 @@ import { useEffect, useRef } from "react";
 
 const NAV_ITEMS = [
   { href: "/inbox", label: "Inbox" },
-  { href: "/analytics", label: "Analytics" },
-  { href: "/settings", label: "Settings" },
-  { href: "/connections", label: "Connections" },
-  { href: "/billing", label: "Billing" },
+  { href: "/settings", label: "Setup" },
+  { href: "/billing", label: "Subscription" },
 ];
 
 export function ShopifyAppNav() {
