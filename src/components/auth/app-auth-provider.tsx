@@ -102,7 +102,7 @@ type BillingStatusResponse = {
 type BillingCheckoutResponse = {
   success?: boolean;
   active?: boolean;
-  confirmationUrl?: string;
+  planSelectionUrl?: string;
 };
 
 async function fetchBillingStatusWithToken(token: string): Promise<{ active: boolean; exempt: boolean }> {
@@ -194,11 +194,11 @@ export function AppAuthProvider({ children }: { children: ReactNode }) {
 
         if (checkout.active) {
           setBillingRedirectPending(false);
-        } else if (checkout.confirmationUrl) {
-          window.open(checkout.confirmationUrl, "_top");
+        } else if (checkout.planSelectionUrl) {
+          window.open(checkout.planSelectionUrl, "_top");
           return false;
         } else {
-          throw new Error("BILLING_CHECKOUT_MISSING_CONFIRMATION_URL");
+          throw new Error("BILLING_CHECKOUT_MISSING_PLAN_SELECTION_URL");
         }
       }
 
