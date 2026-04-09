@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import localFont from "next/font/local";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import { Toaster } from "sonner";
@@ -32,7 +33,11 @@ export default function RootLayout({
       lang="en"
       className={`${plusJakarta.variable} h-full scroll-smooth antialiased`}
     >
+      <head>
+        <meta name="shopify-api-key" content="327e4daf19a338e5b04707172c2b39bc" />
+      </head>
       <body className={cn("min-h-full font-sans", plusJakarta.className, geistMono.variable)}>
+        <Script src="https://cdn.shopify.com/shopifycloud/app-bridge.js" strategy="beforeInteractive" />
         {children}
         <Toaster richColors />
       </body>

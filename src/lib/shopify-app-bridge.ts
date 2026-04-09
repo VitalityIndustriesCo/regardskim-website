@@ -13,6 +13,7 @@ declare global {
 
 const HOST_STORAGE_KEY = "shopify-host";
 const ID_TOKEN_STORAGE_KEY = "shopify-id-token";
+const TOKEN_EXPIRY_BUFFER_MS = 5_000;
 
 function readHostFromUrl(): string | null {
   if (typeof window === "undefined") return null;
@@ -73,15 +74,58 @@ export function isShopifyEmbedded(): boolean {
  * The CDN script at https://cdn.shopify.com/shopifycloud/app-bridge.js
  * injects window.shopify automatically when the app is embedded.
  */
-export function storeIdToken(token: string) {
-  if (typeof window !== "undefined") {
-    window.sessionStorage.setItem(ID_TOKEN_STORAGE_KEY, token);
+function decodeJwtPayload(token: string): Record<string, unknown> | null {
+  try {
+    const [, payload] = token.split(".");
+    if (!payload) return null;
+
+    const normalized = payload.replace(/-/g, "+").replace(/_/g, "/");
+    const padded = normalized.padEnd(Math.ceil(normalized.length / 4) * 4, "=");
+    const json = window.atob(padded);
+    return JSON.parse(json) as Record<string, unknown>;
+  } catch {
+    return null;
   }
+}
+
+function isIdTokenExpired(token: string): boolean {
+  const payload = decodeJwtPayload(token);
+  const exp = typeof payload?.exp === "number" ? payload.exp : null;
+
+  if (!exp) {
+    return true;
+  }
+
+  return exp * 1000 <= Date.now() + TOKEN_EXPIRY_BUFFER_MS;
+}
+
+export function storeIdToken(token: string) {
+  if (typeof window === "undefined") {
+    return;
+  }
+
+  if (isIdTokenExpired(token)) {
+    clearStoredIdToken();
+    return;
+  }
+
+  window.sessionStorage.setItem(ID_TOKEN_STORAGE_KEY, token);
 }
 
 export function getStoredIdToken(): string | null {
   if (typeof window === "undefined") return null;
-  return window.sessionStorage.getItem(ID_TOKEN_STORAGE_KEY);
+
+  const token = window.sessionStorage.getItem(ID_TOKEN_STORAGE_KEY);
+  if (!token) {
+    return null;
+  }
+
+  if (isIdTokenExpired(token)) {
+    clearStoredIdToken();
+    return null;
+  }
+
+  return token;
 }
 
 export function clearStoredIdToken() {
@@ -112,17 +156,17 @@ export async function getFreshShopifySessionToken(timeoutMs = 5000): Promise<str
 
   const bridgeReady = await waitForShopifyBridge(timeoutMs);
   if (!bridgeReady || !window.shopify) {
-    return null;
+    return getStoredIdToken();
   }
 
   try {
     const token = await window.shopify.idToken();
-    if (token) {
+    if (token && !isIdTokenExpired(token)) {
       storeIdToken(token);
       return token;
     }
   } catch {
-    // Fall through to stored token as a last resort.
+    // Fall through to a still-valid stored token only if App Bridge could not provide one.
   }
 
   return getStoredIdToken();
@@ -131,21 +175,7 @@ export async function getFreshShopifySessionToken(timeoutMs = 5000): Promise<str
 export async function getShopifySessionToken(): Promise<string | null> {
   if (typeof window === "undefined") return null;
 
-  // Try App Bridge first
-  if (window.shopify) {
-    try {
-      const token = await window.shopify.idToken();
-      if (token) {
-        storeIdToken(token);
-        return token;
-      }
-    } catch {
-      // Fall through to stored token
-    }
-  }
-
-  // Fall back to stored id_token from URL / last successful App Bridge token
-  return getStoredIdToken();
+  return getFreshShopifySessionToken(1000);
 }
 
 export async function waitForShopifySessionToken(timeoutMs = 5000): Promise<string | null> {
@@ -154,9 +184,14 @@ export async function waitForShopifySessionToken(timeoutMs = 5000): Promise<stri
   const startedAt = Date.now();
 
   while (Date.now() - startedAt < timeoutMs) {
-    const token = await getShopifySessionToken();
+    const token = await getFreshShopifySessionToken(250);
     if (token) {
       return token;
+    }
+
+    const storedToken = getStoredIdToken();
+    if (storedToken) {
+      return storedToken;
     }
 
     await new Promise((resolve) => window.setTimeout(resolve, 150));
