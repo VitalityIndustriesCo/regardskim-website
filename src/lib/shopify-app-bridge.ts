@@ -151,6 +151,13 @@ export async function waitForShopifyBridge(timeoutMs = 5000): Promise<boolean> {
   return false;
 }
 
+function withTimeout<T>(promise: Promise<T>, ms: number): Promise<T | null> {
+  return Promise.race([
+    promise,
+    new Promise<null>((resolve) => setTimeout(() => resolve(null), ms)),
+  ]);
+}
+
 export async function getFreshShopifySessionToken(timeoutMs = 5000): Promise<string | null> {
   if (typeof window === "undefined") return null;
 
@@ -160,7 +167,9 @@ export async function getFreshShopifySessionToken(timeoutMs = 5000): Promise<str
   }
 
   try {
-    const token = await window.shopify.idToken();
+    // window.shopify.idToken() can hang indefinitely (known App Bridge issue)
+    // so we add a timeout to prevent blocking forever
+    const token = await withTimeout(window.shopify.idToken(), 3000);
     if (token && !isIdTokenExpired(token)) {
       storeIdToken(token);
       return token;

@@ -82,6 +82,15 @@ export async function api<T = unknown>(
   }
 
   if (res.status === 401) {
+    // Both token attempts failed. Force a full page reload to get a fresh
+    // id_token from Shopify in the URL. This handles the known App Bridge
+    // issue where window.shopify.idToken() hangs or returns stale tokens.
+    if (typeof window !== "undefined" && window.self !== window.top) {
+      // We're in an iframe (embedded app) — reload to get fresh Shopify context
+      window.location.reload();
+      // Return a never-resolving promise so the UI stays in loading state
+      await new Promise(() => {});
+    }
     throw new ApiError(401, "Your Shopify session expired. Please reopen RegardsKim from Shopify Admin and try again.");
   }
 
