@@ -5,7 +5,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { AlertTriangle, ExternalLink, Loader2 } from "lucide-react";
 import { api, ApiError } from "@/lib/api";
 import { OnboardingStatusResponse, SetupState } from "@/lib/onboarding";
-import { buildEmbeddedAppPath } from "@/lib/shopify-app-bridge";
+import { buildEmbeddedAppPath, storeIdToken } from "@/lib/shopify-app-bridge";
 import { useEmbeddedApp } from "@/components/shopify/embedded-app-provider";
 import { Button } from "@/components/ui/button";
 
@@ -110,10 +110,16 @@ export function AppAuthProvider({ children }: { children: ReactNode }) {
       setLoading(true);
       try {
         if (embedded) {
-          const bridgeReady = await waitForShopifyBridge(5000);
-          if (bridgeReady && window.shopify) {
-            if (await tryAuth()) return;
+          // Store the id_token from URL so api() can use it for auth
+          const params = new URLSearchParams(window.location.search);
+          const urlIdToken = params.get("id_token");
+          if (urlIdToken) {
+            storeIdToken(urlIdToken);
           }
+
+          // Wait for App Bridge, then try auth (api() handles token refresh)
+          await waitForShopifyBridge(5000);
+          if (await tryAuth()) return;
         }
 
         if (!active) return;
