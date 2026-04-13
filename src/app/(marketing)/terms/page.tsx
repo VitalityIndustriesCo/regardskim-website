@@ -113,7 +113,6 @@ export default function TermsPage() {
       </p>
       <ul>
         <li><strong>$49/month</strong> on a monthly plan</li>
-        <li><strong>$37/month billed annually</strong> on an annual plan</li>
       </ul>
       <p>All pricing is subject to change in the future with notice.</p>
 

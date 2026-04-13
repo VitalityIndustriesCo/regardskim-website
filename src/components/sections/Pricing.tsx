@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import { Check } from "lucide-react";
 import FadeIn from "@/components/ui/FadeIn";
 
@@ -15,11 +14,9 @@ const inclusions = [
 ];
 
 export default function Pricing() {
-  const [annual, setAnnual] = useState(false);
-
-  const price = annual ? 37 : 49;
-  const period = annual ? "/month" : "/month";
-  const billingNote = annual ? "Billed annually" : "Billed monthly";
+  const price = 49;
+  const period = "/month";
+  const billingNote = "Billed monthly";
 
   return (
     <section id="pricing" className="bg-cream py-16 md:py-28">
@@ -32,32 +29,8 @@ export default function Pricing() {
             You handle the sales. Kim handles the support.
           </p>
           <p className="mt-2 text-sm font-semibold uppercase tracking-[0.16em] text-brass">
-            Save up to 25% with annual
+            Simple monthly pricing
           </p>
-        </FadeIn>
-
-        <FadeIn delay={0.03} className="mt-8 flex flex-wrap items-center justify-center gap-3 px-4 sm:px-0">
-          <span className={`text-sm font-semibold ${!annual ? "text-forest" : "text-slate"}`}>
-            Monthly
-          </span>
-          <button
-            type="button"
-            role="switch"
-            aria-checked={annual}
-            onClick={() => setAnnual(!annual)}
-            className={`relative inline-flex h-7 w-12 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none ${
-              annual ? "bg-brass" : "bg-brass/25"
-            }`}
-          >
-            <span
-              className={`pointer-events-none inline-block h-6 w-6 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out ${
-                annual ? "translate-x-5" : "translate-x-0"
-              }`}
-            />
-          </button>
-          <span className={`text-sm font-semibold ${annual ? "text-forest" : "text-slate"}`}>
-            Annual
-          </span>
         </FadeIn>
 
         <FadeIn delay={0.06} className="mx-auto mt-10 w-full max-w-md rounded-[1.5rem] border border-forest/15 bg-paper p-5 text-left md:rounded-[2rem] md:p-10">

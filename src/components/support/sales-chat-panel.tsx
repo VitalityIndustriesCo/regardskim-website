@@ -35,7 +35,7 @@ function buildReply(message: string) {
     normalized.includes("plan")
   ) {
     return {
-      reply: "$49/month, 7-day free trial, cancel anytime. Annual plan available at $37/month.",
+      reply: "$49/month, 7-day free trial, cancel anytime.",
       needsEmailCapture: false,
     };
   }

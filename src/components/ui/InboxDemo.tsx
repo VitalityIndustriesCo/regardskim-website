@@ -168,13 +168,13 @@ export default function InboxDemo() {
             <p className="mt-3 text-sm font-medium text-ink">From: Sarah M. (sarahm@email.com)</p>
             <p className="text-sm text-slate">Subject: Where is my order?</p>
             <p className="mt-3 rounded-xl bg-mist p-3 text-sm text-slate">
-              Hi, I ordered a blanket last week and haven't received any tracking info. Could you
+              Hi, I ordered a blanket last week and haven&apos;t received any tracking info. Could you
               please let me know where my order is up to?
             </p>
           </div>
 
           <div className="rounded-2xl border border-forest/15 bg-paper p-4">
-            <p className="text-xs uppercase tracking-[0.1em] text-slate">Kim's draft reply</p>
+            <p className="text-xs uppercase tracking-[0.1em] text-slate">Kim&apos;s draft reply</p>
             <textarea
               readOnly
               className="mt-3 h-28 w-full resize-none rounded-xl border border-forest/10 bg-mist p-3 text-sm text-slate outline-none"

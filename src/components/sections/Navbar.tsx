@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const navLinks = [
@@ -50,22 +51,22 @@ export default function Navbar() {
         }`}
       >
         <nav className="section-shell flex h-20 items-center justify-between" aria-label="Primary">
-          <a href="/" className="font-display text-3xl font-bold tracking-normal text-forest">
+          <Link href="/" className="font-display text-3xl font-bold tracking-normal text-forest">
             RegardsKim
-          </a>
+          </Link>
 
           <div className="hidden items-center gap-8 text-sm text-slate md:flex">
             {navLinks.map((link) => (
-              <a key={link.href} href={link.href} className="transition-colors hover:text-forest">
+              <Link key={link.href} href={link.href} className="transition-colors hover:text-forest">
                 {link.label}
-              </a>
+              </Link>
             ))}
           </div>
 
           <div className="hidden items-center gap-4 md:flex">
-            <a href="/#install" className="btn-primary">
+            <Link href="/#install" className="btn-primary">
               Install on Shopify
-            </a>
+            </Link>
           </div>
 
           <button
@@ -128,21 +129,21 @@ export default function Navbar() {
         <div className="flex flex-1 flex-col justify-between px-6 py-6">
           <div className="flex flex-col gap-2">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.href}
                 href={link.href}
                 className="rounded-2xl px-4 py-3 text-base font-medium text-forest transition-colors hover:bg-cream"
                 onClick={closeMobileMenu}
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
           </div>
 
           <div className="mt-8 flex flex-col gap-3 border-t border-forest/10 pt-6">
-            <a href="/#install" className="btn-primary w-full" onClick={closeMobileMenu}>
+            <Link href="/#install" className="btn-primary w-full" onClick={closeMobileMenu}>
               Install on Shopify
-            </a>
+            </Link>
           </div>
         </div>
       </div>

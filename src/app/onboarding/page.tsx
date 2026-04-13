@@ -333,9 +333,9 @@ function OnboardingContent() {
           <div className="rounded-2xl border border-[#E85D3A]/15 bg-white p-5 shadow-sm">
             <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
               <div className="space-y-1">
-                <h2 className="text-lg font-semibold text-[#1A1A1A]">Everything's ready</h2>
+                <h2 className="text-lg font-semibold text-[#1A1A1A]">Everything&apos;s ready</h2>
                 <p className="text-sm text-[#1A1A1A]/65">
-                  Open your inbox to review Kim's drafted replies and start approving them.
+                  Open your inbox to review Kim&apos;s drafted replies and start approving them.
                 </p>
               </div>
               <Button className="bg-[#E85D3A] text-white hover:bg-[#d34f2f]" onClick={() => void handleFinish()} disabled={isFinishing}>

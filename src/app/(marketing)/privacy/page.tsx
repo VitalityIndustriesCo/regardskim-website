@@ -120,7 +120,7 @@ export default function PrivacyPage() {
       <p>We believe privacy should be straightforward. In particular:</p>
       <ul>
         <li>
-          We <strong>do not sell</strong> your personal information or your customers' personal
+          We <strong>do not sell</strong> your personal information or your customers&apos; personal
           information
         </li>
         <li>

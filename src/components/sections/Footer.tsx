@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Footer() {
   return (
     <footer className="border-t border-forest/10 bg-white py-12">
@@ -8,13 +10,13 @@ export default function Footer() {
         </div>
 
         <nav aria-label="Footer" className="grid grid-cols-2 gap-x-6 gap-y-2 text-sm text-slate">
-          <a href="/" className="hover:text-forest">Home</a>
-          <a href="/#how-it-works" className="hover:text-forest">How it works</a>
-          <a href="/#pricing" className="hover:text-forest">Pricing</a>
-          <a href="/#faq" className="hover:text-forest">FAQ</a>
-          <a href="/blog" className="hover:text-forest">Blog</a>
-          <a href="/privacy" className="hover:text-forest">Privacy Policy</a>
-          <a href="/terms" className="hover:text-forest">Terms of Service</a>
+          <Link href="/" className="hover:text-forest">Home</Link>
+          <Link href="/#how-it-works" className="hover:text-forest">How it works</Link>
+          <Link href="/#pricing" className="hover:text-forest">Pricing</Link>
+          <Link href="/#faq" className="hover:text-forest">FAQ</Link>
+          <Link href="/blog" className="hover:text-forest">Blog</Link>
+          <Link href="/privacy" className="hover:text-forest">Privacy Policy</Link>
+          <Link href="/terms" className="hover:text-forest">Terms of Service</Link>
         </nav>
 
         <div className="md:text-right">

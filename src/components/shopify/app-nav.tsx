@@ -11,11 +11,10 @@ function hasAppNavElements() {
 }
 
 export function ShopifyAppNav() {
-  const [ready, setReady] = useState(false);
+  const [ready, setReady] = useState(() => hasAppNavElements());
 
   useEffect(() => {
-    if (hasAppNavElements()) {
-      setReady(true);
+    if (ready) {
       return;
     }
 
@@ -34,7 +33,7 @@ export function ShopifyAppNav() {
     };
 
     check();
-  }, []);
+  }, [ready]);
 
   if (!ready) {
     return null;

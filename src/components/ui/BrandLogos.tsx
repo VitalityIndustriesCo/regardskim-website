@@ -1,5 +1,7 @@
 // Official brand logos as SVG components
 
+import Image from "next/image";
+
 export function ShopifyLogo({ className = "w-8 h-8" }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 109 124" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -11,9 +13,7 @@ export function ShopifyLogo({ className = "w-8 h-8" }: { className?: string }) {
 }
 
 export function GmailLogo({ className = "w-8 h-8" }: { className?: string }) {
-  return (
-    <img src="/gmail-logo.png" alt="Gmail" className={className} />
-  );
+  return <Image src="/gmail-logo.png" alt="Gmail" width={32} height={32} className={className} />;
 }
 
 export function OutlookLogo({ className = "w-8 h-8" }: { className?: string }) {

@@ -1,5 +1,4 @@
 import Hero from "@/components/sections/Hero";
-import VideoDemo from "@/components/sections/VideoDemo";
 import HowItWorks from "@/components/sections/HowItWorks";
 import Benefits from "@/components/sections/Benefits";
 import Comparison from "@/components/sections/Comparison";

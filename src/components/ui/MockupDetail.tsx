@@ -15,20 +15,16 @@ const badgeClass = {
 
 export default function MockupDetail({ mode = "draft" }: MockupDetailProps) {
   const prefersReducedMotion = useReducedMotion();
-  const [sent, setSent] = useState(mode === "approval" ? false : false);
+  const [sent, setSent] = useState(false);
 
   useEffect(() => {
-    if (mode !== "approval") return;
-    if (prefersReducedMotion) {
-      setSent(true);
-      return;
-    }
+    if (mode !== "approval" || prefersReducedMotion) return;
 
     const timer = window.setTimeout(() => setSent(true), 1400);
     return () => window.clearTimeout(timer);
   }, [mode, prefersReducedMotion]);
 
-  const isDraft = mode === "draft" || !sent;
+  const isDraft = mode === "draft" || (!prefersReducedMotion && !sent);
 
   return (
     <div className="rounded-2xl border border-forest/12 bg-paper p-3 sm:p-4">
