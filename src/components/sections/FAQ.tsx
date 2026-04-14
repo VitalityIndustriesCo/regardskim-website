@@ -27,6 +27,10 @@ const faqs = [
     a: "Nope. You can change the sign-off name in your settings so replies go out under your brand or team name.",
   },
   {
+    q: "Why do you need our store policies?",
+    a: "So Kim gives the right answers. Your return window, shipping timeframes, exchange rules \u2014 Kim uses these to draft replies that match what you\u2019d actually say, instead of guessing.",
+  },
+  {
     q: "How much does it cost?",
     a: "There is one plan: $49 per month.",
   },
