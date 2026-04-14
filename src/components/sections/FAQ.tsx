@@ -8,11 +8,11 @@ import FadeIn from "@/components/ui/FadeIn";
 const faqs = [
   {
     q: "What does Regards Kim do?",
-    a: "Kim reads your customer emails, writes helpful replies, and leaves everything ready for you to approve.",
+    a: "Kim connects to your Shopify store and email, reads your customer messages, and drafts helpful replies with the right order details. You review and send \u2014 usually takes a few minutes a day.",
   },
   {
     q: "Does Kim send replies automatically?",
-    a: "No. Every reply stays as a draft until you review and approve it.",
+    a: "No \u2014 every reply is a draft until you send it. Most merchants review their queue in a few minutes each morning.",
   },
   {
     q: "What kinds of emails can Kim help with?",
@@ -23,12 +23,16 @@ const faqs = [
     a: "No. Kim works behind the scenes in your inbox and prepares drafts for review.",
   },
   {
+    q: "Does our agent have to be called Kim?",
+    a: "Nope. You can change the sign-off name in your settings so replies go out under your brand or team name.",
+  },
+  {
     q: "How much does it cost?",
     a: "There is one plan: $49 per month.",
   },
   {
     q: "Who is Regards Kim best for?",
-    a: "Small and growing ecommerce stores where the owner is still answering customer emails, or paying someone else to.",
+    a: "Store owners spending hours on customer emails every week \u2014 or paying someone else to. If your inbox is eating into time you should be spending on your business, Kim\u2019s for you.",
   },
 ];
 

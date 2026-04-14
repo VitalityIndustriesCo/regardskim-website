@@ -6,8 +6,8 @@ import MockupDetail from "@/components/ui/MockupDetail";
 const steps = [
   {
     number: "01",
-    title: "Kim reviews your inbox",
-    body: "Every customer email is sorted and ready in one clean queue.",
+    title: "Emails come in, Kim gets to work",
+    body: "Customer emails are matched to orders, tracking, and your store policies — automatically.",
     mockup: (
       <MockupWindow title="Inbox" className="bg-cream">
         <div className="p-2.5 sm:p-3 md:p-4">
@@ -18,8 +18,8 @@ const steps = [
   },
   {
     number: "02",
-    title: "Thoughtful replies, drafted",
-    body: "Kim writes replies using your store info, order details, tracking info, and policies.",
+    title: "Helpful replies, ready to go",
+    body: "Kim drafts real answers with the right details — not generic filler your customers can see through.",
     mockup: (
       <MockupWindow title="Draft composer" className="bg-cream">
         <div className="p-2.5 sm:p-3 md:p-4">
@@ -30,8 +30,8 @@ const steps = [
   },
   {
     number: "03",
-    title: "You approve, Kim sends",
-    body: "Approve in one click and Kim sends polished replies instantly.",
+    title: "Review, send, move on",
+    body: "Check the drafts, hit send, and get back to running your store. Most merchants clear their queue in minutes.",
     mockup: (
       <MockupWindow title="Approval" className="bg-cream">
         <div className="p-2.5 sm:p-3 md:p-4">

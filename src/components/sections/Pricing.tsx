@@ -6,10 +6,10 @@ import FadeIn from "@/components/ui/FadeIn";
 const INSTALL_URL = "/#install";
 
 const inclusions = [
-  "Integrates with Shopify, Gmail & Outlook",
-  "Draft replies for customer emails",
-  "Order, tracking & return support",
-  "Review before anything sends",
+  "Connects to your Shopify store, Gmail & Outlook",
+  "Drafts replies using live order and tracking data",
+  "Handles order questions, returns, and shipping updates",
+  "You review every reply before it sends",
   "Invite your team with separate logins",
 ];
 

@@ -22,7 +22,7 @@ const steps = [
   },
   {
     number: "04",
-    title: "Start reviewing your drafted replies",
+    title: "Review drafts and send \u2014 your inbox is handled",
     icon: <Inbox size={40} className="h-10 w-10" />,
   },
 ];
