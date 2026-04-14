@@ -1,6 +1,6 @@
 import FadeIn from "@/components/ui/FadeIn";
 import HeroInboxPreview from "@/components/ui/HeroInboxPreview";
-import { ShopifyLogo } from "@/components/ui/BrandLogos";
+import { ShopifyLogo, GmailLogo, OutlookLogo } from "@/components/ui/BrandLogos";
 
 const INSTALL_URL = "/#install";
 
@@ -26,15 +26,20 @@ export default function Hero() {
                 <p className="text-sm text-slate">Install from the Shopify App Store and get set up in minutes.</p>
               </div>
 
-              {/* Shopify trust block */}
-              <div className="mx-auto mt-12 w-fit rounded-full border border-forest/8 bg-white/60 px-5 py-2.5 shadow-sm backdrop-blur-sm">
-                <div className="flex items-center justify-center gap-3">
-                  <ShopifyLogo className="h-7 w-7" />
-                  <p className="text-sm font-semibold text-forest md:text-base">
-                    Built for Shopify stores
-                  </p>
+              {/* Trust block */}
+              <div className="mx-auto mt-12 flex flex-wrap items-center justify-center gap-3">
+                <div className="flex items-center gap-2.5 rounded-full border border-forest/8 bg-white/60 px-4 py-2.5 shadow-sm backdrop-blur-sm">
+                  <ShopifyLogo className="h-6 w-6" />
+                  <p className="text-sm font-semibold text-forest">Built for Shopify</p>
                 </div>
-
+                <div className="flex items-center gap-2.5 rounded-full border border-forest/8 bg-white/60 px-4 py-2.5 shadow-sm backdrop-blur-sm">
+                  <GmailLogo className="h-5 w-5" />
+                  <p className="text-sm font-semibold text-forest">Works with Gmail</p>
+                </div>
+                <div className="flex items-center gap-2.5 rounded-full border border-forest/8 bg-white/60 px-4 py-2.5 shadow-sm backdrop-blur-sm">
+                  <OutlookLogo className="h-5 w-5" />
+                  <p className="text-sm font-semibold text-forest">Works with Outlook</p>
+                </div>
               </div>
             </div>
           </FadeIn>
