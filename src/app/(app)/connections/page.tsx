@@ -5,7 +5,6 @@ import { useSearchParams } from "next/navigation";
 import {
   CheckCircle2,
   Loader2,
-  Mail,
   RefreshCw,
   Store,
   Unplug,
@@ -253,10 +252,6 @@ function ConnectionsContent() {
     }
   };
 
-  const handleConnectOutlook = () => {
-    toast.info("Outlook integration coming soon");
-  };
-
   return (
     <section className="space-y-6">
       <div>
@@ -364,16 +359,12 @@ function ConnectionsContent() {
                     </>
                   )}
 
-                  {/* Gmail + Outlook connect buttons */}
+                  {/* Gmail connect button */}
                   {isEmail && !isConnected && !isExpired && (
                     <>
                       <Button onClick={handleConnectGmail}>
                         <GmailLogo className="mr-2" />
                         Connect Gmail
-                      </Button>
-                      <Button variant="outline" onClick={handleConnectOutlook}>
-                        <Mail className="mr-2 h-4 w-4" />
-                        Connect Outlook
                       </Button>
                     </>
                   )}

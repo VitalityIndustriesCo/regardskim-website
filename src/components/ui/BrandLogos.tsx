@@ -15,17 +15,3 @@ export function ShopifyLogo({ className = "w-8 h-8" }: { className?: string }) {
 export function GmailLogo({ className = "w-8 h-8" }: { className?: string }) {
   return <Image src="/gmail-logo.png" alt="Gmail" width={32} height={32} className={className} />;
 }
-
-export function OutlookLogo({ className = "w-8 h-8" }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-      <path fill="#1976d2" d="M28,13h14.533C43.343,13,44,13.657,44,14.467V33.53c0,0.81-0.657,1.467-1.467,1.467H28V13z"/>
-      <path fill="#2196f3" d="M28,6h14.533C43.343,6,44,6.657,44,7.467V14H28V6z"/>
-      <path fill="#0d47a1" d="M28,35h14.533C43.343,35,44,35.657,44,36.467V41.53c0,0.81-0.657,1.467-1.467,1.467H28V35z"/>
-      <path fill="#1565c0" d="M4,14h24V6H4C2.895,6,2,6.895,2,8v5C2,13.552,2.448,14,3,14H4z"/>
-      <path fill="#0d47a1" d="M28,35v8H4c-1.105,0-2-0.895-2-2v-5c0-0.552,0.448-1,1-1H28z"/>
-      <path fill="#1976d2" d="M2,14h26v21H3c-0.552,0-1-0.448-1-1V14z"/>
-      <path fill="#fff" d="M15,18.6c-3.9,0-7,3.4-7,7.4s3.1,7.4,7,7.4s7-3.4,7-7.4S18.9,18.6,15,18.6z M15,30.4c-2.2,0-4-2-4-4.4s1.8-4.4,4-4.4s4,2,4,4.4S17.2,30.4,15,30.4z"/>
-    </svg>
-  );
-}

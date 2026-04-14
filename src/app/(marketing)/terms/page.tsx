@@ -39,7 +39,7 @@ export default function TermsPage() {
         <li>You have the legal authority to enter into these Terms</li>
         <li>You are using the service for a legitimate business purpose</li>
         <li>
-          You have authority to connect the Shopify, Gmail, Outlook, and other third-party
+          You have authority to connect the Shopify, Gmail, and other third-party
           accounts you link to the service
         </li>
       </ul>
@@ -51,7 +51,7 @@ export default function TermsPage() {
       <h2>3. Account Registration and Responsibilities</h2>
       <p>
         To use RegardsKim, you may need to create an account and connect third-party services
-        such as Shopify, Gmail, or Outlook. You are responsible for:
+        such as Shopify or Gmail. You are responsible for:
       </p>
       <ul>
         <li>Providing accurate and current account information</li>
@@ -228,7 +228,7 @@ export default function TermsPage() {
       <p>RegardsKim depends on third-party services, including:</p>
       <ul>
         <li>Shopify</li>
-        <li>Gmail and/or Outlook</li>
+        <li>Gmail</li>
         <li>OpenAI</li>
         <li>Vercel</li>
         <li>Railway</li>

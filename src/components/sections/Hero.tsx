@@ -1,6 +1,6 @@
 import FadeIn from "@/components/ui/FadeIn";
 import HeroInboxPreview from "@/components/ui/HeroInboxPreview";
-import { ShopifyLogo, GmailLogo, OutlookLogo } from "@/components/ui/BrandLogos";
+import { ShopifyLogo, GmailLogo } from "@/components/ui/BrandLogos";
 
 const INSTALL_URL = "/#install";
 
@@ -35,10 +35,6 @@ export default function Hero() {
                 <div className="flex items-center gap-2.5 rounded-full border border-forest/8 bg-white/60 px-4 py-2.5 shadow-sm backdrop-blur-sm">
                   <GmailLogo className="h-5 w-5" />
                   <p className="text-sm font-semibold text-forest">Works with Gmail</p>
-                </div>
-                <div className="flex items-center gap-2.5 rounded-full border border-forest/8 bg-white/60 px-4 py-2.5 shadow-sm backdrop-blur-sm">
-                  <OutlookLogo className="h-5 w-5" />
-                  <p className="text-sm font-semibold text-forest">Works with Outlook</p>
                 </div>
               </div>
             </div>

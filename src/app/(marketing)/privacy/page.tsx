@@ -15,7 +15,7 @@ export default function PrivacyPage() {
       </p>
       <p>
         RegardsKim is an AI email support agent for Shopify stores. It connects to your Shopify
-        account and your email account (such as Gmail or Outlook), reads incoming customer support
+        account and your email account (such as Gmail), reads incoming customer support
         emails, drafts replies using relevant store information, and places those drafts in a queue
         for your approval before anything is sent.
       </p>
@@ -66,7 +66,7 @@ export default function PrivacyPage() {
 
       <h3>2.3 Email and Support Content</h3>
       <p>
-        When you connect Gmail, Outlook, or another supported email provider, we may access and
+        When you connect Gmail or another supported email provider, we may access and
         process:
       </p>
       <ul>
@@ -188,9 +188,9 @@ export default function PrivacyPage() {
         <li>Product and policy-related store information</li>
       </ul>
 
-      <h3>6.3 Gmail and Outlook</h3>
+      <h3>6.3 Gmail</h3>
       <p>
-        We connect to Gmail and/or Outlook to access incoming support emails and draft reply
+        We connect to Gmail to access incoming support emails and draft reply
         workflows. Data that may be processed includes:
       </p>
       <ul>
