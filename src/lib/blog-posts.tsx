@@ -11,6 +11,182 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "ai-storefront-post-sale-support",
+    title: "Your AI Storefront Just Made a Sale. Now What?",
+    date: "April 15, 2026",
+    image: "/blog/ai-storefront.png",
+    meta:
+      "AI storefronts are bringing more sales to Shopify stores. But every sale creates a customer who might need help. Here's the support gap nobody is talking about.",
+    content: (
+      <>
+        <p>
+          If you've been paying attention to Shopify lately, you've probably seen the buzz around AI
+          storefronts and agentic commerce.
+        </p>
+        <p>
+          The short version: customers can now discover and buy products directly inside ChatGPT. No
+          browsing your site, no scrolling collections, no abandoned cart emails. A shopper asks ChatGPT
+          for a recommendation, your product shows up, and they check out right there in the conversation.
+        </p>
+        <p>
+          It's a genuine shift in how people find and buy things online. And Shopify's making it easy for
+          merchants to plug in.
+        </p>
+        <p>But here's the part nobody's talking about yet.</p>
+        <p>What happens after the sale?</p>
+
+        <h2>More AI sales means more support emails</h2>
+        <p>
+          Right now, all the attention is on the front end. Product discovery. Checkout. Conversion. That
+          makes sense — it's new, it's exciting, and it's a real growth opportunity for merchants.
+        </p>
+        <p>
+          But every order that comes through your store, whether it starts from Instagram, Google, or a
+          ChatGPT conversation, ends up in the same place: your inbox.
+        </p>
+        <p>
+          Orders still need to be packed and shipped. Tracking still needs to update. Customers still have
+          questions.
+        </p>
+        <p>
+          And when your store starts getting more orders from new channels, the support volume goes up too.
+          That's just math.
+        </p>
+        <p>The AI storefront handles the sale. Nobody's handling what comes next.</p>
+
+        <h2>The emails that actually eat your time</h2>
+        <p>
+          If you run a Shopify store, you already know what fills your inbox. It's the same handful of
+          questions, over and over:
+        </p>
+        <ul>
+          <li>
+            <strong>Where's my order?</strong> The tracking hasn't updated. The delivery window passed.
+            The customer just wants to know what's going on.
+          </li>
+          <li>
+            <strong>I need to return this.</strong> Wrong size. Wrong colour. Changed their mind. They
+            want to know the process.
+          </li>
+          <li>
+            <strong>This isn't what I ordered.</strong> Wrong item shipped. Damaged in transit. Missing
+            from the package.
+          </li>
+          <li>
+            <strong>Can I change my address?</strong> They moved. They entered the wrong details. The
+            order already shipped.
+          </li>
+          <li>
+            <strong>I never got a shipping confirmation.</strong> It went to spam. Or it hasn't shipped
+            yet. Either way, they're worried.
+          </li>
+        </ul>
+        <p>
+          None of these are complicated. Most have straightforward answers. But they take time — especially
+          when you're answering the same ones twenty or thirty times a week.
+        </p>
+        <p>And the more orders you're processing, the more of these show up.</p>
+
+        <h2>AI storefronts will amplify this problem</h2>
+        <p>
+          Here's the thing about AI-driven product discovery: it removes friction from buying. That's the
+          whole point. Fewer steps, faster decisions, more conversions.
+        </p>
+        <p>
+          But faster buying doesn't mean faster shipping. And it doesn't mean fewer questions.
+        </p>
+        <p>
+          If anything, customers coming through AI shopping channels might have more questions. They didn't
+          browse your site. They might not have read your shipping policy. They might not even know your
+          brand name. They asked ChatGPT for a product, it showed yours, and they bought it.
+        </p>
+        <p>
+          Now they've got an order from a store they've never heard of, and when the tracking doesn't
+          update in two days, they're going to email you.
+        </p>
+        <p>
+          That's not a problem with AI commerce. It's just how ecommerce works. But as the front end gets
+          smarter, the back end needs to keep up.
+        </p>
+
+        <h2>Why generic AI tools don't solve this</h2>
+        <p>
+          You might be thinking, well, if AI can sell the product, surely it can handle the support too.
+        </p>
+        <p>Not quite.</p>
+        <p>
+          General-purpose AI tools — the ones that summarise emails, draft replies, help you hit inbox
+          zero — are useful for a lot of things. But ecommerce support isn't generic email.
+        </p>
+        <p>
+          When a customer asks about order #4721, a helpful reply needs to include the actual shipping
+          status, the real tracking link, and the correct delivery window based on your carrier and
+          location. A tool that doesn't have access to your Shopify store, your order data, and your
+          policies can't give that answer.
+        </p>
+        <p>
+          It can guess. It can write something that sounds polite. But polite and wrong isn't support —
+          it's a second email waiting to happen.
+        </p>
+        <p>
+          Ecommerce support is specific. It depends on real data: orders, tracking numbers, return windows,
+          product details, store policies. Without that context, any reply is just filler.
+        </p>
+
+        <h2>What purpose-built support actually looks like</h2>
+        <p>This is where the approach matters more than the tool.</p>
+        <p>
+          Support that actually works for ecommerce stores isn't about writing faster emails. It's about
+          understanding the email in the context of the order, the customer, and the store.
+        </p>
+        <p>
+          That means knowing what the customer bought. Knowing when it shipped. Knowing whether the return
+          window's still open. Knowing your store's tone and policies. And using all of that to write a
+          reply that actually resolves the issue.
+        </p>
+        <p>That's what Kim does.</p>
+        <p>
+          Kim connects to your Shopify store and reads your customer emails with full context — order
+          details, tracking status, store policies, previous conversations. When a customer emails about a
+          late delivery, Kim doesn't guess. It checks. When someone asks for a return, Kim knows whether
+          they're inside the return window and drafts the right reply.
+        </p>
+        <p>
+          You review and send. Or Kim sends on your behalf if you set it up that way. Either way, the work
+          gets done without you spending your morning copying tracking links.
+        </p>
+        <p>
+          It's not about replacing you. It's about handling the repetitive stuff so you can focus on the
+          parts of your business that actually need you.
+        </p>
+
+        <h2>The gap is real, and it's growing</h2>
+        <p>
+          AI storefronts are going to bring more customers to more stores. That's great. More sales, more
+          growth, more opportunity.
+        </p>
+        <p>
+          But every one of those sales comes with a customer who might need help after they buy. And right
+          now, most merchants are still handling that manually — one email at a time.
+        </p>
+        <p>
+          The front of the funnel's getting automated. The back end doesn't have to stay stuck.
+        </p>
+        <p>
+          If you're a Shopify store owner watching the AI commerce wave build and wondering how you're
+          going to keep up with support as orders grow, it's worth thinking about this now — before the
+          inbox gets out of hand.
+        </p>
+        <p>
+          <strong>
+            <a href="https://regardskim.com">Kim answers your customer emails so you don't have to.</a>
+          </strong>
+        </p>
+        <p>Kind regards, Kim</p>
+      </>
+    ),
+  },
+  {
     slug: "customer-support-solo-shopify-founder",
     title: "How to Handle Customer Support as a Solo Shopify Founder",
     date: "March 15, 2026",
