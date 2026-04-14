@@ -16,7 +16,7 @@ const ROWS: InboxRow[] = [
   { sender: "Lisa K.", subject: "Wrong size received", snippet: "Hi there, I received a medium but I ordered a large. Can you help?", time: "28m ago", status: "Action Required" },
   { sender: "Michael R.", subject: "Refund for damaged item", snippet: "The vase arrived broken. I'd like a refund please...", time: "1h ago", status: "Draft Ready" },
   { sender: "Emma W.", subject: "Product question", snippet: "Does the wool throw come in navy? I can only see grey on the site...", time: "2h ago", status: "Read" },
-  { sender: "Order #1847", subject: "Shipping update", snippet: "Your shipment has been dispatched via Australia Post...", time: "3h ago", status: "Read" },
+  { sender: "David P.", subject: "Shipping update", snippet: "Your shipment has been dispatched via Australia Post...", time: "3h ago", status: "Read" },
 ];
 
 const badgeClass: Record<Status, string> = {
