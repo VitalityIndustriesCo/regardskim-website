@@ -16,7 +16,7 @@ const inclusions = [
 export default function Pricing() {
   const price = 49;
   const period = "/month";
-  const billingNote = "Billed monthly";
+  const billingNote = "Billed monthly through your Shopify account";
 
   return (
     <section id="pricing" className="bg-cream py-16 md:py-28">
