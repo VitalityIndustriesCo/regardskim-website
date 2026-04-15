@@ -54,6 +54,7 @@ export async function POST(req: NextRequest) {
         body: JSON.stringify({
           email,
           status: "active", // single opt-in
+          groups: ["184796545632175364"], // Newsletter group
         }),
       });
 
