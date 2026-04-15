@@ -5,6 +5,7 @@ import { useState } from "react";
 
 export default function Footer() {
   const [email, setEmail] = useState("");
+  const [honeypot, setHoneypot] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 
   const handleSubscribe = async (e: React.FormEvent) => {
@@ -15,7 +16,7 @@ export default function Footer() {
       const res = await fetch("/api/subscribe", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email: email.trim() }),
+        body: JSON.stringify({ email: email.trim(), website: honeypot }),
       });
       if (res.ok) {
         setStatus("success");
@@ -37,6 +38,16 @@ export default function Footer() {
 
           <form onSubmit={handleSubscribe} className="mt-6">
             <p className="text-sm font-medium text-forest mb-2">Stay in the loop</p>
+            {/* Honeypot — hidden from humans, bots fill it */}
+            <input
+              type="text"
+              name="website"
+              value={honeypot}
+              onChange={(e) => setHoneypot(e.target.value)}
+              tabIndex={-1}
+              autoComplete="off"
+              style={{ position: "absolute", left: "-9999px", opacity: 0, height: 0 }}
+            />
             <div className="flex gap-2">
               <input
                 type="email"
