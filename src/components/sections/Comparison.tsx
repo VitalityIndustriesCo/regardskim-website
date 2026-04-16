@@ -132,7 +132,7 @@ function ReplyCard({ label, body, tone }: ReplyCardProps) {
 
           <div className="pt-2 text-forest">
             <p>Kind regards,</p>
-            <p className="font-medium">Regards Kim — Support Team</p>
+            <p className="font-medium">Kim</p>
           </div>
         </div>
       </div>

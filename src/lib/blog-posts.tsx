@@ -182,7 +182,7 @@ export const blogPosts: BlogPost[] = [
             <a href="https://regardskim.com">Regards Kim answers your customer emails so you don't have to.</a>
           </strong>
         </p>
-        <p>Kind regards, the Regards Kim team</p>
+        <p>Kind regards, Kim</p>
       </>
     ),
   },
