@@ -7,7 +7,7 @@ const navLinks = [
   { href: "/#how-it-works", label: "How it works" },
   { href: "/#pricing", label: "Pricing" },
   { href: "/#faq", label: "FAQ" },
-  { href: "/partners", label: "Partners" },
+  { href: "/affiliate", label: "Affiliate" },
   { href: "/blog", label: "Blog" },
 ];
 

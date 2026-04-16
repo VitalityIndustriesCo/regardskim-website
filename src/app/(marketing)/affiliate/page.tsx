@@ -4,7 +4,7 @@ import { useState } from "react";
 
 type FormStatus = "idle" | "loading" | "success" | "error";
 
-export default function PartnersPage() {
+export default function AffiliatePage() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [website, setWebsite] = useState("");
@@ -56,9 +56,12 @@ export default function PartnersPage() {
             <p className="mx-auto mt-6 max-w-2xl text-base text-slate md:text-lg">
               Recommend the tool you trust. Earn recurring commission on every merchant you refer.
             </p>
+            <div className="mt-8">
+              <img src="/affiliate-hero.jpg" alt="Affiliate program" className="mx-auto rounded-2xl shadow-lg" style={{ maxHeight: 320 }} />
+            </div>
             <div className="mt-10">
               <a href="#apply" className="btn-primary">
-                Apply as a partner
+                Become an affiliate
               </a>
             </div>
           </div>
@@ -184,10 +187,10 @@ export default function PartnersPage() {
                 disabled={status === "loading"}
                 className="btn-primary w-full justify-center disabled:opacity-60"
               >
-                {status === "loading" ? "Submitting..." : "Apply to become a partner"}
+                {status === "loading" ? "Submitting..." : "Apply to become an affiliate"}
               </button>
 
-              {status === "success" && <p className="text-sm text-green-700">Thanks! We&apos;ll be in touch soon.</p>}
+              {status === "success" && <p className="text-sm text-green-700">Thanks for applying! We&apos;ll be in touch soon.</p>}
               {status === "error" && (
                 <p className="text-sm text-red-600">Something went wrong — please try again.</p>
               )}
