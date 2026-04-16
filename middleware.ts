@@ -12,6 +12,11 @@ const PROTECTED_PREFIXES = [
 export function middleware(request: NextRequest) {
   const { pathname, searchParams } = request.nextUrl;
 
+  // Redirect homepage to coming soon
+  if (pathname === "/") {
+    return NextResponse.redirect(new URL("/comingsoon", request.url));
+  }
+
   const needsAuth = PROTECTED_PREFIXES.some(
     (prefix) => pathname === prefix || pathname.startsWith(`${prefix}/`)
   );
@@ -31,11 +36,12 @@ export function middleware(request: NextRequest) {
 
   // Non-embedded access to app routes: redirect to the install page
   // (standalone access to the app is not supported — must come from Shopify Admin)
-  return NextResponse.redirect(new URL("/#install", request.url));
+  return NextResponse.redirect(new URL("/comingsoon", request.url));
 }
 
 export const config = {
   matcher: [
+    "/",
     "/inbox/:path*",
     "/analytics/:path*",
     "/settings/:path*",
