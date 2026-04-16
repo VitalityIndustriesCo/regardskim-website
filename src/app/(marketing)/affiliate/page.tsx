@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 
 type FormStatus = "idle" | "loading" | "success" | "error";
 
@@ -57,7 +58,7 @@ export default function AffiliatePage() {
               Recommend the tool you trust. Earn recurring commission on every merchant you refer.
             </p>
             <div className="mt-8">
-              <img src="/affiliate-hero.jpg" alt="Affiliate program" className="mx-auto rounded-2xl shadow-lg" style={{ maxHeight: 320 }} />
+              <Image src="/affiliate-hero.jpg" alt="Affiliate program" width={640} height={320} className="mx-auto rounded-2xl shadow-lg" style={{ maxHeight: 320 }} />
             </div>
             <div className="mt-10">
               <a href="#apply" className="btn-primary">
