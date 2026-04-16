@@ -80,6 +80,7 @@ export default function Footer() {
           <Link href="/#pricing" className="hover:text-forest">Pricing</Link>
           <Link href="/#faq" className="hover:text-forest">FAQ</Link>
           <Link href="/blog" className="hover:text-forest">Blog</Link>
+          <Link href="/affiliate" className="hover:text-forest">Affiliate</Link>
           <Link href="/privacy" className="hover:text-forest">Privacy Policy</Link>
           <Link href="/terms" className="hover:text-forest">Terms of Service</Link>
         </nav>
