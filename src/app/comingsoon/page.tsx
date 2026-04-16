@@ -335,7 +335,7 @@ export default function ComingSoonPage() {
                 },
                 {
                   icon: "✍️",
-                  text: "Drafts responses for you to approve — or handles them automatically",
+                  text: "Drafts in your style and you decide what gets sent — it just handles the busy work",
                 },
                 {
                   icon: "⚡",
