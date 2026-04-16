@@ -141,7 +141,7 @@ function OnboardingContent() {
     {
       number: 1,
       title: "Connect your email",
-      subtitle: "Connect your Gmail so Kim can read customer emails and draft replies.",
+      subtitle: "Connect your Gmail so Regards Kim can read customer emails and draft replies.",
       icon: GmailLogo,
       state: status.gmailStepComplete ? ("completed" as const) : ("active" as const),
       onClick: !status.gmailStepComplete ? () => setActiveView("connect-email") : undefined,
@@ -150,7 +150,7 @@ function OnboardingContent() {
     {
       number: 2,
       title: "Confirm your store policies",
-      subtitle: "Add the two policy links Kim should use as source references.",
+      subtitle: "Add the two policy links Regards Kim should use as source references.",
       icon: Settings2,
       state: status.policiesConfirmed ? ("completed" as const) : currentStepNumber === 2 ? ("active" as const) : ("locked" as const),
       onClick: currentStepNumber === 2 ? () => setActiveView("confirm-policies") : undefined,
@@ -159,7 +159,7 @@ function OnboardingContent() {
     {
       number: 3,
       title: "Go to your inbox",
-      subtitle: "See Kim's drafted replies and start approving them.",
+      subtitle: "See Regards Kim's drafted replies and start approving them.",
       icon: Inbox,
       state: currentStepNumber === 3 ? ("active" as const) : ("locked" as const),
       onClick: currentStepNumber === 3 ? () => void handleFinish() : undefined,
@@ -180,7 +180,7 @@ function OnboardingContent() {
             <p className="text-sm font-medium uppercase tracking-[0.2em] text-[#1A1A1A]/45">Step 1</p>
             <h1 className="text-3xl font-semibold tracking-tight text-[#1A1A1A]">Connect your email</h1>
             <p className="max-w-2xl text-sm text-[#1A1A1A]/65">
-              Connect your Gmail so Kim can read customer emails and draft replies for approval.
+              Connect your Gmail so Regards Kim can read customer emails and draft replies for approval.
             </p>
           </div>
 
@@ -203,7 +203,7 @@ function OnboardingContent() {
             <p className="text-sm font-medium uppercase tracking-[0.2em] text-[#1A1A1A]/45">Step 2</p>
             <h1 className="text-3xl font-semibold tracking-tight text-[#1A1A1A]">Confirm your store policies</h1>
             <p className="max-w-2xl text-sm text-[#1A1A1A]/65">
-              Add the two policy links Kim should use as source references, plus the agent name customers will see.
+              Add the two policy links Regards Kim should use as source references, plus the agent name customers will see.
             </p>
           </div>
 
@@ -229,7 +229,7 @@ function OnboardingContent() {
         <div className="space-y-3">
           <p className="text-sm font-medium uppercase tracking-[0.2em] text-[#1A1A1A]/45">Onboarding</p>
           <div className="space-y-2">
-            <h1 className="text-3xl font-semibold tracking-tight text-[#1A1A1A] sm:text-4xl">Get started with Kim</h1>
+            <h1 className="text-3xl font-semibold tracking-tight text-[#1A1A1A] sm:text-4xl">Get started with Regards Kim</h1>
             <p className="max-w-2xl text-sm text-[#1A1A1A]/65 sm:text-base">
               Complete these steps to start handling your customer emails.
             </p>
@@ -335,7 +335,7 @@ function OnboardingContent() {
               <div className="space-y-1">
                 <h2 className="text-lg font-semibold text-[#1A1A1A]">Everything&apos;s ready</h2>
                 <p className="text-sm text-[#1A1A1A]/65">
-                  Open your inbox to review Kim&apos;s drafted replies and start approving them.
+                  Open your inbox to review Regards Kim&apos;s drafted replies and start approving them.
                 </p>
               </div>
               <Button className="bg-[#E85D3A] text-white hover:bg-[#d34f2f]" onClick={() => void handleFinish()} disabled={isFinishing}>

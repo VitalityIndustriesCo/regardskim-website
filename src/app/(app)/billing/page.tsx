@@ -73,7 +73,7 @@ export default function BillingPage() {
       <section className="space-y-6">
         <div>
           <h1 className="text-2xl font-semibold tracking-tight md:text-3xl">Billing</h1>
-          <p className="text-sm text-muted-foreground">Manage your RegardsKim subscription.</p>
+          <p className="text-sm text-muted-foreground">Manage your Regards Kim subscription.</p>
         </div>
         <LoadingState message="Loading billing…" />
       </section>
@@ -85,7 +85,7 @@ export default function BillingPage() {
       <section className="space-y-6">
         <div>
           <h1 className="text-2xl font-semibold tracking-tight md:text-3xl">Billing</h1>
-          <p className="text-sm text-muted-foreground">Manage your RegardsKim subscription.</p>
+          <p className="text-sm text-muted-foreground">Manage your Regards Kim subscription.</p>
         </div>
         <ErrorState message={error} onRetry={fetchBilling} />
       </section>
@@ -97,7 +97,7 @@ export default function BillingPage() {
       <section className="space-y-6">
         <div>
           <h1 className="text-2xl font-semibold tracking-tight md:text-3xl">Billing</h1>
-          <p className="text-sm text-muted-foreground">Manage your RegardsKim subscription.</p>
+          <p className="text-sm text-muted-foreground">Manage your Regards Kim subscription.</p>
         </div>
         <EmptyState
           icon={CreditCard}
@@ -114,7 +114,7 @@ export default function BillingPage() {
     <section className="space-y-6">
       <div>
         <h1 className="text-2xl font-semibold tracking-tight md:text-3xl">Billing</h1>
-        <p className="text-sm text-muted-foreground">Manage your RegardsKim subscription.</p>
+        <p className="text-sm text-muted-foreground">Manage your Regards Kim subscription.</p>
       </div>
 
       <div className="grid gap-4 lg:grid-cols-[1.2fr_0.8fr]">
@@ -122,7 +122,7 @@ export default function BillingPage() {
         <Card>
           <CardHeader>
             <div className="flex items-center gap-2">
-              <CardTitle>RegardsKim Standard</CardTitle>
+              <CardTitle>Regards Kim Standard</CardTitle>
               {isActive ? (
                 <Badge>Active</Badge>
               ) : (
@@ -131,9 +131,9 @@ export default function BillingPage() {
             </div>
             <CardDescription>
               {billingData.subscription.exempt
-                ? "This development store is billing-exempt, so Kim is unlocked without a paid subscription."
+                ? "This development store is billing-exempt, so Regards Kim is unlocked without a paid subscription."
                 : isActive
-                  ? "Your store is live — Kim is handling your inbox."
+                  ? "Your store is live — Regards Kim is handling your inbox."
                   : "Your subscription looks inactive. Open Shopify billing to reactivate."}
             </CardDescription>
           </CardHeader>

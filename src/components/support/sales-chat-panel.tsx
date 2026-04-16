@@ -49,7 +49,7 @@ function buildReply(message: string) {
   ) {
     return {
       reply:
-        "Kim connects to your Shopify store and email, reads incoming customer emails, drafts replies using your live store data, and queues them for your approval before anything sends.",
+        "Regards Kim connects to your Shopify store and email, reads incoming customer emails, drafts replies using your live store data, and queues them for your approval before anything sends.",
       needsEmailCapture: false,
     };
   }
@@ -62,7 +62,7 @@ function buildReply(message: string) {
     normalized.includes("outlook")
   ) {
     return {
-      reply: "Kim works with Shopify, Gmail, and Outlook.",
+      reply: "Regards Kim works with Shopify, Gmail, and Outlook.",
       needsEmailCapture: false,
     };
   }
@@ -83,7 +83,7 @@ function buildReply(message: string) {
   ) {
     return {
       reply:
-        "Kim handles your customer support emails — shipping questions, returns, order updates, tracking info — using your real Shopify data.",
+        "Regards Kim handles your customer support emails — shipping questions, returns, order updates, tracking info — using your real Shopify data.",
       needsEmailCapture: false,
     };
   }
@@ -97,7 +97,7 @@ function buildReply(message: string) {
   ) {
     return {
       reply:
-        "Kim only accesses the data it needs from your Shopify store. Every reply is a draft until you approve it. Nothing sends without your permission.",
+        "Regards Kim only accesses the data it needs from your Shopify store. Every reply is a draft until you approve it. Nothing sends without your permission.",
       needsEmailCapture: false,
     };
   }
@@ -144,7 +144,7 @@ export function SalesChatPanel({ onClose }: Props) {
       id: "welcome",
       role: "assistant",
       content:
-        "Hey! I'm here to answer any questions about Kim. Ask me anything about pricing, setup, or how it works.",
+        "Hey! I'm here to answer any questions about Regards Kim. Ask me anything about pricing, setup, or how it works.",
     },
   ]);
   const [input, setInput] = useState("");
@@ -238,7 +238,7 @@ export function SalesChatPanel({ onClose }: Props) {
         <div className="flex items-center justify-between gap-3">
           <div className="min-w-0">
             <CardTitle className="text-sm font-semibold text-forest">Sales support</CardTitle>
-            <p className="text-xs text-slate">Ask about pricing, setup, or how Kim works</p>
+            <p className="text-xs text-slate">Ask about pricing, setup, or how Regards Kim works</p>
           </div>
           <Button variant="ghost" size="icon-sm" onClick={onClose} aria-label="Close sales support chat">
             <X className="h-4 w-4" />
@@ -255,7 +255,7 @@ export function SalesChatPanel({ onClose }: Props) {
           {isTyping && (
             <div className="flex items-center gap-2 text-xs text-slate">
               <Loader2 className="h-3.5 w-3.5 animate-spin text-brass" />
-              Kim is typing…
+              Regards Kim is typing…
             </div>
           )}
 
@@ -312,7 +312,7 @@ export function SalesChatPanel({ onClose }: Props) {
 
         <div className="flex w-full flex-col gap-1 text-[11px] text-slate sm:flex-row sm:items-center sm:justify-between sm:gap-3">
           <span>Session-only chat • {userMessageCount}/{MAX_MESSAGES}</span>
-          <span className="font-medium text-forest">Powered by Kim</span>
+          <span className="font-medium text-forest">Powered by Regards Kim</span>
         </div>
       </CardFooter>
     </Card>

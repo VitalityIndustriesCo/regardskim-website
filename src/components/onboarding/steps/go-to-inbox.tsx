@@ -17,7 +17,7 @@ export function GoToInbox() {
           <div className="space-y-2">
             <h2 className="text-2xl font-semibold tracking-tight">You&apos;re all set!</h2>
             <p className="text-muted-foreground">
-              Kim is already pulling your emails and drafting replies. By the time you finish
+              Regards Kim is already pulling your emails and drafting replies. By the time you finish
               reading this, there might already be drafts waiting.
             </p>
           </div>

@@ -26,7 +26,7 @@ export default function Pricing() {
             Pricing
           </h2>
           <p className="mt-4 text-base text-slate md:text-lg">
-            You handle the sales. Kim handles the support.
+            You handle the sales. Regards Kim handles the support.
           </p>
           <p className="mt-2 text-sm font-semibold uppercase tracking-[0.16em] text-brass">
             Simple monthly pricing
@@ -34,7 +34,7 @@ export default function Pricing() {
         </FadeIn>
 
         <FadeIn delay={0.06} className="mx-auto mt-10 w-full max-w-md rounded-[1.5rem] border border-forest/15 bg-paper p-5 text-left md:rounded-[2rem] md:p-10">
-          <p className="text-sm uppercase tracking-[0.16em] text-slate">RegardsKim</p>
+          <p className="text-sm uppercase tracking-[0.16em] text-slate">Regards Kim</p>
           <div className="mt-4 flex items-end gap-2 text-forest">
             <span className="font-display font-bold text-5xl leading-none sm:text-6xl md:text-7xl">${price}</span>
             <span className="mb-1.5 text-sm text-slate sm:mb-2 sm:text-base">{period}</span>

@@ -144,15 +144,15 @@ export const blogPosts: BlogPost[] = [
           window's still open. Knowing your store's tone and policies. And using all of that to write a
           reply that actually resolves the issue.
         </p>
-        <p>That's what Kim does.</p>
+        <p>That's what Regards Kim does.</p>
         <p>
-          Kim connects to your Shopify store and reads your customer emails with full context — order
+          It connects to your Shopify store and reads your customer emails with full context — order
           details, tracking status, store policies, previous conversations. When a customer emails about a
-          late delivery, Kim doesn't guess. It checks. When someone asks for a return, Kim knows whether
+          late delivery, it doesn't guess. It checks. When someone asks for a return, it knows whether
           they're inside the return window and drafts the right reply.
         </p>
         <p>
-          You review and send. Or Kim sends on your behalf if you set it up that way. Either way, the work
+          You review and send. Or it sends on your behalf if you set it up that way. Either way, the work
           gets done without you spending your morning copying tracking links.
         </p>
         <p>
@@ -179,10 +179,10 @@ export const blogPosts: BlogPost[] = [
         </p>
         <p>
           <strong>
-            <a href="https://regardskim.com">Kim answers your customer emails so you don't have to.</a>
+            <a href="https://regardskim.com">Regards Kim answers your customer emails so you don't have to.</a>
           </strong>
         </p>
-        <p>Kind regards, Kim</p>
+        <p>Kind regards, the Regards Kim team</p>
       </>
     ),
   },
@@ -345,7 +345,7 @@ export const blogPosts: BlogPost[] = [
           The more you can ground your reply in real store data, the faster and more accurate you will be.
         </p>
         <p>
-          This is also where tools can help. For example, RegardsKim is built for Shopify stores and can
+          This is also where tools can help. For example, Regards Kim is built for Shopify stores and can
           draft customer email replies using order details, tracking information, and your policies, then
           queue them for your approval before anything gets sent. That kind of setup is useful when you are
           answering the same types of questions over and over but still want the final say.
@@ -632,13 +632,13 @@ export const blogPosts: BlogPost[] = [
         </blockquote>
         <p>Fast, reassuring, and easy to personalize.</p>
 
-        <h2>Where a tool like Kim fits</h2>
+        <h2>Where a tool like Regards Kim fits</h2>
         <p>
           If WISMO questions are eating your day, this is the kind of task that should not depend on you
           manually writing every reply.
         </p>
         <p>
-          RegardsKim can read incoming support emails, pull in order and tracking details from your Shopify
+          It can read incoming support emails, pull in order and tracking details from your Shopify
           store, draft the reply, and leave it for you to approve before it goes out. That means repetitive
           support can move faster without losing control.
         </p>
@@ -877,7 +877,7 @@ export const blogPosts: BlogPost[] = [
           <li>Drafting responses using store data</li>
         </ul>
         <p>
-          This is where a tool like RegardsKim can make sense for a growing Shopify store. Kim reads incoming
+          This is where a tool like Regards Kim can make sense for a growing Shopify store. It reads incoming
           customer emails, drafts replies using order info, tracking, and store policies, and puts those
           drafts in front of you for approval. That is useful when you want faster handling of repetitive
           support without handing the whole customer experience over to a black box.
@@ -938,7 +938,7 @@ export const blogPosts: BlogPost[] = [
     date: "April 1, 2026",
     image: "/blog/why-different.png",
     meta:
-      "Generic AI email tools help with inbox clutter. Kim is different because it is built for Shopify support, real store data, and approved drafts.",
+      "Generic AI email tools help with inbox clutter. Regards Kim is different because it is built for Shopify support, real store data, and approved drafts.",
     content: (
       <>
         <p>
@@ -956,7 +956,7 @@ export const blogPosts: BlogPost[] = [
           That is the gap.
         </p>
         <p>
-          A general-purpose AI email assistant sees an inbox full of messages. Kim sees a Shopify store, real
+          A general-purpose AI email assistant sees an inbox full of messages. Regards Kim sees a Shopify store, real
           customers, real orders, real policies, and the kinds of support questions that show up every single
           day.
         </p>
@@ -1021,7 +1021,7 @@ export const blogPosts: BlogPost[] = [
           So it fills the gaps with generic language.
         </p>
         <p>
-          Now compare that with a Kim-style draft:
+          Now compare that with a Regards Kim-style draft:
         </p>
         <blockquote>
           <p>
@@ -1043,9 +1043,9 @@ export const blogPosts: BlogPost[] = [
           That is what ecommerce support needs.
         </p>
 
-        <h2>Kim is built specifically for ecommerce stores</h2>
+        <h2>Regards Kim is built specifically for ecommerce stores</h2>
         <p>
-          Kim is not trying to be an AI assistant for every kind of inbox.
+          It is not trying to be an AI assistant for every kind of inbox.
         </p>
         <p>
           It is built specifically for Shopify and ecommerce support.
@@ -1055,7 +1055,7 @@ export const blogPosts: BlogPost[] = [
         </p>
         <p>
           Instead of trying to be broadly helpful across sales emails, investor updates, meeting invites,
-          internal chatter, and newsletters, Kim is built around the emails ecommerce stores actually receive.
+          internal chatter, and newsletters, it is built around the emails ecommerce stores actually receive.
           That means it understands the shape of support work: order questions, returns, refunds, delivery
           delays, damaged items, product questions, and all the other repeat issues that eat time every week.
         </p>
@@ -1067,7 +1067,7 @@ export const blogPosts: BlogPost[] = [
           already knows.
         </p>
 
-        <h2>Kim understands the kinds of emails your customers send</h2>
+        <h2>It understands the kinds of emails your customers send</h2>
         <p>
           One of the biggest mistakes in AI email is treating every message like a blank slate.
         </p>
@@ -1078,7 +1078,7 @@ export const blogPosts: BlogPost[] = [
           That is good news, because recurring patterns are exactly where the right kind of AI can help.
         </p>
         <p>
-          Kim is designed around the most common support flows Shopify stores deal with:
+          It is designed around the most common support flows Shopify stores deal with:
         </p>
         <ul>
           <li>Where is my order?</li>
@@ -1091,14 +1091,14 @@ export const blogPosts: BlogPost[] = [
           <li>When will this be back in stock?</li>
         </ul>
         <p>
-          A general inbox tool may recognize that these are customer service emails. Kim recognizes them as
+          A general inbox tool may recognize that these are customer service emails. It recognizes them as
           ecommerce support situations with specific facts, policies, and actions behind them.
         </p>
         <p>
           That means the draft is not just smoother. It is more useful.
         </p>
 
-        <h2>Kim uses your real store data</h2>
+        <h2>It uses your real store data</h2>
         <p>
           This is the big one.
         </p>
@@ -1111,7 +1111,7 @@ export const blogPosts: BlogPost[] = [
           lives in your store.
         </p>
         <p>
-          Kim connects to Shopify and uses real store data like:
+          It connects to Shopify and uses real store data like:
         </p>
         <ul>
           <li>order details</li>
@@ -1122,7 +1122,7 @@ export const blogPosts: BlogPost[] = [
           <li>customer history</li>
         </ul>
         <p>
-          That is what allows Kim to draft replies that are actually informed.
+          That is what allows it to draft replies that are actually informed.
         </p>
         <p>
           Without that, an AI tool is guessing from context clues. With it, the tool can respond based on
@@ -1132,7 +1132,7 @@ export const blogPosts: BlogPost[] = [
           That difference is the difference between “hopefully helpful” and genuinely trustworthy.
         </p>
 
-        <h2>Kim uses your policies too</h2>
+        <h2>It uses your policies too</h2>
         <p>
           Good support is not just about sounding nice.
         </p>
@@ -1144,7 +1144,7 @@ export const blogPosts: BlogPost[] = [
           reply that sounds great but contradicts your actual policy creates more work, not less.
         </p>
         <p>
-          Kim uses your policies when drafting replies, so the response is not just friendly. It is aligned
+          It uses your policies when drafting replies, so the response is not just friendly. It is aligned
           with how your business actually works.
         </p>
         <p>
@@ -1160,7 +1160,7 @@ export const blogPosts: BlogPost[] = [
           Fair enough.
         </p>
         <p>
-          Kim is built with that in mind. Every reply is a draft until you approve it.
+          It is built with that in mind. Every reply is a draft until you approve it.
         </p>
         <p>
           Nothing gets sent without your say-so.
@@ -1180,7 +1180,7 @@ export const blogPosts: BlogPost[] = [
           back hours you would otherwise spend writing the same replies over and over.
         </p>
         <p>
-          When Kim works well, it does not feel like a generic AI layer pasted over your inbox. It feels like a
+          When it works well, it does not feel like a generic AI layer pasted over your inbox. It feels like a
           trusted extension of your store. One that knows your products, knows your policies, knows your
           customers, and helps you handle support with more speed and less mental load.
         </p>
@@ -1200,10 +1200,10 @@ export const blogPosts: BlogPost[] = [
           That is why general purpose does not cut it.
         </p>
         <p>
-          And that is why Kim is different.
+          And that is why Regards Kim is different.
         </p>
         <p>
-          If you run a Shopify store and want help with support without losing accuracy or control, Kim is built
+          If you run a Shopify store and want help with support without losing accuracy or control, it is built
           for exactly that.
         </p>
       </>

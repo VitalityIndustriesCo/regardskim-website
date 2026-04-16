@@ -42,7 +42,7 @@ export function ConnectEmail({ storeId }: ConnectEmailProps) {
             <div>
               <CardTitle className="text-[#1A1A1A]">Connect your Gmail</CardTitle>
               <CardDescription>
-                Kim needs access to your support inbox to read customer emails and draft replies for you.
+                Regards Kim needs access to your support inbox to read customer emails and draft replies for you.
               </CardDescription>
             </div>
           </div>
@@ -78,7 +78,7 @@ export function ConnectEmail({ storeId }: ConnectEmailProps) {
           </div>
 
           <p className="text-center text-xs text-[#1A1A1A]/50">
-            Kim only reads incoming emails. Nothing is ever sent without your approval.
+            Regards Kim only reads incoming emails. Nothing is ever sent without your approval.
           </p>
 
           {error ? <p className="text-sm text-destructive">{error}</p> : null}

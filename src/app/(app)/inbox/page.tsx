@@ -44,7 +44,7 @@ function ConnectEmailPrompt({ storeId }: { storeId: string | null }) {
       </div>
       <h2 className="text-xl font-semibold tracking-tight">Connect your email to get started</h2>
       <p className="mt-2 max-w-md text-sm text-muted-foreground">
-        Kim needs access to your support email to start reading customer messages and drafting replies.
+        Regards Kim needs access to your support email to start reading customer messages and drafting replies.
       </p>
       <div className="mt-6 flex flex-wrap justify-center gap-3">
         <Button onClick={handleConnectGmail} disabled={!storeId}>
@@ -205,7 +205,7 @@ export default function InboxPage() {
         <EmptyState
           icon={Mail}
           title="All clear! 🌟"
-          description="No emails waiting — Kim's keeping things tidy. New messages will pop up here when they arrive."
+          description="No emails waiting — Regards Kim is keeping things tidy. New messages will pop up here when they arrive."
         />
       ) : (
         <>

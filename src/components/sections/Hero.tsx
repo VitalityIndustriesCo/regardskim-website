@@ -16,7 +16,7 @@ export default function Hero() {
                 Your inbox, handled
               </h1>
               <p className="mx-auto mt-6 max-w-2xl text-base text-slate md:text-lg">
-                Kim handles your customer emails using your live store data — you just approve and send.
+                Regards Kim handles your customer emails using your live store data — you just approve and send.
               </p>
 
               <div className="mt-10 flex flex-col items-center gap-4">

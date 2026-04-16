@@ -4,7 +4,7 @@ import FadeIn from "@/components/ui/FadeIn";
 const benefits = [
   {
     title: "Hours back in your day",
-    body: "Stop writing the same replies over and over. Kim handles your support emails so you can run your store.",
+    body: "Stop writing the same replies over and over. Regards Kim handles your support emails so you can run your store.",
     icon: BookOpen,
   },
   {
@@ -14,7 +14,7 @@ const benefits = [
   },
   {
     title: "Your voice, your call",
-    body: "Kim drafts in your style and you decide what gets sent. It\u2019s your store \u2014 Kim just handles the busy work.",
+    body: "Regards Kim drafts in your style and you decide what gets sent. It\u2019s your store \u2014 it just handles the busy work.",
     icon: ShieldCheck,
   },
 ];

@@ -28,7 +28,7 @@ export function ChatPanel({ onClose }: Props) {
     {
       id: "welcome",
       role: "assistant",
-      content: "Hey — I’m Kim support. Ask me about setup, Shopify/email connections, settings, billing, or troubleshooting.",
+      content: "Hey — I’m Regards Kim support. Ask me about setup, Shopify/email connections, settings, billing, or troubleshooting.",
     },
   ]);
   const [input, setInput] = useState("");
@@ -122,7 +122,7 @@ export function ChatPanel({ onClose }: Props) {
         <div className="flex items-center justify-between">
           <div>
             <CardTitle className="text-sm">Support chat</CardTitle>
-            <p className="text-xs text-muted-foreground">Powered by Kim</p>
+            <p className="text-xs text-muted-foreground">Powered by Regards Kim</p>
           </div>
           <Button variant="ghost" size="icon-sm" onClick={onClose} aria-label="Close support chat">
             <X className="h-4 w-4" />
@@ -139,7 +139,7 @@ export function ChatPanel({ onClose }: Props) {
           {isTyping && (
             <div className="flex items-center gap-2 text-xs text-muted-foreground">
               <Loader2 className="h-3.5 w-3.5 animate-spin" />
-              Kim is typing…
+              Regards Kim is typing…
             </div>
           )}
         </div>

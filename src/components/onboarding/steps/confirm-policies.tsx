@@ -101,7 +101,7 @@ export function ConfirmPolicies({ value, onChange, onConfirmed }: ConfirmPolicie
       <CardHeader>
         <CardTitle>Just the essentials</CardTitle>
         <CardDescription>
-          Keep this fast. Add the policy links Kim should use as source references, plus the name customers will see on replies.
+          Keep this fast. Add the policy links Regards Kim should use as source references, plus the name customers will see on replies.
         </CardDescription>
       </CardHeader>
       <CardContent>

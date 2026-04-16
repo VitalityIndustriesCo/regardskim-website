@@ -112,17 +112,17 @@ export function DraftEditor({
             </CardTitle>
           </div>
           <CardDescription className="text-orange-600/80 dark:text-orange-400/80">
-            Kim couldn&apos;t handle this one automatically. Please review, edit, and reply.
+            Regards Kim couldn&apos;t handle this one automatically. Please review, edit, and reply.
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4 pt-4">
-          {/* Kim's note */}
+          {/* Regards Kim note */}
           <div className="space-y-2">
             <Label className="text-sm font-medium text-orange-700 dark:text-orange-300">
-              Kim&apos;s note
+              Regards Kim&apos;s note
             </Label>
             <div className="rounded-lg border border-orange-200 bg-orange-50/50 p-4 text-sm dark:border-orange-900/40 dark:bg-orange-950/20">
-              {kimNote || initialBody || "Kim flagged this email for your attention but didn't leave a note."}
+              {kimNote || initialBody || "Regards Kim flagged this email for your attention but didn't leave a note."}
             </div>
           </div>
 

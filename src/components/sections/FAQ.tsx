@@ -8,19 +8,19 @@ import FadeIn from "@/components/ui/FadeIn";
 const faqs = [
   {
     q: "What does Regards Kim do?",
-    a: "Kim connects to your Shopify store and email, reads your customer messages, and drafts helpful replies with the right order details. You review and send \u2014 usually takes a few minutes a day.",
+    a: "Regards Kim connects to your Shopify store and email, reads your customer messages, and drafts helpful replies with the right order details. You review and send \u2014 it usually takes a few minutes a day.",
   },
   {
-    q: "Does Kim send replies automatically?",
+    q: "Does Regards Kim send replies automatically?",
     a: "No \u2014 every reply is a draft until you send it. Most merchants review their queue in a few minutes each morning.",
   },
   {
-    q: "What kinds of emails can Kim help with?",
-    a: "Kim helps with order updates, tracking questions, returns, refunds, and exchanges.",
+    q: "What kinds of emails can Regards Kim help with?",
+    a: "It helps with order updates, tracking questions, returns, refunds, and exchanges.",
   },
   {
     q: "Is this a chatbot?",
-    a: "No. Kim works behind the scenes in your inbox and prepares drafts for review.",
+    a: "No. Regards Kim works behind the scenes in your inbox and prepares drafts for review.",
   },
   {
     q: "Does our agent have to be called Kim?",
@@ -28,7 +28,7 @@ const faqs = [
   },
   {
     q: "Why do you need our store policies?",
-    a: "So Kim gives the right answers. Your return window, shipping timeframes, exchange rules \u2014 Kim uses these to draft replies that match what you\u2019d actually say, instead of guessing.",
+    a: "So Regards Kim gives the right answers. Your return window, shipping timeframes, exchange rules \u2014 it uses these to draft replies that match what you\u2019d actually say, instead of guessing.",
   },
   {
     q: "How much does it cost?",
@@ -36,7 +36,7 @@ const faqs = [
   },
   {
     q: "Who is Regards Kim best for?",
-    a: "Store owners spending hours on customer emails every week \u2014 or paying someone else to. If your inbox is eating into time you should be spending on your business, Kim\u2019s for you.",
+    a: "Store owners spending hours on customer emails every week \u2014 or paying someone else to. If your inbox is eating into time you should be spending on your business, Regards Kim is for you.",
   },
 ];
 

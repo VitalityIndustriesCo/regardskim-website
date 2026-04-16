@@ -125,7 +125,7 @@ export default function AgentSettingsPage() {
               placeholder="Kim"
             />
             <p className="text-xs text-muted-foreground">
-              This is how Kim signs off emails. You can change it to any name you like.
+              This is how Regards Kim signs off emails. You can change it to any name you like.
             </p>
           </div>
         </CardContent>
@@ -134,7 +134,7 @@ export default function AgentSettingsPage() {
       <Card>
         <CardHeader>
           <CardTitle>Email signature</CardTitle>
-          <CardDescription>Added to the bottom of every reply Kim sends.</CardDescription>
+          <CardDescription>Added to the bottom of every reply Regards Kim sends.</CardDescription>
         </CardHeader>
         <CardContent className="space-y-6">
           <div className="space-y-2">

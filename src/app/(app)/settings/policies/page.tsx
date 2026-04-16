@@ -98,7 +98,7 @@ export default function PoliciesSettingsPage() {
       <section className="space-y-6">
         <div className="space-y-2">
           <h1 className="text-2xl font-semibold tracking-tight md:text-3xl">Policy settings</h1>
-          <p className="text-sm text-muted-foreground">Your shipping, refund, and return rules — Kim uses these to answer customers accurately.</p>
+          <p className="text-sm text-muted-foreground">Your shipping, refund, and return rules — Regards Kim uses these to answer customers accurately.</p>
         </div>
         <SettingsNav />
         <LoadingState message="Loading policy settings…" />
@@ -111,7 +111,7 @@ export default function PoliciesSettingsPage() {
       <section className="space-y-6">
         <div className="space-y-2">
           <h1 className="text-2xl font-semibold tracking-tight md:text-3xl">Policy settings</h1>
-          <p className="text-sm text-muted-foreground">Your shipping, refund, and return rules — Kim uses these to answer customers accurately.</p>
+          <p className="text-sm text-muted-foreground">Your shipping, refund, and return rules — Regards Kim uses these to answer customers accurately.</p>
         </div>
         <SettingsNav />
         <ErrorState message={error} onRetry={fetchStoreFile} />
@@ -124,7 +124,7 @@ export default function PoliciesSettingsPage() {
       <div className="space-y-2">
         <h1 className="text-2xl font-semibold tracking-tight md:text-3xl">Policy settings</h1>
         <p className="text-sm text-muted-foreground">
-          Your shipping, refund, and return rules — Kim uses these to answer customers accurately.
+          Your shipping, refund, and return rules — Regards Kim uses these to answer customers accurately.
         </p>
       </div>
 
@@ -134,7 +134,7 @@ export default function PoliciesSettingsPage() {
         <CardHeader>
           <CardTitle>Policy links</CardTitle>
           <CardDescription>
-            <span className="font-medium text-foreground">* Essential</span> — Kim reads these pages to learn your store rules.
+            <span className="font-medium text-foreground">* Essential</span> — Regards Kim reads these pages to learn your store rules.
           </CardDescription>
         </CardHeader>
         <CardContent className="grid gap-6 md:grid-cols-2">
@@ -153,7 +153,7 @@ export default function PoliciesSettingsPage() {
       <Card>
         <CardHeader>
           <CardTitle>Additional details</CardTitle>
-          <CardDescription>Helps Kim give more specific answers to customers.</CardDescription>
+          <CardDescription>Helps Regards Kim give more specific answers to customers.</CardDescription>
         </CardHeader>
         <CardContent className="grid gap-6 md:grid-cols-2">
           <div className="space-y-2">

@@ -132,7 +132,7 @@ function ReplyCard({ label, body, tone }: ReplyCardProps) {
 
           <div className="pt-2 text-forest">
             <p>Kind regards,</p>
-            <p className="font-medium">Kim — Support Team</p>
+            <p className="font-medium">Regards Kim — Support Team</p>
           </div>
         </div>
       </div>
@@ -148,7 +148,7 @@ export default function Comparison() {
           <div className="mx-auto max-w-3xl text-center">
             <p className="text-sm font-semibold uppercase tracking-[0.18em] text-brass">See the difference</p>
             <h2 className="mt-3 font-display text-4xl font-bold tracking-normal text-forest md:text-5xl">
-              Kim knows your store.
+              Regards Kim knows your store.
             </h2>
             <p className="mt-4 text-base text-slate md:text-lg">
               Same customer question. Very different level of help.
@@ -161,7 +161,7 @@ export default function Comparison() {
             <ComparisonCard title="Generic AI email tools" items={genericToolPoints} tone="generic" />
           </FadeIn>
           <FadeIn delay={0.08}>
-            <ComparisonCard title="Kim" items={kimPoints} tone="kim" />
+            <ComparisonCard title="Regards Kim" items={kimPoints} tone="kim" />
           </FadeIn>
         </div>
 
@@ -177,7 +177,7 @@ export default function Comparison() {
             <ReplyCard label="Generic AI" body={genericReply} tone="generic" />
           </FadeIn>
           <FadeIn delay={0.2}>
-            <ReplyCard label="Kim" body="" tone="kim" />
+            <ReplyCard label="Regards Kim" body="" tone="kim" />
           </FadeIn>
         </div>
       </div>

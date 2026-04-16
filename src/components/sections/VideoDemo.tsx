@@ -7,7 +7,7 @@ export default function VideoDemo() {
       <div className="section-shell">
         <FadeIn className="mx-auto max-w-3xl text-center">
           <h2 className="font-display text-4xl font-bold tracking-normal text-forest md:text-6xl">
-            See how Kim works
+            See how Regards Kim works
           </h2>
           <p className="mt-4 text-sm text-slate md:text-base">
             A quick walkthrough is on the way. For now, here&apos;s where the demo will live.

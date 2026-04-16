@@ -6,7 +6,7 @@ import MockupDetail from "@/components/ui/MockupDetail";
 const steps = [
   {
     number: "01",
-    title: "Emails come in, Kim gets to work",
+    title: "Emails come in, Regards Kim gets to work",
     body: "Customer emails are matched to orders, tracking, and your store policies — automatically.",
     mockup: (
       <MockupWindow title="Inbox" className="bg-cream">
@@ -19,7 +19,7 @@ const steps = [
   {
     number: "02",
     title: "Helpful replies, ready to go",
-    body: "Kim drafts real answers with the right details — not generic filler your customers can see through.",
+    body: "Regards Kim drafts real answers with the right details — not generic filler your customers can see through.",
     mockup: (
       <MockupWindow title="Draft composer" className="bg-cream">
         <div className="p-2.5 sm:p-3 md:p-4">

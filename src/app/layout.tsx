@@ -18,9 +18,9 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "RegardsKim — Your inbox, handled.",
+  title: "Regards Kim — Your inbox, handled.",
   description:
-    "Kim answers your customer emails so you don't have to. Tracking questions, returns, order updates — handled for $49/mo.",
+    "Regards Kim answers your customer emails so you don't have to. Tracking questions, returns, order updates — handled for $49/mo.",
 };
 
 export default function RootLayout({
