@@ -331,7 +331,7 @@ export default function ComingSoonPage() {
               {[
                 {
                   icon: "📬",
-                  text: "Reads and replies to customer emails using your real store data",
+                  text: "Sorts, reads, and replies to customer emails using live store data and tracking",
                 },
                 {
                   icon: "✍️",
