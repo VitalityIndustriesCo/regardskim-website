@@ -19,8 +19,8 @@ const faqs = [
     a: "It helps with order updates, tracking questions, returns, refunds, and exchanges.",
   },
   {
-    q: "Is this a chatbot?",
-    a: "No. Regards Kim works behind the scenes in your inbox and prepares drafts for review.",
+    q: "Is this a live chat widget?",
+    a: "No. Regards Kim works behind the scenes in your email inbox — not on your storefront. It reads incoming emails, drafts replies, and lets you review before sending.",
   },
   {
     q: "Does our agent have to be called Kim?",
