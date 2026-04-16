@@ -8,7 +8,7 @@ import { ShopifyLogo, GmailLogo } from "@/components/ui/BrandLogos";
 
 type FormStatus = "idle" | "loading" | "success" | "error";
 
-const SPOTS_REMAINING = 97;
+const SPOTS_REMAINING = 67;
 const TOTAL_SPOTS = 100;
 
 export default function ComingSoonPage() {
