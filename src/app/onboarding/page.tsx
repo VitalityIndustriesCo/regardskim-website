@@ -320,10 +320,12 @@ function OnboardingContent() {
           <span>{completedCount} of 3 complete</span>
           {isLoading ? (
             <span>Refreshing status…</span>
+          ) : status.policiesConfirmed ? (
+            <span>Gmail + policies confirmed</span>
           ) : status.gmailStepComplete ? (
-            <span>Gmail confirmed</span>
+            <span>Gmail confirmed, policies pending</span>
           ) : status.hasActiveGmailConnection ? (
-            <span>Gmail connected — confirm it in setup</span>
+            <span>Gmail connected, confirm to continue</span>
           ) : (
             <span>Waiting on Gmail</span>
           )}

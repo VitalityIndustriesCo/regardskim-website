@@ -13,7 +13,7 @@ export type OnboardingStatusResponse = {
     onboardingCompleted?: boolean;
     onboardingCompletedAt?: string | null;
     allComplete?: boolean;
-    currentStep?: "subscription" | "connectGmail" | "confirmPolicies" | "complete";
+    currentStep?: "connectGmail" | "confirmPolicies" | "complete";
     steps?: {
       installApp?: { complete: boolean };
       subscription?: {
