@@ -37,6 +37,10 @@ export default function ComingSoonPage() {
 
       if (res.ok) {
         setStatus("success");
+        // Fire Meta Pixel Lead event
+        if (typeof window !== "undefined" && (window as any).fbq) {
+          (window as any).fbq("track", "Lead");
+        }
         setFirstName("");
         setEmail("");
         setStoreUrl("");
