@@ -35,7 +35,6 @@ export default function RootLayout({
     >
       <head>
         <meta name="shopify-api-key" content="327e4daf19a338e5b04707172c2b39bc" />
-        <meta name="facebook-domain-verification" content="" />
       </head>
       <body className={cn("min-h-full font-sans", plusJakarta.className, geistMono.variable)}>
         <Script src="https://cdn.shopify.com/shopifycloud/app-bridge.js" strategy="beforeInteractive" />
