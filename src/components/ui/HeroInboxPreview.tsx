@@ -227,7 +227,7 @@ export default function HeroInboxPreview() {
               <p className="text-center text-[11px] font-semibold uppercase tracking-[0.14em] text-slate sm:text-xs">
                 Customer Emails
               </p>
-              <p className="hidden text-center text-[11px] font-semibold uppercase tracking-[0.14em] text-slate sm:block sm:text-xs">
+              <p className="hidden border-l border-forest/10 text-center text-[11px] font-semibold uppercase tracking-[0.14em] text-slate sm:block sm:text-xs">
                 Email Replies
               </p>
             </div>
@@ -248,7 +248,7 @@ export default function HeroInboxPreview() {
                     transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
                     className="border-b border-forest/8 last:border-b-0"
                   >
-                    <div className="grid grid-cols-1 gap-0 py-4 sm:grid-cols-2 sm:gap-6">
+                    <div className="grid grid-cols-1 gap-0 py-4 sm:grid-cols-2 sm:gap-0">
                       {/* Left — customer email */}
                       <div>
                         <div className="flex items-start gap-3">
@@ -269,7 +269,7 @@ export default function HeroInboxPreview() {
                       </div>
 
                       {/* Right — reply */}
-                      <div className="relative mt-3 sm:mt-0">
+                      <div className="relative mt-3 border-t border-forest/8 pt-3 sm:mt-0 sm:border-l sm:border-t-0 sm:pl-6 sm:pt-0">
                         {/* Reply content */}
                         {card.replyType === "draft" && (
                           <p className="text-[13px] leading-5 text-slate">
