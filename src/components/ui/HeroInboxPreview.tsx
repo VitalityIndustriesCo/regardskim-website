@@ -270,21 +270,26 @@ export default function HeroInboxPreview() {
 
                       {/* Right — reply */}
                       <div className="relative mt-3 sm:mt-0">
-                        {/* Reply preview */}
+                        {/* Reply content */}
                         {card.replyType === "draft" && (
                           <p className="text-[13px] leading-5 text-slate">
                             {card.replyPreview}
                           </p>
                         )}
                         {card.replyType === "decision" && (
-                          <p className="text-[13px] font-medium text-[#C06A1E]">
+                          <p className="text-center text-[13px] font-medium text-[#C06A1E]">
                             Action needed ⚡️
                           </p>
                         )}
                         {card.replyType === "nothing" && (
-                          <p className="text-[13px] text-slate">
-                            Kim checked this and no reply is needed.
-                          </p>
+                          <>
+                            <p className="text-center text-[13px] font-medium text-slate">
+                              ✓ Nothing needed
+                            </p>
+                            <p className="mt-1 text-[12px] leading-5 text-slate">
+                              Kim checked this email and doesn&apos;t think a reply is needed.
+                            </p>
+                          </>
                         )}
 
                         {/* Buttons */}
