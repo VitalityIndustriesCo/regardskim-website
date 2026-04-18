@@ -127,7 +127,14 @@ const badgeToneClass = {
 // 4: pause with 3 remaining (2.5s)
 // 5: (reset)
 
-const PHASE_MS = [2000, 800, 300, 1400, 2500];
+// Phase 0: idle inbox (2.5s)
+// Phase 1: cursor moves to button (0.8s)
+// Phase 2: button press (0.4s)
+// Phase 3: sent flash (0.8s)
+// Phase 4: email slides out (0.8s) — dismissed set here
+// Phase 5: pause with 3 remaining (3s)
+// Phase 6: reset
+const PHASE_MS = [2500, 800, 400, 800, 800, 3000];
 
 /* ── Component ───────────────────────────────────────────────────── */
 
@@ -144,12 +151,11 @@ export default function HeroInboxPreview() {
   useEffect(() => {
     if (prefersReducedMotion) return;
     const t = setTimeout(() => {
-      if (phase === 2) {
-        setPhase(3);
-      } else if (phase === 3) {
+      if (phase === 3) {
+        // After sent flash, start dismiss
         setDismissed(true);
         setPhase(4);
-      } else if (phase === 4) {
+      } else if (phase === 5) {
         reset();
       } else {
         setPhase((p) => p + 1);
@@ -230,16 +236,16 @@ export default function HeroInboxPreview() {
             <div className="mt-2 h-px bg-forest/10" />
 
             {/* Rows */}
-            <AnimatePresence mode="popLayout">
+            <AnimatePresence initial={false}>
               {visible.map((card) => {
                 const isTarget = card.id === "sarah";
                 return (
                   <motion.div
                     key={card.id}
-                    layout
                     initial={{ opacity: 1, height: "auto" }}
-                    exit={{ opacity: 0, height: 0 }}
-                    transition={{ duration: 0.5, ease: "easeInOut" }}
+                    animate={{ opacity: 1, height: "auto" }}
+                    exit={{ opacity: 0, height: 0, overflow: "hidden" }}
+                    transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
                     className="border-b border-forest/8 last:border-b-0"
                   >
                     <div className="grid grid-cols-1 gap-0 py-4 sm:grid-cols-[1.1fr_1fr] sm:gap-6">
