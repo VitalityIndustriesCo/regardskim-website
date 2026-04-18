@@ -91,12 +91,12 @@ const EMAILS: EmailCard[] = [
 function ReplyPanel({ card }: { card: EmailCard }) {
   if (card.replyStatus === "nothing") {
     return (
-      <div className="flex h-full flex-col justify-center gap-3 px-3 py-4">
+      <div className="flex h-full flex-col items-center justify-center gap-3 px-3 py-4 text-center">
         <p className="text-xs font-medium text-slate">✓ Nothing needed</p>
         <p className="text-[11px] leading-4 text-slate/70">
           Kim checked this email and doesn&apos;t think a reply is needed.
         </p>
-        <div className="flex gap-2">
+        <div className="flex justify-center gap-2">
           <span className="rounded-lg border border-forest/12 bg-paper px-2.5 py-1 text-[10px] font-medium text-forest">Review</span>
           <span className="rounded-lg border border-forest/12 bg-paper px-2.5 py-1 text-[10px] font-medium text-forest">Mark done</span>
         </div>
@@ -107,7 +107,7 @@ function ReplyPanel({ card }: { card: EmailCard }) {
   const isAction = card.replyStatus === "action";
 
   return (
-    <div className="flex h-full flex-col justify-between px-3 py-3">
+    <div className="flex h-full flex-col items-center justify-between px-3 py-3 text-center">
       <div>
         {isAction ? (
           <p className="text-[11px] font-medium text-[#C06A1E]">
@@ -115,13 +115,13 @@ function ReplyPanel({ card }: { card: EmailCard }) {
           </p>
         ) : (
           card.replyPreview && (
-            <p className="line-clamp-3 text-[11px] leading-4 text-slate">
+            <p className="line-clamp-3 text-[11px] leading-4 text-slate text-center">
               {card.replyPreview}
             </p>
           )
         )}
       </div>
-      <div className="mt-3 flex flex-wrap gap-1.5">
+      <div className="mt-3 flex flex-wrap justify-center gap-1.5">
         {isAction ? (
           <>
             <span className="rounded-lg border border-forest/15 bg-paper px-2.5 py-1 text-[10px] font-medium text-forest">Write reply</span>
