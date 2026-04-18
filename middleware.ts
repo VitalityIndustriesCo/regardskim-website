@@ -12,10 +12,10 @@ const PROTECTED_PREFIXES = [
 export function middleware(request: NextRequest) {
   const { pathname, searchParams } = request.nextUrl;
 
-  // Redirect homepage to coming soon (TEMPORARILY DISABLED)
-  // if (pathname === "/") {
-  //   return NextResponse.redirect(new URL("/comingsoon", request.url));
-  // }
+  // Redirect homepage to coming soon
+  if (pathname === "/") {
+    return NextResponse.redirect(new URL("/comingsoon", request.url));
+  }
 
   const needsAuth = PROTECTED_PREFIXES.some(
     (prefix) => pathname === prefix || pathname.startsWith(`${prefix}/`)
