@@ -63,7 +63,7 @@ export default function MockupDetail({ mode = "draft" }: MockupDetailProps) {
         </div>
 
         {/* Right: Kim's reply */}
-        <div className="flex flex-col items-center border-t border-forest/8 bg-paper/60 px-4 py-4 text-center sm:border-l sm:border-t-0 sm:border-forest/10">
+        <div className="border-t border-forest/8 bg-paper/60 px-4 py-4 sm:border-l sm:border-t-0 sm:border-forest/10">
           {/* Reply body */}
           <div className="rounded-xl border border-forest/10 bg-paper p-3">
             <p className="text-[12px] leading-5 text-slate sm:text-[13px] sm:leading-5">
@@ -80,7 +80,7 @@ export default function MockupDetail({ mode = "draft" }: MockupDetailProps) {
           </div>
 
           {/* Action buttons */}
-          <div className="mt-3">
+          <div className="mt-3 flex justify-center">
             <AnimatePresence mode="wait">
               {isApproval && !isDraft ? (
                 <motion.div
@@ -92,7 +92,7 @@ export default function MockupDetail({ mode = "draft" }: MockupDetailProps) {
                   <CheckCircle2 size={13} /> Sent ✓
                 </motion.div>
               ) : (
-                <motion.div key="buttons" className="flex flex-wrap gap-2">
+                <motion.div key="buttons" className="flex flex-wrap justify-center gap-2">
                   <span className="rounded-lg bg-[#1A7A3A] px-3 py-1.5 text-[11px] font-semibold text-white">
                     Approve &amp; send
                   </span>

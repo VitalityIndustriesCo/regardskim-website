@@ -269,7 +269,7 @@ export default function HeroInboxPreview() {
                       </div>
 
                       {/* Right — reply */}
-                      <div className="relative mt-3 flex flex-col items-center text-center sm:mt-0">
+                      <div className="relative mt-3 sm:mt-0">
                         {/* Reply preview */}
                         {card.replyType === "draft" && (
                           <p className="text-[13px] leading-5 text-slate">

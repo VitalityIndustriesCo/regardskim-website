@@ -91,8 +91,8 @@ const EMAILS: EmailCard[] = [
 function ReplyPanel({ card }: { card: EmailCard }) {
   if (card.replyStatus === "nothing") {
     return (
-      <div className="flex h-full flex-col items-center justify-center gap-3 px-3 py-4 text-center">
-        <p className="text-xs font-medium text-slate">✓ Nothing needed</p>
+      <div className="flex h-full flex-col justify-center gap-3 px-3 py-4">
+        <p className="text-center text-xs font-medium text-slate">✓ Nothing needed</p>
         <p className="text-[11px] leading-4 text-slate/70">
           Kim checked this email and doesn&apos;t think a reply is needed.
         </p>
@@ -107,15 +107,15 @@ function ReplyPanel({ card }: { card: EmailCard }) {
   const isAction = card.replyStatus === "action";
 
   return (
-    <div className="flex h-full flex-col items-center justify-between px-3 py-3 text-center">
+    <div className="flex h-full flex-col justify-between px-3 py-3">
       <div>
         {isAction ? (
-          <p className="text-[11px] font-medium text-[#C06A1E]">
+          <p className="text-center text-[11px] font-medium text-[#C06A1E]">
             Action needed ⚡️
           </p>
         ) : (
           card.replyPreview && (
-            <p className="line-clamp-3 text-[11px] leading-4 text-slate text-center">
+            <p className="line-clamp-3 text-[11px] leading-4 text-slate">
               {card.replyPreview}
             </p>
           )
