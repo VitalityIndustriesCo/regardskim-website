@@ -118,16 +118,18 @@ function ReplyPanel({ card }: { card: EmailCard }) {
           </p>
         )}
       </div>
-      <div className="mt-3 flex gap-2">
+      <div className="mt-3 flex flex-wrap gap-1.5">
         {isAction ? (
           <>
-            <span className="rounded-lg border border-forest/12 bg-paper px-2.5 py-1 text-[10px] font-medium text-forest">Review</span>
-            <span className="rounded-lg border border-[#C06A1E]/20 bg-[#FFF3E0] px-2.5 py-1 text-[10px] font-medium text-[#C06A1E]">Decide</span>
+            <span className="rounded-lg bg-[#C06A1E] px-2.5 py-1 text-[10px] font-semibold text-white">Approve &amp; send</span>
+            <span className="rounded-lg border border-forest/15 bg-paper px-2.5 py-1 text-[10px] font-medium text-forest">Edit reply</span>
+            <span className="rounded-lg border border-forest/15 bg-paper px-2.5 py-1 text-[10px] font-medium text-forest">Skip for now</span>
           </>
         ) : (
           <>
-            <span className="rounded-lg border border-forest/12 bg-paper px-2.5 py-1 text-[10px] font-medium text-forest">Edit</span>
-            <span className="rounded-lg border border-[#1A7A3A]/20 bg-[#DEF5E5] px-2.5 py-1 text-[10px] font-medium text-[#1A7A3A]">Send</span>
+            <span className="rounded-lg bg-[#1A7A3A] px-2.5 py-1 text-[10px] font-semibold text-white">Approve &amp; send</span>
+            <span className="rounded-lg border border-forest/15 bg-paper px-2.5 py-1 text-[10px] font-medium text-forest">Edit reply</span>
+            <span className="rounded-lg border border-forest/15 bg-paper px-2.5 py-1 text-[10px] font-medium text-forest">Skip for now</span>
           </>
         )}
       </div>
