@@ -91,7 +91,7 @@ const EMAILS: EmailCard[] = [
 function ReplyPanel({ card }: { card: EmailCard }) {
   if (card.replyStatus === "nothing") {
     return (
-      <div className="flex h-full flex-col items-center justify-center gap-3 px-3 py-4 text-center">
+      <div className="flex h-full flex-col justify-center gap-3 px-3 py-4">
         <p className="text-xs font-medium text-slate">✓ Nothing needed</p>
         <p className="text-[11px] leading-4 text-slate/70">
           Kim checked this email and doesn&apos;t think a reply is needed.
@@ -111,7 +111,7 @@ function ReplyPanel({ card }: { card: EmailCard }) {
       <div>
         {isAction ? (
           <p className="text-[11px] font-medium text-[#C06A1E]">
-            Merchant input needed
+            Action needed ⚡️
           </p>
         ) : (
           card.replyPreview && (
@@ -156,7 +156,7 @@ export default function MockupInbox() {
       </div>
 
       {/* Column headers */}
-      <div className="grid grid-cols-1 gap-0 border-b border-forest/10 sm:grid-cols-[1.1fr_0.9fr]">
+      <div className="grid grid-cols-1 gap-0 border-b border-forest/10 sm:grid-cols-2">
         <div className="px-3 py-2 sm:px-4">
           <span className="text-[10px] font-semibold uppercase tracking-[0.14em] text-slate sm:text-[11px]">Customer Emails</span>
         </div>
@@ -168,7 +168,7 @@ export default function MockupInbox() {
       {/* Email rows */}
       <div className="divide-y divide-forest/8">
         {EMAILS.map((card) => (
-          <div key={`${card.sender}-${card.subject}`} className="grid grid-cols-1 sm:grid-cols-[1.1fr_0.9fr]">
+          <div key={`${card.sender}-${card.subject}`} className="grid grid-cols-1 sm:grid-cols-2">
             {/* Left: customer email */}
             <div className="px-3 py-3 sm:px-4">
               <div className="flex items-start gap-2.5">

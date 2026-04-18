@@ -223,7 +223,7 @@ export default function HeroInboxPreview() {
             </div>
 
             {/* Column headers */}
-            <div className="mt-5 grid grid-cols-1 sm:grid-cols-[1.1fr_1fr]">
+            <div className="mt-5 grid grid-cols-1 sm:grid-cols-2">
               <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-slate sm:text-xs">
                 Customer Emails
               </p>
@@ -248,7 +248,7 @@ export default function HeroInboxPreview() {
                     transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
                     className="border-b border-forest/8 last:border-b-0"
                   >
-                    <div className="grid grid-cols-1 gap-0 py-4 sm:grid-cols-[1.1fr_1fr] sm:gap-6">
+                    <div className="grid grid-cols-1 gap-0 py-4 sm:grid-cols-2 sm:gap-6">
                       {/* Left — customer email */}
                       <div>
                         <div className="flex items-start gap-3">
@@ -278,17 +278,17 @@ export default function HeroInboxPreview() {
                         )}
                         {card.replyType === "decision" && (
                           <p className="text-[13px] font-medium text-[#C06A1E]">
-                            Merchant input needed
+                            Action needed ⚡️
                           </p>
                         )}
                         {card.replyType === "nothing" && (
-                          <p className="text-center text-[13px] text-slate">
+                          <p className="text-[13px] text-slate">
                             Kim checked this and no reply is needed.
                           </p>
                         )}
 
                         {/* Buttons */}
-                        <div className={`mt-3 flex flex-wrap gap-2 ${card.replyType === "nothing" ? "justify-center" : ""}`}>
+                        <div className="mt-3 flex flex-wrap gap-2">
                           {isTarget && showSent ? (
                             <motion.span
                               initial={{ opacity: 0, scale: 0.9 }}

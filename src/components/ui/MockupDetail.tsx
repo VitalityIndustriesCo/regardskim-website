@@ -24,7 +24,7 @@ export default function MockupDetail({ mode = "draft" }: MockupDetailProps) {
   return (
     <div className="overflow-hidden rounded-2xl border border-forest/12 bg-[#F7F5F0]">
       {/* Column headers */}
-      <div className="grid grid-cols-1 gap-0 border-b border-forest/10 sm:grid-cols-[1.1fr_0.9fr]">
+      <div className="grid grid-cols-1 gap-0 border-b border-forest/10 sm:grid-cols-2">
         <div className="px-4 py-2.5">
           <span className="text-[10px] font-semibold uppercase tracking-[0.14em] text-slate sm:text-[11px]">Customer Emails</span>
         </div>
@@ -34,7 +34,7 @@ export default function MockupDetail({ mode = "draft" }: MockupDetailProps) {
       </div>
 
       {/* Two-column layout */}
-      <div className="grid grid-cols-1 sm:grid-cols-[1.1fr_0.9fr]">
+      <div className="grid grid-cols-1 sm:grid-cols-2">
         {/* Left: customer email */}
         <div className="px-4 py-4">
           {/* Sender header */}
