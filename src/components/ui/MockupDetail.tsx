@@ -58,7 +58,8 @@ export default function MockupDetail({ mode = "draft" }: MockupDetailProps) {
 
         {/* Right: Kim's reply */}
         <div className="border-t border-forest/8 bg-paper/60 px-3 py-3 sm:border-l sm:border-t-0 sm:border-forest/10 sm:px-4 sm:py-4">
-          <p className={`text-[11px] font-semibold sm:text-xs ${isDraft || !isApproval ? "text-[#1A7A3A]" : "text-[#1A7A3A]"}`}>
+          <p className="text-[10px] uppercase tracking-[0.12em] text-slate sm:text-[11px]">Email Replies</p>
+          <p className={`mt-1 text-[11px] font-semibold sm:text-xs text-[#1A7A3A]`}>
             {isDraft || !isApproval ? "Ready to send" : "Sent"}
           </p>
 
