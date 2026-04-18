@@ -158,10 +158,10 @@ export default function MockupInbox() {
       {/* Column headers */}
       <div className="grid grid-cols-1 gap-0 border-b border-forest/10 sm:grid-cols-2">
         <div className="px-3 py-2 sm:px-4">
-          <span className="text-[10px] font-semibold uppercase tracking-[0.14em] text-slate sm:text-[11px]">Customer Emails</span>
+          <span className="block text-center text-[10px] font-semibold uppercase tracking-[0.14em] text-slate sm:text-[11px]">Customer Emails</span>
         </div>
         <div className="hidden border-l border-forest/10 px-3 py-2 sm:block sm:px-4">
-          <span className="text-[10px] uppercase tracking-[0.12em] text-slate sm:text-[11px]">Email Replies</span>
+          <span className="block text-center text-[10px] font-semibold uppercase tracking-[0.14em] text-slate sm:text-[11px]">Email Replies</span>
         </div>
       </div>
 

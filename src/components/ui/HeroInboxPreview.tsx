@@ -224,10 +224,10 @@ export default function HeroInboxPreview() {
 
             {/* Column headers */}
             <div className="mt-5 grid grid-cols-1 sm:grid-cols-2">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-slate sm:text-xs">
+              <p className="text-center text-[11px] font-semibold uppercase tracking-[0.14em] text-slate sm:text-xs">
                 Customer Emails
               </p>
-              <p className="hidden text-[11px] font-semibold uppercase tracking-[0.14em] text-slate sm:block sm:text-xs">
+              <p className="hidden text-center text-[11px] font-semibold uppercase tracking-[0.14em] text-slate sm:block sm:text-xs">
                 Email Replies
               </p>
             </div>

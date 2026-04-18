@@ -26,10 +26,10 @@ export default function MockupDetail({ mode = "draft" }: MockupDetailProps) {
       {/* Column headers */}
       <div className="grid grid-cols-1 gap-0 border-b border-forest/10 sm:grid-cols-2">
         <div className="px-4 py-2.5">
-          <span className="text-[10px] font-semibold uppercase tracking-[0.14em] text-slate sm:text-[11px]">Customer Emails</span>
+          <span className="block text-center text-[10px] font-semibold uppercase tracking-[0.14em] text-slate sm:text-[11px]">Customer Emails</span>
         </div>
         <div className="hidden border-l border-forest/10 px-4 py-2.5 sm:block">
-          <span className="text-[10px] font-semibold uppercase tracking-[0.14em] text-slate sm:text-[11px]">Email Replies</span>
+          <span className="block text-center text-[10px] font-semibold uppercase tracking-[0.14em] text-slate sm:text-[11px]">Email Replies</span>
         </div>
       </div>
 
