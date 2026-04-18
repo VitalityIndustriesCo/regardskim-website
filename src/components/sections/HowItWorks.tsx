@@ -6,8 +6,8 @@ import MockupDetail from "@/components/ui/MockupDetail";
 const steps = [
   {
     number: "01",
-    title: "Emails come in, Regards Kim gets to work",
-    body: "Customer emails are matched to orders, tracking, and your store policies — automatically.",
+    title: "Emails come in, sorted instantly",
+    body: "Every email is automatically categorised — WISMO, returns, refunds, complaints — and matched to the right order, tracking, and store policies.",
     mockup: (
       <MockupWindow title="Inbox" className="bg-cream">
         <div className="p-2.5 sm:p-3 md:p-4">
