@@ -1,133 +1,196 @@
-type Status = "Pending" | "Draft Ready" | "Action Required" | "Read";
-type Category = "WISMO" | "Return" | "Refund" | "Product Q" | "Complaint" | "All";
+type FilterPill = {
+  label: string;
+  count: number;
+  active?: boolean;
+  tone: "dark" | "green" | "amber" | "muted";
+};
 
-type InboxRow = {
+const FILTERS: FilterPill[] = [
+  { label: "All", count: 4, active: true, tone: "dark" },
+  { label: "ready to send", count: 2, tone: "green" },
+  { label: "needs your decision", count: 1, tone: "amber" },
+  { label: "nothing needed", count: 1, tone: "muted" },
+];
+
+const pillClass: Record<FilterPill["tone"], string> = {
+  dark: "bg-forest text-paper border-forest",
+  green: "bg-[#DEF5E5] text-[#1A7A3A] border-[#B5E2C2]",
+  amber: "bg-[#FFF3E0] text-[#C06A1E] border-[#F5D5A8]",
+  muted: "bg-mist text-slate border-forest/12",
+};
+
+type EmailCard = {
+  avatar: string;
+  avatarColor: string;
   sender: string;
   subject: string;
-  status: Status;
-  category: Category;
+  badge: string;
+  badgeTone: "green" | "amber" | "muted";
+  preview: string;
+  timeAgo: string;
+  replyStatus: "ready" | "action" | "nothing";
+  replyPreview?: string;
 };
 
-const ROWS: InboxRow[] = [
-  { sender: "Sarah M.", subject: "Where is my order?", status: "Draft Ready", category: "WISMO" },
-  { sender: "James T.", subject: "Return request", status: "Draft Ready", category: "Return" },
-  { sender: "Order #1847 shipped", subject: "Shipping update", status: "Read", category: "WISMO" },
-  { sender: "Michael R.", subject: "Refund for damaged item", status: "Action Required", category: "Refund" },
+const badgeToneClass = {
+  green: "bg-[#DEF5E5] text-[#1A7A3A] border-[#B5E2C2]",
+  amber: "bg-[#FFF3E0] text-[#C06A1E] border-[#F5D5A8]",
+  muted: "bg-mist text-slate border-forest/12",
+};
+
+const EMAILS: EmailCard[] = [
+  {
+    avatar: "S",
+    avatarColor: "bg-[#E8893A]",
+    sender: "sarah@gmail.com",
+    subject: "Where is my order #1842?",
+    badge: "Ready to Send",
+    badgeTone: "green",
+    preview: "Hi, I ordered the weighted blanket last week and haven't received any tracking information yet...",
+    timeAgo: "2h ago",
+    replyStatus: "ready",
+    replyPreview: "Hi Sarah, your order #1842 shipped yesterday via Australia Post. Your tracking number is...",
+  },
+  {
+    avatar: "J",
+    avatarColor: "bg-[#7C6BC4]",
+    sender: "james.t@outlook.com",
+    subject: "Return request for order #1836",
+    badge: "Needs Your Decision",
+    badgeTone: "amber",
+    preview: "I'd like to return the throw pillow, it's not quite the right colour for my living room...",
+    timeAgo: "3h ago",
+    replyStatus: "action",
+    replyPreview: "Hi James, I can help with that! Your order is within our 30-day return window...",
+  },
+  {
+    avatar: "E",
+    avatarColor: "bg-[#6B7280]",
+    sender: "email@shopify.com",
+    subject: "Order #1847 shipped",
+    badge: "Nothing Needed",
+    badgeTone: "muted",
+    preview: "Shipping confirmation for order #1847 placed by Michael R...",
+    timeAgo: "5h ago",
+    replyStatus: "nothing",
+  },
+  {
+    avatar: "M",
+    avatarColor: "bg-[#3B9B6D]",
+    sender: "michael.r@gmail.com",
+    subject: "Refund for damaged item",
+    badge: "Ready to Send",
+    badgeTone: "green",
+    preview: "The package arrived but the item inside was broken. Can I get a refund?",
+    timeAgo: "6h ago",
+    replyStatus: "ready",
+    replyPreview: "Hi Michael, I'm sorry to hear that. I've processed a full refund for your order...",
+  },
 ];
 
-const badgeClass: Record<Status, string> = {
-  Pending: "bg-badge-amber/15 text-badge-amber border-badge-amber/35",
-  "Draft Ready": "bg-forest/15 text-forest border-forest/30",
-  "Action Required": "bg-oxblood/15 text-oxblood border-oxblood/35",
-  Read: "bg-badge-gray/15 text-badge-gray border-badge-gray/35",
-};
+function ReplyPanel({ card }: { card: EmailCard }) {
+  if (card.replyStatus === "nothing") {
+    return (
+      <div className="flex h-full flex-col items-center justify-center gap-3 px-3 py-4 text-center">
+        <p className="text-xs font-medium text-slate">✓ Nothing needed</p>
+        <p className="text-[11px] leading-4 text-slate/70">
+          Kim checked this email and doesn&apos;t think a reply is needed.
+        </p>
+        <div className="flex gap-2">
+          <span className="rounded-lg border border-forest/12 bg-paper px-2.5 py-1 text-[10px] font-medium text-forest">Review</span>
+          <span className="rounded-lg border border-forest/12 bg-paper px-2.5 py-1 text-[10px] font-medium text-forest">Mark done</span>
+        </div>
+      </div>
+    );
+  }
 
-const categoryBadgeClass: Record<Category, string> = {
-  All: "bg-forest/10 text-forest border-forest/20",
-  WISMO: "bg-[#E8893A]/12 text-[#C06A1E] border-[#E8893A]/30",
-  Return: "bg-[#7C6BC4]/12 text-[#5B4FA0] border-[#7C6BC4]/30",
-  Refund: "bg-oxblood/12 text-oxblood border-oxblood/30",
-  "Product Q": "bg-[#3B9B6D]/12 text-[#2A7A53] border-[#3B9B6D]/30",
-  Complaint: "bg-[#D4564E]/12 text-[#B33E37] border-[#D4564E]/30",
-};
+  const isAction = card.replyStatus === "action";
 
-const SIDEBAR_CATEGORIES: { label: Category; count: number }[] = [
-  { label: "All", count: 4 },
-  { label: "WISMO", count: 2 },
-  { label: "Refund", count: 1 },
-  { label: "Return", count: 1 },
-  { label: "Product Q", count: 0 },
-  { label: "Complaint", count: 0 },
-];
+  return (
+    <div className="flex h-full flex-col justify-between px-3 py-3">
+      <div>
+        <p className={`text-[11px] font-semibold ${isAction ? "text-[#C06A1E]" : "text-[#1A7A3A]"}`}>
+          {isAction ? "⚡ Needs your decision" : "✓ Draft ready to send"}
+        </p>
+        {card.replyPreview && (
+          <p className="mt-2 line-clamp-3 text-[11px] leading-4 text-slate">
+            {card.replyPreview}
+          </p>
+        )}
+      </div>
+      <div className="mt-3 flex gap-2">
+        {isAction ? (
+          <>
+            <span className="rounded-lg border border-forest/12 bg-paper px-2.5 py-1 text-[10px] font-medium text-forest">Review</span>
+            <span className="rounded-lg border border-[#C06A1E]/20 bg-[#FFF3E0] px-2.5 py-1 text-[10px] font-medium text-[#C06A1E]">Decide</span>
+          </>
+        ) : (
+          <>
+            <span className="rounded-lg border border-forest/12 bg-paper px-2.5 py-1 text-[10px] font-medium text-forest">Edit</span>
+            <span className="rounded-lg border border-[#1A7A3A]/20 bg-[#DEF5E5] px-2.5 py-1 text-[10px] font-medium text-[#1A7A3A]">Send</span>
+          </>
+        )}
+      </div>
+    </div>
+  );
+}
 
 export default function MockupInbox() {
   return (
-    <div className="overflow-hidden rounded-2xl border border-forest/12 bg-paper">
-      <div className="flex">
-        {/* Category sidebar */}
-        <div className="hidden w-[130px] shrink-0 border-r border-forest/10 bg-mist/50 sm:block md:w-[140px]">
-          <div className="border-b border-forest/10 px-3 py-2">
-            <span className="text-[10px] uppercase tracking-[0.1em] text-slate sm:text-[11px]">Categories</span>
-          </div>
-          <div className="space-y-0.5 p-1.5">
-            {SIDEBAR_CATEGORIES.map((cat, idx) => (
-              <div
-                key={cat.label}
-                className={`flex items-center justify-between rounded-lg px-2.5 py-1.5 text-[11px] transition ${
-                  idx === 0
-                    ? "bg-forest/8 font-medium text-forest"
-                    : "text-slate hover:bg-forest/4"
-                }`}
-              >
-                <span>{cat.label}</span>
-                {cat.count > 0 && (
-                  <span className={`rounded-full px-1.5 py-0.5 text-[9px] font-medium ${
-                    idx === 0 ? "bg-forest/15 text-forest" : "bg-forest/8 text-slate"
-                  }`}>
-                    {cat.count}
-                  </span>
-                )}
-              </div>
-            ))}
-          </div>
+    <div className="overflow-hidden rounded-2xl border border-forest/12 bg-[#F7F5F0]">
+      {/* Filter pills */}
+      <div className="flex flex-wrap gap-2 border-b border-forest/10 px-3 py-3 sm:px-4">
+        {FILTERS.map((f) => (
+          <span
+            key={f.label}
+            className={`inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-[10px] font-medium sm:text-[11px] ${pillClass[f.tone]}`}
+          >
+            {f.active ? f.label : f.count} {!f.active && f.label}
+            {f.active && <span className="ml-0.5">({f.count})</span>}
+          </span>
+        ))}
+      </div>
+
+      {/* Column headers */}
+      <div className="grid grid-cols-1 gap-0 border-b border-forest/10 sm:grid-cols-[1.1fr_0.9fr]">
+        <div className="px-3 py-2 sm:px-4">
+          <span className="text-[10px] uppercase tracking-[0.12em] text-slate sm:text-[11px]">Customer Email</span>
         </div>
+        <div className="hidden border-l border-forest/10 px-3 py-2 sm:block sm:px-4">
+          <span className="text-[10px] uppercase tracking-[0.12em] text-slate sm:text-[11px]">Email Replies</span>
+        </div>
+      </div>
 
-        {/* Inbox table */}
-        <div className="min-w-0 flex-1">
-          {/* Mobile category pills */}
-          <div className="flex gap-1.5 overflow-x-auto border-b border-forest/10 bg-mist/50 px-3 py-2 sm:hidden">
-            {SIDEBAR_CATEGORIES.slice(0, 4).map((cat, idx) => (
-              <span
-                key={cat.label}
-                className={`shrink-0 rounded-full border px-2 py-0.5 text-[10px] font-medium ${
-                  idx === 0
-                    ? "border-forest/20 bg-forest/10 text-forest"
-                    : "border-forest/10 bg-paper text-slate"
-                }`}
-              >
-                {cat.label} {cat.count > 0 && `(${cat.count})`}
-              </span>
-            ))}
-          </div>
-
-          <div className="grid grid-cols-[minmax(0,0.9fr)_minmax(0,1.4fr)] gap-2 border-b border-forest/10 bg-mist px-3 py-2 text-[10px] uppercase tracking-[0.1em] text-slate sm:grid-cols-[1fr_1.2fr_90px_110px] sm:text-[11px]">
-            <span>Sender</span>
-            <span>Subject</span>
-            <span className="hidden sm:block">Category</span>
-            <span className="hidden sm:block">Status</span>
-          </div>
-
-          {ROWS.map((row) => (
-            <div
-              key={`${row.sender}-${row.subject}`}
-              className="grid grid-cols-[minmax(0,0.9fr)_minmax(0,1.4fr)] gap-2 border-b border-forest/8 px-3 py-3 last:border-b-0 sm:grid-cols-[1fr_1.2fr_90px_110px]"
-            >
-              <span className="truncate text-xs font-medium text-ink">{row.sender}</span>
-              <div className="min-w-0 space-y-1 sm:space-y-0">
-                <span className="block truncate text-xs text-slate">{row.subject}</span>
-                {/* Mobile: show category + status inline */}
-                <div className="flex flex-wrap gap-1 sm:hidden">
-                  <span className={`inline-flex rounded-full border px-2 py-0.5 text-[10px] font-medium ${categoryBadgeClass[row.category]}`}>
-                    {row.category}
+      {/* Email rows */}
+      <div className="divide-y divide-forest/8">
+        {EMAILS.map((card) => (
+          <div key={`${card.sender}-${card.subject}`} className="grid grid-cols-1 sm:grid-cols-[1.1fr_0.9fr]">
+            {/* Left: customer email */}
+            <div className="px-3 py-3 sm:px-4">
+              <div className="flex items-start gap-2.5">
+                <div className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-[11px] font-semibold text-white ${card.avatarColor}`}>
+                  {card.avatar}
+                </div>
+                <div className="min-w-0 flex-1">
+                  <div className="flex items-center justify-between gap-2">
+                    <span className="truncate text-[11px] font-medium text-forest sm:text-xs">{card.sender}</span>
+                    <span className="shrink-0 text-[10px] text-slate">{card.timeAgo}</span>
+                  </div>
+                  <p className="mt-0.5 truncate text-[11px] font-semibold text-forest sm:text-xs">{card.subject}</p>
+                  <span className={`mt-1.5 inline-flex rounded-full border px-2 py-0.5 text-[10px] font-medium ${badgeToneClass[card.badgeTone]}`}>
+                    {card.badge}
                   </span>
-                  <span className={`inline-flex rounded-full border px-2 py-0.5 text-[10px] font-medium ${badgeClass[row.status]}`}>
-                    {row.status}
-                  </span>
+                  <p className="mt-2 line-clamp-2 text-[11px] leading-4 text-slate">{card.preview}</p>
                 </div>
               </div>
-              <span className="hidden sm:block">
-                <span className={`inline-flex rounded-full border px-2 py-0.5 text-[11px] font-medium ${categoryBadgeClass[row.category]}`}>
-                  {row.category}
-                </span>
-              </span>
-              <span className="hidden sm:block">
-                <span className={`inline-flex rounded-full border px-2 py-0.5 text-[11px] font-medium ${badgeClass[row.status]}`}>
-                  {row.status}
-                </span>
-              </span>
             </div>
-          ))}
-        </div>
+
+            {/* Right: Kim's reply */}
+            <div className="border-t border-forest/8 bg-paper/60 sm:border-l sm:border-t-0 sm:border-forest/10">
+              <ReplyPanel card={card} />
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );
