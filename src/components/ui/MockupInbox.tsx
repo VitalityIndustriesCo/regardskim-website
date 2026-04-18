@@ -112,7 +112,12 @@ function ReplyPanel({ card }: { card: EmailCard }) {
         <p className={`text-[11px] font-semibold ${isAction ? "text-[#C06A1E]" : "text-[#1A7A3A]"}`}>
           {isAction ? "⚡ Needs your decision" : "✓ Draft ready to send"}
         </p>
-        {card.replyPreview && (
+        {isAction && (
+          <span className="mt-1 inline-flex rounded-full border border-[#F5D5A8] bg-[#FFF3E0] px-2 py-0.5 text-[9px] font-medium text-[#C06A1E]">
+            Merchant input needed
+          </span>
+        )}
+        {!isAction && card.replyPreview && (
           <p className="mt-2 line-clamp-3 text-[11px] leading-4 text-slate">
             {card.replyPreview}
           </p>
@@ -121,8 +126,7 @@ function ReplyPanel({ card }: { card: EmailCard }) {
       <div className="mt-3 flex flex-wrap gap-1.5">
         {isAction ? (
           <>
-            <span className="rounded-lg bg-[#C06A1E] px-2.5 py-1 text-[10px] font-semibold text-white">Approve &amp; send</span>
-            <span className="rounded-lg border border-forest/15 bg-paper px-2.5 py-1 text-[10px] font-medium text-forest">Edit reply</span>
+            <span className="rounded-lg border border-forest/15 bg-paper px-2.5 py-1 text-[10px] font-medium text-forest">Write reply</span>
             <span className="rounded-lg border border-forest/15 bg-paper px-2.5 py-1 text-[10px] font-medium text-forest">Skip for now</span>
           </>
         ) : (

@@ -282,16 +282,23 @@ export default function HeroInboxPreview() {
                           </p>
                         )}
                         {card.replyType === "decision" && (
-                          <p className="text-[13px] font-bold text-[#C06A1E]">⚡ Needs your decision</p>
+                          <>
+                            <p className="text-[13px] font-bold text-[#C06A1E]">⚡ Needs your decision</p>
+                            <span className="mt-1.5 inline-flex rounded-full border border-[#F5D5A8] bg-[#FFF3E0] px-2.5 py-0.5 text-[11px] font-medium text-[#C06A1E]">
+                              Merchant input needed
+                            </span>
+                          </>
                         )}
                         {card.replyType === "nothing" && (
                           <p className="text-center text-[13px] font-bold text-slate">✓ Nothing needed</p>
                         )}
 
                         {/* Reply preview */}
-                        <p className={`mt-2 text-[13px] leading-5 text-slate ${card.replyType === "nothing" ? "text-center" : ""}`}>
-                          {card.replyPreview}
-                        </p>
+                        {card.replyType !== "decision" && (
+                          <p className={`mt-2 text-[13px] leading-5 text-slate ${card.replyType === "nothing" ? "text-center" : ""}`}>
+                            {card.replyPreview}
+                          </p>
+                        )}
 
                         {/* Buttons */}
                         <div className={`mt-3 flex flex-wrap gap-2 ${card.replyType === "nothing" ? "justify-center" : ""}`}>
@@ -303,6 +310,15 @@ export default function HeroInboxPreview() {
                             >
                               <CheckCircle2 size={14} /> Sent ✓
                             </motion.span>
+                          ) : card.replyType === "decision" ? (
+                            <>
+                              <span className="rounded-lg border border-forest/15 bg-paper px-3 py-1.5 text-[12px] font-medium text-forest">
+                                Write reply
+                              </span>
+                              <span className="rounded-lg border border-forest/15 bg-paper px-3 py-1.5 text-[12px] font-medium text-forest">
+                                Skip for now
+                              </span>
+                            </>
                           ) : card.replyType === "nothing" ? (
                             <>
                               <span className="rounded-lg border border-forest/15 bg-paper px-3 py-1.5 text-[12px] font-medium text-forest">
@@ -315,11 +331,7 @@ export default function HeroInboxPreview() {
                           ) : (
                             <>
                               <span
-                                className={`rounded-lg px-3 py-1.5 text-[12px] font-bold text-white transition-transform ${
-                                  card.replyType === "decision"
-                                    ? "bg-[#C06A1E]"
-                                    : "bg-[#1A7A3A]"
-                                } ${isTarget && phase === 2 ? "scale-[0.94]" : ""}`}
+                                className={`rounded-lg bg-[#1A7A3A] px-3 py-1.5 text-[12px] font-bold text-white transition-transform ${isTarget && phase === 2 ? "scale-[0.94]" : ""}`}
                               >
                                 Approve &amp; send
                               </span>
