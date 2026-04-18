@@ -21,7 +21,7 @@ const steps = [
     title: "Helpful replies, ready to go",
     body: "Regards Kim drafts real answers with the right details — not generic filler your customers can see through.",
     mockup: (
-      <MockupWindow title="Draft composer" className="bg-cream">
+      <MockupWindow title="Inbox" className="bg-cream">
         <div className="p-2.5 sm:p-3 md:p-4">
           <MockupDetail mode="draft" />
         </div>
@@ -33,7 +33,7 @@ const steps = [
     title: "Review, send, move on",
     body: "Check the drafts, hit send, and get back to running your store. Most merchants clear their queue in minutes.",
     mockup: (
-      <MockupWindow title="Approval" className="bg-cream">
+      <MockupWindow title="Inbox" className="bg-cream">
         <div className="p-2.5 sm:p-3 md:p-4">
           <MockupDetail mode="approval" />
         </div>

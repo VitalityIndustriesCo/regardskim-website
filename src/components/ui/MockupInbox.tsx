@@ -109,18 +109,16 @@ function ReplyPanel({ card }: { card: EmailCard }) {
   return (
     <div className="flex h-full flex-col justify-between px-3 py-3">
       <div>
-        <p className={`text-[11px] font-semibold ${isAction ? "text-[#C06A1E]" : "text-[#1A7A3A]"}`}>
-          {isAction ? "⚡ Needs your decision" : "✓ Draft ready to send"}
-        </p>
-        {isAction && (
-          <span className="mt-1 inline-flex rounded-full border border-[#F5D5A8] bg-[#FFF3E0] px-2 py-0.5 text-[9px] font-medium text-[#C06A1E]">
+        {isAction ? (
+          <p className="text-[11px] font-medium text-[#C06A1E]">
             Merchant input needed
-          </span>
-        )}
-        {!isAction && card.replyPreview && (
-          <p className="mt-2 line-clamp-3 text-[11px] leading-4 text-slate">
-            {card.replyPreview}
           </p>
+        ) : (
+          card.replyPreview && (
+            <p className="line-clamp-3 text-[11px] leading-4 text-slate">
+              {card.replyPreview}
+            </p>
+          )
         )}
       </div>
       <div className="mt-3 flex flex-wrap gap-1.5">
@@ -160,7 +158,7 @@ export default function MockupInbox() {
       {/* Column headers */}
       <div className="grid grid-cols-1 gap-0 border-b border-forest/10 sm:grid-cols-[1.1fr_0.9fr]">
         <div className="px-3 py-2 sm:px-4">
-          <span className="text-[10px] uppercase tracking-[0.12em] text-slate sm:text-[11px]">Customer Email</span>
+          <span className="text-[10px] font-semibold uppercase tracking-[0.14em] text-slate sm:text-[11px]">Customer Emails</span>
         </div>
         <div className="hidden border-l border-forest/10 px-3 py-2 sm:block sm:px-4">
           <span className="text-[10px] uppercase tracking-[0.12em] text-slate sm:text-[11px]">Email Replies</span>
@@ -183,10 +181,7 @@ export default function MockupInbox() {
                     <span className="shrink-0 text-[10px] text-slate">{card.timeAgo}</span>
                   </div>
                   <p className="mt-0.5 truncate text-[11px] font-semibold text-forest sm:text-xs">{card.subject}</p>
-                  <span className={`mt-1.5 inline-flex rounded-full border px-2 py-0.5 text-[10px] font-medium ${badgeToneClass[card.badgeTone]}`}>
-                    {card.badge}
-                  </span>
-                  <p className="mt-2 line-clamp-2 text-[11px] leading-4 text-slate">{card.preview}</p>
+                  <p className="mt-1.5 line-clamp-2 text-[11px] leading-4 text-slate">{card.preview}</p>
                 </div>
               </div>
             </div>

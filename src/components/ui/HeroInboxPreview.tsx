@@ -225,7 +225,7 @@ export default function HeroInboxPreview() {
             {/* Column headers */}
             <div className="mt-5 grid grid-cols-1 sm:grid-cols-[1.1fr_1fr]">
               <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-slate sm:text-xs">
-                Customer Email
+                Customer Emails
               </p>
               <p className="hidden text-[11px] font-semibold uppercase tracking-[0.14em] text-slate sm:block sm:text-xs">
                 Email Replies
@@ -263,40 +263,27 @@ export default function HeroInboxPreview() {
                               <span className="shrink-0 text-[11px] text-slate">{card.timeAgo}</span>
                             </div>
                             <p className="mt-0.5 text-[13px] font-bold text-forest">{card.subject}</p>
-                            <span
-                              className={`mt-1.5 inline-flex rounded-full border px-2.5 py-0.5 text-[11px] font-medium ${badgeToneClass[card.badgeTone]}`}
-                            >
-                              {card.badge}
-                            </span>
-                            <p className="mt-2.5 text-[13px] leading-5 text-slate">{card.preview}</p>
+                            <p className="mt-2 text-[13px] leading-5 text-slate">{card.preview}</p>
                           </div>
                         </div>
                       </div>
 
                       {/* Right — reply */}
                       <div className="relative mt-3 sm:mt-0">
-                        {/* Reply header */}
+                        {/* Reply preview */}
                         {card.replyType === "draft" && (
-                          <p className="text-[13px] font-bold text-[#1A7A3A]">
-                            {isTarget && showSent ? "✓ Sent" : "✓ Draft ready to send"}
+                          <p className="text-[13px] leading-5 text-slate">
+                            {card.replyPreview}
                           </p>
                         )}
                         {card.replyType === "decision" && (
-                          <>
-                            <p className="text-[13px] font-bold text-[#C06A1E]">⚡ Needs your decision</p>
-                            <span className="mt-1.5 inline-flex rounded-full border border-[#F5D5A8] bg-[#FFF3E0] px-2.5 py-0.5 text-[11px] font-medium text-[#C06A1E]">
-                              Merchant input needed
-                            </span>
-                          </>
+                          <p className="text-[13px] font-medium text-[#C06A1E]">
+                            Merchant input needed
+                          </p>
                         )}
                         {card.replyType === "nothing" && (
-                          <p className="text-center text-[13px] font-bold text-slate">✓ Nothing needed</p>
-                        )}
-
-                        {/* Reply preview */}
-                        {card.replyType !== "decision" && (
-                          <p className={`mt-2 text-[13px] leading-5 text-slate ${card.replyType === "nothing" ? "text-center" : ""}`}>
-                            {card.replyPreview}
+                          <p className="text-center text-[13px] text-slate">
+                            Kim checked this and no reply is needed.
                           </p>
                         )}
 
