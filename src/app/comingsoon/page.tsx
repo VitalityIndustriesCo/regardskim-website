@@ -113,7 +113,7 @@ export default function ComingSoonPage() {
               <div className="h-4 w-px hidden md:block" style={{ backgroundColor: "#d6cfc4" }} />
               <div className="flex items-center gap-2.5">
                 <GmailLogo className="h-7 w-7" />
-                <span className="text-sm font-medium" style={{ color: "#1a1a1a" }}>Works with Gmail</span>
+                <span className="text-sm font-medium" style={{ color: "#1a1a1a" }}>Connects with Gmail</span>
               </div>
               <div className="h-4 w-px hidden md:block" style={{ backgroundColor: "#d6cfc4" }} />
               <div className="flex items-center gap-2.5">
