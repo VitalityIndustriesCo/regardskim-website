@@ -345,7 +345,7 @@ export default function ComingSoonPage() {
                 },
                 {
                   icon: "⚡",
-                  text: "Works with Gmail and Shopify — set up in under 5 minutes",
+                  text: "Replace your VA for $49/month",
                 },
               ].map(({ icon, text }) => (
                 <div
