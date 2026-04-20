@@ -37,7 +37,6 @@ export default function ComingSoonPage() {
       });
 
       if (res.ok) {
-        setStatus("success");
         setSpotsRemaining((prev) => Math.max(0, prev - 1));
         // Fire Meta Pixel Lead event
         if (typeof window !== "undefined" && (window as any).fbq) {
@@ -47,6 +46,8 @@ export default function ComingSoonPage() {
         setEmail("");
         setStoreUrl("");
         setHoneypot("");
+        // Small delay so user sees the counter drop before success screen
+        setTimeout(() => setStatus("success"), 1200);
       } else {
         setStatus("error");
       }
