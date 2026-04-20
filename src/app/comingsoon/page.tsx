@@ -82,8 +82,7 @@ export default function ComingSoonPage() {
               Your inbox, handled.
             </h1>
             <p className="mx-auto mt-5 max-w-xl text-base leading-7 md:text-lg" style={{ color: "#6b6b6b" }}>
-              Regards Kim answers your customer emails so you don&apos;t have to. Tracking questions, returns,
-              order updates — handled automatically.
+              The Shopify app that connects to your Gmail and handles customer support for you. Tracking questions, returns, order updates — drafted and ready to send.
             </p>
 
             {/* Hero image */}
