@@ -116,7 +116,7 @@ export default function ComingSoonPage() {
               <div className="h-4 w-px hidden md:block" style={{ backgroundColor: "#d6cfc4" }} />
               <div className="flex items-center gap-2.5">
                 <span className="text-xl">✨</span>
-                <span className="text-sm font-medium" style={{ color: "#1a1a1a" }}>Trained on 10,000+ real customer emails</span>
+                <span className="text-sm font-medium" style={{ color: "#1a1a1a" }}>Trained on 100,000+ real customer emails</span>
               </div>
             </div>
           </section>
