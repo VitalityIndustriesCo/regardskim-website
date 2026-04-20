@@ -8,8 +8,8 @@ import { ShopifyLogo, GmailLogo } from "@/components/ui/BrandLogos";
 
 type FormStatus = "idle" | "loading" | "success" | "error";
 
-const SPOTS_REMAINING = 67;
 const TOTAL_SPOTS = 100;
+const INITIAL_SPOTS = 67;
 
 export default function ComingSoonPage() {
   const [firstName, setFirstName] = useState("");
@@ -17,6 +17,7 @@ export default function ComingSoonPage() {
   const [storeUrl, setStoreUrl] = useState("");
   const [honeypot, setHoneypot] = useState("");
   const [status, setStatus] = useState<FormStatus>("idle");
+  const [spotsRemaining, setSpotsRemaining] = useState(INITIAL_SPOTS);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -37,6 +38,7 @@ export default function ComingSoonPage() {
 
       if (res.ok) {
         setStatus("success");
+        setSpotsRemaining((prev) => Math.max(0, prev - 1));
         // Fire Meta Pixel Lead event
         if (typeof window !== "undefined" && (window as any).fbq) {
           (window as any).fbq("track", "Lead");
@@ -53,7 +55,7 @@ export default function ComingSoonPage() {
     }
   };
 
-  const progressPct = ((TOTAL_SPOTS - SPOTS_REMAINING) / TOTAL_SPOTS) * 100;
+  const progressPct = ((TOTAL_SPOTS - spotsRemaining) / TOTAL_SPOTS) * 100;
 
   return (
     <div
@@ -155,7 +157,7 @@ export default function ComingSoonPage() {
                   className="font-display text-6xl font-bold tabular-nums leading-none"
                   style={{ color: "#d04e2e" }}
                 >
-                  {SPOTS_REMAINING}
+                  {spotsRemaining}
                 </span>
                 <span className="text-xl font-medium" style={{ color: "#6b6b6b" }}>/ {TOTAL_SPOTS}</span>
               </div>
@@ -177,7 +179,7 @@ export default function ComingSoonPage() {
                 />
               </div>
               <p className="mt-2 text-xs" style={{ color: "#6b6b6b" }}>
-                {TOTAL_SPOTS - SPOTS_REMAINING} of {TOTAL_SPOTS} spots claimed
+                {TOTAL_SPOTS - spotsRemaining} of {TOTAL_SPOTS} spots claimed
               </p>
             </div>
           </section>
