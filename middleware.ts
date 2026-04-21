@@ -13,10 +13,9 @@ export function middleware(request: NextRequest) {
   const { pathname, searchParams } = request.nextUrl;
 
   // Redirect homepage to coming soon
-  // TEMP DISABLED — remove comment to re-enable
-  // if (pathname === "/") {
-  //   return NextResponse.redirect(new URL("/comingsoon", request.url));
-  // }
+  if (pathname === "/") {
+    return NextResponse.redirect(new URL("/comingsoon", request.url));
+  }
 
   const needsAuth = PROTECTED_PREFIXES.some(
     (prefix) => pathname === prefix || pathname.startsWith(`${prefix}/`)
