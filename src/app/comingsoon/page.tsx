@@ -82,7 +82,7 @@ export default function ComingSoonPage() {
               Your inbox, handled.
             </h1>
             <p className="mx-auto mt-5 max-w-xl text-base leading-7 md:text-lg" style={{ color: "#6b6b6b" }}>
-              The Shopify app that connects to your Gmail and handles customer support for you. Tracking questions, returns, order updates — drafted and ready to send.
+              The Shopify app that connects to your Gmail and handles your customer emails for you. Tracking questions, returns, order updates — drafted and ready to send.
             </p>
 
             {/* Hero image */}
@@ -337,11 +337,11 @@ export default function ComingSoonPage() {
               {[
                 {
                   icon: "📬",
-                  text: "Sorts, reads, and replies to customer emails using live store data and tracking",
+                  text: "Reads your customer emails, pulls in live order and tracking data, and drafts the reply for you",
                 },
                 {
                   icon: "✍️",
-                  text: "Drafts in your style and you decide what gets sent — it just handles the busy work",
+                  text: "Drafts replies in your style — you decide what gets sent, nothing goes out without you",
                 },
                 {
                   icon: "⚡",
