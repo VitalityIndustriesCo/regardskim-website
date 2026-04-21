@@ -121,12 +121,7 @@ export default function AboutPage() {
             <p className="text-sm" style={{ color: "#6b6b6b" }}>
               Founder, RegardsKim
             </p>
-            <p
-              className="mt-4 text-sm italic"
-              style={{ color: "#6b6b6b" }}
-            >
-              Kind regards, Kim.
-            </p>
+
           </div>
         </div>
       </div>
