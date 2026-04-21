@@ -373,6 +373,10 @@ export default function ComingSoonPage() {
           © RegardsKim 2026
         </p>
         <div className="mt-2 flex items-center justify-center gap-4">
+          <Link href="/about" className="text-sm transition-colors hover:underline" style={{ color: "#6b6b6b" }}>
+            About
+          </Link>
+          <span style={{ color: "#d6cfc4" }}>·</span>
           <Link href="/privacy" className="text-sm transition-colors hover:underline" style={{ color: "#6b6b6b" }}>
             Privacy
           </Link>
