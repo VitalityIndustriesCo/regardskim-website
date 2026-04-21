@@ -1,8 +1,41 @@
 import { NextRequest, NextResponse } from "next/server";
+import { createHash } from "crypto";
 
 const MAILERLITE_API_KEY = process.env.MAILERLITE_API_KEY || "";
 const MAILERLITE_COMING_SOON_GROUP_ID = process.env.MAILERLITE_COMING_SOON_GROUP_ID || "";
 const MAILERLITE_API = "https://connect.mailerlite.com/api/subscribers";
+
+const META_PIXEL_ID = "1609329553452333";
+const META_CAPI_TOKEN = process.env.META_CAPI_TOKEN || "";
+const META_CAPI_URL = `https://graph.facebook.com/v19.0/${META_PIXEL_ID}/events`;
+
+async function sendMetaCAPIEvent(email: string, ip: string, userAgent: string) {
+  if (!META_CAPI_TOKEN) return;
+  const hashedEmail = createHash("sha256").update(email.toLowerCase().trim()).digest("hex");
+  const eventId = `lead_${Date.now()}_${Math.random().toString(36).slice(2)}`;
+  try {
+    await fetch(`${META_CAPI_URL}?access_token=${META_CAPI_TOKEN}`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        data: [{
+          event_name: "Lead",
+          event_time: Math.floor(Date.now() / 1000),
+          event_id: eventId,
+          action_source: "website",
+          event_source_url: "https://regardskim.com/comingsoon",
+          user_data: {
+            em: [hashedEmail],
+            client_ip_address: ip !== "unknown" ? ip : undefined,
+            client_user_agent: userAgent || undefined,
+          },
+        }],
+      }),
+    });
+  } catch (err) {
+    console.error("[CAPI] Failed to send Meta CAPI event:", err);
+  }
+}
 
 // Simple in-memory rate limiting (resets on deploy)
 const rateLimitMap = new Map<string, { count: number; resetAt: number }>();
@@ -45,6 +78,7 @@ export async function POST(req: NextRequest) {
 
     // Rate limiting
     const ip = req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "unknown";
+    const userAgent = req.headers.get("user-agent") || "";
     if (isRateLimited(ip)) {
       return NextResponse.json({ error: "Too many requests" }, { status: 429 });
     }
@@ -76,6 +110,9 @@ export async function POST(req: NextRequest) {
         // Still return success to user — don't expose backend errors
       }
     }
+
+    // Send Meta CAPI Lead event (server-side, deduplicates with browser Pixel)
+    await sendMetaCAPIEvent(email, ip, userAgent);
 
     console.log(`[coming-soon] ${email}${storeUrl ? ` (${storeUrl})` : ""}`);
     return NextResponse.json({ ok: true });
