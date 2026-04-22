@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import FadeIn from "@/components/ui/FadeIn";
@@ -9,7 +9,7 @@ import { ShopifyLogo, GmailLogo } from "@/components/ui/BrandLogos";
 type FormStatus = "idle" | "loading" | "success" | "error";
 
 const TOTAL_SPOTS = 100;
-const INITIAL_SPOTS = 67;
+const INITIAL_SPOTS = 67; // fallback while loading
 
 export default function ComingSoonPage() {
   const [firstName, setFirstName] = useState("");
@@ -18,6 +18,18 @@ export default function ComingSoonPage() {
   const [honeypot, setHoneypot] = useState("");
   const [status, setStatus] = useState<FormStatus>("idle");
   const [spotsRemaining, setSpotsRemaining] = useState(INITIAL_SPOTS);
+
+  // Fetch real count from MailerLite on mount
+  useEffect(() => {
+    fetch("/api/spots")
+      .then((res) => res.json())
+      .then((data) => {
+        if (typeof data.remaining === "number") {
+          setSpotsRemaining(data.remaining);
+        }
+      })
+      .catch(() => {}); // silently fall back to INITIAL_SPOTS
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -37,7 +49,7 @@ export default function ComingSoonPage() {
       });
 
       if (res.ok) {
-        setSpotsRemaining((prev) => Math.max(0, prev - 1));
+        setSpotsRemaining((prev) => Math.max(0, prev - 1)); // instant visual feedback
         // Fire Meta Pixel Lead event
         if (typeof window !== "undefined" && (window as any).fbq) {
           (window as any).fbq("track", "Lead");
