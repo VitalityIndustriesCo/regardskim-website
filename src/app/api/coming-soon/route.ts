@@ -44,10 +44,10 @@ const META_PIXEL_ID = "1609329553452333";
 const META_CAPI_TOKEN = process.env.META_CAPI_TOKEN || "";
 const META_CAPI_URL = `https://graph.facebook.com/v19.0/${META_PIXEL_ID}/events`;
 
-async function sendMetaCAPIEvent(email: string, ip: string, userAgent: string, fbc?: string, fbp?: string) {
+async function sendMetaCAPIEvent(email: string, ip: string, userAgent: string, fbc?: string, fbp?: string, eventId?: string) {
   if (!META_CAPI_TOKEN) return;
   const hashedEmail = createHash("sha256").update(email.toLowerCase().trim()).digest("hex");
-  const eventId = `lead_${Date.now()}_${Math.random().toString(36).slice(2)}`;
+  if (!eventId) eventId = `lead_${Date.now()}_${Math.random().toString(36).slice(2)}`;
   try {
     await fetch(`${META_CAPI_URL}?access_token=${META_CAPI_TOKEN}`, {
       method: "POST",
@@ -151,13 +151,14 @@ export async function POST(req: NextRequest) {
     }
 
     // Send Meta CAPI Lead event (server-side, deduplicates with browser Pixel)
-    await sendMetaCAPIEvent(email, ip, userAgent, fbc, fbp);
+    const eventId = `lead_${Date.now()}_${Math.random().toString(36).slice(2)}`;
+    await sendMetaCAPIEvent(email, ip, userAgent, fbc, fbp, eventId);
 
     // Increment spots counter
     await incrementSpotsClaimed();
 
     console.log(`[coming-soon] ${email}${storeUrl ? ` (${storeUrl})` : ""}`);
-    return NextResponse.json({ ok: true });
+    return NextResponse.json({ ok: true, eventId });
   } catch (err) {
     console.error("[coming-soon] Error:", err);
     return NextResponse.json({ error: "Server error" }, { status: 500 });

@@ -55,9 +55,12 @@ export default function ComingSoonPage() {
       });
 
       if (res.ok) {
+        const data = await res.json();
         setSpotsRemaining((prev) => Math.max(0, prev - 1)); // instant visual feedback
-        // Fire Meta Pixel Lead event
-        if (typeof window !== "undefined" && (window as any).fbq) {
+        // Fire Meta Pixel Lead event with matching eventID for CAPI deduplication
+        if (typeof window !== "undefined" && (window as any).fbq && data.eventId) {
+          (window as any).fbq("track", "Lead", {}, { eventID: data.eventId });
+        } else if (typeof window !== "undefined" && (window as any).fbq) {
           (window as any).fbq("track", "Lead");
         }
         setFirstName("");
