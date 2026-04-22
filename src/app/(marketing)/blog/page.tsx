@@ -14,7 +14,7 @@ export default function BlogPage() {
       <section className="section-shell">
         <div className="max-w-3xl">
           <p className="text-sm font-medium uppercase tracking-[0.24em] text-brass">Resources</p>
-          <h1 className="mt-4 text-4xl font-semibold tracking-tight text-forest sm:text-5xl">Blog</h1>
+          <h1 className="mt-4 text-4xl font-semibold tracking-tight text-ink sm:text-5xl">Blog</h1>
           <p className="mt-5 text-lg leading-8 text-slate sm:text-xl">
             Practical advice for Shopify store owners
           </p>
@@ -38,7 +38,7 @@ export default function BlogPage() {
                 </div>
               )}
               <p className="text-sm font-medium uppercase tracking-[0.16em] text-slate">{post.date}</p>
-              <h2 className="mt-4 text-2xl font-semibold leading-tight text-forest">
+              <h2 className="mt-4 text-2xl font-semibold leading-tight text-ink">
                 <Link href={`/blog/${post.slug}`} className="transition-colors group-hover:text-brass">
                   {post.title}
                 </Link>

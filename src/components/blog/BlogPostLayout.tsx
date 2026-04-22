@@ -38,7 +38,7 @@ export default function BlogPostLayout({
 
           <header className="mt-8 border-b border-mist pb-8">
             <p className="text-sm font-medium uppercase tracking-[0.2em] text-slate">{date}</p>
-            <h1 className="mt-4 text-4xl font-semibold tracking-tight text-forest sm:text-5xl">
+            <h1 className="mt-4 text-4xl font-semibold tracking-tight text-ink sm:text-5xl">
               {title}
             </h1>
           </header>
@@ -49,7 +49,7 @@ export default function BlogPostLayout({
 
           <section className="mt-16 rounded-[2rem] border border-brass/30 bg-cream px-6 py-8 sm:px-8">
             <p className="text-sm font-medium uppercase tracking-[0.2em] text-slate">Next step</p>
-            <h2 className="mt-3 text-2xl font-semibold text-forest sm:text-3xl">
+            <h2 className="mt-3 text-2xl font-semibold text-ink sm:text-3xl">
               Ready to spend less time on support emails?
             </h2>
             <p className="mt-3 max-w-xl text-base leading-7 text-slate">

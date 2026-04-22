@@ -102,7 +102,7 @@ export default function ComingSoonPage() {
             >
               Your inbox, handled.
             </h1>
-            <p className="mx-auto mt-5 max-w-xl text-base leading-7 md:text-lg" style={{ color: "#94A3B8" }}>
+            <p className="mx-auto mt-5 max-w-xl text-base leading-7 md:text-lg" style={{ color: "#E2E8F0" }}>
               The Shopify app that connects to your Gmail and handles your customer emails for you. Tracking questions, returns, order updates — drafted and ready to send.
             </p>
 
@@ -163,7 +163,7 @@ export default function ComingSoonPage() {
             >
               Join the Founding 100
             </h2>
-            <p className="mx-auto mt-4 max-w-lg text-base leading-7" style={{ color: "#94A3B8" }}>
+            <p className="mx-auto mt-4 max-w-lg text-base leading-7" style={{ color: "#E2E8F0" }}>
               The first 100 stores to sign up get 50% off — forever. Not a trial. Not a promo.
               A permanent thank-you for believing early.
             </p>
@@ -180,9 +180,9 @@ export default function ComingSoonPage() {
                 >
                   {spotsRemaining}
                 </span>
-                <span className="text-xl font-medium" style={{ color: "#94A3B8" }}>/ {TOTAL_SPOTS}</span>
+                <span className="text-xl font-medium" style={{ color: "#E2E8F0" }}>/ {TOTAL_SPOTS}</span>
               </div>
-              <p className="mt-2 text-sm font-medium" style={{ color: "#94A3B8" }}>
+              <p className="mt-2 text-sm font-medium" style={{ color: "#E2E8F0" }}>
                 spots remaining
               </p>
 
@@ -199,7 +199,7 @@ export default function ComingSoonPage() {
                   }}
                 />
               </div>
-              <p className="mt-2 text-xs" style={{ color: "#94A3B8" }}>
+              <p className="mt-2 text-xs" style={{ color: "#E2E8F0" }}>
                 {TOTAL_SPOTS - spotsRemaining} of {TOTAL_SPOTS} spots claimed
               </p>
             </div>
@@ -219,7 +219,7 @@ export default function ComingSoonPage() {
                   <h3 className="font-display text-2xl font-bold" style={{ color: "#FFFFFF" }}>
                     You&apos;re in!
                   </h3>
-                  <p className="mt-2 text-base" style={{ color: "#94A3B8" }}>
+                  <p className="mt-2 text-base" style={{ color: "#E2E8F0" }}>
                     Check your inbox for confirmation.
                   </p>
                 </div>
@@ -228,7 +228,7 @@ export default function ComingSoonPage() {
                   <h3 className="font-display text-2xl font-bold" style={{ color: "#FFFFFF" }}>
                     Lock in your founding spot
                   </h3>
-                  <p className="mt-2 text-sm" style={{ color: "#94A3B8" }}>
+                  <p className="mt-2 text-sm" style={{ color: "#E2E8F0" }}>
                     Reserve your spot now. No payment required.
                   </p>
 
@@ -305,7 +305,7 @@ export default function ComingSoonPage() {
                         style={{ color: "#FFFFFF" }}
                       >
                         Store URL{" "}
-                        <span style={{ color: "#94A3B8", fontWeight: 400 }}>(optional)</span>
+                        <span style={{ color: "#E2E8F0", fontWeight: 400 }}>(optional)</span>
                       </label>
                       <input
                         id="cs-store"
@@ -390,23 +390,23 @@ export default function ComingSoonPage() {
 
       {/* Footer */}
       <footer className="border-t py-8 text-center" style={{ borderColor: "#1E293B" }}>
-        <p className="text-sm" style={{ color: "#94A3B8" }}>
+        <p className="text-sm" style={{ color: "#E2E8F0" }}>
           © RegardsKim 2026
         </p>
         <div className="mt-2 flex items-center justify-center gap-4">
-          <Link href="/about" className="text-sm transition-colors hover:underline" style={{ color: "#94A3B8" }}>
+          <Link href="/about" className="text-sm transition-colors hover:underline" style={{ color: "#E2E8F0" }}>
             About
           </Link>
           <span style={{ color: "#1E293B" }}>·</span>
-          <Link href="/privacy" className="text-sm transition-colors hover:underline" style={{ color: "#94A3B8" }}>
+          <Link href="/privacy" className="text-sm transition-colors hover:underline" style={{ color: "#E2E8F0" }}>
             Privacy
           </Link>
           <span style={{ color: "#1E293B" }}>·</span>
-          <Link href="/terms" className="text-sm transition-colors hover:underline" style={{ color: "#94A3B8" }}>
+          <Link href="/terms" className="text-sm transition-colors hover:underline" style={{ color: "#E2E8F0" }}>
             Terms
           </Link>
         </div>
-        <p className="mt-3 text-sm italic" style={{ color: "#94A3B8" }}>
+        <p className="mt-3 text-sm italic" style={{ color: "#E2E8F0" }}>
           Kind regards, Kim
         </p>
       </footer>

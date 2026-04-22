@@ -112,13 +112,13 @@ export default function AboutPage() {
             className="mt-10 border-t pt-8"
             style={{ borderColor: "#1E293B" }}
           >
-            <p className="text-base italic" style={{ color: "#94A3B8" }}>
+            <p className="text-base italic" style={{ color: "#E2E8F0" }}>
               And Kim? She still works for me. She just doesn't answer customer emails anymore.
             </p>
             <p className="mt-6 font-semibold" style={{ color: "#FFFFFF" }}>
               Matt
             </p>
-            <p className="text-sm" style={{ color: "#94A3B8" }}>
+            <p className="text-sm" style={{ color: "#E2E8F0" }}>
               Founder, RegardsKim
             </p>
 

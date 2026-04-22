@@ -48,10 +48,10 @@ export default function AffiliatePage() {
 
   return (
     <main>
-      <section className="paper-grain bg-cream py-20 md:py-28">
+      <section className="bg-forest py-20 md:py-28">
         <div className="section-shell">
           <div className="mx-auto max-w-4xl text-center">
-            <h1 className="font-display text-5xl font-bold leading-[1.02] tracking-normal text-forest md:text-7xl">
+            <h1 className="font-display text-5xl font-bold leading-[1.02] tracking-normal text-ink md:text-7xl">
               Earn with Regards Kim
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-base text-slate md:text-lg">
@@ -69,23 +69,23 @@ export default function AffiliatePage() {
         </div>
       </section>
 
-      <section className="bg-paper py-14 md:py-20">
+      <section className="bg-forest py-14 md:py-20">
         <div className="section-shell">
           <div className="grid gap-4 md:grid-cols-3">
             <article className="rounded-2xl border border-mist bg-cream p-6 shadow-sm">
-              <h2 className="font-display text-2xl font-bold text-forest">Recurring commission</h2>
+              <h2 className="font-display text-2xl font-bold text-ink">Recurring commission</h2>
               <p className="mt-3 text-sm text-slate md:text-base">
                 Earn 20% of every referral&apos;s subscription, every month, for as long as they stay.
               </p>
             </article>
             <article className="rounded-2xl border border-mist bg-cream p-6 shadow-sm">
-              <h2 className="font-display text-2xl font-bold text-forest">Easy to recommend</h2>
+              <h2 className="font-display text-2xl font-bold text-ink">Easy to recommend</h2>
               <p className="mt-3 text-sm text-slate md:text-base">
                 Regards Kim sells itself — 7-day free trial, no setup friction, real results from day one.
               </p>
             </article>
             <article className="rounded-2xl border border-mist bg-cream p-6 shadow-sm">
-              <h2 className="font-display text-2xl font-bold text-forest">We support you</h2>
+              <h2 className="font-display text-2xl font-bold text-ink">We support you</h2>
               <p className="mt-3 text-sm text-slate md:text-base">
                 Need assets, landing pages, or custom links? We&apos;ll help you promote effectively.
               </p>
@@ -97,7 +97,7 @@ export default function AffiliatePage() {
       <section id="apply" className="bg-mist py-16 md:py-24">
         <div className="section-shell">
           <div className="mx-auto max-w-2xl rounded-3xl border border-mist bg-cream p-6 shadow-sm md:p-10">
-            <h2 className="font-display text-3xl font-bold text-forest md:text-4xl">Partner application</h2>
+            <h2 className="font-display text-3xl font-bold text-ink md:text-4xl">Partner application</h2>
             <p className="mt-3 text-sm text-slate md:text-base">
               Tell us a little about you and how you&apos;d like to promote Regards Kim.
             </p>
@@ -114,7 +114,7 @@ export default function AffiliatePage() {
               />
 
               <div>
-                <label htmlFor="name" className="mb-2 block text-sm font-medium text-forest">
+                <label htmlFor="name" className="mb-2 block text-sm font-medium text-ink">
                   Name
                 </label>
                 <input
@@ -132,7 +132,7 @@ export default function AffiliatePage() {
               </div>
 
               <div>
-                <label htmlFor="email" className="mb-2 block text-sm font-medium text-forest">
+                <label htmlFor="email" className="mb-2 block text-sm font-medium text-ink">
                   Email
                 </label>
                 <input
@@ -150,7 +150,7 @@ export default function AffiliatePage() {
               </div>
 
               <div>
-                <label htmlFor="website" className="mb-2 block text-sm font-medium text-forest">
+                <label htmlFor="website" className="mb-2 block text-sm font-medium text-ink">
                   Website/Social URL (optional)
                 </label>
                 <input
@@ -167,7 +167,7 @@ export default function AffiliatePage() {
               </div>
 
               <div>
-                <label htmlFor="message" className="mb-2 block text-sm font-medium text-forest">
+                <label htmlFor="message" className="mb-2 block text-sm font-medium text-ink">
                   Message (optional)
                 </label>
                 <textarea
