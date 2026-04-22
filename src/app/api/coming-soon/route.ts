@@ -5,6 +5,41 @@ const MAILERLITE_API_KEY = process.env.MAILERLITE_API_KEY || "";
 const MAILERLITE_COMING_SOON_GROUP_ID = process.env.MAILERLITE_COMING_SOON_GROUP_ID || "";
 const MAILERLITE_API = "https://connect.mailerlite.com/api/subscribers";
 
+const EDGE_CONFIG_ID = process.env.EDGE_CONFIG_ID || "";
+const EDGE_CONFIG_TOKEN = process.env.EDGE_CONFIG_TOKEN || "";
+const VERCEL_API_TOKEN = process.env.VERCEL_API_TOKEN || "";
+const TEAM_ID = "team_ctaVHec1dDgzxKjuwLCzQdIo";
+
+async function incrementSpotsClaimed() {
+  if (!EDGE_CONFIG_ID || !EDGE_CONFIG_TOKEN || !VERCEL_API_TOKEN) return;
+  try {
+    // Read current value
+    const readRes = await fetch(
+      `https://edge-config.vercel.com/${EDGE_CONFIG_ID}/item/spots_claimed?token=${EDGE_CONFIG_TOKEN}`,
+      { cache: "no-store" }
+    );
+    const current = readRes.ok ? await readRes.json() : 0;
+    const newCount = (typeof current === "number" ? current : 0) + 1;
+
+    // Write new value via Vercel API
+    await fetch(
+      `https://api.vercel.com/v1/edge-config/${EDGE_CONFIG_ID}/items?teamId=${TEAM_ID}`,
+      {
+        method: "PATCH",
+        headers: {
+          Authorization: `Bearer ${VERCEL_API_TOKEN}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          items: [{ operation: "upsert", key: "spots_claimed", value: newCount }],
+        }),
+      }
+    );
+  } catch (err) {
+    console.error("[spots] Failed to increment spots_claimed:", err);
+  }
+}
+
 const META_PIXEL_ID = "1609329553452333";
 const META_CAPI_TOKEN = process.env.META_CAPI_TOKEN || "";
 const META_CAPI_URL = `https://graph.facebook.com/v19.0/${META_PIXEL_ID}/events`;
@@ -113,6 +148,9 @@ export async function POST(req: NextRequest) {
 
     // Send Meta CAPI Lead event (server-side, deduplicates with browser Pixel)
     await sendMetaCAPIEvent(email, ip, userAgent);
+
+    // Increment spots counter
+    await incrementSpotsClaimed();
 
     console.log(`[coming-soon] ${email}${storeUrl ? ` (${storeUrl})` : ""}`);
     return NextResponse.json({ ok: true });
