@@ -72,19 +72,19 @@ export default function AffiliatePage() {
       <section className="bg-paper py-14 md:py-20">
         <div className="section-shell">
           <div className="grid gap-4 md:grid-cols-3">
-            <article className="rounded-2xl border border-forest/10 bg-white p-6 shadow-sm">
+            <article className="rounded-2xl border border-mist bg-cream p-6 shadow-sm">
               <h2 className="font-display text-2xl font-bold text-forest">Recurring commission</h2>
               <p className="mt-3 text-sm text-slate md:text-base">
                 Earn 20% of every referral&apos;s subscription, every month, for as long as they stay.
               </p>
             </article>
-            <article className="rounded-2xl border border-forest/10 bg-white p-6 shadow-sm">
+            <article className="rounded-2xl border border-mist bg-cream p-6 shadow-sm">
               <h2 className="font-display text-2xl font-bold text-forest">Easy to recommend</h2>
               <p className="mt-3 text-sm text-slate md:text-base">
                 Regards Kim sells itself — 7-day free trial, no setup friction, real results from day one.
               </p>
             </article>
-            <article className="rounded-2xl border border-forest/10 bg-white p-6 shadow-sm">
+            <article className="rounded-2xl border border-mist bg-cream p-6 shadow-sm">
               <h2 className="font-display text-2xl font-bold text-forest">We support you</h2>
               <p className="mt-3 text-sm text-slate md:text-base">
                 Need assets, landing pages, or custom links? We&apos;ll help you promote effectively.
@@ -96,7 +96,7 @@ export default function AffiliatePage() {
 
       <section id="apply" className="bg-mist py-16 md:py-24">
         <div className="section-shell">
-          <div className="mx-auto max-w-2xl rounded-3xl border border-forest/10 bg-white p-6 shadow-sm md:p-10">
+          <div className="mx-auto max-w-2xl rounded-3xl border border-mist bg-cream p-6 shadow-sm md:p-10">
             <h2 className="font-display text-3xl font-bold text-forest md:text-4xl">Partner application</h2>
             <p className="mt-3 text-sm text-slate md:text-base">
               Tell us a little about you and how you&apos;d like to promote Regards Kim.
@@ -126,7 +126,7 @@ export default function AffiliatePage() {
                     setName(e.target.value);
                     if (status !== "idle") setStatus("idle");
                   }}
-                  className="w-full rounded-xl border border-forest/15 bg-cream/40 px-4 py-3 text-sm text-forest placeholder:text-slate/50 focus:border-brass focus:outline-none focus:ring-1 focus:ring-brass/30"
+                  className="w-full rounded-xl border border-mist bg-forest px-4 py-3 text-sm text-ink placeholder:text-slate/50 focus:border-brass focus:outline-none focus:ring-1 focus:ring-brass/30"
                   placeholder="Your name"
                 />
               </div>
@@ -144,7 +144,7 @@ export default function AffiliatePage() {
                     setEmail(e.target.value);
                     if (status !== "idle") setStatus("idle");
                   }}
-                  className="w-full rounded-xl border border-forest/15 bg-cream/40 px-4 py-3 text-sm text-forest placeholder:text-slate/50 focus:border-brass focus:outline-none focus:ring-1 focus:ring-brass/30"
+                  className="w-full rounded-xl border border-mist bg-forest px-4 py-3 text-sm text-ink placeholder:text-slate/50 focus:border-brass focus:outline-none focus:ring-1 focus:ring-brass/30"
                   placeholder="you@example.com"
                 />
               </div>
@@ -161,7 +161,7 @@ export default function AffiliatePage() {
                     setWebsite(e.target.value);
                     if (status !== "idle") setStatus("idle");
                   }}
-                  className="w-full rounded-xl border border-forest/15 bg-cream/40 px-4 py-3 text-sm text-forest placeholder:text-slate/50 focus:border-brass focus:outline-none focus:ring-1 focus:ring-brass/30"
+                  className="w-full rounded-xl border border-mist bg-forest px-4 py-3 text-sm text-ink placeholder:text-slate/50 focus:border-brass focus:outline-none focus:ring-1 focus:ring-brass/30"
                   placeholder="https://"
                 />
               </div>
@@ -178,7 +178,7 @@ export default function AffiliatePage() {
                     setMessage(e.target.value);
                     if (status !== "idle") setStatus("idle");
                   }}
-                  className="w-full rounded-xl border border-forest/15 bg-cream/40 px-4 py-3 text-sm text-forest placeholder:text-slate/50 focus:border-brass focus:outline-none focus:ring-1 focus:ring-brass/30"
+                  className="w-full rounded-xl border border-mist bg-forest px-4 py-3 text-sm text-ink placeholder:text-slate/50 focus:border-brass focus:outline-none focus:ring-1 focus:ring-brass/30"
                   placeholder="Anything we should know?"
                 />
               </div>

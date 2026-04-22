@@ -10,7 +10,7 @@ export default function LegalPageLayout({
   children: ReactNode;
 }) {
   return (
-    <main className="bg-white py-16 sm:py-20">
+    <main className="bg-forest py-16 sm:py-20">
       <div className="section-shell">
         <div className="mx-auto max-w-[720px]">
           <header className="border-b border-forest/10 pb-8">

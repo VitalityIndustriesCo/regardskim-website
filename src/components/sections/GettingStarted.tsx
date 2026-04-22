@@ -29,11 +29,11 @@ const steps = [
 
 export default function GettingStarted() {
   return (
-    <section id="install" className="bg-paper py-20 md:py-28">
+    <section id="install" className="bg-forest py-20 md:py-28">
       <div className="section-shell">
         <FadeIn className="text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate">Getting Started</p>
-          <h2 className="mt-4 font-display text-4xl font-bold tracking-normal text-forest md:text-6xl">
+          <h2 className="mt-4 font-display text-4xl font-bold tracking-normal text-ink md:text-6xl">
             Install from Shopify and get running in minutes
           </h2>
         </FadeIn>
@@ -45,12 +45,12 @@ export default function GettingStarted() {
         <div className="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
           {steps.map((step, index) => (
             <FadeIn key={step.number} delay={index * 0.08}>
-              <div className="flex h-full flex-col rounded-2xl border border-forest/10 bg-paper p-6 shadow-sm">
+              <div className="flex h-full flex-col rounded-2xl border border-mist bg-cream p-6 shadow-sm">
                 <div className="flex items-center gap-3">
                   <span className="font-display text-sm font-bold text-brass">{step.number}</span>
-                  <div className="rounded-lg bg-mist p-4 text-forest">{step.icon}</div>
+                  <div className="rounded-lg bg-mist p-4 text-brass">{step.icon}</div>
                 </div>
-                <h3 className="mt-4 font-display text-xl font-bold text-forest">{step.title}</h3>
+                <h3 className="mt-4 font-display text-xl font-bold text-ink">{step.title}</h3>
               </div>
             </FadeIn>
           ))}

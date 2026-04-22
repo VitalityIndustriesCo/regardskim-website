@@ -19,10 +19,10 @@ export default function Pricing() {
   const billingNote = "Billed monthly through your Shopify account";
 
   return (
-    <section id="pricing" className="bg-cream py-16 md:py-28">
+    <section id="pricing" className="bg-forest py-16 md:py-28">
       <div className="section-shell text-center">
         <FadeIn>
-          <h2 className="font-display font-bold text-4xl tracking-normal text-forest md:text-6xl">
+          <h2 className="font-display font-bold text-4xl tracking-normal text-ink md:text-6xl">
             Pricing
           </h2>
           <p className="mt-4 text-base text-slate md:text-lg">
@@ -33,9 +33,9 @@ export default function Pricing() {
           </p>
         </FadeIn>
 
-        <FadeIn delay={0.06} className="mx-auto mt-10 w-full max-w-md rounded-[1.5rem] border border-forest/15 bg-paper p-5 text-left md:rounded-[2rem] md:p-10">
+        <FadeIn delay={0.06} className="mx-auto mt-10 w-full max-w-md rounded-[1.5rem] border border-mist bg-cream p-5 text-left md:rounded-[2rem] md:p-10">
           <p className="text-sm uppercase tracking-[0.16em] text-slate">Regards Kim</p>
-          <div className="mt-4 flex items-end gap-2 text-forest">
+          <div className="mt-4 flex items-end gap-2 text-ink">
             <span className="font-display font-bold text-5xl leading-none sm:text-6xl md:text-7xl">${price}</span>
             <span className="mb-1.5 text-sm text-slate sm:mb-2 sm:text-base">{period}</span>
           </div>

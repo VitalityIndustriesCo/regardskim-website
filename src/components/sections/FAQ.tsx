@@ -44,10 +44,10 @@ export default function FAQ() {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="bg-cream py-16 md:py-24">
+    <section id="faq" className="bg-forest py-16 md:py-24">
       <div className="section-shell">
         <FadeIn>
-          <h2 className="font-display font-bold text-4xl tracking-normal text-forest md:text-5xl">FAQ</h2>
+          <h2 className="font-display font-bold text-4xl tracking-normal text-ink md:text-5xl">FAQ</h2>
         </FadeIn>
 
         <div className="mt-10 space-y-4 md:space-y-5">
@@ -55,14 +55,14 @@ export default function FAQ() {
             const isOpen = open === idx;
             return (
               <FadeIn key={faq.q} delay={idx * 0.02}>
-                <article className="overflow-hidden rounded-2xl border border-forest/12 bg-paper">
+                <article className="overflow-hidden rounded-2xl border border-mist bg-cream">
                   <button
                     type="button"
                     onClick={() => setOpen(isOpen ? null : idx)}
                     className="flex w-full items-center justify-between gap-5 px-6 py-5 text-left"
                     aria-expanded={isOpen}
                   >
-                    <h3 className="font-medium text-forest md:text-lg">{faq.q}</h3>
+                    <h3 className="font-medium text-ink md:text-lg">{faq.q}</h3>
                     <ChevronDown className={`shrink-0 transition-transform ${isOpen ? "rotate-180" : "rotate-0"}`} size={18} />
                   </button>
 

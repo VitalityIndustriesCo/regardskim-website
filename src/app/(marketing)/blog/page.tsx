@@ -24,7 +24,7 @@ export default function BlogPage() {
           {blogPosts.map((post) => (
             <article
               key={post.slug}
-              className="group flex h-full flex-col rounded-[1.75rem] border border-forest/10 bg-white p-7 shadow-[0_18px_40px_rgba(26,26,26,0.04)] transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_24px_52px_rgba(26,26,26,0.08)]"
+              className="group flex h-full flex-col rounded-[1.75rem] border border-mist bg-cream p-7 shadow-[0_18px_40px_rgba(0,0,0,0.2)] transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_24px_52px_rgba(0,0,0,0.3)]"
             >
               {post.image && (
                 <div className="-mx-7 -mt-7 mb-5 overflow-hidden rounded-t-[1.75rem]">

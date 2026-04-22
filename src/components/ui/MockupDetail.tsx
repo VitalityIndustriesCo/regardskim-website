@@ -22,13 +22,13 @@ export default function MockupDetail({ mode = "draft" }: MockupDetailProps) {
   const isApproval = mode === "approval";
 
   return (
-    <div className="overflow-hidden rounded-2xl border border-forest/12 bg-[#F7F5F0]">
+    <div className="overflow-hidden rounded-2xl border border-mist bg-cream">
       {/* Column headers */}
       <div className="grid grid-cols-1 gap-0 border-b border-forest/10 sm:grid-cols-2">
         <div className="px-4 py-2.5">
           <span className="block text-center text-[10px] font-semibold uppercase tracking-[0.14em] text-slate sm:text-[11px]">Customer Emails</span>
         </div>
-        <div className="hidden border-l border-forest/10 px-4 py-2.5 sm:block">
+        <div className="hidden border-l border-mist px-4 py-2.5 sm:block">
           <span className="block text-center text-[10px] font-semibold uppercase tracking-[0.14em] text-slate sm:text-[11px]">Email Replies</span>
         </div>
       </div>
@@ -51,7 +51,7 @@ export default function MockupDetail({ mode = "draft" }: MockupDetailProps) {
           <p className="mt-2 text-[12px] font-bold text-forest sm:text-[13px]">Where is my order #1842?</p>
 
           {/* Email body */}
-          <div className="mt-3 rounded-xl border border-forest/10 bg-paper p-3">
+          <div className="mt-3 rounded-xl border border-mist bg-forest p-3">
             <p className="text-[12px] leading-5 text-slate sm:text-[13px] sm:leading-5">
               Hi, I ordered the weighted blanket last week and haven&apos;t received any tracking information yet.
               Can you let me know when it shipped?
@@ -63,9 +63,9 @@ export default function MockupDetail({ mode = "draft" }: MockupDetailProps) {
         </div>
 
         {/* Right: Kim's reply */}
-        <div className="border-t border-forest/8 bg-paper/60 px-4 py-4 sm:border-l sm:border-t-0 sm:border-forest/10">
+        <div className="border-t border-mist bg-forest/60 px-4 py-4 sm:border-l sm:border-t-0 sm:border-mist">
           {/* Reply body */}
-          <div className="rounded-xl border border-forest/10 bg-paper p-3">
+          <div className="rounded-xl border border-mist bg-forest p-3">
             <p className="text-[12px] leading-5 text-slate sm:text-[13px] sm:leading-5">
               Hi Sarah,
             </p>
@@ -93,13 +93,13 @@ export default function MockupDetail({ mode = "draft" }: MockupDetailProps) {
                 </motion.div>
               ) : (
                 <motion.div key="buttons" className="flex flex-wrap justify-center gap-2">
-                  <span className="rounded-lg bg-[#1A7A3A] px-3 py-1.5 text-[11px] font-semibold text-white">
+                  <span className="rounded-lg bg-brass px-3 py-1.5 text-[11px] font-semibold text-forest">
                     Approve &amp; send
                   </span>
-                  <span className="rounded-lg border border-forest/15 bg-paper px-3 py-1.5 text-[11px] font-medium text-forest">
+                  <span className="rounded-lg border border-mist bg-cream px-3 py-1.5 text-[11px] font-medium text-ink">
                     Edit reply
                   </span>
-                  <span className="rounded-lg border border-forest/15 bg-paper px-3 py-1.5 text-[11px] font-medium text-forest">
+                  <span className="rounded-lg border border-mist bg-cream px-3 py-1.5 text-[11px] font-medium text-ink">
                     Skip for now
                   </span>
                 </motion.div>

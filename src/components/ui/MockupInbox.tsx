@@ -13,10 +13,10 @@ const FILTERS: FilterPill[] = [
 ];
 
 const pillClass: Record<FilterPill["tone"], string> = {
-  dark: "bg-forest text-paper border-forest",
-  green: "bg-[#DEF5E5] text-[#1A7A3A] border-[#B5E2C2]",
-  amber: "bg-[#FFF3E0] text-[#C06A1E] border-[#F5D5A8]",
-  muted: "bg-mist text-slate border-forest/12",
+  dark: "bg-brass text-forest border-brass",
+  green: "bg-emerald-900/40 text-emerald-300 border-emerald-800",
+  amber: "bg-amber-900/40 text-amber-300 border-amber-800",
+  muted: "bg-mist text-slate border-mist",
 };
 
 type EmailCard = {
@@ -33,9 +33,9 @@ type EmailCard = {
 };
 
 const badgeToneClass = {
-  green: "bg-[#DEF5E5] text-[#1A7A3A] border-[#B5E2C2]",
-  amber: "bg-[#FFF3E0] text-[#C06A1E] border-[#F5D5A8]",
-  muted: "bg-mist text-slate border-forest/12",
+  green: "bg-emerald-900/40 text-emerald-300 border-emerald-800",
+  amber: "bg-amber-900/40 text-amber-300 border-amber-800",
+  muted: "bg-mist text-slate border-mist",
 };
 
 const EMAILS: EmailCard[] = [
@@ -97,8 +97,8 @@ function ReplyPanel({ card }: { card: EmailCard }) {
           Kim checked this email and doesn&apos;t think a reply is needed.
         </p>
         <div className="flex justify-center gap-2">
-          <span className="rounded-lg border border-forest/12 bg-paper px-2.5 py-1 text-[10px] font-medium text-forest">Review</span>
-          <span className="rounded-lg border border-forest/12 bg-paper px-2.5 py-1 text-[10px] font-medium text-forest">Mark done</span>
+          <span className="rounded-lg border border-mist bg-cream px-2.5 py-1 text-[10px] font-medium text-ink">Review</span>
+          <span className="rounded-lg border border-mist bg-cream px-2.5 py-1 text-[10px] font-medium text-ink">Mark done</span>
         </div>
       </div>
     );
@@ -110,7 +110,7 @@ function ReplyPanel({ card }: { card: EmailCard }) {
     <div className="flex h-full flex-col justify-between px-3 py-3">
       <div>
         {isAction ? (
-          <p className="text-center text-[11px] font-medium text-[#C06A1E]">
+          <p className="text-center text-[11px] font-medium text-amber-400">
             Action needed ⚡️
           </p>
         ) : (
@@ -124,14 +124,14 @@ function ReplyPanel({ card }: { card: EmailCard }) {
       <div className="mt-3 flex flex-wrap justify-center gap-1.5">
         {isAction ? (
           <>
-            <span className="rounded-lg border border-forest/15 bg-paper px-2.5 py-1 text-[10px] font-medium text-forest">Write reply</span>
-            <span className="rounded-lg border border-forest/15 bg-paper px-2.5 py-1 text-[10px] font-medium text-forest">Skip for now</span>
+            <span className="rounded-lg border border-mist bg-cream px-2.5 py-1 text-[10px] font-medium text-ink">Write reply</span>
+            <span className="rounded-lg border border-mist bg-cream px-2.5 py-1 text-[10px] font-medium text-ink">Skip for now</span>
           </>
         ) : (
           <>
-            <span className="rounded-lg bg-[#1A7A3A] px-2.5 py-1 text-[10px] font-semibold text-white">Approve &amp; send</span>
-            <span className="rounded-lg border border-forest/15 bg-paper px-2.5 py-1 text-[10px] font-medium text-forest">Edit reply</span>
-            <span className="rounded-lg border border-forest/15 bg-paper px-2.5 py-1 text-[10px] font-medium text-forest">Skip for now</span>
+            <span className="rounded-lg bg-brass px-2.5 py-1 text-[10px] font-semibold text-forest">Approve &amp; send</span>
+            <span className="rounded-lg border border-mist bg-cream px-2.5 py-1 text-[10px] font-medium text-ink">Edit reply</span>
+            <span className="rounded-lg border border-mist bg-cream px-2.5 py-1 text-[10px] font-medium text-ink">Skip for now</span>
           </>
         )}
       </div>
@@ -141,9 +141,9 @@ function ReplyPanel({ card }: { card: EmailCard }) {
 
 export default function MockupInbox() {
   return (
-    <div className="overflow-hidden rounded-2xl border border-forest/12 bg-[#F7F5F0]">
+    <div className="overflow-hidden rounded-2xl border border-mist bg-cream">
       {/* Filter pills */}
-      <div className="flex flex-wrap gap-2 border-b border-forest/10 px-3 py-3 sm:px-4">
+      <div className="flex flex-wrap gap-2 border-b border-mist px-3 py-3 sm:px-4">
         {FILTERS.map((f) => (
           <span
             key={f.label}
@@ -156,17 +156,17 @@ export default function MockupInbox() {
       </div>
 
       {/* Column headers */}
-      <div className="grid grid-cols-1 gap-0 border-b border-forest/10 sm:grid-cols-2">
+      <div className="grid grid-cols-1 gap-0 border-b border-mist sm:grid-cols-2">
         <div className="px-3 py-2 sm:px-4">
           <span className="block text-center text-[10px] font-semibold uppercase tracking-[0.14em] text-slate sm:text-[11px]">Customer Emails</span>
         </div>
-        <div className="hidden border-l border-forest/10 px-3 py-2 sm:block sm:px-4">
+        <div className="hidden border-l border-mist px-3 py-2 sm:block sm:px-4">
           <span className="block text-center text-[10px] font-semibold uppercase tracking-[0.14em] text-slate sm:text-[11px]">Email Replies</span>
         </div>
       </div>
 
       {/* Email rows */}
-      <div className="divide-y divide-forest/8">
+      <div className="divide-y divide-mist">
         {EMAILS.map((card) => (
           <div key={`${card.sender}-${card.subject}`} className="grid grid-cols-1 sm:grid-cols-2">
             {/* Left: customer email */}
@@ -177,17 +177,17 @@ export default function MockupInbox() {
                 </div>
                 <div className="min-w-0 flex-1">
                   <div className="flex items-center justify-between gap-2">
-                    <span className="truncate text-[11px] font-medium text-forest sm:text-xs">{card.sender}</span>
+                    <span className="truncate text-[11px] font-medium text-ink sm:text-xs">{card.sender}</span>
                     <span className="shrink-0 text-[10px] text-slate">{card.timeAgo}</span>
                   </div>
-                  <p className="mt-0.5 truncate text-[11px] font-semibold text-forest sm:text-xs">{card.subject}</p>
+                  <p className="mt-0.5 truncate text-[11px] font-semibold text-ink sm:text-xs">{card.subject}</p>
                   <p className="mt-1.5 line-clamp-2 text-[11px] leading-4 text-slate">{card.preview}</p>
                 </div>
               </div>
             </div>
 
             {/* Right: Kim's reply */}
-            <div className="border-t border-forest/8 bg-paper/60 sm:border-l sm:border-t-0 sm:border-forest/10">
+            <div className="border-t border-mist bg-forest/60 sm:border-l sm:border-t-0 sm:border-mist">
               <ReplyPanel card={card} />
             </div>
           </div>

@@ -11,7 +11,7 @@ export default function AboutPage() {
   return (
     <div
       className="min-h-screen paper-grain"
-      style={{ backgroundColor: "#f5f0e8", fontFamily: "var(--font-plus-jakarta)" }}
+      style={{ backgroundColor: "#0A0F1A", fontFamily: "var(--font-plus-jakarta)" }}
     >
       {/* Hero Image */}
       <div className="relative w-full overflow-hidden" style={{ maxHeight: "480px" }}>
@@ -31,20 +31,20 @@ export default function AboutPage() {
         {/* Heading */}
         <h1
           className="font-display text-4xl font-bold leading-tight md:text-5xl"
-          style={{ color: "#1a1a1a" }}
+          style={{ color: "#FFFFFF" }}
         >
           About Regards Kim
         </h1>
 
         <div
           className="mt-2 h-1 w-16 rounded-full"
-          style={{ backgroundColor: "#e85d3a" }}
+          style={{ backgroundColor: "#B08D57" }}
         />
 
         {/* Body */}
         <div
           className="mt-10 space-y-6 text-base leading-8 md:text-lg"
-          style={{ color: "#3a3a3a" }}
+          style={{ color: "#CBD5E1" }}
         >
           <p>
             I've been in ecommerce for over 10 years. Across every product, every niche, every
@@ -59,7 +59,7 @@ export default function AboutPage() {
 
           <p
             className="text-xl font-semibold md:text-2xl"
-            style={{ color: "#1a1a1a" }}
+            style={{ color: "#FFFFFF" }}
           >
             Kim was one of those people.
           </p>
@@ -87,9 +87,9 @@ export default function AboutPage() {
           {/* Product callout block */}
           <div
             className="rounded-2xl border p-6 md:p-8"
-            style={{ backgroundColor: "#ffffff", borderColor: "rgba(26,26,26,0.08)" }}
+            style={{ backgroundColor: "#111827", borderColor: "#1E293B" }}
           >
-            <p style={{ color: "#3a3a3a" }}>
+            <p style={{ color: "#CBD5E1" }}>
               Regards Kim connects to your Gmail and Shopify store, reads your customer emails,
               pulls in the order and tracking context, and drafts the reply before you even open
               your inbox. You review, approve, and send. Nothing goes out without you.
@@ -110,15 +110,15 @@ export default function AboutPage() {
           {/* Sign-off */}
           <div
             className="mt-10 border-t pt-8"
-            style={{ borderColor: "rgba(26,26,26,0.1)" }}
+            style={{ borderColor: "#1E293B" }}
           >
-            <p className="text-base italic" style={{ color: "#6b6b6b" }}>
+            <p className="text-base italic" style={{ color: "#94A3B8" }}>
               And Kim? She still works for me. She just doesn't answer customer emails anymore.
             </p>
-            <p className="mt-6 font-semibold" style={{ color: "#1a1a1a" }}>
+            <p className="mt-6 font-semibold" style={{ color: "#FFFFFF" }}>
               Matt
             </p>
-            <p className="text-sm" style={{ color: "#6b6b6b" }}>
+            <p className="text-sm" style={{ color: "#94A3B8" }}>
               Founder, RegardsKim
             </p>
 

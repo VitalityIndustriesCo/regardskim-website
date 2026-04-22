@@ -81,12 +81,12 @@ export default function ComingSoonPage() {
 
   return (
     <div
-      className="paper-grain min-h-screen"
-      style={{ backgroundColor: "#f5f0e8", fontFamily: "var(--font-plus-jakarta)" }}
+      className="min-h-screen"
+      style={{ backgroundColor: "#0A0F1A", fontFamily: "var(--font-plus-jakarta)" }}
     >
       {/* Logo */}
       <header className="flex items-center justify-center px-6 pt-10 pb-2">
-        <span className="font-display text-3xl font-bold" style={{ color: "#1a1a1a" }}>
+        <span className="font-display text-3xl font-bold" style={{ color: "#FFFFFF" }}>
           RegardsKim
         </span>
       </header>
@@ -98,11 +98,11 @@ export default function ComingSoonPage() {
           <section className="pt-12 pb-8 text-center">
             <h1
               className="font-display text-5xl font-bold leading-[1.05] tracking-tight md:text-6xl"
-              style={{ color: "#1a1a1a" }}
+              style={{ color: "#FFFFFF" }}
             >
               Your inbox, handled.
             </h1>
-            <p className="mx-auto mt-5 max-w-xl text-base leading-7 md:text-lg" style={{ color: "#6b6b6b" }}>
+            <p className="mx-auto mt-5 max-w-xl text-base leading-7 md:text-lg" style={{ color: "#94A3B8" }}>
               The Shopify app that connects to your Gmail and handles your customer emails for you. Tracking questions, returns, order updates — drafted and ready to send.
             </p>
 
@@ -129,41 +129,41 @@ export default function ComingSoonPage() {
             <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10">
               <div className="flex items-center gap-2.5">
                 <ShopifyLogo className="h-7 w-7" />
-                <span className="text-sm font-medium" style={{ color: "#1a1a1a" }}>Built for Shopify</span>
+                <span className="text-sm font-medium" style={{ color: "#FFFFFF" }}>Built for Shopify</span>
               </div>
-              <div className="h-4 w-px hidden md:block" style={{ backgroundColor: "#d6cfc4" }} />
+              <div className="h-4 w-px hidden md:block" style={{ backgroundColor: "#1E293B" }} />
               <div className="flex items-center gap-2.5">
                 <GmailLogo className="h-7 w-7" />
-                <span className="text-sm font-medium" style={{ color: "#1a1a1a" }}>Connects with Gmail</span>
+                <span className="text-sm font-medium" style={{ color: "#FFFFFF" }}>Connects with Gmail</span>
               </div>
-              <div className="h-4 w-px hidden md:block" style={{ backgroundColor: "#d6cfc4" }} />
+              <div className="h-4 w-px hidden md:block" style={{ backgroundColor: "#1E293B" }} />
               <div className="flex items-center gap-2.5">
                 <span className="text-xl">✨</span>
-                <span className="text-sm font-medium" style={{ color: "#1a1a1a" }}>Trained on 100,000+ real customer emails</span>
+                <span className="text-sm font-medium" style={{ color: "#FFFFFF" }}>Trained on 100,000+ real customer emails</span>
               </div>
             </div>
           </section>
         </FadeIn>
 
         {/* Divider */}
-        <div className="my-2 h-px" style={{ backgroundColor: "#d6cfc4" }} />
+        <div className="my-2 h-px" style={{ backgroundColor: "#1E293B" }} />
 
         {/* Founding 100 */}
         <FadeIn delay={0.15}>
           <section className="py-12 text-center">
             <span
               className="inline-block rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-widest"
-              style={{ backgroundColor: "#e85d3a", color: "#ffffff" }}
+              style={{ backgroundColor: "#B08D57", color: "#0A0F1A" }}
             >
               Limited offer
             </span>
             <h2
               className="mt-4 font-display text-3xl font-bold md:text-4xl"
-              style={{ color: "#1a1a1a" }}
+              style={{ color: "#FFFFFF" }}
             >
               Join the Founding 100
             </h2>
-            <p className="mx-auto mt-4 max-w-lg text-base leading-7" style={{ color: "#6b6b6b" }}>
+            <p className="mx-auto mt-4 max-w-lg text-base leading-7" style={{ color: "#94A3B8" }}>
               The first 100 stores to sign up get 50% off — forever. Not a trial. Not a promo.
               A permanent thank-you for believing early.
             </p>
@@ -171,35 +171,35 @@ export default function ComingSoonPage() {
             {/* Counter */}
             <div
               className="mx-auto mt-8 max-w-sm rounded-2xl border p-6"
-              style={{ backgroundColor: "#ffffff", borderColor: "rgba(26,26,26,0.1)" }}
+              style={{ backgroundColor: "#111827", borderColor: "#1E293B" }}
             >
               <div className="flex items-baseline justify-center gap-1">
                 <span
                   className="font-display text-6xl font-bold tabular-nums leading-none"
-                  style={{ color: "#d04e2e" }}
+                  style={{ color: "#C9A66B" }}
                 >
                   {spotsRemaining}
                 </span>
-                <span className="text-xl font-medium" style={{ color: "#6b6b6b" }}>/ {TOTAL_SPOTS}</span>
+                <span className="text-xl font-medium" style={{ color: "#94A3B8" }}>/ {TOTAL_SPOTS}</span>
               </div>
-              <p className="mt-2 text-sm font-medium" style={{ color: "#6b6b6b" }}>
+              <p className="mt-2 text-sm font-medium" style={{ color: "#94A3B8" }}>
                 spots remaining
               </p>
 
               {/* Progress bar */}
               <div
                 className="relative mt-5 h-2.5 w-full overflow-hidden rounded-full"
-                style={{ backgroundColor: "rgba(26,26,26,0.08)" }}
+                style={{ backgroundColor: "#1E293B" }}
               >
                 <div
                   className="absolute inset-y-0 left-0 rounded-full transition-all duration-700"
                   style={{
                     width: `${progressPct}%`,
-                    background: "linear-gradient(90deg, #e85d3a, #d04e2e)",
+                    background: "linear-gradient(90deg, #B08D57, #C9A66B)",
                   }}
                 />
               </div>
-              <p className="mt-2 text-xs" style={{ color: "#6b6b6b" }}>
+              <p className="mt-2 text-xs" style={{ color: "#94A3B8" }}>
                 {TOTAL_SPOTS - spotsRemaining} of {TOTAL_SPOTS} spots claimed
               </p>
             </div>
@@ -211,24 +211,24 @@ export default function ComingSoonPage() {
           <section className="pb-12">
             <div
               className="mx-auto rounded-3xl border p-6 shadow-sm md:p-10"
-              style={{ backgroundColor: "#ffffff", borderColor: "rgba(26,26,26,0.08)" }}
+              style={{ backgroundColor: "#111827", borderColor: "#1E293B" }}
             >
               {status === "success" ? (
                 <div className="py-8 text-center">
                   <div className="mb-4 text-4xl">🎉</div>
-                  <h3 className="font-display text-2xl font-bold" style={{ color: "#1a1a1a" }}>
+                  <h3 className="font-display text-2xl font-bold" style={{ color: "#FFFFFF" }}>
                     You&apos;re in!
                   </h3>
-                  <p className="mt-2 text-base" style={{ color: "#6b6b6b" }}>
+                  <p className="mt-2 text-base" style={{ color: "#94A3B8" }}>
                     Check your inbox for confirmation.
                   </p>
                 </div>
               ) : (
                 <>
-                  <h3 className="font-display text-2xl font-bold" style={{ color: "#1a1a1a" }}>
+                  <h3 className="font-display text-2xl font-bold" style={{ color: "#FFFFFF" }}>
                     Lock in your founding spot
                   </h3>
-                  <p className="mt-2 text-sm" style={{ color: "#6b6b6b" }}>
+                  <p className="mt-2 text-sm" style={{ color: "#94A3B8" }}>
                     Reserve your spot now. No payment required.
                   </p>
 
@@ -248,7 +248,7 @@ export default function ComingSoonPage() {
                       <label
                         htmlFor="cs-first-name"
                         className="mb-2 block text-sm font-medium"
-                        style={{ color: "#1a1a1a" }}
+                        style={{ color: "#FFFFFF" }}
                       >
                         First name
                       </label>
@@ -263,9 +263,9 @@ export default function ComingSoonPage() {
                         }}
                         className="w-full rounded-xl border px-4 py-3 text-sm placeholder:opacity-40 focus:outline-none focus:ring-2"
                         style={{
-                          borderColor: "rgba(26,26,26,0.15)",
-                          backgroundColor: "rgba(245,240,232,0.4)",
-                          color: "#1a1a1a",
+                          borderColor: "#1E293B",
+                          backgroundColor: "#1E293B",
+                          color: "#FFFFFF",
                         }}
                         placeholder="Your first name"
                       />
@@ -275,7 +275,7 @@ export default function ComingSoonPage() {
                       <label
                         htmlFor="cs-email"
                         className="mb-2 block text-sm font-medium"
-                        style={{ color: "#1a1a1a" }}
+                        style={{ color: "#FFFFFF" }}
                       >
                         Email
                       </label>
@@ -290,9 +290,9 @@ export default function ComingSoonPage() {
                         }}
                         className="w-full rounded-xl border px-4 py-3 text-sm placeholder:opacity-40 focus:outline-none focus:ring-2"
                         style={{
-                          borderColor: "rgba(26,26,26,0.15)",
-                          backgroundColor: "rgba(245,240,232,0.4)",
-                          color: "#1a1a1a",
+                          borderColor: "#1E293B",
+                          backgroundColor: "#1E293B",
+                          color: "#FFFFFF",
                         }}
                         placeholder="you@example.com"
                       />
@@ -302,10 +302,10 @@ export default function ComingSoonPage() {
                       <label
                         htmlFor="cs-store"
                         className="mb-2 block text-sm font-medium"
-                        style={{ color: "#1a1a1a" }}
+                        style={{ color: "#FFFFFF" }}
                       >
                         Store URL{" "}
-                        <span style={{ color: "#6b6b6b", fontWeight: 400 }}>(optional)</span>
+                        <span style={{ color: "#94A3B8", fontWeight: 400 }}>(optional)</span>
                       </label>
                       <input
                         id="cs-store"
@@ -314,9 +314,9 @@ export default function ComingSoonPage() {
                         onChange={(e) => setStoreUrl(e.target.value)}
                         className="w-full rounded-xl border px-4 py-3 text-sm placeholder:opacity-40 focus:outline-none focus:ring-2"
                         style={{
-                          borderColor: "rgba(26,26,26,0.15)",
-                          backgroundColor: "rgba(245,240,232,0.4)",
-                          color: "#1a1a1a",
+                          borderColor: "#1E293B",
+                          backgroundColor: "#1E293B",
+                          color: "#FFFFFF",
                         }}
                         placeholder="yourstore.myshopify.com"
                       />
@@ -325,16 +325,16 @@ export default function ComingSoonPage() {
                     <button
                       type="submit"
                       disabled={status === "loading"}
-                      className="mt-2 w-full rounded-full py-3.5 text-sm font-semibold text-white shadow-[0_8px_24px_rgba(232,93,58,0.3)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_12px_28px_rgba(208,78,46,0.35)] disabled:opacity-60 disabled:cursor-not-allowed"
+                      className="mt-2 w-full rounded-full py-3.5 text-sm font-semibold shadow-[0_8px_24px_rgba(176,141,87,0.35)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_12px_28px_rgba(176,141,87,0.45)] disabled:opacity-60 disabled:cursor-not-allowed"
                       style={{
-                        background: "linear-gradient(135deg, #e85d3a, #d04e2e)",
+                        background: "linear-gradient(135deg, #B08D57, #C9A66B)",
                       }}
                     >
                       {status === "loading" ? "Reserving your spot…" : "Lock in my spot"}
                     </button>
 
                     {status === "error" && (
-                      <p className="text-sm" style={{ color: "#d04e2e" }}>
+                      <p className="text-sm" style={{ color: "#C9A66B" }}>
                         Something went wrong — try again.
                       </p>
                     )}
@@ -350,7 +350,7 @@ export default function ComingSoonPage() {
           <section className="py-10">
             <h2
               className="mb-8 text-center font-display text-2xl font-bold md:text-3xl"
-              style={{ color: "#1a1a1a" }}
+              style={{ color: "#FFFFFF" }}
             >
               What is Regards Kim?
             </h2>
@@ -372,13 +372,13 @@ export default function ComingSoonPage() {
                 <div
                   key={text}
                   className="flex items-start gap-4 rounded-2xl border p-5"
-                  style={{ backgroundColor: "#ffffff", borderColor: "rgba(26,26,26,0.08)" }}
+                  style={{ backgroundColor: "#111827", borderColor: "#1E293B" }}
                 >
                   <span className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl text-xl"
-                    style={{ backgroundColor: "rgba(232,93,58,0.08)" }}>
+                    style={{ backgroundColor: "rgba(176,141,87,0.15)" }}>
                     {icon}
                   </span>
-                  <p className="mt-1.5 text-sm leading-6 md:text-base" style={{ color: "#1a1a1a" }}>
+                  <p className="mt-1.5 text-sm leading-6 md:text-base" style={{ color: "#FFFFFF" }}>
                     {text}
                   </p>
                 </div>
@@ -389,24 +389,24 @@ export default function ComingSoonPage() {
       </main>
 
       {/* Footer */}
-      <footer className="border-t py-8 text-center" style={{ borderColor: "rgba(26,26,26,0.1)" }}>
-        <p className="text-sm" style={{ color: "#6b6b6b" }}>
+      <footer className="border-t py-8 text-center" style={{ borderColor: "#1E293B" }}>
+        <p className="text-sm" style={{ color: "#94A3B8" }}>
           © RegardsKim 2026
         </p>
         <div className="mt-2 flex items-center justify-center gap-4">
-          <Link href="/about" className="text-sm transition-colors hover:underline" style={{ color: "#6b6b6b" }}>
+          <Link href="/about" className="text-sm transition-colors hover:underline" style={{ color: "#94A3B8" }}>
             About
           </Link>
-          <span style={{ color: "#d6cfc4" }}>·</span>
-          <Link href="/privacy" className="text-sm transition-colors hover:underline" style={{ color: "#6b6b6b" }}>
+          <span style={{ color: "#1E293B" }}>·</span>
+          <Link href="/privacy" className="text-sm transition-colors hover:underline" style={{ color: "#94A3B8" }}>
             Privacy
           </Link>
-          <span style={{ color: "#d6cfc4" }}>·</span>
-          <Link href="/terms" className="text-sm transition-colors hover:underline" style={{ color: "#6b6b6b" }}>
+          <span style={{ color: "#1E293B" }}>·</span>
+          <Link href="/terms" className="text-sm transition-colors hover:underline" style={{ color: "#94A3B8" }}>
             Terms
           </Link>
         </div>
-        <p className="mt-3 text-sm italic" style={{ color: "#6b6b6b" }}>
+        <p className="mt-3 text-sm italic" style={{ color: "#94A3B8" }}>
           Kind regards, Kim
         </p>
       </footer>
