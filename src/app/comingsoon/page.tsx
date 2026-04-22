@@ -37,6 +37,10 @@ export default function ComingSoonPage() {
 
     setStatus("loading");
     try {
+      // Read Meta cookies for CAPI match quality
+      const getCookie = (name: string) =>
+        document.cookie.match(new RegExp(`(?:^|; )${name}=([^;]*)`))?.[ 1] || "";
+
       const res = await fetch("/api/coming-soon", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -45,6 +49,8 @@ export default function ComingSoonPage() {
           email: email.trim(),
           storeUrl: storeUrl.trim(),
           website: honeypot,
+          fbc: getCookie("_fbc"),
+          fbp: getCookie("_fbp"),
         }),
       });
 

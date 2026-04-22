@@ -44,7 +44,7 @@ const META_PIXEL_ID = "1609329553452333";
 const META_CAPI_TOKEN = process.env.META_CAPI_TOKEN || "";
 const META_CAPI_URL = `https://graph.facebook.com/v19.0/${META_PIXEL_ID}/events`;
 
-async function sendMetaCAPIEvent(email: string, ip: string, userAgent: string) {
+async function sendMetaCAPIEvent(email: string, ip: string, userAgent: string, fbc?: string, fbp?: string) {
   if (!META_CAPI_TOKEN) return;
   const hashedEmail = createHash("sha256").update(email.toLowerCase().trim()).digest("hex");
   const eventId = `lead_${Date.now()}_${Math.random().toString(36).slice(2)}`;
@@ -63,6 +63,8 @@ async function sendMetaCAPIEvent(email: string, ip: string, userAgent: string) {
             em: [hashedEmail],
             client_ip_address: ip !== "unknown" ? ip : undefined,
             client_user_agent: userAgent || undefined,
+            fbc: fbc || undefined,
+            fbp: fbp || undefined,
           },
         }],
       }),
@@ -95,6 +97,8 @@ export async function POST(req: NextRequest) {
     const email = (body.email || "").trim().toLowerCase();
     const storeUrl = (body.storeUrl || "").trim();
     const honeypot = body.website || ""; // hidden field — bots fill this
+    const fbc = (body.fbc || "").trim();
+    const fbp = (body.fbp || "").trim();
 
     // Honeypot check
     if (honeypot) {
@@ -147,7 +151,7 @@ export async function POST(req: NextRequest) {
     }
 
     // Send Meta CAPI Lead event (server-side, deduplicates with browser Pixel)
-    await sendMetaCAPIEvent(email, ip, userAgent);
+    await sendMetaCAPIEvent(email, ip, userAgent, fbc, fbp);
 
     // Increment spots counter
     await incrementSpotsClaimed();
