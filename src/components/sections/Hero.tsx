@@ -1,5 +1,5 @@
+import Image from "next/image";
 import FadeIn from "@/components/ui/FadeIn";
-import HeroInboxPreview from "@/components/ui/HeroInboxPreview";
 import { ShopifyLogo, GmailLogo } from "@/components/ui/BrandLogos";
 
 const INSTALL_URL = "/#install";
@@ -42,15 +42,18 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Inbox preview with split background */}
-      <div className="relative">
-        <div className="absolute inset-0">
-          <div className="h-1/2 bg-forest" />
-          <div className="h-1/2 bg-forest" />
-        </div>
-        <div className="section-shell relative z-10 py-8 md:py-12">
-          <FadeIn className="mx-auto max-w-5xl text-center">
-            <HeroInboxPreview />
+      {/* Hero product mockup */}
+      <div className="bg-forest">
+        <div className="section-shell py-8 md:py-12">
+          <FadeIn className="mx-auto max-w-5xl">
+            <Image
+              src="/images/hero-product-mockup.png"
+              alt="RegardsKim inbox showing customer emails sorted and drafted automatically"
+              width={1536}
+              height={1024}
+              className="w-full rounded-2xl"
+              priority
+            />
           </FadeIn>
         </div>
       </div>
