@@ -141,9 +141,9 @@ function ReplyPanel({ card }: { card: EmailCard }) {
 
 export default function MockupInbox() {
   return (
-    <div className="overflow-hidden rounded-2xl border border-mist bg-cream">
+    <div className="overflow-hidden rounded-2xl border border-brass/50 bg-cream">
       {/* Filter pills */}
-      <div className="flex flex-wrap gap-2 border-b-2 border-brass/30 px-3 py-3 sm:px-4">
+      <div className="flex flex-wrap gap-2 border-b-2 border-brass/50 px-3 py-3 sm:px-4">
         {FILTERS.map((f) => (
           <span
             key={f.label}
@@ -156,17 +156,17 @@ export default function MockupInbox() {
       </div>
 
       {/* Column headers */}
-      <div className="grid grid-cols-1 gap-0 border-b-2 border-brass/30 sm:grid-cols-2">
+      <div className="grid grid-cols-1 gap-0 border-b-2 border-brass/50 sm:grid-cols-2">
         <div className="px-3 py-2 sm:px-4">
           <span className="block text-center text-[10px] font-semibold uppercase tracking-[0.14em] text-slate sm:text-[11px]">Customer Emails</span>
         </div>
-        <div className="hidden border-l-2 border-brass/30 px-3 py-2 sm:block sm:px-4">
+        <div className="hidden border-l-2 border-brass/50 px-3 py-2 sm:block sm:px-4">
           <span className="block text-center text-[10px] font-semibold uppercase tracking-[0.14em] text-slate sm:text-[11px]">Email Replies</span>
         </div>
       </div>
 
       {/* Email rows */}
-      <div className="divide-y-2 divide-slate/20">
+      <div className="divide-y-2 divide-brass/50">
         {EMAILS.map((card) => (
           <div key={`${card.sender}-${card.subject}`} className="grid grid-cols-1 sm:grid-cols-2">
             {/* Left: customer email */}
@@ -187,7 +187,7 @@ export default function MockupInbox() {
             </div>
 
             {/* Right: Kim's reply */}
-            <div className="border-t-2 border-brass/30 sm:border-l-2 sm:border-t-0 sm:border-brass/30">
+            <div className="border-t-2 border-brass/50 sm:border-l-2 sm:border-t-0 sm:border-brass/50">
               <ReplyPanel card={card} />
             </div>
           </div>
