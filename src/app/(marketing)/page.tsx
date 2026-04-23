@@ -4,6 +4,7 @@ import Benefits from "@/components/sections/Benefits";
 import Comparison from "@/components/sections/Comparison";
 import GettingStarted from "@/components/sections/GettingStarted";
 import Pricing from "@/components/sections/Pricing";
+import Founding from "@/components/sections/Founding";
 import FAQ from "@/components/sections/FAQ";
 
 export default function Home() {
@@ -14,6 +15,7 @@ export default function Home() {
       <Benefits />
       <Comparison />
       <Pricing />
+      <Founding />
       <GettingStarted />
       <FAQ />
     </main>

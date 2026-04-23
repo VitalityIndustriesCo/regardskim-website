@@ -3,7 +3,7 @@
 import { Check } from "lucide-react";
 import FadeIn from "@/components/ui/FadeIn";
 
-const INSTALL_URL = "/#install";
+const CTA_URL = "/#founding";
 
 const inclusions = [
   "Connects to your Shopify store, Gmail & Outlook",
@@ -50,8 +50,8 @@ export default function Pricing() {
             ))}
           </ul>
 
-          <a href={INSTALL_URL} className="btn-primary mt-8 inline-flex w-full justify-center sm:w-auto">
-            Get started on Shopify
+          <a href={CTA_URL} className="btn-primary mt-8 inline-flex w-full justify-center sm:w-auto">
+            Lock in your spot
           </a>
         </FadeIn>
 

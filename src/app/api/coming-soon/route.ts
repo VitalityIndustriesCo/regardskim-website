@@ -58,7 +58,7 @@ async function sendMetaCAPIEvent(email: string, ip: string, userAgent: string, f
           event_time: Math.floor(Date.now() / 1000),
           event_id: eventId,
           action_source: "website",
-          event_source_url: "https://regardskim.com/comingsoon",
+          event_source_url: "https://regardskim.com",
           user_data: {
             em: [hashedEmail],
             client_ip_address: ip !== "unknown" ? ip : undefined,

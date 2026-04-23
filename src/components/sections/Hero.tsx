@@ -2,7 +2,7 @@ import Image from "next/image";
 import FadeIn from "@/components/ui/FadeIn";
 import { ShopifyLogo, GmailLogo } from "@/components/ui/BrandLogos";
 
-const INSTALL_URL = "/#install";
+const CTA_URL = "/#founding";
 
 export default function Hero() {
   return (
@@ -20,10 +20,10 @@ export default function Hero() {
               </p>
 
               <div className="mt-10 flex flex-col items-center gap-4">
-                <a href={INSTALL_URL} className="btn-primary">
-                  Install on Shopify
+                <a href={CTA_URL} className="btn-primary">
+                  Lock in your spot
                 </a>
-                <p className="text-sm text-slate">Install from the Shopify App Store and get set up in minutes.</p>
+                <p className="text-sm text-slate">Join the Founding 100 — 50% off forever. No payment required.</p>
               </div>
 
               {/* Trust block */}
