@@ -50,34 +50,28 @@ export default function MockupDetail({ mode = "draft" }: MockupDetailProps) {
 
           <p className="mt-2 text-[12px] font-bold text-ink sm:text-[13px]">Where is my order #1842?</p>
 
-          {/* Email body */}
-          <div className="mt-3 rounded-xl border border-mist bg-[#111827] p-3">
-            <p className="text-[12px] leading-5 text-slate sm:text-[13px] sm:leading-5">
-              Hi, I ordered the weighted blanket last week and haven&apos;t received any tracking information yet.
-              Can you let me know when it shipped?
-            </p>
-            <p className="mt-2 text-[12px] leading-5 text-slate sm:text-[13px] sm:leading-5">
-              Thanks<br />Sarah
-            </p>
-          </div>
+          <p className="mt-2 text-[12px] leading-5 text-slate sm:text-[13px] sm:leading-5">
+            Hi, I ordered the weighted blanket last week and haven&apos;t received any tracking information yet.
+            Can you let me know when it shipped?
+          </p>
+          <p className="mt-2 text-[12px] leading-5 text-slate sm:text-[13px] sm:leading-5">
+            Thanks<br />Sarah
+          </p>
         </div>
 
         {/* Right: Kim's reply card */}
         <div className="rounded-xl border border-slate/20 bg-[#1E293B] px-4 py-4 shadow-sm">
-          {/* Reply body */}
-          <div className="rounded-xl border border-mist bg-[#111827] p-3">
-            <p className="text-[12px] leading-5 text-slate sm:text-[13px] sm:leading-5">
-              Hi Sarah,
-            </p>
-            <p className="mt-2 text-[12px] leading-5 text-slate sm:text-[13px] sm:leading-5">
-              Thanks for reaching out! Your order #1842 shipped yesterday via Australia Post. Your tracking
-              number is AP4821093AU — it usually takes 24–48 hours for the first scan to appear.
-            </p>
-            <p className="mt-2 text-[12px] leading-5 text-slate sm:text-[13px] sm:leading-5">
-              I&apos;ll keep an eye on it and let you know if anything looks off.
-            </p>
-            <p className="mt-2 text-[12px] text-slate sm:text-[13px]">Kind regards, Kim</p>
-          </div>
+          <p className="text-[12px] leading-5 text-slate sm:text-[13px] sm:leading-5">
+            Hi Sarah,
+          </p>
+          <p className="mt-2 text-[12px] leading-5 text-slate sm:text-[13px] sm:leading-5">
+            Thanks for reaching out! Your order #1842 shipped yesterday via Australia Post. Your tracking
+            number is AP4821093AU — it usually takes 24–48 hours for the first scan to appear.
+          </p>
+          <p className="mt-2 text-[12px] leading-5 text-slate sm:text-[13px] sm:leading-5">
+            I&apos;ll keep an eye on it and let you know if anything looks off.
+          </p>
+          <p className="mt-2 text-[12px] text-slate sm:text-[13px]">Kind regards, Kim</p>
 
           {/* Action buttons */}
           <div className="mt-3 flex justify-center">
