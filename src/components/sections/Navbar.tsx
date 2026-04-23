@@ -66,8 +66,8 @@ export default function Navbar() {
           </div>
 
           <div className="hidden items-center gap-4 md:flex">
-            <Link href="/#install" className="btn-primary">
-              Install on Shopify
+            <Link href="/#founding" className="btn-primary">
+              Lock in your spot
             </Link>
           </div>
 
@@ -143,8 +143,8 @@ export default function Navbar() {
           </div>
 
           <div className="mt-8 flex flex-col gap-3 border-t border-mist pt-6">
-            <Link href="/#install" className="btn-primary w-full" onClick={closeMobileMenu}>
-              Install on Shopify
+            <Link href="/#founding" className="btn-primary w-full" onClick={closeMobileMenu}>
+              Lock in your spot
             </Link>
           </div>
         </div>
