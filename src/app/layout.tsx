@@ -31,7 +31,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${plusJakarta.variable} h-full scroll-smooth antialiased`}
+      className={`${plusJakarta.variable} h-full overflow-x-hidden scroll-smooth antialiased`}
     >
       <head>
         <meta name="shopify-api-key" content="327e4daf19a338e5b04707172c2b39bc" />
