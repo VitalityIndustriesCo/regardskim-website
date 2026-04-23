@@ -13,18 +13,6 @@ export default function AboutPage() {
       className="min-h-screen paper-grain"
       style={{ backgroundColor: "#060B14", fontFamily: "var(--font-plus-jakarta)" }}
     >
-      {/* Hero Image */}
-      <div className="relative w-full">
-        <Image
-          src="/images/about-hero.jpg"
-          alt="Abstract golden light on dark background"
-          width={1536}
-          height={1024}
-          className="w-full"
-          priority
-        />
-      </div>
-
       {/* Content */}
       <div className="mx-auto max-w-2xl px-6 py-16">
 
@@ -40,6 +28,18 @@ export default function AboutPage() {
           className="mt-2 h-1 w-16 rounded-full"
           style={{ backgroundColor: "#B08D57" }}
         />
+
+        {/* Hero Image */}
+        <div className="mt-8 overflow-hidden rounded-2xl">
+          <Image
+            src="/images/about-hero.jpg"
+            alt="Abstract golden light on dark background"
+            width={1536}
+            height={1024}
+            className="w-full object-cover"
+            priority
+          />
+        </div>
 
         {/* Body */}
         <div
