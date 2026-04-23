@@ -81,7 +81,7 @@ export default function AboutPage() {
           </p>
 
           <p>
-            Now, through the power of AI, that's possible.
+            Now, the technology has caught up to the idea.
           </p>
 
           {/* Product callout block */}
