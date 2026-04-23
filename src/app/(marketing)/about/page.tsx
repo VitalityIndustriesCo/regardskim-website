@@ -14,13 +14,13 @@ export default function AboutPage() {
       style={{ backgroundColor: "#060B14", fontFamily: "var(--font-plus-jakarta)" }}
     >
       {/* Hero Image */}
-      <div className="relative w-full overflow-hidden" style={{ maxHeight: "480px" }}>
+      <div className="relative w-full">
         <Image
           src="/images/about-hero.jpg"
-          alt="Abstract visualization of customer support reimagined through technology"
-          width={1792}
+          alt="Abstract golden light on dark background"
+          width={1536}
           height={1024}
-          className="w-full object-cover"
+          className="w-full"
           priority
         />
       </div>
