@@ -22,13 +22,13 @@ export default function MockupDetail({ mode = "draft" }: MockupDetailProps) {
   const isApproval = mode === "approval";
 
   return (
-    <div className="overflow-hidden rounded-2xl border-2 bg-cream" style={{ borderColor: '#D4AA60' }}>
+    <div className="overflow-hidden rounded-2xl border border-[#D4AA60] bg-cream">
       {/* Column headers */}
-      <div className="grid grid-cols-1 gap-0 border-b-2 sm:grid-cols-2" style={{ borderColor: '#D4AA60' }}>
+      <div className="grid grid-cols-1 gap-0 border-b-2 border-[#D4AA60] sm:grid-cols-2">
         <div className="px-4 py-2.5">
           <span className="block text-center text-[10px] font-semibold uppercase tracking-[0.14em] text-slate sm:text-[11px]">Customer Emails</span>
         </div>
-        <div className="hidden border-l-2 px-4 py-2.5 sm:block" style={{ borderColor: '#D4AA60' }}>
+        <div className="hidden border-l-2 border-[#D4AA60] px-4 py-2.5 sm:block">
           <span className="block text-center text-[10px] font-semibold uppercase tracking-[0.14em] text-slate sm:text-[11px]">Email Replies</span>
         </div>
       </div>
@@ -63,7 +63,7 @@ export default function MockupDetail({ mode = "draft" }: MockupDetailProps) {
         </div>
 
         {/* Right: Kim's reply */}
-        <div className="border-t-2 px-4 py-4 sm:border-l-2 sm:border-t-0" style={{ borderColor: '#D4AA60' }}>
+        <div className="border-t-2 border-[#D4AA60] px-4 py-4 sm:border-l-2 sm:border-t-0 sm:border-[#D4AA60]">
           {/* Reply body */}
           <div className="rounded-xl border border-mist bg-cream p-3">
             <p className="text-[12px] leading-5 text-slate sm:text-[13px] sm:leading-5">
