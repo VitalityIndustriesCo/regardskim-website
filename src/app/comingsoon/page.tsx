@@ -108,14 +108,13 @@ export default function ComingSoonPage() {
 
             {/* Hero image */}
             <div className="mt-10">
-              <div className="relative mx-auto inline-block w-full max-w-2xl overflow-hidden rounded-2xl shadow-[0_8px_40px_rgba(26,26,26,0.12)]">
+              <div className="relative mx-auto inline-block w-full max-w-2xl">
                 <Image
-                  src="/images/coming-soon-hero-1.png"
-                  alt="Regards Kim inbox preview"
-                  width={800}
-                  height={480}
-                  className="w-full object-cover"
-                  onError={() => {}}
+                  src="/images/hero-product-mockup.png"
+                  alt="RegardsKim inbox showing customer emails sorted and drafted automatically"
+                  width={1536}
+                  height={1024}
+                  className="w-full"
                   priority
                 />
               </div>
