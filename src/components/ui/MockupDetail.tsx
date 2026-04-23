@@ -22,14 +22,14 @@ export default function MockupDetail({ mode = "draft" }: MockupDetailProps) {
   const isApproval = mode === "approval";
 
   return (
-    <div className="overflow-hidden rounded-2xl border border-mist bg-cream">
+    <div className="overflow-hidden rounded-xl bg-white">
       {/* Column headers */}
-      <div className="grid grid-cols-1 gap-0 border-b-2 border-slate/20 sm:grid-cols-2">
+      <div className="grid grid-cols-1 border-b border-gray-100 sm:grid-cols-2">
         <div className="px-4 py-2.5">
-          <span className="block text-center text-[10px] font-semibold uppercase tracking-[0.14em] text-slate sm:text-[11px]">Customer Emails</span>
+          <span className="text-[10px] font-semibold uppercase tracking-[0.12em] text-gray-400 sm:text-[11px]">Customer Email</span>
         </div>
-        <div className="hidden border-l-2 border-slate/20 px-4 py-2.5 sm:block">
-          <span className="block text-center text-[10px] font-semibold uppercase tracking-[0.14em] text-slate sm:text-[11px]">Email Replies</span>
+        <div className="hidden border-l border-gray-100 px-4 py-2.5 sm:block">
+          <span className="text-[10px] font-semibold uppercase tracking-[0.12em] text-gray-400 sm:text-[11px]">Kim&apos;s Reply</span>
         </div>
       </div>
 
@@ -40,43 +40,43 @@ export default function MockupDetail({ mode = "draft" }: MockupDetailProps) {
           {/* Sender header */}
           <div className="flex items-start justify-between gap-2">
             <div className="flex items-center gap-2.5">
-              <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#E8893A] text-[11px] font-semibold text-white">
+              <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-orange-400 text-[11px] font-semibold text-white">
                 S
               </div>
-              <span className="text-[12px] font-medium text-ink sm:text-[13px]">sarah@gmail.com</span>
+              <span className="text-[12px] font-medium text-gray-900 sm:text-[13px]">sarah@gmail.com</span>
             </div>
-            <span className="shrink-0 text-[11px] text-slate">2h ago</span>
+            <span className="shrink-0 text-[11px] text-gray-400">2h ago</span>
           </div>
 
-          <p className="mt-2 text-[12px] font-bold text-ink sm:text-[13px]">Where is my order #1842?</p>
+          <p className="mt-2 text-[12px] font-bold text-gray-900 sm:text-[13px]">Where is my order #1842?</p>
 
           {/* Email body */}
-          <div className="mt-3 rounded-xl border border-mist bg-cream p-3">
-            <p className="text-[12px] leading-5 text-slate sm:text-[13px] sm:leading-5">
+          <div className="mt-3 rounded-lg border border-gray-100 bg-gray-50 p-3">
+            <p className="text-[12px] leading-5 text-gray-600 sm:text-[13px] sm:leading-5">
               Hi, I ordered the weighted blanket last week and haven&apos;t received any tracking information yet.
               Can you let me know when it shipped?
             </p>
-            <p className="mt-2 text-[12px] leading-5 text-slate sm:text-[13px] sm:leading-5">
+            <p className="mt-2 text-[12px] leading-5 text-gray-600 sm:text-[13px] sm:leading-5">
               Thanks<br />Sarah
             </p>
           </div>
         </div>
 
         {/* Right: Kim's reply */}
-        <div className="border-t-2 border-slate/20 bg-mist/40 px-4 py-4 sm:border-l-2 sm:border-t-0 sm:border-slate/20">
+        <div className="border-t border-gray-100 bg-gray-50/50 px-4 py-4 sm:border-l sm:border-t-0">
           {/* Reply body */}
-          <div className="rounded-xl border border-mist bg-cream p-3">
-            <p className="text-[12px] leading-5 text-slate sm:text-[13px] sm:leading-5">
+          <div className="rounded-lg border border-gray-100 bg-white p-3">
+            <p className="text-[12px] leading-5 text-gray-700 sm:text-[13px] sm:leading-5">
               Hi Sarah,
             </p>
-            <p className="mt-2 text-[12px] leading-5 text-slate sm:text-[13px] sm:leading-5">
+            <p className="mt-2 text-[12px] leading-5 text-gray-700 sm:text-[13px] sm:leading-5">
               Thanks for reaching out! Your order #1842 shipped yesterday via Australia Post. Your tracking
               number is AP4821093AU — it usually takes 24–48 hours for the first scan to appear.
             </p>
-            <p className="mt-2 text-[12px] leading-5 text-slate sm:text-[13px] sm:leading-5">
+            <p className="mt-2 text-[12px] leading-5 text-gray-700 sm:text-[13px] sm:leading-5">
               I&apos;ll keep an eye on it and let you know if anything looks off.
             </p>
-            <p className="mt-2 text-[12px] text-slate sm:text-[13px]">Kind regards, Kim</p>
+            <p className="mt-2 text-[12px] text-gray-500 sm:text-[13px]">Kind regards, Kim</p>
           </div>
 
           {/* Action buttons */}
@@ -87,19 +87,19 @@ export default function MockupDetail({ mode = "draft" }: MockupDetailProps) {
                   key="sent"
                   initial={prefersReducedMotion ? undefined : { opacity: 0, y: 4 }}
                   animate={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
-                  className="inline-flex items-center gap-1.5 rounded-full border border-brass/30 bg-brass/20 px-3 py-1 text-[11px] font-medium text-brass"
+                  className="inline-flex items-center gap-1.5 rounded-full bg-emerald-50 px-3 py-1 text-[11px] font-medium text-emerald-600"
                 >
                   <CheckCircle2 size={13} /> Sent ✓
                 </motion.div>
               ) : (
                 <motion.div key="buttons" className="flex flex-wrap justify-center gap-2">
-                  <span className="rounded-lg bg-brass px-3 py-1.5 text-[11px] font-semibold text-forest">
+                  <span className="rounded-md bg-emerald-600 px-3 py-1.5 text-[11px] font-semibold text-white shadow-sm">
                     Approve &amp; send
                   </span>
-                  <span className="rounded-lg border border-mist bg-cream px-3 py-1.5 text-[11px] font-medium text-ink">
+                  <span className="rounded-md border border-gray-200 bg-white px-3 py-1.5 text-[11px] font-medium text-gray-600 shadow-sm">
                     Edit reply
                   </span>
-                  <span className="rounded-lg border border-mist bg-cream px-3 py-1.5 text-[11px] font-medium text-ink">
+                  <span className="rounded-md border border-gray-200 bg-white px-3 py-1.5 text-[11px] font-medium text-gray-600 shadow-sm">
                     Skip for now
                   </span>
                 </motion.div>

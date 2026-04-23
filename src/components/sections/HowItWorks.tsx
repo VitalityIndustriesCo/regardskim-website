@@ -9,7 +9,7 @@ const steps = [
     title: "Emails come in, sorted instantly",
     body: "Every email is automatically categorised — WISMO, returns, refunds, complaints — and matched to the right order, tracking, and store policies.",
     mockup: (
-      <MockupWindow title="Inbox" className="bg-cream">
+      <MockupWindow title="Inbox">
         <div className="p-2.5 sm:p-3 md:p-4">
           <MockupInbox />
         </div>
@@ -21,7 +21,7 @@ const steps = [
     title: "Helpful replies, ready to go",
     body: "Regards Kim drafts real answers with the right details — not generic filler your customers can see through.",
     mockup: (
-      <MockupWindow title="Inbox" className="bg-cream">
+      <MockupWindow title="Inbox">
         <div className="p-2.5 sm:p-3 md:p-4">
           <MockupDetail mode="draft" />
         </div>
@@ -33,7 +33,7 @@ const steps = [
     title: "Review, send, move on",
     body: "Check the drafts, hit send, and get back to running your store. Most merchants clear their queue in minutes.",
     mockup: (
-      <MockupWindow title="Inbox" className="bg-cream">
+      <MockupWindow title="Inbox">
         <div className="p-2.5 sm:p-3 md:p-4">
           <MockupDetail mode="approval" />
         </div>
@@ -55,7 +55,7 @@ export default function HowItWorks() {
                   <h3 className="mt-4 font-display text-2xl font-bold tracking-normal text-ink sm:text-3xl md:text-4xl">{step.title}</h3>
                   <p className="mt-3 max-w-2xl text-sm text-slate md:text-base">{step.body}</p>
                 </div>
-                <div className="rounded-[1.5rem] border border-mist bg-forest/50 p-3 sm:p-4 md:rounded-[2rem] md:p-5 lg:p-6">
+                <div className="rounded-[1.5rem] p-1 sm:p-2 md:rounded-[2rem] md:p-3">
                   {step.mockup}
                 </div>
               </article>
