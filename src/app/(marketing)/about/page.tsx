@@ -17,7 +17,7 @@ export default function AboutPage() {
       <div className="relative w-full overflow-hidden" style={{ maxHeight: "480px" }}>
         <Image
           src="/images/about-hero.jpg"
-          alt="A neatly organised vintage office desk"
+          alt="Abstract visualization of customer support reimagined through technology"
           width={1792}
           height={1024}
           className="w-full object-cover"
