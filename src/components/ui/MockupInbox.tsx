@@ -141,9 +141,9 @@ function ReplyPanel({ card }: { card: EmailCard }) {
 
 export default function MockupInbox() {
   return (
-    <div className="overflow-hidden rounded-2xl border border-[#D4AA60] bg-cream">
+    <div className="overflow-hidden rounded-2xl border-2 bg-cream" style={{ borderColor: '#D4AA60' }}>
       {/* Filter pills */}
-      <div className="flex flex-wrap gap-2 border-b-2 border-[#D4AA60] px-3 py-3 sm:px-4">
+      <div className="flex flex-wrap gap-2 border-b-2 px-3 py-3 sm:px-4" style={{ borderColor: '#D4AA60' }}>
         {FILTERS.map((f) => (
           <span
             key={f.label}
@@ -156,19 +156,19 @@ export default function MockupInbox() {
       </div>
 
       {/* Column headers */}
-      <div className="grid grid-cols-1 gap-0 border-b-2 border-[#D4AA60] sm:grid-cols-2">
+      <div className="grid grid-cols-1 gap-0 border-b-2 sm:grid-cols-2" style={{ borderColor: '#D4AA60' }}>
         <div className="px-3 py-2 sm:px-4">
           <span className="block text-center text-[10px] font-semibold uppercase tracking-[0.14em] text-slate sm:text-[11px]">Customer Emails</span>
         </div>
-        <div className="hidden border-l-2 border-[#D4AA60] px-3 py-2 sm:block sm:px-4">
+        <div className="hidden border-l-2 px-3 py-2 sm:block sm:px-4" style={{ borderColor: '#D4AA60' }}>
           <span className="block text-center text-[10px] font-semibold uppercase tracking-[0.14em] text-slate sm:text-[11px]">Email Replies</span>
         </div>
       </div>
 
       {/* Email rows */}
-      <div className="divide-y-2 divide-[#D4AA60]">
-        {EMAILS.map((card) => (
-          <div key={`${card.sender}-${card.subject}`} className="grid grid-cols-1 sm:grid-cols-2">
+      <div>
+        {EMAILS.map((card, idx) => (
+          <div key={`${card.sender}-${card.subject}`} className={`grid grid-cols-1 sm:grid-cols-2${idx > 0 ? ' border-t-2' : ''}`} style={idx > 0 ? { borderColor: '#D4AA60' } : undefined}>
             {/* Left: customer email */}
             <div className="px-3 py-3 sm:px-4">
               <div className="flex items-start gap-2.5">
@@ -187,7 +187,7 @@ export default function MockupInbox() {
             </div>
 
             {/* Right: Kim's reply */}
-            <div className="border-t-2 border-[#D4AA60] sm:border-l-2 sm:border-t-0 sm:border-[#D4AA60]">
+            <div className="border-t-2 sm:border-l-2 sm:border-t-0" style={{ borderColor: '#D4AA60' }}>
               <ReplyPanel card={card} />
             </div>
           </div>
