@@ -46,15 +46,18 @@ export default function Hero() {
       <div className="bg-forest">
         <div className="section-shell py-8 md:py-12">
           <FadeIn className="mx-auto max-w-5xl">
-            <Image
-              src="/images/hero-product-mockup.png"
-              alt="RegardsKim inbox showing customer emails sorted and drafted automatically"
-              width={1536}
-              height={1024}
-              className="w-full rounded-xl border shadow-[0_4px_30px_rgba(0,0,0,0.4),0_0_60px_rgba(176,141,87,0.06)]"
-              style={{ borderColor: 'rgba(176, 141, 87, 0.6)' }}
-              priority
-            />
+            <div className="rounded-2xl bg-gradient-to-b from-[#2a2f3a] via-[#1a1f2a] to-[#0d1018] p-[3px] shadow-[0_8px_40px_rgba(0,0,0,0.5),0_2px_8px_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.08)]">
+              <div className="rounded-[13px] bg-gradient-to-b from-[#0f1420] to-[#080c14] p-[3px]">
+                <Image
+                  src="/images/hero-product-mockup.png"
+                  alt="RegardsKim inbox showing customer emails sorted and drafted automatically"
+                  width={1536}
+                  height={1024}
+                  className="w-full rounded-xl"
+                  priority
+                />
+              </div>
+            </div>
           </FadeIn>
         </div>
       </div>
