@@ -6,7 +6,7 @@ import FadeIn from "@/components/ui/FadeIn";
 const CTA_URL = "/#founding";
 
 const inclusions = [
-  "Connects to your Shopify store, Gmail & Outlook",
+  "Connects to your Shopify store and Gmail",
   "Drafts replies using live order and tracking data",
   "Handles order questions, returns, and shipping updates",
   "You review every reply before it sends",
