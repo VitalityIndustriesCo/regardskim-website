@@ -17,7 +17,7 @@ export default function MockupWindow({ children, title, className = "" }: Mockup
           <span className="h-2.5 w-2.5 rounded-full bg-[#FFBD2E]" />
           <span className="h-2.5 w-2.5 rounded-full bg-[#28C840]" />
         </div>
-        <p className="truncate px-3 text-[11px] text-slate">{title ?? ""}</p>
+        <p className="truncate px-3 text-xs font-semibold uppercase tracking-wider text-slate">{title ?? ""}</p>
         <span className="w-8 sm:w-10" />
       </div>
       <div className="bg-[#0F1724] p-3 sm:p-4">{children}</div>
