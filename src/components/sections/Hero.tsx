@@ -6,7 +6,7 @@ const INSTALL_URL = "/#install";
 
 export default function Hero() {
   return (
-    <section id="top" className="relative overflow-hidden">
+    <section id="top" className="relative overflow-visible">
       {/* Dark background with hero text */}
       <div className="bg-forest pb-0">
         <div className="section-shell">
