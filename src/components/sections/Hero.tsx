@@ -46,18 +46,14 @@ export default function Hero() {
       <div className="bg-forest">
         <div className="section-shell py-8 md:py-12">
           <FadeIn className="mx-auto max-w-5xl">
-            <div className="relative">
-              {/* Gold ambient glow behind the mockup */}
-              <div className="absolute -inset-8 rounded-3xl bg-[#B08D57]/15 blur-3xl" />
-              <Image
-                src="/images/hero-product-mockup.png"
-                alt="RegardsKim inbox showing customer emails sorted and drafted automatically"
-                width={1536}
-                height={1024}
-                className="relative w-full"
-                priority
-              />
-            </div>
+            <Image
+              src="/images/hero-product-mockup.png"
+              alt="RegardsKim inbox showing customer emails sorted and drafted automatically"
+              width={1536}
+              height={1024}
+              className="w-full"
+              priority
+            />
           </FadeIn>
         </div>
       </div>
