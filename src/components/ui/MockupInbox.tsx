@@ -141,7 +141,7 @@ function ReplyPanel({ card }: { card: EmailCard }) {
 
 export default function MockupInbox() {
   return (
-    <div className="overflow-hidden rounded-2xl border border-mist bg-cream">
+    <div className="overflow-hidden rounded-2xl border border-mist bg-[#1E293B]">
       {/* Filter pills */}
       <div className="flex flex-wrap gap-2 border-b-2 border-brass/30 px-3 py-3 sm:px-4">
         {FILTERS.map((f) => (

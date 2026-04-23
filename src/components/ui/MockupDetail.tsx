@@ -22,7 +22,7 @@ export default function MockupDetail({ mode = "draft" }: MockupDetailProps) {
   const isApproval = mode === "approval";
 
   return (
-    <div className="overflow-hidden rounded-2xl border border-mist bg-cream">
+    <div className="overflow-hidden rounded-2xl border border-mist bg-[#1E293B]">
       {/* Column headers */}
       <div className="grid grid-cols-1 gap-0 border-b-2 border-brass/30 sm:grid-cols-2">
         <div className="px-4 py-2.5">
@@ -51,7 +51,7 @@ export default function MockupDetail({ mode = "draft" }: MockupDetailProps) {
           <p className="mt-2 text-[12px] font-bold text-ink sm:text-[13px]">Where is my order #1842?</p>
 
           {/* Email body */}
-          <div className="mt-3 rounded-xl border border-mist bg-cream p-3">
+          <div className="mt-3 rounded-xl border border-mist bg-[#111827] p-3">
             <p className="text-[12px] leading-5 text-slate sm:text-[13px] sm:leading-5">
               Hi, I ordered the weighted blanket last week and haven&apos;t received any tracking information yet.
               Can you let me know when it shipped?
@@ -65,7 +65,7 @@ export default function MockupDetail({ mode = "draft" }: MockupDetailProps) {
         {/* Right: Kim's reply */}
         <div className="border-t-2 border-brass/30 px-4 py-4 sm:border-l-2 sm:border-t-0 sm:border-brass/30">
           {/* Reply body */}
-          <div className="rounded-xl border border-mist bg-cream p-3">
+          <div className="rounded-xl border border-mist bg-[#111827] p-3">
             <p className="text-[12px] leading-5 text-slate sm:text-[13px] sm:leading-5">
               Hi Sarah,
             </p>
