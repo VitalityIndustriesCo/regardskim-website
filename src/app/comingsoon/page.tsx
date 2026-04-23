@@ -135,11 +135,7 @@ export default function ComingSoonPage() {
                 <GmailLogo className="h-7 w-7" />
                 <span className="text-sm font-medium" style={{ color: "#FFFFFF" }}>Connects with Gmail</span>
               </div>
-              <div className="h-4 w-px hidden md:block" style={{ backgroundColor: "#1E293B" }} />
-              <div className="flex items-center gap-2.5">
-                <span className="text-xl">✨</span>
-                <span className="text-sm font-medium" style={{ color: "#FFFFFF" }}>Trained on 100,000+ real customer emails</span>
-              </div>
+
             </div>
           </section>
         </FadeIn>
