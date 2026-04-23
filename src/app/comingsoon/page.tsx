@@ -82,7 +82,7 @@ export default function ComingSoonPage() {
   return (
     <div
       className="min-h-screen"
-      style={{ backgroundColor: "#0A0F1A", fontFamily: "var(--font-plus-jakarta)" }}
+      style={{ backgroundColor: "#060B14", fontFamily: "var(--font-plus-jakarta)" }}
     >
       {/* Logo */}
       <header className="flex items-center justify-center px-6 pt-10 pb-2">

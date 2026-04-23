@@ -11,7 +11,7 @@ export default function AboutPage() {
   return (
     <div
       className="min-h-screen paper-grain"
-      style={{ backgroundColor: "#0A0F1A", fontFamily: "var(--font-plus-jakarta)" }}
+      style={{ backgroundColor: "#060B14", fontFamily: "var(--font-plus-jakarta)" }}
     >
       {/* Hero Image */}
       <div className="relative w-full overflow-hidden" style={{ maxHeight: "480px" }}>

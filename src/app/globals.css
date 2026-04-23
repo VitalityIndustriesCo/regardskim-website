@@ -5,14 +5,14 @@
   --font-display: var(--font-plus-jakarta);
   --font-sans: var(--font-plus-jakarta);
 
-  --color-forest: #0A0F1A;
+  --color-forest: #060B14;
   --color-cream: #111827;
   --color-oxblood: #C9A66B;
   --color-brass: #B08D57;
   --color-ink: #FFFFFF;
   --color-slate: #E2E8F0;
   --color-mist: #1E293B;
-  --color-paper: #0A0F1A;
+  --color-paper: #060B14;
   --color-badge-amber: #B08D57;
   --color-badge-blue: #B08D57;
   --color-badge-green: #B08D57;
@@ -46,7 +46,7 @@
 }
 
 :root {
-  --background: 220 30% 5%;
+  --background: 222 40% 4%;
   --foreground: 0 0% 100%;
   --card: 220 25% 9%;
   --card-foreground: 0 0% 100%;
