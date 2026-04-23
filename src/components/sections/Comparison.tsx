@@ -104,7 +104,7 @@ function ReplyCard({ label, body, tone }: ReplyCardProps) {
         </span>
       </div>
 
-      <div className="mt-5 rounded-[1.25rem] border border-brass/20 bg-cream/90 p-5 md:p-6">
+      <div className="mt-5 rounded-[1.25rem] border border-brass/20 bg-[#1E293B] p-5 md:p-6">
         <div className="space-y-3 text-sm md:text-[0.95rem]">
           <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:gap-3">
             <span className="text-xs font-semibold uppercase tracking-[0.14em] text-slate">To</span>
