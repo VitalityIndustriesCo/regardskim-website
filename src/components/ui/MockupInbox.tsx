@@ -170,7 +170,7 @@ export default function MockupInbox() {
         {EMAILS.map((card) => (
           <div key={`${card.sender}-${card.subject}`} className="grid grid-cols-1 gap-2.5 sm:grid-cols-2">
             {/* Left: customer email card */}
-            <div className="rounded-xl border border-mist bg-[#1E293B] px-3 py-3 sm:px-4">
+            <div className="rounded-xl border border-slate/20 bg-[#1E293B] px-3 py-3 shadow-sm sm:px-4">
               <div className="flex items-start gap-2.5">
                 <div className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-[11px] font-semibold text-white ${card.avatarColor}`}>
                   {card.avatar}
@@ -187,7 +187,7 @@ export default function MockupInbox() {
             </div>
 
             {/* Right: Kim's reply card */}
-            <div className="rounded-xl border border-mist bg-[#1E293B]">
+            <div className="rounded-xl border border-slate/20 bg-[#1E293B] shadow-sm">
               <ReplyPanel card={card} />
             </div>
           </div>

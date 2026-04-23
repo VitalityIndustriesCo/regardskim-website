@@ -9,10 +9,8 @@ const steps = [
     title: "Emails come in, sorted instantly",
     body: "Every email is automatically categorised — WISMO, returns, refunds, complaints — and matched to the right order, tracking, and store policies.",
     mockup: (
-      <MockupWindow title="Inbox" className="bg-cream">
-        <div className="p-2.5 sm:p-3 md:p-4">
-          <MockupInbox />
-        </div>
+      <MockupWindow title="Inbox">
+        <MockupInbox />
       </MockupWindow>
     ),
   },
@@ -21,10 +19,8 @@ const steps = [
     title: "Helpful replies, ready to go",
     body: "Regards Kim drafts real answers with the right details — not generic filler your customers can see through.",
     mockup: (
-      <MockupWindow title="Inbox" className="bg-cream">
-        <div className="p-2.5 sm:p-3 md:p-4">
-          <MockupDetail mode="draft" />
-        </div>
+      <MockupWindow title="Inbox">
+        <MockupDetail mode="draft" />
       </MockupWindow>
     ),
   },
@@ -33,10 +29,8 @@ const steps = [
     title: "Review, send, move on",
     body: "Check the drafts, hit send, and get back to running your store. Most merchants clear their queue in minutes.",
     mockup: (
-      <MockupWindow title="Inbox" className="bg-cream">
-        <div className="p-2.5 sm:p-3 md:p-4">
-          <MockupDetail mode="approval" />
-        </div>
+      <MockupWindow title="Inbox">
+        <MockupDetail mode="approval" />
       </MockupWindow>
     ),
   },

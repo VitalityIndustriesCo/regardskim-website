@@ -22,21 +22,21 @@ export default function MockupDetail({ mode = "draft" }: MockupDetailProps) {
   const isApproval = mode === "approval";
 
   return (
-    <div className="overflow-hidden rounded-2xl border border-mist bg-[#1E293B]">
+    <div>
       {/* Column headers */}
-      <div className="grid grid-cols-1 gap-0 border-b-2 border-brass/30 sm:grid-cols-2">
-        <div className="px-4 py-2.5">
-          <span className="block text-center text-[10px] font-semibold uppercase tracking-[0.14em] text-slate sm:text-[11px]">Customer Emails</span>
+      <div className="grid grid-cols-1 gap-x-2.5 sm:grid-cols-2">
+        <div className="pb-1.5">
+          <span className="block text-center text-[10px] font-semibold uppercase tracking-[0.14em] text-slate sm:text-[11px]">Customer Email</span>
         </div>
-        <div className="hidden border-l-2 border-brass/30 px-4 py-2.5 sm:block">
-          <span className="block text-center text-[10px] font-semibold uppercase tracking-[0.14em] text-slate sm:text-[11px]">Email Replies</span>
+        <div className="hidden pb-1.5 sm:block">
+          <span className="block text-center text-[10px] font-semibold uppercase tracking-[0.14em] text-slate sm:text-[11px]">Kim&apos;s Reply</span>
         </div>
       </div>
 
-      {/* Two-column layout */}
-      <div className="grid grid-cols-1 sm:grid-cols-2">
-        {/* Left: customer email */}
-        <div className="px-4 py-4">
+      {/* Two-column card layout */}
+      <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-2">
+        {/* Left: customer email card */}
+        <div className="rounded-xl border border-slate/20 bg-[#1E293B] px-4 py-4 shadow-sm">
           {/* Sender header */}
           <div className="flex items-start justify-between gap-2">
             <div className="flex items-center gap-2.5">
@@ -62,8 +62,8 @@ export default function MockupDetail({ mode = "draft" }: MockupDetailProps) {
           </div>
         </div>
 
-        {/* Right: Kim's reply */}
-        <div className="border-t-2 border-brass/30 px-4 py-4 sm:border-l-2 sm:border-t-0 sm:border-brass/30">
+        {/* Right: Kim's reply card */}
+        <div className="rounded-xl border border-slate/20 bg-[#1E293B] px-4 py-4 shadow-sm">
           {/* Reply body */}
           <div className="rounded-xl border border-mist bg-[#111827] p-3">
             <p className="text-[12px] leading-5 text-slate sm:text-[13px] sm:leading-5">
