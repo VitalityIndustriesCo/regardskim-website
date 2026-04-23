@@ -39,6 +39,10 @@ export default function Pricing() {
             <span className="font-display font-bold text-5xl leading-none sm:text-6xl md:text-7xl">${price}</span>
             <span className="mb-1.5 text-sm text-slate sm:mb-2 sm:text-base">{period}</span>
           </div>
+          <div className="mt-2 flex items-center gap-2">
+            <span className="text-sm text-slate line-through">$98/month</span>
+            <span className="rounded-full bg-brass/15 px-2.5 py-0.5 text-xs font-semibold text-brass">50% off — forever</span>
+          </div>
           <p className="mt-1 text-xs text-slate">{billingNote}</p>
 
           <ul className="mt-6 space-y-3 md:mt-8">
