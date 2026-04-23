@@ -94,9 +94,9 @@ export default function AffiliatePage() {
         </div>
       </section>
 
-      <section id="apply" className="bg-mist py-16 md:py-24">
+      <section id="apply" className="bg-forest py-16 md:py-24">
         <div className="section-shell">
-          <div className="mx-auto max-w-2xl rounded-3xl border border-mist bg-cream p-6 shadow-sm md:p-10">
+          <div className="mx-auto max-w-2xl rounded-3xl border border-mist bg-[#1E293B] p-6 shadow-sm md:p-10">
             <h2 className="font-display text-3xl font-bold text-ink md:text-4xl">Partner application</h2>
             <p className="mt-3 text-sm text-slate md:text-base">
               Tell us a little about you and how you&apos;d like to promote Regards Kim.
