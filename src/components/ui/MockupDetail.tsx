@@ -22,13 +22,13 @@ export default function MockupDetail({ mode = "draft" }: MockupDetailProps) {
   const isApproval = mode === "approval";
 
   return (
-    <div className="overflow-hidden rounded-2xl border border-brass/50 bg-cream">
+    <div className="overflow-hidden rounded-2xl border border-mist bg-cream">
       {/* Column headers */}
-      <div className="grid grid-cols-1 gap-0 border-b-2 border-brass/50 sm:grid-cols-2">
+      <div className="grid grid-cols-1 gap-0 border-b-2 border-brass/30 sm:grid-cols-2">
         <div className="px-4 py-2.5">
           <span className="block text-center text-[10px] font-semibold uppercase tracking-[0.14em] text-slate sm:text-[11px]">Customer Emails</span>
         </div>
-        <div className="hidden border-l-2 border-brass/50 px-4 py-2.5 sm:block">
+        <div className="hidden border-l-2 border-brass/30 px-4 py-2.5 sm:block">
           <span className="block text-center text-[10px] font-semibold uppercase tracking-[0.14em] text-slate sm:text-[11px]">Email Replies</span>
         </div>
       </div>
@@ -63,7 +63,7 @@ export default function MockupDetail({ mode = "draft" }: MockupDetailProps) {
         </div>
 
         {/* Right: Kim's reply */}
-        <div className="border-t-2 border-brass/50 px-4 py-4 sm:border-l-2 sm:border-t-0 sm:border-brass/50">
+        <div className="border-t-2 border-brass/30 px-4 py-4 sm:border-l-2 sm:border-t-0 sm:border-brass/30">
           {/* Reply body */}
           <div className="rounded-xl border border-mist bg-cream p-3">
             <p className="text-[12px] leading-5 text-slate sm:text-[13px] sm:leading-5">
@@ -87,7 +87,7 @@ export default function MockupDetail({ mode = "draft" }: MockupDetailProps) {
                   key="sent"
                   initial={prefersReducedMotion ? undefined : { opacity: 0, y: 4 }}
                   animate={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
-                  className="inline-flex items-center gap-1.5 rounded-full border border-brass/50 bg-brass/20 px-3 py-1 text-[11px] font-medium text-brass"
+                  className="inline-flex items-center gap-1.5 rounded-full border border-brass/30 bg-brass/20 px-3 py-1 text-[11px] font-medium text-brass"
                 >
                   <CheckCircle2 size={13} /> Sent ✓
                 </motion.div>
