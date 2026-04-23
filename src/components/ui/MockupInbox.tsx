@@ -141,9 +141,9 @@ function ReplyPanel({ card }: { card: EmailCard }) {
 
 export default function MockupInbox() {
   return (
-    <div className="overflow-hidden rounded-2xl border border-mist bg-[#1E293B]">
+    <div>
       {/* Filter pills */}
-      <div className="flex flex-wrap gap-2 border-b-2 border-brass/30 px-3 py-3 sm:px-4">
+      <div className="flex flex-wrap gap-2 px-1 pb-3">
         {FILTERS.map((f) => (
           <span
             key={f.label}
@@ -156,21 +156,21 @@ export default function MockupInbox() {
       </div>
 
       {/* Column headers */}
-      <div className="grid grid-cols-1 gap-0 border-b-2 border-brass/30 sm:grid-cols-2">
-        <div className="px-3 py-2 sm:px-4">
+      <div className="grid grid-cols-1 gap-x-2.5 px-1 sm:grid-cols-2">
+        <div className="pb-1.5">
           <span className="block text-center text-[10px] font-semibold uppercase tracking-[0.14em] text-slate sm:text-[11px]">Customer Emails</span>
         </div>
-        <div className="hidden border-l-2 border-brass/30 px-3 py-2 sm:block sm:px-4">
+        <div className="hidden pb-1.5 sm:block">
           <span className="block text-center text-[10px] font-semibold uppercase tracking-[0.14em] text-slate sm:text-[11px]">Email Replies</span>
         </div>
       </div>
 
-      {/* Email rows */}
-      <div className="divide-y-2 divide-slate/20">
+      {/* Email rows as cards */}
+      <div className="space-y-2.5 px-1">
         {EMAILS.map((card) => (
-          <div key={`${card.sender}-${card.subject}`} className="grid grid-cols-1 sm:grid-cols-2">
-            {/* Left: customer email */}
-            <div className="px-3 py-3 sm:px-4">
+          <div key={`${card.sender}-${card.subject}`} className="grid grid-cols-1 gap-2.5 sm:grid-cols-2">
+            {/* Left: customer email card */}
+            <div className="rounded-xl border border-mist bg-[#1E293B] px-3 py-3 sm:px-4">
               <div className="flex items-start gap-2.5">
                 <div className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-[11px] font-semibold text-white ${card.avatarColor}`}>
                   {card.avatar}
@@ -186,8 +186,8 @@ export default function MockupInbox() {
               </div>
             </div>
 
-            {/* Right: Kim's reply */}
-            <div className="border-t-2 border-brass/30 sm:border-l-2 sm:border-t-0 sm:border-brass/30">
+            {/* Right: Kim's reply card */}
+            <div className="rounded-xl border border-mist bg-[#1E293B]">
               <ReplyPanel card={card} />
             </div>
           </div>
