@@ -143,7 +143,7 @@ export default function MockupInbox() {
   return (
     <div className="overflow-hidden rounded-2xl border border-mist bg-cream">
       {/* Filter pills */}
-      <div className="flex flex-wrap gap-2 border-b border-mist px-3 py-3 sm:px-4">
+      <div className="flex flex-wrap gap-2 border-b-2 border-slate/20 px-3 py-3 sm:px-4">
         {FILTERS.map((f) => (
           <span
             key={f.label}
@@ -156,17 +156,17 @@ export default function MockupInbox() {
       </div>
 
       {/* Column headers */}
-      <div className="grid grid-cols-1 gap-0 border-b border-mist sm:grid-cols-2">
+      <div className="grid grid-cols-1 gap-0 border-b-2 border-slate/20 sm:grid-cols-2">
         <div className="px-3 py-2 sm:px-4">
           <span className="block text-center text-[10px] font-semibold uppercase tracking-[0.14em] text-slate sm:text-[11px]">Customer Emails</span>
         </div>
-        <div className="hidden border-l border-mist px-3 py-2 sm:block sm:px-4">
+        <div className="hidden border-l-2 border-slate/20 px-3 py-2 sm:block sm:px-4">
           <span className="block text-center text-[10px] font-semibold uppercase tracking-[0.14em] text-slate sm:text-[11px]">Email Replies</span>
         </div>
       </div>
 
       {/* Email rows */}
-      <div className="divide-y divide-mist">
+      <div className="divide-y-2 divide-slate/20">
         {EMAILS.map((card) => (
           <div key={`${card.sender}-${card.subject}`} className="grid grid-cols-1 sm:grid-cols-2">
             {/* Left: customer email */}
@@ -187,7 +187,7 @@ export default function MockupInbox() {
             </div>
 
             {/* Right: Kim's reply */}
-            <div className="border-t border-mist bg-mist/40 sm:border-l sm:border-t-0 sm:border-mist">
+            <div className="border-t-2 border-slate/20 bg-mist/40 sm:border-l-2 sm:border-t-0 sm:border-slate/20">
               <ReplyPanel card={card} />
             </div>
           </div>
