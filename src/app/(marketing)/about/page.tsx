@@ -113,7 +113,7 @@ export default function AboutPage() {
             style={{ borderColor: "#1E293B" }}
           >
             <p className="text-base italic" style={{ color: "#E2E8F0" }}>
-              And Kim? She still works for me. She just doesn't answer customer emails anymore.
+              And Kim? She still works for me. She just doesn't answer customer emails anymore, our app does.
             </p>
             <p className="mt-6 font-semibold" style={{ color: "#FFFFFF" }}>
               Matt
