@@ -143,7 +143,7 @@ export default function MockupInbox() {
   return (
     <div className="overflow-hidden rounded-2xl border border-mist bg-cream">
       {/* Filter pills */}
-      <div className="flex flex-wrap gap-2 border-b-2 border-slate/20 px-3 py-3 sm:px-4">
+      <div className="flex flex-wrap gap-2 border-b-2 border-brass/30 px-3 py-3 sm:px-4">
         {FILTERS.map((f) => (
           <span
             key={f.label}
@@ -156,11 +156,11 @@ export default function MockupInbox() {
       </div>
 
       {/* Column headers */}
-      <div className="grid grid-cols-1 gap-0 border-b-2 border-slate/20 sm:grid-cols-2">
+      <div className="grid grid-cols-1 gap-0 border-b-2 border-brass/30 sm:grid-cols-2">
         <div className="px-3 py-2 sm:px-4">
           <span className="block text-center text-[10px] font-semibold uppercase tracking-[0.14em] text-slate sm:text-[11px]">Customer Emails</span>
         </div>
-        <div className="hidden border-l-2 border-slate/20 px-3 py-2 sm:block sm:px-4">
+        <div className="hidden border-l-2 border-brass/30 px-3 py-2 sm:block sm:px-4">
           <span className="block text-center text-[10px] font-semibold uppercase tracking-[0.14em] text-slate sm:text-[11px]">Email Replies</span>
         </div>
       </div>
@@ -187,7 +187,7 @@ export default function MockupInbox() {
             </div>
 
             {/* Right: Kim's reply */}
-            <div className="border-t-2 border-slate/20 sm:border-l-2 sm:border-t-0 sm:border-slate/20">
+            <div className="border-t-2 border-brass/30 sm:border-l-2 sm:border-t-0 sm:border-brass/30">
               <ReplyPanel card={card} />
             </div>
           </div>
