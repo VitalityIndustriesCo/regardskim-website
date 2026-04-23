@@ -10,7 +10,7 @@ export const metadata = {
 
 export default function BlogPage() {
   return (
-    <main className="bg-cream py-16 sm:py-20">
+    <main className="bg-forest py-16 sm:py-20">
       <section className="section-shell">
         <div className="max-w-3xl">
           <p className="text-sm font-medium uppercase tracking-[0.24em] text-brass">Resources</p>
