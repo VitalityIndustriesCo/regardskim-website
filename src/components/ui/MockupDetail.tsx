@@ -63,7 +63,7 @@ export default function MockupDetail({ mode = "draft" }: MockupDetailProps) {
         </div>
 
         {/* Right: Kim's reply */}
-        <div className="border-t border-mist bg-cream/20 px-4 py-4 sm:border-l sm:border-t-0 sm:border-mist">
+        <div className="border-t border-mist bg-mist/40 px-4 py-4 sm:border-l sm:border-t-0 sm:border-mist">
           {/* Reply body */}
           <div className="rounded-xl border border-mist bg-cream p-3">
             <p className="text-[12px] leading-5 text-slate sm:text-[13px] sm:leading-5">

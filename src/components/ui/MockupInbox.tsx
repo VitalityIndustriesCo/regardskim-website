@@ -187,7 +187,7 @@ export default function MockupInbox() {
             </div>
 
             {/* Right: Kim's reply */}
-            <div className="border-t border-mist bg-forest/60 sm:border-l sm:border-t-0 sm:border-mist">
+            <div className="border-t border-mist bg-mist/40 sm:border-l sm:border-t-0 sm:border-mist">
               <ReplyPanel card={card} />
             </div>
           </div>
