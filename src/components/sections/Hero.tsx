@@ -51,7 +51,8 @@ export default function Hero() {
               alt="RegardsKim inbox showing customer emails sorted and drafted automatically"
               width={1536}
               height={1024}
-              className="w-full rounded-xl border border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.4),0_0_60px_rgba(176,141,87,0.06)]"
+              className="w-full rounded-xl border shadow-[0_4px_30px_rgba(0,0,0,0.4),0_0_60px_rgba(176,141,87,0.06)]"
+              style={{ borderColor: 'rgba(176, 141, 87, 0.6)' }}
               priority
             />
           </FadeIn>
