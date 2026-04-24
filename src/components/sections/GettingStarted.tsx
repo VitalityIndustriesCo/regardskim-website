@@ -45,12 +45,12 @@ export default function GettingStarted() {
         <div className="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
           {steps.map((step, index) => (
             <FadeIn key={step.number} delay={index * 0.08}>
-              <div className="flex h-full flex-col rounded-2xl border border-mist bg-cream p-6 shadow-sm">
-                <div className="flex items-center gap-3">
+              <div className="flex h-full items-center gap-4 rounded-2xl border border-mist bg-cream p-5 shadow-sm md:flex-col md:items-start md:p-6">
+                <div className="flex shrink-0 items-center gap-3">
                   <span className="font-display text-sm font-bold text-brass">{step.number}</span>
-                  <div className="rounded-lg bg-mist p-4 text-brass">{step.icon}</div>
+                  <div className="rounded-lg bg-mist p-3 text-brass md:p-4">{step.icon}</div>
                 </div>
-                <h3 className="mt-4 font-display text-xl font-bold text-ink">{step.title}</h3>
+                <h3 className="font-display text-lg font-bold text-ink md:mt-4 md:text-xl">{step.title}</h3>
               </div>
             </FadeIn>
           ))}
