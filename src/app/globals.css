@@ -6,7 +6,7 @@
   --font-sans: var(--font-plus-jakarta);
 
   --color-forest: #060B14;
-  --color-cream: #111827;
+  --color-cream: #1E2A3A;
   --color-oxblood: #C9A66B;
   --color-brass: #B08D57;
   --color-ink: #FFFFFF;
@@ -48,9 +48,9 @@
 :root {
   --background: 222 40% 4%;
   --foreground: 0 0% 100%;
-  --card: 220 25% 9%;
+  --card: 215 28% 17%;
   --card-foreground: 0 0% 100%;
-  --popover: 220 25% 9%;
+  --popover: 215 28% 17%;
   --popover-foreground: 0 0% 100%;
   --primary: 38 35% 52%;
   --primary-foreground: 220 30% 5%;
@@ -65,7 +65,7 @@
   --border: 220 15% 18%;
   --input: 220 15% 18%;
   --ring: 38 35% 52%;
-  --sidebar: 220 25% 9%;
+  --sidebar: 215 28% 17%;
   --sidebar-foreground: 0 0% 100%;
   --sidebar-accent: 38 35% 52%;
   --sidebar-accent-foreground: 220 30% 5%;
