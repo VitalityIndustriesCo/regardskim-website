@@ -3,7 +3,7 @@
 import { Check } from "lucide-react";
 import FadeIn from "@/components/ui/FadeIn";
 
-const CTA_URL = "/#founding";
+const CTA_URL = "/founding";
 
 const inclusions = [
   "Connects to your Shopify store and Gmail",

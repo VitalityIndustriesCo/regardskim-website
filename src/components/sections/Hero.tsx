@@ -2,7 +2,7 @@ import Image from "next/image";
 import FadeIn from "@/components/ui/FadeIn";
 import { ShopifyLogo, GmailLogo } from "@/components/ui/BrandLogos";
 
-const CTA_URL = "/#founding";
+const CTA_URL = "/founding";
 
 export default function Hero() {
   return (
@@ -23,7 +23,7 @@ export default function Hero() {
                 <a href={CTA_URL} className="btn-primary">
                   Lock in your spot
                 </a>
-                <p className="text-sm text-slate">Join the Founding 100 — 50% off forever. No payment required.</p>
+                <p className="text-sm text-slate">Founding pricing available — 50% off forever. No payment required.</p>
               </div>
 
               {/* Trust block */}
