@@ -49,19 +49,18 @@ const EMAILS: EmailCard[] = [
     preview: "Hi, I ordered the weighted blanket last week and haven't received any tracking information yet...",
     timeAgo: "2h ago",
     replyStatus: "ready",
-    replyPreview: "Hi Sarah, your order #1842 shipped yesterday via Australia Post. Your tracking number is...",
+    replyPreview: "Hi Sarah, your order #1842 shipped yesterday via Australia Post. It should be with you by...",
   },
   {
     avatar: "J",
     avatarColor: "bg-[#7C6BC4]",
     sender: "james.t@outlook.com",
-    subject: "Return request for order #1836",
+    subject: "Re: Return request for order #1836",
     badge: "Needs Your Decision",
     badgeTone: "amber",
-    preview: "I'd like to return the throw pillow, it's not quite the right colour for my living room...",
+    preview: "Thanks, but I'd rather just return it for a refund if that's okay...",
     timeAgo: "3h ago",
     replyStatus: "action",
-    replyPreview: "Hi James, I can help with that! Your order is within our 30-day return window...",
   },
   {
     avatar: "E",
@@ -84,7 +83,7 @@ const EMAILS: EmailCard[] = [
     preview: "The package arrived but the item inside was broken. Can I get a refund?",
     timeAgo: "6h ago",
     replyStatus: "ready",
-    replyPreview: "Hi Michael, I'm sorry to hear that. I've processed a full refund for your order...",
+    replyPreview: "Hi Michael, I'm really sorry about that. Could you send a photo of the damage? I'd love to get a...",
   },
 ];
 
@@ -94,7 +93,7 @@ function ReplyPanel({ card }: { card: EmailCard }) {
       <div className="flex h-full flex-col justify-center gap-3 px-3 py-4">
         <p className="text-center text-xs font-medium text-slate">✓ Nothing needed</p>
         <p className="text-[11px] leading-4 text-slate/70">
-          Kim checked this email and doesn&apos;t think a reply is needed.
+          Not a customer email. No reply needed.
         </p>
         <div className="flex justify-center gap-2">
           <span className="rounded-lg border border-mist bg-cream px-2.5 py-1 text-[10px] font-medium text-ink">Review</span>
