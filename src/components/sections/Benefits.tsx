@@ -29,7 +29,7 @@ export default function Benefits() {
             return (
               <FadeIn key={item.title} delay={idx * 0.06}>
                 <article className="h-full rounded-3xl border border-mist bg-cream p-7 md:p-8">
-                  <div className="mx-auto mb-6 w-fit rounded-xl bg-mist p-2.5 text-brass md:mx-0">
+                  <div className="mb-6 w-fit rounded-xl bg-mist p-2.5 text-brass">
                     <Icon size={20} />
                   </div>
                   <h3 className="font-display text-2xl font-bold tracking-normal text-ink md:text-3xl">
