@@ -66,12 +66,11 @@ export default function MockupDetail({ mode = "draft" }: MockupDetailProps) {
           </p>
           <p className="mt-2 text-[12px] leading-5 text-slate sm:text-[13px] sm:leading-5">
             Thanks for reaching out! Your order #1842 shipped yesterday via Australia Post. Your tracking
-            number is AP4821093AU — it usually takes 24–48 hours for the first scan to appear.
+            number is AP4821093AU. It usually takes 24-48 hours for the first scan to appear.
           </p>
           <p className="mt-2 text-[12px] leading-5 text-slate sm:text-[13px] sm:leading-5">
-            I&apos;ll keep an eye on it and let you know if anything looks off.
+            If it hasn&apos;t updated in a couple of days, let me know and I&apos;ll look into it for you.
           </p>
-          <p className="mt-2 text-[12px] text-slate sm:text-[13px]">Kind regards, Kim</p>
 
           {/* Action buttons */}
           <div className="mt-3 flex justify-center">

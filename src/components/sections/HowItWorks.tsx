@@ -7,7 +7,7 @@ const steps = [
   {
     number: "01",
     title: "Emails come in, sorted instantly",
-    body: "Every email is automatically categorised — WISMO, returns, refunds, complaints — and matched to the right order, tracking, and store policies.",
+    body: "Every email is automatically categorised and matched to the right order, tracking, and store policies.",
     mockup: (
       <MockupWindow title="Inbox">
         <MockupInbox />
@@ -17,7 +17,7 @@ const steps = [
   {
     number: "02",
     title: "Helpful replies, ready to go",
-    body: "Regards Kim drafts real answers with the right details — not generic filler your customers can see through.",
+    body: "Regards Kim drafts real answers with the right details, not generic filler your customers can see through.",
     mockup: (
       <MockupWindow title="Inbox">
         <MockupDetail mode="draft" />
@@ -27,7 +27,7 @@ const steps = [
   {
     number: "03",
     title: "Review, send, move on",
-    body: "Check the drafts, hit send, and get back to running your store. Most merchants clear their queue in minutes.",
+    body: "Replies are sent and received through your existing Gmail account. Your customers just see your store, never us.",
     mockup: (
       <MockupWindow title="Inbox">
         <MockupDetail mode="approval" />
