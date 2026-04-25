@@ -133,8 +133,8 @@ export default function FoundingPage() {
           {/* Pricing + scarcity */}
           <div className="mx-auto mt-8 max-w-sm text-center">
             <div className="flex items-baseline justify-center gap-2">
-              <span className="text-sm text-slate line-through">$49/mo</span>
-              <span className="font-display text-4xl font-bold text-ink">$24.50</span>
+              <span className="text-sm text-slate line-through">$98/mo</span>
+              <span className="font-display text-4xl font-bold text-ink">$49</span>
               <span className="text-sm text-slate">/mo forever</span>
             </div>
             <p className="mt-1 text-xs text-slate">Founding price locked in permanently. Regular price after 100 spots fill.</p>
