@@ -71,6 +71,7 @@ export default function MockupDetail({ mode = "draft" }: MockupDetailProps) {
           <p className="mt-2 text-[12px] leading-5 text-slate sm:text-[13px] sm:leading-5">
             If it hasn&apos;t updated in a couple of days, let me know and I&apos;ll look into it for you.
           </p>
+          <p className="mt-3 text-[12px] text-slate sm:text-[13px]">Kind regards,<br />Kim</p>
 
           {/* Action buttons */}
           <div className="mt-3 flex justify-center">
