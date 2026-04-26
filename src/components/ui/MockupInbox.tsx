@@ -2,21 +2,21 @@ type FilterPill = {
   label: string;
   count: number;
   active?: boolean;
-  tone: "dark" | "green" | "amber" | "muted";
+  tone: "gold" | "green" | "amber" | "muted";
 };
 
 const FILTERS: FilterPill[] = [
-  { label: "All", count: 4, active: true, tone: "dark" },
+  { label: "All", count: 4, active: true, tone: "gold" },
   { label: "ready to send", count: 2, tone: "green" },
   { label: "needs your decision", count: 1, tone: "amber" },
   { label: "nothing needed", count: 1, tone: "muted" },
 ];
 
 const pillClass: Record<FilterPill["tone"], string> = {
-  dark: "bg-brass text-forest border-brass",
-  green: "bg-emerald-900/40 text-emerald-300 border-emerald-800",
-  amber: "bg-amber-900/40 text-amber-300 border-amber-800",
-  muted: "bg-mist text-slate border-mist",
+  gold: "bg-brass text-white border-brass",
+  green: "bg-emerald-50 text-emerald-700 border-emerald-200",
+  amber: "bg-amber-50 text-amber-700 border-amber-200",
+  muted: "bg-slate/8 text-slate border-slate/15",
 };
 
 type EmailCard = {
@@ -33,9 +33,9 @@ type EmailCard = {
 };
 
 const badgeToneClass = {
-  green: "bg-emerald-900/40 text-emerald-300 border-emerald-800",
-  amber: "bg-amber-900/40 text-amber-300 border-amber-800",
-  muted: "bg-mist text-slate border-mist",
+  green: "bg-emerald-50 text-emerald-700 border-emerald-200",
+  amber: "bg-amber-50 text-amber-700 border-amber-200",
+  muted: "bg-slate/8 text-slate border-slate/15",
 };
 
 const EMAILS: EmailCard[] = [
@@ -96,8 +96,8 @@ function ReplyPanel({ card }: { card: EmailCard }) {
           Not a customer email. No reply needed.
         </p>
         <div className="flex justify-center gap-2">
-          <span className="rounded-lg border border-mist bg-cream px-2.5 py-1 text-[10px] font-medium text-ink">Review</span>
-          <span className="rounded-lg border border-mist bg-cream px-2.5 py-1 text-[10px] font-medium text-ink">Mark done</span>
+          <span className="rounded-lg border border-slate/15 bg-mist px-2.5 py-1 text-[10px] font-medium text-ink">Review</span>
+          <span className="rounded-lg border border-slate/15 bg-mist px-2.5 py-1 text-[10px] font-medium text-ink">Mark done</span>
         </div>
       </div>
     );
@@ -109,7 +109,7 @@ function ReplyPanel({ card }: { card: EmailCard }) {
     <div className="flex h-full flex-col justify-between px-3 py-3">
       <div>
         {isAction ? (
-          <p className="text-center text-[11px] font-medium text-amber-400">
+          <p className="text-center text-[11px] font-medium text-amber-600">
             Action needed ⚡️
           </p>
         ) : (
@@ -123,14 +123,14 @@ function ReplyPanel({ card }: { card: EmailCard }) {
       <div className="mt-3 flex flex-wrap justify-center gap-1.5">
         {isAction ? (
           <>
-            <span className="rounded-lg border border-mist bg-cream px-2.5 py-1 text-[10px] font-medium text-ink">Write reply</span>
-            <span className="rounded-lg border border-mist bg-cream px-2.5 py-1 text-[10px] font-medium text-ink">Skip for now</span>
+            <span className="rounded-lg border border-slate/15 bg-mist px-2.5 py-1 text-[10px] font-medium text-ink">Write reply</span>
+            <span className="rounded-lg border border-slate/15 bg-mist px-2.5 py-1 text-[10px] font-medium text-ink">Skip for now</span>
           </>
         ) : (
           <>
-            <span className="rounded-lg bg-brass px-2.5 py-1 text-[10px] font-semibold text-forest">Approve &amp; send</span>
-            <span className="rounded-lg border border-mist bg-cream px-2.5 py-1 text-[10px] font-medium text-ink">Edit reply</span>
-            <span className="rounded-lg border border-mist bg-cream px-2.5 py-1 text-[10px] font-medium text-ink">Skip for now</span>
+            <span className="rounded-lg bg-emerald-600 px-2.5 py-1 text-[10px] font-semibold text-white">Approve &amp; send</span>
+            <span className="rounded-lg border border-slate/15 bg-mist px-2.5 py-1 text-[10px] font-medium text-ink">Edit reply</span>
+            <span className="rounded-lg border border-slate/15 bg-mist px-2.5 py-1 text-[10px] font-medium text-ink">Skip for now</span>
           </>
         )}
       </div>
@@ -169,7 +169,7 @@ export default function MockupInbox() {
         {EMAILS.map((card) => (
           <div key={`${card.sender}-${card.subject}`} className="grid grid-cols-1 gap-2.5 sm:grid-cols-2">
             {/* Left: customer email card */}
-            <div className="rounded-xl border border-slate/20 bg-[#1E293B] px-3 py-3 shadow-sm sm:px-4">
+            <div className="rounded-xl border border-slate/12 bg-white px-3 py-3 shadow-[0_2px_8px_rgba(0,0,0,0.06)] sm:px-4">
               <div className="flex items-start gap-2.5">
                 <div className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-[11px] font-semibold text-white ${card.avatarColor}`}>
                   {card.avatar}
@@ -181,12 +181,16 @@ export default function MockupInbox() {
                   </div>
                   <p className="mt-0.5 truncate text-[11px] font-semibold text-ink sm:text-xs">{card.subject}</p>
                   <p className="mt-1.5 line-clamp-2 text-[11px] leading-4 text-slate">{card.preview}</p>
+                  {/* Badge */}
+                  <span className={`mt-2 inline-flex rounded-full border px-2 py-0.5 text-[9px] font-semibold ${badgeToneClass[card.badgeTone]}`}>
+                    {card.badge}
+                  </span>
                 </div>
               </div>
             </div>
 
             {/* Right: Kim's reply card */}
-            <div className="rounded-xl border border-slate/20 bg-[#1E293B] shadow-sm">
+            <div className="rounded-xl border border-slate/12 bg-white shadow-[0_2px_8px_rgba(0,0,0,0.06)]">
               <ReplyPanel card={card} />
             </div>
           </div>

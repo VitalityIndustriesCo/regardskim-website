@@ -8,11 +8,11 @@ import FadeIn from "@/components/ui/FadeIn";
 const faqs = [
   {
     q: "What does Regards Kim do?",
-    a: "Regards Kim connects to your Shopify store and email, reads your customer messages, and drafts helpful replies with the right order details. You review and send \u2014 it usually takes a few minutes a day.",
+    a: "Regards Kim connects to your Shopify store and email, reads your customer messages, and drafts helpful replies with the right order details. You review and send — it usually takes a few minutes a day.",
   },
   {
     q: "Does Regards Kim send replies automatically?",
-    a: "No \u2014 every reply is a draft until you send it. Most merchants review their queue in a few minutes each morning.",
+    a: "No — every reply is a draft until you send it. Most merchants review their queue in a few minutes each morning.",
   },
   {
     q: "What kinds of emails can Regards Kim help with?",
@@ -28,7 +28,7 @@ const faqs = [
   },
   {
     q: "Why do you need our store policies?",
-    a: "So Regards Kim gives the right answers. Your return window, shipping timeframes, exchange rules \u2014 it uses these to draft replies that match what you\u2019d actually say, instead of guessing.",
+    a: "So Regards Kim gives the right answers. Your return window, shipping timeframes, exchange rules — it uses these to draft replies that match what you'd actually say, instead of guessing.",
   },
   {
     q: "How much does it cost?",
@@ -36,7 +36,7 @@ const faqs = [
   },
   {
     q: "Who is Regards Kim best for?",
-    a: "Store owners spending hours on customer emails every week \u2014 or paying someone else to. If your inbox is eating into time you should be spending on your business, Regards Kim is for you.",
+    a: "Store owners spending hours on customer emails every week — or paying someone else to. If your inbox is eating into time you should be spending on your business, Regards Kim is for you.",
   },
 ];
 
@@ -44,7 +44,7 @@ export default function FAQ() {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="bg-forest py-16 md:py-24">
+    <section id="faq" className="bg-paper py-16 md:py-24">
       <div className="section-shell">
         <FadeIn>
           <h2 className="font-display font-bold text-4xl tracking-normal text-ink md:text-5xl">FAQ</h2>
@@ -55,7 +55,7 @@ export default function FAQ() {
             const isOpen = open === idx;
             return (
               <FadeIn key={faq.q} delay={idx * 0.02}>
-                <article className="overflow-hidden rounded-2xl border border-mist bg-cream">
+                <article className="overflow-hidden rounded-2xl border border-slate/12 bg-white shadow-[0_2px_8px_rgba(0,0,0,0.04)]">
                   <button
                     type="button"
                     onClick={() => setOpen(isOpen ? null : idx)}
@@ -63,7 +63,7 @@ export default function FAQ() {
                     aria-expanded={isOpen}
                   >
                     <h3 className="font-medium text-ink md:text-lg">{faq.q}</h3>
-                    <ChevronDown className={`shrink-0 transition-transform ${isOpen ? "rotate-180" : "rotate-0"}`} size={18} />
+                    <ChevronDown className={`shrink-0 text-slate transition-transform ${isOpen ? "rotate-180" : "rotate-0"}`} size={18} />
                   </button>
 
                   <AnimatePresence initial={false}>

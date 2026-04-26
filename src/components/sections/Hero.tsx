@@ -7,8 +7,8 @@ const CTA_URL = "/founding";
 export default function Hero() {
   return (
     <section id="top" className="relative overflow-hidden">
-      {/* Dark background with hero text */}
-      <div className="bg-forest pb-0">
+      {/* Light background with hero text */}
+      <div className="bg-paper pb-0">
         <div className="section-shell">
           <FadeIn className="mx-auto max-w-5xl text-center">
             <div className="mx-auto max-w-3xl pt-20 md:pt-32">
@@ -28,11 +28,11 @@ export default function Hero() {
 
               {/* Trust block */}
               <div className="mx-auto mt-12 flex flex-wrap items-center justify-center gap-3">
-                <div className="flex items-center gap-2.5 rounded-full border border-mist bg-cream/80 px-4 py-2.5 shadow-sm backdrop-blur-sm">
+                <div className="flex items-center gap-2.5 rounded-full border border-slate/15 bg-white px-4 py-2.5 shadow-sm">
                   <ShopifyLogo className="h-6 w-6" />
                   <p className="text-sm font-semibold text-ink">Built for Shopify</p>
                 </div>
-                <div className="flex items-center gap-2.5 rounded-full border border-mist bg-cream/80 px-4 py-2.5 shadow-sm backdrop-blur-sm">
+                <div className="flex items-center gap-2.5 rounded-full border border-slate/15 bg-white px-4 py-2.5 shadow-sm">
                   <GmailLogo className="h-5 w-5" />
                   <p className="text-sm font-semibold text-ink">Connects with Gmail</p>
                 </div>
@@ -43,7 +43,7 @@ export default function Hero() {
       </div>
 
       {/* Hero product mockup */}
-      <div className="bg-forest">
+      <div className="bg-paper">
         <div className="section-shell py-8 md:py-12">
           <FadeIn className="mx-auto max-w-5xl">
             <Image
@@ -51,7 +51,7 @@ export default function Hero() {
               alt="RegardsKim inbox showing customer emails sorted and drafted automatically"
               width={1536}
               height={1024}
-              className="w-full"
+              className="w-full rounded-2xl shadow-[0_20px_60px_rgba(0,0,0,0.12)]"
               priority
             />
           </FadeIn>

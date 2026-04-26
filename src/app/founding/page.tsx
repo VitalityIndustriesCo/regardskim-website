@@ -85,19 +85,19 @@ export default function FoundingPage() {
   const progressPct = ((TOTAL_SPOTS - spotsRemaining) / TOTAL_SPOTS) * 100;
 
   return (
-    <div className="flex min-h-screen flex-col bg-forest">
+    <div className="flex min-h-screen flex-col bg-paper">
       {/* Minimal header — logo only, no nav */}
-      <header className="px-6 py-5">
+      <header className="border-b border-slate/10 bg-white px-6 py-5">
         <Link href="/" className="font-display text-2xl font-bold tracking-normal text-ink">
           RegardsKim
         </Link>
       </header>
 
-      <main className="flex flex-1 items-center justify-center px-4 pb-16 pt-4">
+      <main className="flex flex-1 items-center justify-center px-4 pb-16 pt-8">
         <div className="w-full max-w-xl">
           {/* Headline */}
           <div className="text-center">
-            <span className="inline-block rounded-full bg-brass px-3 py-1 text-xs font-semibold uppercase tracking-widest text-forest">
+            <span className="inline-block rounded-full bg-brass px-3 py-1 text-xs font-semibold uppercase tracking-widest text-white">
               Founding 100
             </span>
             <h1 className="mt-5 font-display text-4xl font-bold leading-tight tracking-normal text-ink md:text-5xl">
@@ -110,11 +110,11 @@ export default function FoundingPage() {
 
           {/* Trust badges */}
           <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
-            <div className="flex items-center gap-2 rounded-full border border-mist bg-cream/80 px-3 py-2">
+            <div className="flex items-center gap-2 rounded-full border border-slate/15 bg-white px-3 py-2 shadow-sm">
               <ShopifyLogo className="h-5 w-5" />
               <span className="text-xs font-semibold text-ink">Built for Shopify</span>
             </div>
-            <div className="flex items-center gap-2 rounded-full border border-mist bg-cream/80 px-3 py-2">
+            <div className="flex items-center gap-2 rounded-full border border-slate/15 bg-white px-3 py-2 shadow-sm">
               <GmailLogo className="h-4 w-4" />
               <span className="text-xs font-semibold text-ink">Sends from your Gmail</span>
             </div>
@@ -124,7 +124,7 @@ export default function FoundingPage() {
           <ul className="mx-auto mt-8 max-w-sm space-y-2.5">
             {bullets.map((item) => (
               <li key={item} className="flex items-start gap-2.5 text-sm text-slate">
-                <Check size={16} className="mt-0.5 shrink-0 text-brass" />
+                <Check size={16} className="mt-0.5 shrink-0 text-emerald-600" />
                 <span>{item}</span>
               </li>
             ))}
@@ -157,8 +157,8 @@ export default function FoundingPage() {
             </div>
           </div>
 
-          {/* Form */}
-          <div className="mx-auto mt-8 max-w-sm rounded-2xl border border-mist bg-cream p-6">
+          {/* Form card */}
+          <div className="mx-auto mt-8 max-w-sm rounded-2xl border border-slate/12 bg-white p-6 shadow-[0_8px_32px_rgba(0,0,0,0.08),0_2px_6px_rgba(0,0,0,0.04)]">
             {status === "success" ? (
               <div className="py-6 text-center">
                 <div className="mb-3 text-3xl">🎉</div>
@@ -190,7 +190,7 @@ export default function FoundingPage() {
                       setFirstName(e.target.value);
                       if (status === "error") setStatus("idle");
                     }}
-                    className="w-full rounded-xl border border-mist bg-forest px-4 py-3 text-sm text-ink placeholder:text-slate/50 focus:border-brass focus:outline-none focus:ring-1 focus:ring-brass/30"
+                    className="w-full rounded-xl border border-slate/20 bg-mist px-4 py-3 text-sm text-ink placeholder:text-slate/50 focus:border-brass focus:bg-white focus:outline-none focus:ring-1 focus:ring-brass/30"
                     placeholder="Your first name"
                   />
                 </div>
@@ -208,7 +208,7 @@ export default function FoundingPage() {
                       setEmail(e.target.value);
                       if (status === "error") setStatus("idle");
                     }}
-                    className="w-full rounded-xl border border-mist bg-forest px-4 py-3 text-sm text-ink placeholder:text-slate/50 focus:border-brass focus:outline-none focus:ring-1 focus:ring-brass/30"
+                    className="w-full rounded-xl border border-slate/20 bg-mist px-4 py-3 text-sm text-ink placeholder:text-slate/50 focus:border-brass focus:bg-white focus:outline-none focus:ring-1 focus:ring-brass/30"
                     placeholder="you@example.com"
                   />
                 </div>
@@ -222,7 +222,7 @@ export default function FoundingPage() {
                     type="text"
                     value={storeUrl}
                     onChange={(e) => setStoreUrl(e.target.value)}
-                    className="w-full rounded-xl border border-mist bg-forest px-4 py-3 text-sm text-ink placeholder:text-slate/50 focus:border-brass focus:outline-none focus:ring-1 focus:ring-brass/30"
+                    className="w-full rounded-xl border border-slate/20 bg-mist px-4 py-3 text-sm text-ink placeholder:text-slate/50 focus:border-brass focus:bg-white focus:outline-none focus:ring-1 focus:ring-brass/30"
                     placeholder="yourstore.myshopify.com"
                   />
                 </div>
@@ -236,7 +236,7 @@ export default function FoundingPage() {
                 </button>
 
                 {status === "error" && (
-                  <p className="text-sm text-oxblood">Something went wrong. Please try again.</p>
+                  <p className="text-sm text-red-600">Something went wrong. Please try again.</p>
                 )}
 
                 <p className="text-center text-xs text-slate/70">No payment required. We&apos;ll notify you when it&apos;s time to install.</p>

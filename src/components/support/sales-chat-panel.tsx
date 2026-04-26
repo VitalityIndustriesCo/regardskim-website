@@ -129,7 +129,7 @@ function SalesMessageBubble({ message }: { message: SalesChatMessage }) {
       <div
         className={cn(
           "max-w-[88%] rounded-2xl px-3 py-2 text-sm leading-relaxed shadow-sm sm:max-w-[86%]",
-          isUser ? "bg-brass text-paper" : "bg-cream text-ink"
+          isUser ? "bg-brass text-white" : "bg-cream text-ink"
         )}
       >
         <p>{message.content}</p>
@@ -237,7 +237,7 @@ export function SalesChatPanel({ onClose }: Props) {
       <CardHeader className="border-b border-forest/10 bg-paper px-4 pb-3 sm:px-6">
         <div className="flex items-center justify-between gap-3">
           <div className="min-w-0">
-            <CardTitle className="text-sm font-semibold text-forest">Sales support</CardTitle>
+            <CardTitle className="text-sm font-semibold text-ink">Sales support</CardTitle>
             <p className="text-xs text-slate">Ask about pricing, setup, or how Regards Kim works</p>
           </div>
           <Button variant="ghost" size="icon-sm" onClick={onClose} aria-label="Close sales support chat">
@@ -261,7 +261,7 @@ export function SalesChatPanel({ onClose }: Props) {
 
           {showEmailCapture ? (
             <div className="rounded-2xl border border-forest/10 bg-cream p-3 shadow-sm">
-              <p className="mb-2 text-sm font-medium text-forest">{EMAIL_PROMPT}</p>
+              <p className="mb-2 text-sm font-medium text-ink">{EMAIL_PROMPT}</p>
               <div className="flex flex-col gap-2 sm:flex-row">
                 <Input
                   type="email"
@@ -274,7 +274,7 @@ export function SalesChatPanel({ onClose }: Props) {
                   type="button"
                   onClick={submitEmail}
                   disabled={!email.trim()}
-                  className="h-11 rounded-xl bg-brass px-4 text-paper hover:bg-oxblood sm:self-auto"
+                  className="h-11 rounded-xl bg-brass px-4 text-white hover:bg-oxblood sm:self-auto"
                 >
                   Send
                 </Button>
@@ -303,7 +303,7 @@ export function SalesChatPanel({ onClose }: Props) {
             size="lg"
             onClick={send}
             disabled={isTyping || reachedLimit || !input.trim()}
-            className="h-11 shrink-0 rounded-full bg-brass px-4 text-paper hover:bg-oxblood"
+            className="h-11 shrink-0 rounded-full bg-brass px-4 text-white hover:bg-oxblood"
             aria-label="Send message"
           >
             <SendHorizontal className="h-4 w-4" />
@@ -312,7 +312,7 @@ export function SalesChatPanel({ onClose }: Props) {
 
         <div className="flex w-full flex-col gap-1 text-[11px] text-slate sm:flex-row sm:items-center sm:justify-between sm:gap-3">
           <span>Session-only chat • {userMessageCount}/{MAX_MESSAGES}</span>
-          <span className="font-medium text-forest">Powered by Regards Kim</span>
+          <span className="font-medium text-ink">Powered by Regards Kim</span>
         </div>
       </CardFooter>
     </Card>

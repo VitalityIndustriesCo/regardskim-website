@@ -3,7 +3,7 @@ import FadeIn from "@/components/ui/FadeIn";
 
 export default function VideoDemo() {
   return (
-    <section className="bg-forest py-16 md:py-24">
+    <section className="bg-paper py-16 md:py-24">
       <div className="section-shell">
         <FadeIn className="mx-auto max-w-3xl text-center">
           <h2 className="font-display text-4xl font-bold tracking-normal text-ink md:text-6xl">

@@ -5,18 +5,21 @@
   --font-display: var(--font-plus-jakarta);
   --font-sans: var(--font-plus-jakarta);
 
-  --color-forest: #060B14;
-  --color-cream: #1E2A3A;
+  /* ── Light theme colour tokens ── */
+  --color-forest: #FAFBFC;
+  --color-cream: #FFFFFF;
   --color-oxblood: #C9A66B;
   --color-brass: #B08D57;
-  --color-ink: #FFFFFF;
-  --color-slate: #E2E8F0;
-  --color-mist: #1E293B;
-  --color-paper: #060B14;
-  --color-badge-amber: #B08D57;
-  --color-badge-blue: #B08D57;
-  --color-badge-green: #B08D57;
-  --color-badge-orange: #C9A66B;
+  --color-ink: #0F172A;
+  --color-slate: #64748B;
+  --color-mist: #F1F5F9;
+  --color-paper: #F8FAFC;
+
+  /* Gmail-style functional badge colours */
+  --color-badge-green: #16A34A;
+  --color-badge-amber: #D97706;
+  --color-badge-blue: #2563EB;
+  --color-badge-orange: #EA580C;
   --color-badge-gray: #64748B;
 
   --color-background: hsl(var(--background));
@@ -46,30 +49,31 @@
 }
 
 :root {
-  --background: 222 40% 4%;
-  --foreground: 0 0% 100%;
-  --card: 215 28% 17%;
-  --card-foreground: 0 0% 100%;
-  --popover: 215 28% 17%;
-  --popover-foreground: 0 0% 100%;
+  /* Light theme HSL variables */
+  --background: 210 40% 98%;
+  --foreground: 222 47% 11%;
+  --card: 0 0% 100%;
+  --card-foreground: 222 47% 11%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 222 47% 11%;
   --primary: 38 35% 52%;
   --primary-foreground: 220 30% 5%;
-  --secondary: 220 20% 15%;
-  --secondary-foreground: 0 0% 100%;
-  --muted: 220 20% 15%;
-  --muted-foreground: 215 20% 65%;
+  --secondary: 210 40% 96%;
+  --secondary-foreground: 222 47% 11%;
+  --muted: 210 40% 96%;
+  --muted-foreground: 215 16% 47%;
   --accent: 38 35% 52%;
   --accent-foreground: 220 30% 5%;
   --destructive: 0 84% 60%;
   --destructive-foreground: 0 0% 98%;
-  --border: 220 15% 18%;
-  --input: 220 15% 18%;
+  --border: 214 32% 91%;
+  --input: 214 32% 91%;
   --ring: 38 35% 52%;
-  --sidebar: 215 28% 17%;
-  --sidebar-foreground: 0 0% 100%;
+  --sidebar: 0 0% 100%;
+  --sidebar-foreground: 222 47% 11%;
   --sidebar-accent: 38 35% 52%;
   --sidebar-accent-foreground: 220 30% 5%;
-  --sidebar-border: 220 15% 18%;
+  --sidebar-border: 214 32% 91%;
 }
 
 html {
@@ -94,15 +98,17 @@ main {
   position: relative;
 }
 
+/* Subtle light-mode textures */
 .paper-grain {
-  background-image: radial-gradient(circle at 12% 18%, rgba(255, 255, 255, 0.03) 0, rgba(255, 255, 255, 0) 34%),
-    radial-gradient(circle at 84% 4%, rgba(176, 141, 87, 0.08) 0, transparent 30%),
-    radial-gradient(circle at 84% 74%, rgba(0, 0, 0, 0.2) 0, transparent 34%),
-    linear-gradient(115deg, rgba(17, 24, 39, 0.5), rgba(10, 15, 26, 0.8));
+  background-image:
+    radial-gradient(circle at 12% 18%, rgba(176, 141, 87, 0.04) 0, transparent 34%),
+    radial-gradient(circle at 84% 4%, rgba(176, 141, 87, 0.06) 0, transparent 30%),
+    radial-gradient(circle at 50% 90%, rgba(241, 245, 249, 0.8) 0, transparent 60%),
+    linear-gradient(160deg, rgba(250, 251, 252, 0.95), rgba(248, 250, 252, 1));
 }
 
 .texture-mist {
-  background-image: linear-gradient(135deg, rgba(17, 24, 39, 0.8), rgba(10, 15, 26, 0.95));
+  background-image: linear-gradient(135deg, rgba(241, 245, 249, 0.9), rgba(248, 250, 252, 0.98));
 }
 
 .section-shell {
@@ -110,13 +116,14 @@ main {
 }
 
 .btn-primary {
-  @apply inline-flex items-center justify-center rounded-full bg-brass px-6 py-3 text-sm font-medium text-forest shadow-[0_8px_24px_rgba(176,141,87,0.35)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-oxblood hover:shadow-[0_12px_28px_rgba(176,141,87,0.45)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brass focus-visible:ring-offset-2;
+  @apply inline-flex items-center justify-center rounded-full bg-brass px-6 py-3 text-sm font-medium text-white shadow-[0_4px_14px_rgba(176,141,87,0.4)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-oxblood hover:shadow-[0_6px_20px_rgba(176,141,87,0.45)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brass focus-visible:ring-offset-2;
 }
 
 .btn-secondary {
-  @apply inline-flex items-center justify-center rounded-full border border-brass/40 bg-transparent px-6 py-3 text-sm font-medium text-brass transition-all duration-200 hover:bg-brass/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brass focus-visible:ring-offset-2;
+  @apply inline-flex items-center justify-center rounded-full border border-brass/50 bg-white px-6 py-3 text-sm font-medium text-brass transition-all duration-200 hover:bg-brass/8 hover:border-brass focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brass focus-visible:ring-offset-2;
 }
 
+/* Blog prose — dark text on light background */
 .blog-prose {
   @apply text-lg leading-8 text-slate;
 }
@@ -156,7 +163,7 @@ main {
 }
 
 .blog-prose blockquote {
-  @apply rounded-r-2xl border-l-4 border-brass bg-cream/20 px-5 py-4 text-ink;
+  @apply rounded-r-2xl border-l-4 border-brass bg-amber-50 px-5 py-4 text-ink;
 }
 
 .blog-prose strong {

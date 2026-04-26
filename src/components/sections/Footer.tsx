@@ -30,7 +30,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="border-t border-mist bg-forest py-12">
+    <footer className="border-t border-slate/10 bg-white py-12">
       <div className="section-shell grid gap-8 md:grid-cols-3 md:items-start">
         <div>
           <p className="font-display font-bold text-2xl text-ink">RegardsKim</p>
@@ -55,18 +55,18 @@ export default function Footer() {
                 value={email}
                 onChange={(e) => { setEmail(e.target.value); if (status !== "idle") setStatus("idle"); }}
                 placeholder="you@store.com"
-                className="w-full max-w-[220px] rounded-lg border border-mist bg-cream px-3 py-2 text-sm text-ink placeholder:text-slate/50 focus:border-brass focus:outline-none focus:ring-2 focus:ring-brass/50"
+                className="w-full max-w-[220px] rounded-lg border border-slate/20 bg-mist px-3 py-2 text-sm text-ink placeholder:text-slate/50 focus:border-brass focus:bg-white focus:outline-none focus:ring-2 focus:ring-brass/30"
               />
               <button
                 type="submit"
                 disabled={status === "loading"}
-                className="shrink-0 rounded-lg bg-brass px-4 py-2 text-sm font-medium text-forest transition-colors hover:bg-oxblood hover:text-forest disabled:opacity-60"
+                className="shrink-0 rounded-lg bg-brass px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-oxblood disabled:opacity-60"
               >
                 {status === "loading" ? "..." : "Subscribe"}
               </button>
             </div>
             {status === "success" && (
-              <p className="mt-2 text-xs text-green-700">You&apos;re in! We&apos;ll keep you posted.</p>
+              <p className="mt-2 text-xs text-emerald-600">You&apos;re in! We&apos;ll keep you posted.</p>
             )}
             {status === "error" && (
               <p className="mt-2 text-xs text-red-600">Something went wrong — try again.</p>
@@ -89,7 +89,7 @@ export default function Footer() {
         <div className="md:text-right">
           <p className="font-display font-bold text-2xl text-ink">Your inbox, handled.</p>
           <p className="mt-3 text-sm text-slate">Kind regards, Kim</p>
-          <p className="mt-6 text-sm text-slate/80">&copy; RegardsKim 2026. All rights reserved.</p>
+          <p className="mt-6 text-sm text-slate/60">&copy; RegardsKim 2026. All rights reserved.</p>
         </div>
       </div>
     </footer>

@@ -48,7 +48,7 @@ export default function AffiliatePage() {
 
   return (
     <main>
-      <section className="bg-forest py-20 md:py-28">
+      <section className="bg-paper py-20 md:py-28">
         <div className="section-shell">
           <div className="mx-auto max-w-4xl text-center">
             <h1 className="font-display text-5xl font-bold leading-[1.02] tracking-normal text-ink md:text-7xl">
@@ -58,7 +58,7 @@ export default function AffiliatePage() {
               Recommend the tool you trust. Earn recurring commission on every merchant you refer.
             </p>
             <div className="mt-8">
-              <Image src="/affiliate-hero.jpg" alt="Affiliate program" width={640} height={320} className="mx-auto rounded-2xl shadow-lg" style={{ maxHeight: 320 }} />
+              <Image src="/affiliate-hero.jpg" alt="Affiliate program" width={640} height={320} className="mx-auto rounded-2xl shadow-[0_8px_32px_rgba(0,0,0,0.10)]" style={{ maxHeight: 320 }} />
             </div>
             <div className="mt-10">
               <a href="#apply" className="btn-primary">
@@ -69,22 +69,22 @@ export default function AffiliatePage() {
         </div>
       </section>
 
-      <section className="bg-forest py-14 md:py-20">
+      <section className="bg-mist py-14 md:py-20">
         <div className="section-shell">
           <div className="grid gap-4 md:grid-cols-3">
-            <article className="rounded-2xl border border-mist bg-cream p-6 shadow-sm">
+            <article className="rounded-2xl border border-slate/10 bg-white p-6 shadow-[0_4px_20px_rgba(0,0,0,0.06),0_1px_3px_rgba(0,0,0,0.04)]">
               <h2 className="font-display text-2xl font-bold text-ink">Recurring commission</h2>
               <p className="mt-3 text-sm text-slate md:text-base">
                 Earn 20% of every referral&apos;s subscription, every month, for as long as they stay.
               </p>
             </article>
-            <article className="rounded-2xl border border-mist bg-cream p-6 shadow-sm">
+            <article className="rounded-2xl border border-slate/10 bg-white p-6 shadow-[0_4px_20px_rgba(0,0,0,0.06),0_1px_3px_rgba(0,0,0,0.04)]">
               <h2 className="font-display text-2xl font-bold text-ink">Easy to recommend</h2>
               <p className="mt-3 text-sm text-slate md:text-base">
                 Regards Kim sells itself — 7-day free trial, no setup friction, real results from day one.
               </p>
             </article>
-            <article className="rounded-2xl border border-mist bg-cream p-6 shadow-sm">
+            <article className="rounded-2xl border border-slate/10 bg-white p-6 shadow-[0_4px_20px_rgba(0,0,0,0.06),0_1px_3px_rgba(0,0,0,0.04)]">
               <h2 className="font-display text-2xl font-bold text-ink">We support you</h2>
               <p className="mt-3 text-sm text-slate md:text-base">
                 Need assets, landing pages, or custom links? We&apos;ll help you promote effectively.
@@ -94,9 +94,9 @@ export default function AffiliatePage() {
         </div>
       </section>
 
-      <section id="apply" className="bg-forest py-16 md:py-24">
+      <section id="apply" className="bg-paper py-16 md:py-24">
         <div className="section-shell">
-          <div className="mx-auto max-w-2xl rounded-3xl border border-mist bg-[#1E293B] p-6 shadow-sm md:p-10">
+          <div className="mx-auto max-w-2xl rounded-3xl border border-slate/12 bg-white p-6 shadow-[0_8px_40px_rgba(0,0,0,0.08),0_2px_6px_rgba(0,0,0,0.04)] md:p-10">
             <h2 className="font-display text-3xl font-bold text-ink md:text-4xl">Partner application</h2>
             <p className="mt-3 text-sm text-slate md:text-base">
               Tell us a little about you and how you&apos;d like to promote Regards Kim.
@@ -126,7 +126,7 @@ export default function AffiliatePage() {
                     setName(e.target.value);
                     if (status !== "idle") setStatus("idle");
                   }}
-                  className="w-full rounded-xl border border-mist bg-forest px-4 py-3 text-sm text-ink placeholder:text-slate/50 focus:border-brass focus:outline-none focus:ring-1 focus:ring-brass/30"
+                  className="w-full rounded-xl border border-slate/20 bg-mist px-4 py-3 text-sm text-ink placeholder:text-slate/50 focus:border-brass focus:bg-white focus:outline-none focus:ring-1 focus:ring-brass/30"
                   placeholder="Your name"
                 />
               </div>
@@ -144,7 +144,7 @@ export default function AffiliatePage() {
                     setEmail(e.target.value);
                     if (status !== "idle") setStatus("idle");
                   }}
-                  className="w-full rounded-xl border border-mist bg-forest px-4 py-3 text-sm text-ink placeholder:text-slate/50 focus:border-brass focus:outline-none focus:ring-1 focus:ring-brass/30"
+                  className="w-full rounded-xl border border-slate/20 bg-mist px-4 py-3 text-sm text-ink placeholder:text-slate/50 focus:border-brass focus:bg-white focus:outline-none focus:ring-1 focus:ring-brass/30"
                   placeholder="you@example.com"
                 />
               </div>
@@ -161,7 +161,7 @@ export default function AffiliatePage() {
                     setWebsite(e.target.value);
                     if (status !== "idle") setStatus("idle");
                   }}
-                  className="w-full rounded-xl border border-mist bg-forest px-4 py-3 text-sm text-ink placeholder:text-slate/50 focus:border-brass focus:outline-none focus:ring-1 focus:ring-brass/30"
+                  className="w-full rounded-xl border border-slate/20 bg-mist px-4 py-3 text-sm text-ink placeholder:text-slate/50 focus:border-brass focus:bg-white focus:outline-none focus:ring-1 focus:ring-brass/30"
                   placeholder="https://"
                 />
               </div>
@@ -178,7 +178,7 @@ export default function AffiliatePage() {
                     setMessage(e.target.value);
                     if (status !== "idle") setStatus("idle");
                   }}
-                  className="w-full rounded-xl border border-mist bg-forest px-4 py-3 text-sm text-ink placeholder:text-slate/50 focus:border-brass focus:outline-none focus:ring-1 focus:ring-brass/30"
+                  className="w-full rounded-xl border border-slate/20 bg-mist px-4 py-3 text-sm text-ink placeholder:text-slate/50 focus:border-brass focus:bg-white focus:outline-none focus:ring-1 focus:ring-brass/30"
                   placeholder="Anything we should know?"
                 />
               </div>
@@ -191,7 +191,7 @@ export default function AffiliatePage() {
                 {status === "loading" ? "Submitting..." : "Apply to become an affiliate"}
               </button>
 
-              {status === "success" && <p className="text-sm text-green-700">Thanks for applying! We&apos;ll be in touch soon.</p>}
+              {status === "success" && <p className="text-sm text-emerald-600">Thanks for applying! We&apos;ll be in touch soon.</p>}
               {status === "error" && (
                 <p className="text-sm text-red-600">Something went wrong — please try again.</p>
               )}

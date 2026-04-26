@@ -18,7 +18,7 @@ const kimPoints = [
 ];
 
 const customerEmail =
-  '“Hi, just checking on order #4721 — the tracking link hasn\'t updated in three days. Has it actually shipped?”';
+  '"Hi, just checking on order #4721 — the tracking link hasn\'t updated in three days. Has it actually shipped?"';
 
 const genericReply =
   "Hi there, thanks for reaching out. I'm sorry for the confusion. Shipping updates can sometimes take a little longer than expected. Please keep an eye on your tracking link, and if it still doesn't update soon, contact the shipping carrier or reply here for further help.";
@@ -36,8 +36,10 @@ function ComparisonCard({ title, items, tone }: ComparisonCardProps) {
   return (
     <article
       className={[
-        "h-full rounded-[1.75rem] border bg-cream p-6 shadow-[0_12px_40px_rgba(0,0,0,0.3)] md:p-8",
-        isKim ? "border-brass/40 bg-gradient-to-br from-cream via-cream to-forest/20" : "border-mist",
+        "h-full rounded-[1.75rem] border bg-white p-6 md:p-8",
+        isKim
+          ? "border-brass/30 shadow-[0_8px_32px_rgba(176,141,87,0.15),0_2px_6px_rgba(0,0,0,0.06)]"
+          : "border-slate/12 shadow-[0_4px_20px_rgba(0,0,0,0.06),0_1px_3px_rgba(0,0,0,0.04)]",
       ].join(" ")}
     >
       <div className="flex items-center justify-between gap-4">
@@ -45,7 +47,7 @@ function ComparisonCard({ title, items, tone }: ComparisonCardProps) {
         <span
           className={[
             "rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em]",
-            isKim ? "bg-brass/20 text-brass" : "bg-mist/50 text-slate",
+            isKim ? "bg-brass/15 text-brass" : "bg-slate/10 text-slate",
           ].join(" ")}
         >
           {isKim ? "Built for ecommerce" : "One-size-fits-all"}
@@ -58,12 +60,14 @@ function ComparisonCard({ title, items, tone }: ComparisonCardProps) {
             <span
               className={[
                 "mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full border",
-                isKim ? "border-brass/30 bg-brass/15 text-brass" : "border-mist bg-mist/50 text-slate",
+                isKim
+                  ? "border-emerald-200 bg-emerald-50 text-emerald-600"
+                  : "border-slate/20 bg-slate/5 text-slate",
               ].join(" ")}
             >
               <Icon size={14} strokeWidth={2.4} />
             </span>
-            <span className={isKim ? "text-ink" : "text-slate"}>{item}</span>
+            <span className="text-slate">{item}</span>
           </li>
         ))}
       </ul>
@@ -82,9 +86,9 @@ function ReplyCard({ label, body, tone }: ReplyCardProps) {
 
   if (!isKim) {
     return (
-      <article className="h-full rounded-[1.75rem] border border-mist bg-cream p-6 shadow-[0_12px_40px_rgba(0,0,0,0.3)] md:p-8">
+      <article className="h-full rounded-[1.75rem] border border-slate/12 bg-white p-6 shadow-[0_4px_20px_rgba(0,0,0,0.06),0_1px_3px_rgba(0,0,0,0.04)] md:p-8">
         <div className="flex items-center gap-3">
-          <span className="rounded-full bg-mist px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-slate">
+          <span className="rounded-full bg-slate/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-slate">
             {label}
           </span>
         </div>
@@ -94,17 +98,18 @@ function ReplyCard({ label, body, tone }: ReplyCardProps) {
   }
 
   return (
-    <article className="h-full rounded-[1.75rem] border-2 border-brass/40 bg-gradient-to-br from-cream via-cream to-forest/20 p-6 shadow-[0_16px_44px_rgba(0,0,0,0.35)] md:p-8">
+    <article className="h-full rounded-[1.75rem] border-2 border-brass/30 bg-white p-6 shadow-[0_8px_32px_rgba(176,141,87,0.15),0_2px_6px_rgba(0,0,0,0.06)] md:p-8">
       <div className="flex flex-wrap items-center justify-between gap-3">
-        <span className="rounded-full bg-brass px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-forest">
+        <span className="rounded-full bg-brass px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-white">
           {label}
         </span>
-        <span className="rounded-full border border-brass/30 bg-brass/15 px-3 py-1 text-xs font-semibold text-brass">
+        <span className="rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700">
           Draft — Ready for approval
         </span>
       </div>
 
-      <div className="mt-5 rounded-[1.25rem] border border-brass/20 bg-[#283548] p-5 md:p-6">
+      {/* Email card — light browser/Gmail feel */}
+      <div className="mt-5 rounded-[1.25rem] border border-slate/10 bg-mist p-5 md:p-6">
         <div className="space-y-3 text-sm md:text-[0.95rem]">
           <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:gap-3">
             <span className="text-xs font-semibold uppercase tracking-[0.14em] text-slate">To</span>
@@ -116,7 +121,7 @@ function ReplyCard({ label, body, tone }: ReplyCardProps) {
           </div>
         </div>
 
-        <div className="my-5 h-px bg-brass/15" />
+        <div className="my-5 h-px bg-slate/10" />
 
         <div className="space-y-4 text-sm leading-7 text-ink md:text-base">
           <p>Hey Sarah, thanks for checking in.</p>
@@ -125,7 +130,7 @@ function ReplyCard({ label, body, tone }: ReplyCardProps) {
 
           <a
             href="#"
-            className="inline-flex items-center rounded-full border border-brass/30 bg-brass/15 px-4 py-2 text-sm font-semibold text-brass transition hover:bg-brass/20"
+            className="inline-flex items-center rounded-full border border-brass/30 bg-brass/10 px-4 py-2 text-sm font-semibold text-brass transition hover:bg-brass/20"
           >
             View tracking →
           </a>
@@ -142,7 +147,7 @@ function ReplyCard({ label, body, tone }: ReplyCardProps) {
 
 export default function Comparison() {
   return (
-    <section className="bg-forest py-16 md:py-24">
+    <section className="bg-paper py-16 md:py-24">
       <div className="section-shell">
         <FadeIn>
           <div className="mx-auto max-w-3xl text-center">
@@ -166,7 +171,7 @@ export default function Comparison() {
         </div>
 
         <FadeIn delay={0.12}>
-          <div className="mx-auto mt-10 max-w-4xl rounded-[1.75rem] border border-mist bg-cream px-6 py-5 text-center shadow-[0_12px_40px_rgba(0,0,0,0.3)] md:px-8 md:py-6">
+          <div className="mx-auto mt-10 max-w-4xl rounded-[1.75rem] border border-slate/12 bg-white px-6 py-5 text-center shadow-[0_4px_20px_rgba(0,0,0,0.06)] md:px-8 md:py-6">
             <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate">Customer email</p>
             <p className="mt-3 text-base leading-7 text-ink md:text-lg">{customerEmail}</p>
           </div>

@@ -9,27 +9,27 @@ const benefits = [
   },
   {
     title: "Replies your customers actually trust",
-    body: "Real answers with real order details \u2014 not vague templates that make your store look careless.",
+    body: "Real answers with real order details — not vague templates that make your store look careless.",
     icon: PenLine,
   },
   {
     title: "Your voice, your call",
-    body: "Regards Kim drafts in your style and you decide what gets sent. It\u2019s your store \u2014 it just handles the busy work.",
+    body: "Regards Kim drafts in your style and you decide what gets sent. It's your store — it just handles the busy work.",
     icon: ShieldCheck,
   },
 ];
 
 export default function Benefits() {
   return (
-    <section className="bg-forest py-16 md:py-24">
+    <section className="bg-paper py-16 md:py-24">
       <div className="section-shell">
         <div className="grid gap-5 md:grid-cols-3">
           {benefits.map((item, idx) => {
             const Icon = item.icon;
             return (
               <FadeIn key={item.title} delay={idx * 0.06}>
-                <article className="h-full rounded-3xl border border-mist bg-cream p-7 md:p-8">
-                  <div className="mb-6 w-fit rounded-xl bg-mist p-2.5 text-brass">
+                <article className="h-full rounded-3xl border border-slate/10 bg-white p-7 shadow-[0_4px_24px_rgba(0,0,0,0.06),0_1px_3px_rgba(0,0,0,0.04)] md:p-8">
+                  <div className="mb-6 w-fit rounded-xl bg-brass/10 p-2.5 text-brass">
                     <Icon size={20} />
                   </div>
                   <h3 className="font-display text-2xl font-bold tracking-normal text-ink md:text-3xl">

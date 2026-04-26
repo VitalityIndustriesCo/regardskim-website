@@ -36,7 +36,7 @@ export default function MockupDetail({ mode = "draft" }: MockupDetailProps) {
       {/* Two-column card layout */}
       <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-2">
         {/* Left: customer email card */}
-        <div className="rounded-xl border border-slate/20 bg-[#1E293B] px-4 py-4 shadow-sm">
+        <div className="rounded-xl border border-slate/12 bg-white px-4 py-4 shadow-[0_2px_8px_rgba(0,0,0,0.06)]">
           {/* Sender header */}
           <div className="flex items-start justify-between gap-2">
             <div className="flex items-center gap-2.5">
@@ -60,7 +60,7 @@ export default function MockupDetail({ mode = "draft" }: MockupDetailProps) {
         </div>
 
         {/* Right: Kim's reply card */}
-        <div className="rounded-xl border border-slate/20 bg-[#1E293B] px-4 py-4 shadow-sm">
+        <div className="rounded-xl border border-slate/12 bg-white px-4 py-4 shadow-[0_2px_8px_rgba(0,0,0,0.06)]">
           <p className="text-[12px] leading-5 text-slate sm:text-[13px] sm:leading-5">
             Hi Sarah,
           </p>
@@ -81,19 +81,19 @@ export default function MockupDetail({ mode = "draft" }: MockupDetailProps) {
                   key="sent"
                   initial={prefersReducedMotion ? undefined : { opacity: 0, y: 4 }}
                   animate={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
-                  className="inline-flex items-center gap-1.5 rounded-full border border-brass/30 bg-brass/20 px-3 py-1 text-[11px] font-medium text-brass"
+                  className="inline-flex items-center gap-1.5 rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-[11px] font-medium text-emerald-700"
                 >
                   <CheckCircle2 size={13} /> Sent ✓
                 </motion.div>
               ) : (
                 <motion.div key="buttons" className="flex flex-wrap justify-center gap-2">
-                  <span className="rounded-lg bg-brass px-3 py-1.5 text-[11px] font-semibold text-forest">
+                  <span className="rounded-lg bg-emerald-600 px-3 py-1.5 text-[11px] font-semibold text-white">
                     Approve &amp; send
                   </span>
-                  <span className="rounded-lg border border-mist bg-cream px-3 py-1.5 text-[11px] font-medium text-ink">
+                  <span className="rounded-lg border border-slate/15 bg-mist px-3 py-1.5 text-[11px] font-medium text-ink">
                     Edit reply
                   </span>
-                  <span className="rounded-lg border border-mist bg-cream px-3 py-1.5 text-[11px] font-medium text-ink">
+                  <span className="rounded-lg border border-slate/15 bg-mist px-3 py-1.5 text-[11px] font-medium text-ink">
                     Skip for now
                   </span>
                 </motion.div>

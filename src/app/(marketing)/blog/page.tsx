@@ -10,7 +10,7 @@ export const metadata = {
 
 export default function BlogPage() {
   return (
-    <main className="bg-forest py-16 sm:py-20">
+    <main className="bg-paper py-16 sm:py-20">
       <section className="section-shell">
         <div className="max-w-3xl">
           <p className="text-sm font-medium uppercase tracking-[0.24em] text-brass">Resources</p>
@@ -24,7 +24,7 @@ export default function BlogPage() {
           {blogPosts.map((post) => (
             <article
               key={post.slug}
-              className="group flex h-full flex-col rounded-[1.75rem] border border-mist bg-cream p-7 shadow-[0_18px_40px_rgba(0,0,0,0.2)] transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_24px_52px_rgba(0,0,0,0.3)]"
+              className="group flex h-full flex-col rounded-[1.75rem] border border-slate/10 bg-white p-7 shadow-[0_4px_24px_rgba(0,0,0,0.07),0_1px_3px_rgba(0,0,0,0.04)] transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(0,0,0,0.12)]"
             >
               {post.image && (
                 <div className="-mx-7 -mt-7 mb-5 overflow-hidden rounded-t-[1.75rem]">
