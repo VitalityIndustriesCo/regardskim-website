@@ -104,7 +104,7 @@ export default function FoundingPage() {
               Stop spending hours on customer&nbsp;emails
             </h1>
             <p className="mx-auto mt-4 max-w-md text-base text-slate md:text-lg">
-              Regards Kim reads your customer emails, drafts real replies using your Shopify data, and sends them from your Gmail. You just approve.
+              Regards Kim is a Shopify app that connects to your Gmail, reads your customer emails, and drafts replies using your live store data. You review, approve, and send.
             </p>
           </div>
 
