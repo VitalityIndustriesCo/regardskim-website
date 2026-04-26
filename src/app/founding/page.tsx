@@ -116,7 +116,7 @@ export default function FoundingPage() {
             </div>
             <div className="flex items-center gap-2 rounded-full border border-slate/15 bg-white px-3 py-2 shadow-sm">
               <GmailLogo className="h-4 w-4" />
-              <span className="text-xs font-semibold text-ink">Sends from your Gmail</span>
+              <span className="text-xs font-semibold text-ink">Connects with Gmail</span>
             </div>
           </div>
 
