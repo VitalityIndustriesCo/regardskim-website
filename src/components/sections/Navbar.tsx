@@ -67,7 +67,7 @@ export default function Navbar() {
 
           <div className="hidden items-center gap-4 md:flex">
             <Link href="/founding" className="btn-primary">
-              Lock in pricing
+              Lock in your spot
             </Link>
           </div>
 
@@ -144,7 +144,7 @@ export default function Navbar() {
 
           <div className="mt-8 flex flex-col gap-3 border-t border-slate/10 pt-6">
             <Link href="/founding" className="btn-primary w-full" onClick={closeMobileMenu}>
-              Lock in pricing
+              Lock in your spot
             </Link>
           </div>
         </div>

@@ -25,7 +25,7 @@ export default function Hero() {
 
             <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <a href={CTA_URL} className="btn-primary">
-                Lock in founding pricing
+                Lock in your spot
               </a>
               <a href="#how-it-works" className="btn-secondary">
                 See how it works
