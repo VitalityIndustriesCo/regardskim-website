@@ -5,15 +5,15 @@
   --font-display: var(--font-plus-jakarta);
   --font-sans: var(--font-plus-jakarta);
 
-  /* ── Light theme colour tokens ── */
-  --color-forest: #FAFBFC;
-  --color-cream: #FFFFFF;
-  --color-oxblood: #C9A66B;
-  --color-brass: #B08D57;
-  --color-ink: #0F172A;
-  --color-slate: #64748B;
-  --color-mist: #F1F5F9;
-  --color-paper: #F8FAFC;
+  /* ── Premium light theme colour tokens ── */
+  --color-forest: #233547;
+  --color-cream: #FFF9F3;
+  --color-oxblood: #D96252;
+  --color-brass: #E97C6B;
+  --color-ink: #233547;
+  --color-slate: #6F7D88;
+  --color-mist: #F6DDD2;
+  --color-paper: #F8F1E7;
 
   /* Gmail-style functional badge colours */
   --color-badge-green: #16A34A;
@@ -49,21 +49,21 @@
 }
 
 :root {
-  /* Light theme HSL variables */
-  --background: 210 40% 98%;
-  --foreground: 222 47% 11%;
-  --card: 0 0% 100%;
-  --card-foreground: 222 47% 11%;
-  --popover: 0 0% 100%;
-  --popover-foreground: 222 47% 11%;
-  --primary: 38 35% 52%;
-  --primary-foreground: 220 30% 5%;
-  --secondary: 210 40% 96%;
-  --secondary-foreground: 222 47% 11%;
-  --muted: 210 40% 96%;
-  --muted-foreground: 215 16% 47%;
-  --accent: 38 35% 52%;
-  --accent-foreground: 220 30% 5%;
+  /* Premium light theme HSL variables */
+  --background: 36 55% 94%;
+  --foreground: 207 34% 21%;
+  --card: 30 100% 98%;
+  --card-foreground: 207 34% 21%;
+  --popover: 30 100% 98%;
+  --popover-foreground: 207 34% 21%;
+  --primary: 7 75% 67%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 15 70% 89%;
+  --secondary-foreground: 207 34% 21%;
+  --muted: 15 70% 89%;
+  --muted-foreground: 205 11% 48%;
+  --accent: 7 75% 67%;
+  --accent-foreground: 0 0% 100%;
   --destructive: 0 84% 60%;
   --destructive-foreground: 0 0% 98%;
   --border: 214 32% 91%;
@@ -101,14 +101,14 @@ main {
 /* Subtle light-mode textures */
 .paper-grain {
   background-image:
-    radial-gradient(circle at 12% 18%, rgba(176, 141, 87, 0.04) 0, transparent 34%),
-    radial-gradient(circle at 84% 4%, rgba(176, 141, 87, 0.06) 0, transparent 30%),
-    radial-gradient(circle at 50% 90%, rgba(241, 245, 249, 0.8) 0, transparent 60%),
-    linear-gradient(160deg, rgba(250, 251, 252, 0.95), rgba(248, 250, 252, 1));
+    radial-gradient(circle at 12% 18%, rgba(233, 124, 107, 0.09) 0, transparent 34%),
+    radial-gradient(circle at 84% 4%, rgba(127, 167, 161, 0.12) 0, transparent 30%),
+    radial-gradient(circle at 50% 90%, rgba(246, 221, 210, 0.8) 0, transparent 60%),
+    linear-gradient(160deg, rgba(255, 249, 243, 0.95), rgba(248, 241, 231, 1));
 }
 
 .texture-mist {
-  background-image: linear-gradient(135deg, rgba(241, 245, 249, 0.9), rgba(248, 250, 252, 0.98));
+  background-image: linear-gradient(135deg, rgba(255, 249, 243, 0.94), rgba(246, 221, 210, 0.58));
 }
 
 .section-shell {
@@ -116,11 +116,11 @@ main {
 }
 
 .btn-primary {
-  @apply inline-flex items-center justify-center rounded-full bg-brass px-6 py-3 text-sm font-medium text-white shadow-[0_4px_14px_rgba(176,141,87,0.4)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-oxblood hover:shadow-[0_6px_20px_rgba(176,141,87,0.45)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brass focus-visible:ring-offset-2;
+  @apply inline-flex items-center justify-center rounded-full bg-brass px-6 py-3 text-sm font-bold text-white shadow-[0_10px_24px_rgba(233,124,107,0.28)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-oxblood hover:shadow-[0_14px_30px_rgba(233,124,107,0.34)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brass focus-visible:ring-offset-2;
 }
 
 .btn-secondary {
-  @apply inline-flex items-center justify-center rounded-full border border-brass/50 bg-white px-6 py-3 text-sm font-medium text-brass transition-all duration-200 hover:bg-brass/8 hover:border-brass focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brass focus-visible:ring-offset-2;
+  @apply inline-flex items-center justify-center rounded-full border border-brass/35 bg-white px-6 py-3 text-sm font-bold text-ink transition-all duration-200 hover:border-brass hover:bg-[#FFF0ED] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brass focus-visible:ring-offset-2;
 }
 
 /* Blog prose — dark text on light background */

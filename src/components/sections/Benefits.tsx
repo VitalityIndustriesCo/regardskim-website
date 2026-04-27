@@ -3,18 +3,18 @@ import FadeIn from "@/components/ui/FadeIn";
 
 const benefits = [
   {
-    title: "Hours back in your day",
-    body: "Stop writing the same replies over and over. Regards Kim handles your support emails so you can run your store.",
+    title: "Feels native to your workflow",
+    body: "Regards Kim works with Gmail and Shopify, so you are not forcing customers or your team into another helpdesk.",
     icon: BookOpen,
   },
   {
-    title: "Replies your customers actually trust",
-    body: "Real answers with real order details — not vague templates that make your store look careless.",
+    title: "Replies customers actually trust",
+    body: "Drafts include real order details, tracking context, and store policies instead of vague template filler.",
     icon: PenLine,
   },
   {
-    title: "Your voice, your call",
-    body: "Regards Kim drafts in your style and you decide what gets sent. It's your store — it just handles the busy work.",
+    title: "Your voice, your approval",
+    body: "Regards Kim prepares the reply, but you stay in control of what gets sent from your Gmail account.",
     icon: ShieldCheck,
   },
 ];

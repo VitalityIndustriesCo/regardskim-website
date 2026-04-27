@@ -1,61 +1,58 @@
-import Image from "next/image";
 import FadeIn from "@/components/ui/FadeIn";
 import { ShopifyLogo, GmailLogo } from "@/components/ui/BrandLogos";
+import IntegrationHeroPreview from "@/components/ui/IntegrationHeroPreview";
 
 const CTA_URL = "/founding";
 
 export default function Hero() {
   return (
-    <section id="top" className="relative overflow-hidden">
-      {/* Light background with hero text */}
-      <div className="bg-paper pb-0">
-        <div className="section-shell">
-          <FadeIn className="mx-auto max-w-5xl text-center">
-            <div className="mx-auto max-w-3xl pt-20 md:pt-32">
-              <h1 className="font-display text-5xl font-bold leading-[1.02] tracking-normal text-ink md:text-8xl">
-                Your inbox, handled
-              </h1>
-              <p className="mx-auto mt-6 max-w-2xl text-base text-slate md:text-lg">
-                Regards Kim is a Shopify app that connects to your Gmail, reads your customer emails, and drafts replies using your live store data. You review, approve, and send.
-              </p>
+    <section id="top" className="paper-grain relative overflow-hidden">
+      <div className="absolute left-1/2 top-24 h-72 w-72 -translate-x-1/2 rounded-full bg-[#E97C6B]/10 blur-3xl" aria-hidden="true" />
+      <div className="section-shell relative">
+        <FadeIn className="mx-auto max-w-5xl text-center">
+          <div className="mx-auto max-w-4xl pt-20 md:pt-32">
+            <div className="mx-auto mb-6 inline-flex flex-wrap items-center justify-center gap-2 rounded-full border border-[#E3D3C6] bg-white/80 px-4 py-2 text-xs font-bold uppercase tracking-[0.14em] text-[#8A6F61] shadow-sm backdrop-blur">
+              <ShopifyLogo className="h-5 w-5" /> Shopify support
+              <span className="h-1 w-1 rounded-full bg-[#C9B5A7]" />
+              <GmailLogo className="h-4 w-4" /> Gmail drafts
+            </div>
+            <h1 className="font-display text-5xl font-extrabold leading-[1.02] tracking-tight text-ink md:text-8xl">
+              Post-purchase emails, handled.
+            </h1>
+            <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-slate md:text-xl">
+              Regards Kim connects Gmail to your Shopify store, matches customer emails to live order data, and prepares polished replies for you to approve.
+            </p>
 
-              <div className="mt-10 flex flex-col items-center gap-4">
-                <a href={CTA_URL} className="btn-primary">
-                  Lock in your spot
-                </a>
-                <p className="text-sm text-slate">Founding pricing available — 50% off forever. No payment required.</p>
+            <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
+              <a href={CTA_URL} className="btn-primary">
+                Lock in founding pricing
+              </a>
+              <a href="#how-it-works" className="btn-secondary">
+                See how it works
+              </a>
+            </div>
+            <p className="mt-4 text-sm font-medium text-slate">50% off forever for founding stores. No payment required.</p>
+
+            <div className="mx-auto mt-10 grid max-w-3xl gap-3 sm:grid-cols-3">
+              <div className="rounded-2xl border border-[#E3D3C6] bg-white/80 px-4 py-3 shadow-sm backdrop-blur">
+                <p className="text-sm font-extrabold text-ink">Sends from Gmail</p>
+                <p className="mt-1 text-xs leading-5 text-slate">Customers only see your store.</p>
               </div>
-
-              {/* Trust block */}
-              <div className="mx-auto mt-12 flex flex-wrap items-center justify-center gap-3">
-                <div className="flex items-center gap-2.5 rounded-full border border-slate/15 bg-white px-4 py-2.5 shadow-sm">
-                  <ShopifyLogo className="h-6 w-6" />
-                  <p className="text-sm font-semibold text-ink">Built for Shopify</p>
-                </div>
-                <div className="flex items-center gap-2.5 rounded-full border border-slate/15 bg-white px-4 py-2.5 shadow-sm">
-                  <GmailLogo className="h-5 w-5" />
-                  <p className="text-sm font-semibold text-ink">Connects with Gmail</p>
-                </div>
+              <div className="rounded-2xl border border-[#CFE3D1] bg-white/80 px-4 py-3 shadow-sm backdrop-blur">
+                <p className="text-sm font-extrabold text-ink">Reads Shopify data</p>
+                <p className="mt-1 text-xs leading-5 text-slate">Orders, tracking, products, policies.</p>
+              </div>
+              <div className="rounded-2xl border border-[#F1C8C0] bg-white/80 px-4 py-3 shadow-sm backdrop-blur">
+                <p className="text-sm font-extrabold text-ink">Approval first</p>
+                <p className="mt-1 text-xs leading-5 text-slate">Nothing sends without you.</p>
               </div>
             </div>
-          </FadeIn>
-        </div>
-      </div>
+          </div>
+        </FadeIn>
 
-      {/* Hero product mockup */}
-      <div className="bg-paper">
-        <div className="section-shell py-8 md:py-12">
-          <FadeIn className="mx-auto max-w-5xl">
-            <Image
-              src="/images/hero-product-mockup.png"
-              alt="RegardsKim inbox showing customer emails sorted and drafted automatically"
-              width={1536}
-              height={1024}
-              className="w-full rounded-2xl shadow-[0_20px_60px_rgba(0,0,0,0.12)]"
-              priority
-            />
-          </FadeIn>
-        </div>
+        <FadeIn delay={0.08} className="py-10 md:py-16">
+          <IntegrationHeroPreview />
+        </FadeIn>
       </div>
     </section>
   );

@@ -46,18 +46,18 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`sticky top-0 z-50 border-b border-slate/10 bg-white/95 transition-all duration-300 ${
+        className={`sticky top-0 z-50 border-b border-[#E3D3C6] bg-[#FFF9F3]/88 transition-all duration-300 ${
           scrolled
-            ? "shadow-[0_2px_12px_rgba(0,0,0,0.08)] backdrop-blur-md"
-            : ""
+            ? "shadow-[0_10px_30px_rgba(35,53,71,0.08)] backdrop-blur-xl"
+            : "backdrop-blur-md"
         }`}
       >
         <nav className="section-shell flex h-20 items-center justify-between" aria-label="Primary">
-          <Link href="/" className="font-display text-3xl font-bold tracking-normal text-ink">
-            RegardsKim
+          <Link href="/" className="font-display text-3xl font-extrabold tracking-tight text-ink">
+            Regards Kim
           </Link>
 
-          <div className="hidden items-center gap-8 text-sm text-slate md:flex">
+          <div className="hidden items-center gap-8 text-sm font-semibold text-slate md:flex">
             {navLinks.map((link) => (
               <Link key={link.href} href={link.href} className="transition-colors hover:text-ink">
                 {link.label}
@@ -67,13 +67,13 @@ export default function Navbar() {
 
           <div className="hidden items-center gap-4 md:flex">
             <Link href="/founding" className="btn-primary">
-              Lock in your spot
+              Lock in pricing
             </Link>
           </div>
 
           <button
             type="button"
-            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate/20 bg-white text-ink transition-all duration-200 hover:border-brass/40 hover:bg-mist focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brass focus-visible:ring-offset-2 md:hidden"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[#E3D3C6] bg-white text-ink transition-all duration-200 hover:border-brass/40 hover:bg-[#FFF0ED] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brass focus-visible:ring-offset-2 md:hidden"
             aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileMenuOpen}
             aria-controls="mobile-navigation"
@@ -144,7 +144,7 @@ export default function Navbar() {
 
           <div className="mt-8 flex flex-col gap-3 border-t border-slate/10 pt-6">
             <Link href="/founding" className="btn-primary w-full" onClick={closeMobileMenu}>
-              Lock in your spot
+              Lock in pricing
             </Link>
           </div>
         </div>
