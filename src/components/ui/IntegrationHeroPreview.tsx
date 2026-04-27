@@ -65,7 +65,6 @@ export default function IntegrationHeroPreview() {
                 <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#8A6F61] dark:text-brass">Reply inside Shopify</p>
                 <h3 className="mt-1 font-display text-xl font-extrabold text-ink">Ready for approval</h3>
               </div>
-              <span className="rounded-full bg-[#F3FAF2] px-3 py-1 text-xs font-bold text-[#386D34] dark:border dark:border-emerald-800 dark:bg-emerald-950 dark:text-emerald-400">98% ready</span>
             </div>
             <div className="rounded-2xl border border-[#E9DCD1] bg-[#FFF9F3] p-5 shadow-[0_12px_30px_rgba(35,53,71,0.09)] dark:border-slate/12 dark:bg-[#0C1118] dark:shadow-[0_12px_30px_rgba(0,0,0,0.26)]">
               <p className="text-sm leading-6 text-ink">Hi Sarah,</p>
