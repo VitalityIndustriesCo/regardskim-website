@@ -42,7 +42,7 @@ function ComparisonCard({ title, items, tone }: ComparisonCardProps) {
           : "border-slate/12 shadow-[0_4px_20px_rgba(0,0,0,0.06),0_1px_3px_rgba(0,0,0,0.04)]",
       ].join(" ")}
     >
-      <div className="flex items-center justify-between gap-4">
+      <div className="flex min-h-[4.5rem] items-center justify-between gap-4">
         <h3 className="font-display text-2xl font-bold tracking-normal text-ink md:text-3xl">{title}</h3>
         <span
           className={[
