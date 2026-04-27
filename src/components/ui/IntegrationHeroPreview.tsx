@@ -17,8 +17,8 @@ const orderFacts = [
 export default function IntegrationHeroPreview() {
   return (
     <div className="relative mx-auto max-w-6xl">
-      <div className="overflow-hidden rounded-[2rem] border border-[#E3D3C6] bg-[#FFF9F3] shadow-[0_34px_110px_rgba(35,53,71,0.24),0_18px_45px_rgba(233,124,107,0.14)] dark:border-slate/15 dark:bg-[#20283A] dark:shadow-[0_34px_110px_rgba(0,0,0,0.45),0_18px_45px_rgba(0,0,0,0.28)]">
-        <div className="flex flex-wrap items-center justify-between gap-3 border-b border-[#E9DCD1] bg-white/70 dark:border-slate/12 dark:bg-[#20283A]/80 px-5 py-4 backdrop-blur md:px-7">
+      <div className="overflow-hidden rounded-[2rem] border border-[#E3D3C6] bg-[#FFF9F3] shadow-[0_34px_110px_rgba(35,53,71,0.24),0_18px_45px_rgba(233,124,107,0.14)] dark:border-slate/15 dark:bg-[#111625] dark:shadow-[0_34px_110px_rgba(0,0,0,0.45),0_18px_45px_rgba(0,0,0,0.28)]">
+        <div className="flex flex-wrap items-center justify-between gap-3 border-b border-[#E9DCD1] bg-white/70 dark:border-slate/12 dark:bg-[#111625]/80 px-5 py-4 backdrop-blur md:px-7">
           <div className="flex items-center gap-3">
             <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-[#E97C6B] text-base font-black text-white shadow-[0_10px_24px_rgba(233,124,107,0.28)]">K</div>
             <div>
@@ -43,7 +43,7 @@ export default function IntegrationHeroPreview() {
               </div>
               <MailCheck className="text-[#E97C6B]" size={22} />
             </div>
-            <div className="rounded-2xl border border-[#E9DCD1] bg-[#FFF9F3] p-4 shadow-[0_10px_26px_rgba(35,53,71,0.08)] dark:border-slate/12 dark:bg-[#1D2840] dark:shadow-[0_10px_26px_rgba(0,0,0,0.24)]">
+            <div className="rounded-2xl border border-[#E9DCD1] bg-[#FFF9F3] p-4 shadow-[0_10px_26px_rgba(35,53,71,0.08)] dark:border-slate/12 dark:bg-[#20283A] dark:shadow-[0_10px_26px_rgba(0,0,0,0.24)]">
               <div className="flex items-center gap-3">
                 <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[#E97C6B] text-sm font-bold text-white">S</div>
                 <div className="min-w-0">
@@ -66,7 +66,7 @@ export default function IntegrationHeroPreview() {
                 <h3 className="mt-1 font-display text-xl font-extrabold text-ink dark:text-white">Ready for approval</h3>
               </div>
             </div>
-            <div className="rounded-2xl border border-[#E9DCD1] bg-[#FFF9F3] p-5 shadow-[0_12px_30px_rgba(35,53,71,0.09)] dark:border-slate/12 dark:bg-[#1D2840] dark:shadow-[0_12px_30px_rgba(0,0,0,0.26)]">
+            <div className="rounded-2xl border border-[#E9DCD1] bg-[#FFF9F3] p-5 shadow-[0_12px_30px_rgba(35,53,71,0.09)] dark:border-slate/12 dark:bg-[#20283A] dark:shadow-[0_12px_30px_rgba(0,0,0,0.26)]">
               <p className="text-sm leading-6 text-ink dark:text-white">Hi Sarah,</p>
               <p className="mt-3 text-sm leading-6 text-ink dark:text-white">Thanks for checking in. Regards Kim found order <strong>#1842</strong> and it shipped yesterday with Australia Post.</p>
               <p className="mt-3 text-sm leading-6 text-ink dark:text-white">Your tracking number is <strong>AP4821093AU</strong>. The first scan can take 24 to 48 hours, so it should update shortly.</p>
@@ -89,13 +89,13 @@ export default function IntegrationHeroPreview() {
             </div>
             <div className="space-y-3">
               {orderFacts.map(([label, value]) => (
-                <div key={label} className="rounded-2xl border border-[#DCEBDA] bg-white px-4 py-3 dark:border-emerald-900 dark:bg-[#1D2840]">
+                <div key={label} className="rounded-2xl border border-[#DCEBDA] bg-white px-4 py-3 dark:border-emerald-900 dark:bg-[#20283A]">
                   <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#6B8D60] dark:text-emerald-400">{label}</p>
                   <p className="mt-1 text-sm font-extrabold text-ink">{value}</p>
                 </div>
               ))}
             </div>
-            <div className="mt-4 flex items-center gap-2 rounded-2xl bg-white px-4 py-3 text-xs font-semibold text-slate dark:text-white dark:border dark:border-slate/12 dark:bg-[#1D2840]">
+            <div className="mt-4 flex items-center gap-2 rounded-2xl bg-white px-4 py-3 text-xs font-semibold text-slate dark:text-white dark:border dark:border-slate/12 dark:bg-[#20283A]">
               <Clock3 size={15} className="text-[#7FA7A1]" /> Synced moments ago
             </div>
           </section>
