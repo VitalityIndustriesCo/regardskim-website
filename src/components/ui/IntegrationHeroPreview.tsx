@@ -35,7 +35,7 @@ export default function IntegrationHeroPreview() {
         </div>
 
         <div className="grid gap-5 bg-[radial-gradient(circle_at_20%_20%,rgba(233,124,107,0.10),transparent_30%),linear-gradient(180deg,#FFF9F3,#F8F1E7)] dark:bg-[radial-gradient(circle_at_20%_20%,rgba(176,141,87,0.06),transparent_30%),linear-gradient(180deg,#111526,#090B13)] p-4 md:grid-cols-[1fr_1.08fr_0.82fr] md:p-7">
-          <section className="rounded-[1.5rem] border border-[#E9DCD1] bg-white p-4 shadow-[0_18px_40px_rgba(35,53,71,0.14)] dark:border-slate/12 dark:bg-[#111625] dark:shadow-[0_18px_40px_rgba(0,0,0,0.30)]">
+          <section className="rounded-[1.5rem] border border-[#E9DCD1] bg-white p-4 shadow-[0_18px_40px_rgba(35,53,71,0.14)] dark:border-slate/12 dark:bg-[#20283A] dark:shadow-[0_18px_40px_rgba(0,0,0,0.30)]">
             <div className="mb-4 flex items-center justify-between">
               <div>
                 <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#8A6F61] dark:text-brass">Email from Gmail</p>
@@ -79,7 +79,7 @@ export default function IntegrationHeroPreview() {
             </div>
           </section>
 
-          <section className="rounded-[1.5rem] border border-[#CFE3D1] bg-[#F8FCF6] p-4 shadow-[0_18px_40px_rgba(56,109,52,0.13)] dark:border-slate/15 dark:bg-[#111625] dark:shadow-[0_18px_40px_rgba(0,0,0,0.30)]">
+          <section className="rounded-[1.5rem] border border-[#CFE3D1] bg-[#F8FCF6] p-4 shadow-[0_18px_40px_rgba(56,109,52,0.13)] dark:border-slate/15 dark:bg-[#20283A] dark:shadow-[0_18px_40px_rgba(0,0,0,0.30)]">
             <div className="mb-4 flex items-center gap-3">
               <ShopifyLogo className="h-9 w-9" />
               <div>
