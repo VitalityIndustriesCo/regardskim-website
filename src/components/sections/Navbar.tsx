@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import ThemeToggle from "@/components/ui/ThemeToggle";
 
 const navLinks = [
   { href: "/#how-it-works", label: "How it works" },
@@ -46,7 +47,7 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`sticky top-0 z-50 border-b border-[#E3D3C6] bg-[#FFF9F3]/88 transition-all duration-300 ${
+        className={`sticky top-0 z-50 border-b border-slate/15 bg-[#FFF9F3]/88 dark:bg-[#0C111B]/90 transition-all duration-300 ${
           scrolled
             ? "shadow-[0_10px_30px_rgba(35,53,71,0.08)] backdrop-blur-xl"
             : "backdrop-blur-md"
@@ -66,6 +67,7 @@ export default function Navbar() {
           </div>
 
           <div className="hidden items-center gap-4 md:flex">
+            <ThemeToggle />
             <Link href="/founding" className="btn-primary">
               Lock in your spot
             </Link>
@@ -73,7 +75,7 @@ export default function Navbar() {
 
           <button
             type="button"
-            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[#E3D3C6] bg-white text-ink transition-all duration-200 hover:border-brass/40 hover:bg-[#FFF0ED] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brass focus-visible:ring-offset-2 md:hidden"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate/15 bg-white dark:bg-[#1B2436] text-ink transition-all duration-200 hover:border-brass/40 hover:bg-[#FFF0ED] dark:hover:bg-[#1E293B] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brass focus-visible:ring-offset-2 md:hidden"
             aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileMenuOpen}
             aria-controls="mobile-navigation"
@@ -111,7 +113,7 @@ export default function Navbar() {
 
       <div
         id="mobile-navigation"
-        className={`fixed right-0 top-0 z-50 flex h-screen w-full max-w-sm flex-col border-l border-slate/10 bg-white shadow-[-8px_0_32px_rgba(0,0,0,0.12)] transition-transform duration-300 ease-out md:hidden ${
+        className={`fixed right-0 top-0 z-50 flex h-screen w-full max-w-sm flex-col border-l border-slate/10 bg-white dark:bg-[#111827] shadow-[-8px_0_32px_rgba(0,0,0,0.12)] dark:shadow-[-8px_0_32px_rgba(0,0,0,0.4)] transition-transform duration-300 ease-out md:hidden ${
           mobileMenuOpen ? "translate-x-0" : "translate-x-full"
         }`}
         aria-hidden={!mobileMenuOpen}
@@ -143,6 +145,10 @@ export default function Navbar() {
           </div>
 
           <div className="mt-8 flex flex-col gap-3 border-t border-slate/10 pt-6">
+            <div className="flex items-center justify-between px-4 py-2">
+              <span className="text-sm font-medium text-slate">Theme</span>
+              <ThemeToggle />
+            </div>
             <Link href="/founding" className="btn-primary w-full" onClick={closeMobileMenu}>
               Lock in your spot
             </Link>
