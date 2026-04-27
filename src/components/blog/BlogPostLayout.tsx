@@ -14,7 +14,7 @@ export default function BlogPostLayout({
   children: ReactNode;
 }) {
   return (
-    <main className="bg-forest py-16 sm:py-20">
+    <main className="bg-paper py-16 sm:py-20">
       <div className="section-shell">
         <div className="mx-auto max-w-[720px]">
           <Link
@@ -25,7 +25,7 @@ export default function BlogPostLayout({
           </Link>
 
           {image && (
-            <div className="mt-8 overflow-hidden rounded-2xl">
+            <div className="mt-8 overflow-hidden rounded-2xl shadow-[0_8px_32px_rgba(0,0,0,0.10)]">
               <Image
                 src={image}
                 alt={title}
@@ -36,7 +36,7 @@ export default function BlogPostLayout({
             </div>
           )}
 
-          <header className="mt-8 border-b border-mist pb-8">
+          <header className="mt-8 border-b border-slate/15 pb-8">
             <p className="text-sm font-medium uppercase tracking-[0.2em] text-slate">{date}</p>
             <h1 className="mt-4 text-4xl font-semibold tracking-tight text-ink sm:text-5xl">
               {title}
@@ -47,7 +47,7 @@ export default function BlogPostLayout({
             {children}
           </article>
 
-          <section className="mt-16 rounded-[2rem] border border-brass/30 bg-cream px-6 py-8 sm:px-8">
+          <section className="mt-16 rounded-[2rem] border border-brass/25 bg-white px-6 py-8 shadow-[0_4px_24px_rgba(176,141,87,0.10)] sm:px-8">
             <p className="text-sm font-medium uppercase tracking-[0.2em] text-slate">Next step</p>
             <h2 className="mt-3 text-2xl font-semibold text-ink sm:text-3xl">
               Ready to spend less time on support emails?

@@ -183,7 +183,7 @@ export default function InboxDemo() {
             <div className="mt-3 flex flex-wrap gap-2">
               <motion.button
                 type="button"
-                className="rounded-full bg-brass px-4 py-2 text-xs font-medium text-paper"
+                className="rounded-full bg-brass px-4 py-2 text-xs font-medium text-white"
                 animate={prefersReducedMotion ? undefined : { scale: [1, 1.04, 0.98, 1] }}
                 transition={{ duration: 0.7, delay: 2.6 }}
               >

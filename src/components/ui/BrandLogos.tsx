@@ -1,7 +1,5 @@
 // Official brand logos as SVG components
 
-import Image from "next/image";
-
 export function ShopifyLogo({ className = "w-8 h-8" }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 109 124" fill="none" xmlns="http://www.w3.org/2000/svg">

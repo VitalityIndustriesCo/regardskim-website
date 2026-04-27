@@ -29,11 +29,11 @@ export function SignupForm() {
       <div className="w-full max-w-md">
         <div className="text-center">
           <p className="text-sm font-semibold uppercase tracking-[0.16em] text-slate">RegardsKim</p>
-          <h1 className="mt-3 text-3xl font-bold text-forest">Start your free trial</h1>
+          <h1 className="mt-3 text-3xl font-bold text-ink">Start your free trial</h1>
           <p className="mt-2 text-sm text-slate">7-day free trial • No credit card required</p>
         </div>
 
-        <div className="mt-8 rounded-2xl border border-forest/10 bg-white p-6 shadow-sm sm:p-8">
+        <div className="mt-8 rounded-2xl border border-slate/12 bg-white p-6 shadow-[0_4px_20px_rgba(0,0,0,0.07)] sm:p-8">
           <form className="space-y-5" onSubmit={handleSubmit}>
             <div className="space-y-2">
               <Label htmlFor="storeName">Store name</Label>
