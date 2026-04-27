@@ -20,7 +20,7 @@ export default function Hero() {
               Customer emails, handled.
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-slate md:text-xl">
-              Regards Kim lives inside your Shopify admin, turns customer emails into ready-to-check replies, and sends from your Gmail when you approve.
+              Regards Kim is a Shopify app that connects to your Gmail, reads your customer emails, and drafts replies using your order details. You review, approve, and send from Shopify.
             </p>
 
             <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
