@@ -36,8 +36,8 @@ export default function MockupDetail({ mode = "draft" }: MockupDetailProps) {
       {/* Two-column card layout */}
       <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-2">
         {/* Left: customer email card */}
-        <div className="rounded-xl border border-slate/12 bg-white px-4 py-4 shadow-[0_2px_8px_rgba(0,0,0,0.06)]">
-          {/* Sender header */}
+        <div className="rounded-xl border border-slate/10 bg-white px-4 py-4 shadow-[0_4px_16px_rgba(0,0,0,0.10),0_1.5px_4px_rgba(0,0,0,0.06)]">
+          {/* Sender header */
           <div className="flex items-start justify-between gap-2">
             <div className="flex items-center gap-2.5">
               <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#E8893A] text-[11px] font-semibold text-white">
@@ -60,7 +60,7 @@ export default function MockupDetail({ mode = "draft" }: MockupDetailProps) {
         </div>
 
         {/* Right: Kim's reply card */}
-        <div className="rounded-xl border border-slate/12 bg-white px-4 py-4 shadow-[0_2px_8px_rgba(0,0,0,0.06)]">
+        <div className="rounded-xl border border-slate/10 bg-white px-4 py-4 shadow-[0_4px_16px_rgba(0,0,0,0.10),0_1.5px_4px_rgba(0,0,0,0.06)]">
           <p className="text-[12px] leading-5 text-slate sm:text-[13px] sm:leading-5">
             Hi Sarah,
           </p>
