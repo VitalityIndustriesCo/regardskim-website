@@ -7,7 +7,7 @@ const steps = [
   {
     number: "01",
     title: "Connect Gmail and Shopify",
-    body: "Regards Kim works where customer conversations already happen, then checks Shopify for the order details behind each email.",
+    body: "Every email is automatically categorised and matched to the right order, tracking, and store policies.",
     mockup: (
       <MockupWindow title="Inbox">
         <MockupInbox />
@@ -16,7 +16,7 @@ const steps = [
   },
   {
     number: "02",
-    title: "Drafts use live store data",
+    title: "Drafts using live tracking and store data",
     body: "Regards Kim prepares replies with tracking numbers, order status, return rules, and the details customers actually asked for.",
     mockup: (
       <MockupWindow title="Inbox">
