@@ -40,14 +40,11 @@ export default function HowItWorks() {
   return (
     <section id="how-it-works" className="bg-[#FFF9F3] py-16 md:py-24">
       <div className="section-shell">
-        <FadeIn className="mx-auto max-w-3xl text-center">
-          <p className="text-xs font-bold uppercase tracking-[0.2em] text-brass">How it works</p>
-          <h2 className="mt-4 font-display text-4xl font-extrabold tracking-tight text-ink md:text-6xl">
+        <FadeIn className="mx-auto max-w-5xl text-center">
+          <p className="text-sm font-bold uppercase tracking-[0.24em] text-brass md:text-base">How it works</p>
+          <h2 className="mt-5 font-display text-5xl font-extrabold tracking-tight text-ink md:text-7xl">
             Gmail on the front. Shopify data underneath.
           </h2>
-          <p className="mt-4 text-base leading-7 text-slate md:text-lg">
-            Regards Kim feels familiar because it keeps your inbox workflow intact. The magic is that every draft is backed by real store context.
-          </p>
         </FadeIn>
 
         <div className="mt-10 space-y-6 md:mt-14 md:space-y-8">
