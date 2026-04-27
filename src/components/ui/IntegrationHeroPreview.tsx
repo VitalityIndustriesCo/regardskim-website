@@ -9,7 +9,7 @@ const customerEmail = {
 
 const orderFacts = [
   ["Order", "#1842"],
-  ["Status", "Fulfilled yesterday"],
+  ["Status", "Fulfilled 23/08/2025"],
   ["Carrier", "Australia Post"],
   ["Tracking", "AP4821093AU"],
 ];
@@ -29,7 +29,7 @@ export default function IntegrationHeroPreview() {
 
           <div className="flex flex-wrap items-center gap-2 text-xs font-semibold">
             <span className="inline-flex items-center gap-1.5 rounded-full border border-[#CFE3D1] bg-[#F3FAF2] px-3 py-1.5 text-[#386D34]"><ShopifyLogo className="h-4 w-4" /> Shopify admin</span>
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-[#E9DCD1] bg-white px-3 py-1.5 text-ink"><GmailLogo className="h-4 w-4" /> Gmail sending</span>
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-[#E9DCD1] bg-white px-3 py-1.5 text-ink"><GmailLogo className="h-4 w-4" /> Gmail Connected</span>
             <span className="inline-flex items-center gap-1.5 rounded-full border border-[#F1C8C0] bg-[#FFF0ED] px-3 py-1.5 text-[#B85345]"><ShieldCheck size={14} /> Approval required</span>
           </div>
         </div>

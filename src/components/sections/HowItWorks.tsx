@@ -41,10 +41,7 @@ export default function HowItWorks() {
     <section id="how-it-works" className="bg-[#FFF9F3] py-16 md:py-24">
       <div className="section-shell">
         <FadeIn className="mx-auto max-w-5xl text-center">
-          <p className="text-sm font-bold uppercase tracking-[0.24em] text-brass md:text-base">How it works</p>
-          <h2 className="mt-5 font-display text-5xl font-extrabold tracking-tight text-ink md:text-7xl">
-            Gmail on the front. Shopify data underneath.
-          </h2>
+          <p className="font-display text-5xl font-extrabold tracking-tight text-brass md:text-7xl">How it works</p>
         </FadeIn>
 
         <div className="mt-10 space-y-6 md:mt-14 md:space-y-8">
