@@ -14,8 +14,8 @@ const FILTERS: FilterPill[] = [
 
 const pillClass: Record<FilterPill["tone"], string> = {
   gold: "bg-brass text-white border-brass",
-  green: "bg-emerald-50 text-emerald-700 border-emerald-200",
-  amber: "bg-amber-50 text-amber-700 border-amber-200",
+  green: "bg-emerald-950 text-emerald-400 border-emerald-800",
+  amber: "bg-amber-950 text-amber-400 border-amber-800",
   muted: "bg-slate/8 text-slate border-slate/15",
 };
 
@@ -33,8 +33,8 @@ type EmailCard = {
 };
 
 const badgeToneClass = {
-  green: "bg-emerald-50 text-emerald-700 border-emerald-200",
-  amber: "bg-amber-50 text-amber-700 border-amber-200",
+  green: "bg-emerald-950 text-emerald-400 border-emerald-800",
+  amber: "bg-amber-950 text-amber-400 border-amber-800",
   muted: "bg-slate/8 text-slate border-slate/15",
 };
 
@@ -109,7 +109,7 @@ function ReplyPanel({ card }: { card: EmailCard }) {
     <div className="flex h-full flex-col justify-between px-3 py-3">
       <div>
         {isAction ? (
-          <p className="text-center text-[11px] font-medium text-amber-600">
+          <p className="text-center text-[11px] font-medium text-amber-400">
             Action needed ⚡️
           </p>
         ) : (
@@ -169,7 +169,7 @@ export default function MockupInbox() {
         {EMAILS.map((card) => (
           <div key={`${card.sender}-${card.subject}`} className="grid grid-cols-1 gap-2.5 sm:grid-cols-2">
             {/* Left: customer email card */}
-            <div className="rounded-xl border border-slate/10 bg-white px-3 py-3 shadow-[0_4px_16px_rgba(0,0,0,0.10),0_1.5px_4px_rgba(0,0,0,0.06)] sm:px-4">
+            <div className="rounded-xl border border-slate/10 bg-cream px-3 py-3 shadow-[0_4px_16px_rgba(0,0,0,0.10),0_1.5px_4px_rgba(0,0,0,0.06)] sm:px-4">
               <div className="flex items-start gap-2.5">
                 <div className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-[11px] font-semibold text-white ${card.avatarColor}`}>
                   {card.avatar}
@@ -190,7 +190,7 @@ export default function MockupInbox() {
             </div>
 
             {/* Right: Kim's reply card */}
-            <div className="rounded-xl border border-slate/10 bg-white shadow-[0_4px_16px_rgba(0,0,0,0.10),0_1.5px_4px_rgba(0,0,0,0.06)]">
+            <div className="rounded-xl border border-slate/10 bg-cream shadow-[0_4px_16px_rgba(0,0,0,0.10),0_1.5px_4px_rgba(0,0,0,0.06)]">
               <ReplyPanel card={card} />
             </div>
           </div>

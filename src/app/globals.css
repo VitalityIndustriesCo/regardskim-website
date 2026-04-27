@@ -5,21 +5,21 @@
   --font-display: var(--font-plus-jakarta);
   --font-sans: var(--font-plus-jakarta);
 
-  /* ── Premium light theme colour tokens ── */
-  --color-forest: #233547;
-  --color-cream: #FFF9F3;
-  --color-oxblood: #D96252;
-  --color-brass: #E97C6B;
-  --color-ink: #233547;
-  --color-slate: #4A5568;
-  --color-mist: #F6DDD2;
-  --color-paper: #F8F1E7;
+  /* ── Premium dark theme colour tokens ── */
+  --color-forest: #060B14;
+  --color-cream: #1E2A3A;
+  --color-oxblood: #C9A66B;
+  --color-brass: #B08D57;
+  --color-ink: #FFFFFF;
+  --color-slate: #94A3B8;
+  --color-mist: #1E293B;
+  --color-paper: #060B14;
 
-  /* Gmail-style functional badge colours */
-  --color-badge-green: #16A34A;
-  --color-badge-amber: #D97706;
-  --color-badge-blue: #2563EB;
-  --color-badge-orange: #EA580C;
+  /* Functional badge colours */
+  --color-badge-green: #22C55E;
+  --color-badge-amber: #F59E0B;
+  --color-badge-blue: #3B82F6;
+  --color-badge-orange: #C9A66B;
   --color-badge-gray: #64748B;
 
   --color-background: hsl(var(--background));
@@ -49,31 +49,31 @@
 }
 
 :root {
-  /* Premium light theme HSL variables */
-  --background: 36 55% 94%;
-  --foreground: 207 34% 21%;
-  --card: 30 100% 98%;
-  --card-foreground: 207 34% 21%;
-  --popover: 30 100% 98%;
-  --popover-foreground: 207 34% 21%;
-  --primary: 7 75% 67%;
+  /* Premium dark theme HSL variables */
+  --background: 220 50% 5%;
+  --foreground: 0 0% 100%;
+  --card: 215 35% 17%;
+  --card-foreground: 0 0% 100%;
+  --popover: 215 35% 17%;
+  --popover-foreground: 0 0% 100%;
+  --primary: 38 35% 52%;
   --primary-foreground: 0 0% 100%;
-  --secondary: 15 70% 89%;
-  --secondary-foreground: 207 34% 21%;
-  --muted: 15 70% 89%;
-  --muted-foreground: 205 11% 48%;
-  --accent: 7 75% 67%;
+  --secondary: 215 30% 20%;
+  --secondary-foreground: 210 40% 90%;
+  --muted: 215 30% 20%;
+  --muted-foreground: 215 20% 65%;
+  --accent: 38 35% 52%;
   --accent-foreground: 0 0% 100%;
   --destructive: 0 84% 60%;
   --destructive-foreground: 0 0% 98%;
-  --border: 214 32% 91%;
-  --input: 214 32% 91%;
+  --border: 215 25% 20%;
+  --input: 215 25% 20%;
   --ring: 38 35% 52%;
-  --sidebar: 0 0% 100%;
-  --sidebar-foreground: 222 47% 11%;
+  --sidebar: 220 40% 8%;
+  --sidebar-foreground: 210 40% 90%;
   --sidebar-accent: 38 35% 52%;
   --sidebar-accent-foreground: 220 30% 5%;
-  --sidebar-border: 214 32% 91%;
+  --sidebar-border: 215 25% 20%;
 }
 
 html {
@@ -98,17 +98,17 @@ main {
   position: relative;
 }
 
-/* Subtle light-mode textures */
+/* Subtle dark-mode textures */
 .paper-grain {
   background-image:
-    radial-gradient(circle at 12% 18%, rgba(233, 124, 107, 0.09) 0, transparent 34%),
-    radial-gradient(circle at 84% 4%, rgba(127, 167, 161, 0.12) 0, transparent 30%),
-    radial-gradient(circle at 50% 90%, rgba(246, 221, 210, 0.8) 0, transparent 60%),
-    linear-gradient(160deg, rgba(255, 249, 243, 0.95), rgba(248, 241, 231, 1));
+    radial-gradient(circle at 12% 18%, rgba(176, 141, 87, 0.06) 0, transparent 34%),
+    radial-gradient(circle at 84% 4%, rgba(100, 130, 160, 0.08) 0, transparent 30%),
+    radial-gradient(circle at 50% 90%, rgba(30, 41, 59, 0.6) 0, transparent 60%),
+    linear-gradient(160deg, rgba(6, 11, 20, 0.98), rgba(6, 11, 20, 1));
 }
 
 .texture-mist {
-  background-image: linear-gradient(135deg, rgba(255, 249, 243, 0.94), rgba(246, 221, 210, 0.58));
+  background-image: linear-gradient(135deg, rgba(6, 11, 20, 0.94), rgba(30, 41, 59, 0.58));
 }
 
 .section-shell {
@@ -116,11 +116,11 @@ main {
 }
 
 .btn-primary {
-  @apply inline-flex items-center justify-center rounded-full bg-brass px-6 py-3 text-sm font-bold text-white shadow-[0_10px_24px_rgba(233,124,107,0.28)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-oxblood hover:shadow-[0_14px_30px_rgba(233,124,107,0.34)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brass focus-visible:ring-offset-2;
+  @apply inline-flex items-center justify-center rounded-full bg-brass px-6 py-3 text-sm font-bold text-white shadow-[0_10px_24px_rgba(176,141,87,0.3)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-oxblood hover:shadow-[0_14px_30px_rgba(176,141,87,0.35)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brass focus-visible:ring-offset-2;
 }
 
 .btn-secondary {
-  @apply inline-flex items-center justify-center rounded-full border border-brass/35 bg-white px-6 py-3 text-sm font-bold text-ink transition-all duration-200 hover:border-brass hover:bg-[#FFF0ED] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brass focus-visible:ring-offset-2;
+  @apply inline-flex items-center justify-center rounded-full border border-brass/35 bg-cream px-6 py-3 text-sm font-bold text-ink transition-all duration-200 hover:border-brass hover:bg-mist focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brass focus-visible:ring-offset-2;
 }
 
 /* Blog prose — dark text on light background */
@@ -163,7 +163,7 @@ main {
 }
 
 .blog-prose blockquote {
-  @apply rounded-r-2xl border-l-4 border-brass bg-amber-50 px-5 py-4 text-ink;
+  @apply rounded-r-2xl border-l-4 border-brass bg-mist px-5 py-4 text-ink;
 }
 
 .blog-prose strong {

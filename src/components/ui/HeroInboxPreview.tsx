@@ -12,7 +12,7 @@ function AnnotationBadge({
 }) {
   return (
     <div
-      className={`pointer-events-none absolute hidden items-center gap-2 rounded-full border border-slate/15 bg-white px-3 py-2 text-xs font-medium text-ink shadow-[0_4px_16px_rgba(0,0,0,0.10)] md:flex ${className ?? ""}`}
+      className={`pointer-events-none absolute hidden items-center gap-2 rounded-full border border-slate/15 bg-cream px-3 py-2 text-xs font-medium text-ink shadow-[0_4px_16px_rgba(0,0,0,0.10)] md:flex ${className ?? ""}`}
     >
       <span className="flex h-6 w-6 items-center justify-center rounded-full bg-brass/10 text-brass">{icon}</span>
       <span className="whitespace-nowrap">{label}</span>
@@ -54,7 +54,7 @@ export default function HeroInboxPreview() {
           className="-bottom-4 left-4 z-10 lg:-left-16"
         />
 
-        <div className="rounded-[1.5rem] border border-slate/12 bg-white shadow-[0_16px_48px_rgba(0,0,0,0.10),0_2px_8px_rgba(0,0,0,0.06)] sm:rounded-[2rem]">
+        <div className="rounded-[1.5rem] border border-slate/12 bg-cream shadow-[0_16px_48px_rgba(0,0,0,0.10),0_2px_8px_rgba(0,0,0,0.06)] sm:rounded-[2rem]">
           <div className="flex items-center gap-3 border-b border-mist bg-mist px-3 py-3 sm:px-5">
             <div className="flex items-center gap-1.5">
               <span className="h-2.5 w-2.5 rounded-full bg-[#EE8A72]" />

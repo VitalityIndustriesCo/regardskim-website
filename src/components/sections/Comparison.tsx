@@ -36,7 +36,7 @@ function ComparisonCard({ title, items, tone }: ComparisonCardProps) {
   return (
     <article
       className={[
-        "h-full rounded-[1.75rem] border bg-white p-6 md:p-8",
+        "h-full rounded-[1.75rem] border bg-cream p-6 md:p-8",
         isKim
           ? "border-brass/30 shadow-[0_8px_32px_rgba(176,141,87,0.15),0_2px_6px_rgba(0,0,0,0.06)]"
           : "border-slate/12 shadow-[0_4px_20px_rgba(0,0,0,0.06),0_1px_3px_rgba(0,0,0,0.04)]",
@@ -61,7 +61,7 @@ function ComparisonCard({ title, items, tone }: ComparisonCardProps) {
               className={[
                 "mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full border",
                 isKim
-                  ? "border-emerald-200 bg-emerald-50 text-emerald-600"
+                  ? "border-emerald-800 bg-emerald-950 text-emerald-400"
                   : "border-slate/20 bg-slate/5 text-slate",
               ].join(" ")}
             >
@@ -86,7 +86,7 @@ function ReplyCard({ label, body, tone }: ReplyCardProps) {
 
   if (!isKim) {
     return (
-      <article className="h-full rounded-[1.75rem] border border-slate/12 bg-white p-6 shadow-[0_4px_20px_rgba(0,0,0,0.06),0_1px_3px_rgba(0,0,0,0.04)] md:p-8">
+      <article className="h-full rounded-[1.75rem] border border-slate/12 bg-cream p-6 shadow-[0_4px_20px_rgba(0,0,0,0.06),0_1px_3px_rgba(0,0,0,0.04)] md:p-8">
         <div className="flex items-center gap-3">
           <span className="rounded-full bg-slate/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-slate">
             {label}
@@ -98,12 +98,12 @@ function ReplyCard({ label, body, tone }: ReplyCardProps) {
   }
 
   return (
-    <article className="h-full rounded-[1.75rem] border-2 border-brass/30 bg-white p-6 shadow-[0_8px_32px_rgba(176,141,87,0.15),0_2px_6px_rgba(0,0,0,0.06)] md:p-8">
+    <article className="h-full rounded-[1.75rem] border-2 border-brass/30 bg-cream p-6 shadow-[0_8px_32px_rgba(176,141,87,0.15),0_2px_6px_rgba(0,0,0,0.06)] md:p-8">
       <div className="flex flex-wrap items-center justify-between gap-3">
         <span className="rounded-full bg-brass px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-white">
           {label}
         </span>
-        <span className="rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700">
+        <span className="rounded-full border border-emerald-800 bg-emerald-950 px-3 py-1 text-xs font-semibold text-emerald-400">
           Draft — Ready for approval
         </span>
       </div>
@@ -171,7 +171,7 @@ export default function Comparison() {
         </div>
 
         <FadeIn delay={0.12}>
-          <div className="mx-auto mt-10 max-w-4xl rounded-[1.75rem] border border-slate/12 bg-white px-6 py-5 text-center shadow-[0_4px_20px_rgba(0,0,0,0.06)] md:px-8 md:py-6">
+          <div className="mx-auto mt-10 max-w-4xl rounded-[1.75rem] border border-slate/12 bg-cream px-6 py-5 text-center shadow-[0_4px_20px_rgba(0,0,0,0.06)] md:px-8 md:py-6">
             <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate">Customer email</p>
             <p className="mt-3 text-base leading-7 text-ink md:text-lg">{customerEmail}</p>
           </div>

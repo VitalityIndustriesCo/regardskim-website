@@ -46,9 +46,9 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`sticky top-0 z-50 border-b border-[#E3D3C6] bg-[#FFF9F3]/88 transition-all duration-300 ${
+        className={`sticky top-0 z-50 border-b border-slate/15 bg-forest/90 transition-all duration-300 ${
           scrolled
-            ? "shadow-[0_10px_30px_rgba(35,53,71,0.08)] backdrop-blur-xl"
+            ? "shadow-[0_10px_30px_rgba(0,0,0,0.3)] backdrop-blur-xl"
             : "backdrop-blur-md"
         }`}
       >
@@ -73,7 +73,7 @@ export default function Navbar() {
 
           <button
             type="button"
-            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[#E3D3C6] bg-white text-ink transition-all duration-200 hover:border-brass/40 hover:bg-[#FFF0ED] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brass focus-visible:ring-offset-2 md:hidden"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate/15 bg-cream text-ink transition-all duration-200 hover:border-brass/40 hover:bg-mist focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brass focus-visible:ring-offset-2 md:hidden"
             aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileMenuOpen}
             aria-controls="mobile-navigation"
@@ -111,7 +111,7 @@ export default function Navbar() {
 
       <div
         id="mobile-navigation"
-        className={`fixed right-0 top-0 z-50 flex h-screen w-full max-w-sm flex-col border-l border-slate/10 bg-white shadow-[-8px_0_32px_rgba(0,0,0,0.12)] transition-transform duration-300 ease-out md:hidden ${
+        className={`fixed right-0 top-0 z-50 flex h-screen w-full max-w-sm flex-col border-l border-slate/10 bg-cream shadow-[-8px_0_32px_rgba(0,0,0,0.4)] transition-transform duration-300 ease-out md:hidden ${
           mobileMenuOpen ? "translate-x-0" : "translate-x-full"
         }`}
         aria-hidden={!mobileMenuOpen}

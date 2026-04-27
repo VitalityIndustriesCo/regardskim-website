@@ -142,7 +142,7 @@ export default function MockupDetail({ mode = "draft" }: MockupDetailProps) {
       {/* Two-column card layout */}
       <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-2">
         {/* Left: customer email card */}
-        <div className="rounded-xl border border-slate/10 bg-white px-4 py-4 shadow-[0_4px_16px_rgba(0,0,0,0.10),0_1.5px_4px_rgba(0,0,0,0.06)]">
+        <div className="rounded-xl border border-slate/10 bg-cream px-4 py-4 shadow-[0_4px_16px_rgba(0,0,0,0.10),0_1.5px_4px_rgba(0,0,0,0.06)]">
           {/* Sender header */}
           <div className="flex items-start justify-between gap-2">
             <div className="flex items-center gap-2.5">
@@ -166,7 +166,7 @@ export default function MockupDetail({ mode = "draft" }: MockupDetailProps) {
         </div>
 
         {/* Right: Kim's reply card */}
-        <div className="rounded-xl border border-slate/10 bg-white px-4 py-4 shadow-[0_4px_16px_rgba(0,0,0,0.10),0_1.5px_4px_rgba(0,0,0,0.06)] overflow-hidden">
+        <div className="rounded-xl border border-slate/10 bg-cream px-4 py-4 shadow-[0_4px_16px_rgba(0,0,0,0.10),0_1.5px_4px_rgba(0,0,0,0.06)] overflow-hidden">
           {mode === "draft" ? (
             /* ── Draft mode: typewriter ────────────────────────── */
             <>
@@ -262,7 +262,7 @@ export default function MockupDetail({ mode = "draft" }: MockupDetailProps) {
                       initial={{ opacity: 0, y: 6, scale: 0.9 }}
                       animate={{ opacity: 1, y: 0, scale: 1 }}
                       transition={{ duration: 0.4, ease: "easeOut" }}
-                      className="inline-flex items-center gap-1.5 rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-[11px] font-medium text-emerald-700"
+                      className="inline-flex items-center gap-1.5 rounded-full border border-emerald-800 bg-emerald-950 px-3 py-1 text-[11px] font-medium text-emerald-400"
                     >
                       <CheckCircle2 size={13} /> Sent ✓
                     </motion.div>

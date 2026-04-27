@@ -92,7 +92,7 @@ export default function Founding() {
         </FadeIn>
 
         <FadeIn delay={0.06}>
-          <div className="mx-auto mt-10 max-w-sm rounded-2xl border border-slate/12 bg-white p-6 text-center shadow-[0_4px_20px_rgba(0,0,0,0.07)]">
+          <div className="mx-auto mt-10 max-w-sm rounded-2xl border border-slate/12 bg-cream p-6 text-center shadow-[0_4px_20px_rgba(0,0,0,0.07)]">
             <div className="flex items-baseline justify-center gap-1">
               <span className="font-display text-6xl font-bold tabular-nums leading-none text-oxblood">
                 {spotsRemaining}
@@ -117,7 +117,7 @@ export default function Founding() {
         </FadeIn>
 
         <FadeIn delay={0.1}>
-          <div className="mx-auto mt-8 max-w-lg rounded-3xl border border-slate/12 bg-white p-6 shadow-[0_8px_40px_rgba(0,0,0,0.08),0_2px_6px_rgba(0,0,0,0.04)] md:p-10">
+          <div className="mx-auto mt-8 max-w-lg rounded-3xl border border-slate/12 bg-cream p-6 shadow-[0_8px_40px_rgba(0,0,0,0.08),0_2px_6px_rgba(0,0,0,0.04)] md:p-10">
             {status === "success" ? (
               <div className="py-8 text-center">
                 <div className="mb-4 text-4xl">🎉</div>
@@ -153,7 +153,7 @@ export default function Founding() {
                         setFirstName(e.target.value);
                         if (status === "error") setStatus("idle");
                       }}
-                      className="w-full rounded-xl border border-slate/20 bg-mist px-4 py-3 text-sm text-ink placeholder:text-slate/50 focus:border-brass focus:bg-white focus:outline-none focus:ring-1 focus:ring-brass/30"
+                      className="w-full rounded-xl border border-slate/20 bg-mist px-4 py-3 text-sm text-ink placeholder:text-slate/50 focus:border-brass focus:bg-cream focus:outline-none focus:ring-1 focus:ring-brass/30"
                       placeholder="Your first name"
                     />
                   </div>
@@ -171,7 +171,7 @@ export default function Founding() {
                         setEmail(e.target.value);
                         if (status === "error") setStatus("idle");
                       }}
-                      className="w-full rounded-xl border border-slate/20 bg-mist px-4 py-3 text-sm text-ink placeholder:text-slate/50 focus:border-brass focus:bg-white focus:outline-none focus:ring-1 focus:ring-brass/30"
+                      className="w-full rounded-xl border border-slate/20 bg-mist px-4 py-3 text-sm text-ink placeholder:text-slate/50 focus:border-brass focus:bg-cream focus:outline-none focus:ring-1 focus:ring-brass/30"
                       placeholder="you@example.com"
                     />
                   </div>
@@ -185,7 +185,7 @@ export default function Founding() {
                       type="text"
                       value={storeUrl}
                       onChange={(e) => setStoreUrl(e.target.value)}
-                      className="w-full rounded-xl border border-slate/20 bg-mist px-4 py-3 text-sm text-ink placeholder:text-slate/50 focus:border-brass focus:bg-white focus:outline-none focus:ring-1 focus:ring-brass/30"
+                      className="w-full rounded-xl border border-slate/20 bg-mist px-4 py-3 text-sm text-ink placeholder:text-slate/50 focus:border-brass focus:bg-cream focus:outline-none focus:ring-1 focus:ring-brass/30"
                       placeholder="yourstore.myshopify.com"
                     />
                   </div>
