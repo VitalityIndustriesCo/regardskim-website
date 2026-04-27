@@ -17,8 +17,8 @@ const orderFacts = [
 export default function IntegrationHeroPreview() {
   return (
     <div className="relative mx-auto max-w-6xl">
-      <div className="overflow-hidden rounded-[2rem] border border-[#E3D3C6] bg-[#FFF9F3] shadow-[0_34px_110px_rgba(35,53,71,0.24),0_18px_45px_rgba(233,124,107,0.14)] dark:border-slate/15 dark:bg-[#111625] dark:shadow-[0_34px_110px_rgba(0,0,0,0.45),0_18px_45px_rgba(0,0,0,0.28)]">
-        <div className="flex flex-wrap items-center justify-between gap-3 border-b border-[#E9DCD1] bg-white/70 dark:border-slate/12 dark:bg-[#111625]/80 px-5 py-4 backdrop-blur md:px-7">
+      <div className="overflow-hidden rounded-[2rem] border border-[#E3D3C6] bg-[#FFF9F3] shadow-[0_34px_110px_rgba(35,53,71,0.24),0_18px_45px_rgba(233,124,107,0.14)] dark:border-slate/15 dark:bg-[#20283A] dark:shadow-[0_34px_110px_rgba(0,0,0,0.45),0_18px_45px_rgba(0,0,0,0.28)]">
+        <div className="flex flex-wrap items-center justify-between gap-3 border-b border-[#E9DCD1] bg-white/70 dark:border-slate/12 dark:bg-[#20283A]/80 px-5 py-4 backdrop-blur md:px-7">
           <div className="flex items-center gap-3">
             <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-[#E97C6B] text-base font-black text-white shadow-[0_10px_24px_rgba(233,124,107,0.28)]">K</div>
             <div>
