@@ -6,14 +6,14 @@
   --font-sans: var(--font-plus-jakarta);
 
   /* ── Premium dark theme colour tokens ── */
-  --color-forest: #060B14;
-  --color-cream: #1E2A3A;
+  --color-forest: #0C111B;
+  --color-cream: #1B2436;
   --color-oxblood: #C9A66B;
   --color-brass: #B08D57;
   --color-ink: #FFFFFF;
   --color-slate: #94A3B8;
   --color-mist: #1E293B;
-  --color-paper: #060B14;
+  --color-paper: #0C111B;
 
   /* Functional badge colours */
   --color-badge-green: #22C55E;

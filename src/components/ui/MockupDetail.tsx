@@ -142,7 +142,7 @@ export default function MockupDetail({ mode = "draft" }: MockupDetailProps) {
       {/* Two-column card layout */}
       <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-2">
         {/* Left: customer email card */}
-        <div className="rounded-xl border border-slate/10 bg-[#162236] px-4 py-4 shadow-[0_4px_16px_rgba(0,0,0,0.25),0_1.5px_4px_rgba(0,0,0,0.15)]">
+        <div className="rounded-xl border border-slate/10 bg-[#1B2436] px-4 py-4 shadow-[0_4px_16px_rgba(0,0,0,0.25),0_1.5px_4px_rgba(0,0,0,0.15)]">
           {/* Sender header */}
           <div className="flex items-start justify-between gap-2">
             <div className="flex items-center gap-2.5">
@@ -166,7 +166,7 @@ export default function MockupDetail({ mode = "draft" }: MockupDetailProps) {
         </div>
 
         {/* Right: Kim's reply card */}
-        <div className="rounded-xl border border-slate/10 bg-[#162236] px-4 py-4 shadow-[0_4px_16px_rgba(0,0,0,0.25),0_1.5px_4px_rgba(0,0,0,0.15)] overflow-hidden">
+        <div className="rounded-xl border border-slate/10 bg-[#1B2436] px-4 py-4 shadow-[0_4px_16px_rgba(0,0,0,0.25),0_1.5px_4px_rgba(0,0,0,0.15)] overflow-hidden">
           {mode === "draft" ? (
             /* ── Draft mode: typewriter ────────────────────────── */
             <>

@@ -75,7 +75,7 @@ export function LoginForm({ redirectTo }: LoginFormProps) {
           <p className="mt-2 text-sm text-slate">Sign in to your RegardsKim account.</p>
         </div>
 
-        <div className="mt-8 rounded-2xl border border-slate/12 bg-[#0F1B2E] p-6 shadow-[0_4px_20px_rgba(0,0,0,0.07)] sm:p-8">
+        <div className="mt-8 rounded-2xl border border-slate/12 bg-[#111827] p-6 shadow-[0_4px_20px_rgba(0,0,0,0.07)] sm:p-8">
           <form className="space-y-5" onSubmit={handleSubmit}>
             <div className="space-y-2">
               <Label htmlFor="email">Email</Label>
