@@ -95,14 +95,14 @@ export default function IntegrationHeroPreview() {
                 </div>
               ))}
             </div>
-            <div className="mt-4 flex items-center gap-2 rounded-2xl bg-white px-4 py-3 text-xs font-semibold text-slate dark:text-white/70 dark:border dark:border-slate/12 dark:bg-[#1D2840]">
+            <div className="mt-4 flex items-center gap-2 rounded-2xl bg-white px-4 py-3 text-xs font-semibold text-slate dark:text-white dark:border dark:border-slate/12 dark:bg-[#1D2840]">
               <Clock3 size={15} className="text-[#7FA7A1]" /> Synced moments ago
             </div>
           </section>
         </div>
       </div>
 
-      <div className="mx-auto mt-5 flex max-w-3xl flex-wrap items-center justify-center gap-3 text-xs font-semibold text-slate dark:text-white/70">
+      <div className="mx-auto mt-5 flex max-w-3xl flex-wrap items-center justify-center gap-3 text-xs font-semibold text-slate dark:text-white">
         <span className="inline-flex items-center gap-1.5"><CheckCircle2 size={14} className="text-[#386D34]" /> Sends from your Gmail</span>
         <span className="hidden h-1 w-1 rounded-full bg-[#C9B5A7] dark:bg-slate/40 sm:block" />
         <span className="inline-flex items-center gap-1.5"><CheckCircle2 size={14} className="text-[#386D34]" /> Uses Shopify order data</span>

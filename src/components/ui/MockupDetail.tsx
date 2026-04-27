@@ -156,11 +156,11 @@ export default function MockupDetail({ mode = "draft" }: MockupDetailProps) {
 
           <p className="mt-2 text-[12px] font-bold text-ink sm:text-[13px]">Where is my order #1842?</p>
 
-          <p className="mt-2 text-[12px] leading-5 text-slate dark:text-white/80 sm:text-[13px] sm:leading-5">
+          <p className="mt-2 text-[12px] leading-5 text-slate dark:text-white sm:text-[13px] sm:leading-5">
             Hi, I ordered the weighted blanket last week and haven&apos;t received any tracking information yet.
             Can you let me know when it shipped?
           </p>
-          <p className="mt-2 text-[12px] leading-5 text-slate dark:text-white/80 sm:text-[13px] sm:leading-5">
+          <p className="mt-2 text-[12px] leading-5 text-slate dark:text-white sm:text-[13px] sm:leading-5">
             Thanks<br />Sarah
           </p>
         </div>
@@ -179,8 +179,8 @@ export default function MockupDetail({ mode = "draft" }: MockupDetailProps) {
                       key={i}
                       className={
                         isSignoff
-                          ? "text-[12px] text-slate dark:text-white/80 sm:text-[13px]"
-                          : "text-[12px] leading-5 text-slate dark:text-white/80 sm:text-[13px] sm:leading-5"
+                          ? "text-[12px] text-slate dark:text-white sm:text-[13px]"
+                          : "text-[12px] leading-5 text-slate dark:text-white sm:text-[13px] sm:leading-5"
                       }
                     >
                       {line}
@@ -227,15 +227,15 @@ export default function MockupDetail({ mode = "draft" }: MockupDetailProps) {
                       : { duration: 0 }
                 }
               >
-                <p className="text-[12px] leading-5 text-slate dark:text-white/80 sm:text-[13px] sm:leading-5">Hi Sarah,</p>
-                <p className="mt-2 text-[12px] leading-5 text-slate dark:text-white/80 sm:text-[13px] sm:leading-5">
+                <p className="text-[12px] leading-5 text-slate dark:text-white sm:text-[13px] sm:leading-5">Hi Sarah,</p>
+                <p className="mt-2 text-[12px] leading-5 text-slate dark:text-white sm:text-[13px] sm:leading-5">
                   Thanks for reaching out! Your order #1842 shipped yesterday via Australia Post. Your tracking
                   number is AP4821093AU. It usually takes 24-48 hours for the first scan to appear.
                 </p>
-                <p className="mt-2 text-[12px] leading-5 text-slate dark:text-white/80 sm:text-[13px] sm:leading-5">
+                <p className="mt-2 text-[12px] leading-5 text-slate dark:text-white sm:text-[13px] sm:leading-5">
                   If it hasn&apos;t updated in a couple of days, let me know and I&apos;ll look into it for you.
                 </p>
-                <p className="mt-3 text-[12px] text-slate dark:text-white/80 sm:text-[13px]">Kind regards,<br />Kim</p>
+                <p className="mt-3 text-[12px] text-slate dark:text-white sm:text-[13px]">Kind regards,<br />Kim</p>
               </motion.div>
 
               {/* Send icon that flies out during whoosh */}

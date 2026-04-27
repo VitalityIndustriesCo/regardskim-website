@@ -92,7 +92,7 @@ function ReplyPanel({ card }: { card: EmailCard }) {
     return (
       <div className="flex h-full flex-col justify-center gap-3 px-3 py-4">
         <p className="text-center text-xs font-medium text-slate dark:text-white">✓ Nothing needed</p>
-        <p className="text-[11px] leading-4 text-slate dark:text-white/70">
+        <p className="text-[11px] leading-4 text-slate dark:text-white">
           Not a customer email. No reply needed.
         </p>
         <div className="flex justify-center gap-2">
@@ -114,7 +114,7 @@ function ReplyPanel({ card }: { card: EmailCard }) {
           </p>
         ) : (
           card.replyPreview && (
-            <p className="line-clamp-3 text-[11px] leading-4 text-slate dark:text-white/70">
+            <p className="line-clamp-3 text-[11px] leading-4 text-slate dark:text-white">
               {card.replyPreview}
             </p>
           )
@@ -157,10 +157,10 @@ export default function MockupInbox() {
       {/* Column headers */}
       <div className="grid grid-cols-1 gap-x-2.5 px-1 sm:grid-cols-2">
         <div className="pb-1.5">
-          <span className="block text-center text-[10px] font-semibold uppercase tracking-[0.14em] text-slate dark:text-white/70 sm:text-[11px]">Customer Emails</span>
+          <span className="block text-center text-[10px] font-semibold uppercase tracking-[0.14em] text-slate dark:text-white sm:text-[11px]">Customer Emails</span>
         </div>
         <div className="hidden pb-1.5 sm:block">
-          <span className="block text-center text-[10px] font-semibold uppercase tracking-[0.14em] text-slate dark:text-white/70 sm:text-[11px]">Email Replies</span>
+          <span className="block text-center text-[10px] font-semibold uppercase tracking-[0.14em] text-slate dark:text-white sm:text-[11px]">Email Replies</span>
         </div>
       </div>
 
@@ -177,10 +177,10 @@ export default function MockupInbox() {
                 <div className="min-w-0 flex-1">
                   <div className="flex items-center justify-between gap-2">
                     <span className="truncate text-[11px] font-medium text-ink sm:text-xs">{card.sender}</span>
-                    <span className="shrink-0 text-[10px] text-slate dark:text-white/60">{card.timeAgo}</span>
+                    <span className="shrink-0 text-[10px] text-slate dark:text-white">{card.timeAgo}</span>
                   </div>
                   <p className="mt-0.5 truncate text-[11px] font-semibold text-ink sm:text-xs">{card.subject}</p>
-                  <p className="mt-1.5 line-clamp-2 text-[11px] leading-4 text-slate dark:text-white/70">{card.preview}</p>
+                  <p className="mt-1.5 line-clamp-2 text-[11px] leading-4 text-slate dark:text-white">{card.preview}</p>
 
                 </div>
               </div>
