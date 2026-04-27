@@ -33,20 +33,7 @@ export default function Hero() {
             </div>
             <p className="mt-4 text-sm font-medium text-slate">50% off forever for founding stores. No payment required.</p>
 
-            <div className="mx-auto mt-10 grid max-w-3xl gap-3 sm:grid-cols-3">
-              <div className="rounded-2xl border border-[#E3D3C6] bg-white/80 px-4 py-3 shadow-sm backdrop-blur">
-                <p className="text-sm font-extrabold text-ink">Works in Shopify</p>
-                <p className="mt-1 text-xs leading-5 text-slate">Review replies from your admin.</p>
-              </div>
-              <div className="rounded-2xl border border-[#CFE3D1] bg-white/80 px-4 py-3 shadow-sm backdrop-blur">
-                <p className="text-sm font-extrabold text-ink">Uses order details</p>
-                <p className="mt-1 text-xs leading-5 text-slate">Tracking, products, policies.</p>
-              </div>
-              <div className="rounded-2xl border border-[#F1C8C0] bg-white/80 px-4 py-3 shadow-sm backdrop-blur">
-                <p className="text-sm font-extrabold text-ink">Sends from Gmail</p>
-                <p className="mt-1 text-xs leading-5 text-slate">Nothing sends without you.</p>
-              </div>
-            </div>
+
           </div>
         </FadeIn>
 
