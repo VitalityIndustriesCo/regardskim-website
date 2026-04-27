@@ -74,7 +74,7 @@ export default function IntegrationHeroPreview() {
               <p className="mt-3 text-sm leading-6 text-ink">Kind regards,<br />Kim</p>
             </div>
             <div className="mt-4 flex flex-wrap gap-2">
-              <span className="rounded-full bg-[#E97C6B] px-4 py-2 text-xs font-bold text-white shadow-[0_8px_18px_rgba(176,141,87,0.18)]">Approve & send</span>
+              <span className="rounded-full bg-emerald-600 px-4 py-2 text-xs font-bold text-white shadow-[0_8px_18px_rgba(16,185,129,0.25)]">Approve & send</span>
               <span className="rounded-full border border-slate/15 bg-[#1B2436] px-4 py-2 text-xs font-bold text-ink">Edit draft</span>
               <span className="rounded-full border border-slate/15 bg-[#1B2436] px-4 py-2 text-xs font-bold text-ink">Skip</span>
             </div>
