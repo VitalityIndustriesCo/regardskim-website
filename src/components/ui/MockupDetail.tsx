@@ -1,8 +1,8 @@
 "use client";
 
-import { useEffect, useRef, useState, useCallback } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, Send } from "lucide-react";
 
 /* ── Typewriter hook ─────────────────────────────────────────────── */
 
@@ -18,8 +18,8 @@ const REPLY_LINES = [
 ];
 
 const FULL_TEXT = REPLY_LINES.join("\n");
-const CHARS_PER_TICK = 2; // characters revealed per frame — fast but readable
-const TICK_MS = 18; // ms between frames (~55 chars/sec)
+const CHARS_PER_TICK = 2;
+const TICK_MS = 18;
 
 function useTypewriter(trigger: boolean, reducedMotion: boolean | null) {
   const [displayed, setDisplayed] = useState("");
@@ -75,6 +75,38 @@ function useOnceInView(threshold = 0.3) {
   return { ref, inView };
 }
 
+/* ── Send animation phases ───────────────────────────────────────── */
+// idle → pressing → whoosh → sent
+type SendPhase = "idle" | "pressing" | "whoosh" | "sent";
+
+function useSendSequence(trigger: boolean, reducedMotion: boolean | null) {
+  const [phase, setPhase] = useState<SendPhase>("idle");
+  const started = useRef(false);
+
+  useEffect(() => {
+    if (!trigger || started.current) return;
+    started.current = true;
+
+    if (reducedMotion) {
+      setPhase("sent");
+      return;
+    }
+
+    // Timeline: 800ms idle → 400ms pressing → 600ms whoosh → sent
+    const t1 = setTimeout(() => setPhase("pressing"), 800);
+    const t2 = setTimeout(() => setPhase("whoosh"), 1200);
+    const t3 = setTimeout(() => setPhase("sent"), 1800);
+
+    return () => {
+      clearTimeout(t1);
+      clearTimeout(t2);
+      clearTimeout(t3);
+    };
+  }, [trigger, reducedMotion]);
+
+  return phase;
+}
+
 /* ── Component ───────────────────────────────────────────────────── */
 
 type MockupDetailProps = {
@@ -83,24 +115,17 @@ type MockupDetailProps = {
 
 export default function MockupDetail({ mode = "draft" }: MockupDetailProps) {
   const prefersReducedMotion = useReducedMotion();
-  const [sent, setSent] = useState(false);
 
-  useEffect(() => {
-    if (mode !== "approval" || prefersReducedMotion) return;
-    const timer = window.setTimeout(() => setSent(true), 1800);
-    return () => window.clearTimeout(timer);
-  }, [mode, prefersReducedMotion]);
-
-  const isDraft = mode === "draft" || (!prefersReducedMotion && !sent);
-  const isApproval = mode === "approval";
-
-  // Typewriter for draft mode only
+  // Scroll trigger (shared by both modes)
   const { ref: viewRef, inView } = useOnceInView(0.3);
+
+  // Typewriter for draft mode
   const shouldType = mode === "draft" && inView;
   const { displayed, done: typeDone } = useTypewriter(shouldType, prefersReducedMotion);
-
-  // Split displayed text back into lines for paragraph rendering
   const visibleLines = displayed.split("\n");
+
+  // Send sequence for approval mode
+  const sendPhase = useSendSequence(mode === "approval" && inView, prefersReducedMotion);
 
   return (
     <div ref={viewRef}>
@@ -140,15 +165,14 @@ export default function MockupDetail({ mode = "draft" }: MockupDetailProps) {
           </p>
         </div>
 
-        {/* Right: Kim's reply card — typewriter on draft, static on approval */}
-        <div className="rounded-xl border border-slate/10 bg-white px-4 py-4 shadow-[0_4px_16px_rgba(0,0,0,0.10),0_1.5px_4px_rgba(0,0,0,0.06)]">
+        {/* Right: Kim's reply card */}
+        <div className="rounded-xl border border-slate/10 bg-white px-4 py-4 shadow-[0_4px_16px_rgba(0,0,0,0.10),0_1.5px_4px_rgba(0,0,0,0.06)] overflow-hidden">
           {mode === "draft" ? (
+            /* ── Draft mode: typewriter ────────────────────────── */
             <>
-              {/* Typewriter reply */}
               <div className="min-h-[10rem]">
                 {visibleLines.map((line, i) => {
                   if (line === "") return <div key={i} className="h-2" />;
-                  // last two non-empty lines are "Kind regards," and "Kim"
                   const isSignoff = i >= visibleLines.length - 2 && (line.startsWith("Kind regards") || line === "Kim");
                   return (
                     <p
@@ -160,7 +184,6 @@ export default function MockupDetail({ mode = "draft" }: MockupDetailProps) {
                       }
                     >
                       {line}
-                      {/* blinking cursor at end of last visible line */}
                       {i === visibleLines.length - 1 && !typeDone && (
                         <span className="ml-px inline-block h-[0.85em] w-[2px] translate-y-[1px] animate-pulse bg-brass" />
                       )}
@@ -168,8 +191,6 @@ export default function MockupDetail({ mode = "draft" }: MockupDetailProps) {
                   );
                 })}
               </div>
-
-              {/* Buttons fade in once typing finishes */}
               <div
                 className={`mt-3 flex justify-center transition-opacity duration-500 ${typeDone ? "opacity-100" : "opacity-0"}`}
               >
@@ -187,34 +208,81 @@ export default function MockupDetail({ mode = "draft" }: MockupDetailProps) {
               </div>
             </>
           ) : (
-            <>
-              <p className="text-[12px] leading-5 text-slate sm:text-[13px] sm:leading-5">Hi Sarah,</p>
-              <p className="mt-2 text-[12px] leading-5 text-slate sm:text-[13px] sm:leading-5">
-                Thanks for reaching out! Your order #1842 shipped yesterday via Australia Post. Your tracking
-                number is AP4821093AU. It usually takes 24-48 hours for the first scan to appear.
-              </p>
-              <p className="mt-2 text-[12px] leading-5 text-slate sm:text-[13px] sm:leading-5">
-                If it hasn&apos;t updated in a couple of days, let me know and I&apos;ll look into it for you.
-              </p>
-              <p className="mt-3 text-[12px] text-slate sm:text-[13px]">Kind regards,<br />Kim</p>
+            /* ── Approval mode: send animation ────────────────── */
+            <div className="relative">
+              {/* Reply text — whooshes up when sending */}
+              <motion.div
+                animate={
+                  sendPhase === "whoosh"
+                    ? { y: -20, opacity: 0, scale: 0.97 }
+                    : sendPhase === "sent"
+                      ? { y: 0, opacity: 1, scale: 1 }
+                      : { y: 0, opacity: 1, scale: 1 }
+                }
+                transition={
+                  sendPhase === "whoosh"
+                    ? { duration: 0.5, ease: "easeIn" }
+                    : sendPhase === "sent"
+                      ? { duration: 0.4, ease: "easeOut" }
+                      : { duration: 0 }
+                }
+              >
+                <p className="text-[12px] leading-5 text-slate sm:text-[13px] sm:leading-5">Hi Sarah,</p>
+                <p className="mt-2 text-[12px] leading-5 text-slate sm:text-[13px] sm:leading-5">
+                  Thanks for reaching out! Your order #1842 shipped yesterday via Australia Post. Your tracking
+                  number is AP4821093AU. It usually takes 24-48 hours for the first scan to appear.
+                </p>
+                <p className="mt-2 text-[12px] leading-5 text-slate sm:text-[13px] sm:leading-5">
+                  If it hasn&apos;t updated in a couple of days, let me know and I&apos;ll look into it for you.
+                </p>
+                <p className="mt-3 text-[12px] text-slate sm:text-[13px]">Kind regards,<br />Kim</p>
+              </motion.div>
 
-              {/* Action buttons */}
+              {/* Send icon that flies out during whoosh */}
+              <AnimatePresence>
+                {sendPhase === "whoosh" && (
+                  <motion.div
+                    className="absolute inset-0 flex items-center justify-center"
+                    initial={{ opacity: 0, scale: 0.5 }}
+                    animate={{ opacity: 1, scale: 1, y: -30 }}
+                    exit={{ opacity: 0, y: -60, scale: 0.8 }}
+                    transition={{ duration: 0.5, ease: "easeOut" }}
+                  >
+                    <Send size={24} className="text-brass" />
+                  </motion.div>
+                )}
+              </AnimatePresence>
+
+              {/* Buttons / Sent badge */}
               <div className="mt-3 flex justify-center">
                 <AnimatePresence mode="wait">
-                  {isApproval && !isDraft ? (
+                  {sendPhase === "sent" ? (
                     <motion.div
                       key="sent"
-                      initial={prefersReducedMotion ? undefined : { opacity: 0, y: 4 }}
-                      animate={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
+                      initial={{ opacity: 0, y: 6, scale: 0.9 }}
+                      animate={{ opacity: 1, y: 0, scale: 1 }}
+                      transition={{ duration: 0.4, ease: "easeOut" }}
                       className="inline-flex items-center gap-1.5 rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-[11px] font-medium text-emerald-700"
                     >
                       <CheckCircle2 size={13} /> Sent ✓
                     </motion.div>
                   ) : (
-                    <motion.div key="buttons" className="flex flex-wrap justify-center gap-2">
-                      <span className="rounded-lg bg-emerald-600 px-3 py-1.5 text-[11px] font-semibold text-white">
+                    <motion.div
+                      key="buttons"
+                      className="flex flex-wrap justify-center gap-2"
+                      exit={{ opacity: 0, transition: { duration: 0.2 } }}
+                    >
+                      <motion.span
+                        className="rounded-lg bg-emerald-600 px-3 py-1.5 text-[11px] font-semibold text-white"
+                        animate={
+                          sendPhase === "pressing"
+                            ? { scale: 0.92, boxShadow: "0 0 0 3px rgba(16,185,129,0.3)" }
+                            : { scale: 1 }
+                        }
+                        transition={{ duration: 0.15 }}
+                      >
                         Approve &amp; send
-                      </span>
+                      </motion.span>
                       <span className="rounded-lg border border-slate/15 bg-mist px-3 py-1.5 text-[11px] font-medium text-ink">
                         Edit reply
                       </span>
@@ -225,7 +293,7 @@ export default function MockupDetail({ mode = "draft" }: MockupDetailProps) {
                   )}
                 </AnimatePresence>
               </div>
-            </>
+            </div>
           )}
         </div>
       </div>
