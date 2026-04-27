@@ -30,12 +30,12 @@ export default function IntegrationHeroPreview() {
           <div className="flex flex-wrap items-center gap-2 text-xs font-semibold">
             <span className="inline-flex items-center gap-1.5 rounded-full border border-[#CFE3D1] bg-[#F3FAF2] px-3 py-1.5 text-[#386D34] dark:border-slate/15 dark:bg-[#1D2840] dark:text-emerald-400"><ShopifyLogo className="h-4 w-4" /> Shopify admin</span>
             <span className="inline-flex items-center gap-1.5 rounded-full border border-[#E9DCD1] bg-white px-3 py-1.5 text-ink dark:border-slate/12 dark:bg-[#1D2840]"><GmailLogo className="h-4 w-4" /> Gmail Connected</span>
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-[#F1C8C0] bg-[#FFF0ED] px-3 py-1.5 text-[#B85345] dark:border-brass/25 dark:bg-[#1D2840] dark:text-brass"><ShieldCheck size={14} /> Approval required</span>
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-[#F1C8C0] bg-[#FFF0ED] px-3 py-1.5 text-[#B85345] dark:border-brass/25 dark:bg-[#111625] dark:text-brass"><ShieldCheck size={14} /> Approval required</span>
           </div>
         </div>
 
         <div className="grid gap-5 bg-[radial-gradient(circle_at_20%_20%,rgba(233,124,107,0.10),transparent_30%),linear-gradient(180deg,#FFF9F3,#F8F1E7)] dark:bg-[radial-gradient(circle_at_20%_20%,rgba(176,141,87,0.06),transparent_30%),linear-gradient(180deg,#111526,#090B13)] p-4 md:grid-cols-[1fr_1.08fr_0.82fr] md:p-7">
-          <section className="rounded-[1.5rem] border border-[#E9DCD1] bg-white p-4 shadow-[0_18px_40px_rgba(35,53,71,0.14)] dark:border-slate/12 dark:bg-[#1D2840] dark:shadow-[0_18px_40px_rgba(0,0,0,0.30)]">
+          <section className="rounded-[1.5rem] border border-[#E9DCD1] bg-white p-4 shadow-[0_18px_40px_rgba(35,53,71,0.14)] dark:border-slate/12 dark:bg-[#111625] dark:shadow-[0_18px_40px_rgba(0,0,0,0.30)]">
             <div className="mb-4 flex items-center justify-between">
               <div>
                 <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#8A6F61] dark:text-brass">Email from Gmail</p>
@@ -54,12 +54,12 @@ export default function IntegrationHeroPreview() {
               <p className="mt-4 text-sm font-extrabold text-ink">{customerEmail.subject}</p>
               <p className="mt-2 text-sm leading-6 text-slate">{customerEmail.body}</p>
             </div>
-            <div className="mt-3 inline-flex items-center gap-2 rounded-full bg-[#FFF0ED] px-3 py-1.5 text-xs font-bold text-[#B85345] dark:bg-[#1D2840] dark:text-brass">
+            <div className="mt-3 inline-flex items-center gap-2 rounded-full bg-[#FFF0ED] px-3 py-1.5 text-xs font-bold text-[#B85345] dark:bg-[#111625] dark:text-brass">
               <Sparkles size={13} /> Kim matched this to an order
             </div>
           </section>
 
-          <section className="rounded-[1.5rem] border border-[#E9DCD1] bg-white p-4 shadow-[0_22px_48px_rgba(35,53,71,0.16)] dark:border-slate/12 dark:bg-[#1D2840] dark:shadow-[0_22px_48px_rgba(0,0,0,0.32)]">
+          <section className="rounded-[1.5rem] border border-[#E9DCD1] bg-white p-4 shadow-[0_22px_48px_rgba(35,53,71,0.16)] dark:border-slate/12 dark:bg-[#111625] dark:shadow-[0_22px_48px_rgba(0,0,0,0.32)]">
             <div className="mb-4 flex items-center justify-between">
               <div>
                 <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#8A6F61] dark:text-brass">Reply inside Shopify</p>
@@ -74,12 +74,12 @@ export default function IntegrationHeroPreview() {
             </div>
             <div className="mt-4 flex flex-wrap gap-2">
               <span className="rounded-full bg-emerald-600 dark:bg-brass px-4 py-2 text-xs font-bold text-white shadow-[0_8px_18px_rgba(233,124,107,0.28)] dark:shadow-[0_8px_18px_rgba(0,0,0,0.28)]">Approve & send</span>
-              <span className="rounded-full border border-[#E3D3C6] bg-white px-4 py-2 text-xs font-bold text-ink dark:border-slate/15 dark:bg-[#1D2840]">Edit draft</span>
-              <span className="rounded-full border border-[#E3D3C6] bg-white px-4 py-2 text-xs font-bold text-ink dark:border-slate/15 dark:bg-[#1D2840]">Skip</span>
+              <span className="rounded-full border border-[#E3D3C6] bg-white px-4 py-2 text-xs font-bold text-ink dark:border-slate/15 dark:bg-[#20283A]">Edit draft</span>
+              <span className="rounded-full border border-[#E3D3C6] bg-white px-4 py-2 text-xs font-bold text-ink dark:border-slate/15 dark:bg-[#20283A]">Skip</span>
             </div>
           </section>
 
-          <section className="rounded-[1.5rem] border border-[#CFE3D1] bg-[#F8FCF6] p-4 shadow-[0_18px_40px_rgba(56,109,52,0.13)] dark:border-slate/15 dark:bg-[#1D2840] dark:shadow-[0_18px_40px_rgba(0,0,0,0.30)]">
+          <section className="rounded-[1.5rem] border border-[#CFE3D1] bg-[#F8FCF6] p-4 shadow-[0_18px_40px_rgba(56,109,52,0.13)] dark:border-slate/15 dark:bg-[#111625] dark:shadow-[0_18px_40px_rgba(0,0,0,0.30)]">
             <div className="mb-4 flex items-center gap-3">
               <ShopifyLogo className="h-9 w-9" />
               <div>
