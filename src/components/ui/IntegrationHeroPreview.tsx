@@ -17,49 +17,33 @@ const orderFacts = [
 export default function IntegrationHeroPreview() {
   return (
     <div className="relative mx-auto max-w-6xl">
-      <div className="absolute -left-8 top-16 hidden rounded-2xl border border-[#D9C6B8]/70 bg-white/85 px-4 py-3 shadow-[0_18px_45px_rgba(35,53,71,0.12)] backdrop-blur md:flex md:items-center md:gap-3">
-        <GmailLogo className="h-7 w-7" />
-        <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#8A6F61]">Gmail connected</p>
-          <p className="text-sm font-bold text-ink">support@yourstore.com</p>
-        </div>
-      </div>
-
-      <div className="absolute -right-6 top-28 hidden rounded-2xl border border-[#CFE3D1] bg-white/90 px-4 py-3 shadow-[0_18px_45px_rgba(35,53,71,0.12)] backdrop-blur md:flex md:items-center md:gap-3">
-        <ShopifyLogo className="h-8 w-8" />
-        <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#5F7F4A]">Shopify synced</p>
-          <p className="text-sm font-bold text-ink">Live order data</p>
-        </div>
-      </div>
-
-      <div className="overflow-hidden rounded-[2rem] border border-[#E3D3C6] bg-[#FFF9F3] shadow-[0_28px_90px_rgba(35,53,71,0.16)]">
+      <div className="overflow-hidden rounded-[2rem] border border-[#E3D3C6] bg-[#FFF9F3] shadow-[0_34px_110px_rgba(35,53,71,0.24),0_18px_45px_rgba(233,124,107,0.14)]">
         <div className="flex flex-wrap items-center justify-between gap-3 border-b border-[#E9DCD1] bg-white/70 px-5 py-4 backdrop-blur md:px-7">
           <div className="flex items-center gap-3">
             <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-[#E97C6B] text-base font-black text-white shadow-[0_10px_24px_rgba(233,124,107,0.28)]">K</div>
             <div>
               <p className="font-display text-lg font-extrabold text-ink">Regards Kim</p>
-              <p className="text-xs font-medium text-slate">Post-purchase support desk</p>
+              <p className="text-xs font-medium text-slate">Inside your Shopify admin</p>
             </div>
           </div>
 
           <div className="flex flex-wrap items-center gap-2 text-xs font-semibold">
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-[#E9DCD1] bg-white px-3 py-1.5 text-ink"><GmailLogo className="h-4 w-4" /> Gmail</span>
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-[#CFE3D1] bg-[#F3FAF2] px-3 py-1.5 text-[#386D34]"><ShopifyLogo className="h-4 w-4" /> Shopify</span>
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-[#CFE3D1] bg-[#F3FAF2] px-3 py-1.5 text-[#386D34]"><ShopifyLogo className="h-4 w-4" /> Shopify admin</span>
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-[#E9DCD1] bg-white px-3 py-1.5 text-ink"><GmailLogo className="h-4 w-4" /> Gmail sending</span>
             <span className="inline-flex items-center gap-1.5 rounded-full border border-[#F1C8C0] bg-[#FFF0ED] px-3 py-1.5 text-[#B85345]"><ShieldCheck size={14} /> Approval required</span>
           </div>
         </div>
 
         <div className="grid gap-5 bg-[radial-gradient(circle_at_20%_20%,rgba(233,124,107,0.10),transparent_30%),linear-gradient(180deg,#FFF9F3,#F8F1E7)] p-4 md:grid-cols-[1fr_1.08fr_0.82fr] md:p-7">
-          <section className="rounded-[1.5rem] border border-[#E9DCD1] bg-white p-4 shadow-sm">
+          <section className="rounded-[1.5rem] border border-[#E9DCD1] bg-white p-4 shadow-[0_18px_40px_rgba(35,53,71,0.14)]">
             <div className="mb-4 flex items-center justify-between">
               <div>
-                <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#8A6F61]">Gmail inbox</p>
+                <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#8A6F61]">Email from Gmail</p>
                 <h3 className="mt-1 font-display text-xl font-extrabold text-ink">Customer email</h3>
               </div>
               <MailCheck className="text-[#E97C6B]" size={22} />
             </div>
-            <div className="rounded-2xl border border-[#E9DCD1] bg-[#FFF9F3] p-4">
+            <div className="rounded-2xl border border-[#E9DCD1] bg-[#FFF9F3] p-4 shadow-[0_10px_26px_rgba(35,53,71,0.08)]">
               <div className="flex items-center gap-3">
                 <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[#E97C6B] text-sm font-bold text-white">S</div>
                 <div className="min-w-0">
@@ -75,15 +59,15 @@ export default function IntegrationHeroPreview() {
             </div>
           </section>
 
-          <section className="rounded-[1.5rem] border border-[#E9DCD1] bg-white p-4 shadow-sm">
+          <section className="rounded-[1.5rem] border border-[#E9DCD1] bg-white p-4 shadow-[0_22px_48px_rgba(35,53,71,0.16)]">
             <div className="mb-4 flex items-center justify-between">
               <div>
-                <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#8A6F61]">Draft reply</p>
+                <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#8A6F61]">Reply inside Shopify</p>
                 <h3 className="mt-1 font-display text-xl font-extrabold text-ink">Ready for approval</h3>
               </div>
               <span className="rounded-full bg-[#F3FAF2] px-3 py-1 text-xs font-bold text-[#386D34]">98% ready</span>
             </div>
-            <div className="rounded-2xl border border-[#E9DCD1] bg-[#FFF9F3] p-5">
+            <div className="rounded-2xl border border-[#E9DCD1] bg-[#FFF9F3] p-5 shadow-[0_12px_30px_rgba(35,53,71,0.09)]">
               <p className="text-sm leading-6 text-ink">Hi Sarah,</p>
               <p className="mt-3 text-sm leading-6 text-ink">Thanks for checking in. Regards Kim found order <strong>#1842</strong> and it shipped yesterday with Australia Post.</p>
               <p className="mt-3 text-sm leading-6 text-ink">Your tracking number is <strong>AP4821093AU</strong>. The first scan can take 24 to 48 hours, so it should update shortly.</p>
@@ -96,7 +80,7 @@ export default function IntegrationHeroPreview() {
             </div>
           </section>
 
-          <section className="rounded-[1.5rem] border border-[#CFE3D1] bg-[#F8FCF6] p-4 shadow-sm">
+          <section className="rounded-[1.5rem] border border-[#CFE3D1] bg-[#F8FCF6] p-4 shadow-[0_18px_40px_rgba(56,109,52,0.13)]">
             <div className="mb-4 flex items-center gap-3">
               <ShopifyLogo className="h-9 w-9" />
               <div>

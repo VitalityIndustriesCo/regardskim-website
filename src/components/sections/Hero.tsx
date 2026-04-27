@@ -12,15 +12,15 @@ export default function Hero() {
         <FadeIn className="mx-auto max-w-5xl text-center">
           <div className="mx-auto max-w-4xl pt-20 md:pt-32">
             <div className="mx-auto mb-6 inline-flex flex-wrap items-center justify-center gap-2 rounded-full border border-[#E3D3C6] bg-white/80 px-4 py-2 text-xs font-bold uppercase tracking-[0.14em] text-[#8A6F61] shadow-sm backdrop-blur">
-              <ShopifyLogo className="h-5 w-5" /> Built for Shopify
+              <ShopifyLogo className="h-5 w-5" /> Works inside Shopify
               <span className="h-1 w-1 rounded-full bg-[#C9B5A7]" />
-              <GmailLogo className="h-4 w-4" /> Connects to Gmail
+              <GmailLogo className="h-4 w-4" /> Sends from Gmail
             </div>
             <h1 className="font-display text-5xl font-extrabold leading-[1.02] tracking-tight text-ink md:text-8xl">
               Customer emails, handled.
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-slate md:text-xl">
-              Regards Kim connects Gmail to your Shopify store, matches customer emails to live order data, and prepares polished replies for you to approve.
+              Regards Kim lives inside your Shopify admin, turns customer emails into ready-to-check replies, and sends from your Gmail when you approve.
             </p>
 
             <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
@@ -35,15 +35,15 @@ export default function Hero() {
 
             <div className="mx-auto mt-10 grid max-w-3xl gap-3 sm:grid-cols-3">
               <div className="rounded-2xl border border-[#E3D3C6] bg-white/80 px-4 py-3 shadow-sm backdrop-blur">
-                <p className="text-sm font-extrabold text-ink">Sends from Gmail</p>
-                <p className="mt-1 text-xs leading-5 text-slate">Customers only see your store.</p>
+                <p className="text-sm font-extrabold text-ink">Works in Shopify</p>
+                <p className="mt-1 text-xs leading-5 text-slate">Review replies from your admin.</p>
               </div>
               <div className="rounded-2xl border border-[#CFE3D1] bg-white/80 px-4 py-3 shadow-sm backdrop-blur">
-                <p className="text-sm font-extrabold text-ink">Reads Shopify data</p>
-                <p className="mt-1 text-xs leading-5 text-slate">Orders, tracking, products, policies.</p>
+                <p className="text-sm font-extrabold text-ink">Uses order details</p>
+                <p className="mt-1 text-xs leading-5 text-slate">Tracking, products, policies.</p>
               </div>
               <div className="rounded-2xl border border-[#F1C8C0] bg-white/80 px-4 py-3 shadow-sm backdrop-blur">
-                <p className="text-sm font-extrabold text-ink">Approval first</p>
+                <p className="text-sm font-extrabold text-ink">Sends from Gmail</p>
                 <p className="mt-1 text-xs leading-5 text-slate">Nothing sends without you.</p>
               </div>
             </div>
