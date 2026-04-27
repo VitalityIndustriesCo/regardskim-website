@@ -1,11 +1,13 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme inline {
   --font-display: var(--font-plus-jakarta);
   --font-sans: var(--font-plus-jakarta);
 
-  /* ── Premium light theme colour tokens ── */
+  /* ── Colour tokens (light defaults, overridden by .dark) ── */
   --color-forest: #233547;
   --color-cream: #FFF9F3;
   --color-oxblood: #D96252;
@@ -48,8 +50,8 @@
   --color-sidebar-border: hsl(var(--sidebar-border));
 }
 
+/* ── Light theme (default) ── */
 :root {
-  /* Premium light theme HSL variables */
   --background: 36 55% 94%;
   --foreground: 207 34% 21%;
   --card: 30 100% 98%;
@@ -76,6 +78,48 @@
   --sidebar-border: 214 32% 91%;
 }
 
+/* ── Dark theme ── */
+.dark {
+  --color-forest: #0C111B;
+  --color-cream: #1B2436;
+  --color-oxblood: #C9A66B;
+  --color-brass: #B08D57;
+  --color-ink: #FFFFFF;
+  --color-slate: #94A3B8;
+  --color-mist: #1E293B;
+  --color-paper: #0C111B;
+  --color-badge-green: #22C55E;
+  --color-badge-amber: #F59E0B;
+  --color-badge-blue: #3B82F6;
+  --color-badge-orange: #C9A66B;
+  --color-badge-gray: #64748B;
+
+  --background: 220 50% 5%;
+  --foreground: 0 0% 100%;
+  --card: 215 35% 11%;
+  --card-foreground: 0 0% 100%;
+  --popover: 215 35% 11%;
+  --popover-foreground: 0 0% 100%;
+  --primary: 38 35% 52%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 215 30% 15%;
+  --secondary-foreground: 210 40% 90%;
+  --muted: 215 30% 15%;
+  --muted-foreground: 215 20% 65%;
+  --accent: 38 35% 52%;
+  --accent-foreground: 0 0% 100%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 215 25% 18%;
+  --input: 215 25% 18%;
+  --ring: 38 35% 52%;
+  --sidebar: 220 40% 6%;
+  --sidebar-foreground: 210 40% 90%;
+  --sidebar-accent: 38 35% 52%;
+  --sidebar-accent-foreground: 220 30% 5%;
+  --sidebar-border: 215 25% 18%;
+}
+
 html {
   overflow-x: hidden;
 }
@@ -83,9 +127,6 @@ html {
 body {
   max-width: 100vw;
   overflow-x: hidden;
-}
-
-body {
   background: var(--color-paper);
   color: var(--color-ink);
 }
@@ -98,7 +139,7 @@ main {
   position: relative;
 }
 
-/* Subtle light-mode textures */
+/* ── Textures ── */
 .paper-grain {
   background-image:
     radial-gradient(circle at 12% 18%, rgba(233, 124, 107, 0.09) 0, transparent 34%),
@@ -107,23 +148,44 @@ main {
     linear-gradient(160deg, rgba(255, 249, 243, 0.95), rgba(248, 241, 231, 1));
 }
 
+.dark .paper-grain {
+  background-image:
+    radial-gradient(circle at 12% 18%, rgba(176, 141, 87, 0.06) 0, transparent 34%),
+    radial-gradient(circle at 84% 4%, rgba(100, 130, 160, 0.08) 0, transparent 30%),
+    radial-gradient(circle at 50% 90%, rgba(30, 41, 59, 0.6) 0, transparent 60%),
+    linear-gradient(160deg, rgba(12, 17, 27, 0.98), rgba(12, 17, 27, 1));
+}
+
 .texture-mist {
   background-image: linear-gradient(135deg, rgba(255, 249, 243, 0.94), rgba(246, 221, 210, 0.58));
+}
+
+.dark .texture-mist {
+  background-image: linear-gradient(135deg, rgba(12, 17, 27, 0.94), rgba(30, 41, 59, 0.58));
 }
 
 .section-shell {
   @apply mx-auto w-full max-w-6xl px-6 md:px-10;
 }
 
+/* ── Buttons ── */
 .btn-primary {
   @apply inline-flex items-center justify-center rounded-full bg-brass px-6 py-3 text-sm font-bold text-white shadow-[0_10px_24px_rgba(233,124,107,0.28)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-oxblood hover:shadow-[0_14px_30px_rgba(233,124,107,0.34)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brass focus-visible:ring-offset-2;
+}
+
+.dark .btn-primary {
+  @apply shadow-[0_10px_24px_rgba(176,141,87,0.3)] hover:shadow-[0_14px_30px_rgba(176,141,87,0.35)];
 }
 
 .btn-secondary {
   @apply inline-flex items-center justify-center rounded-full border border-brass/35 bg-white px-6 py-3 text-sm font-bold text-ink transition-all duration-200 hover:border-brass hover:bg-[#FFF0ED] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brass focus-visible:ring-offset-2;
 }
 
-/* Blog prose — dark text on light background */
+.dark .btn-secondary {
+  @apply border-brass/40 bg-[#1B2436] hover:bg-[#1E293B];
+}
+
+/* ── Blog prose ── */
 .blog-prose {
   @apply text-lg leading-8 text-slate;
 }
@@ -164,6 +226,10 @@ main {
 
 .blog-prose blockquote {
   @apply rounded-r-2xl border-l-4 border-brass bg-amber-50 px-5 py-4 text-ink;
+}
+
+.dark .blog-prose blockquote {
+  @apply bg-[#1E293B];
 }
 
 .blog-prose strong {

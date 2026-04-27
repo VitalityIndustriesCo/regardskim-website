@@ -30,7 +30,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="border-t border-slate/10 bg-white py-12">
+    <footer className="border-t border-slate/10 bg-white py-12 dark:bg-[#111827]">
       <div className="section-shell grid gap-8 md:grid-cols-3 md:items-start">
         <div>
           <p className="font-display font-bold text-2xl text-ink">RegardsKim</p>
@@ -55,7 +55,7 @@ export default function Footer() {
                 value={email}
                 onChange={(e) => { setEmail(e.target.value); if (status !== "idle") setStatus("idle"); }}
                 placeholder="you@store.com"
-                className="w-full max-w-[220px] rounded-lg border border-slate/20 bg-mist px-3 py-2 text-sm text-ink placeholder:text-slate/50 focus:border-brass focus:bg-white focus:outline-none focus:ring-2 focus:ring-brass/30"
+                className="w-full max-w-[220px] rounded-lg border border-slate/20 bg-mist px-3 py-2 text-sm text-ink placeholder:text-slate/50 focus:border-brass focus:bg-white focus:outline-none focus:ring-2 focus:ring-brass/30 dark:focus:bg-[#1B2436]"
               />
               <button
                 type="submit"

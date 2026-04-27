@@ -35,6 +35,11 @@ export default function RootLayout({
     >
       <head>
         <meta name="shopify-api-key" content="327e4daf19a338e5b04707172c2b39bc" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem('theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme:dark)').matches)){document.documentElement.classList.add('dark')}}catch(e){}})();`,
+          }}
+        />
       </head>
       <body className={cn("min-h-full font-sans", plusJakarta.className, geistMono.variable)}>
         <Script src="https://cdn.shopify.com/shopifycloud/app-bridge.js" strategy="beforeInteractive" />

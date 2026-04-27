@@ -129,7 +129,7 @@ function SalesMessageBubble({ message }: { message: SalesChatMessage }) {
       <div
         className={cn(
           "max-w-[88%] rounded-2xl px-3 py-2 text-sm leading-relaxed shadow-sm sm:max-w-[86%]",
-          isUser ? "bg-brass text-white" : "bg-cream text-ink"
+          isUser ? "bg-brass text-white" : "bg-cream text-ink dark:bg-[#1B2436]"
         )}
       >
         <p>{message.content}</p>
@@ -233,8 +233,8 @@ export function SalesChatPanel({ onClose }: Props) {
   };
 
   return (
-    <Card className="fixed inset-x-3 bottom-3 z-50 flex h-[min(75vh,560px)] w-auto max-w-none flex-col border border-forest/10 bg-paper shadow-[0_24px_60px_rgba(26,26,26,0.16)] sm:right-4 sm:bottom-20 sm:left-auto sm:h-[560px] sm:w-[380px] sm:max-w-[calc(100vw-2rem)]">
-      <CardHeader className="border-b border-forest/10 bg-paper px-4 pb-3 sm:px-6">
+    <Card className="fixed inset-x-3 bottom-3 z-50 flex h-[min(75vh,560px)] w-auto max-w-none flex-col border border-forest/10 bg-paper shadow-[0_24px_60px_rgba(26,26,26,0.16)] dark:bg-[#111827] sm:right-4 sm:bottom-20 sm:left-auto sm:h-[560px] sm:w-[380px] sm:max-w-[calc(100vw-2rem)]">
+      <CardHeader className="border-b border-forest/10 bg-paper px-4 pb-3 dark:bg-[#111827] sm:px-6">
         <div className="flex items-center justify-between gap-3">
           <div className="min-w-0">
             <CardTitle className="text-sm font-semibold text-ink">Sales support</CardTitle>
@@ -260,7 +260,7 @@ export function SalesChatPanel({ onClose }: Props) {
           )}
 
           {showEmailCapture ? (
-            <div className="rounded-2xl border border-forest/10 bg-cream p-3 shadow-sm">
+            <div className="rounded-2xl border border-forest/10 bg-cream p-3 shadow-sm dark:bg-[#1B2436]">
               <p className="mb-2 text-sm font-medium text-ink">{EMAIL_PROMPT}</p>
               <div className="flex flex-col gap-2 sm:flex-row">
                 <Input
@@ -284,7 +284,7 @@ export function SalesChatPanel({ onClose }: Props) {
         </div>
       </CardContent>
 
-      <CardFooter className="flex-col gap-3 border-t border-forest/10 bg-paper px-4 py-4 sm:px-6">
+      <CardFooter className="flex-col gap-3 border-t border-forest/10 bg-paper px-4 py-4 dark:bg-[#111827] sm:px-6">
         <div className="flex w-full items-center gap-2">
           <Input
             value={input}
