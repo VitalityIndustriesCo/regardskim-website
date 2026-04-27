@@ -15,7 +15,7 @@ export default function VideoDemo() {
         </FadeIn>
 
         <FadeIn delay={0.06} className="mx-auto mt-8 max-w-5xl">
-          <div className="overflow-hidden rounded-[2rem] border border-mist bg-cream p-3 shadow-sm md:p-4">
+          <div className="overflow-hidden rounded-[2rem] border border-mist bg-[#0F1B2E] p-3 shadow-sm md:p-4">
             <div className="relative aspect-video rounded-[1.5rem] border border-dashed border-mist bg-mist/50">
               <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 px-6 text-center">
                 <div className="flex h-18 w-18 items-center justify-center rounded-full border border-mist bg-cream text-brass shadow-sm md:h-20 md:w-20">

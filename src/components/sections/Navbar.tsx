@@ -73,7 +73,7 @@ export default function Navbar() {
 
           <button
             type="button"
-            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate/15 bg-cream text-ink transition-all duration-200 hover:border-brass/40 hover:bg-mist focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brass focus-visible:ring-offset-2 md:hidden"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate/15 bg-[#0F1B2E] text-ink transition-all duration-200 hover:border-brass/40 hover:bg-mist focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brass focus-visible:ring-offset-2 md:hidden"
             aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileMenuOpen}
             aria-controls="mobile-navigation"
@@ -111,7 +111,7 @@ export default function Navbar() {
 
       <div
         id="mobile-navigation"
-        className={`fixed right-0 top-0 z-50 flex h-screen w-full max-w-sm flex-col border-l border-slate/10 bg-cream shadow-[-8px_0_32px_rgba(0,0,0,0.4)] transition-transform duration-300 ease-out md:hidden ${
+        className={`fixed right-0 top-0 z-50 flex h-screen w-full max-w-sm flex-col border-l border-slate/10 bg-[#0F1B2E] shadow-[-8px_0_32px_rgba(0,0,0,0.4)] transition-transform duration-300 ease-out md:hidden ${
           mobileMenuOpen ? "translate-x-0" : "translate-x-full"
         }`}
         aria-hidden={!mobileMenuOpen}

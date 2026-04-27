@@ -12,7 +12,7 @@ function AnnotationBadge({
 }) {
   return (
     <div
-      className={`pointer-events-none absolute hidden items-center gap-2 rounded-full border border-slate/15 bg-cream px-3 py-2 text-xs font-medium text-ink shadow-[0_4px_16px_rgba(0,0,0,0.10)] md:flex ${className ?? ""}`}
+      className={`pointer-events-none absolute hidden items-center gap-2 rounded-full border border-slate/15 bg-[#162236] px-3 py-2 text-xs font-medium text-ink shadow-[0_4px_16px_rgba(0,0,0,0.10)] md:flex ${className ?? ""}`}
     >
       <span className="flex h-6 w-6 items-center justify-center rounded-full bg-brass/10 text-brass">{icon}</span>
       <span className="whitespace-nowrap">{label}</span>
@@ -24,7 +24,7 @@ function InboxBadge({ children, tone = "muted" }: { children: ReactNode; tone?: 
   const toneClass =
     tone === "accent"
       ? "border-brass/30 bg-brass/15 text-brass"
-      : "border-mist bg-cream/60 text-slate";
+      : "border-mist bg-[#162236]/60 text-slate";
 
   return <span className={`inline-flex rounded-full border px-2 py-0.5 text-[10px] font-medium ${toneClass}`}>{children}</span>;
 }
@@ -54,7 +54,7 @@ export default function HeroInboxPreview() {
           className="-bottom-4 left-4 z-10 lg:-left-16"
         />
 
-        <div className="rounded-[1.5rem] border border-slate/12 bg-cream shadow-[0_16px_48px_rgba(0,0,0,0.10),0_2px_8px_rgba(0,0,0,0.06)] sm:rounded-[2rem]">
+        <div className="rounded-[1.5rem] border border-slate/12 bg-[#0F1B2E] shadow-[0_16px_48px_rgba(0,0,0,0.10),0_2px_8px_rgba(0,0,0,0.06)] sm:rounded-[2rem]">
           <div className="flex items-center gap-3 border-b border-mist bg-mist px-3 py-3 sm:px-5">
             <div className="flex items-center gap-1.5">
               <span className="h-2.5 w-2.5 rounded-full bg-[#EE8A72]" />
@@ -82,7 +82,7 @@ export default function HeroInboxPreview() {
                       Hi, I ordered the weighted blanket last week and haven&apos;t received any tracking...
                     </p>
 
-                    <div className="mt-3 rounded-[1rem] border border-brass/20 bg-cream px-3 py-2.5 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] sm:mt-4 sm:rounded-[1.25rem] sm:px-4 sm:py-3">
+                    <div className="mt-3 rounded-[1rem] border border-brass/20 bg-[#162236] px-3 py-2.5 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] sm:mt-4 sm:rounded-[1.25rem] sm:px-4 sm:py-3">
                       <p className="text-[11px] font-semibold uppercase tracking-[0.08em] text-brass sm:text-xs">Draft</p>
                       <p className="mt-1.5 text-[12px] leading-5 text-slate sm:mt-2 sm:text-sm sm:leading-6">
                         <span className="sm:hidden">Hi Sarah — your order #1842 shipped yesterday. Tracking: AP4821…</span>
@@ -96,7 +96,7 @@ export default function HeroInboxPreview() {
                 </div>
 
                 <div className="mt-3 flex justify-end md:hidden">
-                  <div className="inline-flex max-w-full items-center gap-2 rounded-full border border-mist bg-cream px-3 py-2 text-[11px] font-medium text-ink shadow-sm">
+                  <div className="inline-flex max-w-full items-center gap-2 rounded-full border border-mist bg-[#162236] px-3 py-2 text-[11px] font-medium text-ink shadow-sm">
                     <span className="flex h-5 w-5 items-center justify-center rounded-full bg-brass/10 text-brass">
                       <PenLine size={12} strokeWidth={2} />
                     </span>
@@ -105,7 +105,7 @@ export default function HeroInboxPreview() {
                 </div>
               </article>
 
-              <article className="rounded-[1.25rem] border border-mist bg-cream p-3 text-left sm:rounded-[1.5rem] sm:p-4">
+              <article className="rounded-[1.25rem] border border-mist bg-[#162236] p-3 text-left sm:rounded-[1.5rem] sm:p-4">
                 <div className="flex items-start gap-2.5 sm:gap-3">
                   <Avatar initial="J" />
                   <div className="min-w-0 flex-1">
@@ -124,7 +124,7 @@ export default function HeroInboxPreview() {
                 </div>
               </article>
 
-              <article className="rounded-[1.25rem] border border-mist bg-cream p-3 text-left sm:rounded-[1.5rem] sm:p-4">
+              <article className="rounded-[1.25rem] border border-mist bg-[#162236] p-3 text-left sm:rounded-[1.5rem] sm:p-4">
                 <div className="flex items-start gap-2.5 sm:gap-3">
                   <Avatar initial="M" />
                   <div className="min-w-0 flex-1">
@@ -145,7 +145,7 @@ export default function HeroInboxPreview() {
             </div>
 
             <div className="mt-4 flex justify-center md:hidden">
-              <div className="inline-flex max-w-full items-center gap-2 rounded-full border border-mist bg-cream px-3 py-2 text-[11px] font-medium text-ink shadow-sm">
+              <div className="inline-flex max-w-full items-center gap-2 rounded-full border border-mist bg-[#162236] px-3 py-2 text-[11px] font-medium text-ink shadow-sm">
                 <span className="flex h-5 w-5 items-center justify-center rounded-full bg-brass/10 text-brass">
                   <Flag size={12} strokeWidth={2} />
                 </span>
