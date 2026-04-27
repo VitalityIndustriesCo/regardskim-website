@@ -96,8 +96,8 @@ function ReplyPanel({ card }: { card: EmailCard }) {
           Not a customer email. No reply needed.
         </p>
         <div className="flex justify-center gap-2">
-          <span className="rounded-lg border border-slate/15 bg-mist px-2.5 py-1 text-[10px] font-medium text-ink">Review</span>
-          <span className="rounded-lg border border-slate/15 bg-mist px-2.5 py-1 text-[10px] font-medium text-ink">Mark done</span>
+          <span className="rounded-lg border border-slate/15 bg-mist px-2.5 py-1 text-[10px] font-medium text-ink dark:text-white">Review</span>
+          <span className="rounded-lg border border-slate/15 bg-mist px-2.5 py-1 text-[10px] font-medium text-ink dark:text-white">Mark done</span>
         </div>
       </div>
     );
@@ -123,14 +123,14 @@ function ReplyPanel({ card }: { card: EmailCard }) {
       <div className="mt-3 flex flex-wrap justify-center gap-1.5">
         {isAction ? (
           <>
-            <span className="rounded-lg border border-slate/15 bg-mist px-2.5 py-1 text-[10px] font-medium text-ink">Write reply</span>
-            <span className="rounded-lg border border-slate/15 bg-mist px-2.5 py-1 text-[10px] font-medium text-ink">Skip for now</span>
+            <span className="rounded-lg border border-slate/15 bg-mist px-2.5 py-1 text-[10px] font-medium text-ink dark:text-white">Write reply</span>
+            <span className="rounded-lg border border-slate/15 bg-mist px-2.5 py-1 text-[10px] font-medium text-ink dark:text-white">Skip for now</span>
           </>
         ) : (
           <>
-            <span className="rounded-lg bg-emerald-600 px-2.5 py-1 text-[10px] font-semibold text-white">Approve &amp; send</span>
-            <span className="rounded-lg border border-slate/15 bg-mist px-2.5 py-1 text-[10px] font-medium text-ink">Edit reply</span>
-            <span className="rounded-lg border border-slate/15 bg-mist px-2.5 py-1 text-[10px] font-medium text-ink">Skip for now</span>
+            <span className="rounded-lg bg-emerald-600 dark:bg-brass px-2.5 py-1 text-[10px] font-semibold text-white">Approve &amp; send</span>
+            <span className="rounded-lg border border-slate/15 bg-mist px-2.5 py-1 text-[10px] font-medium text-ink dark:text-white">Edit reply</span>
+            <span className="rounded-lg border border-slate/15 bg-mist px-2.5 py-1 text-[10px] font-medium text-ink dark:text-white">Skip for now</span>
           </>
         )}
       </div>
@@ -177,7 +177,7 @@ export default function MockupInbox() {
                 <div className="min-w-0 flex-1">
                   <div className="flex items-center justify-between gap-2">
                     <span className="truncate text-[11px] font-medium text-ink sm:text-xs">{card.sender}</span>
-                    <span className="shrink-0 text-[10px] text-slate">{card.timeAgo}</span>
+                    <span className="shrink-0 text-[10px] text-slate dark:text-white/60">{card.timeAgo}</span>
                   </div>
                   <p className="mt-0.5 truncate text-[11px] font-semibold text-ink sm:text-xs">{card.subject}</p>
                   <p className="mt-1.5 line-clamp-2 text-[11px] leading-4 text-slate dark:text-white/70">{card.preview}</p>

@@ -156,11 +156,11 @@ export default function MockupDetail({ mode = "draft" }: MockupDetailProps) {
 
           <p className="mt-2 text-[12px] font-bold text-ink sm:text-[13px]">Where is my order #1842?</p>
 
-          <p className="mt-2 text-[12px] leading-5 text-slate sm:text-[13px] sm:leading-5">
+          <p className="mt-2 text-[12px] leading-5 text-slate dark:text-white/80 sm:text-[13px] sm:leading-5">
             Hi, I ordered the weighted blanket last week and haven&apos;t received any tracking information yet.
             Can you let me know when it shipped?
           </p>
-          <p className="mt-2 text-[12px] leading-5 text-slate sm:text-[13px] sm:leading-5">
+          <p className="mt-2 text-[12px] leading-5 text-slate dark:text-white/80 sm:text-[13px] sm:leading-5">
             Thanks<br />Sarah
           </p>
         </div>
@@ -179,8 +179,8 @@ export default function MockupDetail({ mode = "draft" }: MockupDetailProps) {
                       key={i}
                       className={
                         isSignoff
-                          ? "text-[12px] text-slate sm:text-[13px]"
-                          : "text-[12px] leading-5 text-slate sm:text-[13px] sm:leading-5"
+                          ? "text-[12px] text-slate dark:text-white/80 sm:text-[13px]"
+                          : "text-[12px] leading-5 text-slate dark:text-white/80 sm:text-[13px] sm:leading-5"
                       }
                     >
                       {line}
@@ -195,13 +195,13 @@ export default function MockupDetail({ mode = "draft" }: MockupDetailProps) {
                 className={`mt-3 flex justify-center transition-opacity duration-500 ${typeDone ? "opacity-100" : "opacity-0"}`}
               >
                 <div className="flex flex-wrap justify-center gap-2">
-                  <span className="rounded-lg bg-emerald-600 px-3 py-1.5 text-[11px] font-semibold text-white">
+                  <span className="rounded-lg bg-emerald-600 dark:bg-brass px-3 py-1.5 text-[11px] font-semibold text-white">
                     Approve &amp; send
                   </span>
-                  <span className="rounded-lg border border-slate/15 bg-mist px-3 py-1.5 text-[11px] font-medium text-ink">
+                  <span className="rounded-lg border border-slate/15 bg-mist px-3 py-1.5 text-[11px] font-medium text-ink dark:text-white">
                     Edit reply
                   </span>
-                  <span className="rounded-lg border border-slate/15 bg-mist px-3 py-1.5 text-[11px] font-medium text-ink">
+                  <span className="rounded-lg border border-slate/15 bg-mist px-3 py-1.5 text-[11px] font-medium text-ink dark:text-white">
                     Skip for now
                   </span>
                 </div>
@@ -227,15 +227,15 @@ export default function MockupDetail({ mode = "draft" }: MockupDetailProps) {
                       : { duration: 0 }
                 }
               >
-                <p className="text-[12px] leading-5 text-slate sm:text-[13px] sm:leading-5">Hi Sarah,</p>
-                <p className="mt-2 text-[12px] leading-5 text-slate sm:text-[13px] sm:leading-5">
+                <p className="text-[12px] leading-5 text-slate dark:text-white/80 sm:text-[13px] sm:leading-5">Hi Sarah,</p>
+                <p className="mt-2 text-[12px] leading-5 text-slate dark:text-white/80 sm:text-[13px] sm:leading-5">
                   Thanks for reaching out! Your order #1842 shipped yesterday via Australia Post. Your tracking
                   number is AP4821093AU. It usually takes 24-48 hours for the first scan to appear.
                 </p>
-                <p className="mt-2 text-[12px] leading-5 text-slate sm:text-[13px] sm:leading-5">
+                <p className="mt-2 text-[12px] leading-5 text-slate dark:text-white/80 sm:text-[13px] sm:leading-5">
                   If it hasn&apos;t updated in a couple of days, let me know and I&apos;ll look into it for you.
                 </p>
-                <p className="mt-3 text-[12px] text-slate sm:text-[13px]">Kind regards,<br />Kim</p>
+                <p className="mt-3 text-[12px] text-slate dark:text-white/80 sm:text-[13px]">Kind regards,<br />Kim</p>
               </motion.div>
 
               {/* Send icon that flies out during whoosh */}
@@ -262,7 +262,7 @@ export default function MockupDetail({ mode = "draft" }: MockupDetailProps) {
                       initial={{ opacity: 0, y: 6, scale: 0.9 }}
                       animate={{ opacity: 1, y: 0, scale: 1 }}
                       transition={{ duration: 0.4, ease: "easeOut" }}
-                      className="inline-flex items-center gap-1.5 rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-[11px] font-medium text-emerald-700 dark:border-emerald-800 dark:bg-emerald-950 dark:text-emerald-400"
+                      className="inline-flex items-center gap-1.5 rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-[11px] font-medium text-emerald-700 dark:text-white dark:border-emerald-800 dark:bg-emerald-950 dark:text-emerald-400"
                     >
                       <CheckCircle2 size={13} /> Sent ✓
                     </motion.div>
@@ -273,7 +273,7 @@ export default function MockupDetail({ mode = "draft" }: MockupDetailProps) {
                       exit={{ opacity: 0, transition: { duration: 0.2 } }}
                     >
                       <motion.span
-                        className="rounded-lg bg-emerald-600 px-3 py-1.5 text-[11px] font-semibold text-white"
+                        className="rounded-lg bg-emerald-600 dark:bg-brass px-3 py-1.5 text-[11px] font-semibold text-white"
                         animate={
                           sendPhase === "pressing"
                             ? { scale: 0.92, boxShadow: "0 0 0 3px rgba(16,185,129,0.3)" }
@@ -283,10 +283,10 @@ export default function MockupDetail({ mode = "draft" }: MockupDetailProps) {
                       >
                         Approve &amp; send
                       </motion.span>
-                      <span className="rounded-lg border border-slate/15 bg-mist px-3 py-1.5 text-[11px] font-medium text-ink">
+                      <span className="rounded-lg border border-slate/15 bg-mist px-3 py-1.5 text-[11px] font-medium text-ink dark:text-white">
                         Edit reply
                       </span>
-                      <span className="rounded-lg border border-slate/15 bg-mist px-3 py-1.5 text-[11px] font-medium text-ink">
+                      <span className="rounded-lg border border-slate/15 bg-mist px-3 py-1.5 text-[11px] font-medium text-ink dark:text-white">
                         Skip for now
                       </span>
                     </motion.div>

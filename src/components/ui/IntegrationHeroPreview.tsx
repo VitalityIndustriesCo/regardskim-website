@@ -39,7 +39,7 @@ export default function IntegrationHeroPreview() {
             <div className="mb-4 flex items-center justify-between">
               <div>
                 <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#8A6F61] dark:text-brass">Email from Gmail</p>
-                <h3 className="mt-1 font-display text-xl font-extrabold text-ink">Customer email</h3>
+                <h3 className="mt-1 font-display text-xl font-extrabold text-ink dark:text-white">Customer email</h3>
               </div>
               <MailCheck className="text-[#E97C6B]" size={22} />
             </div>
@@ -63,17 +63,17 @@ export default function IntegrationHeroPreview() {
             <div className="mb-4 flex items-center justify-between">
               <div>
                 <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#8A6F61] dark:text-brass">Reply inside Shopify</p>
-                <h3 className="mt-1 font-display text-xl font-extrabold text-ink">Ready for approval</h3>
+                <h3 className="mt-1 font-display text-xl font-extrabold text-ink dark:text-white">Ready for approval</h3>
               </div>
             </div>
             <div className="rounded-2xl border border-[#E9DCD1] bg-[#FFF9F3] p-5 shadow-[0_12px_30px_rgba(35,53,71,0.09)] dark:border-slate/12 dark:bg-[#111625] dark:shadow-[0_12px_30px_rgba(0,0,0,0.26)]">
-              <p className="text-sm leading-6 text-ink">Hi Sarah,</p>
-              <p className="mt-3 text-sm leading-6 text-ink">Thanks for checking in. Regards Kim found order <strong>#1842</strong> and it shipped yesterday with Australia Post.</p>
-              <p className="mt-3 text-sm leading-6 text-ink">Your tracking number is <strong>AP4821093AU</strong>. The first scan can take 24 to 48 hours, so it should update shortly.</p>
-              <p className="mt-3 text-sm leading-6 text-ink">Kind regards,<br />Kim</p>
+              <p className="text-sm leading-6 text-ink dark:text-white">Hi Sarah,</p>
+              <p className="mt-3 text-sm leading-6 text-ink dark:text-white">Thanks for checking in. Regards Kim found order <strong>#1842</strong> and it shipped yesterday with Australia Post.</p>
+              <p className="mt-3 text-sm leading-6 text-ink dark:text-white">Your tracking number is <strong>AP4821093AU</strong>. The first scan can take 24 to 48 hours, so it should update shortly.</p>
+              <p className="mt-3 text-sm leading-6 text-ink dark:text-white">Kind regards,<br />Kim</p>
             </div>
             <div className="mt-4 flex flex-wrap gap-2">
-              <span className="rounded-full bg-emerald-600 px-4 py-2 text-xs font-bold text-white shadow-[0_8px_18px_rgba(233,124,107,0.28)] dark:shadow-[0_8px_18px_rgba(0,0,0,0.28)]">Approve & send</span>
+              <span className="rounded-full bg-emerald-600 dark:bg-brass px-4 py-2 text-xs font-bold text-white shadow-[0_8px_18px_rgba(233,124,107,0.28)] dark:shadow-[0_8px_18px_rgba(0,0,0,0.28)]">Approve & send</span>
               <span className="rounded-full border border-[#E3D3C6] bg-white px-4 py-2 text-xs font-bold text-ink dark:border-slate/15 dark:bg-[#1D2840]">Edit draft</span>
               <span className="rounded-full border border-[#E3D3C6] bg-white px-4 py-2 text-xs font-bold text-ink dark:border-slate/15 dark:bg-[#1D2840]">Skip</span>
             </div>
@@ -84,7 +84,7 @@ export default function IntegrationHeroPreview() {
               <ShopifyLogo className="h-9 w-9" />
               <div>
                 <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#5F7F4A] dark:text-brass">Shopify order</p>
-                <h3 className="font-display text-xl font-extrabold text-ink">Matched data</h3>
+                <h3 className="font-display text-xl font-extrabold text-ink dark:text-white">Matched data</h3>
               </div>
             </div>
             <div className="space-y-3">
@@ -95,14 +95,14 @@ export default function IntegrationHeroPreview() {
                 </div>
               ))}
             </div>
-            <div className="mt-4 flex items-center gap-2 rounded-2xl bg-white px-4 py-3 text-xs font-semibold text-slate dark:border dark:border-slate/12 dark:bg-[#1D2840]">
+            <div className="mt-4 flex items-center gap-2 rounded-2xl bg-white px-4 py-3 text-xs font-semibold text-slate dark:text-white/70 dark:border dark:border-slate/12 dark:bg-[#1D2840]">
               <Clock3 size={15} className="text-[#7FA7A1]" /> Synced moments ago
             </div>
           </section>
         </div>
       </div>
 
-      <div className="mx-auto mt-5 flex max-w-3xl flex-wrap items-center justify-center gap-3 text-xs font-semibold text-slate">
+      <div className="mx-auto mt-5 flex max-w-3xl flex-wrap items-center justify-center gap-3 text-xs font-semibold text-slate dark:text-white/70">
         <span className="inline-flex items-center gap-1.5"><CheckCircle2 size={14} className="text-[#386D34]" /> Sends from your Gmail</span>
         <span className="hidden h-1 w-1 rounded-full bg-[#C9B5A7] dark:bg-slate/40 sm:block" />
         <span className="inline-flex items-center gap-1.5"><CheckCircle2 size={14} className="text-[#386D34]" /> Uses Shopify order data</span>
