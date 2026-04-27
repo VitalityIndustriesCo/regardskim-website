@@ -91,8 +91,8 @@ function ReplyPanel({ card }: { card: EmailCard }) {
   if (card.replyStatus === "nothing") {
     return (
       <div className="flex h-full flex-col justify-center gap-3 px-3 py-4">
-        <p className="text-center text-xs font-medium text-slate">✓ Nothing needed</p>
-        <p className="text-[11px] leading-4 text-slate">
+        <p className="text-center text-xs font-medium text-slate dark:text-white">✓ Nothing needed</p>
+        <p className="text-[11px] leading-4 text-slate dark:text-white/70">
           Not a customer email. No reply needed.
         </p>
         <div className="flex justify-center gap-2">
@@ -109,12 +109,12 @@ function ReplyPanel({ card }: { card: EmailCard }) {
     <div className="flex h-full flex-col justify-between px-3 py-3">
       <div>
         {isAction ? (
-          <p className="text-center text-[11px] font-medium text-amber-600 dark:text-amber-400">
+          <p className="text-center text-[11px] font-medium text-amber-600 dark:text-white">
             Action needed ⚡️
           </p>
         ) : (
           card.replyPreview && (
-            <p className="line-clamp-3 text-[11px] leading-4 text-slate">
+            <p className="line-clamp-3 text-[11px] leading-4 text-slate dark:text-white/70">
               {card.replyPreview}
             </p>
           )
@@ -157,10 +157,10 @@ export default function MockupInbox() {
       {/* Column headers */}
       <div className="grid grid-cols-1 gap-x-2.5 px-1 sm:grid-cols-2">
         <div className="pb-1.5">
-          <span className="block text-center text-[10px] font-semibold uppercase tracking-[0.14em] text-slate sm:text-[11px]">Customer Emails</span>
+          <span className="block text-center text-[10px] font-semibold uppercase tracking-[0.14em] text-slate dark:text-white/70 sm:text-[11px]">Customer Emails</span>
         </div>
         <div className="hidden pb-1.5 sm:block">
-          <span className="block text-center text-[10px] font-semibold uppercase tracking-[0.14em] text-slate sm:text-[11px]">Email Replies</span>
+          <span className="block text-center text-[10px] font-semibold uppercase tracking-[0.14em] text-slate dark:text-white/70 sm:text-[11px]">Email Replies</span>
         </div>
       </div>
 
@@ -169,7 +169,7 @@ export default function MockupInbox() {
         {EMAILS.map((card) => (
           <div key={`${card.sender}-${card.subject}`} className="grid grid-cols-1 gap-2.5 sm:grid-cols-2">
             {/* Left: customer email card */}
-            <div className="rounded-xl border border-slate/10 bg-white px-3 py-3 shadow-[0_4px_16px_rgba(0,0,0,0.10),0_1.5px_4px_rgba(0,0,0,0.06)] dark:bg-[#252E42] dark:shadow-[0_4px_16px_rgba(0,0,0,0.25)] sm:px-4">
+            <div className="rounded-xl border border-slate/10 bg-white px-3 py-3 shadow-[0_4px_16px_rgba(0,0,0,0.10),0_1.5px_4px_rgba(0,0,0,0.06)] dark:bg-[#1E2A3E] dark:shadow-[0_4px_16px_rgba(0,0,0,0.25)] sm:px-4">
               <div className="flex items-start gap-2.5">
                 <div className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-[11px] font-semibold text-white ${card.avatarColor}`}>
                   {card.avatar}
@@ -180,9 +180,9 @@ export default function MockupInbox() {
                     <span className="shrink-0 text-[10px] text-slate">{card.timeAgo}</span>
                   </div>
                   <p className="mt-0.5 truncate text-[11px] font-semibold text-ink sm:text-xs">{card.subject}</p>
-                  <p className="mt-1.5 line-clamp-2 text-[11px] leading-4 text-slate">{card.preview}</p>
-                  {/* Badge */}
-                  <span className={`mt-2 inline-flex rounded-full border px-2 py-0.5 text-[9px] font-semibold ${badgeToneClass[card.badgeTone]}`}>
+                  <p className="mt-1.5 line-clamp-2 text-[11px] leading-4 text-slate dark:text-white/70">{card.preview}</p>
+                  {/* Badge — light mode only */}
+                  <span className={`mt-2 inline-flex rounded-full border px-2 py-0.5 text-[9px] font-semibold dark:hidden ${badgeToneClass[card.badgeTone]}`}>
                     {card.badge}
                   </span>
                 </div>
@@ -190,7 +190,7 @@ export default function MockupInbox() {
             </div>
 
             {/* Right: Kim's reply card */}
-            <div className="rounded-xl border border-slate/10 bg-white shadow-[0_4px_16px_rgba(0,0,0,0.10),0_1.5px_4px_rgba(0,0,0,0.06)] dark:bg-[#252E42] dark:shadow-[0_4px_16px_rgba(0,0,0,0.25)]">
+            <div className="rounded-xl border border-slate/10 bg-white shadow-[0_4px_16px_rgba(0,0,0,0.10),0_1.5px_4px_rgba(0,0,0,0.06)] dark:bg-[#1E2A3E] dark:shadow-[0_4px_16px_rgba(0,0,0,0.25)]">
               <ReplyPanel card={card} />
             </div>
           </div>
