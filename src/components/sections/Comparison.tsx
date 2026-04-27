@@ -61,7 +61,7 @@ function ComparisonCard({ title, items, tone }: ComparisonCardProps) {
               className={[
                 "mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full border",
                 isKim
-                  ? "border-emerald-200 bg-emerald-50 text-emerald-600"
+                  ? "border-emerald-200 bg-emerald-50 text-emerald-600 dark:border-emerald-400 dark:bg-emerald-500 dark:text-white"
                   : "border-slate/20 bg-slate/5 text-slate",
               ].join(" ")}
             >
@@ -109,7 +109,7 @@ function ReplyCard({ label, body, tone }: ReplyCardProps) {
       </div>
 
       {/* Email card — light browser/Gmail feel */}
-      <div className="mt-5 rounded-[1.25rem] border border-slate/10 bg-[#F5F0EB] p-5 md:p-6 dark:bg-[#20283A]">
+      <div className="mt-5 rounded-[1.25rem] border border-slate/10 bg-[#F5F0EB] p-5 md:p-6 dark:bg-[#111625] dark:border-slate/15">
         <div className="space-y-3 text-sm md:text-[0.95rem]">
           <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:gap-3">
             <span className="text-xs font-semibold uppercase tracking-[0.14em] text-slate">To</span>
