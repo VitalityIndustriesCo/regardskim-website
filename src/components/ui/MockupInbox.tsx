@@ -181,10 +181,7 @@ export default function MockupInbox() {
                   </div>
                   <p className="mt-0.5 truncate text-[11px] font-semibold text-ink sm:text-xs">{card.subject}</p>
                   <p className="mt-1.5 line-clamp-2 text-[11px] leading-4 text-slate dark:text-white/70">{card.preview}</p>
-                  {/* Badge — light mode only */}
-                  <span className={`mt-2 inline-flex rounded-full border px-2 py-0.5 text-[9px] font-semibold dark:hidden ${badgeToneClass[card.badgeTone]}`}>
-                    {card.badge}
-                  </span>
+
                 </div>
               </div>
             </div>
