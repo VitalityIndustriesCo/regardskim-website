@@ -87,7 +87,7 @@ export default function FoundingPage() {
   return (
     <div className="flex min-h-screen flex-col bg-paper">
       {/* Minimal header — logo only, no nav */}
-      <header className="border-b border-slate/10 bg-white px-6 py-5">
+      <header className="border-b border-slate/10 bg-[var(--surface-card)] px-6 py-5">
         <Link href="/" className="font-display text-2xl font-bold tracking-normal text-ink">
           RegardsKim
         </Link>
@@ -110,11 +110,11 @@ export default function FoundingPage() {
 
           {/* Trust badges */}
           <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
-            <div className="flex items-center gap-2 rounded-full border border-slate/15 bg-white px-3 py-2 shadow-sm">
+            <div className="flex items-center gap-2 rounded-full border border-slate/15 bg-[var(--surface-card)] px-3 py-2 shadow-sm dark:shadow-[0_6px_18px_rgba(0,0,0,0.18)]">
               <ShopifyLogo className="h-5 w-5" />
               <span className="text-xs font-semibold text-ink">Built for Shopify</span>
             </div>
-            <div className="flex items-center gap-2 rounded-full border border-slate/15 bg-white px-3 py-2 shadow-sm">
+            <div className="flex items-center gap-2 rounded-full border border-slate/15 bg-[var(--surface-card)] px-3 py-2 shadow-sm dark:shadow-[0_6px_18px_rgba(0,0,0,0.18)]">
               <GmailLogo className="h-4 w-4" />
               <span className="text-xs font-semibold text-ink">Connects with Gmail</span>
             </div>
@@ -124,7 +124,7 @@ export default function FoundingPage() {
           <ul className="mx-auto mt-8 max-w-sm space-y-2.5">
             {bullets.map((item) => (
               <li key={item} className="flex items-start gap-2.5 text-sm text-slate">
-                <Check size={16} className="mt-0.5 shrink-0 text-emerald-600" />
+                <Check size={16} className="mt-0.5 shrink-0 text-emerald-600 dark:text-emerald-400" />
                 <span>{item}</span>
               </li>
             ))}
@@ -158,7 +158,7 @@ export default function FoundingPage() {
           </div>
 
           {/* Form card */}
-          <div className="mx-auto mt-8 max-w-sm rounded-2xl border border-slate/12 bg-white p-6 shadow-[0_8px_32px_rgba(0,0,0,0.08),0_2px_6px_rgba(0,0,0,0.04)]">
+          <div className="mx-auto mt-8 max-w-sm rounded-2xl border border-slate/12 bg-[var(--surface-card)] p-6 shadow-[0_8px_32px_rgba(0,0,0,0.08),0_2px_6px_rgba(0,0,0,0.04)] dark:shadow-[0_12px_38px_rgba(0,0,0,0.28)]">
             {status === "success" ? (
               <div className="py-6 text-center">
                 <div className="mb-3 text-3xl">🎉</div>
@@ -190,7 +190,7 @@ export default function FoundingPage() {
                       setFirstName(e.target.value);
                       if (status === "error") setStatus("idle");
                     }}
-                    className="w-full rounded-xl border border-slate/20 bg-mist px-4 py-3 text-sm text-ink placeholder:text-slate/50 focus:border-brass focus:bg-white focus:outline-none focus:ring-1 focus:ring-brass/30"
+                    className="w-full rounded-xl border border-slate/20 bg-mist px-4 py-3 text-sm text-ink placeholder:text-slate/50 focus:border-brass focus:bg-[var(--surface-card)] focus:outline-none focus:ring-1 focus:ring-brass/30"
                     placeholder="Your first name"
                   />
                 </div>
@@ -208,7 +208,7 @@ export default function FoundingPage() {
                       setEmail(e.target.value);
                       if (status === "error") setStatus("idle");
                     }}
-                    className="w-full rounded-xl border border-slate/20 bg-mist px-4 py-3 text-sm text-ink placeholder:text-slate/50 focus:border-brass focus:bg-white focus:outline-none focus:ring-1 focus:ring-brass/30"
+                    className="w-full rounded-xl border border-slate/20 bg-mist px-4 py-3 text-sm text-ink placeholder:text-slate/50 focus:border-brass focus:bg-[var(--surface-card)] focus:outline-none focus:ring-1 focus:ring-brass/30"
                     placeholder="you@example.com"
                   />
                 </div>
@@ -222,7 +222,7 @@ export default function FoundingPage() {
                     type="text"
                     value={storeUrl}
                     onChange={(e) => setStoreUrl(e.target.value)}
-                    className="w-full rounded-xl border border-slate/20 bg-mist px-4 py-3 text-sm text-ink placeholder:text-slate/50 focus:border-brass focus:bg-white focus:outline-none focus:ring-1 focus:ring-brass/30"
+                    className="w-full rounded-xl border border-slate/20 bg-mist px-4 py-3 text-sm text-ink placeholder:text-slate/50 focus:border-brass focus:bg-[var(--surface-card)] focus:outline-none focus:ring-1 focus:ring-brass/30"
                     placeholder="yourstore.myshopify.com"
                   />
                 </div>

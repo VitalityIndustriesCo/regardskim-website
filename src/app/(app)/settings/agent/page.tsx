@@ -238,7 +238,7 @@ export default function AgentSettingsPage() {
           {/* Signature preview */}
           <div className="space-y-2">
             <Label>Preview</Label>
-            <div className="rounded-md border border-border bg-white p-4 text-sm leading-relaxed text-foreground dark:bg-muted/20">
+            <div className="rounded-md border border-border bg-[var(--surface-card)] p-4 text-sm leading-relaxed text-foreground dark:bg-muted/20">
               {signature.split("\n").map((line, i) => (
                 <p key={i}>{line || "\u00A0"}</p>
               ))}

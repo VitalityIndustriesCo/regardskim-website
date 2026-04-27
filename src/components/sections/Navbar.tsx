@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import ThemeToggle from "@/components/ui/ThemeToggle";
 
 const navLinks = [
   { href: "/#how-it-works", label: "How it works" },
@@ -46,9 +47,9 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`sticky top-0 z-50 border-b border-[#E3D3C6] bg-[#FFF9F3]/88 transition-all duration-300 ${
+        className={`sticky top-0 z-50 border-b border-slate/15 bg-[var(--surface-navbar)] transition-all duration-300 ${
           scrolled
-            ? "shadow-[0_10px_30px_rgba(35,53,71,0.08)] backdrop-blur-xl"
+            ? "shadow-[0_10px_30px_rgba(35,53,71,0.08)] dark:shadow-[0_16px_40px_rgba(0,0,0,0.35)] backdrop-blur-xl"
             : "backdrop-blur-md"
         }`}
       >
@@ -66,38 +67,42 @@ export default function Navbar() {
           </div>
 
           <div className="hidden items-center gap-4 md:flex">
+            <ThemeToggle />
             <Link href="/founding" className="btn-primary">
               Lock in your spot
             </Link>
           </div>
 
-          <button
-            type="button"
-            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[#E3D3C6] bg-white text-ink transition-all duration-200 hover:border-brass/40 hover:bg-[#FFF0ED] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brass focus-visible:ring-offset-2 md:hidden"
-            aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
-            aria-expanded={mobileMenuOpen}
-            aria-controls="mobile-navigation"
-            onClick={() => setMobileMenuOpen((open) => !open)}
-          >
-            <span className="sr-only">Toggle navigation menu</span>
-            <div className="relative h-4 w-5">
-              <span
-                className={`absolute left-0 top-0 h-0.5 w-5 rounded-full bg-current transition-all duration-300 ${
-                  mobileMenuOpen ? "top-1.5 rotate-45" : ""
-                }`}
-              />
-              <span
-                className={`absolute left-0 top-1.5 h-0.5 w-5 rounded-full bg-current transition-all duration-300 ${
-                  mobileMenuOpen ? "opacity-0" : "opacity-100"
-                }`}
-              />
-              <span
-                className={`absolute left-0 top-3 h-0.5 w-5 rounded-full bg-current transition-all duration-300 ${
-                  mobileMenuOpen ? "top-1.5 -rotate-45" : ""
-                }`}
-              />
-            </div>
-          </button>
+          <div className="flex items-center gap-3 md:hidden">
+            <ThemeToggle />
+            <button
+              type="button"
+              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate/15 bg-[var(--surface-card)] text-ink transition-all duration-200 hover:border-brass/40 hover:bg-mist focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brass focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--surface-page)]"
+              aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+              aria-expanded={mobileMenuOpen}
+              aria-controls="mobile-navigation"
+              onClick={() => setMobileMenuOpen((open) => !open)}
+            >
+              <span className="sr-only">Toggle navigation menu</span>
+              <div className="relative h-4 w-5">
+                <span
+                  className={`absolute left-0 top-0 h-0.5 w-5 rounded-full bg-current transition-all duration-300 ${
+                    mobileMenuOpen ? "top-1.5 rotate-45" : ""
+                  }`}
+                />
+                <span
+                  className={`absolute left-0 top-1.5 h-0.5 w-5 rounded-full bg-current transition-all duration-300 ${
+                    mobileMenuOpen ? "opacity-0" : "opacity-100"
+                  }`}
+                />
+                <span
+                  className={`absolute left-0 top-3 h-0.5 w-5 rounded-full bg-current transition-all duration-300 ${
+                    mobileMenuOpen ? "top-1.5 -rotate-45" : ""
+                  }`}
+                />
+              </div>
+            </button>
+          </div>
         </nav>
       </header>
 
@@ -111,7 +116,7 @@ export default function Navbar() {
 
       <div
         id="mobile-navigation"
-        className={`fixed right-0 top-0 z-50 flex h-screen w-full max-w-sm flex-col border-l border-slate/10 bg-white shadow-[-8px_0_32px_rgba(0,0,0,0.12)] transition-transform duration-300 ease-out md:hidden ${
+        className={`fixed right-0 top-0 z-50 flex h-screen w-full max-w-sm flex-col border-l border-slate/10 bg-[var(--surface-mobile-menu)] shadow-[-8px_0_32px_rgba(0,0,0,0.2)] dark:shadow-[-12px_0_40px_rgba(0,0,0,0.35)] transition-transform duration-300 ease-out md:hidden ${
           mobileMenuOpen ? "translate-x-0" : "translate-x-full"
         }`}
         aria-hidden={!mobileMenuOpen}
@@ -120,7 +125,7 @@ export default function Navbar() {
           <span className="font-display text-2xl font-bold text-ink">Menu</span>
           <button
             type="button"
-            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate/20 bg-mist text-ink transition-colors hover:bg-slate/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brass focus-visible:ring-offset-2"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate/20 bg-mist text-ink transition-colors hover:bg-slate/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brass focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--surface-page)]"
             aria-label="Close menu"
             onClick={closeMobileMenu}
           >
@@ -143,6 +148,10 @@ export default function Navbar() {
           </div>
 
           <div className="mt-8 flex flex-col gap-3 border-t border-slate/10 pt-6">
+            <div className="flex items-center justify-between">
+              <span className="text-sm font-medium text-slate">Theme</span>
+              <ThemeToggle />
+            </div>
             <Link href="/founding" className="btn-primary w-full" onClick={closeMobileMenu}>
               Lock in your spot
             </Link>

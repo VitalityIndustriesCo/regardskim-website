@@ -24,7 +24,7 @@ export default function BlogPage() {
           {blogPosts.map((post) => (
             <article
               key={post.slug}
-              className="group flex h-full flex-col rounded-[1.75rem] border border-slate/10 bg-white p-7 shadow-[0_4px_24px_rgba(0,0,0,0.07),0_1px_3px_rgba(0,0,0,0.04)] transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(0,0,0,0.12)]"
+              className="group flex h-full flex-col rounded-[1.75rem] border border-slate/10 bg-[var(--surface-card)] p-7 shadow-[0_4px_24px_rgba(0,0,0,0.07),0_1px_3px_rgba(0,0,0,0.04)] dark:shadow-[0_10px_30px_rgba(0,0,0,0.24)] transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(0,0,0,0.12)]"
             >
               {post.image && (
                 <div className="-mx-7 -mt-7 mb-5 overflow-hidden rounded-t-[1.75rem]">

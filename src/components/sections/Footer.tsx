@@ -30,7 +30,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="border-t border-slate/10 bg-white py-12">
+    <footer className="border-t border-slate/10 bg-[var(--surface-card)] py-12">
       <div className="section-shell grid gap-8 md:grid-cols-3 md:items-start">
         <div>
           <p className="font-display font-bold text-2xl text-ink">RegardsKim</p>
@@ -55,7 +55,7 @@ export default function Footer() {
                 value={email}
                 onChange={(e) => { setEmail(e.target.value); if (status !== "idle") setStatus("idle"); }}
                 placeholder="you@store.com"
-                className="w-full max-w-[220px] rounded-lg border border-slate/20 bg-mist px-3 py-2 text-sm text-ink placeholder:text-slate/50 focus:border-brass focus:bg-white focus:outline-none focus:ring-2 focus:ring-brass/30"
+                className="w-full max-w-[220px] rounded-lg border border-slate/20 bg-mist px-3 py-2 text-sm text-ink placeholder:text-slate/50 focus:border-brass focus:bg-[var(--surface-card)] focus:outline-none focus:ring-2 focus:ring-brass/30"
               />
               <button
                 type="submit"
@@ -66,7 +66,7 @@ export default function Footer() {
               </button>
             </div>
             {status === "success" && (
-              <p className="mt-2 text-xs text-emerald-600">You&apos;re in! We&apos;ll keep you posted.</p>
+              <p className="mt-2 text-xs text-emerald-600 dark:text-emerald-400">You&apos;re in! We&apos;ll keep you posted.</p>
             )}
             {status === "error" && (
               <p className="mt-2 text-xs text-red-600">Something went wrong — try again.</p>
