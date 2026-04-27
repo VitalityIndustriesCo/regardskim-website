@@ -73,9 +73,11 @@ export default function Navbar() {
             </Link>
           </div>
 
+          <div className="flex items-center gap-2 md:hidden">
+            <ThemeToggle />
           <button
             type="button"
-            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate/15 bg-white dark:bg-[#252E42] text-ink transition-all duration-200 hover:border-brass/40 hover:bg-[#FFF0ED] dark:hover:bg-[#1E293B] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brass focus-visible:ring-offset-2 md:hidden"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate/15 bg-white dark:bg-[#252E42] text-ink transition-all duration-200 hover:border-brass/40 hover:bg-[#FFF0ED] dark:hover:bg-[#1E293B] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brass focus-visible:ring-offset-2"
             aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileMenuOpen}
             aria-controls="mobile-navigation"
@@ -100,6 +102,7 @@ export default function Navbar() {
               />
             </div>
           </button>
+          </div>
         </nav>
       </header>
 
@@ -145,10 +148,6 @@ export default function Navbar() {
           </div>
 
           <div className="mt-8 flex flex-col gap-3 border-t border-slate/10 pt-6">
-            <div className="flex items-center justify-between px-4 py-2">
-              <span className="text-sm font-medium text-slate">Theme</span>
-              <ThemeToggle />
-            </div>
             <Link href="/founding" className="btn-primary w-full" onClick={closeMobileMenu}>
               Lock in your spot
             </Link>
