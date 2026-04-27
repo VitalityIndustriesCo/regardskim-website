@@ -72,19 +72,19 @@ export default function AffiliatePage() {
       <section className="bg-mist py-14 md:py-20">
         <div className="section-shell">
           <div className="grid gap-4 md:grid-cols-3">
-            <article className="rounded-2xl border border-slate/10 bg-white p-6 shadow-[0_4px_20px_rgba(0,0,0,0.06),0_1px_3px_rgba(0,0,0,0.04)] dark:bg-[#111827]">
+            <article className="rounded-2xl border border-slate/10 bg-white p-6 shadow-[0_4px_20px_rgba(0,0,0,0.06),0_1px_3px_rgba(0,0,0,0.04)] dark:bg-[#202739]">
               <h2 className="font-display text-2xl font-bold text-ink">Recurring commission</h2>
               <p className="mt-3 text-sm text-slate md:text-base">
                 Earn 20% of every referral&apos;s subscription, every month, for as long as they stay.
               </p>
             </article>
-            <article className="rounded-2xl border border-slate/10 bg-white p-6 shadow-[0_4px_20px_rgba(0,0,0,0.06),0_1px_3px_rgba(0,0,0,0.04)] dark:bg-[#111827]">
+            <article className="rounded-2xl border border-slate/10 bg-white p-6 shadow-[0_4px_20px_rgba(0,0,0,0.06),0_1px_3px_rgba(0,0,0,0.04)] dark:bg-[#202739]">
               <h2 className="font-display text-2xl font-bold text-ink">Easy to recommend</h2>
               <p className="mt-3 text-sm text-slate md:text-base">
                 Regards Kim sells itself — 7-day free trial, no setup friction, real results from day one.
               </p>
             </article>
-            <article className="rounded-2xl border border-slate/10 bg-white p-6 shadow-[0_4px_20px_rgba(0,0,0,0.06),0_1px_3px_rgba(0,0,0,0.04)] dark:bg-[#111827]">
+            <article className="rounded-2xl border border-slate/10 bg-white p-6 shadow-[0_4px_20px_rgba(0,0,0,0.06),0_1px_3px_rgba(0,0,0,0.04)] dark:bg-[#202739]">
               <h2 className="font-display text-2xl font-bold text-ink">We support you</h2>
               <p className="mt-3 text-sm text-slate md:text-base">
                 Need assets, landing pages, or custom links? We&apos;ll help you promote effectively.
@@ -96,7 +96,7 @@ export default function AffiliatePage() {
 
       <section id="apply" className="bg-paper py-16 md:py-24">
         <div className="section-shell">
-          <div className="mx-auto max-w-2xl rounded-3xl border border-slate/12 bg-white p-6 shadow-[0_8px_40px_rgba(0,0,0,0.08),0_2px_6px_rgba(0,0,0,0.04)] dark:bg-[#111827] md:p-10">
+          <div className="mx-auto max-w-2xl rounded-3xl border border-slate/12 bg-white p-6 shadow-[0_8px_40px_rgba(0,0,0,0.08),0_2px_6px_rgba(0,0,0,0.04)] dark:bg-[#202739] md:p-10">
             <h2 className="font-display text-3xl font-bold text-ink md:text-4xl">Partner application</h2>
             <p className="mt-3 text-sm text-slate md:text-base">
               Tell us a little about you and how you&apos;d like to promote Regards Kim.
