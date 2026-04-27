@@ -92,7 +92,7 @@ function ReplyPanel({ card }: { card: EmailCard }) {
     return (
       <div className="flex h-full flex-col justify-center gap-3 px-3 py-4">
         <p className="text-center text-xs font-medium text-slate">✓ Nothing needed</p>
-        <p className="text-[11px] leading-4 text-slate/70">
+        <p className="text-[11px] leading-4 text-slate">
           Not a customer email. No reply needed.
         </p>
         <div className="flex justify-center gap-2">
