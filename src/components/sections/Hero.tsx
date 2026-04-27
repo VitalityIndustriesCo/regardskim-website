@@ -12,9 +12,9 @@ export default function Hero() {
         <FadeIn className="mx-auto max-w-5xl text-center">
           <div className="mx-auto max-w-4xl pt-20 md:pt-32">
             <div className="mx-auto mb-6 inline-flex flex-wrap items-center justify-center gap-2 rounded-full border border-[#E3D3C6] bg-white/80 px-4 py-2 text-xs font-bold uppercase tracking-[0.14em] text-[#8A6F61] shadow-sm backdrop-blur dark:border-slate/15 dark:bg-[#1B2436]/80 dark:text-brass">
-              <ShopifyLogo className="h-5 w-5" /> Built for Shopify
+              <span className="inline-flex items-center gap-2"><ShopifyLogo className="h-5 w-5" /> Built for Shopify</span>
               <span className="h-1 w-1 rounded-full bg-[#C9B5A7] dark:bg-slate/40" />
-              <GmailLogo className="h-4 w-4" /> Connects to Gmail
+              <span className="inline-flex items-center gap-2"><GmailLogo className="h-4 w-4" /> Connects to Gmail</span>
             </div>
             <h1 className="font-display text-5xl font-extrabold leading-[1.02] tracking-tight text-ink md:text-8xl">
               Customer emails, handled.
