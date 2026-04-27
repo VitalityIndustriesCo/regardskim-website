@@ -94,14 +94,14 @@
 
 /* ── Dark theme ── */
 .dark {
-  --t-forest: #090B13;
-  --t-cream: #202739;
+  --t-forest: #090C14;
+  --t-cream: #20283A;
   --t-oxblood: #C9A66B;
   --t-brass: #B08D57;
   --t-ink: #FFFFFF;
   --t-slate: #94A3B8;
-  --t-mist: #252E42;
-  --t-paper: #090B13;
+  --t-mist: #1D2840;
+  --t-paper: #090C14;
   --t-badge-green: #22C55E;
   --t-badge-amber: #F59E0B;
   --t-badge-blue: #3B82F6;
@@ -167,7 +167,7 @@ main {
     radial-gradient(circle at 12% 18%, rgba(176, 141, 87, 0.06) 0, transparent 34%),
     radial-gradient(circle at 84% 4%, rgba(100, 130, 160, 0.08) 0, transparent 30%),
     radial-gradient(circle at 50% 90%, rgba(30, 41, 59, 0.6) 0, transparent 60%),
-    linear-gradient(160deg, rgba(9, 11, 19, 0.98), rgba(9, 11, 19, 1));
+    linear-gradient(160deg, rgba(9, 12, 20, 0.98), rgba(9, 12, 20, 1));
 }
 
 .texture-mist {
@@ -175,7 +175,7 @@ main {
 }
 
 .dark .texture-mist {
-  background-image: linear-gradient(135deg, rgba(9, 11, 19, 0.94), rgba(30, 41, 59, 0.58));
+  background-image: linear-gradient(135deg, rgba(9, 12, 20, 0.94), rgba(30, 41, 59, 0.58));
 }
 
 .section-shell {

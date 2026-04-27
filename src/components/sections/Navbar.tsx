@@ -77,7 +77,7 @@ export default function Navbar() {
             <ThemeToggle />
           <button
             type="button"
-            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate/15 bg-white dark:bg-[#252E42] text-ink transition-all duration-200 hover:border-brass/40 hover:bg-[#FFF0ED] dark:hover:bg-[#1E293B] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brass focus-visible:ring-offset-2"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate/15 bg-white dark:bg-[#1D2840] text-ink transition-all duration-200 hover:border-brass/40 hover:bg-[#FFF0ED] dark:hover:bg-[#1E293B] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brass focus-visible:ring-offset-2"
             aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileMenuOpen}
             aria-controls="mobile-navigation"
@@ -116,7 +116,7 @@ export default function Navbar() {
 
       <div
         id="mobile-navigation"
-        className={`fixed right-0 top-0 z-50 flex h-screen w-full max-w-sm flex-col border-l border-slate/10 bg-white dark:bg-[#202739] shadow-[-8px_0_32px_rgba(0,0,0,0.12)] dark:shadow-[-8px_0_32px_rgba(0,0,0,0.4)] transition-transform duration-300 ease-out md:hidden ${
+        className={`fixed right-0 top-0 z-50 flex h-screen w-full max-w-sm flex-col border-l border-slate/10 bg-white dark:bg-[#20283A] shadow-[-8px_0_32px_rgba(0,0,0,0.12)] dark:shadow-[-8px_0_32px_rgba(0,0,0,0.4)] transition-transform duration-300 ease-out md:hidden ${
           mobileMenuOpen ? "translate-x-0" : "translate-x-full"
         }`}
         aria-hidden={!mobileMenuOpen}

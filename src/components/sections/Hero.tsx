@@ -15,8 +15,8 @@ export default function Hero() {
               Customer emails, handled.
             </h1>
             <div className="mx-auto mt-6 flex flex-wrap items-center justify-center gap-3">
-              <span className="inline-flex items-center gap-2 rounded-full border border-[#E3D3C6] bg-white/80 px-4 py-2 text-xs font-bold uppercase tracking-[0.14em] text-[#8A6F61] shadow-sm backdrop-blur dark:border-slate/15 dark:bg-[#252E42]/80 dark:text-brass"><ShopifyLogo className="h-5 w-5" /> Built for Shopify</span>
-              <span className="inline-flex items-center gap-2 rounded-full border border-[#E3D3C6] bg-white/80 px-4 py-2 text-xs font-bold uppercase tracking-[0.14em] text-[#8A6F61] shadow-sm backdrop-blur dark:border-slate/15 dark:bg-[#252E42]/80 dark:text-brass"><GmailLogo className="h-4 w-4" /> Connects to Gmail</span>
+              <span className="inline-flex items-center gap-2 rounded-full border border-[#E3D3C6] bg-white/80 px-4 py-2 text-xs font-bold uppercase tracking-[0.14em] text-[#8A6F61] shadow-sm backdrop-blur dark:border-slate/15 dark:bg-[#1D2840]/80 dark:text-brass"><ShopifyLogo className="h-5 w-5" /> Built for Shopify</span>
+              <span className="inline-flex items-center gap-2 rounded-full border border-[#E3D3C6] bg-white/80 px-4 py-2 text-xs font-bold uppercase tracking-[0.14em] text-[#8A6F61] shadow-sm backdrop-blur dark:border-slate/15 dark:bg-[#1D2840]/80 dark:text-brass"><GmailLogo className="h-4 w-4" /> Connects to Gmail</span>
             </div>
             <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-slate md:text-xl">
               Regards Kim is a Shopify app that connects to your Gmail, reads your customer emails, and drafts replies using your order details. You review, approve, and send from Shopify.

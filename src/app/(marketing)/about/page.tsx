@@ -70,7 +70,7 @@ export default function AboutPage() {
           </p>
 
           {/* Product callout block */}
-          <div className="rounded-2xl border border-slate/15 bg-white p-6 shadow-[0_4px_20px_rgba(0,0,0,0.06)] dark:bg-[#202739] md:p-8">
+          <div className="rounded-2xl border border-slate/15 bg-white p-6 shadow-[0_4px_20px_rgba(0,0,0,0.06)] dark:bg-[#20283A] md:p-8">
             <p className="text-slate">
               Regards Kim connects to your Gmail and Shopify store, reads your customer emails,
               pulls in the order and tracking context, and drafts the reply before you even open

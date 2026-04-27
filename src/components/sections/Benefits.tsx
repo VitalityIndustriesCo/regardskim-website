@@ -28,7 +28,7 @@ export default function Benefits() {
             const Icon = item.icon;
             return (
               <FadeIn key={item.title} delay={idx * 0.06}>
-                <article className="h-full rounded-3xl border border-slate/10 bg-white p-7 shadow-[0_4px_24px_rgba(0,0,0,0.06),0_1px_3px_rgba(0,0,0,0.04)] dark:bg-[#202739] md:p-8">
+                <article className="h-full rounded-3xl border border-slate/10 bg-white p-7 shadow-[0_4px_24px_rgba(0,0,0,0.06),0_1px_3px_rgba(0,0,0,0.04)] dark:bg-[#20283A] md:p-8">
                   <div className="mb-6 w-fit rounded-xl bg-brass/10 p-2.5 text-brass">
                     <Icon size={20} />
                   </div>

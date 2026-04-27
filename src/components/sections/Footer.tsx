@@ -30,7 +30,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="border-t border-slate/10 bg-white py-12 dark:bg-[#202739]">
+    <footer className="border-t border-slate/10 bg-white py-12 dark:bg-[#20283A]">
       <div className="section-shell grid gap-8 md:grid-cols-3 md:items-start">
         <div>
           <p className="font-display font-bold text-2xl text-ink">RegardsKim</p>
