@@ -99,12 +99,12 @@ export default function Footer() {
         <div className="grid gap-10 lg:grid-cols-[1.1fr_1.9fr] lg:items-start">
           <div>
             <p className="font-display text-2xl font-bold text-ink">RegardsKim</p>
-            <p className="mt-3 max-w-sm text-sm leading-6 text-slate">
+            <p className="mt-3 max-w-sm text-sm leading-6 text-slate dark:text-white/80">
               Customer email support for ecommerce stores.
             </p>
 
             <form onSubmit={handleSubscribe} className="mt-6 max-w-sm">
-              <p className="mb-2 text-sm font-medium text-ink">Stay in the loop</p>
+              <p className="mb-2 text-sm font-medium text-ink dark:text-white">Stay in the loop</p>
               <input
                 type="text"
                 name="website"
@@ -124,7 +124,7 @@ export default function Footer() {
                     if (status !== "idle") setStatus("idle");
                   }}
                   placeholder="you@store.com"
-                  className="w-full rounded-lg border border-slate/20 bg-mist dark:bg-[#1B2436] px-3 py-2 text-sm text-ink placeholder:text-slate/50 focus:border-brass focus:bg-white dark:bg-[#20283A] dark:focus:bg-[#1B2436] focus:outline-none focus:ring-2 focus:ring-brass/30 dark:focus:bg-[#1B2436]"
+                  className="w-full rounded-lg border border-slate/20 bg-mist px-3 py-2 text-sm text-ink placeholder:text-slate/50 focus:border-brass focus:bg-white focus:outline-none focus:ring-2 focus:ring-brass/30 dark:bg-[#2A3347] dark:border-slate/40 dark:text-white dark:placeholder:text-slate/50 dark:focus:bg-[#2A3347]"
                 />
                 <button
                   type="submit"
@@ -146,8 +146,8 @@ export default function Footer() {
             <div className="mt-8 grid grid-cols-2 gap-8">
               {secondaryColumns.map((column) => (
                 <div key={column.title}>
-                  <p className="text-sm font-semibold uppercase tracking-[0.2em] text-slate/70">{column.title}</p>
-                  <div className="mt-4 space-y-3 text-[0.9375rem] leading-6 text-slate">
+                  <p className="text-sm font-semibold uppercase tracking-[0.2em] text-slate/70 dark:text-white/60">{column.title}</p>
+                  <div className="mt-4 space-y-3 text-[0.9375rem] leading-6 text-slate dark:text-white">
                     {column.links.map((link) => (
                       <Link key={link.href + link.label} href={link.href} className="block hover:text-ink">
                         {link.label}
@@ -162,8 +162,8 @@ export default function Footer() {
           <nav aria-label="Footer" className="grid grid-cols-2 gap-8 xl:grid-cols-4">
             {mainColumns.map((column) => (
               <div key={column.title}>
-                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-slate/70">{column.title}</p>
-                <div className="mt-4 space-y-3 text-[0.9375rem] leading-6 text-slate">
+                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-slate/70 dark:text-white/60">{column.title}</p>
+                <div className="mt-4 space-y-3 text-[0.9375rem] leading-6 text-slate dark:text-white">
                   {column.links.map((link) => (
                     <Link key={link.href + link.label} href={link.href} className="block hover:text-ink">
                       {link.label}
@@ -178,9 +178,9 @@ export default function Footer() {
         <div className="mt-10 flex flex-col gap-3 border-t border-slate/10 dark:border-slate/20 pt-6 text-sm text-slate/70 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <p className="font-display text-xl font-bold text-ink">Your inbox, handled.</p>
-            <p className="mt-1 text-sm text-slate">Kind regards, Kim</p>
+            <p className="mt-1 text-sm text-slate dark:text-white/70">Kind regards, Kim</p>
           </div>
-          <p>&copy; RegardsKim 2026. All rights reserved.</p>
+          <p className="dark:text-white/60">&copy; RegardsKim 2026. All rights reserved.</p>
         </div>
       </div>
     </footer>
