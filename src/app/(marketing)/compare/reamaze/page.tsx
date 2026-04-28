@@ -79,7 +79,7 @@ export default function RegardsKimVsReamazePage() {
   };
 
   return (
-    <main className="bg-paper dark:bg-[#151C2C]">
+    <main className="bg-paper">
       <StructuredData data={schema} />
 
       <section className="section-shell py-16 sm:py-20">
