@@ -99,7 +99,7 @@ export default function Footer() {
         <div className="grid gap-10 lg:grid-cols-[1.1fr_1.9fr] lg:items-start">
           <div>
             <p className="font-display text-2xl font-bold text-ink">RegardsKim</p>
-            <p className="mt-3 max-w-sm text-sm leading-6 text-slate dark:text-white/80">
+            <p className="mt-3 max-w-sm text-sm leading-6 text-slate-600 dark:text-white/80">
               Customer email support for ecommerce stores.
             </p>
 
@@ -146,8 +146,8 @@ export default function Footer() {
             <div className="mt-8 grid grid-cols-2 gap-8">
               {secondaryColumns.map((column) => (
                 <div key={column.title}>
-                  <p className="text-sm font-semibold uppercase tracking-[0.2em] text-slate/70 dark:text-white/60">{column.title}</p>
-                  <div className="mt-4 space-y-3 text-[0.9375rem] leading-6 text-slate dark:text-white">
+                  <p className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-600 dark:text-white/60">{column.title}</p>
+                  <div className="mt-4 space-y-3 text-[0.9375rem] leading-6 text-slate-700 dark:text-white">
                     {column.links.map((link) => (
                       <Link key={link.href + link.label} href={link.href} className="block hover:text-ink">
                         {link.label}
@@ -162,8 +162,8 @@ export default function Footer() {
           <nav aria-label="Footer" className="grid grid-cols-2 gap-8 xl:grid-cols-4">
             {mainColumns.map((column) => (
               <div key={column.title}>
-                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-slate/70 dark:text-white/60">{column.title}</p>
-                <div className="mt-4 space-y-3 text-[0.9375rem] leading-6 text-slate dark:text-white">
+                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-600 dark:text-white/60">{column.title}</p>
+                <div className="mt-4 space-y-3 text-[0.9375rem] leading-6 text-slate-700 dark:text-white">
                   {column.links.map((link) => (
                     <Link key={link.href + link.label} href={link.href} className="block hover:text-ink">
                       {link.label}
@@ -175,10 +175,10 @@ export default function Footer() {
           </nav>
         </div>
 
-        <div className="mt-10 flex flex-col gap-3 border-t border-slate/10 dark:border-slate/20 pt-6 text-sm text-slate/70 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-10 flex flex-col gap-3 border-t border-slate/10 dark:border-slate/20 pt-6 text-sm text-slate-600 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <p className="font-display text-xl font-bold text-ink">Your inbox, handled.</p>
-            <p className="mt-1 text-sm text-slate dark:text-white/70">Kind regards, Kim</p>
+            <p className="mt-1 text-sm text-slate-600 dark:text-white/70">Kind regards, Kim</p>
           </div>
           <p className="dark:text-white/60">&copy; RegardsKim 2026. All rights reserved.</p>
         </div>
