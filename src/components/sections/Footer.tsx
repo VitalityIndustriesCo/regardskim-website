@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 
-const footerColumns = [
+const mainColumns = [
   {
     title: "Get Started",
     links: [
@@ -45,6 +45,9 @@ const footerColumns = [
       { href: "/tools/ai-tone-rewriter", label: "AI Tone Rewriter" },
     ],
   },
+] as const;
+
+const secondaryColumns = [
   {
     title: "Company",
     links: [
@@ -92,6 +95,7 @@ export default function Footer() {
   return (
     <footer className="border-t border-slate/10 bg-white py-12 dark:bg-[#20283A]">
       <div className="section-shell">
+        {/* Top row: brand/subscribe + main 4 columns */}
         <div className="grid gap-10 lg:grid-cols-[1.1fr_1.9fr] lg:items-start">
           <div>
             <p className="font-display text-2xl font-bold text-ink">RegardsKim</p>
@@ -137,10 +141,26 @@ export default function Footer() {
                 <p className="mt-2 text-xs text-red-600">Something went wrong — try again.</p>
               )}
             </form>
+
+            {/* Company + Resources tucked under subscribe */}
+            <div className="mt-8 grid grid-cols-2 gap-8">
+              {secondaryColumns.map((column) => (
+                <div key={column.title}>
+                  <p className="text-sm font-semibold uppercase tracking-[0.2em] text-slate/70">{column.title}</p>
+                  <div className="mt-4 space-y-3 text-[0.9375rem] leading-6 text-slate">
+                    {column.links.map((link) => (
+                      <Link key={link.href + link.label} href={link.href} className="block hover:text-ink">
+                        {link.label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
 
-          <nav aria-label="Footer" className="grid gap-8 sm:grid-cols-2 xl:grid-cols-4">
-            {footerColumns.map((column) => (
+          <nav aria-label="Footer" className="grid grid-cols-2 gap-8 xl:grid-cols-4">
+            {mainColumns.map((column) => (
               <div key={column.title}>
                 <p className="text-sm font-semibold uppercase tracking-[0.2em] text-slate/70">{column.title}</p>
                 <div className="mt-4 space-y-3 text-[0.9375rem] leading-6 text-slate">
