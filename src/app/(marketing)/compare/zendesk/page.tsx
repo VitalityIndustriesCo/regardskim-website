@@ -135,10 +135,13 @@ export default function RegardsKimVsZendeskPage() {
             need them.
           </p>
           <p>
+            If you are still mapping the category, our <Link href="/blog/best-shopify-customer-service-apps-2026" className="font-medium text-brass hover:text-oxblood">roundup of Shopify customer service apps</Link> is a good companion read.
+          </p>
+          <p>
             RegardsKim makes more sense if support is still close to the founder, the inbox is mostly email,
             and the goal is to reply faster without sacrificing accuracy. That is especially true when you look
             at cost. At <strong>$49/month</strong>, it is easy to justify against the hours spent manually
-            answering the same kinds of questions every week.
+            answering the same kinds of questions every week. Our <Link href="/tools/support-cost-calculator" className="font-medium text-brass hover:text-oxblood">support cost calculator</Link> makes that comparison concrete.
           </p>
           <p>
             So if you are building a support department, Zendesk is the stronger platform. If you are trying to

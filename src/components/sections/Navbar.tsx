@@ -7,6 +7,7 @@ import ThemeToggle from "@/components/ui/ThemeToggle";
 const navLinks = [
   { href: "/#how-it-works", label: "How it works" },
   { href: "/#pricing", label: "Pricing" },
+  { href: "/compare", label: "Compare" },
   { href: "/#faq", label: "FAQ" },
   { href: "/about", label: "About" },
   { href: "/affiliate", label: "Affiliate" },

@@ -21,6 +21,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: absoluteUrl("/compare"),
+      changeFrequency: "monthly",
+      priority: 0.75,
+    },
+    {
+      url: absoluteUrl("/tools/support-cost-calculator"),
+      changeFrequency: "monthly",
+      priority: 0.75,
+    },
+    {
       url: absoluteUrl("/affiliate"),
       changeFrequency: "monthly",
       priority: 0.6,

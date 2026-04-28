@@ -56,7 +56,8 @@ export const blogPosts: BlogPost[] = [
         </p>
         <p>
           The tradeoff is obvious too. If you need full ticket routing, live chat teams, deep reporting, and a
-          broad multi-channel support stack, this is not trying to be that.
+          broad multi-channel support stack, this is not trying to be that. If you want the direct breakdowns,
+          see how Kim compares to <a href="/compare/gorgias">Gorgias</a> and <a href="/compare/zendesk">Zendesk</a>.
         </p>
         <p>
           <strong>Best for:</strong> founder-led Shopify stores that want fast email support help without help
@@ -159,7 +160,9 @@ export const blogPosts: BlogPost[] = [
         </p>
         <p>
           For a lot of Shopify merchants, that bottleneck is still email. Not ticket ops. Not cross-channel
-          service architecture. Just too many repetitive customer questions landing in the inbox every day.
+          service architecture. Just too many repetitive customer questions landing in the inbox every day. If
+          that sounds like your store, our guide to <a href="/blog/automate-shopify-support-emails">automating Shopify support emails</a>
+          goes deeper on how to remove the repetitive parts first.
         </p>
         <p>
           If that sounds familiar, start with the lightest solution that genuinely saves time. You can always grow
@@ -232,7 +235,7 @@ export const blogPosts: BlogPost[] = [
         </ul>
         <p>
           Every email you prevent is better than an email you automate. The inbox gets quieter and the customer
-          experience improves at the same time.
+          experience improves at the same time. We covered one of the biggest preventable categories in our guide to <a href="/blog/reduce-where-is-my-order-emails">reducing “Where is my order?” emails</a>.
         </p>
 
         <h2>Step 3: Build good saved replies first</h2>
@@ -286,7 +289,8 @@ export const blogPosts: BlogPost[] = [
         </p>
         <p>
           This gives you most of the speed benefit without taking unnecessary risk. It also helps you spot which
-          categories are safe to automate more aggressively later.
+          categories are safe to automate more aggressively later. If you are still deciding between software and
+          hiring, compare that path with <a href="/compare/va">bringing on a virtual assistant</a>.
         </p>
 
         <h2>Step 6: Separate routine support from real exception work</h2>
@@ -459,7 +463,7 @@ export const blogPosts: BlogPost[] = [
         <p>
           AI tools like RegardsKim sit in a different category. At $49 per month, the math is much easier. If it
           saves even two hours a month, it is probably already paid for itself. If it saves two hours a week, it is
-          not even close.
+          not even close. If you want a quick estimate for your own store, use the <a href="/tools/support-cost-calculator">support cost calculator</a>.
         </p>
         <p>
           That does not mean AI replaces a great person. It means the cost threshold to try it is extremely low.
@@ -520,7 +524,7 @@ export const blogPosts: BlogPost[] = [
           extra cost.
         </p>
         <p>
-          The best support setups are not ideological. They are practical.
+          The best support setups are not ideological. They are practical. If you want to run the numbers, try the <a href="/tools/support-cost-calculator">support cost calculator</a> or read our breakdown of the <a href="/blog/true-cost-of-shopify-customer-support">true cost of Shopify customer support</a>.
         </p>
       </>
     ),
@@ -762,6 +766,7 @@ export const blogPosts: BlogPost[] = [
         </p>
         <p>
           That means the support side of ecommerce becomes even more important as storefront discovery gets smarter.
+          If you are preparing for that shift, it helps to read this alongside our piece on <a href="/blog/ai-storefront-post-sale-support">the post-sale support gap in AI storefronts</a>.
         </p>
 
         <h2>The stores that benefit most will be operationally tight</h2>
@@ -1170,7 +1175,7 @@ export const blogPosts: BlogPost[] = [
         </p>
         <p>
           Even if you do not use a tool like that, the principle is the same: build your support process
-          around facts, not memory.
+          around facts, not memory. If you want the next step after that, our guide on <a href="/blog/scale-customer-support-without-hiring">scaling support without hiring a team</a> lays out a simple system.
         </p>
 
         <h2>Keep a living support note</h2>
@@ -1462,7 +1467,7 @@ export const blogPosts: BlogPost[] = [
         </p>
         <p>
           But even if you never use a tool, the same lesson applies: the best fix for WISMO is better
-          communication before the customer has to ask.
+          communication before the customer has to ask. That pairs well with our broader guide to <a href="/blog/automate-shopify-support-emails">automating Shopify support emails</a> without losing the human touch.
         </p>
 
         <h2>Final thought</h2>
@@ -1741,7 +1746,8 @@ export const blogPosts: BlogPost[] = [
           information earlier, and saves your attention for the problems that actually need you.
         </p>
         <p>
-          That is how small stores grow without the founder getting trapped in the inbox.
+          That is how small stores grow without the founder getting trapped in the inbox. If you are weighing tools
+          while you build that system, start with our <a href="/compare">comparison hub</a> to see where Kim fits against Gorgias, Zendesk, and hiring a VA.
         </p>
         <p>
           And if you reach the point where you do hire, those systems still pay off. They make your next
@@ -2019,7 +2025,7 @@ export const blogPosts: BlogPost[] = [
           That is why general purpose does not cut it.
         </p>
         <p>
-          And that is why Regards Kim is different.
+          And that is why Regards Kim is different. If you want the side-by-side version, see how Kim compares with <a href="/compare/gorgias">Gorgias</a> and <a href="/compare/zendesk">Zendesk</a>.
         </p>
         <p>
           If you run a Shopify store and want help with support without losing accuracy or control, it is built

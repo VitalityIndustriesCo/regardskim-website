@@ -78,6 +78,8 @@ export default function Footer() {
           <Link href="/" className="hover:text-ink">Home</Link>
           <Link href="/#how-it-works" className="hover:text-ink">How it works</Link>
           <Link href="/#pricing" className="hover:text-ink">Pricing</Link>
+          <Link href="/compare" className="hover:text-ink">Compare</Link>
+          <Link href="/tools/support-cost-calculator" className="hover:text-ink">Support cost calculator</Link>
           <Link href="/#faq" className="hover:text-ink">FAQ</Link>
           <Link href="/about" className="hover:text-ink">About</Link>
           <Link href="/blog" className="hover:text-ink">Blog</Link>

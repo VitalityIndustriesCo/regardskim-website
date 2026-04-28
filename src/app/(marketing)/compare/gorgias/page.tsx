@@ -137,6 +137,9 @@ export default function RegardsKimVsGorgiasPage() {
             a real ticketing operation, Gorgias probably makes more sense. It was built for that world.
           </p>
           <p>
+            If you want more context on the tool landscape first, our <Link href="/blog/best-shopify-customer-service-apps-2026" className="font-medium text-brass hover:text-oxblood">best Shopify customer service apps guide</Link> gives the broader picture.
+          </p>
+          <p>
             But a lot of Shopify stores are not there. They are founder-led, lean, and mostly dealing with
             email questions like tracking, returns, refunds, and product follow-ups. In that setup, Gorgias
             can feel like buying a whole support department when what you really need is help clearing the
@@ -146,7 +149,7 @@ export default function RegardsKimVsGorgiasPage() {
             RegardsKim is stronger when you want speed, simplicity, and a price that makes sense early. At
             <strong> $49/month</strong>, it is often cheaper than one missed hour of founder time each week.
             It plugs into your Shopify store, uses real order and tracking context, and drafts replies you can
-            approve fast.
+            approve fast. If you want to sanity-check that math for your own store, try the <Link href="/tools/support-cost-calculator" className="font-medium text-brass hover:text-oxblood">support cost calculator</Link>.
           </p>
           <p>
             That does not make it a universal winner. It just makes it a better fit for stores that do not
