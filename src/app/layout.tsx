@@ -4,6 +4,7 @@ import localFont from "next/font/local";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import { Toaster } from "sonner";
 import { cn } from "@/lib/utils";
+import { absoluteUrl, siteConfig } from "@/lib/seo";
 import "./globals.css";
 
 const plusJakarta = Plus_Jakarta_Sans({
@@ -18,9 +19,43 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Regards Kim — Your inbox, handled.",
+  metadataBase: new URL(siteConfig.url),
+  title: {
+    default: "Regards Kim — AI email customer support for Shopify stores",
+    template: "%s | RegardsKim",
+  },
   description:
     "Regards Kim answers your customer emails so you don't have to. Tracking questions, returns, order updates — handled for $49/mo.",
+  applicationName: siteConfig.name,
+  keywords: [
+    "Shopify customer support",
+    "AI customer support",
+    "Shopify email support",
+    "ecommerce support automation",
+    "RegardsKim",
+  ],
+  alternates: {
+    canonical: siteConfig.url,
+  },
+  openGraph: {
+    title: "Regards Kim — AI email customer support for Shopify stores",
+    description: "Regards Kim answers your customer emails so you don't have to. Tracking questions, returns, order updates — handled for $49/mo.",
+    url: siteConfig.url,
+    siteName: siteConfig.name,
+    images: [
+      {
+        url: absoluteUrl(siteConfig.ogImage),
+      },
+    ],
+    locale: "en_AU",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Regards Kim — AI email customer support for Shopify stores",
+    description: "Regards Kim answers your customer emails so you don't have to. Tracking questions, returns, order updates — handled for $49/mo.",
+    images: [absoluteUrl(siteConfig.ogImage)],
+  },
 };
 
 export default function RootLayout({

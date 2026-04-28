@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import LegalPageLayout from "@/components/legal/LegalPageLayout";
+import { marketingMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Terms of Service | RegardsKim",
+export const metadata: Metadata = marketingMetadata({
+  title: "Terms of Service",
   description: "The terms governing your use of RegardsKim.",
-};
+  path: "/terms",
+});
 
 export default function TermsPage() {
   return (

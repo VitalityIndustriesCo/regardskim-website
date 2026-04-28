@@ -1,11 +1,15 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 
-export const metadata: Metadata = {
-  title: "About | RegardsKim",
+import { marketingMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = marketingMetadata({
+  title: "About RegardsKim",
   description:
     "The story behind RegardsKim — why we built it, who inspired it, and what we're working toward.",
-};
+  path: "/about",
+  image: "/images/about-hero.jpg",
+});
 
 export default function AboutPage() {
   return (

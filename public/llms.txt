@@ -1,0 +1,20 @@
+RegardsKim is an AI email customer support agent for Shopify stores.
+
+It helps small and medium Shopify store owners handle repetitive support emails faster without losing control of the customer experience.
+
+Core capabilities:
+- Drafts replies to tracking questions, returns, refunds, exchanges, and general order support emails
+- Uses live Shopify order, fulfillment, and tracking context to make responses accurate
+- Keeps merchants in control by requiring review and approval before replies are sent
+- Pricing starts at $49/mo
+- Founding 100 offer: $24.50/mo forever for early merchants
+
+Integration details:
+- Installs as a Shopify app
+- Connects to merchant email via Gmail OAuth
+- Reads incoming support emails and prepares reply drafts inside the workflow
+
+Best fit:
+- Small to medium Shopify store owners
+- Merchants spending too much time on customer support
+- Stores that want faster email handling without hiring a support team yet

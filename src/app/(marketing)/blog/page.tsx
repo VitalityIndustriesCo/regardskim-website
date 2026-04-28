@@ -1,12 +1,16 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 
 import { blogPosts } from "@/lib/blog-posts";
+import { marketingMetadata } from "@/lib/seo";
 
-export const metadata = {
-  title: "Blog | RegardsKim",
+export const metadata: Metadata = marketingMetadata({
+  title: "Blog",
   description: "Practical advice for Shopify store owners handling support, shipping questions, and growth.",
-};
+  path: "/blog",
+  image: "/blog/ai-storefront.png",
+});
 
 export default function BlogPage() {
   return (

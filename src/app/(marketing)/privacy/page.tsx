@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import LegalPageLayout from "@/components/legal/LegalPageLayout";
+import { marketingMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Privacy Policy | RegardsKim",
+export const metadata: Metadata = marketingMetadata({
+  title: "Privacy Policy",
   description: "How RegardsKim collects, uses, and protects your personal information.",
-};
+  path: "/privacy",
+});
 
 export default function PrivacyPage() {
   return (
