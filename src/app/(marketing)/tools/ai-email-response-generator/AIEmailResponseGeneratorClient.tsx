@@ -247,7 +247,7 @@ export default function AIEmailResponseGeneratorClient() {
             </label>
           </div>
 
-          <div className="rounded-[1.5rem] border border-brass/20 bg-[#FFF9F3] p-5 text-sm leading-7 text-slate">
+          <div className="rounded-[1.5rem] border border-brass/20 bg-[#FFF9F3] dark:bg-[#2A2520] dark:text-white/80 p-5 text-sm leading-7 text-slate">
             <p className="font-medium text-ink">Tip</p>
             <p className="mt-1">{scenarioHints[scenario]}</p>
           </div>
@@ -265,7 +265,7 @@ export default function AIEmailResponseGeneratorClient() {
 
       <aside className="rounded-[2rem] border border-brass/20 bg-white dark:bg-[#20283A] p-8 shadow-[0_8px_32px_rgba(176,141,87,0.12)] dark:shadow-[0_4px_24px_rgba(0,0,0,0.3)]">
         <p className="text-sm font-medium uppercase tracking-[0.18em] text-slate">Generated reply</p>
-        <div className="mt-5 rounded-[1.5rem] bg-[#FFF4E8] p-5">
+        <div className="mt-5 rounded-[1.5rem] bg-[#FFF4E8] dark:bg-[#2A2520] dark:text-white/80 p-5">
           {generatedResponse ? (
             <pre className="whitespace-pre-wrap font-sans text-base leading-7 text-ink">{generatedResponse}</pre>
           ) : (

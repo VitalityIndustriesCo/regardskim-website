@@ -149,7 +149,7 @@ export default function AIToneRewriterClient() {
             </select>
           </label>
 
-          <div className="rounded-[1.5rem] border border-brass/20 bg-[#FFF9F3] p-5 text-sm leading-7 text-slate">
+          <div className="rounded-[1.5rem] border border-brass/20 bg-[#FFF9F3] dark:bg-[#2A2520] dark:text-white/80 p-5 text-sm leading-7 text-slate">
             <p className="font-medium text-ink">What this rewrite does</p>
             <p className="mt-1">{helperCopy[tone]}</p>
           </div>
@@ -167,7 +167,7 @@ export default function AIToneRewriterClient() {
 
       <aside className="rounded-[2rem] border border-brass/20 bg-white dark:bg-[#20283A] p-8 shadow-[0_8px_32px_rgba(176,141,87,0.12)] dark:shadow-[0_4px_24px_rgba(0,0,0,0.3)]">
         <p className="text-sm font-medium uppercase tracking-[0.18em] text-slate">Rewritten message</p>
-        <div className="mt-5 rounded-[1.5rem] bg-[#FFF4E8] p-5">
+        <div className="mt-5 rounded-[1.5rem] bg-[#FFF4E8] dark:bg-[#2A2520] dark:text-white/80 p-5">
           {output ? (
             <pre className="whitespace-pre-wrap font-sans text-base leading-7 text-ink">{output}</pre>
           ) : (

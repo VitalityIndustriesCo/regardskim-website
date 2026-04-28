@@ -209,7 +209,7 @@ If you have any questions about a return, refund, or exchange, contact ${store} 
           </button>
         </div>
 
-        <div className="mt-5 rounded-[1.5rem] bg-[#FFF4E8] p-5">
+        <div className="mt-5 rounded-[1.5rem] bg-[#FFF4E8] dark:bg-[#2A2520] dark:text-white/80 p-5">
           <pre className="whitespace-pre-wrap font-sans text-base leading-7 text-ink">{policyText}</pre>
         </div>
 
