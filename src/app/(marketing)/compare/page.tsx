@@ -26,10 +26,46 @@ const comparisonPages = [
       "Useful when you are weighing simple Shopify email support against a broader, more operational service platform.",
   },
   {
+    href: "/compare/tidio",
+    title: "RegardsKim vs Tidio",
+    description:
+      "A clear breakdown of email-first support versus live chat and chatbot-heavy customer service.",
+  },
+  {
+    href: "/compare/reamaze",
+    title: "RegardsKim vs Reamaze",
+    description:
+      "Helpful if you are deciding between lightweight email automation and a more mature ecommerce help desk.",
+  },
+  {
+    href: "/compare/richpanel",
+    title: "RegardsKim vs Richpanel",
+    description:
+      "Best for comparing pure inbox relief against a self-service portal and customer dashboard approach.",
+  },
+  {
+    href: "/compare/freshdesk",
+    title: "RegardsKim vs Freshdesk",
+    description:
+      "A practical look at Shopify-native support help versus broader enterprise service software.",
+  },
+  {
+    href: "/compare/hiring-staff",
+    title: "RegardsKim vs Hiring Support Staff",
+    description:
+      "Useful when you are deciding whether to hire support people now or remove repetitive work first.",
+  },
+  {
     href: "/compare/va",
     title: "RegardsKim vs Hiring a Virtual Assistant",
     description:
       "A practical breakdown of AI versus a VA on cost, speed, judgment, and when each option makes sense.",
+  },
+  {
+    href: "/compare/diy",
+    title: "RegardsKim vs Doing It Yourself",
+    description:
+      "A reality check on the hidden cost of founder-led support compared with a lightweight automation layer.",
   },
 ];
 
@@ -55,7 +91,7 @@ export default function CompareHubPage() {
     name: "How RegardsKim Compares",
     url: absoluteUrl("/compare"),
     description:
-      "Comparison hub for RegardsKim against Gorgias, Zendesk, and hiring a virtual assistant.",
+      "Comparison hub for RegardsKim against help desks, live chat tools, hiring options, and the DIY support approach.",
     hasPart: comparisonPages.map((page) => ({
       "@type": "WebPage",
       name: page.title,
@@ -80,7 +116,7 @@ export default function CompareHubPage() {
           </p>
         </div>
 
-        <div className="mx-auto mt-12 grid max-w-6xl gap-6 lg:grid-cols-3">
+        <div className="mx-auto mt-12 grid max-w-6xl gap-6 md:grid-cols-2 xl:grid-cols-3">
           {comparisonPages.map((page) => (
             <article
               key={page.href}

@@ -3,6 +3,66 @@
 import Link from "next/link";
 import { useState } from "react";
 
+const footerColumns = [
+  {
+    title: "Get Started",
+    links: [
+      { href: "/#install", label: "Install on Shopify" },
+      { href: "/pricing", label: "Pricing" },
+      { href: "/founding", label: "Founding 100" },
+    ],
+  },
+  {
+    title: "How It Works",
+    links: [
+      { href: "/#how-it-works", label: "How It Works" },
+      { href: "/blog", label: "Blog" },
+      { href: "/about", label: "About" },
+      { href: "/#faq", label: "FAQ" },
+    ],
+  },
+  {
+    title: "Comparisons",
+    links: [
+      { href: "/compare/gorgias", label: "Kim vs Gorgias" },
+      { href: "/compare/zendesk", label: "Kim vs Zendesk" },
+      { href: "/compare/tidio", label: "Kim vs Tidio" },
+      { href: "/compare/reamaze", label: "Kim vs Reamaze" },
+      { href: "/compare/richpanel", label: "Kim vs Richpanel" },
+      { href: "/compare/freshdesk", label: "Kim vs Freshdesk" },
+      { href: "/compare/hiring-staff", label: "Kim vs Hiring Staff" },
+      { href: "/compare/va", label: "Kim vs Hiring a VA" },
+      { href: "/compare/diy", label: "Kim vs Doing It Yourself" },
+    ],
+  },
+  {
+    title: "Free Tools",
+    links: [
+      { href: "/tools/ai-email-response-generator", label: "AI Email Response Generator" },
+      { href: "/tools/return-policy-generator", label: "Return Policy Generator" },
+      { href: "/tools/cs-email-templates", label: "CS Email Templates" },
+      { href: "/tools/support-cost-calculator", label: "Support Cost Calculator" },
+      { href: "/tools/ai-tone-rewriter", label: "AI Tone Rewriter" },
+    ],
+  },
+  {
+    title: "Company",
+    links: [
+      { href: "/privacy", label: "Privacy Policy" },
+      { href: "/terms", label: "Terms of Service" },
+      { href: "/affiliate", label: "Affiliate Program" },
+    ],
+  },
+  {
+    title: "Resources",
+    links: [
+      { href: "/tools/support-cost-calculator", label: "Support Cost Calc" },
+      { href: "/tools/cs-email-templates", label: "CS Email Templates" },
+      { href: "/blog", label: "Blog" },
+    ],
+  },
+] as const;
+
 export default function Footer() {
   const [email, setEmail] = useState("");
   const [honeypot, setHoneypot] = useState("");
@@ -31,67 +91,76 @@ export default function Footer() {
 
   return (
     <footer className="border-t border-slate/10 bg-white py-12 dark:bg-[#20283A]">
-      <div className="section-shell grid gap-8 md:grid-cols-3 md:items-start">
-        <div>
-          <p className="font-display font-bold text-2xl text-ink">RegardsKim</p>
-          <p className="mt-3 text-sm text-slate">Customer email support for ecommerce stores.</p>
+      <div className="section-shell">
+        <div className="grid gap-10 lg:grid-cols-[1.1fr_1.9fr] lg:items-start">
+          <div>
+            <p className="font-display text-2xl font-bold text-ink">RegardsKim</p>
+            <p className="mt-3 max-w-sm text-sm leading-6 text-slate">
+              Customer email support for ecommerce stores.
+            </p>
 
-          <form onSubmit={handleSubscribe} className="mt-6">
-            <p className="text-sm font-medium text-ink mb-2">Stay in the loop</p>
-            {/* Honeypot — hidden from humans, bots fill it */}
-            <input
-              type="text"
-              name="website"
-              value={honeypot}
-              onChange={(e) => setHoneypot(e.target.value)}
-              tabIndex={-1}
-              autoComplete="off"
-              style={{ position: "absolute", left: "-9999px", opacity: 0, height: 0 }}
-            />
-            <div className="flex gap-2">
+            <form onSubmit={handleSubscribe} className="mt-6 max-w-sm">
+              <p className="mb-2 text-sm font-medium text-ink">Stay in the loop</p>
               <input
-                type="email"
-                required
-                value={email}
-                onChange={(e) => { setEmail(e.target.value); if (status !== "idle") setStatus("idle"); }}
-                placeholder="you@store.com"
-                className="w-full max-w-[220px] rounded-lg border border-slate/20 bg-mist px-3 py-2 text-sm text-ink placeholder:text-slate/50 focus:border-brass focus:bg-white focus:outline-none focus:ring-2 focus:ring-brass/30 dark:focus:bg-[#1B2436]"
+                type="text"
+                name="website"
+                value={honeypot}
+                onChange={(e) => setHoneypot(e.target.value)}
+                tabIndex={-1}
+                autoComplete="off"
+                style={{ position: "absolute", left: "-9999px", opacity: 0, height: 0 }}
               />
-              <button
-                type="submit"
-                disabled={status === "loading"}
-                className="shrink-0 rounded-lg bg-brass px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-oxblood disabled:opacity-60"
-              >
-                {status === "loading" ? "..." : "Subscribe"}
-              </button>
-            </div>
-            {status === "success" && (
-              <p className="mt-2 text-xs text-emerald-600">You&apos;re in! We&apos;ll keep you posted.</p>
-            )}
-            {status === "error" && (
-              <p className="mt-2 text-xs text-red-600">Something went wrong — try again.</p>
-            )}
-          </form>
+              <div className="flex gap-2">
+                <input
+                  type="email"
+                  required
+                  value={email}
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                    if (status !== "idle") setStatus("idle");
+                  }}
+                  placeholder="you@store.com"
+                  className="w-full rounded-lg border border-slate/20 bg-mist px-3 py-2 text-sm text-ink placeholder:text-slate/50 focus:border-brass focus:bg-white focus:outline-none focus:ring-2 focus:ring-brass/30 dark:focus:bg-[#1B2436]"
+                />
+                <button
+                  type="submit"
+                  disabled={status === "loading"}
+                  className="shrink-0 rounded-lg bg-brass px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-oxblood disabled:opacity-60"
+                >
+                  {status === "loading" ? "..." : "Subscribe"}
+                </button>
+              </div>
+              {status === "success" && (
+                <p className="mt-2 text-xs text-emerald-600">You&apos;re in! We&apos;ll keep you posted.</p>
+              )}
+              {status === "error" && (
+                <p className="mt-2 text-xs text-red-600">Something went wrong — try again.</p>
+              )}
+            </form>
+          </div>
+
+          <nav aria-label="Footer" className="grid gap-8 sm:grid-cols-2 xl:grid-cols-4">
+            {footerColumns.map((column) => (
+              <div key={column.title}>
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate/70">{column.title}</p>
+                <div className="mt-4 space-y-3 text-sm text-slate">
+                  {column.links.map((link) => (
+                    <Link key={link.href + link.label} href={link.href} className="block hover:text-ink">
+                      {link.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </nav>
         </div>
 
-        <nav aria-label="Footer" className="grid grid-cols-2 gap-x-6 gap-y-2 text-sm text-slate">
-          <Link href="/" className="hover:text-ink">Home</Link>
-          <Link href="/#how-it-works" className="hover:text-ink">How it works</Link>
-          <Link href="/#pricing" className="hover:text-ink">Pricing</Link>
-          <Link href="/compare" className="hover:text-ink">Compare</Link>
-          <Link href="/tools/support-cost-calculator" className="hover:text-ink">Support cost calculator</Link>
-          <Link href="/#faq" className="hover:text-ink">FAQ</Link>
-          <Link href="/about" className="hover:text-ink">About</Link>
-          <Link href="/blog" className="hover:text-ink">Blog</Link>
-          <Link href="/affiliate" className="hover:text-ink">Affiliate</Link>
-          <Link href="/privacy" className="hover:text-ink">Privacy Policy</Link>
-          <Link href="/terms" className="hover:text-ink">Terms of Service</Link>
-        </nav>
-
-        <div className="md:text-right">
-          <p className="font-display font-bold text-2xl text-ink">Your inbox, handled.</p>
-          <p className="mt-3 text-sm text-slate">Kind regards, Kim</p>
-          <p className="mt-6 text-sm text-slate/60">&copy; RegardsKim 2026. All rights reserved.</p>
+        <div className="mt-10 flex flex-col gap-3 border-t border-slate/10 pt-6 text-sm text-slate/70 sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <p className="font-display text-xl font-bold text-ink">Your inbox, handled.</p>
+            <p className="mt-1 text-sm text-slate">Kind regards, Kim</p>
+          </div>
+          <p>&copy; RegardsKim 2026. All rights reserved.</p>
         </div>
       </div>
     </footer>
