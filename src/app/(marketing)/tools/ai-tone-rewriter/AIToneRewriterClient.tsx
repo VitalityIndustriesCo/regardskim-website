@@ -130,7 +130,7 @@ export default function AIToneRewriterClient() {
               onChange={(e) => setInput(e.target.value)}
               rows={9}
               placeholder="We can't refund this because your order is outside the return window..."
-              className="mt-2 w-full rounded-[1.5rem] border border-slate/15 bg-mist dark:bg-[#2A3347] dark:border-slate/40 dark:text-white px-4 py-3 text-ink placeholder:text-slate/50 focus:border-brass focus:bg-white dark:bg-[#20283A] dark:focus:bg-[#2A3347] focus:outline-none focus:ring-2 focus:ring-brass/30"
+              className="mt-2 w-full rounded-[1.5rem] border border-slate/15 bg-mist dark:bg-[#2A3347] dark:border-slate/40 dark:text-white px-4 py-3 text-ink placeholder:text-slate/50 focus:border-brass focus:bg-white dark:focus:bg-[#2A3347] focus:outline-none focus:ring-2 focus:ring-brass/30"
             />
           </label>
 
@@ -139,7 +139,7 @@ export default function AIToneRewriterClient() {
             <select
               value={tone}
               onChange={(e) => setTone(e.target.value as ToneOption)}
-              className="mt-2 w-full rounded-2xl border border-slate/15 bg-mist dark:bg-[#2A3347] dark:border-slate/40 dark:text-white px-4 py-3 text-ink focus:border-brass focus:bg-white dark:bg-[#20283A] dark:focus:bg-[#2A3347] focus:outline-none focus:ring-2 focus:ring-brass/30"
+              className="mt-2 w-full rounded-2xl border border-slate/15 bg-mist dark:bg-[#2A3347] dark:border-slate/40 dark:text-white px-4 py-3 text-ink focus:border-brass focus:bg-white dark:focus:bg-[#2A3347] focus:outline-none focus:ring-2 focus:ring-brass/30"
             >
               {tones.map((option) => (
                 <option key={option} value={option}>
