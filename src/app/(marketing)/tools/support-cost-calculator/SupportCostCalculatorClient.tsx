@@ -101,7 +101,7 @@ export default function SupportCostCalculatorClient() {
             <p className="text-3xl font-semibold text-ink">${results.yearlyCost.toFixed(0)}</p>
           </div>
           <div className="rounded-[1.5rem] bg-[#FFF4E8] p-5">
-            <p className="text-sm text-slate">Compared with Kim at ${KIM_MONTHLY_COST}/month</p>
+            <p className="text-sm text-slate">Compared with Regards Kim at ${KIM_MONTHLY_COST}/month</p>
             <p className="mt-2 text-2xl font-semibold text-ink">Save about ${results.monthlySavings.toFixed(0)}/month</p>
             <p className="mt-1 text-base text-slate">That is roughly ${results.yearlySavings.toFixed(0)}/year back in time or payroll.</p>
           </div>

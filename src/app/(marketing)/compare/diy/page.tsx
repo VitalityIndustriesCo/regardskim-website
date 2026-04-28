@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import StructuredData from "@/components/seo/StructuredData";
-import FinalCTA from "@/components/sections/FinalCTA";
 import { absoluteUrl, marketingMetadata, siteConfig } from "@/lib/seo";
 
 export const metadata: Metadata = marketingMetadata({
@@ -153,15 +152,14 @@ export default function RegardsKimVsDIYPage() {
         <div className="mx-auto mt-12 max-w-4xl rounded-[1.75rem] border border-brass/20 bg-white p-8 text-center shadow-[0_8px_32px_rgba(176,141,87,0.12)]">
           <h2 className="font-display text-3xl font-bold text-ink">Keep the control, lose the drag</h2>
           <p className="mt-4 text-lg leading-8 text-slate">
-            If you are still doing support yourself, Kim helps without taking the inbox fully out of your hands.
+            If you are still doing support yourself, Regards Kim helps without taking the inbox fully out of your hands.
           </p>
           <Link href="/#install" className="btn-primary mt-8 inline-flex">
-            Install Kim on Shopify
+            Install Regards Kim on Shopify
           </Link>
         </div>
       </section>
 
-      <FinalCTA />
     </main>
   );
 }

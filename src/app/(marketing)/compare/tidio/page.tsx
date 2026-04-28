@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import StructuredData from "@/components/seo/StructuredData";
-import FinalCTA from "@/components/sections/FinalCTA";
 import { absoluteUrl, marketingMetadata, siteConfig } from "@/lib/seo";
 
 export const metadata: Metadata = marketingMetadata({
@@ -143,7 +142,7 @@ export default function RegardsKimVsTidioPage() {
             founder ends up answering them manually. That is the exact lane where RegardsKim is stronger.
           </p>
           <p>
-            Kim stays focused on email, uses Shopify order context, and keeps the setup lighter. If you want help
+            Regards Kim stays focused on email, uses Shopify order context, and keeps the setup lighter. If you want help
             judging whether the savings justify it, our <Link href="/tools/support-cost-calculator" className="font-medium text-brass hover:text-oxblood">support cost calculator</Link> makes the tradeoff easier to see.
           </p>
           <p>
@@ -158,12 +157,11 @@ export default function RegardsKimVsTidioPage() {
             If your inbox is the thing draining time, RegardsKim is the simpler and more focused option.
           </p>
           <Link href="/#install" className="btn-primary mt-8 inline-flex">
-            Install Kim on Shopify
+            Install Regards Kim on Shopify
           </Link>
         </div>
       </section>
 
-      <FinalCTA />
     </main>
   );
 }

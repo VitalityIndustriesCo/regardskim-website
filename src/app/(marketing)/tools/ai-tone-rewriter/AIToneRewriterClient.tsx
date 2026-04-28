@@ -179,7 +179,7 @@ export default function AIToneRewriterClient() {
 
         <div className="mt-6 border-t border-slate/10 pt-6">
           <Link href="/#install" className="text-sm font-semibold text-brass hover:text-oxblood">
-            Kim automatically matches the right tone for every customer →
+            Regards Kim automatically matches the right tone for every customer →
           </Link>
         </div>
       </aside>

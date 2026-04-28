@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import StructuredData from "@/components/seo/StructuredData";
-import FinalCTA from "@/components/sections/FinalCTA";
 import { absoluteUrl, marketingMetadata, siteConfig } from "@/lib/seo";
 
 export const metadata: Metadata = marketingMetadata({
@@ -157,12 +156,11 @@ export default function RegardsKimVsReamazePage() {
             If your main goal is to stop drowning in support email, RegardsKim is often the easier call.
           </p>
           <Link href="/#install" className="btn-primary mt-8 inline-flex">
-            Install Kim on Shopify
+            Install Regards Kim on Shopify
           </Link>
         </div>
       </section>
 
-      <FinalCTA />
     </main>
   );
 }

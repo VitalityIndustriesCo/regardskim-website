@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import StructuredData from "@/components/seo/StructuredData";
-import FinalCTA from "@/components/sections/FinalCTA";
 import { absoluteUrl, marketingMetadata, siteConfig } from "@/lib/seo";
 
 export const metadata: Metadata = marketingMetadata({
@@ -147,7 +146,7 @@ export default function RegardsKimVsHiringStaffPage() {
             put numbers behind that, try the <Link href="/tools/support-cost-calculator" className="font-medium text-brass hover:text-oxblood">support cost calculator</Link>.
           </p>
           <p>
-            Later on, you may still hire someone. In a lot of cases that is the best progression: let Kim remove the
+            Later on, you may still hire someone. In a lot of cases that is the best progression: let Regards Kim remove the
             repetitive load first, then add humans once the remaining work is truly nuanced enough to need them.
           </p>
         </div>
@@ -155,15 +154,14 @@ export default function RegardsKimVsHiringStaffPage() {
         <div className="mx-auto mt-12 max-w-4xl rounded-[1.75rem] border border-brass/20 bg-white p-8 text-center shadow-[0_8px_32px_rgba(176,141,87,0.12)]">
           <h2 className="font-display text-3xl font-bold text-ink">A lighter step before payroll</h2>
           <p className="mt-4 text-lg leading-8 text-slate">
-            If you are not ready to hire, Kim can still take a real chunk of support work off your plate.
+            If you are not ready to hire, Regards Kim can still take a real chunk of support work off your plate.
           </p>
           <Link href="/#install" className="btn-primary mt-8 inline-flex">
-            Install Kim on Shopify
+            Install Regards Kim on Shopify
           </Link>
         </div>
       </section>
 
-      <FinalCTA />
     </main>
   );
 }

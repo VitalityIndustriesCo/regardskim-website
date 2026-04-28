@@ -57,7 +57,7 @@ export const blogPosts: BlogPost[] = [
         <p>
           The tradeoff is obvious too. If you need full ticket routing, live chat teams, deep reporting, and a
           broad multi-channel support stack, this is not trying to be that. If you want the direct breakdowns,
-          see how Kim compares to <a href="/compare/gorgias">Gorgias</a> and <a href="/compare/zendesk">Zendesk</a>.
+          see how Regards Kim compares to <a href="/compare/gorgias">Gorgias</a> and <a href="/compare/zendesk">Zendesk</a>.
         </p>
         <p>
           <strong>Best for:</strong> founder-led Shopify stores that want fast email support help without help
@@ -1747,7 +1747,7 @@ export const blogPosts: BlogPost[] = [
         </p>
         <p>
           That is how small stores grow without the founder getting trapped in the inbox. If you are weighing tools
-          while you build that system, start with our <a href="/compare">comparison hub</a> to see where Kim fits against Gorgias, Zendesk, and hiring a VA.
+          while you build that system, start with our <a href="/compare">comparison hub</a> to see where Regards Kim fits against Gorgias, Zendesk, and hiring a VA.
         </p>
         <p>
           And if you reach the point where you do hire, those systems still pay off. They make your next

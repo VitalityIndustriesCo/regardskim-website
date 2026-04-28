@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import StructuredData from "@/components/seo/StructuredData";
-import FinalCTA from "@/components/sections/FinalCTA";
 import { absoluteUrl, marketingMetadata, siteConfig } from "@/lib/seo";
 
 export const metadata: Metadata = marketingMetadata({
@@ -144,7 +143,7 @@ export default function RegardsKimVsVirtualAssistantPage() {
             It gives you faster replies, better consistency, and 24/7 coverage without adding another salary.
           </p>
           <p>
-            Later on, you may still hire a VA. In fact, the two can work well together. Let Kim handle the
+            Later on, you may still hire a VA. In fact, the two can work well together. Let Regards Kim handle the
             repetitive first draft work, and let a human step in for the sensitive or complicated conversations.
             We unpack that sequence more in our guide to <Link href="/blog/ai-vs-virtual-assistant-ecommerce-support" className="font-medium text-brass hover:text-oxblood">AI vs virtual assistant for ecommerce support</Link>.
           </p>
@@ -157,12 +156,11 @@ export default function RegardsKimVsVirtualAssistantPage() {
             keep customer support under control.
           </p>
           <Link href="/#install" className="btn-primary mt-8 inline-flex">
-            Install Kim on Shopify
+            Install Regards Kim on Shopify
           </Link>
         </div>
       </section>
 
-      <FinalCTA />
     </main>
   );
 }

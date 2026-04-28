@@ -215,7 +215,7 @@ If you have any questions about a return, refund, or exchange, contact ${store} 
 
         <div className="mt-6 border-t border-slate/10 pt-6">
           <Link href="/#install" className="text-sm font-semibold text-brass hover:text-oxblood">
-            Kim uses your policies to answer customer questions automatically →
+            Regards Kim uses your policies to answer customer questions automatically →
           </Link>
         </div>
       </aside>

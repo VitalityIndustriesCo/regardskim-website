@@ -84,7 +84,7 @@ export default function SupportCostCalculatorPage() {
             </h1>
             <p className="mt-6 text-lg leading-8 text-slate">
               If support is chewing through founder time or VA hours, the real cost adds up fast. Use this
-              calculator to estimate your monthly support cost and compare it with Kim at $49/month.
+              calculator to estimate your monthly support cost and compare it with Regards Kim at $49/month.
             </p>
           </div>
 
