@@ -160,7 +160,7 @@ export default function CSEmailTemplatesClient() {
             {category.templates.map((template) => {
               const key = `${category.title}-${template.title}`;
               return (
-                <article key={key} className="rounded-[1.75rem] border border-slate/10 dark:border-slate/20 bg-mist/40 dark:bg-[#1B2436]/40 p-6">
+                <article key={key} className="rounded-[1.75rem] border border-slate/10 dark:border-slate/20 bg-mist/40 dark:bg-[#2A3347]/40 p-6">
                   <div className="flex items-start justify-between gap-4">
                     <h3 className="font-display text-xl font-bold text-ink">{template.title}</h3>
                     <button

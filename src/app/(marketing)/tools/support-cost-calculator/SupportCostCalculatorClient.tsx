@@ -39,7 +39,7 @@ export default function SupportCostCalculatorClient() {
               min={0}
               value={ordersPerMonth}
               onChange={(e) => setOrdersPerMonth(Number(e.target.value) || 0)}
-              className="mt-2 w-full rounded-2xl border border-slate/15 bg-mist dark:bg-[#1B2436] px-4 py-3 text-ink focus:border-brass focus:bg-white dark:bg-[#20283A] dark:focus:bg-[#1B2436] focus:outline-none focus:ring-2 focus:ring-brass/30"
+              className="mt-2 w-full rounded-2xl border border-slate/15 bg-mist dark:bg-[#2A3347] dark:border-slate/40 dark:text-white px-4 py-3 text-ink focus:border-brass focus:bg-white dark:bg-[#20283A] dark:focus:bg-[#2A3347] focus:outline-none focus:ring-2 focus:ring-brass/30"
             />
           </label>
 
@@ -51,7 +51,7 @@ export default function SupportCostCalculatorClient() {
               step="0.5"
               value={emailsPerOrderRate}
               onChange={(e) => setEmailsPerOrderRate(Number(e.target.value) || 0)}
-              className="mt-2 w-full rounded-2xl border border-slate/15 bg-mist dark:bg-[#1B2436] px-4 py-3 text-ink focus:border-brass focus:bg-white dark:bg-[#20283A] dark:focus:bg-[#1B2436] focus:outline-none focus:ring-2 focus:ring-brass/30"
+              className="mt-2 w-full rounded-2xl border border-slate/15 bg-mist dark:bg-[#2A3347] dark:border-slate/40 dark:text-white px-4 py-3 text-ink focus:border-brass focus:bg-white dark:bg-[#20283A] dark:focus:bg-[#2A3347] focus:outline-none focus:ring-2 focus:ring-brass/30"
             />
           </label>
 
@@ -63,7 +63,7 @@ export default function SupportCostCalculatorClient() {
               step="0.5"
               value={hoursPerWeek}
               onChange={(e) => setHoursPerWeek(Number(e.target.value) || 0)}
-              className="mt-2 w-full rounded-2xl border border-slate/15 bg-mist dark:bg-[#1B2436] px-4 py-3 text-ink focus:border-brass focus:bg-white dark:bg-[#20283A] dark:focus:bg-[#1B2436] focus:outline-none focus:ring-2 focus:ring-brass/30"
+              className="mt-2 w-full rounded-2xl border border-slate/15 bg-mist dark:bg-[#2A3347] dark:border-slate/40 dark:text-white px-4 py-3 text-ink focus:border-brass focus:bg-white dark:bg-[#20283A] dark:focus:bg-[#2A3347] focus:outline-none focus:ring-2 focus:ring-brass/30"
             />
           </label>
 
@@ -75,7 +75,7 @@ export default function SupportCostCalculatorClient() {
               step="1"
               value={hourlyRate}
               onChange={(e) => setHourlyRate(Number(e.target.value) || 0)}
-              className="mt-2 w-full rounded-2xl border border-slate/15 bg-mist dark:bg-[#1B2436] px-4 py-3 text-ink focus:border-brass focus:bg-white dark:bg-[#20283A] dark:focus:bg-[#1B2436] focus:outline-none focus:ring-2 focus:ring-brass/30"
+              className="mt-2 w-full rounded-2xl border border-slate/15 bg-mist dark:bg-[#2A3347] dark:border-slate/40 dark:text-white px-4 py-3 text-ink focus:border-brass focus:bg-white dark:bg-[#20283A] dark:focus:bg-[#2A3347] focus:outline-none focus:ring-2 focus:ring-brass/30"
             />
           </label>
         </div>

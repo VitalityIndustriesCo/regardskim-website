@@ -110,7 +110,7 @@ If you have any questions about a return, refund, or exchange, contact ${store} 
                 setStoreName(e.target.value);
                 setCopied(false);
               }}
-              className="mt-2 w-full rounded-2xl border border-slate/15 bg-mist dark:bg-[#1B2436] px-4 py-3 text-ink focus:border-brass focus:bg-white dark:bg-[#20283A] dark:focus:bg-[#1B2436] focus:outline-none focus:ring-2 focus:ring-brass/30"
+              className="mt-2 w-full rounded-2xl border border-slate/15 bg-mist dark:bg-[#2A3347] dark:border-slate/40 dark:text-white px-4 py-3 text-ink focus:border-brass focus:bg-white dark:bg-[#20283A] dark:focus:bg-[#2A3347] focus:outline-none focus:ring-2 focus:ring-brass/30"
             />
           </label>
 
@@ -124,7 +124,7 @@ If you have any questions about a return, refund, or exchange, contact ${store} 
                 setReturnWindow(Number(e.target.value) || 1);
                 setCopied(false);
               }}
-              className="mt-2 w-full rounded-2xl border border-slate/15 bg-mist dark:bg-[#1B2436] px-4 py-3 text-ink focus:border-brass focus:bg-white dark:bg-[#20283A] dark:focus:bg-[#1B2436] focus:outline-none focus:ring-2 focus:ring-brass/30"
+              className="mt-2 w-full rounded-2xl border border-slate/15 bg-mist dark:bg-[#2A3347] dark:border-slate/40 dark:text-white px-4 py-3 text-ink focus:border-brass focus:bg-white dark:bg-[#20283A] dark:focus:bg-[#2A3347] focus:outline-none focus:ring-2 focus:ring-brass/30"
             />
           </label>
 
@@ -136,7 +136,7 @@ If you have any questions about a return, refund, or exchange, contact ${store} 
                 setRefundMethod(e.target.value as keyof typeof refundMethodLabels);
                 setCopied(false);
               }}
-              className="mt-2 w-full rounded-2xl border border-slate/15 bg-mist dark:bg-[#1B2436] px-4 py-3 text-ink focus:border-brass focus:bg-white dark:bg-[#20283A] dark:focus:bg-[#1B2436] focus:outline-none focus:ring-2 focus:ring-brass/30"
+              className="mt-2 w-full rounded-2xl border border-slate/15 bg-mist dark:bg-[#2A3347] dark:border-slate/40 dark:text-white px-4 py-3 text-ink focus:border-brass focus:bg-white dark:bg-[#20283A] dark:focus:bg-[#2A3347] focus:outline-none focus:ring-2 focus:ring-brass/30"
             >
               <option value="original">Original payment</option>
               <option value="credit">Store credit</option>
@@ -152,7 +152,7 @@ If you have any questions about a return, refund, or exchange, contact ${store} 
                 setShippingResponsibility(e.target.value as keyof typeof shippingResponsibilityLabels);
                 setCopied(false);
               }}
-              className="mt-2 w-full rounded-2xl border border-slate/15 bg-mist dark:bg-[#1B2436] px-4 py-3 text-ink focus:border-brass focus:bg-white dark:bg-[#20283A] dark:focus:bg-[#1B2436] focus:outline-none focus:ring-2 focus:ring-brass/30"
+              className="mt-2 w-full rounded-2xl border border-slate/15 bg-mist dark:bg-[#2A3347] dark:border-slate/40 dark:text-white px-4 py-3 text-ink focus:border-brass focus:bg-white dark:bg-[#20283A] dark:focus:bg-[#2A3347] focus:outline-none focus:ring-2 focus:ring-brass/30"
             >
               <option value="customer">Customer pays return shipping</option>
               <option value="store">Store pays return shipping</option>
@@ -165,7 +165,7 @@ If you have any questions about a return, refund, or exchange, contact ${store} 
             <p className="text-sm font-medium text-ink">Return conditions</p>
             <div className="mt-3 space-y-3">
               {conditionOptions.map((option) => (
-                <label key={option.id} className="flex items-start gap-3 rounded-2xl border border-slate/10 dark:border-slate/20 bg-mist/60 dark:bg-[#1B2436]/60 px-4 py-3 text-sm text-slate">
+                <label key={option.id} className="flex items-start gap-3 rounded-2xl border border-slate/10 dark:border-slate/20 bg-mist/60 dark:bg-[#2A3347]/60 px-4 py-3 text-sm text-slate">
                   <input
                     type="checkbox"
                     checked={conditions.includes(option.id)}
@@ -182,7 +182,7 @@ If you have any questions about a return, refund, or exchange, contact ${store} 
             <p className="text-sm font-medium text-ink">Exceptions</p>
             <div className="mt-3 space-y-3">
               {exceptionOptions.map((option) => (
-                <label key={option.id} className="flex items-start gap-3 rounded-2xl border border-slate/10 dark:border-slate/20 bg-mist/60 dark:bg-[#1B2436]/60 px-4 py-3 text-sm text-slate">
+                <label key={option.id} className="flex items-start gap-3 rounded-2xl border border-slate/10 dark:border-slate/20 bg-mist/60 dark:bg-[#2A3347]/60 px-4 py-3 text-sm text-slate">
                   <input
                     type="checkbox"
                     checked={exceptions.includes(option.id)}
