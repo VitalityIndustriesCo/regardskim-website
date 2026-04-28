@@ -142,8 +142,8 @@ export default function Footer() {
           <nav aria-label="Footer" className="grid gap-8 sm:grid-cols-2 xl:grid-cols-4">
             {footerColumns.map((column) => (
               <div key={column.title}>
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate/70">{column.title}</p>
-                <div className="mt-4 space-y-3 text-sm text-slate">
+                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-slate/70">{column.title}</p>
+                <div className="mt-4 space-y-3 text-[0.9375rem] leading-6 text-slate">
                   {column.links.map((link) => (
                     <Link key={link.href + link.label} href={link.href} className="block hover:text-ink">
                       {link.label}
