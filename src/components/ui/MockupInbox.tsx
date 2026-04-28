@@ -32,12 +32,6 @@ type EmailCard = {
   replyPreview?: string;
 };
 
-const badgeToneClass = {
-  green: "bg-emerald-50 text-emerald-700 border-emerald-200 dark:bg-emerald-950 dark:text-emerald-400 dark:border-emerald-800",
-  amber: "bg-amber-50 text-amber-700 border-amber-200 dark:bg-amber-950 dark:text-amber-400 dark:border-amber-800",
-  muted: "bg-slate/8 text-slate border-slate/15",
-};
-
 const EMAILS: EmailCard[] = [
   {
     avatar: "S",

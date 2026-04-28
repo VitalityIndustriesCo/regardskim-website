@@ -84,7 +84,7 @@ After the returned item is received, please allow a few business days for inspec
 
 Need help?
 If you have any questions about a return, refund, or exchange, contact ${store} support and we will be happy to help.`;
-  }, [conditions, exceptions, refundMethod, returnWindow, selectedConditions, selectedExceptions, shippingResponsibility, storeName]);
+  }, [refundMethod, returnWindow, selectedConditions, selectedExceptions, shippingResponsibility, storeName]);
 
   const handleToggle = (value: string, current: string[], setter: (next: string[]) => void) => {
     setter(current.includes(value) ? current.filter((item) => item !== value) : [...current, value]);
