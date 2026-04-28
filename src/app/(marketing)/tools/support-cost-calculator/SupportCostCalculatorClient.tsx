@@ -30,7 +30,7 @@ export default function SupportCostCalculatorClient() {
 
   return (
     <div className="mt-12 grid gap-8 lg:grid-cols-[1.15fr_0.85fr]">
-      <section className="rounded-[2rem] border border-slate/10 bg-white p-8 shadow-[0_8px_32px_rgba(0,0,0,0.08)]">
+      <section className="rounded-[2rem] border border-slate/10 dark:border-slate/20 bg-white dark:bg-[#20283A] p-8 shadow-[0_8px_32px_rgba(0,0,0,0.08)] dark:shadow-[0_4px_24px_rgba(0,0,0,0.3)]">
         <div className="grid gap-6 sm:grid-cols-2">
           <label className="block">
             <span className="text-sm font-medium text-ink">Orders per month</span>
@@ -39,7 +39,7 @@ export default function SupportCostCalculatorClient() {
               min={0}
               value={ordersPerMonth}
               onChange={(e) => setOrdersPerMonth(Number(e.target.value) || 0)}
-              className="mt-2 w-full rounded-2xl border border-slate/15 bg-mist px-4 py-3 text-ink focus:border-brass focus:bg-white focus:outline-none focus:ring-2 focus:ring-brass/30"
+              className="mt-2 w-full rounded-2xl border border-slate/15 bg-mist dark:bg-[#1B2436] px-4 py-3 text-ink focus:border-brass focus:bg-white dark:bg-[#20283A] dark:focus:bg-[#1B2436] focus:outline-none focus:ring-2 focus:ring-brass/30"
             />
           </label>
 
@@ -51,7 +51,7 @@ export default function SupportCostCalculatorClient() {
               step="0.5"
               value={emailsPerOrderRate}
               onChange={(e) => setEmailsPerOrderRate(Number(e.target.value) || 0)}
-              className="mt-2 w-full rounded-2xl border border-slate/15 bg-mist px-4 py-3 text-ink focus:border-brass focus:bg-white focus:outline-none focus:ring-2 focus:ring-brass/30"
+              className="mt-2 w-full rounded-2xl border border-slate/15 bg-mist dark:bg-[#1B2436] px-4 py-3 text-ink focus:border-brass focus:bg-white dark:bg-[#20283A] dark:focus:bg-[#1B2436] focus:outline-none focus:ring-2 focus:ring-brass/30"
             />
           </label>
 
@@ -63,7 +63,7 @@ export default function SupportCostCalculatorClient() {
               step="0.5"
               value={hoursPerWeek}
               onChange={(e) => setHoursPerWeek(Number(e.target.value) || 0)}
-              className="mt-2 w-full rounded-2xl border border-slate/15 bg-mist px-4 py-3 text-ink focus:border-brass focus:bg-white focus:outline-none focus:ring-2 focus:ring-brass/30"
+              className="mt-2 w-full rounded-2xl border border-slate/15 bg-mist dark:bg-[#1B2436] px-4 py-3 text-ink focus:border-brass focus:bg-white dark:bg-[#20283A] dark:focus:bg-[#1B2436] focus:outline-none focus:ring-2 focus:ring-brass/30"
             />
           </label>
 
@@ -75,7 +75,7 @@ export default function SupportCostCalculatorClient() {
               step="1"
               value={hourlyRate}
               onChange={(e) => setHourlyRate(Number(e.target.value) || 0)}
-              className="mt-2 w-full rounded-2xl border border-slate/15 bg-mist px-4 py-3 text-ink focus:border-brass focus:bg-white focus:outline-none focus:ring-2 focus:ring-brass/30"
+              className="mt-2 w-full rounded-2xl border border-slate/15 bg-mist dark:bg-[#1B2436] px-4 py-3 text-ink focus:border-brass focus:bg-white dark:bg-[#20283A] dark:focus:bg-[#1B2436] focus:outline-none focus:ring-2 focus:ring-brass/30"
             />
           </label>
         </div>
@@ -89,7 +89,7 @@ export default function SupportCostCalculatorClient() {
         </div>
       </section>
 
-      <aside className="rounded-[2rem] border border-brass/20 bg-white p-8 shadow-[0_8px_32px_rgba(176,141,87,0.12)]">
+      <aside className="rounded-[2rem] border border-brass/20 bg-white dark:bg-[#20283A] p-8 shadow-[0_8px_32px_rgba(176,141,87,0.12)] dark:shadow-[0_4px_24px_rgba(0,0,0,0.3)]">
         <p className="text-sm font-medium uppercase tracking-[0.18em] text-slate">Your estimate</p>
         <div className="mt-5 space-y-5">
           <div>
@@ -107,7 +107,7 @@ export default function SupportCostCalculatorClient() {
           </div>
         </div>
 
-        <div className="mt-8 border-t border-slate/10 pt-6 text-sm leading-7 text-slate">
+        <div className="mt-8 border-t border-slate/10 dark:border-slate/20 pt-6 text-sm leading-7 text-slate">
           <p>
             This uses a simple estimate: weekly support hours × hourly cost × 4.33 weeks per month.
           </p>

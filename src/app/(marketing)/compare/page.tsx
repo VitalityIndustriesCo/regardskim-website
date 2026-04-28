@@ -101,7 +101,7 @@ export default function CompareHubPage() {
   };
 
   return (
-    <main className="bg-paper">
+    <main className="bg-paper dark:bg-[#151C2C]">
       <StructuredData data={schema} />
 
       <section className="section-shell py-16 sm:py-20">
@@ -120,7 +120,7 @@ export default function CompareHubPage() {
           {comparisonPages.map((page) => (
             <article
               key={page.href}
-              className="rounded-[1.75rem] border border-slate/10 bg-white p-8 shadow-[0_4px_20px_rgba(0,0,0,0.06)] transition-transform duration-200 hover:-translate-y-1"
+              className="rounded-[1.75rem] border border-slate/10 dark:border-slate/20 bg-white dark:bg-[#20283A] p-8 shadow-[0_4px_20px_rgba(0,0,0,0.06)] dark:shadow-[0_4px_24px_rgba(0,0,0,0.3)] transition-transform duration-200 hover:-translate-y-1"
             >
               <p className="text-sm font-medium uppercase tracking-[0.18em] text-slate">Comparison</p>
               <h2 className="mt-4 font-display text-2xl font-bold text-ink">{page.title}</h2>
@@ -132,7 +132,7 @@ export default function CompareHubPage() {
           ))}
         </div>
 
-        <div className="mx-auto mt-12 max-w-5xl rounded-[2rem] border border-brass/20 bg-white p-8 shadow-[0_8px_32px_rgba(176,141,87,0.12)]">
+        <div className="mx-auto mt-12 max-w-5xl rounded-[2rem] border border-brass/20 bg-white dark:bg-[#20283A] p-8 shadow-[0_8px_32px_rgba(176,141,87,0.12)] dark:shadow-[0_4px_24px_rgba(0,0,0,0.3)]">
           <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
             <div>
               <h2 className="font-display text-3xl font-bold text-ink">Need more context before you choose?</h2>
@@ -146,7 +146,7 @@ export default function CompareHubPage() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="block rounded-2xl border border-slate/10 bg-mist/50 px-5 py-4 text-sm font-medium text-ink transition-colors hover:border-brass/30 hover:bg-[#FFF4E8]"
+                  className="block rounded-2xl border border-slate/10 dark:border-slate/20 bg-mist/50 dark:bg-[#1B2436]/50 px-5 py-4 text-sm font-medium text-ink transition-colors hover:border-brass/30 hover:bg-[#FFF4E8]"
                 >
                   {link.label}
                 </Link>

@@ -93,7 +93,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="border-t border-slate/10 bg-white py-12 dark:bg-[#20283A]">
+    <footer className="border-t border-slate/10 dark:border-slate/20 bg-white dark:bg-[#20283A] py-12 dark:bg-[#20283A]">
       <div className="section-shell">
         {/* Top row: brand/subscribe + main 4 columns */}
         <div className="grid gap-10 lg:grid-cols-[1.1fr_1.9fr] lg:items-start">
@@ -124,7 +124,7 @@ export default function Footer() {
                     if (status !== "idle") setStatus("idle");
                   }}
                   placeholder="you@store.com"
-                  className="w-full rounded-lg border border-slate/20 bg-mist px-3 py-2 text-sm text-ink placeholder:text-slate/50 focus:border-brass focus:bg-white focus:outline-none focus:ring-2 focus:ring-brass/30 dark:focus:bg-[#1B2436]"
+                  className="w-full rounded-lg border border-slate/20 bg-mist dark:bg-[#1B2436] px-3 py-2 text-sm text-ink placeholder:text-slate/50 focus:border-brass focus:bg-white dark:bg-[#20283A] dark:focus:bg-[#1B2436] focus:outline-none focus:ring-2 focus:ring-brass/30 dark:focus:bg-[#1B2436]"
                 />
                 <button
                   type="submit"
@@ -175,7 +175,7 @@ export default function Footer() {
           </nav>
         </div>
 
-        <div className="mt-10 flex flex-col gap-3 border-t border-slate/10 pt-6 text-sm text-slate/70 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-10 flex flex-col gap-3 border-t border-slate/10 dark:border-slate/20 pt-6 text-sm text-slate/70 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <p className="font-display text-xl font-bold text-ink">Your inbox, handled.</p>
             <p className="mt-1 text-sm text-slate">Kind regards, Kim</p>

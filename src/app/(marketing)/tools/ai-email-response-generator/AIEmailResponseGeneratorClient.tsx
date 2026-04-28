@@ -202,7 +202,7 @@ export default function AIEmailResponseGeneratorClient() {
 
   return (
     <div className="mt-12 grid gap-8 lg:grid-cols-[1.05fr_0.95fr]">
-      <section className="rounded-[2rem] border border-slate/10 bg-white p-8 shadow-[0_8px_32px_rgba(0,0,0,0.08)]">
+      <section className="rounded-[2rem] border border-slate/10 dark:border-slate/20 bg-white dark:bg-[#20283A] p-8 shadow-[0_8px_32px_rgba(0,0,0,0.08)] dark:shadow-[0_4px_24px_rgba(0,0,0,0.3)]">
         <div className="grid gap-6">
           <label className="block">
             <span className="text-sm font-medium text-ink">Paste the customer email</span>
@@ -211,7 +211,7 @@ export default function AIEmailResponseGeneratorClient() {
               onChange={(e) => setCustomerEmail(e.target.value)}
               placeholder="Hi, my order still hasn't arrived and tracking hasn't moved for days..."
               rows={9}
-              className="mt-2 w-full rounded-[1.5rem] border border-slate/15 bg-mist px-4 py-3 text-ink placeholder:text-slate/50 focus:border-brass focus:bg-white focus:outline-none focus:ring-2 focus:ring-brass/30"
+              className="mt-2 w-full rounded-[1.5rem] border border-slate/15 bg-mist dark:bg-[#1B2436] px-4 py-3 text-ink placeholder:text-slate/50 focus:border-brass focus:bg-white dark:bg-[#20283A] dark:focus:bg-[#1B2436] focus:outline-none focus:ring-2 focus:ring-brass/30"
             />
           </label>
 
@@ -221,7 +221,7 @@ export default function AIEmailResponseGeneratorClient() {
               <select
                 value={tone}
                 onChange={(e) => setTone(e.target.value as Tone)}
-                className="mt-2 w-full rounded-2xl border border-slate/15 bg-mist px-4 py-3 text-ink focus:border-brass focus:bg-white focus:outline-none focus:ring-2 focus:ring-brass/30"
+                className="mt-2 w-full rounded-2xl border border-slate/15 bg-mist dark:bg-[#1B2436] px-4 py-3 text-ink focus:border-brass focus:bg-white dark:bg-[#20283A] dark:focus:bg-[#1B2436] focus:outline-none focus:ring-2 focus:ring-brass/30"
               >
                 {tones.map((option) => (
                   <option key={option} value={option}>
@@ -236,7 +236,7 @@ export default function AIEmailResponseGeneratorClient() {
               <select
                 value={scenario}
                 onChange={(e) => setScenario(e.target.value as Scenario)}
-                className="mt-2 w-full rounded-2xl border border-slate/15 bg-mist px-4 py-3 text-ink focus:border-brass focus:bg-white focus:outline-none focus:ring-2 focus:ring-brass/30"
+                className="mt-2 w-full rounded-2xl border border-slate/15 bg-mist dark:bg-[#1B2436] px-4 py-3 text-ink focus:border-brass focus:bg-white dark:bg-[#20283A] dark:focus:bg-[#1B2436] focus:outline-none focus:ring-2 focus:ring-brass/30"
               >
                 {scenarios.map((option) => (
                   <option key={option} value={option}>
@@ -263,7 +263,7 @@ export default function AIEmailResponseGeneratorClient() {
         </div>
       </section>
 
-      <aside className="rounded-[2rem] border border-brass/20 bg-white p-8 shadow-[0_8px_32px_rgba(176,141,87,0.12)]">
+      <aside className="rounded-[2rem] border border-brass/20 bg-white dark:bg-[#20283A] p-8 shadow-[0_8px_32px_rgba(176,141,87,0.12)] dark:shadow-[0_4px_24px_rgba(0,0,0,0.3)]">
         <p className="text-sm font-medium uppercase tracking-[0.18em] text-slate">Generated reply</p>
         <div className="mt-5 rounded-[1.5rem] bg-[#FFF4E8] p-5">
           {generatedResponse ? (
@@ -275,7 +275,7 @@ export default function AIEmailResponseGeneratorClient() {
           )}
         </div>
 
-        <div className="mt-6 border-t border-slate/10 pt-6">
+        <div className="mt-6 border-t border-slate/10 dark:border-slate/20 pt-6">
           <Link href="/#install" className="text-sm font-semibold text-brass hover:text-oxblood">
             Want this automated for every email? Try RegardsKim →
           </Link>

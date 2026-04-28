@@ -75,7 +75,7 @@ export default function CSEmailTemplatesPage() {
   ];
 
   return (
-    <main className="bg-paper">
+    <main className="bg-paper dark:bg-[#151C2C]">
       <StructuredData data={schema} />
 
       <section className="section-shell py-16 sm:py-20">

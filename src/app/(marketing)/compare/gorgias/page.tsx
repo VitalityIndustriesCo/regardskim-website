@@ -79,7 +79,7 @@ export default function RegardsKimVsGorgiasPage() {
   };
 
   return (
-    <main className="bg-paper">
+    <main className="bg-paper dark:bg-[#151C2C]">
       <StructuredData data={schema} />
 
       <section className="section-shell py-16 sm:py-20">
@@ -95,23 +95,23 @@ export default function RegardsKimVsGorgiasPage() {
           </p>
         </div>
 
-        <div className="mx-auto mt-12 max-w-5xl overflow-hidden rounded-[2rem] border border-slate/10 bg-white shadow-[0_8px_32px_rgba(0,0,0,0.08)]">
-          <div className="grid grid-cols-3 border-b border-slate/10 bg-mist/40 text-sm font-semibold text-ink">
+        <div className="mx-auto mt-12 max-w-5xl overflow-hidden rounded-[2rem] border border-slate/10 dark:border-slate/20 bg-white dark:bg-[#20283A] shadow-[0_8px_32px_rgba(0,0,0,0.08)] dark:shadow-[0_4px_24px_rgba(0,0,0,0.3)]">
+          <div className="grid grid-cols-3 border-b border-slate/10 dark:border-slate/20 bg-mist/40 dark:bg-[#1B2436]/40 text-sm font-semibold text-ink">
             <div className="p-4">Category</div>
-            <div className="border-l border-slate/10 p-4">RegardsKim</div>
-            <div className="border-l border-slate/10 p-4">Gorgias</div>
+            <div className="border-l border-slate/10 dark:border-slate/20 p-4">RegardsKim</div>
+            <div className="border-l border-slate/10 dark:border-slate/20 p-4">Gorgias</div>
           </div>
           {comparisonRows.map((row) => (
-            <div key={row.label} className="grid grid-cols-1 border-b border-slate/10 last:border-b-0 sm:grid-cols-3">
+            <div key={row.label} className="grid grid-cols-1 border-b border-slate/10 dark:border-slate/20 last:border-b-0 sm:grid-cols-3">
               <div className="p-4 font-medium text-ink">{row.label}</div>
-              <div className="border-t border-slate/10 p-4 text-slate sm:border-l sm:border-t-0">{row.kim}</div>
-              <div className="border-t border-slate/10 p-4 text-slate sm:border-l sm:border-t-0">{row.competitor}</div>
+              <div className="border-t border-slate/10 dark:border-slate/20 p-4 text-slate sm:border-l sm:border-t-0">{row.kim}</div>
+              <div className="border-t border-slate/10 dark:border-slate/20 p-4 text-slate sm:border-l sm:border-t-0">{row.competitor}</div>
             </div>
           ))}
         </div>
 
         <div className="mx-auto mt-12 grid max-w-5xl gap-6 lg:grid-cols-2">
-          <article className="rounded-[1.75rem] border border-brass/20 bg-white p-8 shadow-[0_8px_32px_rgba(176,141,87,0.12)]">
+          <article className="rounded-[1.75rem] border border-brass/20 bg-white dark:bg-[#20283A] p-8 shadow-[0_8px_32px_rgba(176,141,87,0.12)] dark:shadow-[0_4px_24px_rgba(0,0,0,0.3)]">
             <h2 className="font-display text-2xl font-bold text-ink">Where RegardsKim wins</h2>
             <ul className="mt-5 space-y-3 text-slate">
               {pros.kim.map((item) => (
@@ -120,7 +120,7 @@ export default function RegardsKimVsGorgiasPage() {
             </ul>
           </article>
 
-          <article className="rounded-[1.75rem] border border-slate/10 bg-white p-8 shadow-[0_4px_20px_rgba(0,0,0,0.06)]">
+          <article className="rounded-[1.75rem] border border-slate/10 dark:border-slate/20 bg-white dark:bg-[#20283A] p-8 shadow-[0_4px_20px_rgba(0,0,0,0.06)] dark:shadow-[0_4px_24px_rgba(0,0,0,0.3)]">
             <h2 className="font-display text-2xl font-bold text-ink">Where Gorgias is stronger</h2>
             <ul className="mt-5 space-y-3 text-slate">
               {pros.competitor.map((item) => (
@@ -156,7 +156,7 @@ export default function RegardsKimVsGorgiasPage() {
           </p>
         </div>
 
-        <div className="mx-auto mt-12 max-w-4xl rounded-[1.75rem] border border-brass/20 bg-white p-8 text-center shadow-[0_8px_32px_rgba(176,141,87,0.12)]">
+        <div className="mx-auto mt-12 max-w-4xl rounded-[1.75rem] border border-brass/20 bg-white dark:bg-[#20283A] p-8 text-center shadow-[0_8px_32px_rgba(176,141,87,0.12)]">
           <h2 className="font-display text-3xl font-bold text-ink">Best for small Shopify teams</h2>
           <p className="mt-4 text-lg leading-8 text-slate">
             If your biggest support problem is repetitive email, not managing a full team, RegardsKim is the

@@ -146,7 +146,7 @@ export default function CSEmailTemplatesClient() {
       {templateCategories.map((category) => (
         <section
           key={category.title}
-          className="rounded-[2rem] border border-slate/10 bg-white p-8 shadow-[0_4px_20px_rgba(0,0,0,0.06)]"
+          className="rounded-[2rem] border border-slate/10 dark:border-slate/20 bg-white dark:bg-[#20283A] p-8 shadow-[0_4px_20px_rgba(0,0,0,0.06)] dark:shadow-[0_4px_24px_rgba(0,0,0,0.3)]"
         >
           <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
             <div>
@@ -160,7 +160,7 @@ export default function CSEmailTemplatesClient() {
             {category.templates.map((template) => {
               const key = `${category.title}-${template.title}`;
               return (
-                <article key={key} className="rounded-[1.75rem] border border-slate/10 bg-mist/40 p-6">
+                <article key={key} className="rounded-[1.75rem] border border-slate/10 dark:border-slate/20 bg-mist/40 dark:bg-[#1B2436]/40 p-6">
                   <div className="flex items-start justify-between gap-4">
                     <h3 className="font-display text-xl font-bold text-ink">{template.title}</h3>
                     <button
@@ -179,7 +179,7 @@ export default function CSEmailTemplatesClient() {
         </section>
       ))}
 
-      <div className="rounded-[1.75rem] border border-brass/20 bg-white p-8 text-center shadow-[0_8px_32px_rgba(176,141,87,0.12)]">
+      <div className="rounded-[1.75rem] border border-brass/20 bg-white dark:bg-[#20283A] p-8 text-center shadow-[0_8px_32px_rgba(176,141,87,0.12)]">
         <Link href="/#install" className="text-base font-semibold text-brass hover:text-oxblood">
           Stop copying templates. Let Regards Kim write replies that actually use your order data →
         </Link>
