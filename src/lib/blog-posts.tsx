@@ -13,6 +13,214 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "customer-service-email-templates-sound-human",
+    title: "How to Write Customer Service Email Templates That Still Sound Human",
+    date: "May 6, 2026",
+    image: "/blog/customer-service-email-templates-sound-human.png",
+    meta:
+      "Write customer service email templates that save time, answer clearly, and still sound human to Shopify customers.",
+    content: (
+      <>
+        <p>
+          Customer service email templates can save a Shopify store hours every week. The trick is making them feel
+          like a helpful shortcut, not a cold copy-and-paste reply.
+        </p>
+        <p>
+          Most ecommerce support is repetitive. Customers ask where their order is, how returns work, whether they
+          can change an address, when a refund will arrive, or why tracking has not moved. You should not have to
+          rewrite those answers from scratch every time.
+        </p>
+        <p>
+          But customers can tell when a reply was sent without care. A good template gives you structure, accuracy,
+          and speed while still leaving enough room for the customer’s actual situation. Here is how to build
+          support templates that make your inbox lighter without making your brand sound robotic.
+        </p>
+
+        <h2>Start with the questions you answer every week</h2>
+        <p>
+          Do not begin by trying to create a complete support library. Start with the emails already eating your
+          time. Open your inbox and look for the questions that keep coming back.
+        </p>
+        <p>For most Shopify stores, the first templates should cover:</p>
+        <ul>
+          <li>Where is my order?</li>
+          <li>Tracking has not updated.</li>
+          <li>How do I return or exchange this?</li>
+          <li>Can I change my shipping address?</li>
+          <li>When will my refund arrive?</li>
+          <li>Can I cancel my order?</li>
+          <li>Do you ship to my location?</li>
+        </ul>
+        <p>
+          If you have typed the same answer three times in a week, it deserves a template. That does not mean every
+          reply should be identical. It means you should not keep rebuilding the same structure from zero.
+        </p>
+
+        <h2>Use a simple three-part reply structure</h2>
+        <p>
+          The best customer service email templates are usually short. They do three things clearly:
+        </p>
+        <ol>
+          <li>Answer the customer’s question.</li>
+          <li>Explain what happens next.</li>
+          <li>Give the customer an easy way to reply if they still need help.</li>
+        </ol>
+        <p>
+          That structure works because most customers are not looking for a long policy explanation. They want to
+          know what is true, what will happen, and whether they need to do anything.
+        </p>
+        <p>
+          For example, a tracking reply should not just say “please wait.” It should say whether the order has
+          shipped, where the tracking link is, why tracking may be delayed, and when the customer should follow up.
+          Our guide to <Link href="/blog/reduce-where-is-my-order-emails">reducing “Where is my order?” emails</Link>
+          goes deeper on this category because it is usually one of the biggest inbox drains.
+        </p>
+
+        <h2>Write like a person, then tighten it</h2>
+        <p>
+          A lot of templates sound stiff because they are written like policy documents. Try writing the first draft
+          the way you would explain the answer to a real customer in plain English.
+        </p>
+        <p>Instead of:</p>
+        <p>
+          <em>“Your request has been received. Please allow 3-5 business days for processing.”</em>
+        </p>
+        <p>Try:</p>
+        <p>
+          <em>
+            “Thanks for reaching out. I checked your order and your return has been received. Refunds usually take
+            3-5 business days to appear once processed, depending on your bank.”
+          </em>
+        </p>
+        <p>
+          The second version is not longer in any meaningful way, but it feels more useful because it says someone
+          checked. Human does not mean chatty. It means clear, specific, and aware of what the customer asked.
+        </p>
+
+        <h2>Leave blanks for the details that matter</h2>
+        <p>
+          The fastest way to make a template feel fake is to ignore the customer’s order details. Build your saved
+          replies with obvious spaces for the information that should change.
+        </p>
+        <p>Useful placeholders include:</p>
+        <ul>
+          <li>Customer name.</li>
+          <li>Order number.</li>
+          <li>Tracking link.</li>
+          <li>Shipping date.</li>
+          <li>Return window.</li>
+          <li>Refund status.</li>
+          <li>Product name or size.</li>
+        </ul>
+        <p>
+          Even one specific detail makes a reply feel more considered. “Your order shipped yesterday” is much better
+          than “your order is on the way.” Customers want signs that you actually looked at their situation.
+        </p>
+
+        <h2>Keep your tone warm, but not overdone</h2>
+        <p>
+          Ecommerce support does not need to sound like a legal department, but it also does not need exaggerated
+          friendliness. Overly cheerful replies can annoy customers when something has gone wrong.
+        </p>
+        <p>
+          A useful tone is calm, direct, and kind. Say sorry when there is a real inconvenience. Thank the customer
+          when it fits. Avoid big emotional language for small issues.
+        </p>
+        <p>
+          For example, if tracking has not updated, “I know that is frustrating when you are waiting for an order”
+          is better than “We are incredibly devastated to hear this.” Keep the wording honest and proportional.
+        </p>
+
+        <h2>Make policies easier to understand inside the reply</h2>
+        <p>
+          Customers should not have to decode your returns or shipping policy while they are already annoyed. If a
+          template refers to a policy, translate the important part into plain language.
+        </p>
+        <p>
+          Instead of only linking to a returns page, say: “You can return unused items within 30 days. Start the
+          return here, and we will send the next steps by email.” The link still matters, but the answer should be
+          understandable without making the customer hunt.
+        </p>
+        <p>
+          This also protects your team from mixed messages. When your templates use the same wording as your policy,
+          customers get a clearer answer and you reduce back-and-forth.
+        </p>
+
+        <h2>Separate normal cases from messy cases</h2>
+        <p>
+          Not every support email should get a template-heavy reply. Templates are best for predictable questions.
+          They are risky when the customer is angry, the order is unusual, or the issue needs judgement.
+        </p>
+        <p>Good template candidates include:</p>
+        <ul>
+          <li>Basic tracking updates.</li>
+          <li>Standard return instructions.</li>
+          <li>Refund timing explanations.</li>
+          <li>Shipping estimate questions.</li>
+          <li>Address change requests before fulfilment.</li>
+        </ul>
+        <p>Emails that need more care include:</p>
+        <ul>
+          <li>Damaged or missing items.</li>
+          <li>Very late deliveries.</li>
+          <li>Repeat complaints.</li>
+          <li>High-value orders.</li>
+          <li>Anything where your policy may need an exception.</li>
+        </ul>
+        <p>
+          The goal is not to force every customer into a canned response. It is to save your energy for the moments
+          where a thoughtful human reply matters most.
+        </p>
+
+        <h2>Review your templates once a month</h2>
+        <p>
+          Templates should change as your store changes. Shipping times shift. Return rules get updated. Products
+          sell out. Carriers behave differently during busy periods.
+        </p>
+        <p>
+          Once a month, read through your most-used replies and ask three questions:
+        </p>
+        <ol>
+          <li>Is this still accurate?</li>
+          <li>Does it answer the question quickly enough?</li>
+          <li>Does it sound like something we would actually say?</li>
+        </ol>
+        <p>
+          This is also a good time to look at your support volume. If one template is being used constantly, that
+          might be a sign your product page, shipping page, or order emails need clearer information. Better support
+          is not only about replying faster. Sometimes it is about preventing the question in the first place.
+        </p>
+
+        <h2>Use automation to draft, not disconnect</h2>
+        <p>
+          Once you have strong templates, support automation gets much safer. A tool can help pull order context,
+          choose the right starting point, and prepare a reply for review instead of asking you to write the same
+          answer again.
+        </p>
+        <p>
+          RegardsKim is built for Shopify merchants who want help with customer email without setting up a heavy
+          help desk. It can help draft replies using your Shopify store data and support rules, so repetitive emails
+          move faster while you stay in control of the final message.
+        </p>
+        <p>
+          If you are still building the basics, our guide to <Link href="/blog/automate-shopify-support-emails">automating
+          Shopify support emails</Link> explains what to automate first and what to keep human.
+        </p>
+
+        <h2>A good template should make the customer feel seen</h2>
+        <p>
+          The best customer service email templates do not hide the human side of your store. They make it easier to
+          give the customer a clear, accurate answer on a busy day.
+        </p>
+        <p>
+          Start with your repeated questions. Keep the structure simple. Add the details that prove you checked.
+          Use plain language. Review the templates often. Done well, templates do not make support colder. They give
+          you more time and attention for the customers who need it most.
+        </p>
+      </>
+    ),
+  },
+  {
     slug: "ecommerce-customer-service-best-practices-small-shopify-teams",
     title: "Ecommerce Customer Service Best Practices for Small Shopify Teams",
     date: "April 29, 2026",
