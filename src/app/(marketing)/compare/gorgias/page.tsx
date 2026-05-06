@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import StructuredData from "@/components/seo/StructuredData";
 import { absoluteUrl, marketingMetadata, siteConfig } from "@/lib/seo";
+import { SHOPIFY_APP_STORE_INSTALL_URL } from "@/lib/shopify-install";
 
 export const metadata: Metadata = marketingMetadata({
   title: "RegardsKim vs Gorgias",
@@ -162,7 +163,7 @@ export default function RegardsKimVsGorgiasPage() {
             If your biggest support problem is repetitive email, not managing a full team, RegardsKim is the
             lighter and cheaper option.
           </p>
-          <Link href="/#install" className="btn-primary mt-8 inline-flex">
+          <Link href={SHOPIFY_APP_STORE_INSTALL_URL} className="btn-primary mt-8 inline-flex">
             Install Regards Kim on Shopify
           </Link>
         </div>

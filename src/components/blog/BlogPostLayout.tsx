@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { ReactNode } from "react";
+import { SHOPIFY_APP_STORE_INSTALL_URL } from "@/lib/shopify-install";
 
 export default function BlogPostLayout({
   title,
@@ -55,7 +56,7 @@ export default function BlogPostLayout({
             <p className="mt-3 max-w-xl text-base leading-7 text-slate">
               See how Kim helps Shopify stores handle repetitive customer emails without losing the human touch.
             </p>
-            <Link href="/#install" className="btn-primary mt-6">
+            <Link href={SHOPIFY_APP_STORE_INSTALL_URL} className="btn-primary mt-6">
               Install on Shopify
             </Link>
           </section>

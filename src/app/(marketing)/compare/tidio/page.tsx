@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import StructuredData from "@/components/seo/StructuredData";
 import { absoluteUrl, marketingMetadata, siteConfig } from "@/lib/seo";
+import { SHOPIFY_APP_STORE_INSTALL_URL } from "@/lib/shopify-install";
 
 export const metadata: Metadata = marketingMetadata({
   title: "RegardsKim vs Tidio",
@@ -156,7 +157,7 @@ export default function RegardsKimVsTidioPage() {
           <p className="mt-4 text-lg leading-8 text-slate">
             If your inbox is the thing draining time, RegardsKim is the simpler and more focused option.
           </p>
-          <Link href="/#install" className="btn-primary mt-8 inline-flex">
+          <Link href={SHOPIFY_APP_STORE_INSTALL_URL} className="btn-primary mt-8 inline-flex">
             Install Regards Kim on Shopify
           </Link>
         </div>

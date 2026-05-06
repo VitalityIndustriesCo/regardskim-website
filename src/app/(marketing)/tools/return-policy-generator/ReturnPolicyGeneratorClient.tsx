@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useMemo, useState } from "react";
+import { SHOPIFY_APP_STORE_INSTALL_URL } from "@/lib/shopify-install";
 
 const conditionOptions = [
   { id: "unworn", label: "Items must be unworn" },
@@ -214,7 +215,7 @@ If you have any questions about a return, refund, or exchange, contact ${store} 
         </div>
 
         <div className="mt-6 border-t border-slate/10 dark:border-slate/20 pt-6">
-          <Link href="/#install" className="text-sm font-semibold text-brass hover:text-oxblood">
+          <Link href={SHOPIFY_APP_STORE_INSTALL_URL} className="text-sm font-semibold text-brass hover:text-oxblood">
             Regards Kim uses your policies to answer customer questions automatically →
           </Link>
         </div>

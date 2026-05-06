@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import StructuredData from "@/components/seo/StructuredData";
 import { absoluteUrl, marketingMetadata, siteConfig } from "@/lib/seo";
+import { SHOPIFY_APP_STORE_INSTALL_URL } from "@/lib/shopify-install";
 
 export const metadata: Metadata = marketingMetadata({
   title: "RegardsKim vs Doing It Yourself",
@@ -154,7 +155,7 @@ export default function RegardsKimVsDIYPage() {
           <p className="mt-4 text-lg leading-8 text-slate">
             If you are still doing support yourself, Regards Kim helps without taking the inbox fully out of your hands.
           </p>
-          <Link href="/#install" className="btn-primary mt-8 inline-flex">
+          <Link href={SHOPIFY_APP_STORE_INSTALL_URL} className="btn-primary mt-8 inline-flex">
             Install Regards Kim on Shopify
           </Link>
         </div>

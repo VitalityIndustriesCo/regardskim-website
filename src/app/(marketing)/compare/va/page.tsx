@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import StructuredData from "@/components/seo/StructuredData";
 import { absoluteUrl, marketingMetadata, siteConfig } from "@/lib/seo";
+import { SHOPIFY_APP_STORE_INSTALL_URL } from "@/lib/shopify-install";
 
 export const metadata: Metadata = marketingMetadata({
   title: "RegardsKim vs Hiring a Virtual Assistant",
@@ -155,7 +156,7 @@ export default function RegardsKimVsVirtualAssistantPage() {
             If you are not ready for the cost and management of a VA, RegardsKim gives you a much lighter way to
             keep customer support under control.
           </p>
-          <Link href="/#install" className="btn-primary mt-8 inline-flex">
+          <Link href={SHOPIFY_APP_STORE_INSTALL_URL} className="btn-primary mt-8 inline-flex">
             Install Regards Kim on Shopify
           </Link>
         </div>

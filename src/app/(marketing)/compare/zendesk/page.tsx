@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import StructuredData from "@/components/seo/StructuredData";
 import { absoluteUrl, marketingMetadata, siteConfig } from "@/lib/seo";
+import { SHOPIFY_APP_STORE_INSTALL_URL } from "@/lib/shopify-install";
 
 export const metadata: Metadata = marketingMetadata({
   title: "RegardsKim vs Zendesk",
@@ -154,7 +155,7 @@ export default function RegardsKimVsZendeskPage() {
             If you want Shopify-aware email support without the weight of a full service stack, RegardsKim is a
             strong place to start.
           </p>
-          <Link href="/#install" className="btn-primary mt-8 inline-flex">
+          <Link href={SHOPIFY_APP_STORE_INSTALL_URL} className="btn-primary mt-8 inline-flex">
             Install Regards Kim on Shopify
           </Link>
         </div>

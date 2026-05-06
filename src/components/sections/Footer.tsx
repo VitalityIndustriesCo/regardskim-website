@@ -2,14 +2,14 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { SHOPIFY_APP_STORE_INSTALL_URL } from "@/lib/shopify-install";
 
 const mainColumns = [
   {
     title: "Get Started",
     links: [
-      { href: "/#install", label: "Install on Shopify" },
+      { href: SHOPIFY_APP_STORE_INSTALL_URL, label: "Install on Shopify" },
       { href: "/pricing", label: "Pricing" },
-      { href: "/founding", label: "Founding 100" },
     ],
   },
   {

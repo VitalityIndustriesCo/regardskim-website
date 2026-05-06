@@ -1,8 +1,7 @@
 import FadeIn from "@/components/ui/FadeIn";
 import { ShopifyLogo, GmailLogo } from "@/components/ui/BrandLogos";
 import IntegrationHeroPreview from "@/components/ui/IntegrationHeroPreview";
-
-const CTA_URL = "/founding";
+import { SHOPIFY_APP_STORE_INSTALL_URL } from "@/lib/shopify-install";
 
 export default function Hero() {
   return (
@@ -23,14 +22,14 @@ export default function Hero() {
             </p>
 
             <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <a href={CTA_URL} className="btn-primary">
-                Lock in your spot
+              <a href={SHOPIFY_APP_STORE_INSTALL_URL} className="btn-primary">
+                Install on Shopify
               </a>
               <a href="#how-it-works" className="btn-secondary">
                 See how it works
               </a>
             </div>
-            <p className="mt-4 text-sm font-medium text-slate">50% off forever for founding stores. No payment required.</p>
+            <p className="mt-4 text-sm font-medium text-slate">Starts with a 7-day free trial. Billed through Shopify.</p>
 
 
           </div>

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import ThemeToggle from "@/components/ui/ThemeToggle";
+import { SHOPIFY_APP_STORE_INSTALL_URL } from "@/lib/shopify-install";
 
 const navLinks = [
   { href: "/#how-it-works", label: "How it works" },
@@ -69,8 +70,8 @@ export default function Navbar() {
 
           <div className="hidden items-center gap-4 md:flex">
             <ThemeToggle />
-            <Link href="/founding" className="btn-primary">
-              Lock in your spot
+            <Link href={SHOPIFY_APP_STORE_INSTALL_URL} className="btn-primary">
+              Install on Shopify
             </Link>
           </div>
 
@@ -149,8 +150,8 @@ export default function Navbar() {
           </div>
 
           <div className="mt-8 flex flex-col gap-3 border-t border-slate/10 pt-6">
-            <Link href="/founding" className="btn-primary w-full" onClick={closeMobileMenu}>
-              Lock in your spot
+            <Link href={SHOPIFY_APP_STORE_INSTALL_URL} className="btn-primary w-full" onClick={closeMobileMenu}>
+              Install on Shopify
             </Link>
           </div>
         </div>

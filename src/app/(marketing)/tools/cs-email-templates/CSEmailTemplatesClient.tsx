@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { SHOPIFY_APP_STORE_INSTALL_URL } from "@/lib/shopify-install";
 
 const templateCategories = [
   {
@@ -180,7 +181,7 @@ export default function CSEmailTemplatesClient() {
       ))}
 
       <div className="rounded-[1.75rem] border border-brass/20 bg-white dark:bg-[#20283A] p-8 text-center shadow-[0_8px_32px_rgba(176,141,87,0.12)]">
-        <Link href="/#install" className="text-base font-semibold text-brass hover:text-oxblood">
+        <Link href={SHOPIFY_APP_STORE_INSTALL_URL} className="text-base font-semibold text-brass hover:text-oxblood">
           Stop copying templates. Let Regards Kim write replies that actually use your order data →
         </Link>
       </div>
