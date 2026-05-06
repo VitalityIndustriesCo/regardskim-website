@@ -115,11 +115,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "yearly",
       priority: 0.3,
     },
-    {
-      url: absoluteUrl("/founding"),
-      changeFrequency: "daily",
-      priority: 0.9,
-    },
   ];
 
   const blogRoutes: MetadataRoute.Sitemap = blogPosts.map((post) => ({
