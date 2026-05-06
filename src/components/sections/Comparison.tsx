@@ -128,12 +128,9 @@ function ReplyCard({ label, body, tone }: ReplyCardProps) {
           <p>I looked up order #4721 — it was dispatched from our warehouse on March 29 via Australia Post. Tracking is currently showing <span className="font-medium">&ldquo;label created&rdquo;</span>, which means the carrier hasn&apos;t scanned it yet. This usually updates within 24–48 hours, but three days is longer than expected.</p>
           <p>I&apos;ll keep an eye on it from our side — if it hasn&apos;t moved by tomorrow afternoon, I&apos;ll follow up with the carrier directly and let you know.</p>
 
-          <a
-            href="#"
-            className="inline-flex items-center rounded-full border border-brass/30 bg-brass/10 px-4 py-2 text-sm font-semibold text-brass transition hover:bg-brass/20"
-          >
+          <span className="inline-flex items-center rounded-full border border-brass/30 bg-brass/10 px-4 py-2 text-sm font-semibold text-brass">
             View tracking →
-          </a>
+          </span>
 
           <div className="pt-2 text-ink">
             <p>Kind regards,</p>
