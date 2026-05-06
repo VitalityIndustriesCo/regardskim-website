@@ -1,11 +1,12 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
-import { Loader2, SendHorizontal, X } from "lucide-react";
+import { ExternalLink, Loader2, SendHorizontal, X } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
+import { SHOPIFY_APP_STORE_INSTALL_URL } from "@/lib/shopify-install";
 import { cn } from "@/lib/utils";
 
 type SalesChatRole = "user" | "assistant";
@@ -14,6 +15,8 @@ type SalesChatMessage = {
   id: string;
   role: SalesChatRole;
   content: string;
+  actionLabel?: string;
+  actionUrl?: string;
 };
 
 interface Props {
@@ -21,102 +24,102 @@ interface Props {
 }
 
 const MAX_MESSAGES = 20;
-const UNKNOWN_REPLY = "Great question! I'd love to help — drop your email and we'll get back to you personally.";
-const EMAIL_PROMPT = "Leave your email and we'll get back to you";
-const EMAIL_CONFIRMATION = "Thanks! We'll be in touch soon.";
+const UNKNOWN_REPLY =
+  "I can help with pricing, setup, Shopify install, Gmail/Outlook, security, or what happens after install. If you want a human, leave your email and we’ll follow up.";
+const EMAIL_PROMPT = "Want us to follow up? Leave your email.";
+const EMAIL_CONFIRMATION = "Thanks — we’ll be in touch soon.";
 
-function buildReply(message: string) {
+const QUICK_QUESTIONS = [
+  "How do I install on Shopify?",
+  "What does it cost?",
+  "How does setup work?",
+  "Does it send emails automatically?",
+];
+
+function includesAny(text: string, terms: string[]) {
+  return terms.some((term) => text.includes(term));
+}
+
+function buildReply(message: string): Omit<SalesChatMessage, "id" | "role"> & { needsEmailCapture: boolean } {
   const normalized = message.toLowerCase();
 
-  if (
-    normalized.includes("price") ||
-    normalized.includes("pricing") ||
-    normalized.includes("cost") ||
-    normalized.includes("plan")
-  ) {
+  if (includesAny(normalized, ["install", "shopify app", "app store", "get started", "start", "sign up", "signup"])) {
     return {
-      reply: "$49/month, 7-day free trial, cancel anytime.",
+      content:
+        "Install RegardsKim from the Shopify App Store, approve the Shopify connection, then connect your support inbox. After that, Kim starts drafting customer replies for approval.",
+      actionLabel: "Install on Shopify",
+      actionUrl: SHOPIFY_APP_STORE_INSTALL_URL,
       needsEmailCapture: false,
     };
   }
 
-  if (
-    normalized.includes("how it works") ||
-    normalized.includes("how does it work") ||
-    normalized.includes("works") ||
-    normalized.includes("setup") ||
-    normalized.includes("set up")
-  ) {
+  if (includesAny(normalized, ["price", "pricing", "cost", "plan", "monthly", "subscription", "billing"])) {
     return {
-      reply:
-        "Regards Kim connects to your Shopify store and email, reads incoming customer emails, drafts replies using your live store data, and queues them for your approval before anything sends.",
+      content: "$49/month with a 7-day free trial. Billing runs through Shopify, and you can cancel anytime.",
+      actionLabel: "Install on Shopify",
+      actionUrl: SHOPIFY_APP_STORE_INSTALL_URL,
       needsEmailCapture: false,
     };
   }
 
-  if (
-    normalized.includes("integration") ||
-    normalized.includes("integrations") ||
-    normalized.includes("shopify") ||
-    normalized.includes("gmail") ||
-    normalized.includes("outlook")
-  ) {
+  if (includesAny(normalized, ["trial", "free trial", "credit card", "cancel"])) {
     return {
-      reply: "Regards Kim works with Shopify, Gmail, and Outlook.",
+      content: "There’s a 7-day free trial. Billing is handled by Shopify, and you can cancel anytime from your Shopify admin.",
+      actionLabel: "Start free trial",
+      actionUrl: SHOPIFY_APP_STORE_INSTALL_URL,
       needsEmailCapture: false,
     };
   }
 
-  if (normalized.includes("trial") || normalized.includes("free trial") || normalized.includes("credit card")) {
+  if (includesAny(normalized, ["how it works", "how does it work", "works", "setup", "set up", "onboarding", "connect"])) {
     return {
-      reply: "7-day free trial, no credit card required. Cancel anytime.",
+      content:
+        "Setup is simple: connect Shopify, connect Gmail or Outlook, confirm your store policies, then review Kim’s draft replies before sending. It’s built for support emails like tracking, returns, exchanges, order updates, and product questions.",
       needsEmailCapture: false,
     };
   }
 
-  if (
-    normalized.includes("what kim does") ||
-    normalized.includes("what does kim do") ||
-    normalized.includes("what do you do") ||
-    normalized.includes("what is kim") ||
-    normalized.includes("what does it do")
-  ) {
+  if (includesAny(normalized, ["gmail", "outlook", "email", "inbox", "integration", "integrations", "shopify"])) {
     return {
-      reply:
-        "Regards Kim handles your customer support emails — shipping questions, returns, order updates, tracking info — using your real Shopify data.",
+      content:
+        "RegardsKim is built for Shopify stores and connects to your support inbox, including Gmail and Outlook. It uses live store context to draft better replies.",
       needsEmailCapture: false,
     };
   }
 
-  if (
-    normalized.includes("security") ||
-    normalized.includes("secure") ||
-    normalized.includes("data") ||
-    normalized.includes("privacy") ||
-    normalized.includes("safe")
-  ) {
+  if (includesAny(normalized, ["send automatically", "auto send", "autosend", "approval", "approve", "draft", "human"])) {
     return {
-      reply:
-        "Regards Kim only accesses the data it needs from your Shopify store. Every reply is a draft until you approve it. Nothing sends without your permission.",
+      content:
+        "Kim drafts replies first. You stay in control: review, edit if needed, then approve before anything is sent.",
       needsEmailCapture: false,
     };
   }
 
-  if (
-    normalized.includes("human") ||
-    normalized.includes("someone") ||
-    normalized.includes("contact") ||
-    normalized.includes("talk to sales") ||
-    normalized.includes("talk to a person")
-  ) {
+  if (includesAny(normalized, ["what kim does", "what does kim do", "what do you do", "what is kim", "what does it do"])) {
     return {
-      reply: UNKNOWN_REPLY,
+      content:
+        "RegardsKim handles repetitive customer support emails for Shopify stores — shipping questions, returns, exchanges, order updates, tracking info, and common product questions — using your real store data.",
+      needsEmailCapture: false,
+    };
+  }
+
+  if (includesAny(normalized, ["security", "secure", "data", "privacy", "safe", "permission", "access"])) {
+    return {
+      content:
+        "RegardsKim only asks for the access needed to draft support replies. Replies stay as drafts until you approve them, so nothing is sent without your permission.",
+      needsEmailCapture: false,
+    };
+  }
+
+  if (includesAny(normalized, ["human", "someone", "contact", "talk to sales", "talk to a person", "demo", "call"])) {
+    return {
+      content: "Sure — leave your email and we’ll follow up personally.",
       needsEmailCapture: true,
     };
   }
 
   return {
-    reply: UNKNOWN_REPLY,
+    content: UNKNOWN_REPLY,
     needsEmailCapture: true,
   };
 }
@@ -133,6 +136,15 @@ function SalesMessageBubble({ message }: { message: SalesChatMessage }) {
         )}
       >
         <p>{message.content}</p>
+        {message.actionLabel && message.actionUrl ? (
+          <a
+            href={message.actionUrl}
+            className="mt-3 inline-flex items-center gap-1 rounded-full bg-brass px-3 py-1.5 text-xs font-semibold text-white transition hover:bg-oxblood"
+          >
+            {message.actionLabel}
+            <ExternalLink className="h-3 w-3" />
+          </a>
+        ) : null}
       </div>
     </div>
   );
@@ -144,7 +156,7 @@ export function SalesChatPanel({ onClose }: Props) {
       id: "welcome",
       role: "assistant",
       content:
-        "Hey! I'm here to answer any questions about Regards Kim. Ask me anything about pricing, setup, or how it works.",
+        "Hey — I can help with RegardsKim pricing, Shopify install, setup, Gmail/Outlook, and how approvals work. What would you like to know?",
     },
   ]);
   const [input, setInput] = useState("");
@@ -163,9 +175,10 @@ export function SalesChatPanel({ onClose }: Props) {
 
   const userMessageCount = useMemo(() => messages.filter((message) => message.role === "user").length, [messages]);
   const reachedLimit = userMessageCount >= MAX_MESSAGES;
+  const showQuickQuestions = userMessageCount === 0 && !isTyping;
 
-  const send = async () => {
-    const text = input.trim();
+  const send = async (overrideText?: string) => {
+    const text = (overrideText ?? input).trim();
     if (!text || isTyping) return;
 
     if (reachedLimit) {
@@ -175,7 +188,7 @@ export function SalesChatPanel({ onClose }: Props) {
           {
             id: crypto.randomUUID(),
             role: "assistant",
-            content: "This chat is capped at 20 messages per session. Leave your email and we'll get back to you.",
+            content: "This chat is capped at 20 messages per session. Leave your email and we’ll get back to you.",
           },
         ]);
         setShowEmailCapture(true);
@@ -196,14 +209,14 @@ export function SalesChatPanel({ onClose }: Props) {
     setIsTyping(true);
 
     window.setTimeout(() => {
-      const { reply, needsEmailCapture } = buildReply(text);
+      const { needsEmailCapture, ...reply } = buildReply(text);
 
       setMessages((prev) => [
         ...prev,
         {
           id: crypto.randomUUID(),
           role: "assistant",
-          content: reply,
+          ...reply,
         },
       ]);
       setShowEmailCapture(needsEmailCapture);
@@ -211,14 +224,23 @@ export function SalesChatPanel({ onClose }: Props) {
         setEmailSubmitted(false);
       }
       setIsTyping(false);
-    }, 300);
+    }, 250);
   };
 
-  const submitEmail = () => {
+  const submitEmail = async () => {
     const trimmedEmail = email.trim();
     if (!trimmedEmail) return;
 
-    // Lead captured — email submitted by visitor
+    try {
+      await fetch("/api/subscribe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: trimmedEmail, source: "sales-chat" }),
+      });
+    } catch {
+      // Keep the visitor experience smooth even if the lead capture backend is unavailable.
+    }
+
     setEmail("");
     setShowEmailCapture(false);
     setEmailSubmitted(true);
@@ -237,8 +259,8 @@ export function SalesChatPanel({ onClose }: Props) {
       <CardHeader className="border-b border-forest/10 bg-paper px-4 pb-3 dark:bg-[#202739] sm:px-6">
         <div className="flex items-center justify-between gap-3">
           <div className="min-w-0">
-            <CardTitle className="text-sm font-semibold text-ink">Sales support</CardTitle>
-            <p className="text-xs text-slate">Ask about pricing, setup, or how Regards Kim works</p>
+            <CardTitle className="text-sm font-semibold text-ink">RegardsKim sales</CardTitle>
+            <p className="text-xs text-slate">Pricing, install, setup, and approvals</p>
           </div>
           <Button variant="ghost" size="icon-sm" onClick={onClose} aria-label="Close sales support chat">
             <X className="h-4 w-4" />
@@ -252,10 +274,25 @@ export function SalesChatPanel({ onClose }: Props) {
             <SalesMessageBubble key={message.id} message={message} />
           ))}
 
+          {showQuickQuestions ? (
+            <div className="flex flex-wrap gap-2">
+              {QUICK_QUESTIONS.map((question) => (
+                <button
+                  key={question}
+                  type="button"
+                  onClick={() => send(question)}
+                  className="rounded-full border border-brass/25 bg-brass/10 px-3 py-1.5 text-xs font-semibold text-brass transition hover:bg-brass/20"
+                >
+                  {question}
+                </button>
+              ))}
+            </div>
+          ) : null}
+
           {isTyping && (
             <div className="flex items-center gap-2 text-xs text-slate">
               <Loader2 className="h-3.5 w-3.5 animate-spin text-brass" />
-              Regards Kim is typing…
+              RegardsKim is typing…
             </div>
           )}
 
@@ -295,13 +332,13 @@ export function SalesChatPanel({ onClose }: Props) {
                 send();
               }
             }}
-            placeholder={reachedLimit ? "Message limit reached" : "Ask about pricing, setup, integrations..."}
+            placeholder={reachedLimit ? "Message limit reached" : "Ask about install, pricing, Gmail, Outlook..."}
             className="h-11 min-w-0 rounded-full border-forest/15 bg-paper px-4"
             disabled={isTyping || reachedLimit}
           />
           <Button
             size="lg"
-            onClick={send}
+            onClick={() => send()}
             disabled={isTyping || reachedLimit || !input.trim()}
             className="h-11 shrink-0 rounded-full bg-brass px-4 text-white hover:bg-oxblood"
             aria-label="Send message"
@@ -311,8 +348,8 @@ export function SalesChatPanel({ onClose }: Props) {
         </div>
 
         <div className="flex w-full flex-col gap-1 text-[11px] text-slate sm:flex-row sm:items-center sm:justify-between sm:gap-3">
-          <span>Session-only chat • {userMessageCount}/{MAX_MESSAGES}</span>
-          <span className="font-medium text-ink">Powered by Regards Kim</span>
+          <span>Private session • {userMessageCount}/{MAX_MESSAGES}</span>
+          <span className="font-medium text-ink">Powered by RegardsKim</span>
         </div>
       </CardFooter>
     </Card>
