@@ -56,11 +56,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.6,
     },
     {
-      url: absoluteUrl("/pricing"),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
       url: absoluteUrl("/compare/gorgias"),
       changeFrequency: "monthly",
       priority: 0.7,

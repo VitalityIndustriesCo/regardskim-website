@@ -9,3 +9,7 @@ export const metadata: Metadata = marketingMetadata({
   path: "/affiliate",
   image: "/affiliate-hero.jpg",
 });
+
+export default function AffiliateLayout({ children }: { children: React.ReactNode }) {
+  return children;
+}

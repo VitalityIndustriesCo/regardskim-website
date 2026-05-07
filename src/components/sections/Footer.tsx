@@ -9,7 +9,7 @@ const mainColumns = [
     title: "Get Started",
     links: [
       { href: SHOPIFY_APP_STORE_INSTALL_URL, label: "Install on Shopify" },
-      { href: "/pricing", label: "Pricing" },
+      { href: "/#pricing", label: "Pricing" },
     ],
   },
   {
