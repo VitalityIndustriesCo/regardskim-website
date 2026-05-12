@@ -13,6 +13,181 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "use-gmail-shopify-customer-support",
+    title: "How to Use Gmail for Shopify Customer Support Without Losing Your Mind",
+    date: "May 13, 2026",
+    image: "/blog/use-gmail-shopify-customer-support.png",
+    meta:
+      "Use Gmail for Shopify customer support without losing orders, replies, or your sanity. A practical setup for small ecommerce teams.",
+    content: (
+      <>
+        <p>
+          Gmail can work surprisingly well for Shopify customer support when your store is small. The problem is not
+          Gmail itself. The problem is using one busy inbox as your order tracker, returns desk, shipping update tool,
+          complaint log, and mental to-do list all at once.
+        </p>
+        <p>
+          If you are a solo founder or a small ecommerce team, you probably do not need a heavy help desk on day one.
+          You need a simple way to see what needs a reply, find the right order details, avoid missing customers, and
+          stop rewriting the same answers every morning.
+        </p>
+        <p>
+          Here is a practical Gmail setup for Shopify support that keeps things calm without adding more software than
+          you can actually maintain.
+        </p>
+
+        <h2>Use one support address, not your personal inbox</h2>
+        <p>
+          The first step is boring, but it matters: keep customer support out of your personal inbox. Use a clear address
+          like support@yourstore.com or hello@yourstore.com, then route customer questions there from your Shopify store,
+          order emails, contact page, and policy pages.
+        </p>
+        <p>
+          This gives you one place to check for customer issues. It also makes it easier to hand support to someone else
+          later, even if that “someone else” is only a part-time helper for a few hours a week.
+        </p>
+        <p>
+          If customers are still emailing your founder address, reply once from the support address and gently move the
+          thread over. You do not need to make it formal. A simple “I’m moving this to our support inbox so we can keep
+          everything in one place” is enough.
+        </p>
+
+        <h2>Create labels for the questions you answer every day</h2>
+        <p>
+          Gmail labels are only useful if they match the work you actually do. Do not build a complicated system with
+          twenty categories. Start with the support questions that hit your inbox every week.
+        </p>
+        <p>For most Shopify stores, useful labels include:</p>
+        <ul>
+          <li>Tracking question.</li>
+          <li>Return or exchange.</li>
+          <li>Address change.</li>
+          <li>Cancel order.</li>
+          <li>Refund question.</li>
+          <li>Damaged or missing item.</li>
+          <li>Needs Shopify check.</li>
+        </ul>
+        <p>
+          Labels make the inbox easier to scan, but they also show you where support time is going. If “tracking
+          question” is always full, your shipping emails or order status page may need clearer information. Our guide to
+          <Link href="/blog/reduce-where-is-my-order-emails">reducing “Where is my order?” emails</Link> covers that
+          problem in more detail.
+        </p>
+
+        <h2>Use stars or priority markers for emails that need judgement</h2>
+        <p>
+          Not every email deserves the same level of attention. A standard tracking question is different from a damaged
+          item, an angry repeat customer, or a high-value order that has gone missing.
+        </p>
+        <p>
+          Pick one simple Gmail marker for anything that needs human judgement before a reply goes out. That might be a
+          star, an “Urgent” label, or a “Review today” label. The exact name does not matter. What matters is that you
+          can separate routine replies from sensitive ones at a glance.
+        </p>
+        <p>
+          This is where small stores often lose time. They treat every email like a mini emergency, then have no energy
+          left for the few conversations that genuinely need care. Your system should help you reply faster to normal
+          questions and slow down for the messy ones.
+        </p>
+
+        <h2>Keep Shopify open beside Gmail, not buried in tabs</h2>
+        <p>
+          Most Shopify support replies need order context. Before you answer, you usually need to know whether the order
+          has shipped, which product the customer bought, whether tracking exists, whether the order can still be edited,
+          and whether the customer has contacted you before.
+        </p>
+        <p>
+          A simple workflow is to process support in batches with Gmail on one side and Shopify admin on the other. Open
+          the customer’s order, check the facts, then reply. It sounds obvious, but it prevents the risky habit of
+          answering from memory.
+        </p>
+        <p>
+          Customers can forgive a short delay. They are less forgiving when you send a confident reply that turns out to
+          be wrong. Accuracy is part of speed.
+        </p>
+
+        <h2>Turn repeated replies into Gmail templates</h2>
+        <p>
+          If you type the same answer three times in a week, make it a Gmail template. You do not need a huge library.
+          Start with five replies that save real time.
+        </p>
+        <p>Good first templates are:</p>
+        <ul>
+          <li>Tracking has been sent, with a reminder that carrier scans can lag.</li>
+          <li>Tracking has not moved yet, with a clear follow-up point.</li>
+          <li>Return instructions with the return window in plain language.</li>
+          <li>Refund timing after a return has been received.</li>
+          <li>Address change request received before fulfilment.</li>
+        </ul>
+        <p>
+          The goal is not to sound canned. The goal is to stop rebuilding the same answer from scratch. Leave blanks for
+          the customer’s name, order number, product, tracking link, and next step. Our post on
+          <Link href="/blog/customer-service-email-templates-sound-human"> customer service email templates that still
+          sound human</Link> has a full structure you can copy.
+        </p>
+
+        <h2>Make your inbox status visible with three simple views</h2>
+        <p>
+          A messy Gmail inbox feels stressful because you cannot tell what is waiting, what is handled, and what is
+          paused. Create a simple support rhythm around three views:
+        </p>
+        <ol>
+          <li><strong>Unread:</strong> new customer emails that have not been triaged.</li>
+          <li><strong>Needs reply:</strong> emails waiting on you or your team.</li>
+          <li><strong>Waiting:</strong> emails where you are waiting on the customer, carrier, supplier, or warehouse.</li>
+        </ol>
+        <p>
+          You can build this with labels, stars, or Gmail search. Keep it simple enough that you will use it on a busy
+          day. If your system takes more discipline than the work itself, it will fall apart by Friday.
+        </p>
+
+        <h2>Set two support blocks instead of checking Gmail all day</h2>
+        <p>
+          Constant inbox checking makes support feel bigger than it is. For many small Shopify stores, two focused
+          support blocks per day are enough: one in the morning and one later in the afternoon.
+        </p>
+        <p>
+          During each block, clear urgent issues first, handle simple replies in batches, then review anything that
+          needs a Shopify check. Outside those blocks, close Gmail unless you are in a launch, sale, shipping incident,
+          or other unusually busy period.
+        </p>
+        <p>
+          This protects your attention. You still give customers reliable replies, but your whole day does not become a
+          slow drip of interruptions.
+        </p>
+
+        <h2>Know when Gmail starts to strain</h2>
+        <p>
+          Gmail can carry a small store for a long time, but there are signs it is starting to strain. If you are missing
+          replies, duplicating work, forgetting whether an order was checked, or spending more time finding context than
+          answering customers, the workflow needs help.
+        </p>
+        <p>
+          That does not always mean moving to a full help desk. Sometimes the better next step is support automation
+          that works with the way you already handle email.
+        </p>
+        <p>
+          RegardsKim is built for Shopify merchants who want help with customer email without setting up a heavy help
+          desk. RegardsKim can help draft replies using your Shopify store data and support rules, so repetitive emails
+          move faster while you stay in control of the final message. If you are deciding what to automate first, start
+          with our guide to <Link href="/blog/automate-shopify-support-emails">automating Shopify support emails</Link>.
+        </p>
+
+        <h2>A calm Gmail workflow beats a complicated system</h2>
+        <p>
+          You do not need a perfect support setup to run a good Shopify store. You need a clear inbox, a small set of
+          labels, reliable templates, easy access to Shopify order details, and a rhythm that stops customer email from
+          taking over the whole day.
+        </p>
+        <p>
+          Start with the emails you already receive. Organise those first. Once Gmail feels less chaotic, it becomes much
+          easier to decide whether you need more automation, more help, or simply better support habits.
+        </p>
+      </>
+    ),
+  },
+
+  {
     slug: "customer-service-email-templates-sound-human",
     title: "How to Write Customer Service Email Templates That Still Sound Human",
     date: "May 6, 2026",
