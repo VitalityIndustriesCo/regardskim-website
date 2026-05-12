@@ -61,9 +61,13 @@ export default function AffiliatePage() {
               <Image src="/affiliate-hero.jpg" alt="Affiliate program" width={640} height={320} className="mx-auto rounded-2xl shadow-[0_8px_32px_rgba(0,0,0,0.10)]" style={{ maxHeight: 320 }} />
             </div>
             <div className="mt-10">
-              <a href="#apply" className="btn-primary">
+              <button
+                type="button"
+                className="btn-primary"
+                onClick={() => document.getElementById("apply")?.scrollIntoView({ behavior: "smooth", block: "start" })}
+              >
                 Become an affiliate
-              </a>
+              </button>
             </div>
           </div>
         </div>
