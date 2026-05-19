@@ -137,7 +137,7 @@ export default function MockupDetail({ mode = "draft" }: MockupDetailProps) {
           <span className="block text-center text-[10px] font-semibold uppercase tracking-[0.14em] text-slate sm:text-[11px]">Customer Emails</span>
         </div>
         <div className="hidden pb-1.5 sm:block">
-          <span className="block text-center text-[10px] font-semibold uppercase tracking-[0.14em] text-slate sm:text-[11px]">AI Support Context</span>
+          <span className="block text-center text-[10px] font-semibold uppercase tracking-[0.14em] text-slate sm:text-[11px]">Reply ready</span>
         </div>
       </div>
 
@@ -204,7 +204,7 @@ export default function MockupDetail({ mode = "draft" }: MockupDetailProps) {
                     Insert tracking
                   </span>
                   <span className="rounded-lg border border-slate/15 bg-mist px-3 py-1.5 text-[11px] font-medium text-ink dark:text-white">
-                    Send from Gmail
+                    Add policy link
                   </span>
                 </div>
               </div>
@@ -289,7 +289,7 @@ export default function MockupDetail({ mode = "draft" }: MockupDetailProps) {
                         Insert tracking
                       </span>
                       <span className="rounded-lg border border-slate/15 bg-mist px-3 py-1.5 text-[11px] font-medium text-ink dark:text-white">
-                        Send from Gmail
+                        Add policy link
                       </span>
                     </motion.div>
                   )}

@@ -25,7 +25,7 @@ interface Props {
 
 const MAX_MESSAGES = 20;
 const UNKNOWN_REPLY =
-  "I can help with pricing, setup, Shopify install, Gmail/Outlook, security, or what happens after install. If you want a human, leave your email and we’ll follow up.";
+  "I can help with pricing, setup, Shopify install, Gmail, security, or what happens after install. If you want a human, leave your email and we’ll follow up.";
 const EMAIL_PROMPT = "Want us to follow up? Leave your email.";
 const EMAIL_CONFIRMATION = "Thanks — we’ll be in touch soon.";
 
@@ -74,15 +74,15 @@ function buildReply(message: string): Omit<SalesChatMessage, "id" | "role"> & { 
   if (includesAny(normalized, ["how it works", "how does it work", "works", "setup", "set up", "onboarding", "connect"])) {
     return {
       content:
-        "Setup is simple: connect Shopify, connect Gmail or Outlook, and confirm your store policies. RegardsKim then gives you AI triage, Shopify context, saved replies, and reply helpers for tracking, returns, exchanges, order updates, and product questions.",
+        "Setup is simple: connect Shopify, connect Gmail, and confirm your store policies. RegardsKim then gives you AI triage, Shopify context, saved replies, and reply helpers for tracking, returns, exchanges, order updates, and product questions.",
       needsEmailCapture: false,
     };
   }
 
-  if (includesAny(normalized, ["gmail", "outlook", "email", "inbox", "integration", "integrations", "shopify"])) {
+  if (includesAny(normalized, ["gmail", "email", "inbox", "integration", "integrations", "shopify"])) {
     return {
       content:
-        "RegardsKim is built for Shopify stores and connects to your support inbox, including Gmail and Outlook. It uses store context to organise support and help you reply faster.",
+        "RegardsKim is built for Shopify stores and connects to Gmail for your support inbox. It uses store context to organise support and help you reply faster.",
       needsEmailCapture: false,
     };
   }
@@ -156,7 +156,7 @@ export function SalesChatPanel({ onClose }: Props) {
       id: "welcome",
       role: "assistant",
       content:
-        "Hey - I can help with RegardsKim pricing, Shopify install, setup, Gmail/Outlook, and how the AI support inbox works. What would you like to know?",
+        "Hey - I can help with RegardsKim pricing, Shopify install, setup, Gmail, and how the AI support inbox works. What would you like to know?",
     },
   ]);
   const [input, setInput] = useState("");
@@ -332,7 +332,7 @@ export function SalesChatPanel({ onClose }: Props) {
                 send();
               }
             }}
-            placeholder={reachedLimit ? "Message limit reached" : "Ask about install, pricing, Gmail, Outlook..."}
+            placeholder={reachedLimit ? "Message limit reached" : "Ask about install, pricing, Gmail..."}
             className="h-11 min-w-0 rounded-full border-forest/15 bg-paper px-4"
             disabled={isTyping || reachedLimit}
           />
