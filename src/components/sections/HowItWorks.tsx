@@ -47,7 +47,7 @@ export default function HowItWorks() {
         <div className="mt-10 space-y-6 md:mt-14 md:space-y-8">
           {steps.map((step, idx) => (
             <FadeIn key={step.number} delay={idx * 0.06}>
-              <article className="rounded-[2rem] border border-[#E3D3C6] bg-white p-4 shadow-[0_16px_44px_rgba(35,53,71,0.08),0_1px_4px_rgba(35,53,71,0.04)] dark:border-slate/15 dark:bg-[#20283A] dark:shadow-[0_16px_44px_rgba(0,0,0,0.28),0_1px_4px_rgba(0,0,0,0.18)] sm:p-5 md:rounded-[2.5rem] md:p-6 lg:p-8">
+              <article className="rounded-[2rem] border border-[#E3D3C6] bg-white p-4 shadow-[0_14px_32px_rgba(35,53,71,0.18),0_3px_8px_rgba(35,53,71,0.10)] dark:border-slate/15 dark:bg-[#20283A] dark:shadow-[0_16px_44px_rgba(0,0,0,0.28),0_1px_4px_rgba(0,0,0,0.18)] sm:p-5 md:rounded-[2.5rem] md:p-6 lg:p-8">
                 <div className="mb-5 px-1 md:mb-6 md:px-2">
                   <span className="inline-flex items-center justify-center rounded-full bg-[#FFF0ED] px-3.5 py-1.5 text-sm font-bold tracking-[0.12em] text-brass dark:bg-[#312D2F]">{step.number}</span>
                   <h3 className="mt-4 font-display text-2xl font-bold tracking-normal text-ink sm:text-3xl md:text-4xl">{step.title}</h3>

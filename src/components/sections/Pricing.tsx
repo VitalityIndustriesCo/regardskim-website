@@ -33,7 +33,7 @@ export default function Pricing() {
           </p>
         </FadeIn>
 
-        <FadeIn delay={0.06} className="mx-auto mt-10 w-full max-w-md rounded-[1.5rem] border border-slate/12 bg-white p-5 text-left shadow-[0_8px_40px_rgba(0,0,0,0.10),0_2px_6px_rgba(0,0,0,0.05)] dark:bg-[#1D2840] dark:border-slate/20 dark:shadow-[0_8px_40px_rgba(0,0,0,0.3),0_2px_6px_rgba(0,0,0,0.2)] md:rounded-[2rem] md:p-10">
+        <FadeIn delay={0.06} className="mx-auto mt-10 w-full max-w-md rounded-[1.5rem] border border-slate/12 bg-white p-5 text-left shadow-[0_10px_28px_rgba(35,53,71,0.18),0_2px_6px_rgba(35,53,71,0.10)] dark:bg-[#1D2840] dark:border-slate/20 dark:shadow-[0_8px_40px_rgba(0,0,0,0.3),0_2px_6px_rgba(0,0,0,0.2)] md:rounded-[2rem] md:p-10">
           <p className="text-sm uppercase tracking-[0.16em] text-slate">Regards Kim</p>
           <div className="mt-4 flex items-end gap-2 text-ink">
             <span className="font-display font-bold text-5xl leading-none sm:text-6xl md:text-7xl">${price}</span>

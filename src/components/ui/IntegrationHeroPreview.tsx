@@ -17,7 +17,7 @@ const orderFacts = [
 export default function IntegrationHeroPreview() {
   return (
     <div className="relative mx-auto max-w-6xl">
-      <div className="overflow-hidden rounded-[2rem] border border-[#E3D3C6] bg-[#FFF9F3] shadow-[0_34px_110px_rgba(35,53,71,0.24),0_18px_45px_rgba(233,124,107,0.14)] dark:border-slate/15 dark:bg-[#20283A] dark:shadow-[0_34px_110px_rgba(0,0,0,0.45),0_18px_45px_rgba(0,0,0,0.28)]">
+      <div className="overflow-hidden rounded-[2rem] border border-[#E3D3C6] bg-[#FFF9F3] shadow-[0_22px_58px_rgba(35,53,71,0.30),0_6px_16px_rgba(35,53,71,0.14)] dark:border-slate/15 dark:bg-[#20283A] dark:shadow-[0_22px_58px_rgba(0,0,0,0.52),0_6px_16px_rgba(0,0,0,0.34)]">
         <div className="flex flex-wrap items-center justify-between gap-3 border-b border-[#E9DCD1] bg-white/70 dark:border-slate/12 dark:bg-[#20283A]/80 px-5 py-4 backdrop-blur md:px-7">
           <div className="flex items-center gap-3">
             <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-[#E97C6B] text-base font-black text-white shadow-[0_10px_24px_rgba(233,124,107,0.28)]">K</div>
@@ -34,7 +34,7 @@ export default function IntegrationHeroPreview() {
         </div>
 
         <div className="grid gap-5 bg-[radial-gradient(circle_at_20%_20%,rgba(233,124,107,0.10),transparent_30%),linear-gradient(180deg,#FFF9F3,#F8F1E7)] dark:bg-[radial-gradient(circle_at_20%_20%,rgba(176,141,87,0.06),transparent_30%),linear-gradient(180deg,#20283A,#20283A)] p-4 md:grid-cols-[1fr_0.82fr_1.08fr] md:p-7">
-          <section className="rounded-[1.5rem] border border-[#E9DCD1] bg-white p-4 shadow-[0_18px_40px_rgba(35,53,71,0.14)] dark:border-slate/12 dark:bg-[#111625] dark:shadow-[0_18px_40px_rgba(0,0,0,0.30)]">
+          <section className="rounded-[1.5rem] border border-[#E9DCD1] bg-white p-4 shadow-[0_12px_28px_rgba(35,53,71,0.20),0_3px_8px_rgba(35,53,71,0.11)] dark:border-slate/12 dark:bg-[#111625] dark:shadow-[0_12px_28px_rgba(0,0,0,0.38),0_3px_8px_rgba(0,0,0,0.24)]">
             <div className="mb-4 flex items-center justify-between">
               <div>
               <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#8A6F61] dark:text-brass">AI triage from Gmail</p>
@@ -42,7 +42,7 @@ export default function IntegrationHeroPreview() {
               </div>
               <MailCheck className="text-[#E97C6B]" size={22} />
             </div>
-            <div className="rounded-2xl border border-[#E9DCD1] bg-[#FFF9F3] p-4 shadow-[0_10px_26px_rgba(35,53,71,0.08)] dark:border-slate/12 dark:bg-[#20283A] dark:shadow-[0_10px_26px_rgba(0,0,0,0.24)]">
+            <div className="rounded-2xl border border-[#E9DCD1] bg-[#FFF9F3] p-4 shadow-[0_8px_18px_rgba(35,53,71,0.13),0_2px_5px_rgba(35,53,71,0.08)] dark:border-slate/12 dark:bg-[#20283A] dark:shadow-[0_8px_18px_rgba(0,0,0,0.30),0_2px_5px_rgba(0,0,0,0.20)]">
               <div className="flex items-center gap-3">
                 <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[#E97C6B] text-sm font-bold text-white">S</div>
                 <div className="min-w-0">
@@ -64,7 +64,7 @@ export default function IntegrationHeroPreview() {
             </div>
           </section>
 
-          <section className="rounded-[1.5rem] border border-[#CFE3D1] bg-[#F8FCF6] p-4 shadow-[0_18px_40px_rgba(56,109,52,0.13)] dark:border-slate/15 dark:bg-[#111625] dark:shadow-[0_18px_40px_rgba(0,0,0,0.30)]">
+          <section className="rounded-[1.5rem] border border-[#CFE3D1] bg-[#F8FCF6] p-4 shadow-[0_12px_28px_rgba(35,53,71,0.18),0_3px_8px_rgba(56,109,52,0.10)] dark:border-slate/15 dark:bg-[#111625] dark:shadow-[0_12px_28px_rgba(0,0,0,0.38),0_3px_8px_rgba(0,0,0,0.24)]">
             <div className="mb-4 flex items-center gap-3">
               <ShopifyLogo className="h-9 w-9" />
               <div>
@@ -85,14 +85,14 @@ export default function IntegrationHeroPreview() {
             </div>
           </section>
 
-          <section className="rounded-[1.5rem] border border-[#E9DCD1] bg-white p-4 shadow-[0_22px_48px_rgba(35,53,71,0.16)] dark:border-slate/12 dark:bg-[#111625] dark:shadow-[0_22px_48px_rgba(0,0,0,0.32)]">
+          <section className="rounded-[1.5rem] border border-[#E9DCD1] bg-white p-4 shadow-[0_12px_28px_rgba(35,53,71,0.21),0_3px_8px_rgba(35,53,71,0.12)] dark:border-slate/12 dark:bg-[#111625] dark:shadow-[0_12px_28px_rgba(0,0,0,0.40),0_3px_8px_rgba(0,0,0,0.24)]">
             <div className="mb-4 flex items-center justify-between">
               <div>
                 <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#8A6F61] dark:text-brass">AI support workspace</p>
                 <h3 className="mt-1 font-display text-xl font-extrabold text-ink dark:text-white">Draft ready</h3>
               </div>
             </div>
-            <div className="rounded-2xl border border-[#E9DCD1] bg-[#FFF9F3] p-5 shadow-[0_12px_30px_rgba(35,53,71,0.09)] dark:border-slate/12 dark:bg-[#20283A] dark:shadow-[0_12px_30px_rgba(0,0,0,0.26)]">
+            <div className="rounded-2xl border border-[#E9DCD1] bg-[#FFF9F3] p-5 shadow-[0_8px_18px_rgba(35,53,71,0.14),0_2px_5px_rgba(35,53,71,0.08)] dark:border-slate/12 dark:bg-[#20283A] dark:shadow-[0_8px_18px_rgba(0,0,0,0.31),0_2px_5px_rgba(0,0,0,0.20)]">
               <p className="text-sm leading-6 text-ink dark:text-white">Hi Sarah,</p>
               <p className="mt-3 text-sm leading-6 text-ink dark:text-white">Thanks for checking in. Regards Kim found order <strong>#1842</strong> and it shipped yesterday with Australia Post.</p>
               <p className="mt-3 text-sm leading-6 text-ink dark:text-white">Your tracking number is <strong>AP4821093AU</strong>. The first scan can take 24 to 48 hours, so it should update shortly.</p>

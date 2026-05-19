@@ -30,7 +30,7 @@ export default function SupportCostCalculatorClient() {
 
   return (
     <div className="mt-12 grid gap-8 lg:grid-cols-[1.15fr_0.85fr]">
-      <section className="rounded-[2rem] border border-slate/10 dark:border-slate/20 bg-white dark:bg-[#20283A] p-8 shadow-[0_8px_32px_rgba(0,0,0,0.08)] dark:shadow-[0_4px_24px_rgba(0,0,0,0.3)]">
+      <section className="rounded-[2rem] border border-slate/10 dark:border-slate/20 bg-white dark:bg-[#20283A] p-8 shadow-[0_10px_26px_rgba(35,53,71,0.16),0_2px_6px_rgba(35,53,71,0.08)] dark:shadow-[0_4px_24px_rgba(0,0,0,0.3)]">
         <div className="grid gap-6 sm:grid-cols-2">
           <label className="block">
             <span className="text-sm font-medium text-ink">Orders per month</span>
@@ -89,7 +89,7 @@ export default function SupportCostCalculatorClient() {
         </div>
       </section>
 
-      <aside className="rounded-[2rem] border border-brass/20 bg-white dark:bg-[#20283A] p-8 shadow-[0_8px_32px_rgba(176,141,87,0.12)] dark:shadow-[0_4px_24px_rgba(0,0,0,0.3)]">
+      <aside className="rounded-[2rem] border border-brass/20 bg-white dark:bg-[#20283A] p-8 shadow-[0_10px_26px_rgba(35,53,71,0.15),0_2px_6px_rgba(35,53,71,0.08)] dark:shadow-[0_4px_24px_rgba(0,0,0,0.3)]">
         <p className="text-sm font-medium uppercase tracking-[0.18em] text-slate">Your estimate</p>
         <div className="mt-5 space-y-5">
           <div>

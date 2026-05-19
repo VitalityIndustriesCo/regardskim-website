@@ -100,7 +100,7 @@ If you have any questions about a return, refund, or exchange, contact ${store} 
 
   return (
     <div className="mt-12 grid gap-8 lg:grid-cols-[1.05fr_0.95fr]">
-      <section className="rounded-[2rem] border border-slate/10 dark:border-slate/20 bg-white dark:bg-[#20283A] p-8 shadow-[0_8px_32px_rgba(0,0,0,0.08)] dark:shadow-[0_4px_24px_rgba(0,0,0,0.3)]">
+      <section className="rounded-[2rem] border border-slate/10 dark:border-slate/20 bg-white dark:bg-[#20283A] p-8 shadow-[0_10px_26px_rgba(35,53,71,0.16),0_2px_6px_rgba(35,53,71,0.08)] dark:shadow-[0_4px_24px_rgba(0,0,0,0.3)]">
         <div className="grid gap-6 sm:grid-cols-2">
           <label className="block sm:col-span-2">
             <span className="text-sm font-medium text-ink">Store name</span>
@@ -198,7 +198,7 @@ If you have any questions about a return, refund, or exchange, contact ${store} 
         </div>
       </section>
 
-      <aside className="rounded-[2rem] border border-brass/20 bg-white dark:bg-[#20283A] p-8 shadow-[0_8px_32px_rgba(176,141,87,0.12)] dark:shadow-[0_4px_24px_rgba(0,0,0,0.3)]">
+      <aside className="rounded-[2rem] border border-brass/20 bg-white dark:bg-[#20283A] p-8 shadow-[0_10px_26px_rgba(35,53,71,0.15),0_2px_6px_rgba(35,53,71,0.08)] dark:shadow-[0_4px_24px_rgba(0,0,0,0.3)]">
         <div className="flex items-center justify-between gap-4">
           <p className="text-sm font-medium uppercase tracking-[0.18em] text-slate">Generated policy</p>
           <button

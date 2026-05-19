@@ -96,7 +96,7 @@ export default function RegardsKimVsRichpanelPage() {
           </p>
         </div>
 
-        <div className="mx-auto mt-12 max-w-5xl overflow-hidden rounded-[2rem] border border-slate/10 dark:border-slate/20 bg-white dark:bg-[#20283A] shadow-[0_8px_32px_rgba(0,0,0,0.08)] dark:shadow-[0_4px_24px_rgba(0,0,0,0.3)]">
+        <div className="mx-auto mt-12 max-w-5xl overflow-hidden rounded-[2rem] border border-slate/10 dark:border-slate/20 bg-white dark:bg-[#20283A] shadow-[0_10px_26px_rgba(35,53,71,0.16),0_2px_6px_rgba(35,53,71,0.08)] dark:shadow-[0_4px_24px_rgba(0,0,0,0.3)]">
           <div className="grid grid-cols-3 border-b border-slate/10 dark:border-slate/20 bg-mist/40 dark:bg-[#1B2436]/40 text-sm font-semibold text-ink">
             <div className="p-4">Category</div>
             <div className="border-l border-slate/10 dark:border-slate/20 p-4">RegardsKim</div>
@@ -112,7 +112,7 @@ export default function RegardsKimVsRichpanelPage() {
         </div>
 
         <div className="mx-auto mt-12 grid max-w-5xl gap-6 lg:grid-cols-2">
-          <article className="rounded-[1.75rem] border border-brass/20 bg-white dark:bg-[#20283A] p-8 shadow-[0_8px_32px_rgba(176,141,87,0.12)] dark:shadow-[0_4px_24px_rgba(0,0,0,0.3)]">
+          <article className="rounded-[1.75rem] border border-brass/20 bg-white dark:bg-[#20283A] p-8 shadow-[0_10px_26px_rgba(35,53,71,0.15),0_2px_6px_rgba(35,53,71,0.08)] dark:shadow-[0_4px_24px_rgba(0,0,0,0.3)]">
             <h2 className="font-display text-2xl font-bold text-ink">Where RegardsKim wins</h2>
             <ul className="mt-5 space-y-3 text-slate">
               {pros.kim.map((item) => (
@@ -121,7 +121,7 @@ export default function RegardsKimVsRichpanelPage() {
             </ul>
           </article>
 
-          <article className="rounded-[1.75rem] border border-slate/10 dark:border-slate/20 bg-white dark:bg-[#20283A] p-8 shadow-[0_4px_20px_rgba(0,0,0,0.06)] dark:shadow-[0_4px_24px_rgba(0,0,0,0.3)]">
+          <article className="rounded-[1.75rem] border border-slate/10 dark:border-slate/20 bg-white dark:bg-[#20283A] p-8 shadow-[0_8px_22px_rgba(35,53,71,0.13),0_2px_5px_rgba(35,53,71,0.08)] dark:shadow-[0_4px_24px_rgba(0,0,0,0.3)]">
             <h2 className="font-display text-2xl font-bold text-ink">Where Richpanel is stronger</h2>
             <ul className="mt-5 space-y-3 text-slate">
               {pros.competitor.map((item) => (
@@ -152,7 +152,7 @@ export default function RegardsKimVsRichpanelPage() {
           </p>
         </div>
 
-        <div className="mx-auto mt-12 max-w-4xl rounded-[1.75rem] border border-brass/20 bg-white dark:bg-[#20283A] p-8 text-center shadow-[0_8px_32px_rgba(176,141,87,0.12)]">
+        <div className="mx-auto mt-12 max-w-4xl rounded-[1.75rem] border border-brass/20 bg-white dark:bg-[#20283A] p-8 text-center shadow-[0_10px_26px_rgba(35,53,71,0.15),0_2px_6px_rgba(35,53,71,0.08)]">
           <h2 className="font-display text-3xl font-bold text-ink">Simple beats sprawling for many stores</h2>
           <p className="mt-4 text-lg leading-8 text-slate">
             If your support pain is mostly email, RegardsKim gets to the point faster.

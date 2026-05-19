@@ -89,7 +89,7 @@ export default function ReturnPolicyGeneratorPage() {
 
           <ReturnPolicyGeneratorClient />
 
-          <div className="mx-auto mt-12 max-w-4xl rounded-[1.75rem] border border-slate/10 dark:border-slate/20 bg-white dark:bg-[#20283A] p-8 shadow-[0_4px_20px_rgba(0,0,0,0.06)] dark:shadow-[0_4px_24px_rgba(0,0,0,0.3)]">
+          <div className="mx-auto mt-12 max-w-4xl rounded-[1.75rem] border border-slate/10 dark:border-slate/20 bg-white dark:bg-[#20283A] p-8 shadow-[0_8px_22px_rgba(35,53,71,0.13),0_2px_5px_rgba(35,53,71,0.08)] dark:shadow-[0_4px_24px_rgba(0,0,0,0.3)]">
             <h2 className="font-display text-2xl font-bold text-ink">Why this matters</h2>
             <div className="mt-5 space-y-4 text-slate">
               <p>

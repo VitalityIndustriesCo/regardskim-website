@@ -21,7 +21,7 @@ export default function FAQ() {
             const isOpen = open === idx;
             return (
               <FadeIn key={faq.question} delay={idx * 0.02}>
-                <article className="overflow-hidden rounded-2xl border border-slate/12 bg-white shadow-[0_2px_8px_rgba(0,0,0,0.04)] dark:bg-[#20283A]">
+                <article className="overflow-hidden rounded-2xl border border-slate/12 bg-white shadow-[0_6px_16px_rgba(35,53,71,0.11),0_1px_4px_rgba(35,53,71,0.07)] dark:bg-[#20283A]">
                   <button
                     type="button"
                     onClick={() => setOpen(isOpen ? null : idx)}

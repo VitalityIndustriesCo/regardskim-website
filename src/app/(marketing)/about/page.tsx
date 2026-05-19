@@ -25,7 +25,7 @@ export default function AboutPage() {
         <div className="mt-2 h-1 w-16 rounded-full bg-brass" />
 
         {/* Hero Image */}
-        <div className="mt-8 overflow-hidden rounded-2xl shadow-[0_8px_32px_rgba(0,0,0,0.10)]">
+        <div className="mt-8 overflow-hidden rounded-2xl shadow-[0_10px_26px_rgba(35,53,71,0.18),0_2px_6px_rgba(35,53,71,0.09)]">
           <Image
             src="/images/about-hero.jpg"
             alt="Abstract golden light on dark background"
@@ -74,7 +74,7 @@ export default function AboutPage() {
           </p>
 
           {/* Product callout block */}
-          <div className="rounded-2xl border border-slate/15 bg-white p-6 shadow-[0_4px_20px_rgba(0,0,0,0.06)] dark:bg-[#20283A] md:p-8">
+          <div className="rounded-2xl border border-slate/15 bg-white p-6 shadow-[0_8px_22px_rgba(35,53,71,0.13),0_2px_5px_rgba(35,53,71,0.08)] dark:bg-[#20283A] md:p-8">
             <p className="text-slate">
               Regards Kim connects to your Gmail and Shopify store, sorts customer emails by issue,
               pulls in the order and tracking context, and gives you the AI support tools to answer

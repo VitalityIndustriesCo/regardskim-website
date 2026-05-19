@@ -120,7 +120,7 @@ export default function CompareHubPage() {
           {comparisonPages.map((page) => (
             <article
               key={page.href}
-              className="rounded-[1.75rem] border border-slate/10 dark:border-slate/20 bg-white dark:bg-[#20283A] p-8 shadow-[0_4px_20px_rgba(0,0,0,0.06)] dark:shadow-[0_4px_24px_rgba(0,0,0,0.3)] transition-transform duration-200 hover:-translate-y-1"
+              className="rounded-[1.75rem] border border-slate/10 dark:border-slate/20 bg-white dark:bg-[#20283A] p-8 shadow-[0_8px_22px_rgba(35,53,71,0.13),0_2px_5px_rgba(35,53,71,0.08)] dark:shadow-[0_4px_24px_rgba(0,0,0,0.3)] transition-transform duration-200 hover:-translate-y-1"
             >
               <p className="text-sm font-medium uppercase tracking-[0.18em] text-slate">Comparison</p>
               <h2 className="mt-4 font-display text-2xl font-bold text-ink">{page.title}</h2>
@@ -132,7 +132,7 @@ export default function CompareHubPage() {
           ))}
         </div>
 
-        <div className="mx-auto mt-12 max-w-5xl rounded-[2rem] border border-brass/20 bg-white dark:bg-[#20283A] p-8 shadow-[0_8px_32px_rgba(176,141,87,0.12)] dark:shadow-[0_4px_24px_rgba(0,0,0,0.3)]">
+        <div className="mx-auto mt-12 max-w-5xl rounded-[2rem] border border-brass/20 bg-white dark:bg-[#20283A] p-8 shadow-[0_10px_26px_rgba(35,53,71,0.15),0_2px_6px_rgba(35,53,71,0.08)] dark:shadow-[0_4px_24px_rgba(0,0,0,0.3)]">
           <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
             <div>
               <h2 className="font-display text-3xl font-bold text-ink">Need more context before you choose?</h2>

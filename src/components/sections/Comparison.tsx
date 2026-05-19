@@ -38,8 +38,8 @@ function ComparisonCard({ title, items, tone }: ComparisonCardProps) {
       className={[
         "h-full rounded-[1.75rem] border bg-white p-6 dark:bg-[#20283A] md:p-8",
         isKim
-          ? "border-brass/30 shadow-[0_8px_32px_rgba(176,141,87,0.15),0_2px_6px_rgba(0,0,0,0.06)]"
-          : "border-slate/12 shadow-[0_4px_20px_rgba(0,0,0,0.06),0_1px_3px_rgba(0,0,0,0.04)]",
+          ? "border-brass/30 shadow-[0_10px_28px_rgba(35,53,71,0.17),0_2px_6px_rgba(35,53,71,0.09)]"
+          : "border-slate/12 shadow-[0_8px_22px_rgba(35,53,71,0.13),0_2px_5px_rgba(35,53,71,0.08)]",
       ].join(" ")}
     >
       <div className="flex min-h-[4.5rem] items-center justify-between gap-4">
@@ -86,7 +86,7 @@ function ReplyCard({ label, body, tone }: ReplyCardProps) {
 
   if (!isKim) {
     return (
-      <article className="h-full rounded-[1.75rem] border border-slate/12 bg-white p-6 shadow-[0_4px_20px_rgba(0,0,0,0.06),0_1px_3px_rgba(0,0,0,0.04)] dark:bg-[#20283A] dark:shadow-[0_4px_20px_rgba(0,0,0,0.24),0_1px_3px_rgba(0,0,0,0.16)] md:p-8">
+      <article className="h-full rounded-[1.75rem] border border-slate/12 bg-white p-6 shadow-[0_8px_22px_rgba(35,53,71,0.13),0_2px_5px_rgba(35,53,71,0.08)] dark:bg-[#20283A] dark:shadow-[0_4px_20px_rgba(0,0,0,0.24),0_1px_3px_rgba(0,0,0,0.16)] md:p-8">
         <div className="flex items-center gap-3">
           <span className="rounded-full bg-slate/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-slate">
             {label}
@@ -98,7 +98,7 @@ function ReplyCard({ label, body, tone }: ReplyCardProps) {
   }
 
   return (
-    <article className="h-full rounded-[1.75rem] border-2 border-brass/30 bg-white p-6 shadow-[0_8px_32px_rgba(176,141,87,0.15),0_2px_6px_rgba(0,0,0,0.06)] dark:bg-[#20283A] dark:shadow-[0_8px_32px_rgba(0,0,0,0.28),0_2px_6px_rgba(0,0,0,0.18)] md:p-8">
+    <article className="h-full rounded-[1.75rem] border-2 border-brass/30 bg-white p-6 shadow-[0_10px_28px_rgba(35,53,71,0.17),0_2px_6px_rgba(35,53,71,0.09)] dark:bg-[#20283A] dark:shadow-[0_8px_32px_rgba(0,0,0,0.28),0_2px_6px_rgba(0,0,0,0.18)] md:p-8">
       <div className="flex flex-wrap items-center justify-between gap-3">
         <span className="rounded-full bg-brass px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-white">
           {label}
@@ -168,7 +168,7 @@ export default function Comparison() {
         </div>
 
         <FadeIn delay={0.12}>
-          <div className="mx-auto mt-10 max-w-4xl rounded-[1.75rem] border border-slate/12 bg-white px-6 py-5 text-center shadow-[0_4px_20px_rgba(0,0,0,0.06)] dark:bg-[#20283A] dark:shadow-[0_4px_20px_rgba(0,0,0,0.24)] md:px-8 md:py-6">
+          <div className="mx-auto mt-10 max-w-4xl rounded-[1.75rem] border border-slate/12 bg-white px-6 py-5 text-center shadow-[0_8px_22px_rgba(35,53,71,0.13),0_2px_5px_rgba(35,53,71,0.08)] dark:bg-[#20283A] dark:shadow-[0_4px_20px_rgba(0,0,0,0.24)] md:px-8 md:py-6">
             <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate">Customer email</p>
             <p className="mt-3 text-base leading-7 text-ink md:text-lg">{customerEmail}</p>
           </div>

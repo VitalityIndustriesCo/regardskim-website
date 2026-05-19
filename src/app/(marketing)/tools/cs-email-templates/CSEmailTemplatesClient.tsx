@@ -147,7 +147,7 @@ export default function CSEmailTemplatesClient() {
       {templateCategories.map((category) => (
         <section
           key={category.title}
-          className="rounded-[2rem] border border-slate/10 dark:border-slate/20 bg-white dark:bg-[#20283A] p-8 shadow-[0_4px_20px_rgba(0,0,0,0.06)] dark:shadow-[0_4px_24px_rgba(0,0,0,0.3)]"
+          className="rounded-[2rem] border border-slate/10 dark:border-slate/20 bg-white dark:bg-[#20283A] p-8 shadow-[0_8px_22px_rgba(35,53,71,0.13),0_2px_5px_rgba(35,53,71,0.08)] dark:shadow-[0_4px_24px_rgba(0,0,0,0.3)]"
         >
           <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
             <div>
@@ -180,7 +180,7 @@ export default function CSEmailTemplatesClient() {
         </section>
       ))}
 
-      <div className="rounded-[1.75rem] border border-brass/20 bg-white dark:bg-[#20283A] p-8 text-center shadow-[0_8px_32px_rgba(176,141,87,0.12)]">
+      <div className="rounded-[1.75rem] border border-brass/20 bg-white dark:bg-[#20283A] p-8 text-center shadow-[0_10px_26px_rgba(35,53,71,0.15),0_2px_6px_rgba(35,53,71,0.08)]">
         <Link href={SHOPIFY_APP_STORE_INSTALL_URL} className="text-base font-semibold text-brass hover:text-oxblood">
           Stop copying templates. Use Regards Kim for Shopify-aware AI customer support →
         </Link>
