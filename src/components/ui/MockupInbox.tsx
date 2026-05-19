@@ -2,21 +2,29 @@ type FilterPill = {
   label: string;
   count: number;
   active?: boolean;
-  tone: "gold" | "green" | "amber" | "muted";
+  tone: "tracking" | "returns" | "orders" | "product" | "sales" | "problems" | "none" | "address";
 };
 
 const FILTERS: FilterPill[] = [
-  { label: "All", count: 4, active: true, tone: "gold" },
-  { label: "tracking", count: 2, tone: "green" },
-  { label: "escalations", count: 1, tone: "amber" },
-  { label: "nothing needed", count: 1, tone: "muted" },
+  { label: "Tracking", count: 4, active: true, tone: "tracking" },
+  { label: "Refunds / Exchanges", count: 0, tone: "returns" },
+  { label: "Order Changes", count: 0, tone: "orders" },
+  { label: "Product Help", count: 0, tone: "product" },
+  { label: "Sales", count: 0, tone: "sales" },
+  { label: "Problems / Escalations", count: 0, tone: "problems" },
+  { label: "Nothing Needed", count: 0, tone: "none" },
+  { label: "Shipping Address Issues", count: 0, tone: "address" },
 ];
 
 const pillClass: Record<FilterPill["tone"], string> = {
-  gold: "bg-brass text-white border-brass",
-  green: "bg-emerald-50 text-emerald-700 border-emerald-200 dark:bg-emerald-950 dark:text-emerald-400 dark:border-emerald-800",
-  amber: "bg-amber-50 text-amber-700 border-amber-200 dark:bg-amber-950 dark:text-amber-400 dark:border-amber-800",
-  muted: "bg-slate/8 text-slate border-slate/15",
+  tracking: "bg-emerald-600 text-white border-emerald-600",
+  returns: "bg-orange-50 text-orange-700 border-orange-200 dark:bg-orange-950 dark:text-orange-300 dark:border-orange-800",
+  orders: "bg-sky-50 text-sky-700 border-sky-200 dark:bg-sky-950 dark:text-sky-300 dark:border-sky-800",
+  product: "bg-violet-50 text-violet-700 border-violet-200 dark:bg-violet-950 dark:text-violet-300 dark:border-violet-800",
+  sales: "bg-amber-50 text-amber-700 border-amber-200 dark:bg-amber-950 dark:text-amber-300 dark:border-amber-800",
+  problems: "bg-rose-50 text-rose-700 border-rose-200 dark:bg-rose-950 dark:text-rose-300 dark:border-rose-800",
+  none: "bg-slate/8 text-slate border-slate/15",
+  address: "bg-teal-50 text-teal-700 border-teal-200 dark:bg-teal-950 dark:text-teal-300 dark:border-teal-800",
 };
 
 type EmailCard = {
@@ -25,11 +33,9 @@ type EmailCard = {
   sender: string;
   subject: string;
   badge: string;
-  badgeTone: "green" | "amber" | "muted";
   preview: string;
   timeAgo: string;
-  replyStatus: "ready" | "action" | "nothing";
-  replyPreview?: string;
+  replyPreview: string;
 };
 
 const EMAILS: EmailCard[] = [
@@ -39,94 +45,55 @@ const EMAILS: EmailCard[] = [
     sender: "sarah@gmail.com",
     subject: "Where is my order #1842?",
     badge: "Tracking",
-    badgeTone: "green",
     preview: "Hi, I ordered the weighted blanket last week and haven't received any tracking information yet...",
     timeAgo: "2h ago",
-    replyStatus: "ready",
-    replyPreview: "Order #1842 matched. Tracking link and delivery status are ready to insert...",
+    replyPreview: "Order #1842 matched. Tracking link and delivery status are ready to insert.",
   },
   {
-    avatar: "J",
+    avatar: "P",
     avatarColor: "bg-[#7C6BC4]",
-    sender: "james.t@outlook.com",
-    subject: "Re: Return request for order #1836",
-    badge: "Refunds / Exchanges",
-    badgeTone: "amber",
-    preview: "Thanks, but I'd rather just return it for a refund if that's okay...",
+    sender: "priya@outlook.com",
+    subject: "Tracking link not updating",
+    badge: "Tracking",
+    preview: "The tracking page still says pending. Can you check if Australia Post has scanned it yet?",
     timeAgo: "3h ago",
-    replyStatus: "action",
+    replyPreview: "Latest tracking status found. Reply can explain the first scan delay and include the link.",
+  },
+  {
+    avatar: "L",
+    avatarColor: "bg-[#3B9B6D]",
+    sender: "liam@gmail.com",
+    subject: "Has order #1847 shipped yet?",
+    badge: "Tracking",
+    preview: "Just checking whether my order has shipped. I haven't seen a tracking email come through.",
+    timeAgo: "5h ago",
+    replyPreview: "Fulfilment and tracking number are ready. Insert tracking before sending the reply.",
   },
   {
     avatar: "E",
     avatarColor: "bg-[#6B7280]",
-    sender: "email@shopify.com",
-    subject: "Order #1847 shipped",
-    badge: "Nothing Needed",
-    badgeTone: "muted",
-    preview: "Shipping confirmation for order #1847 placed by Michael R...",
-    timeAgo: "5h ago",
-    replyStatus: "nothing",
-  },
-  {
-    avatar: "M",
-    avatarColor: "bg-[#3B9B6D]",
-    sender: "michael.r@gmail.com",
-    subject: "Refund for damaged item",
-    badge: "Problems / Escalations",
-    badgeTone: "green",
-    preview: "The package arrived but the item inside was broken. Can I get a refund?",
+    sender: "emma@gmail.com",
+    subject: "Delivery taking longer than expected",
+    badge: "Tracking",
+    preview: "My package was meant to arrive yesterday but it hasn't shown up. Is there an update?",
     timeAgo: "6h ago",
-    replyStatus: "ready",
-    replyPreview: "Possible damaged item. Saved reply and evidence request helper are ready...",
+    replyPreview: "Delivery status is in transit. Add tracking link and shipping policy if needed.",
   },
 ];
 
 function ReplyPanel({ card }: { card: EmailCard }) {
-  if (card.replyStatus === "nothing") {
-    return (
-      <div className="flex h-full flex-col justify-center gap-3 px-3 py-4">
-        <p className="text-center text-xs font-medium text-slate dark:text-white">✓ Nothing needed</p>
-        <p className="text-[11px] leading-4 text-slate dark:text-white">
-          Not a customer email. No reply needed.
-        </p>
-        <div className="flex justify-center gap-2">
-          <span className="rounded-lg border border-slate/15 bg-mist px-2.5 py-1 text-[10px] font-medium text-ink dark:text-white">Review</span>
-          <span className="rounded-lg border border-slate/15 bg-mist px-2.5 py-1 text-[10px] font-medium text-ink dark:text-white">Mark done</span>
-        </div>
-      </div>
-    );
-  }
-
-  const isAction = card.replyStatus === "action";
-
   return (
     <div className="flex h-full flex-col justify-between px-3 py-3">
       <div>
-        {isAction ? (
-          <p className="text-center text-[11px] font-medium text-amber-600 dark:text-white">
-            Owner decision needed
-          </p>
-        ) : (
-          card.replyPreview && (
-            <p className="line-clamp-3 text-[11px] leading-4 text-slate dark:text-white">
-              {card.replyPreview}
-            </p>
-          )
-        )}
+        <p className="text-[11px] font-semibold text-emerald-700 dark:text-emerald-300">Reply ready</p>
+        <p className="mt-1 line-clamp-3 text-[11px] leading-4 text-slate dark:text-white">
+          {card.replyPreview}
+        </p>
       </div>
       <div className="mt-3 flex flex-wrap justify-center gap-1.5">
-        {isAction ? (
-          <>
-            <span className="rounded-lg border border-slate/15 bg-mist px-2.5 py-1 text-[10px] font-medium text-ink dark:text-white">Open context</span>
-            <span className="rounded-lg border border-slate/15 bg-mist px-2.5 py-1 text-[10px] font-medium text-ink dark:text-white">Add note</span>
-          </>
-        ) : (
-          <>
-            <span className="rounded-lg bg-emerald-600 dark:bg-brass px-2.5 py-1 text-[10px] font-semibold text-white">Use helper</span>
-            <span className="rounded-lg border border-slate/15 bg-mist px-2.5 py-1 text-[10px] font-medium text-ink dark:text-white">Improve reply</span>
-            <span className="rounded-lg border border-slate/15 bg-mist px-2.5 py-1 text-[10px] font-medium text-ink dark:text-white">Mark done</span>
-          </>
-        )}
+        <span className="rounded-lg bg-emerald-600 dark:bg-brass px-2.5 py-1 text-[10px] font-semibold text-white">Edit reply</span>
+        <span className="rounded-lg border border-slate/15 bg-mist px-2.5 py-1 text-[10px] font-medium text-ink dark:text-white">Add tracking link</span>
+        <span className="rounded-lg border border-slate/15 bg-mist px-2.5 py-1 text-[10px] font-medium text-ink dark:text-white">Skip for now</span>
       </div>
     </div>
   );
@@ -140,10 +107,10 @@ export default function MockupInbox() {
         {FILTERS.map((f) => (
           <span
             key={f.label}
-            className={`inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-[10px] font-medium sm:text-[11px] ${pillClass[f.tone]}`}
+            className={`inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-[10px] font-medium sm:text-[11px] ${pillClass[f.tone]} ${!f.active ? "opacity-80" : ""}`}
           >
-            {f.active ? f.label : f.count} {!f.active && f.label}
-            {f.active && <span className="ml-0.5">({f.count})</span>}
+            {f.tone === "address" && <span className="-ml-1 mr-1 text-slate/50 dark:text-white/50">|</span>}
+            {f.label} <span className="ml-0.5">({f.count})</span>
           </span>
         ))}
       </div>
@@ -154,7 +121,7 @@ export default function MockupInbox() {
           <span className="block text-center text-[10px] font-semibold uppercase tracking-[0.14em] text-slate dark:text-white sm:text-[11px]">Customer Emails</span>
         </div>
         <div className="hidden pb-1.5 sm:block">
-          <span className="block text-center text-[10px] font-semibold uppercase tracking-[0.14em] text-slate dark:text-white sm:text-[11px]">AI Support Context</span>
+          <span className="block text-center text-[10px] font-semibold uppercase tracking-[0.14em] text-slate dark:text-white sm:text-[11px]">Reply ready</span>
         </div>
       </div>
 
@@ -174,6 +141,9 @@ export default function MockupInbox() {
                     <span className="shrink-0 text-[10px] text-slate dark:text-white">{card.timeAgo}</span>
                   </div>
                   <p className="mt-0.5 truncate text-[11px] font-semibold text-ink sm:text-xs">{card.subject}</p>
+                  <div className="mt-1.5">
+                    <span className="inline-flex rounded-full bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold text-emerald-700 dark:bg-emerald-950 dark:text-emerald-300">{card.badge}</span>
+                  </div>
                   <p className="mt-1.5 line-clamp-2 text-[11px] leading-4 text-slate dark:text-white">{card.preview}</p>
 
                 </div>
