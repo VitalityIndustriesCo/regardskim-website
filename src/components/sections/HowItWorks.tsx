@@ -27,7 +27,7 @@ const steps = [
   {
     number: "03",
     title: "Answer faster with AI control",
-    body: "Use saved replies, improve your wording, insert the right links, and send from Gmail. Your customers see your store, not another helpdesk tool.",
+    body: "Use saved replies, improve your wording with AI, insert the right links, and send from Gmail. Your customers see your store, not another helpdesk tool.",
     mockup: (
       <MockupWindow title="Inbox">
         <MockupDetail mode="approval" />
