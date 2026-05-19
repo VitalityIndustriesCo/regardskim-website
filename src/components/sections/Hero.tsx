@@ -2,6 +2,7 @@ import FadeIn from "@/components/ui/FadeIn";
 import { ShopifyLogo, GmailLogo } from "@/components/ui/BrandLogos";
 import IntegrationHeroPreview from "@/components/ui/IntegrationHeroPreview";
 import { SHOPIFY_APP_STORE_INSTALL_URL } from "@/lib/shopify-install";
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -25,9 +26,9 @@ export default function Hero() {
               <a href={SHOPIFY_APP_STORE_INSTALL_URL} className="btn-primary">
                 Install on Shopify
               </a>
-              <a href="/#how-it-works" className="btn-secondary">
+              <Link href="/#how-it-works" className="btn-secondary">
                 See how it works
-              </a>
+              </Link>
             </div>
             <p className="mt-4 text-sm font-medium text-slate">AI triage, order context, reply helpers, and support analytics in one Shopify app.</p>
 

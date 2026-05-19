@@ -1,4 +1,4 @@
-import { CheckCircle2, Clock3, MailCheck, ShieldCheck, Sparkles } from "lucide-react";
+import { CheckCircle2, Clock3, MailCheck, Sparkles } from "lucide-react";
 import { GmailLogo, ShopifyLogo } from "@/components/ui/BrandLogos";
 
 const customerEmail = {
@@ -30,7 +30,6 @@ export default function IntegrationHeroPreview() {
           <div className="flex flex-wrap items-center gap-2 text-xs font-semibold">
             <span className="inline-flex items-center gap-1.5 rounded-full border border-[#CFE3D1] bg-[#F3FAF2] px-3 py-1.5 text-[#386D34] dark:border-slate/15 dark:bg-[#1D2840] dark:text-emerald-400"><ShopifyLogo className="h-4 w-4" /> Shopify admin</span>
             <span className="inline-flex items-center gap-1.5 rounded-full border border-[#E9DCD1] bg-white px-3 py-1.5 text-ink dark:border-slate/12 dark:bg-[#1D2840]"><GmailLogo className="h-4 w-4" /> Gmail Connected</span>
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-[#F1C8C0] bg-[#FFF0ED] px-3 py-1.5 text-[#B85345] dark:border-brass/25 dark:bg-[#111625] dark:text-brass"><ShieldCheck size={14} /> You keep the final say</span>
           </div>
         </div>
 
@@ -57,6 +56,12 @@ export default function IntegrationHeroPreview() {
             <div className="mt-3 inline-flex items-center gap-2 rounded-full bg-[#FFF0ED] px-3 py-1.5 text-xs font-bold text-[#B85345] dark:bg-[#111625] dark:text-brass">
               <Sparkles size={13} /> Regards Kim matched this to an order
             </div>
+            <div className="mt-3">
+              <span className="inline-flex rounded-full border border-[#B7D8BC] bg-[#EAF6EC] px-3 py-1.5 text-xs font-bold text-[#2E7D42] dark:border-emerald-900 dark:bg-emerald-950/50 dark:text-emerald-300">
+                Tracking
+              </span>
+              <p className="mt-2 text-sm leading-6 text-slate">Customer is asking about shipping</p>
+            </div>
           </section>
 
           <section className="rounded-[1.5rem] border border-[#E9DCD1] bg-white p-4 shadow-[0_22px_48px_rgba(35,53,71,0.16)] dark:border-slate/12 dark:bg-[#111625] dark:shadow-[0_22px_48px_rgba(0,0,0,0.32)]">
@@ -75,7 +80,7 @@ export default function IntegrationHeroPreview() {
             <div className="mt-4 flex flex-wrap gap-2">
               <span className="rounded-full bg-emerald-600 dark:bg-brass px-4 py-2 text-xs font-bold text-white shadow-[0_8px_18px_rgba(233,124,107,0.28)] dark:shadow-[0_8px_18px_rgba(0,0,0,0.28)]">Improve reply</span>
               <span className="rounded-full border border-[#E3D3C6] bg-white px-4 py-2 text-xs font-bold text-ink dark:border-slate/15 dark:bg-[#20283A]">Insert tracking</span>
-              <span className="rounded-full border border-[#E3D3C6] bg-white px-4 py-2 text-xs font-bold text-ink dark:border-slate/15 dark:bg-[#20283A]">Send from Gmail</span>
+              <span className="rounded-full border border-[#E3D3C6] bg-white px-4 py-2 text-xs font-bold text-ink dark:border-slate/15 dark:bg-[#20283A]">Insert shipping policy</span>
             </div>
           </section>
 
