@@ -247,8 +247,10 @@ export default function MockupInbox() {
               type="button"
               onClick={() => setActiveFilter(filter.key)}
               className={[
-                "inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-[10px] font-medium transition sm:text-[11px]",
+                "inline-flex cursor-pointer items-center gap-1.5 rounded-full border px-2.5 py-1 text-[10px] font-medium transition duration-200 hover:-translate-y-0.5 hover:shadow-[0_5px_14px_rgba(35,53,71,0.12)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brass/40 focus-visible:ring-offset-1 sm:text-[11px]",
                 active ? pillClass[filter.tone].active : pillClass[filter.tone].idle,
+                active ? "shadow-[inset_0_1px_0_rgba(255,255,255,0.22),0_5px_14px_rgba(35,53,71,0.14)]" : "",
+                filter.key === "tracking" ? "kim-demo-nudge" : "",
               ].join(" ")}
             >
               {filter.tone === "address" && <span className="-ml-1 mr-1 text-current opacity-50">|</span>}
@@ -267,7 +269,7 @@ export default function MockupInbox() {
         </div>
       </div>
 
-      <div className="space-y-2.5 px-1">
+      <div key={activeFilter} className="space-y-2.5 px-1 duration-200 animate-in fade-in-0 slide-in-from-bottom-1">
         {emails.length === 0 ? (
           <EmptyState label={FILTERS.find((filter) => filter.key === activeFilter)?.label ?? "selected"} />
         ) : (
