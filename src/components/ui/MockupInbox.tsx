@@ -7,8 +7,8 @@ type FilterPill = {
 
 const FILTERS: FilterPill[] = [
   { label: "All", count: 4, active: true, tone: "gold" },
-  { label: "ready to send", count: 2, tone: "green" },
-  { label: "needs your decision", count: 1, tone: "amber" },
+  { label: "tracking", count: 2, tone: "green" },
+  { label: "escalations", count: 1, tone: "amber" },
   { label: "nothing needed", count: 1, tone: "muted" },
 ];
 
@@ -38,19 +38,19 @@ const EMAILS: EmailCard[] = [
     avatarColor: "bg-[#E8893A]",
     sender: "sarah@gmail.com",
     subject: "Where is my order #1842?",
-    badge: "Ready to Send",
+    badge: "Tracking",
     badgeTone: "green",
     preview: "Hi, I ordered the weighted blanket last week and haven't received any tracking information yet...",
     timeAgo: "2h ago",
     replyStatus: "ready",
-    replyPreview: "Hi Sarah, your order #1842 shipped yesterday via Australia Post. It should be with you by...",
+    replyPreview: "Order #1842 matched. Tracking link and delivery status are ready to insert...",
   },
   {
     avatar: "J",
     avatarColor: "bg-[#7C6BC4]",
     sender: "james.t@outlook.com",
     subject: "Re: Return request for order #1836",
-    badge: "Needs Your Decision",
+    badge: "Refunds / Exchanges",
     badgeTone: "amber",
     preview: "Thanks, but I'd rather just return it for a refund if that's okay...",
     timeAgo: "3h ago",
@@ -72,12 +72,12 @@ const EMAILS: EmailCard[] = [
     avatarColor: "bg-[#3B9B6D]",
     sender: "michael.r@gmail.com",
     subject: "Refund for damaged item",
-    badge: "Ready to Send",
+    badge: "Problems / Escalations",
     badgeTone: "green",
     preview: "The package arrived but the item inside was broken. Can I get a refund?",
     timeAgo: "6h ago",
     replyStatus: "ready",
-    replyPreview: "Hi Michael, I'm really sorry about that. Could you send a photo of the damage? I'd love to get a...",
+    replyPreview: "Possible damaged item. Saved reply and evidence request helper are ready...",
   },
 ];
 
@@ -104,7 +104,7 @@ function ReplyPanel({ card }: { card: EmailCard }) {
       <div>
         {isAction ? (
           <p className="text-center text-[11px] font-medium text-amber-600 dark:text-white">
-            Action needed ⚡️
+            Owner decision needed
           </p>
         ) : (
           card.replyPreview && (
@@ -117,14 +117,14 @@ function ReplyPanel({ card }: { card: EmailCard }) {
       <div className="mt-3 flex flex-wrap justify-center gap-1.5">
         {isAction ? (
           <>
-            <span className="rounded-lg border border-slate/15 bg-mist px-2.5 py-1 text-[10px] font-medium text-ink dark:text-white">Write reply</span>
-            <span className="rounded-lg border border-slate/15 bg-mist px-2.5 py-1 text-[10px] font-medium text-ink dark:text-white">Skip for now</span>
+            <span className="rounded-lg border border-slate/15 bg-mist px-2.5 py-1 text-[10px] font-medium text-ink dark:text-white">Open context</span>
+            <span className="rounded-lg border border-slate/15 bg-mist px-2.5 py-1 text-[10px] font-medium text-ink dark:text-white">Add note</span>
           </>
         ) : (
           <>
-            <span className="rounded-lg bg-emerald-600 dark:bg-brass px-2.5 py-1 text-[10px] font-semibold text-white">Approve &amp; send</span>
-            <span className="rounded-lg border border-slate/15 bg-mist px-2.5 py-1 text-[10px] font-medium text-ink dark:text-white">Edit reply</span>
-            <span className="rounded-lg border border-slate/15 bg-mist px-2.5 py-1 text-[10px] font-medium text-ink dark:text-white">Skip for now</span>
+            <span className="rounded-lg bg-emerald-600 dark:bg-brass px-2.5 py-1 text-[10px] font-semibold text-white">Use helper</span>
+            <span className="rounded-lg border border-slate/15 bg-mist px-2.5 py-1 text-[10px] font-medium text-ink dark:text-white">Improve reply</span>
+            <span className="rounded-lg border border-slate/15 bg-mist px-2.5 py-1 text-[10px] font-medium text-ink dark:text-white">Mark done</span>
           </>
         )}
       </div>
@@ -154,7 +154,7 @@ export default function MockupInbox() {
           <span className="block text-center text-[10px] font-semibold uppercase tracking-[0.14em] text-slate dark:text-white sm:text-[11px]">Customer Emails</span>
         </div>
         <div className="hidden pb-1.5 sm:block">
-          <span className="block text-center text-[10px] font-semibold uppercase tracking-[0.14em] text-slate dark:text-white sm:text-[11px]">Email Replies</span>
+          <span className="block text-center text-[10px] font-semibold uppercase tracking-[0.14em] text-slate dark:text-white sm:text-[11px]">AI Support Context</span>
         </div>
       </div>
 
@@ -180,7 +180,7 @@ export default function MockupInbox() {
               </div>
             </div>
 
-            {/* Right: Kim's reply card */}
+            {/* Right: AI support workspace */}
             <div className="rounded-xl border border-slate/10 bg-white shadow-[0_4px_16px_rgba(0,0,0,0.10),0_1.5px_4px_rgba(0,0,0,0.06)] dark:bg-[#1D2840] dark:shadow-[0_4px_16px_rgba(0,0,0,0.25)]">
               <ReplyPanel card={card} />
             </div>

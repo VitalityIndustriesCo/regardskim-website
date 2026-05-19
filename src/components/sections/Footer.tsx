@@ -24,15 +24,15 @@ const mainColumns = [
   {
     title: "Comparisons",
     links: [
-      { href: "/compare/gorgias", label: "Kim vs Gorgias" },
-      { href: "/compare/zendesk", label: "Kim vs Zendesk" },
-      { href: "/compare/tidio", label: "Kim vs Tidio" },
-      { href: "/compare/reamaze", label: "Kim vs Reamaze" },
-      { href: "/compare/richpanel", label: "Kim vs Richpanel" },
-      { href: "/compare/freshdesk", label: "Kim vs Freshdesk" },
-      { href: "/compare/hiring-staff", label: "Kim vs Hiring Staff" },
-      { href: "/compare/va", label: "Kim vs Hiring a VA" },
-      { href: "/compare/diy", label: "Kim vs Doing It Yourself" },
+      { href: "/compare/gorgias", label: "RegardsKim vs Gorgias" },
+      { href: "/compare/zendesk", label: "RegardsKim vs Zendesk" },
+      { href: "/compare/tidio", label: "RegardsKim vs Tidio" },
+      { href: "/compare/reamaze", label: "RegardsKim vs Reamaze" },
+      { href: "/compare/richpanel", label: "RegardsKim vs Richpanel" },
+      { href: "/compare/freshdesk", label: "RegardsKim vs Freshdesk" },
+      { href: "/compare/hiring-staff", label: "RegardsKim vs Hiring Staff" },
+      { href: "/compare/va", label: "RegardsKim vs Hiring a VA" },
+      { href: "/compare/diy", label: "RegardsKim vs Doing It Yourself" },
     ],
   },
   {
@@ -100,7 +100,7 @@ export default function Footer() {
           <div>
             <p className="font-display text-2xl font-bold text-ink">RegardsKim</p>
             <p className="mt-3 max-w-sm text-sm leading-6 text-slate-600 dark:text-white/80">
-              Customer email support for ecommerce stores.
+              AI-powered customer support control for Shopify stores.
             </p>
 
             <form onSubmit={handleSubscribe} className="mt-6 max-w-sm">
@@ -177,7 +177,7 @@ export default function Footer() {
 
         <div className="mt-10 flex flex-col gap-3 border-t border-slate/10 dark:border-slate/20 pt-6 text-sm text-slate-600 sm:flex-row sm:items-center sm:justify-between">
           <div>
-            <p className="font-display text-xl font-bold text-ink">Your inbox, handled.</p>
+            <p className="font-display text-xl font-bold text-ink">Your support cockpit, powered by AI.</p>
             <p className="mt-1 text-sm text-slate-600 dark:text-white/70">Kind regards, Kim</p>
           </div>
           <p className="dark:text-white/60">&copy; RegardsKim 2026. All rights reserved.</p>

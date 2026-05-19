@@ -6,7 +6,7 @@ import { marketingMetadata } from "@/lib/seo";
 export const metadata: Metadata = marketingMetadata({
   title: "About RegardsKim",
   description:
-    "The story behind RegardsKim — why we built it, who inspired it, and what we're working toward.",
+    "The story behind RegardsKim - why we built an AI-powered support control centre for Shopify stores.",
   path: "/about",
   image: "/images/about-hero.jpg",
 });
@@ -76,27 +76,23 @@ export default function AboutPage() {
           {/* Product callout block */}
           <div className="rounded-2xl border border-slate/15 bg-white p-6 shadow-[0_4px_20px_rgba(0,0,0,0.06)] dark:bg-[#20283A] md:p-8">
             <p className="text-slate">
-              Regards Kim connects to your Gmail and Shopify store, reads your customer emails,
-              pulls in the order and tracking context, and drafts the reply before you even open
-              your inbox. You review, approve, and send. Nothing goes out without you.
+              Regards Kim connects to your Gmail and Shopify store, sorts customer emails by issue,
+              pulls in the order and tracking context, and gives you the AI support tools to answer
+              faster without handing over control.
             </p>
           </div>
 
           <p>
-            It won&apos;t replace the art of being human. Yet.
-          </p>
-
-          <p>
             But right now, it handles the repetitive, time-consuming work so you can focus on
-            the parts of your business that actually need you. And with every edit you make to
-            a draft, Regards Kim learns. It adjusts to your tone, your store&apos;s voice, and the
-            way you like to talk to your customers. The more you use it, the better it gets.
+            the parts of your business that actually need you. It keeps the support queue organised,
+            puts Shopify context next to the conversation, and helps your replies sound sharper,
+            clearer, and more on-brand.
           </p>
 
           {/* Sign-off */}
           <div className="mt-10 border-t border-slate/15 pt-8">
             <p className="text-base italic text-slate">
-              And Kim? She still works for me. She just doesn&apos;t answer customer emails anymore, our app does.
+              And Kim? She still works for me. She just does not have to carry the whole inbox anymore.
             </p>
             <p className="mt-6 font-semibold text-ink">
               Matt

@@ -5,9 +5,10 @@ import { SHOPIFY_APP_STORE_INSTALL_URL } from "@/lib/shopify-install";
 
 const bullets = [
   "Connects to your Shopify store and Gmail",
-  "Drafts replies using real order, tracking, and policy data",
-  "Handles WISMO, returns, refunds, and complaints",
-  "You review and approve every reply before it sends",
+  "Sorts customer emails into AI-powered support buckets",
+  "Shows real order, delivery, tracking, and policy context",
+  "Helps with WISMO, returns, order changes, product questions, sales, and complaints",
+  "You control every reply before it sends",
   "Your customers just see your store, never us",
 ];
 
@@ -28,10 +29,10 @@ export default function FoundingPage() {
               Now on the Shopify App Store
             </span>
             <h1 className="mt-5 font-display text-4xl font-bold leading-tight tracking-normal text-ink md:text-5xl">
-              Stop spending hours on customer&nbsp;emails
+              Put AI-powered control over customer&nbsp;emails
             </h1>
             <p className="mx-auto mt-4 max-w-md text-base text-slate md:text-lg">
-              Regards Kim is a Shopify app that connects to your Gmail, reads your customer emails, and drafts replies using your live store data. You review, approve, and send.
+              Regards Kim connects Shopify and Gmail, sorts the support queue, pulls in order context, and gives you the AI tools to answer customers faster.
             </p>
           </div>
 

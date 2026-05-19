@@ -278,7 +278,7 @@ export default function AIEmailResponseGeneratorClient() {
 
         <div className="mt-6 border-t border-slate/10 dark:border-slate/20 pt-6">
           <Link href={SHOPIFY_APP_STORE_INSTALL_URL} className="text-sm font-semibold text-brass hover:text-oxblood">
-            Want this automated for every email? Try RegardsKim →
+            Want this inside an AI-powered support cockpit? Try RegardsKim →
           </Link>
           {generatedResponse && (
             <p className="mt-3 text-xs text-slate/70">Variation {variationIndex + 1} of {templateCount}</p>

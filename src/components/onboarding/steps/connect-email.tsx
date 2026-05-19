@@ -42,7 +42,7 @@ export function ConnectEmail({ storeId }: ConnectEmailProps) {
             <div>
               <CardTitle className="text-[#1A1A1A]">Connect your Gmail</CardTitle>
               <CardDescription>
-                Regards Kim needs access to your support inbox to read customer emails and draft replies for you.
+                Regards Kim needs access to your support inbox to sort customer emails and bring the right context into your workflow.
               </CardDescription>
             </div>
           </div>

@@ -8,7 +8,7 @@ import { SHOPIFY_APP_STORE_INSTALL_URL } from "@/lib/shopify-install";
 export const metadata: Metadata = marketingMetadata({
   title: "RegardsKim vs Gorgias",
   description:
-    "An honest look at RegardsKim vs Gorgias for Shopify support, including price, setup time, automation, and where each tool fits best.",
+    "An honest look at RegardsKim vs Gorgias for Shopify support, including price, setup time, AI support control, and where each tool fits best.",
   path: "/compare/gorgias",
 });
 
@@ -35,7 +35,7 @@ const comparisonRows = [
   },
   {
     label: "24/7 coverage",
-    kim: "Yes, drafts keep moving even when you are offline",
+    kim: "Yes, AI triage and context keep the queue moving even when you are offline",
     competitor: "Possible, but usually depends on team coverage and setup",
   },
   {
@@ -148,8 +148,8 @@ export default function RegardsKimVsGorgiasPage() {
           <p>
             RegardsKim is stronger when you want speed, simplicity, and a price that makes sense early. At
             <strong> $49/month</strong>, it is often cheaper than one missed hour of founder time each week.
-            It plugs into your Shopify store, uses real order and tracking context, and drafts replies you can
-            approve fast. If you want to sanity-check that math for your own store, try the <Link href="/tools/support-cost-calculator" className="font-medium text-brass hover:text-oxblood">support cost calculator</Link>.
+            It plugs into your Shopify store, uses real order and tracking context, and gives you AI-powered
+            help to reply fast. If you want to sanity-check that math for your own store, try the <Link href="/tools/support-cost-calculator" className="font-medium text-brass hover:text-oxblood">support cost calculator</Link>.
           </p>
           <p>
             That does not make it a universal winner. It just makes it a better fit for stores that do not

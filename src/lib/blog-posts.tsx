@@ -168,8 +168,7 @@ export const blogPosts: BlogPost[] = [
         </p>
         <p>
           RegardsKim is built for Shopify merchants who want help with customer email without setting up a heavy help
-          desk. RegardsKim can help draft replies using your Shopify store data and support rules, so repetitive emails
-          move faster while you stay in control of the final message. If you are deciding what to automate first, start
+          desk. RegardsKim brings AI triage, Shopify order context, saved replies, and reply helpers into one controlled support workflow, so repetitive emails move faster while you stay in control. If you are deciding what to automate first, start
           with our guide to <Link href="/blog/automate-shopify-support-emails">automating Shopify support emails</Link>.
         </p>
 
@@ -374,8 +373,7 @@ export const blogPosts: BlogPost[] = [
         </p>
         <p>
           RegardsKim is built for Shopify merchants who want help with customer email without setting up a heavy
-          help desk. It can help draft replies using your Shopify store data and support rules, so repetitive emails
-          move faster while you stay in control of the final message.
+          help desk. It can bring Shopify order context, saved replies, and AI reply help into one controlled workflow, so repetitive emails move faster while you stay in control.
         </p>
         <p>
           If you are still building the basics, our guide to <Link href="/blog/automate-shopify-support-emails">automating
@@ -532,8 +530,7 @@ export const blogPosts: BlogPost[] = [
         </p>
         <p>
           RegardsKim is built for Shopify merchants who want help with customer email without setting up a heavy
-          help desk. If repetitive customer emails are eating your week, RegardsKim can help draft replies using
-          your Shopify store data and support rules, so you stay in control while the boring parts move faster.
+          help desk. If repetitive customer emails are eating your week, RegardsKim can sort the queue, surface Shopify context, and help you answer with AI tools, so you stay in control while the boring parts move faster.
         </p>
 
         <h2>7. Measure the simple things first</h2>
@@ -606,7 +603,7 @@ export const blogPosts: BlogPost[] = [
         </p>
         <p>
           It connects to your store, reads incoming support emails, pulls in order details, tracking status, and
-          policy context, then drafts replies for approval. That makes it especially useful for the repetitive
+          policy context, then lines up Shopify-aware context and reply helpers. That makes it especially useful for the repetitive
           questions that take up most of the week: where is my order, how do returns work, can I change my
           address, has this shipped, can I get a refund.
         </p>
@@ -1370,8 +1367,7 @@ export const blogPosts: BlogPost[] = [
         </p>
         <p>
           A tool like RegardsKim makes sense in that world because it handles the post-sale reality that AI shopping
-          does not solve. It reads customer emails, uses actual Shopify order and tracking context, and drafts replies
-          so your inbox does not become the tax you pay for growth.
+          does not solve. It reads customer emails, uses actual Shopify order and tracking context, and gives you AI support control so your inbox does not become the tax you pay for growth.
         </p>
         <p>
           That does not sound as flashy as storefront AI. But operationally, it is just as important.
@@ -1531,12 +1527,10 @@ export const blogPosts: BlogPost[] = [
         <p>
           It connects to your Shopify store and reads your customer emails with full context — order
           details, tracking status, store policies, previous conversations. When a customer emails about a
-          late delivery, it doesn't guess. It checks. When someone asks for a return, it knows whether
-          they're inside the return window and drafts the right reply.
+          late delivery, it doesn't guess. It checks. When someone asks for a return, it checks whether they are inside the return window and gives you the right context to reply.
         </p>
         <p>
-          You review and send. Or it sends on your behalf if you set it up that way. Either way, the work
-          gets done without you spending your morning copying tracking links.
+          You review and send from your inbox. The work moves faster without you spending your morning copying tracking links.
         </p>
         <p>
           It's not about replacing you. It's about handling the repetitive stuff so you can focus on the
@@ -1562,7 +1556,7 @@ export const blogPosts: BlogPost[] = [
         </p>
         <p>
           <strong>
-            <a href="https://regardskim.com">Regards Kim answers your customer emails so you don't have to.</a>
+            <a href="https://regardskim.com">Regards Kim gives Shopify stores AI-powered support control.</a>
           </strong>
         </p>
         <p>Kind regards, Kim</p>
@@ -1729,8 +1723,7 @@ export const blogPosts: BlogPost[] = [
         </p>
         <p>
           This is also where tools can help. For example, Regards Kim is built for Shopify stores and can
-          draft customer email replies using order details, tracking information, and your policies, then
-          queue them for your approval before anything gets sent. That kind of setup is useful when you are
+          sort customer emails, surface order details, tracking information, and policies, then help you reply while you keep the final say. That kind of setup is useful when you are
           answering the same types of questions over and over but still want the final say.
         </p>
         <p>
@@ -2021,8 +2014,7 @@ export const blogPosts: BlogPost[] = [
           manually writing every reply.
         </p>
         <p>
-          It can read incoming support emails, pull in order and tracking details from your Shopify
-          store, draft the reply, and leave it for you to approve before it goes out. That means repetitive
+          It can read incoming support emails, pull in order and tracking details from your Shopify store, and line up the context and reply help you need before you send. That means repetitive
           support can move faster without losing control.
         </p>
         <p>
@@ -2261,8 +2253,7 @@ export const blogPosts: BlogPost[] = [
         </ul>
         <p>
           This is where a tool like Regards Kim can make sense for a growing Shopify store. It reads incoming
-          customer emails, drafts replies using order info, tracking, and store policies, and puts those
-          drafts in front of you for approval. That is useful when you want faster handling of repetitive
+          customer emails, surfaces order info, tracking, and store policies, and puts the right context and reply helpers in front of you. That is useful when you want faster handling of repetitive
           support without handing the whole customer experience over to a black box.
         </p>
         <p>The key is control. Automation should reduce busywork, not create new mess.</p>
@@ -2322,7 +2313,7 @@ export const blogPosts: BlogPost[] = [
     date: "April 1, 2026",
     image: "/blog/why-different.png",
     meta:
-      "Generic AI email tools help with inbox clutter. Regards Kim is different because it is built for Shopify support, real store data, and approved drafts.",
+      "Generic AI email tools help with inbox clutter. Regards Kim is different because it is built for Shopify support, real store data, and approved support workflows.",
     content: (
       <>
         <p>
@@ -2479,7 +2470,7 @@ export const blogPosts: BlogPost[] = [
           ecommerce support situations with specific facts, policies, and actions behind them.
         </p>
         <p>
-          That means the draft is not just smoother. It is more useful.
+          That means the workflow is not just smoother. It is more useful.
         </p>
 
         <h2>It uses your real store data</h2>
@@ -2506,7 +2497,7 @@ export const blogPosts: BlogPost[] = [
           <li>customer history</li>
         </ul>
         <p>
-          That is what allows it to draft replies that are actually informed.
+          That is what allows its reply helpers to be actually informed.
         </p>
         <p>
           Without that, an AI tool is guessing from context clues. With it, the tool can respond based on
@@ -2528,7 +2519,7 @@ export const blogPosts: BlogPost[] = [
           reply that sounds great but contradicts your actual policy creates more work, not less.
         </p>
         <p>
-          It uses your policies when drafting replies, so the response is not just friendly. It is aligned
+          It uses your policies when helping with replies, so the response is not just friendly. It is aligned
           with how your business actually works.
         </p>
         <p>
@@ -2544,7 +2535,7 @@ export const blogPosts: BlogPost[] = [
           Fair enough.
         </p>
         <p>
-          It is built with that in mind. Every reply is a draft until you approve it.
+          It is built with that in mind. Every reply stays under your control until you send it.
         </p>
         <p>
           Nothing gets sent without your say-so.

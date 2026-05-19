@@ -33,7 +33,7 @@ const QUICK_QUESTIONS = [
   "How do I install on Shopify?",
   "What does it cost?",
   "How does setup work?",
-  "Does it send emails automatically?",
+  "Do I stay in control?",
 ];
 
 function includesAny(text: string, terms: string[]) {
@@ -46,7 +46,7 @@ function buildReply(message: string): Omit<SalesChatMessage, "id" | "role"> & { 
   if (includesAny(normalized, ["install", "shopify app", "app store", "get started", "start", "sign up", "signup"])) {
     return {
       content:
-        "Install RegardsKim from the Shopify App Store, approve the Shopify connection, then connect your support inbox. After that, Kim starts drafting customer replies for approval.",
+        "Install RegardsKim from the Shopify App Store, approve the Shopify connection, then connect your support inbox. After that, Regards Kim starts sorting customer emails and matching Shopify context.",
       actionLabel: "Install on Shopify",
       actionUrl: SHOPIFY_APP_STORE_INSTALL_URL,
       needsEmailCapture: false,
@@ -74,7 +74,7 @@ function buildReply(message: string): Omit<SalesChatMessage, "id" | "role"> & { 
   if (includesAny(normalized, ["how it works", "how does it work", "works", "setup", "set up", "onboarding", "connect"])) {
     return {
       content:
-        "Setup is simple: connect Shopify, connect Gmail or Outlook, confirm your store policies, then review Kim’s draft replies before sending. It’s built for support emails like tracking, returns, exchanges, order updates, and product questions.",
+        "Setup is simple: connect Shopify, connect Gmail or Outlook, and confirm your store policies. RegardsKim then gives you AI triage, Shopify context, saved replies, and reply helpers for tracking, returns, exchanges, order updates, and product questions.",
       needsEmailCapture: false,
     };
   }
@@ -82,7 +82,7 @@ function buildReply(message: string): Omit<SalesChatMessage, "id" | "role"> & { 
   if (includesAny(normalized, ["gmail", "outlook", "email", "inbox", "integration", "integrations", "shopify"])) {
     return {
       content:
-        "RegardsKim is built for Shopify stores and connects to your support inbox, including Gmail and Outlook. It uses live store context to draft better replies.",
+        "RegardsKim is built for Shopify stores and connects to your support inbox, including Gmail and Outlook. It uses store context to organise support and help you reply faster.",
       needsEmailCapture: false,
     };
   }
@@ -90,7 +90,7 @@ function buildReply(message: string): Omit<SalesChatMessage, "id" | "role"> & { 
   if (includesAny(normalized, ["send automatically", "auto send", "autosend", "approval", "approve", "draft", "human"])) {
     return {
       content:
-        "Kim drafts replies first. You stay in control: review, edit if needed, then approve before anything is sent.",
+        "You stay in control. Regards Kim sorts the work, shows the order context, and gives AI reply help, but you decide what gets sent.",
       needsEmailCapture: false,
     };
   }
@@ -98,7 +98,7 @@ function buildReply(message: string): Omit<SalesChatMessage, "id" | "role"> & { 
   if (includesAny(normalized, ["what kim does", "what does kim do", "what do you do", "what is kim", "what does it do"])) {
     return {
       content:
-        "RegardsKim handles repetitive customer support emails for Shopify stores — shipping questions, returns, exchanges, order updates, tracking info, and common product questions — using your real store data.",
+        "RegardsKim gives Shopify stores an AI-powered support cockpit for repetitive customer emails: shipping questions, returns, exchanges, order updates, tracking info, sales questions, and product questions using your real store data.",
       needsEmailCapture: false,
     };
   }
@@ -106,7 +106,7 @@ function buildReply(message: string): Omit<SalesChatMessage, "id" | "role"> & { 
   if (includesAny(normalized, ["security", "secure", "data", "privacy", "safe", "permission", "access"])) {
     return {
       content:
-        "RegardsKim only asks for the access needed to draft support replies. Replies stay as drafts until you approve them, so nothing is sent without your permission.",
+        "RegardsKim only asks for the access needed to organise support, match Shopify context, and power reply helpers. Nothing is sent without your permission.",
       needsEmailCapture: false,
     };
   }
@@ -156,7 +156,7 @@ export function SalesChatPanel({ onClose }: Props) {
       id: "welcome",
       role: "assistant",
       content:
-        "Hey — I can help with RegardsKim pricing, Shopify install, setup, Gmail/Outlook, and how approvals work. What would you like to know?",
+        "Hey - I can help with RegardsKim pricing, Shopify install, setup, Gmail/Outlook, and how the AI support cockpit works. What would you like to know?",
     },
   ]);
   const [input, setInput] = useState("");

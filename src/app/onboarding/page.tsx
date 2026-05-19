@@ -141,7 +141,7 @@ function OnboardingContent() {
     {
       number: 1,
       title: "Connect your email",
-      subtitle: "Connect your Gmail so Regards Kim can read customer emails and draft replies.",
+      subtitle: "Connect your Gmail so Regards Kim can sort customer emails and surface support context.",
       icon: GmailLogo,
       state: status.gmailStepComplete ? ("completed" as const) : ("active" as const),
       onClick: !status.gmailStepComplete ? () => setActiveView("connect-email") : undefined,
@@ -159,7 +159,7 @@ function OnboardingContent() {
     {
       number: 3,
       title: "Go to your inbox",
-      subtitle: "See Regards Kim's drafted replies and start approving them.",
+      subtitle: "See your AI support cockpit and start clearing the queue.",
       icon: Inbox,
       state: currentStepNumber === 3 ? ("active" as const) : ("locked" as const),
       onClick: currentStepNumber === 3 ? () => void handleFinish() : undefined,
@@ -180,7 +180,7 @@ function OnboardingContent() {
             <p className="text-sm font-medium uppercase tracking-[0.2em] text-[#1A1A1A]/45">Step 1</p>
             <h1 className="text-3xl font-semibold tracking-tight text-[#1A1A1A]">Connect your email</h1>
             <p className="max-w-2xl text-sm text-[#1A1A1A]/65">
-              Connect your Gmail so Regards Kim can read customer emails and draft replies for approval.
+              Connect your Gmail so Regards Kim can sort customer emails and surface support context.
             </p>
           </div>
 
@@ -337,7 +337,7 @@ function OnboardingContent() {
               <div className="space-y-1">
                 <h2 className="text-lg font-semibold text-[#1A1A1A]">Everything&apos;s ready</h2>
                 <p className="text-sm text-[#1A1A1A]/65">
-                  Open your inbox to review Regards Kim&apos;s drafted replies and start approving them.
+                  Open your inbox to review sorted customer emails, Shopify context, and reply helpers.
                 </p>
               </div>
               <Button className="bg-[#E85D3A] text-white hover:bg-[#d34f2f]" onClick={() => void handleFinish()} disabled={isFinishing}>

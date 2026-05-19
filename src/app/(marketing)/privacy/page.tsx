@@ -16,10 +16,10 @@ export default function PrivacyPage() {
         information when you use our website, app, and services.
       </p>
       <p>
-        RegardsKim is an AI email support agent for Shopify stores. It connects to your Shopify
+        RegardsKim is an AI-powered customer support control centre for Shopify stores. It connects to your Shopify
         account and your email account (such as Gmail), reads incoming customer support
-        emails, drafts replies using relevant store information, and places those drafts in a queue
-        for your approval before anything is sent.
+        emails, sorts them into support workflows, uses relevant store information to provide
+        reply assistance, and keeps you in control before anything is sent.
       </p>
       <p>By using RegardsKim, you agree to the practices described in this Privacy Policy.</p>
 
@@ -62,8 +62,8 @@ export default function PrivacyPage() {
         <li>Store policies or support-related content you make available to us</li>
       </ul>
       <p>
-        We only access Shopify data that is reasonably necessary to help generate support reply
-        drafts and operate the service.
+        We only access Shopify data that is reasonably necessary to provide support context,
+        reply assistance, and operate the service.
       </p>
 
       <h3>2.3 Email and Support Content</h3>
@@ -74,8 +74,8 @@ export default function PrivacyPage() {
       <ul>
         <li>Incoming customer emails</li>
         <li>Email metadata such as sender, subject line, and timestamps</li>
-        <li>Draft replies created by RegardsKim</li>
-        <li>Reply approval and sending status</li>
+        <li>Reply assistance, saved reply, and helper content created through RegardsKim</li>
+        <li>Reply sending, completion, and workflow status</li>
       </ul>
       <p>
         Because RegardsKim is built to help with customer support, this content may include
@@ -106,11 +106,11 @@ export default function PrivacyPage() {
       </p>
       <ul>
         <li>Connect with your Shopify store and email provider</li>
-        <li>Read incoming support emails and prepare suggested replies</li>
+        <li>Read incoming support emails and sort them into support workflows</li>
         <li>
-          Use order, tracking, and policy data to make draft replies more accurate and useful
+          Use order, tracking, and policy data to make reply assistance more accurate and useful
         </li>
-        <li>Queue drafts for your review and approval</li>
+        <li>Queue customer conversations with context for your review and response</li>
         <li>Provide account access and customer support</li>
         <li>Manage subscriptions, trials, billing, and payment records</li>
         <li>Monitor usage, detect misuse, and maintain security</li>
@@ -168,20 +168,20 @@ export default function PrivacyPage() {
 
       <h3>6.1 OpenAI</h3>
       <p>
-        We use OpenAI to process relevant support content and generate draft replies. Data that
+        We use OpenAI to process relevant support content and power AI support assistance. Data that
         may be processed by OpenAI includes:
       </p>
       <ul>
         <li>Customer email content</li>
         <li>Order and tracking context</li>
         <li>Store policy context</li>
-        <li>Draft instructions and related prompt data</li>
+        <li>Instructions, helper actions, and related prompt data</li>
       </ul>
 
       <h3>6.2 Shopify</h3>
       <p>
-        We connect to the Shopify API to access store and order data needed to draft support
-        replies. Data that may be received from Shopify includes:
+        We connect to the Shopify API to access store and order data needed to provide support
+        context and reply assistance. Data that may be received from Shopify includes:
       </p>
       <ul>
         <li>Order information</li>
@@ -192,14 +192,14 @@ export default function PrivacyPage() {
 
       <h3>6.3 Gmail</h3>
       <p>
-        We connect to Gmail to access incoming support emails and draft reply
+        We connect to Gmail to access incoming support emails and reply
         workflows. Data that may be processed includes:
       </p>
       <ul>
         <li>Email message content</li>
         <li>Sender details</li>
         <li>Email metadata</li>
-        <li>Draft and approval status</li>
+        <li>Reply helper and workflow status</li>
       </ul>
 
       <h3>6.4 Shopify Billing</h3>

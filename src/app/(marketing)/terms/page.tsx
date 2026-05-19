@@ -16,10 +16,10 @@ export default function TermsPage() {
         RegardsKim website, application, and related services.
       </p>
       <p>
-        RegardsKim is an AI email support agent for Shopify stores. It connects to your Shopify
-        account and your email account, reads incoming customer support emails, drafts replies
-        using order data, tracking details, and store policies, and places those drafts in a
-        queue for your approval before they are sent.
+        RegardsKim is an AI-powered customer support control centre for Shopify stores. It connects to your Shopify
+        account and your email account, reads incoming customer support emails, sorts them into
+        support workflows, uses order data, tracking details, and store policies to provide reply
+        assistance, and keeps you in control before anything is sent.
       </p>
       <p>
         By accessing or using RegardsKim, you agree to these Terms. If you do not agree, do not
@@ -29,8 +29,8 @@ export default function TermsPage() {
       <h2>1. About RegardsKim</h2>
       <p>RegardsKim is operated by Vitality Industries in Australia.</p>
       <p>
-        The service is designed to help merchants manage customer support more efficiently by
-        preparing AI-assisted email drafts for human review. RegardsKim does not replace your
+        The service is designed to help merchants manage customer support more efficiently with
+        AI-assisted triage, support context, and reply tools. RegardsKim does not replace your
         responsibility to review communications sent to your customers.
       </p>
 
@@ -63,7 +63,7 @@ export default function TermsPage() {
           Ensuring you have the rights and permissions needed to connect your store and email
           systems
         </li>
-        <li>Reviewing AI-generated drafts before approving or sending them</li>
+        <li>Reviewing AI-generated or AI-assisted content before sending customer replies</li>
         <li>All activity that occurs under your account</li>
       </ul>
       <p>
@@ -77,10 +77,10 @@ export default function TermsPage() {
         <li>Connects to your Shopify store and supported email account</li>
         <li>Reads inbound customer support emails</li>
         <li>
-          Uses relevant order, tracking, product, and policy information to generate response
-          drafts
+          Uses relevant order, tracking, product, and policy information to organise support
+          workflows and provide reply assistance
         </li>
-        <li>Presents drafts for your review and approval</li>
+        <li>Presents customer conversations, context, and helper output for your review</li>
         <li>Supports subscription management, usage monitoring, and related account functions</li>
       </ul>
       <p>We may add, remove, or change features over time as we improve the service.</p>
@@ -205,12 +205,12 @@ export default function TermsPage() {
       <h2>9. AI-Generated Content Disclaimer</h2>
       <p>RegardsKim uses AI to generate suggested support replies. You understand and agree that:</p>
       <ul>
-        <li>AI-generated drafts are <strong>suggestions only</strong></li>
+        <li>AI-generated or AI-assisted output is <strong>suggestions only</strong></li>
         <li>
-          Drafts may be incomplete, inaccurate, inappropriate, or unsuitable in some cases
+          AI output may be incomplete, inaccurate, inappropriate, or unsuitable in some cases
         </li>
         <li>
-          You are responsible for reviewing and approving drafts before they are sent
+          You are responsible for reviewing customer replies before they are sent
         </li>
         <li>
           You remain responsible for all communications sent to your customers through or in
@@ -286,7 +286,7 @@ export default function TermsPage() {
         <li>Continuous or uninterrupted availability</li>
         <li>Error-free operation</li>
         <li>That the service will always be secure or free of bugs</li>
-        <li>That drafts will always be generated correctly or on time</li>
+        <li>That AI assistance or support classification will always be generated correctly or on time</li>
         <li>That integrations with third-party services will always remain available</li>
       </ul>
       <p>

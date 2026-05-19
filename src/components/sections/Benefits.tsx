@@ -1,20 +1,20 @@
-import { BookOpen, PenLine, ShieldCheck } from "lucide-react";
+import { BookOpen, LayoutDashboard, ShieldCheck } from "lucide-react";
 import FadeIn from "@/components/ui/FadeIn";
 
 const benefits = [
   {
-    title: "Feels native to your workflow",
-    body: "Regards Kim works with Gmail and Shopify, so you are not forcing customers or your team into another helpdesk.",
+    title: "AI triage built for ecommerce",
+    body: "Tracking questions, returns, order changes, product help, sales, and escalations are sorted into clear buckets before they become inbox chaos.",
+    icon: LayoutDashboard,
+  },
+  {
+    title: "Shopify context beside every reply",
+    body: "Regards Kim pulls order, customer, tracking, and policy context into the workflow so your team is not hunting through tabs.",
     icon: BookOpen,
   },
   {
-    title: "Replies customers actually trust",
-    body: "Drafts include real order details, tracking context, and store policies instead of vague template filler.",
-    icon: PenLine,
-  },
-  {
-    title: "Your voice, your approval",
-    body: "Regards Kim prepares the reply, but you stay in control of what gets sent from your Gmail account.",
+    title: "AI help without losing control",
+    body: "Improve replies, insert saved responses, add tracking or policy links, and send from Gmail only when you are ready.",
     icon: ShieldCheck,
   },
 ];

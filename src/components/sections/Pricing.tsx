@@ -6,10 +6,11 @@ import { SHOPIFY_APP_STORE_INSTALL_URL } from "@/lib/shopify-install";
 
 const inclusions = [
   "Connects to your Shopify store and Gmail",
-  "Drafts replies using live order and tracking data",
-  "Handles order questions, returns, and shipping updates",
-  "You review every reply before it sends",
-  "Invite your team with separate logins",
+  "AI support buckets for tracking, returns, order changes, sales, and escalations",
+  "Shopify order, customer, delivery, tracking, and policy context in the inbox",
+  "Improve reply, saved replies, tracking links, and policy helpers",
+  "Support analytics that show where the inbox pressure is coming from",
+  "You stay in control of every message sent from Gmail",
 ];
 
 export default function Pricing() {
@@ -25,7 +26,7 @@ export default function Pricing() {
             Pricing
           </h2>
           <p className="mt-4 text-base text-slate md:text-lg">
-            You handle the sales. Regards Kim handles the support.
+            The AI support cockpit for stores that are growing past Gmail chaos.
           </p>
           <p className="mt-2 text-sm font-semibold uppercase tracking-[0.16em] text-brass">
             Simple monthly pricing

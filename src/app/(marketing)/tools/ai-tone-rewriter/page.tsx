@@ -82,7 +82,7 @@ export default function AIToneRewriterPage() {
               AI tone rewriter for customer service emails
             </h1>
             <p className="mt-6 text-lg leading-8 text-slate">
-              If your draft feels too blunt, too cold, or too wordy, rewrite it in a better tone before you hit
+              If your reply feels too blunt, too cold, or too wordy, rewrite it in a better tone before you hit
               send. This tool helps you make support messages sound more human and on-brand.
             </p>
           </div>
@@ -98,7 +98,7 @@ export default function AIToneRewriterPage() {
               </p>
               <p>
                 For more ready-to-use support help, you can also browse our customer service email templates or
-                generate first drafts with the AI email response generator.
+                use the AI email response generator for a starting point.
               </p>
             </div>
           </div>

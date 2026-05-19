@@ -8,7 +8,7 @@ import { SHOPIFY_APP_STORE_INSTALL_URL } from "@/lib/shopify-install";
 export const metadata: Metadata = marketingMetadata({
   title: "RegardsKim vs Reamaze",
   description:
-    "Compare RegardsKim and Reamaze for ecommerce support. See where Reamaze is stronger as a help desk and where Kim wins on focus, speed, and price.",
+    "Compare RegardsKim and Reamaze for ecommerce support. See where Reamaze is stronger as a help desk and where RegardsKim wins on focus, speed, and AI support control.",
   path: "/compare/reamaze",
 });
 
@@ -30,7 +30,7 @@ const comparisonRows = [
   },
   {
     label: "Core strength",
-    kim: "Simple email-first automation with Shopify context",
+    kim: "Simple email-first support cockpit with Shopify context",
     competitor: "Multi-channel support, FAQ builder, and a more mature help desk layer",
   },
   {
@@ -50,7 +50,7 @@ const pros = {
     "Cheaper and easier to justify for smaller stores",
     "Faster setup when your main pain is repetitive customer emails",
     "No need to build out a full support process before getting value",
-    "Strong fit when you want drafts grounded in Shopify order context",
+    "Strong fit when you want Shopify context, AI helpers, and control in one inbox",
   ],
   competitor: [
     "Better for teams handling support across more than just email",
@@ -142,7 +142,7 @@ export default function RegardsKimVsReamazePage() {
           </p>
           <p>
             That is where RegardsKim is stronger. It gets to value faster, stays focused on email, and gives you
-            a Shopify-aware draft instead of a bigger queue to manage. If you want to compare that against the
+            Shopify-aware context instead of a bigger queue to manage. If you want to compare that against the
             cost of handling support manually, try the <Link href="/tools/support-cost-calculator" className="font-medium text-brass hover:text-oxblood">support cost calculator</Link>.
           </p>
           <p>

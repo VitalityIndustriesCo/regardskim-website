@@ -17,7 +17,7 @@ const comparisonPages = [
     href: "/compare/gorgias",
     title: "RegardsKim vs Gorgias",
     description:
-      "Best if you want a clear look at price, setup time, and whether you really need a full ecommerce help desk yet.",
+      "Best if you want AI-powered support control without committing to a full ecommerce help desk yet.",
   },
   {
     href: "/compare/zendesk",
@@ -35,13 +35,13 @@ const comparisonPages = [
     href: "/compare/reamaze",
     title: "RegardsKim vs Reamaze",
     description:
-      "Helpful if you are deciding between lightweight email automation and a more mature ecommerce help desk.",
+      "Helpful if you are deciding between an AI support cockpit and a more mature ecommerce help desk.",
   },
   {
     href: "/compare/richpanel",
     title: "RegardsKim vs Richpanel",
     description:
-      "Best for comparing pure inbox relief against a self-service portal and customer dashboard approach.",
+      "Best for comparing Shopify-aware inbox control against a self-service portal and customer dashboard approach.",
   },
   {
     href: "/compare/freshdesk",
@@ -65,7 +65,7 @@ const comparisonPages = [
     href: "/compare/diy",
     title: "RegardsKim vs Doing It Yourself",
     description:
-      "A reality check on the hidden cost of founder-led support compared with a lightweight automation layer.",
+      "A reality check on the hidden cost of founder-led support compared with an AI-powered support control layer.",
   },
 ];
 
@@ -111,7 +111,7 @@ export default function CompareHubPage() {
             How RegardsKim Compares
           </h1>
           <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate">
-            If you are choosing between Kim, a help desk, or hiring support, start here. These pages break down
+            If you are choosing between Regards Kim, a help desk, or hiring support, start here. These pages break down
             the tradeoffs without pretending every store needs the same setup.
           </p>
         </div>
@@ -137,7 +137,7 @@ export default function CompareHubPage() {
             <div>
               <h2 className="font-display text-3xl font-bold text-ink">Need more context before you choose?</h2>
               <p className="mt-4 text-lg leading-8 text-slate">
-                Pair the comparison pages with a few deeper resources on support cost, automation, and the tools
+                Pair the comparison pages with a few deeper resources on support cost, AI assistance, and the tools
                 Shopify founders usually compare first.
               </p>
             </div>

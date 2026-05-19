@@ -11,9 +11,9 @@ import { CheckCircle2, Send } from "lucide-react";
 const REPLY_LINES = [
   "Hi Sarah,",
   "",
-  "Thanks for reaching out! Your order #1842 shipped yesterday via Australia Post. Your tracking number is AP4821093AU. It usually takes 24-48 hours for the first scan to appear.",
+  "Regards Kim found order #1842, the Australia Post tracking number AP4821093AU, and the latest delivery status.",
   "",
-  "If it hasn\u2019t updated in a couple of days, let me know and I\u2019ll look into it for you.",
+  "Use the tracking helper, improve your wording, then send from Gmail when you are happy.",
   "",
   "Kind regards,",
   "Kim",
@@ -137,7 +137,7 @@ export default function MockupDetail({ mode = "draft" }: MockupDetailProps) {
           <span className="block text-center text-[10px] font-semibold uppercase tracking-[0.14em] text-slate sm:text-[11px]">Customer Emails</span>
         </div>
         <div className="hidden pb-1.5 sm:block">
-          <span className="block text-center text-[10px] font-semibold uppercase tracking-[0.14em] text-slate sm:text-[11px]">Email Replies</span>
+          <span className="block text-center text-[10px] font-semibold uppercase tracking-[0.14em] text-slate sm:text-[11px]">AI Support Context</span>
         </div>
       </div>
 
@@ -167,7 +167,7 @@ export default function MockupDetail({ mode = "draft" }: MockupDetailProps) {
           </p>
         </div>
 
-        {/* Right: Kim's reply card */}
+        {/* Right: AI support workspace */}
         <div className="rounded-xl border border-slate/10 bg-white px-4 py-4 shadow-[0_4px_16px_rgba(0,0,0,0.10),0_1.5px_4px_rgba(0,0,0,0.06)] dark:bg-[#1D2840] dark:shadow-[0_4px_16px_rgba(0,0,0,0.25)] overflow-hidden">
           {mode === "draft" ? (
             /* ── Draft mode: typewriter ────────────────────────── */
@@ -198,13 +198,13 @@ export default function MockupDetail({ mode = "draft" }: MockupDetailProps) {
               >
                 <div className="flex flex-wrap justify-center gap-2">
                   <span className="rounded-lg bg-emerald-600 dark:bg-brass px-3 py-1.5 text-[11px] font-semibold text-white">
-                    Approve &amp; send
+                    Improve reply
                   </span>
                   <span className="rounded-lg border border-slate/15 bg-mist px-3 py-1.5 text-[11px] font-medium text-ink dark:text-white">
-                    Edit reply
+                    Insert tracking
                   </span>
                   <span className="rounded-lg border border-slate/15 bg-mist px-3 py-1.5 text-[11px] font-medium text-ink dark:text-white">
-                    Skip for now
+                    Send from Gmail
                   </span>
                 </div>
               </div>
@@ -231,11 +231,11 @@ export default function MockupDetail({ mode = "draft" }: MockupDetailProps) {
               >
                 <p className="text-[12px] leading-5 text-slate dark:text-white sm:text-[13px] sm:leading-5">Hi Sarah,</p>
                 <p className="mt-2 text-[12px] leading-5 text-slate dark:text-white sm:text-[13px] sm:leading-5">
-                  Thanks for reaching out! Your order #1842 shipped yesterday via Australia Post. Your tracking
-                  number is AP4821093AU. It usually takes 24-48 hours for the first scan to appear.
+                  Regards Kim found order #1842, the Australia Post tracking number AP4821093AU, and the latest
+                  delivery status.
                 </p>
                 <p className="mt-2 text-[12px] leading-5 text-slate dark:text-white sm:text-[13px] sm:leading-5">
-                  If it hasn&apos;t updated in a couple of days, let me know and I&apos;ll look into it for you.
+                  Use the tracking helper, improve your wording, then send from Gmail when you are happy.
                 </p>
                 <p className="mt-3 text-[12px] text-slate dark:text-white sm:text-[13px]">Kind regards,<br />Kim</p>
               </motion.div>
@@ -283,13 +283,13 @@ export default function MockupDetail({ mode = "draft" }: MockupDetailProps) {
                         }
                         transition={{ duration: 0.15 }}
                       >
-                        Approve &amp; send
+                        Improve reply
                       </motion.span>
                       <span className="rounded-lg border border-slate/15 bg-mist px-3 py-1.5 text-[11px] font-medium text-ink dark:text-white">
-                        Edit reply
+                        Insert tracking
                       </span>
                       <span className="rounded-lg border border-slate/15 bg-mist px-3 py-1.5 text-[11px] font-medium text-ink dark:text-white">
-                        Skip for now
+                        Send from Gmail
                       </span>
                     </motion.div>
                   )}

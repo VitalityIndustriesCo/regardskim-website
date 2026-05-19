@@ -22,7 +22,7 @@ const steps = [
   },
   {
     number: "04",
-    title: "Review drafts and send — your inbox is handled",
+    title: "Open your AI support cockpit",
     icon: <Inbox size={40} className="h-10 w-10" />,
   },
 ];
@@ -39,7 +39,7 @@ export default function GettingStarted() {
         </FadeIn>
 
         <p className="mx-auto mt-4 max-w-2xl text-center text-base text-slate md:text-lg">
-          Start by installing RegardsKim from the Shopify App Store, then connect your inbox and confirm your store policies.
+          Start by installing RegardsKim from the Shopify App Store, then connect your inbox and confirm your store policies so the AI has the right context.
         </p>
 
         <div className="mt-14 grid gap-6 md:grid-cols-2 xl:grid-cols-4">

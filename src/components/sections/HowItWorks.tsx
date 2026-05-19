@@ -7,7 +7,7 @@ const steps = [
   {
     number: "01",
     title: "Connect Gmail and Shopify",
-    body: "Every email is automatically categorised and matched to the right order, tracking, and store policies.",
+    body: "Regards Kim starts turning your support inbox into a clean cockpit, sorting customer emails by issue and matching them to Shopify context.",
     mockup: (
       <MockupWindow title="Inbox">
         <MockupInbox />
@@ -16,8 +16,8 @@ const steps = [
   },
   {
     number: "02",
-    title: "Drafts using live tracking and store data",
-    body: "Regards Kim prepares replies with tracking numbers, order status, return rules, and the details customers actually asked for.",
+    title: "See the whole customer story",
+    body: "Open any conversation with the order, delivery status, tracking links, policy links, customer details, and AI support tools already in reach.",
     mockup: (
       <MockupWindow title="Inbox">
         <MockupDetail mode="draft" />
@@ -26,8 +26,8 @@ const steps = [
   },
   {
     number: "03",
-    title: "You approve before anything sends",
-    body: "Replies are sent from your Gmail after you review them. Your customers see your store, not another helpdesk tool.",
+    title: "Answer faster with AI control",
+    body: "Use saved replies, improve your wording, insert the right links, and send from Gmail. Your customers see your store, not another helpdesk tool.",
     mockup: (
       <MockupWindow title="Inbox">
         <MockupDetail mode="approval" />

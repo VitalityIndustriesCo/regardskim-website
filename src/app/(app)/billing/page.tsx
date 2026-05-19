@@ -13,10 +13,10 @@ import { api } from "@/lib/api";
 
 const STANDARD_FEATURES = [
   "Unlimited emails",
-  "AI drafts for every customer email",
-  "Approve, edit, or skip inline",
-  "Auto-learns from your edits",
-  "Shopify + tracking integration",
+  "AI triage and reply helpers",
+  "Improve, send, or mark done inline",
+  "Saved replies and store context",
+  "Shopify order and tracking context",
   "Analytics dashboard",
   "Priority support",
 ];

@@ -216,7 +216,7 @@ If you have any questions about a return, refund, or exchange, contact ${store} 
 
         <div className="mt-6 border-t border-slate/10 dark:border-slate/20 pt-6">
           <Link href={SHOPIFY_APP_STORE_INSTALL_URL} className="text-sm font-semibold text-brass hover:text-oxblood">
-            Regards Kim uses your policies to answer customer questions automatically →
+            Regards Kim uses your policies to keep AI support answers accurate →
           </Link>
         </div>
       </aside>

@@ -35,7 +35,7 @@ const comparisonRows = [
   },
   {
     label: "Best at",
-    kim: "Repeatable support emails and fast drafting",
+    kim: "Repeatable support emails, AI triage, and faster replies",
     competitor: "Nuanced human judgment, relationship handling, edge cases",
   },
   {
@@ -145,7 +145,7 @@ export default function RegardsKimVsVirtualAssistantPage() {
           </p>
           <p>
             Later on, you may still hire a VA. In fact, the two can work well together. Let Regards Kim handle the
-            repetitive first draft work, and let a human step in for the sensitive or complicated conversations.
+            repetitive sorting, context, and reply assistance, and let a human step in for the sensitive or complicated conversations.
             We unpack that sequence more in our guide to <Link href="/blog/ai-vs-virtual-assistant-ecommerce-support" className="font-medium text-brass hover:text-oxblood">AI vs virtual assistant for ecommerce support</Link>.
           </p>
         </div>

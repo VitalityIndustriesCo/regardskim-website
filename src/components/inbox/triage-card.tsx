@@ -227,7 +227,7 @@ export function TriageCard({ email, checked, onCheckedChange, onActionComplete }
             </div>
           </div>
 
-          {/* Right: Kim's draft or note (60%) */}
+          {/* Right: Regards Kim note or reply workspace (60%) */}
           <div className="min-w-0 flex-1 p-4">
             {isRead ? (
               <div className="flex h-full items-center justify-center">
@@ -239,14 +239,14 @@ export function TriageCard({ email, checked, onCheckedChange, onActionComplete }
               <div className="rounded-lg border border-orange-200 bg-orange-50 p-4 dark:border-orange-900/50 dark:bg-orange-950/30">
                 <div className="mb-2 flex items-center gap-2 text-sm font-medium text-orange-700 dark:text-orange-300">
                   <AlertTriangle className="size-4" />
-                  Kim&apos;s Note
+                  Regards Kim note
                 </div>
                 <p className="text-sm leading-relaxed text-orange-800 dark:text-orange-200">
-                  {email.kimNote || "This email needs your attention — Kim couldn't draft a response."}
+                  {email.kimNote || "This email needs your attention - Regards Kim needs your decision before a reply is written."}
                 </p>
                 {!email.draftResponse && !email.editedResponse && (
                   <p className="mt-2 text-xs italic text-orange-700/80 dark:text-orange-300/80">
-                    No draft was generated — write your reply below.
+                    No helper text is available - write your reply below.
                   </p>
                 )}
                 {!actionTaken && (
@@ -281,7 +281,7 @@ export function TriageCard({ email, checked, onCheckedChange, onActionComplete }
               </div>
             ) : (
               <div className="space-y-2">
-                <p className="text-xs font-medium text-muted-foreground">Kim&apos;s Draft Response</p>
+                <p className="text-xs font-medium text-muted-foreground">AI-assisted reply workspace</p>
                 <div className="max-h-[200px] overflow-y-auto text-sm leading-relaxed text-foreground">
                   {draftText ? (
                     draftText.split("\n").map((line, i) => (
@@ -290,7 +290,7 @@ export function TriageCard({ email, checked, onCheckedChange, onActionComplete }
                   ) : email.kimNote ? (
                     <div className="rounded-md border border-muted bg-muted/40 p-3">
                       <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">
-                        Kim&apos;s note
+                        Regards Kim note
                       </p>
                       <p className="mt-1 text-sm text-foreground">{email.kimNote}</p>
                     </div>

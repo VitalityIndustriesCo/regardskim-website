@@ -20,7 +20,7 @@ const comparisonRows = [
   },
   {
     label: "Availability",
-    kim: "24/7 drafting support",
+    kim: "Always-on AI support organisation",
     competitor: "Only when you are online and have the energy for it",
   },
   {
@@ -141,7 +141,7 @@ export default function RegardsKimVsDIYPage() {
           </p>
           <p>
             RegardsKim is built for that exact moment. It keeps the founder in control, but removes a lot of the
-            repetitive drafting work so support stops eating the day. If you want to quantify what DIY support is
+            repetitive sorting, context-checking, and reply prep so support stops eating the day. If you want to quantify what DIY support is
             really costing you, the <Link href="/tools/support-cost-calculator" className="font-medium text-brass hover:text-oxblood">support cost calculator</Link> is a useful gut check.
           </p>
           <p>

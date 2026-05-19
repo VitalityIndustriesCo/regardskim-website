@@ -8,7 +8,7 @@ import { marketingMetadata } from "@/lib/seo";
 export const metadata: Metadata = marketingMetadata({
   title: "How Regards Kim Works",
   description:
-    "See how Regards Kim connects Shopify and Gmail, matches customer emails to live order data, drafts accurate replies, and keeps you in control before anything sends.",
+    "See how Regards Kim connects Shopify and Gmail, sorts customer emails, matches order context, and gives you AI-powered reply tools while you stay in control.",
   path: "/how-it-works",
 });
 

@@ -8,7 +8,7 @@ import { SHOPIFY_APP_STORE_INSTALL_URL } from "@/lib/shopify-install";
 export const metadata: Metadata = marketingMetadata({
   title: "RegardsKim vs Richpanel",
   description:
-    "Compare RegardsKim and Richpanel for ecommerce support. See where Richpanel is stronger on self-service and where Kim wins on pure email automation, simplicity, and price.",
+    "Compare RegardsKim and Richpanel for ecommerce support. See where Richpanel is stronger on self-service and where RegardsKim wins on AI-powered email control.",
   path: "/compare/richpanel",
 });
 
@@ -30,7 +30,7 @@ const comparisonRows = [
   },
   {
     label: "Core strength",
-    kim: "Pure email support automation with Shopify context",
+    kim: "Email support cockpit with Shopify context",
     competitor: "Self-service portal and customer-facing dashboard experience",
   },
   {
@@ -143,8 +143,8 @@ export default function RegardsKimVsRichpanelPage() {
           </p>
           <p>
             RegardsKim is stronger when you want the simplest solution to the most common problem: too many repeat
-            support emails. It is cheaper, faster to set up, and focused on drafting better replies using Shopify
-            context. Our <Link href="/tools/support-cost-calculator" className="font-medium text-brass hover:text-oxblood">support cost calculator</Link> is a quick way to compare that against the time you are already spending.
+            support emails. It is cheaper, faster to set up, and focused on giving you Shopify context and AI
+            helpers in the inbox. Our <Link href="/tools/support-cost-calculator" className="font-medium text-brass hover:text-oxblood">support cost calculator</Link> is a quick way to compare that against the time you are already spending.
           </p>
           <p>
             So if your roadmap includes heavy self-service, Richpanel has the edge. If you want immediate help on

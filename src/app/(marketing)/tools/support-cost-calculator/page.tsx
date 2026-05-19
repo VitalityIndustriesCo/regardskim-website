@@ -100,7 +100,7 @@ export default function SupportCostCalculatorPage() {
               <p>
                 A good next step is to pair this with our guides on{" "}
                 <Link href="/blog/automate-shopify-support-emails" className="font-medium text-brass hover:text-oxblood">
-                  automating Shopify support emails
+                  using AI in Shopify support emails
                 </Link>{" "}
                 and{" "}
                 <Link href="/compare/va" className="font-medium text-brass hover:text-oxblood">

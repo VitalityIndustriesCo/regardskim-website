@@ -174,7 +174,7 @@ export default function InboxDemo() {
           </div>
 
           <div className="rounded-2xl border border-forest/15 bg-paper p-4">
-            <p className="text-xs uppercase tracking-[0.1em] text-slate">Kim&apos;s draft reply</p>
+            <p className="text-xs uppercase tracking-[0.1em] text-slate">AI support workspace</p>
             <textarea
               readOnly
               className="mt-3 h-28 w-full resize-none rounded-xl border border-forest/10 bg-mist p-3 text-sm text-slate outline-none"
@@ -187,11 +187,11 @@ export default function InboxDemo() {
                 animate={prefersReducedMotion ? undefined : { scale: [1, 1.04, 0.98, 1] }}
                 transition={{ duration: 0.7, delay: 2.6 }}
               >
-                Approve &amp; Send
+                Improve reply
               </motion.button>
-              <button type="button" className="rounded-full border border-forest/20 bg-paper px-4 py-2 text-xs text-slate">Edit</button>
-              <button type="button" className="rounded-full border border-forest/20 bg-paper px-4 py-2 text-xs text-slate">Regenerate</button>
-              <button type="button" className="rounded-full border border-forest/20 bg-paper px-4 py-2 text-xs text-slate">Ignore</button>
+              <button type="button" className="rounded-full border border-forest/20 bg-paper px-4 py-2 text-xs text-slate">Insert tracking</button>
+              <button type="button" className="rounded-full border border-forest/20 bg-paper px-4 py-2 text-xs text-slate">Saved reply</button>
+              <button type="button" className="rounded-full border border-forest/20 bg-paper px-4 py-2 text-xs text-slate">Mark done</button>
             </div>
 
             <div className="mt-3 rounded-xl border border-brass/30 bg-brass/10 p-3 text-xs text-slate">

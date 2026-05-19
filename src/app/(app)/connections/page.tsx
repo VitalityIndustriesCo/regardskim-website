@@ -125,7 +125,7 @@ function deriveConnections(
     },
     {
       title: "Email",
-      description: "Pull support conversations and send approved drafts.",
+      description: "Pull support conversations and send replies from Gmail.",
       status: emailStatus,
       detail: emailDetail,
       icon: GmailLogo,
@@ -259,7 +259,7 @@ function ConnectionsContent() {
           Connections
         </h1>
         <p className="text-sm text-muted-foreground">
-          Connected integrations and services that power support automation.
+          Connected integrations and services that power your AI support cockpit.
         </p>
       </div>
 
@@ -271,7 +271,7 @@ function ConnectionsContent() {
         <EmptyState
           icon={Store}
           title="No connections yet"
-          description="Connect your Shopify store and email provider to enable support automation."
+          description="Connect your Shopify store and email provider to enable AI-powered support control."
         />
       ) : (
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

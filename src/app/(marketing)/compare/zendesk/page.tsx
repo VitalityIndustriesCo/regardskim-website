@@ -30,12 +30,12 @@ const comparisonRows = [
   },
   {
     label: "Daily workflow",
-    kim: "Review AI drafts and keep moving",
+    kim: "Use AI triage, Shopify context, and reply helpers",
     competitor: "Operate inside a full ticketing and agent workspace",
   },
   {
     label: "24/7 help",
-    kim: "Always drafting replies in the background",
+    kim: "Always organising support context in the background",
     competitor: "Depends on configured automation and human coverage",
   },
   {
@@ -107,8 +107,8 @@ export default function RegardsKimVsZendeskPage() {
               </p>
               <p>
                 It is also a better fit when your support issues are mostly Shopify-specific. Things like
-                tracking questions, returns, order edits, and refund requests benefit from store-aware drafts,
-                not a generic ticket queue.
+                tracking questions, returns, order changes, and refund requests benefit from Shopify-aware
+                context, not a generic ticket queue.
               </p>
             </div>
           </article>

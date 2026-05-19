@@ -5,16 +5,16 @@ const genericToolPoints = [
   "Built for every inbox, not ecommerce",
   "Can't access your order or tracking data",
   "Doesn't know your store policies",
-  "Drafts generic, vague replies",
+  "Gives generic answers without support context",
   "No understanding of ecommerce support patterns",
 ];
 
 const kimPoints = [
   "Built specifically for Shopify stores",
-  "Connects to your orders, tracking, and products",
-  "Uses your actual store policies",
-  "Drafts accurate, data-driven replies",
-  "Understands WISMO, returns, refunds, and more",
+  "Connects support conversations to orders, tracking, and products",
+  "Uses your actual store policies and saved replies",
+  "Gives AI-powered help inside a controlled reply workflow",
+  "Understands WISMO, returns, exchanges, order changes, and escalations",
 ];
 
 const customerEmail =
@@ -104,7 +104,7 @@ function ReplyCard({ label, body, tone }: ReplyCardProps) {
           {label}
         </span>
         <span className="rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700 dark:border-emerald-800 dark:bg-emerald-950 dark:text-emerald-400">
-          Draft — Ready for approval
+          AI-assisted reply
         </span>
       </div>
 
@@ -117,7 +117,7 @@ function ReplyCard({ label, body, tone }: ReplyCardProps) {
           </div>
           <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:gap-3">
             <span className="text-xs font-semibold uppercase tracking-[0.14em] text-slate">Subject</span>
-            <span className="font-medium text-ink">Re: Order #4721 — Shipping Update</span>
+            <span className="font-medium text-ink">Re: Order #4721 - Shipping Update</span>
           </div>
         </div>
 
@@ -153,7 +153,7 @@ export default function Comparison() {
               Regards Kim knows your store.
             </h2>
             <p className="mt-4 text-base text-slate md:text-lg">
-              Same customer question. Very different level of help.
+              Same customer question. Very different level of control.
             </p>
           </div>
         </FadeIn>

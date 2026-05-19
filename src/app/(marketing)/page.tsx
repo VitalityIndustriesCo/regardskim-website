@@ -12,9 +12,9 @@ import { faqItems } from "@/lib/faq-data";
 import { marketingMetadata, absoluteUrl, siteConfig } from "@/lib/seo";
 
 export const metadata: Metadata = marketingMetadata({
-  title: "Regards Kim — AI email customer support for Shopify stores",
+  title: "Regards Kim - AI Support Control for Shopify Stores",
   description:
-    "AI email customer support for Shopify stores. Regards Kim drafts accurate replies for tracking, returns, refunds, and order questions using live store data.",
+    "AI-powered customer support control for Shopify stores. Regards Kim sorts customer emails, matches Shopify order context, and helps you answer faster from Gmail.",
   path: "/",
 });
 

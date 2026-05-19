@@ -44,7 +44,7 @@ function ConnectEmailPrompt({ storeId }: { storeId: string | null }) {
       </div>
       <h2 className="text-xl font-semibold tracking-tight">Connect your email to get started</h2>
       <p className="mt-2 max-w-md text-sm text-muted-foreground">
-        Regards Kim needs access to your support email to start reading customer messages and drafting replies.
+        Regards Kim needs access to your support email to start sorting customer messages and surfacing order context.
       </p>
       <div className="mt-6 flex flex-wrap justify-center gap-3">
         <Button onClick={handleConnectGmail} disabled={!storeId}>

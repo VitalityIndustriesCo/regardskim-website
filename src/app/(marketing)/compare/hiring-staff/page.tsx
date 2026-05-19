@@ -20,7 +20,7 @@ const comparisonRows = [
   },
   {
     label: "Availability",
-    kim: "24/7 drafting support",
+    kim: "Always-on AI support organisation",
     competitor: "Depends on roster, timezone, and shift coverage",
   },
   {
@@ -35,7 +35,7 @@ const comparisonRows = [
   },
   {
     label: "Best at",
-    kim: "Repetitive support emails and first drafts",
+    kim: "Repetitive support emails, AI triage, and reply assistance",
     competitor: "Complex issues, relationship handling, brand nuance",
   },
   {

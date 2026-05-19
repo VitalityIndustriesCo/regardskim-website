@@ -5,7 +5,7 @@ import { marketingMetadata } from "@/lib/seo";
 export const metadata: Metadata = marketingMetadata({
   title: "Pricing",
   description:
-    "Simple Regards Kim pricing for Shopify stores: AI email customer support for $49/mo.",
+    "Simple Regards Kim pricing for Shopify stores: AI-powered customer support control for $49/mo.",
   path: "/pricing",
 });
 

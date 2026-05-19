@@ -8,7 +8,7 @@ import { SHOPIFY_APP_STORE_INSTALL_URL } from "@/lib/shopify-install";
 export const metadata: Metadata = marketingMetadata({
   title: "RegardsKim vs Tidio",
   description:
-    "Compare RegardsKim and Tidio for Shopify support. See where Tidio is stronger on live chat and where Kim wins on email-first support, simplicity, and price.",
+    "Compare RegardsKim and Tidio for Shopify support. See where Tidio is stronger on live chat and where RegardsKim wins on AI-powered email support control.",
   path: "/compare/tidio",
 });
 
@@ -35,7 +35,7 @@ const comparisonRows = [
   },
   {
     label: "Daily workflow",
-    kim: "Review AI-generated email drafts",
+    kim: "Use AI triage, Shopify context, and reply helpers",
     competitor: "Manage chats, bot flows, and messages across channels",
   },
   {
@@ -48,7 +48,7 @@ const comparisonRows = [
 const pros = {
   kim: [
     "Better fit if most support demand comes through email rather than live chat",
-    "Shopify-aware drafting makes tracking, refund, and order-edit replies easier",
+    "Shopify-aware context makes tracking, refund, and order-change replies easier",
     "Simpler setup and less support-software overhead for small teams",
     "More affordable if you do not need a full chat stack",
   ],
@@ -92,7 +92,7 @@ export default function RegardsKimVsTidioPage() {
           <p className="mt-6 max-w-3xl text-lg leading-8 text-slate">
             These tools overlap a bit, but they are built with different priorities. Tidio leans hard into live
             chat and chatbot experiences. RegardsKim is more focused: it helps Shopify stores answer repetitive
-            support emails faster with store-aware drafts.
+            support emails faster with store-aware context and AI reply tools.
           </p>
         </div>
 

@@ -112,7 +112,7 @@ export function DraftEditor({
             </CardTitle>
           </div>
           <CardDescription className="text-orange-600/80 dark:text-orange-400/80">
-            Regards Kim couldn&apos;t handle this one automatically. Please review, edit, and reply.
+            Regards Kim flagged this one for human review. Please check the context, edit, and reply.
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4 pt-4">
@@ -155,7 +155,7 @@ export function DraftEditor({
   return (
     <Card className="h-full border border-border/70 shadow-sm">
       <CardHeader className="border-b">
-        <CardTitle>Reply draft</CardTitle>
+        <CardTitle>Reply workspace</CardTitle>
         <CardDescription>
           {canAct
             ? "Edit the AI-generated response, then approve or send."

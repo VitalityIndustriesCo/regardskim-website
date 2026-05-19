@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   ...marketingMetadata({
     title: "Install Regards Kim on Shopify",
     description:
-      "Regards Kim handles your Shopify store customer emails using live order data. You just approve and send.",
+      "Regards Kim brings AI-powered customer support control to your Shopify store with Gmail, order context, and reply helpers.",
     path: "/founding",
   }),
   robots: { index: false, follow: false },
