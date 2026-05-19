@@ -26,21 +26,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.75,
     },
     {
-      url: absoluteUrl("/pricing"),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: absoluteUrl("/how-it-works"),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: absoluteUrl("/faq"),
-      changeFrequency: "monthly",
-      priority: 0.65,
-    },
-    {
       url: absoluteUrl("/tools/support-cost-calculator"),
       changeFrequency: "monthly",
       priority: 0.75,
