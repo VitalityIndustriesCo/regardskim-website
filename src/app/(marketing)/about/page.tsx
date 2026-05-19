@@ -6,7 +6,7 @@ import { marketingMetadata } from "@/lib/seo";
 export const metadata: Metadata = marketingMetadata({
   title: "About RegardsKim",
   description:
-    "The story behind RegardsKim - why we built an AI-powered support control centre for Shopify stores.",
+    "The story behind RegardsKim - why we built an AI-powered customer support centre for Shopify stores.",
   path: "/about",
   image: "/images/about-hero.jpg",
 });

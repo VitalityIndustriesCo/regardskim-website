@@ -13,7 +13,7 @@ const kimPoints = [
   "Built specifically for Shopify stores",
   "Connects support conversations to orders, tracking, and products",
   "Uses your actual store policies and saved replies",
-  "Gives AI-powered help inside a controlled reply workflow",
+  "Gives AI-powered help inside your normal reply workflow",
   "Understands WISMO, returns, exchanges, order changes, and escalations",
 ];
 

@@ -11,14 +11,14 @@ export default function Hero() {
         <FadeIn className="mx-auto max-w-5xl text-center">
           <div className="mx-auto max-w-4xl pt-20 md:pt-32">
             <h1 className="font-display text-5xl font-extrabold leading-[1.02] tracking-tight text-ink md:text-8xl">
-              AI-powered support control for Shopify stores.
+              AI-powered customer support for Shopify stores.
             </h1>
             <div className="mx-auto mt-6 flex flex-wrap items-center justify-center gap-3">
               <span className="inline-flex items-center gap-2 rounded-full border border-[#E3D3C6] bg-white/80 px-4 py-2 text-xs font-bold uppercase tracking-[0.14em] text-[#8A6F61] shadow-sm backdrop-blur dark:border-slate/15 dark:bg-[#1D2840]/80 dark:text-brass"><ShopifyLogo className="h-5 w-5" /> Built for Shopify</span>
               <span className="inline-flex items-center gap-2 rounded-full border border-[#E3D3C6] bg-white/80 px-4 py-2 text-xs font-bold uppercase tracking-[0.14em] text-[#8A6F61] shadow-sm backdrop-blur dark:border-slate/15 dark:bg-[#1D2840]/80 dark:text-brass"><GmailLogo className="h-4 w-4" /> Connects to Gmail</span>
             </div>
             <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-slate md:text-xl">
-              Regards Kim turns your Gmail support inbox into a Shopify-aware command centre. Every customer email is sorted by issue, matched to order context, and lined up with the AI help you need to answer faster.
+              Regards Kim turns your Gmail support inbox into a Shopify-aware support workflow. Every customer email is sorted by issue, matched to order context, and lined up with the AI help you need to answer faster.
             </p>
 
             <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">

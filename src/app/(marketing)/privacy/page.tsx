@@ -16,7 +16,7 @@ export default function PrivacyPage() {
         information when you use our website, app, and services.
       </p>
       <p>
-        RegardsKim is an AI-powered customer support control centre for Shopify stores. It connects to your Shopify
+        RegardsKim is an AI-powered customer support app for Shopify stores. It connects to your Shopify
         account and your email account (such as Gmail), reads incoming customer support
         emails, sorts them into support workflows, uses relevant store information to provide
         reply assistance, and keeps you in control before anything is sent.

@@ -8,7 +8,7 @@ import { SHOPIFY_APP_STORE_INSTALL_URL } from "@/lib/shopify-install";
 export const metadata: Metadata = marketingMetadata({
   title: "RegardsKim vs Freshdesk",
   description:
-    "Compare RegardsKim and Freshdesk for Shopify support. See where Freshdesk is stronger for service teams and where RegardsKim wins on Shopify-native support control.",
+    "Compare RegardsKim and Freshdesk for Shopify support. See where Freshdesk is stronger for service teams and where RegardsKim wins on Shopify-native customer support.",
   path: "/compare/freshdesk",
 });
 
@@ -30,7 +30,7 @@ const comparisonRows = [
   },
   {
     label: "Core strength",
-    kim: "Shopify-native email support control",
+    kim: "Shopify-native email customer support",
     competitor: "Enterprise ticketing, phone support, and broad customer service tooling",
   },
   {

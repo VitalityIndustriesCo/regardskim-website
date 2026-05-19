@@ -7,7 +7,7 @@ const steps = [
   {
     number: "01",
     title: "Connect Gmail and Shopify",
-    body: "Regards Kim starts turning your support inbox into a clean cockpit, sorting customer emails by issue and matching them to Shopify context.",
+    body: "Regards Kim starts turning your support inbox into a organised workflow, sorting customer emails by issue and matching them to Shopify context.",
     mockup: (
       <MockupWindow title="Inbox">
         <MockupInbox />

@@ -22,7 +22,7 @@ const steps = [
   },
   {
     number: "04",
-    title: "Open your AI support cockpit",
+    title: "Open your AI support inbox",
     icon: <Inbox size={40} className="h-10 w-10" />,
   },
 ];

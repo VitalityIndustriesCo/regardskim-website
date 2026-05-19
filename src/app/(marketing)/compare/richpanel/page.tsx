@@ -8,7 +8,7 @@ import { SHOPIFY_APP_STORE_INSTALL_URL } from "@/lib/shopify-install";
 export const metadata: Metadata = marketingMetadata({
   title: "RegardsKim vs Richpanel",
   description:
-    "Compare RegardsKim and Richpanel for ecommerce support. See where Richpanel is stronger on self-service and where RegardsKim wins on AI-powered email control.",
+    "Compare RegardsKim and Richpanel for ecommerce support. See where Richpanel is stronger on self-service and where RegardsKim wins on AI-powered email support.",
   path: "/compare/richpanel",
 });
 
@@ -30,7 +30,7 @@ const comparisonRows = [
   },
   {
     label: "Core strength",
-    kim: "Email support cockpit with Shopify context",
+    kim: "Email support inbox with Shopify context",
     competitor: "Self-service portal and customer-facing dashboard experience",
   },
   {

@@ -17,7 +17,7 @@ export function GoToInbox() {
           <div className="space-y-2">
             <h2 className="text-2xl font-semibold tracking-tight">You&apos;re all set!</h2>
             <p className="text-muted-foreground">
-              Regards Kim is already pulling your emails into the support cockpit. By the time you finish
+              Regards Kim is already pulling your emails into the support inbox. By the time you finish
               reading this, customer emails may already be sorted with context ready.
             </p>
           </div>

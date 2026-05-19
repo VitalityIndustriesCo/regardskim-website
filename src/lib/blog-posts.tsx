@@ -168,7 +168,7 @@ export const blogPosts: BlogPost[] = [
         </p>
         <p>
           RegardsKim is built for Shopify merchants who want help with customer email without setting up a heavy help
-          desk. RegardsKim brings AI triage, Shopify order context, saved replies, and reply helpers into one controlled support workflow, so repetitive emails move faster while you stay in control. If you are deciding what to automate first, start
+          desk. RegardsKim brings AI triage, Shopify order context, saved replies, and reply helpers into one AI-assisted support workflow, so repetitive emails move faster while you keep the final say. If you are deciding what to automate first, start
           with our guide to <Link href="/blog/automate-shopify-support-emails">automating Shopify support emails</Link>.
         </p>
 
@@ -373,7 +373,7 @@ export const blogPosts: BlogPost[] = [
         </p>
         <p>
           RegardsKim is built for Shopify merchants who want help with customer email without setting up a heavy
-          help desk. It can bring Shopify order context, saved replies, and AI reply help into one controlled workflow, so repetitive emails move faster while you stay in control.
+          help desk. It can bring Shopify order context, saved replies, and AI reply help into one AI-assisted workflow, so repetitive emails move faster while you keep the final say.
         </p>
         <p>
           If you are still building the basics, our guide to <Link href="/blog/automate-shopify-support-emails">automating
@@ -530,7 +530,7 @@ export const blogPosts: BlogPost[] = [
         </p>
         <p>
           RegardsKim is built for Shopify merchants who want help with customer email without setting up a heavy
-          help desk. If repetitive customer emails are eating your week, RegardsKim can sort the queue, surface Shopify context, and help you answer with AI tools, so you stay in control while the boring parts move faster.
+          help desk. If repetitive customer emails are eating your week, RegardsKim can sort the queue, surface Shopify context, and help you answer with AI tools, so you keep the final say while the boring parts move faster.
         </p>
 
         <h2>7. Measure the simple things first</h2>
@@ -1367,7 +1367,7 @@ export const blogPosts: BlogPost[] = [
         </p>
         <p>
           A tool like RegardsKim makes sense in that world because it handles the post-sale reality that AI shopping
-          does not solve. It reads customer emails, uses actual Shopify order and tracking context, and gives you AI support control so your inbox does not become the tax you pay for growth.
+          does not solve. It reads customer emails, uses actual Shopify order and tracking context, and gives you AI customer support so your inbox does not become the tax you pay for growth.
         </p>
         <p>
           That does not sound as flashy as storefront AI. But operationally, it is just as important.
@@ -1556,7 +1556,7 @@ export const blogPosts: BlogPost[] = [
         </p>
         <p>
           <strong>
-            <a href="https://regardskim.com">Regards Kim gives Shopify stores AI-powered support control.</a>
+            <a href="https://regardskim.com">Regards Kim gives Shopify stores AI-powered customer support.</a>
           </strong>
         </p>
         <p>Kind regards, Kim</p>
@@ -2015,7 +2015,7 @@ export const blogPosts: BlogPost[] = [
         </p>
         <p>
           It can read incoming support emails, pull in order and tracking details from your Shopify store, and line up the context and reply help you need before you send. That means repetitive
-          support can move faster without losing control.
+          support can move faster without losing the human touch.
         </p>
         <p>
           But even if you never use a tool, the same lesson applies: the best fix for WISMO is better
@@ -2527,7 +2527,7 @@ export const blogPosts: BlogPost[] = [
           promising something you do not offer.
         </p>
 
-        <h2>You stay in control</h2>
+        <h2>You keep the final say</h2>
         <p>
           A lot of founders are open to AI help but nervous about handing over the customer relationship.
         </p>

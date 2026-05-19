@@ -21,11 +21,11 @@ const geistMono = localFont({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: "Regards Kim - AI Support Control for Shopify Stores",
+    default: "Regards Kim - AI Customer Support for Shopify Stores",
     template: "%s | RegardsKim",
   },
   description:
-    "Regards Kim gives Shopify stores AI-powered customer support control: email triage, order context, reply helpers, and support analytics for $49/mo.",
+    "Regards Kim gives Shopify stores AI-powered customer support: email triage, order context, reply helpers, and support analytics for $49/mo.",
   applicationName: siteConfig.name,
   keywords: [
     "Shopify customer support",
@@ -38,8 +38,8 @@ export const metadata: Metadata = {
     canonical: siteConfig.url,
   },
   openGraph: {
-    title: "Regards Kim - AI Support Control for Shopify Stores",
-    description: "Regards Kim gives Shopify stores AI-powered customer support control: email triage, order context, reply helpers, and support analytics for $49/mo.",
+    title: "Regards Kim - AI Customer Support for Shopify Stores",
+    description: "Regards Kim gives Shopify stores AI-powered customer support: email triage, order context, reply helpers, and support analytics for $49/mo.",
     url: siteConfig.url,
     siteName: siteConfig.name,
     images: [
@@ -52,8 +52,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Regards Kim - AI Support Control for Shopify Stores",
-    description: "Regards Kim gives Shopify stores AI-powered customer support control: email triage, order context, reply helpers, and support analytics for $49/mo.",
+    title: "Regards Kim - AI Customer Support for Shopify Stores",
+    description: "Regards Kim gives Shopify stores AI-powered customer support: email triage, order context, reply helpers, and support analytics for $49/mo.",
     images: [absoluteUrl(siteConfig.ogImage)],
   },
 };

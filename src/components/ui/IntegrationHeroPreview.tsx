@@ -30,7 +30,7 @@ export default function IntegrationHeroPreview() {
           <div className="flex flex-wrap items-center gap-2 text-xs font-semibold">
             <span className="inline-flex items-center gap-1.5 rounded-full border border-[#CFE3D1] bg-[#F3FAF2] px-3 py-1.5 text-[#386D34] dark:border-slate/15 dark:bg-[#1D2840] dark:text-emerald-400"><ShopifyLogo className="h-4 w-4" /> Shopify admin</span>
             <span className="inline-flex items-center gap-1.5 rounded-full border border-[#E9DCD1] bg-white px-3 py-1.5 text-ink dark:border-slate/12 dark:bg-[#1D2840]"><GmailLogo className="h-4 w-4" /> Gmail Connected</span>
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-[#F1C8C0] bg-[#FFF0ED] px-3 py-1.5 text-[#B85345] dark:border-brass/25 dark:bg-[#111625] dark:text-brass"><ShieldCheck size={14} /> You stay in control</span>
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-[#F1C8C0] bg-[#FFF0ED] px-3 py-1.5 text-[#B85345] dark:border-brass/25 dark:bg-[#111625] dark:text-brass"><ShieldCheck size={14} /> You keep the final say</span>
           </div>
         </div>
 

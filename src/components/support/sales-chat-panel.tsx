@@ -33,7 +33,7 @@ const QUICK_QUESTIONS = [
   "How do I install on Shopify?",
   "What does it cost?",
   "How does setup work?",
-  "Do I stay in control?",
+  "Do I keep the final say?",
 ];
 
 function includesAny(text: string, terms: string[]) {
@@ -90,7 +90,7 @@ function buildReply(message: string): Omit<SalesChatMessage, "id" | "role"> & { 
   if (includesAny(normalized, ["send automatically", "auto send", "autosend", "approval", "approve", "draft", "human"])) {
     return {
       content:
-        "You stay in control. Regards Kim sorts the work, shows the order context, and gives AI reply help, but you decide what gets sent.",
+        "You keep the final say. Regards Kim sorts the work, shows the order context, and gives AI reply help, but you decide what gets sent.",
       needsEmailCapture: false,
     };
   }
@@ -98,7 +98,7 @@ function buildReply(message: string): Omit<SalesChatMessage, "id" | "role"> & { 
   if (includesAny(normalized, ["what kim does", "what does kim do", "what do you do", "what is kim", "what does it do"])) {
     return {
       content:
-        "RegardsKim gives Shopify stores an AI-powered support cockpit for repetitive customer emails: shipping questions, returns, exchanges, order updates, tracking info, sales questions, and product questions using your real store data.",
+        "RegardsKim gives Shopify stores an AI-powered support inbox for repetitive customer emails: shipping questions, returns, exchanges, order updates, tracking info, sales questions, and product questions using your real store data.",
       needsEmailCapture: false,
     };
   }
@@ -156,7 +156,7 @@ export function SalesChatPanel({ onClose }: Props) {
       id: "welcome",
       role: "assistant",
       content:
-        "Hey - I can help with RegardsKim pricing, Shopify install, setup, Gmail/Outlook, and how the AI support cockpit works. What would you like to know?",
+        "Hey - I can help with RegardsKim pricing, Shopify install, setup, Gmail/Outlook, and how the AI support inbox works. What would you like to know?",
     },
   ]);
   const [input, setInput] = useState("");

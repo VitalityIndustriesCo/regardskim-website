@@ -180,7 +180,7 @@ export default function AIToneRewriterClient() {
 
         <div className="mt-6 border-t border-slate/10 dark:border-slate/20 pt-6">
           <Link href={SHOPIFY_APP_STORE_INSTALL_URL} className="text-sm font-semibold text-brass hover:text-oxblood">
-            Regards Kim brings AI tone help into your support cockpit →
+            Regards Kim brings AI tone help into your support inbox →
           </Link>
         </div>
       </aside>

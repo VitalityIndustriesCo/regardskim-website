@@ -14,7 +14,7 @@ export default function Founding() {
               Install Regards Kim from the Shopify App Store
             </h2>
             <p className="mx-auto mt-4 max-w-lg text-base text-slate md:text-lg">
-              Regards Kim is ready to add to your Shopify store. Install it, connect your inbox, and turn customer emails into a controlled AI-powered support workflow.
+              Regards Kim is ready to add to your Shopify store. Install it, connect your inbox, and turn customer emails into a AI-assisted support workflow.
             </p>
             <a href={SHOPIFY_APP_STORE_INSTALL_URL} className="btn-primary mt-8 inline-flex">
               Install on Shopify

@@ -12,7 +12,7 @@ export const faqItems: FAQItem[] = [
   {
     question: "Does Regards Kim send replies automatically?",
     answer:
-      "No. You stay in control of what leaves your inbox. Regards Kim helps organise the work, surface the right context, improve replies, and speed up sending from Gmail.",
+      "No. You keep the final say of what leaves your inbox. Regards Kim helps organise the work, surface the right context, improve replies, and speed up sending from Gmail.",
   },
   {
     question: "What kinds of emails can Regards Kim help with?",

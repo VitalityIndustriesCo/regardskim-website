@@ -100,7 +100,7 @@ export default function Footer() {
           <div>
             <p className="font-display text-2xl font-bold text-ink">RegardsKim</p>
             <p className="mt-3 max-w-sm text-sm leading-6 text-slate-600 dark:text-white/80">
-              AI-powered customer support control for Shopify stores.
+              AI-powered customer support for Shopify stores.
             </p>
 
             <form onSubmit={handleSubscribe} className="mt-6 max-w-sm">
@@ -177,7 +177,7 @@ export default function Footer() {
 
         <div className="mt-10 flex flex-col gap-3 border-t border-slate/10 dark:border-slate/20 pt-6 text-sm text-slate-600 sm:flex-row sm:items-center sm:justify-between">
           <div>
-            <p className="font-display text-xl font-bold text-ink">Your support cockpit, powered by AI.</p>
+            <p className="font-display text-xl font-bold text-ink">Your support inbox, powered by AI.</p>
             <p className="mt-1 text-sm text-slate-600 dark:text-white/70">Kind regards, Kim</p>
           </div>
           <p className="dark:text-white/60">&copy; RegardsKim 2026. All rights reserved.</p>

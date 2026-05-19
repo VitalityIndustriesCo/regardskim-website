@@ -154,7 +154,7 @@ export default function RegardsKimVsVirtualAssistantPage() {
           <h2 className="font-display text-3xl font-bold text-ink">Get support help before you hire</h2>
           <p className="mt-4 text-lg leading-8 text-slate">
             If you are not ready for the cost and management of a VA, RegardsKim gives you a much lighter way to
-            keep customer support under control.
+            keep customer support manageable.
           </p>
           <Link href={SHOPIFY_APP_STORE_INSTALL_URL} className="btn-primary mt-8 inline-flex">
             Install Regards Kim on Shopify

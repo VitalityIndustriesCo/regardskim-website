@@ -8,7 +8,7 @@ import { SHOPIFY_APP_STORE_INSTALL_URL } from "@/lib/shopify-install";
 export const metadata: Metadata = marketingMetadata({
   title: "RegardsKim vs Tidio",
   description:
-    "Compare RegardsKim and Tidio for Shopify support. See where Tidio is stronger on live chat and where RegardsKim wins on AI-powered email support control.",
+    "Compare RegardsKim and Tidio for Shopify support. See where Tidio is stronger on live chat and where RegardsKim wins on AI-powered email customer support.",
   path: "/compare/tidio",
 });
 

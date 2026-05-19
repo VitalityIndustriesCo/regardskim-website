@@ -1,6 +1,6 @@
-RegardsKim is an AI-powered customer support control centre for Shopify stores.
+RegardsKim is an AI-powered customer support app for Shopify stores.
 
-It helps small and medium Shopify store owners handle repetitive support emails faster without losing control of the customer experience.
+It helps small and medium Shopify store owners handle repetitive support emails faster without losing the human touch of the customer experience.
 
 Core capabilities:
 - Sorts support emails into ecommerce buckets such as tracking, returns, exchanges, order changes, sales, and escalations

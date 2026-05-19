@@ -159,7 +159,7 @@ function OnboardingContent() {
     {
       number: 3,
       title: "Go to your inbox",
-      subtitle: "See your AI support cockpit and start clearing the queue.",
+      subtitle: "See your AI support inbox and start clearing the queue.",
       icon: Inbox,
       state: currentStepNumber === 3 ? ("active" as const) : ("locked" as const),
       onClick: currentStepNumber === 3 ? () => void handleFinish() : undefined,

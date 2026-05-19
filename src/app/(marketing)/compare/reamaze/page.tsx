@@ -8,7 +8,7 @@ import { SHOPIFY_APP_STORE_INSTALL_URL } from "@/lib/shopify-install";
 export const metadata: Metadata = marketingMetadata({
   title: "RegardsKim vs Reamaze",
   description:
-    "Compare RegardsKim and Reamaze for ecommerce support. See where Reamaze is stronger as a help desk and where RegardsKim wins on focus, speed, and AI support control.",
+    "Compare RegardsKim and Reamaze for ecommerce support. See where Reamaze is stronger as a help desk and where RegardsKim wins on focus, speed, and AI customer support.",
   path: "/compare/reamaze",
 });
 
@@ -30,7 +30,7 @@ const comparisonRows = [
   },
   {
     label: "Core strength",
-    kim: "Simple email-first support cockpit with Shopify context",
+    kim: "Simple email-first support inbox with Shopify context",
     competitor: "Multi-channel support, FAQ builder, and a more mature help desk layer",
   },
   {

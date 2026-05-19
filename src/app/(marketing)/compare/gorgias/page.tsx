@@ -8,7 +8,7 @@ import { SHOPIFY_APP_STORE_INSTALL_URL } from "@/lib/shopify-install";
 export const metadata: Metadata = marketingMetadata({
   title: "RegardsKim vs Gorgias",
   description:
-    "An honest look at RegardsKim vs Gorgias for Shopify support, including price, setup time, AI support control, and where each tool fits best.",
+    "An honest look at RegardsKim vs Gorgias for Shopify support, including price, setup time, AI customer support, and where each tool fits best.",
   path: "/compare/gorgias",
 });
 

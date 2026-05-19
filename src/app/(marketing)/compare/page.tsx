@@ -17,7 +17,7 @@ const comparisonPages = [
     href: "/compare/gorgias",
     title: "RegardsKim vs Gorgias",
     description:
-      "Best if you want AI-powered support control without committing to a full ecommerce help desk yet.",
+      "Best if you want AI-powered customer support without committing to a full ecommerce help desk yet.",
   },
   {
     href: "/compare/zendesk",
@@ -35,7 +35,7 @@ const comparisonPages = [
     href: "/compare/reamaze",
     title: "RegardsKim vs Reamaze",
     description:
-      "Helpful if you are deciding between an AI support cockpit and a more mature ecommerce help desk.",
+      "Helpful if you are deciding between an AI support inbox and a more mature ecommerce help desk.",
   },
   {
     href: "/compare/richpanel",
@@ -65,7 +65,7 @@ const comparisonPages = [
     href: "/compare/diy",
     title: "RegardsKim vs Doing It Yourself",
     description:
-      "A reality check on the hidden cost of founder-led support compared with an AI-powered support control layer.",
+      "A reality check on the hidden cost of founder-led support compared with an AI-powered customer support layer.",
   },
 ];
 
