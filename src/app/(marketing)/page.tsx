@@ -14,7 +14,7 @@ import { marketingMetadata, absoluteUrl, siteConfig } from "@/lib/seo";
 export const metadata: Metadata = marketingMetadata({
   title: "Regards Kim - AI Customer Support for Shopify Stores",
   description:
-    "AI-powered customer support for Shopify stores. Regards Kim sorts customer emails, matches Shopify order context, and helps you answer faster from Gmail.",
+    "AI-powered customer support for Shopify stores. Regards Kim sorts customer emails, matches Shopify order context, and drafts replies you can review, edit, and send faster.",
   path: "/",
 });
 
