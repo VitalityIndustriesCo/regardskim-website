@@ -88,8 +88,8 @@ export default function IntegrationHeroPreview() {
           <section className="rounded-[1.5rem] border border-[#E9DCD1] bg-white p-4 shadow-[0_12px_28px_rgba(35,53,71,0.21),0_3px_8px_rgba(35,53,71,0.12)] dark:border-slate/12 dark:bg-[#111625] dark:shadow-[0_12px_28px_rgba(0,0,0,0.40),0_3px_8px_rgba(0,0,0,0.24)]">
             <div className="mb-4 flex items-center justify-between">
               <div>
-                <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#8A6F61] dark:text-brass">AI support workspace</p>
-                <h3 className="mt-1 font-display text-xl font-extrabold text-ink dark:text-white">Draft ready</h3>
+                <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#8A6F61] dark:text-brass">AI draft workspace</p>
+                <h3 className="mt-1 font-display text-xl font-extrabold text-ink dark:text-white">Draft for review</h3>
               </div>
             </div>
             <div className="rounded-2xl border border-[#E9DCD1] bg-[#FFF9F3] p-5 shadow-[0_8px_18px_rgba(35,53,71,0.14),0_2px_5px_rgba(35,53,71,0.08)] dark:border-slate/12 dark:bg-[#20283A] dark:shadow-[0_8px_18px_rgba(0,0,0,0.31),0_2px_5px_rgba(0,0,0,0.20)]">
@@ -99,7 +99,7 @@ export default function IntegrationHeroPreview() {
               <p className="mt-3 text-sm leading-6 text-ink dark:text-white">Kind regards,<br />Kim</p>
             </div>
             <div className="mt-4 flex flex-wrap gap-2">
-              <span className="rounded-full bg-emerald-600 dark:bg-brass px-4 py-2 text-xs font-bold text-white shadow-[0_8px_18px_rgba(233,124,107,0.28)] dark:shadow-[0_8px_18px_rgba(0,0,0,0.28)]">Improve reply</span>
+              <span className="rounded-full bg-emerald-600 dark:bg-brass px-4 py-2 text-xs font-bold text-white shadow-[0_8px_18px_rgba(233,124,107,0.28)] dark:shadow-[0_8px_18px_rgba(0,0,0,0.28)]">Review draft</span>
               <span className="rounded-full border border-[#E3D3C6] bg-white px-4 py-2 text-xs font-bold text-ink dark:border-slate/15 dark:bg-[#20283A]">Insert tracking</span>
               <span className="rounded-full border border-[#E3D3C6] bg-white px-4 py-2 text-xs font-bold text-ink dark:border-slate/15 dark:bg-[#20283A]">Insert shipping policy</span>
             </div>

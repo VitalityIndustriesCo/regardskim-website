@@ -30,12 +30,12 @@ const comparisonRows = [
   },
   {
     label: "Daily workflow",
-    kim: "Use AI triage, Shopify context, and reply helpers",
+    kim: "Use AI triage, Shopify context, and AI-drafted replies",
     competitor: "Operate inside a full ticketing and agent workspace",
   },
   {
-    label: "24/7 help",
-    kim: "Always organising support context in the background",
+    label: "Inbox support",
+    kim: "Organises support context and drafts replies for review",
     competitor: "Depends on configured automation and human coverage",
   },
   {

@@ -9,14 +9,14 @@ import AIToneRewriterClient from "./AIToneRewriterClient";
 export const metadata: Metadata = {
   title: "AI Tone Rewriter for Support Emails | RegardsKim",
   description:
-    "Rewrite customer support messages to sound more friendly, professional, apologetic, concise, or empathetic.",
+    "Rewrite customer support drafts to sound more friendly, professional, apologetic, concise, or empathetic.",
   alternates: {
     canonical: absoluteUrl("/tools/ai-tone-rewriter"),
   },
   openGraph: {
     title: "AI Tone Rewriter for Support Emails | RegardsKim",
     description:
-      "Adjust the tone of your support emails and customer messages with this free ecommerce-focused tone rewriter.",
+      "Adjust the tone of your support email drafts and customer messages with this free ecommerce-focused tone rewriter.",
     url: absoluteUrl("/tools/ai-tone-rewriter"),
     siteName: siteConfig.name,
     type: "website",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "AI Tone Rewriter for Support Emails | RegardsKim",
     description:
-      "Adjust the tone of your support emails and customer messages with this free ecommerce-focused tone rewriter.",
+      "Adjust the tone of your support email drafts and customer messages with this free ecommerce-focused tone rewriter.",
   },
 };
 
@@ -83,7 +83,7 @@ export default function AIToneRewriterPage() {
             </h1>
             <p className="mt-6 text-lg leading-8 text-slate">
               If your reply feels too blunt, too cold, or too wordy, rewrite it in a better tone before you hit
-              send. This tool helps you make support messages sound more human and on-brand.
+              send. This tool helps you make support drafts sound more human and on-brand.
             </p>
           </div>
 

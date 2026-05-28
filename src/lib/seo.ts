@@ -3,10 +3,10 @@ import type { Metadata } from "next";
 export const siteConfig = {
   name: "RegardsKim",
   url: "https://regardskim.com",
-  description: "AI-powered customer support for Shopify stores",
+  description: "AI-powered customer support and email drafting for Shopify stores",
   ogImage: "/logo/kim-og-logo.jpg",
   price: "$49/mo",
-  foundingPrice: "$24.50/mo forever",
+  foundingPrice: "$49/mo founding offer",
 } as const;
 
 export function absoluteUrl(path = "") {

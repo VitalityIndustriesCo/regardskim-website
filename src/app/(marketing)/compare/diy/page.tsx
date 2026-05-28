@@ -20,7 +20,7 @@ const comparisonRows = [
   },
   {
     label: "Availability",
-    kim: "Always-on AI support organisation",
+    kim: "AI support workflow ready when you open the inbox",
     competitor: "Only when you are online and have the energy for it",
   },
   {
@@ -40,7 +40,7 @@ const comparisonRows = [
   },
   {
     label: "Where it is stronger",
-    kim: "Time savings, 24/7 help, reduced support drag",
+    kim: "Time savings, AI drafting help, reduced support drag",
     competitor: "Zero software spend, total control, personal customer connection",
   },
 ];
@@ -141,7 +141,7 @@ export default function RegardsKimVsDIYPage() {
           </p>
           <p>
             RegardsKim is built for that exact moment. It keeps the founder in control, but removes a lot of the
-            repetitive sorting, context-checking, and reply prep so support stops eating the day. If you want to quantify what DIY support is
+            repetitive sorting, context-checking, and AI draft prep so support stops eating the day. If you want to quantify what DIY support is
             really costing you, the <Link href="/tools/support-cost-calculator" className="font-medium text-brass hover:text-oxblood">support cost calculator</Link> is a useful gut check.
           </p>
           <p>
@@ -153,7 +153,7 @@ export default function RegardsKimVsDIYPage() {
         <div className="mx-auto mt-12 max-w-4xl rounded-[1.75rem] border border-brass/20 bg-white dark:bg-[#20283A] p-8 text-center shadow-[0_10px_26px_rgba(35,53,71,0.15),0_2px_6px_rgba(35,53,71,0.08)]">
           <h2 className="font-display text-3xl font-bold text-ink">Keep the control, lose the drag</h2>
           <p className="mt-4 text-lg leading-8 text-slate">
-            If you are still doing support yourself, Regards Kim helps without taking the inbox fully out of your hands.
+            If you are still doing support yourself, Regards Kim helps you draft replies faster without taking the inbox fully out of your hands.
           </p>
           <Link href={SHOPIFY_APP_STORE_INSTALL_URL} className="btn-primary mt-8 inline-flex">
             Install Regards Kim on Shopify

@@ -83,7 +83,7 @@ export default function ReturnPolicyGeneratorPage() {
             </h1>
             <p className="mt-6 text-lg leading-8 text-slate">
               Build a clear, customer-friendly return policy in a few minutes. Set your store name, return
-              window, refund method, conditions, and exceptions, then copy the finished policy straight into your site.
+              window, refund method, conditions, and exceptions, then copy the finished policy into your site and use it as context for better AI support drafts.
             </p>
           </div>
 

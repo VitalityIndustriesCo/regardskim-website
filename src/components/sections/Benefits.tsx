@@ -13,8 +13,8 @@ const benefits = [
     icon: BookOpen,
   },
   {
-    title: "AI help without losing control",
-    body: "Improve replies, insert saved responses, add tracking or policy links, and send from Gmail only when you are ready.",
+    title: "AI-drafted replies you control",
+    body: "Generate Shopify-aware drafts, improve your wording, add tracking or policy links, and send from Gmail only when you are ready.",
     icon: ShieldCheck,
   },
 ];

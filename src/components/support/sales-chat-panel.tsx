@@ -79,7 +79,7 @@ function buildReply(message: string): Omit<SalesChatMessage, "id" | "role"> {
   if (includesAny(normalized, ["how it works", "how does it work", "works", "setup", "set up", "onboarding", "connect"])) {
     return {
       content:
-        "Setup is simple: connect Shopify, connect Gmail, and confirm your store policies. RegardsKim then gives you AI triage, Shopify context, saved replies, and reply helpers for tracking, returns, exchanges, order updates, and product questions.",
+        "Setup is simple: connect Shopify, connect Gmail, and confirm your store policies. RegardsKim then gives you AI triage, Shopify context, saved replies, and AI-drafted replies for tracking, returns, exchanges, order updates, and product questions.",
     };
   }
 
@@ -93,21 +93,21 @@ function buildReply(message: string): Omit<SalesChatMessage, "id" | "role"> {
   if (includesAny(normalized, ["send automatically", "auto send", "autosend", "approval", "approve", "draft", "human"])) {
     return {
       content:
-        "You keep the final say. Regards Kim sorts the work, shows the order context, and gives AI reply help, but you decide what gets sent.",
+        "You keep the final say. Regards Kim sorts the work, shows the order context, and drafts replies for review, but you decide what gets sent.",
     };
   }
 
   if (includesAny(normalized, ["what kim does", "what does kim do", "what do you do", "what is kim", "what does it do"])) {
     return {
       content:
-        "RegardsKim gives Shopify stores an AI-powered support inbox for repetitive customer emails: shipping questions, returns, exchanges, order updates, tracking info, sales questions, and product questions using your real store data.",
+        "RegardsKim gives Shopify stores an AI-powered support inbox for repetitive customer emails: shipping questions, returns, exchanges, order updates, tracking info, sales questions, and product questions. It uses your real store data to help draft better replies faster.",
     };
   }
 
   if (includesAny(normalized, ["security", "secure", "data", "privacy", "safe", "permission", "access"])) {
     return {
       content:
-        "RegardsKim only asks for the access needed to organise support, match Shopify context, and power reply helpers. Nothing is sent without your permission.",
+        "RegardsKim only asks for the access needed to organise support, match Shopify context, and draft support replies. Nothing is sent without your permission.",
     };
   }
 

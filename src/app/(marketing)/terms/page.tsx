@@ -18,8 +18,8 @@ export default function TermsPage() {
       <p>
         RegardsKim is an AI-powered customer support app for Shopify stores. It connects to your Shopify
         account and your email account, reads incoming customer support emails, sorts them into
-        support workflows, uses order data, tracking details, and store policies to provide reply
-        assistance, and keeps you in control before anything is sent.
+        support workflows, uses order data, tracking details, and store policies to provide AI-drafted
+        reply assistance, and keeps you in control before anything is sent.
       </p>
       <p>
         By accessing or using RegardsKim, you agree to these Terms. If you do not agree, do not
@@ -30,7 +30,7 @@ export default function TermsPage() {
       <p>RegardsKim is operated by Vitality Industries in Australia.</p>
       <p>
         The service is designed to help merchants manage customer support more efficiently with
-        AI-assisted triage, support context, and reply tools. RegardsKim does not replace your
+        AI-assisted triage, support context, and draft reply tools. RegardsKim does not replace your
         responsibility to review communications sent to your customers.
       </p>
 
@@ -78,7 +78,7 @@ export default function TermsPage() {
         <li>Reads inbound customer support emails</li>
         <li>
           Uses relevant order, tracking, product, and policy information to organise support
-          workflows and provide reply assistance
+          workflows and provide AI-drafted reply assistance
         </li>
         <li>Presents customer conversations, context, and helper output for your review</li>
         <li>Supports subscription management, usage monitoring, and related account functions</li>

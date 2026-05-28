@@ -13,7 +13,7 @@ const kimPoints = [
   "Built specifically for Shopify stores",
   "Connects support conversations to orders, tracking, and products",
   "Uses your actual store policies and saved replies",
-  "Gives AI-powered help inside your normal reply workflow",
+  "Drafts Shopify-aware replies inside your normal workflow",
   "Understands WISMO, returns, exchanges, order changes, and escalations",
 ];
 
@@ -104,7 +104,7 @@ function ReplyCard({ label, body, tone }: ReplyCardProps) {
           {label}
         </span>
         <span className="rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700 dark:border-emerald-800 dark:bg-emerald-950 dark:text-emerald-400">
-          AI-assisted reply
+          AI-drafted reply
         </span>
       </div>
 

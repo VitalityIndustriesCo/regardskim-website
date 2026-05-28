@@ -8,7 +8,7 @@ const inclusions = [
   "Connects to your Shopify store and Gmail",
   "AI support buckets for tracking, returns, order changes, sales, and escalations",
   "Shopify order, customer, delivery, tracking, and policy context in the inbox",
-  "Improve reply, saved replies, tracking links, and policy helpers",
+  "AI-drafted replies, saved replies, tracking links, and policy helpers",
   "Support analytics that show where the inbox pressure is coming from",
   "You keep the final say of every message sent from Gmail",
 ];
@@ -26,7 +26,7 @@ export default function Pricing() {
             Pricing
           </h2>
           <p className="mt-4 text-base text-slate md:text-lg">
-            The AI customer support app for stores growing past Gmail chaos.
+            The AI customer support app for stores ready to draft better replies from real Shopify context.
           </p>
           <p className="mt-2 text-sm font-semibold uppercase tracking-[0.16em] text-brass">
             Simple monthly pricing

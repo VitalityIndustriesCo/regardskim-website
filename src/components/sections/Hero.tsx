@@ -19,7 +19,7 @@ export default function Hero() {
               <span className="inline-flex items-center gap-2 rounded-full border border-[#E3D3C6] bg-white/80 px-4 py-2 text-xs font-bold uppercase tracking-[0.14em] text-[#8A6F61] shadow-sm backdrop-blur dark:border-slate/15 dark:bg-[#1D2840]/80 dark:text-brass"><GmailLogo className="h-4 w-4" /> Connects to Gmail</span>
             </div>
             <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-slate md:text-xl">
-              Regards Kim turns your Gmail support inbox into a Shopify-aware support workflow. Every customer email is sorted by issue, matched to order context, and lined up with the AI help you need to answer faster.
+              Regards Kim turns your Gmail support inbox into a Shopify-aware support workflow. Customer emails are sorted by issue, matched to order context, and lined up with AI-drafted replies you can review, edit, and send faster.
             </p>
 
             <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
@@ -30,7 +30,7 @@ export default function Hero() {
                 See how it works
               </Link>
             </div>
-            <p className="mt-4 text-sm font-medium text-slate">AI triage, order context, reply helpers, and support analytics in one Shopify app.</p>
+            <p className="mt-4 text-sm font-medium text-slate">AI triage, Shopify order context, AI reply drafting, and support analytics in one Shopify app.</p>
 
 
           </div>

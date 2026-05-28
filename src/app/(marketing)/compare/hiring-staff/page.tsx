@@ -20,7 +20,7 @@ const comparisonRows = [
   },
   {
     label: "Availability",
-    kim: "Always-on AI support organisation",
+    kim: "AI support workflow ready when you open the inbox",
     competitor: "Depends on roster, timezone, and shift coverage",
   },
   {
@@ -35,12 +35,12 @@ const comparisonRows = [
   },
   {
     label: "Best at",
-    kim: "Repetitive support emails, AI triage, and reply assistance",
+    kim: "Repetitive support emails, AI triage, and Shopify-aware draft replies",
     competitor: "Complex issues, relationship handling, brand nuance",
   },
   {
     label: "Where it is stronger",
-    kim: "Price, 24/7 support help, no training burden",
+    kim: "Price, AI drafting help, no training burden",
     competitor: "Human judgment, escalation handling, broader customer relationships",
   },
 ];
@@ -142,7 +142,7 @@ export default function RegardsKimVsHiringStaffPage() {
             repetitive, that is a heavy move to make too early.
           </p>
           <p>
-            RegardsKim is stronger in that in-between stage. It gives you instant coverage for common support emails
+            RegardsKim is stronger in that in-between stage. It gives you AI drafting help for common support emails
             at <strong>$49/month</strong>, which is often dramatically cheaper than even a part-time hire. If you want to
             put numbers behind that, try the <Link href="/tools/support-cost-calculator" className="font-medium text-brass hover:text-oxblood">support cost calculator</Link>.
           </p>
@@ -155,7 +155,7 @@ export default function RegardsKimVsHiringStaffPage() {
         <div className="mx-auto mt-12 max-w-4xl rounded-[1.75rem] border border-brass/20 bg-white dark:bg-[#20283A] p-8 text-center shadow-[0_10px_26px_rgba(35,53,71,0.15),0_2px_6px_rgba(35,53,71,0.08)]">
           <h2 className="font-display text-3xl font-bold text-ink">A lighter step before payroll</h2>
           <p className="mt-4 text-lg leading-8 text-slate">
-            If you are not ready to hire, Regards Kim can still take a real chunk of support work off your plate.
+            If you are not ready to hire, Regards Kim can still draft a real chunk of support work for review.
           </p>
           <Link href={SHOPIFY_APP_STORE_INSTALL_URL} className="btn-primary mt-8 inline-flex">
             Install Regards Kim on Shopify

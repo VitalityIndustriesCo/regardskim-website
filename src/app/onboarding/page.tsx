@@ -337,7 +337,7 @@ function OnboardingContent() {
               <div className="space-y-1">
                 <h2 className="text-lg font-semibold text-[#1A1A1A]">Everything&apos;s ready</h2>
                 <p className="text-sm text-[#1A1A1A]/65">
-                  Open your inbox to review sorted customer emails, Shopify context, and reply helpers.
+                  Open your inbox to review sorted customer emails, Shopify context, and AI-drafted replies.
                 </p>
               </div>
               <Button className="bg-[#E85D3A] text-white hover:bg-[#d34f2f]" onClick={() => void handleFinish()} disabled={isFinishing}>

@@ -9,7 +9,7 @@ import CSEmailTemplatesClient from "./CSEmailTemplatesClient";
 export const metadata: Metadata = {
   title: "Customer Service Email Templates | RegardsKim",
   description:
-    "Browse free customer service email templates for shipping, returns, refunds, order changes, apologies, and follow-ups.",
+    "Browse free customer service email templates for shipping, returns, refunds, order changes, apologies, follow-ups, and AI drafting prompts.",
   alternates: {
     canonical: absoluteUrl("/tools/cs-email-templates"),
   },
@@ -87,7 +87,7 @@ export default function CSEmailTemplatesPage() {
             </h1>
             <p className="mt-6 text-lg leading-8 text-slate">
               A practical swipe file of customer support templates you can actually use. Cover shipping updates,
-              refunds, order changes, apologies, follow-ups, and more without starting from a blank page.
+              refunds, order changes, apologies, follow-ups, and more without starting from a blank page or a generic AI prompt.
             </p>
           </div>
 

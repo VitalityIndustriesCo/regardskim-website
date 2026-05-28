@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     template: "%s | RegardsKim",
   },
   description:
-    "Regards Kim gives Shopify stores AI-powered customer support: email triage, order context, reply helpers, and support analytics for $49/mo.",
+    "Regards Kim gives Shopify stores AI-powered customer support: email triage, Shopify order context, AI-drafted replies, and support analytics for $49/mo.",
   applicationName: siteConfig.name,
   keywords: [
     "Shopify customer support",
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Regards Kim - AI Customer Support for Shopify Stores",
-    description: "Regards Kim gives Shopify stores AI-powered customer support: email triage, order context, reply helpers, and support analytics for $49/mo.",
+    description: "Regards Kim gives Shopify stores AI-powered customer support: email triage, Shopify order context, AI-drafted replies, and support analytics for $49/mo.",
     url: siteConfig.url,
     siteName: siteConfig.name,
     images: [
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Regards Kim - AI Customer Support for Shopify Stores",
-    description: "Regards Kim gives Shopify stores AI-powered customer support: email triage, order context, reply helpers, and support analytics for $49/mo.",
+    description: "Regards Kim gives Shopify stores AI-powered customer support: email triage, Shopify order context, AI-drafted replies, and support analytics for $49/mo.",
     images: [absoluteUrl(siteConfig.ogImage)],
   },
 };

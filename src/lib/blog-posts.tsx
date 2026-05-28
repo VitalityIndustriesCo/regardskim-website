@@ -181,8 +181,8 @@ export const blogPosts: BlogPost[] = [
         </p>
         <p>
           For returns emails, RegardsKim can help by sorting repetitive support messages, bringing Shopify order and
-          customer context closer to the conversation, supporting saved replies, improving draft replies, and helping
-          your team keep common policy details handy.
+          customer context closer to the conversation, drafting Shopify-aware replies for review, supporting saved
+          replies, and helping your team keep common policy details handy.
         </p>
         <p>
           The merchant stays in control of the reply. RegardsKim is there to reduce the searching, rewriting, and
@@ -239,8 +239,8 @@ export const blogPosts: BlogPost[] = [
         </p>
         <p>
           RegardsKim is built for that exact gap. It is AI-powered customer support for Shopify stores that helps your
-          VA get through Gmail-based support faster, with Shopify context close at hand and the merchant still in control
-          of what gets sent.
+          VA get through Gmail-based support faster, with Shopify-aware drafts close at hand and the merchant still in
+          control of what gets sent.
         </p>
         <p>
           It helps your VA spend less time digging, sorting, and rewriting, and more time handling the customer
@@ -352,15 +352,16 @@ export const blogPosts: BlogPost[] = [
           full support week.
         </p>
 
-        <h2>4. Reply improvement without losing the store&apos;s voice</h2>
+        <h2>4. AI drafting without losing the store&apos;s voice</h2>
         <p>VAs are often good at getting through the queue, but support quality can still vary.</p>
         <p>
           One reply might be too blunt. Another might be too long. Another might answer the policy question but miss the
           emotional part of the customer&apos;s message.
         </p>
         <p>
-          RegardsKim includes AI reply improvement tools to help polish support replies before they go out. Your VA can
-          use the helper to make a reply clearer, warmer, shorter, or more useful, while still keeping final control.
+          RegardsKim includes AI drafting and reply improvement tools to help prepare support replies before they go
+          out. Your VA can start from a Shopify-aware draft, then make it clearer, warmer, shorter, or more useful while
+          still keeping final control.
         </p>
         <p>
           That is important. The goal is not hands-off customer service. The goal is better human-approved replies with
@@ -395,7 +396,7 @@ export const blogPosts: BlogPost[] = [
         </p>
         <p>
           If RegardsKim helps reduce that to four minutes per email by improving triage, showing Shopify context faster,
-          using saved replies, and helping polish responses, that drops the workload to about 13 hours.
+          drafting Shopify-aware replies, and helping polish responses, that drops the workload to about 13 hours.
         </p>
         <p>That is roughly seven VA hours saved in a month.</p>
         <p>At $8/hour, that is $56/month. At $12/hour, it is $84/month. At $20/hour, it is $140/month.</p>
@@ -417,7 +418,7 @@ export const blogPosts: BlogPost[] = [
         </p>
         <p>RegardsKim is there for the repetitive work around that human judgement.</p>
         <p>
-          It helps organise the queue. It brings Shopify context closer. It makes saved replies easier to use. It
+          It helps organise the queue. It brings Shopify context closer. It drafts replies from real order context. It
           improves reply quality. It gives you analytics so you can see what customers keep asking about.
         </p>
         <p>
@@ -429,7 +430,8 @@ export const blogPosts: BlogPost[] = [
         <p>Support gets expensive when every email starts from zero.</p>
         <p>
           RegardsKim helps Shopify stores build a faster Gmail support workflow with AI assistance, Shopify context,
-          saved replies, helper tools, and analytics, while keeping the person sending the reply in control.
+          AI-drafted replies, saved replies, helper tools, and analytics, while keeping the person sending the reply in
+          control.
         </p>
         <p>If you already have a VA, the win is simple: help them clear more of the queue in less time.</p>
         <p>That can lower support costs without lowering support quality.</p>
@@ -599,7 +601,7 @@ export const blogPosts: BlogPost[] = [
         </p>
         <p>
           RegardsKim is built for Shopify merchants who want help with customer email without setting up a heavy help
-          desk. RegardsKim brings AI triage, Shopify order context, saved replies, and reply helpers into one AI-assisted support workflow, so repetitive emails move faster while you keep the final say. If you are deciding what to automate first, start
+          desk. RegardsKim brings AI triage, Shopify order context, saved replies, and AI-drafted replies into one AI-assisted support workflow, so repetitive emails move faster while you keep the final say. If you are deciding what to automate first, start
           with our guide to <Link href="/blog/automate-shopify-support-emails">automating Shopify support emails</Link>.
         </p>
 
@@ -804,7 +806,7 @@ export const blogPosts: BlogPost[] = [
         </p>
         <p>
           RegardsKim is built for Shopify merchants who want help with customer email without setting up a heavy
-          help desk. It can bring Shopify order context, saved replies, and AI reply help into one AI-assisted workflow, so repetitive emails move faster while you keep the final say.
+          help desk. It can bring Shopify order context, saved replies, and AI-drafted replies into one AI-assisted workflow, so repetitive emails move faster while you keep the final say.
         </p>
         <p>
           If you are still building the basics, our guide to <Link href="/blog/automate-shopify-support-emails">automating
@@ -1034,7 +1036,7 @@ export const blogPosts: BlogPost[] = [
         </p>
         <p>
           It connects to your store, reads incoming support emails, pulls in order details, tracking status, and
-          policy context, then lines up Shopify-aware context and reply helpers. That makes it especially useful for the repetitive
+          policy context, then lines up Shopify-aware draft replies for review. That makes it especially useful for the repetitive
           questions that take up most of the week: where is my order, how do returns work, can I change my
           address, has this shipped, can I get a refund.
         </p>
@@ -2684,7 +2686,7 @@ export const blogPosts: BlogPost[] = [
         </ul>
         <p>
           This is where a tool like Regards Kim can make sense for a growing Shopify store. It reads incoming
-          customer emails, surfaces order info, tracking, and store policies, and puts the right context and reply helpers in front of you. That is useful when you want faster handling of repetitive
+          customer emails, surfaces order info, tracking, and store policies, and puts the right context and AI-drafted reply in front of you. That is useful when you want faster handling of repetitive
           support without handing the whole customer experience over to a black box.
         </p>
         <p>The key is control. Automation should reduce busywork, not create new mess.</p>
@@ -2928,7 +2930,7 @@ export const blogPosts: BlogPost[] = [
           <li>customer history</li>
         </ul>
         <p>
-          That is what allows its reply helpers to be actually informed.
+          That is what allows its AI drafts to be actually informed.
         </p>
         <p>
           Without that, an AI tool is guessing from context clues. With it, the tool can respond based on

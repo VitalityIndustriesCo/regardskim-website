@@ -17,7 +17,7 @@ const steps = [
   {
     number: "02",
     title: "See the whole customer story",
-    body: "Open any conversation with the order, delivery status, tracking links, policy links, customer details, and AI support tools already in reach.",
+    body: "Open any conversation with the order, delivery status, tracking links, policy links, customer details, and an AI draft workspace already in reach.",
     mockup: (
       <MockupWindow title="Inbox">
         <MockupDetail mode="draft" />
@@ -26,8 +26,8 @@ const steps = [
   },
   {
     number: "03",
-    title: "Answer faster with AI control",
-    body: "Use saved replies, improve your wording with AI, insert the right links, and send from Gmail. Your customers see your store, not another helpdesk tool.",
+    title: "Review, edit, and send faster",
+    body: "Start from an AI-drafted reply, adjust the wording, insert the right links, and send from Gmail. Your customers see your store, not another helpdesk tool.",
     mockup: (
       <MockupWindow title="Inbox">
         <MockupDetail mode="approval" />

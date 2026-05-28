@@ -13,7 +13,7 @@ import { api } from "@/lib/api";
 
 const STANDARD_FEATURES = [
   "Unlimited emails",
-  "AI triage and reply helpers",
+  "AI triage and AI-drafted replies",
   "Improve, send, or mark done inline",
   "Saved replies and store context",
   "Shopify order and tracking context",

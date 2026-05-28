@@ -77,16 +77,16 @@ export default function AboutPage() {
           <div className="rounded-2xl border border-slate/15 bg-white p-6 shadow-[0_8px_22px_rgba(35,53,71,0.13),0_2px_5px_rgba(35,53,71,0.08)] dark:bg-[#20283A] md:p-8">
             <p className="text-slate">
               Regards Kim connects to your Gmail and Shopify store, sorts customer emails by issue,
-              pulls in the order and tracking context, and gives you the AI support tools to answer
-              faster without handing over control.
+              pulls in the order and tracking context, and drafts Shopify-aware replies you can
+              review, edit, and send faster without handing over control.
             </p>
           </div>
 
           <p>
             But right now, it handles the repetitive, time-consuming work so you can focus on
             the parts of your business that actually need you. It keeps the support queue organised,
-            puts Shopify context next to the conversation, and helps your replies sound sharper,
-            clearer, and more on-brand.
+            puts Shopify context next to the conversation, and helps you start from sharper,
+            clearer, more on-brand drafts.
           </p>
 
           {/* Sign-off */}

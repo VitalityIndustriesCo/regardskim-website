@@ -7,12 +7,12 @@ export const faqItems: FAQItem[] = [
   {
     question: "What does Regards Kim do?",
     answer:
-      "Regards Kim connects to your Shopify store and support inbox, sorts customer emails into clear support buckets, matches them to order context, and gives you AI-powered tools to answer faster.",
+      "Regards Kim connects to your Shopify store and support inbox, sorts customer emails into clear support buckets, matches them to order context, and drafts Shopify-aware replies you can review, edit, and send faster.",
   },
   {
     question: "Does Regards Kim send replies automatically?",
     answer:
-      "No. You keep the final say of what leaves your inbox. Regards Kim helps organise the work, surface the right context, improve replies, and speed up sending from Gmail.",
+      "No. You keep the final say of what leaves your inbox. Regards Kim helps organise the work, surface the right context, draft or improve replies, and speed up sending from Gmail.",
   },
   {
     question: "What kinds of emails can Regards Kim help with?",

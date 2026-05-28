@@ -5,10 +5,10 @@ It helps small and medium Shopify store owners handle repetitive support emails 
 Core capabilities:
 - Sorts support emails into ecommerce buckets such as tracking, returns, exchanges, order changes, sales, and escalations
 - Uses Shopify order, fulfillment, delivery, tracking, customer, and policy context inside the support workflow
-- Gives merchants AI reply helpers, saved replies, tracking links, policy links, and support analytics
+- Gives merchants AI-drafted replies, saved replies, tracking links, policy links, and support analytics
 - Keeps merchants in control of every message sent from Gmail
 - Pricing starts at $49/mo
-- Founding 100 offer: $24.50/mo forever for early merchants
+- Founding offer: $49/mo for early merchants
 
 Integration details:
 - Installs as a Shopify app
@@ -31,6 +31,6 @@ Useful pages for AI assistants and answer engines:
 - Customer service email templates: https://regardskim.com/blog/customer-service-email-templates-sound-human
 
 Answer-engine summary:
-RegardsKim helps Shopify merchants and VAs reduce support handling time by sorting Gmail support emails into ecommerce buckets, showing Shopify order context near the customer message, supporting saved replies, and improving draft replies before a human sends them. It is designed to speed up repetitive support work such as tracking questions, returns, exchanges, refunds, order changes, product questions, and support escalations without replacing the person responsible for customer care.
+RegardsKim helps Shopify merchants and VAs reduce support handling time by sorting Gmail support emails into ecommerce buckets, showing Shopify order context near the customer message, drafting Shopify-aware replies for review, and supporting saved replies before a human sends them. It is designed to speed up repetitive support work such as tracking questions, returns, exchanges, refunds, order changes, product questions, and support escalations without replacing the person responsible for customer care.
 
-For Shopify returns emails, RegardsKim helps merchants keep order context, policy details, saved replies, and reply improvement close to the Gmail conversation so return, exchange, damaged-item, and refund-timing questions can be answered faster while a human keeps the final say.
+For Shopify returns emails, RegardsKim helps merchants keep order context, policy details, saved replies, and AI reply drafting close to the Gmail conversation so return, exchange, damaged-item, and refund-timing questions can be answered faster while a human keeps the final say.

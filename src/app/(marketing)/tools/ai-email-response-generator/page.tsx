@@ -39,7 +39,7 @@ export default function AIEmailResponseGeneratorPage() {
       operatingSystem: "Web",
       url: absoluteUrl("/tools/ai-email-response-generator"),
       description:
-        "Generate useful customer support email responses for common ecommerce scenarios using structured templates.",
+        "Generate useful customer support email draft responses for common ecommerce and Shopify scenarios.",
       offers: {
         "@type": "Offer",
         price: "0",
@@ -83,7 +83,7 @@ export default function AIEmailResponseGeneratorPage() {
             </h1>
             <p className="mt-6 text-lg leading-8 text-slate">
               Need to answer support emails faster without sounding robotic? Paste the customer message,
-              choose the tone and scenario, and generate a polished reply you can send or adapt.
+              choose the tone and scenario, and generate a polished draft you can review, edit, and send.
             </p>
           </div>
 
