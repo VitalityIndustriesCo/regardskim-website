@@ -24,10 +24,10 @@ interface Props {
 }
 
 const MAX_MESSAGES = 20;
+const SUPPORT_EMAIL = "support@regardskim.com";
+const SUPPORT_MAILTO = `mailto:${SUPPORT_EMAIL}?subject=RegardsKim%20support`;
 const UNKNOWN_REPLY =
-  "I can help with pricing, setup, Shopify install, Gmail, security, or what happens after install. If you want a human, leave your email and we’ll follow up.";
-const EMAIL_PROMPT = "Want us to follow up? Leave your email.";
-const EMAIL_CONFIRMATION = "Thanks — we’ll be in touch soon.";
+  `I can help with pricing, setup, Shopify install, Gmail, security, or what happens after install. If you want a human, email ${SUPPORT_EMAIL} and we’ll help directly.`;
 
 const QUICK_QUESTIONS = [
   "How do I install on Shopify?",
@@ -40,7 +40,15 @@ function includesAny(text: string, terms: string[]) {
   return terms.some((term) => text.includes(term));
 }
 
-function buildReply(message: string): Omit<SalesChatMessage, "id" | "role"> & { needsEmailCapture: boolean } {
+function supportEmailReply(content: string): Omit<SalesChatMessage, "id" | "role"> {
+  return {
+    content,
+    actionLabel: "Email support",
+    actionUrl: SUPPORT_MAILTO,
+  };
+}
+
+function buildReply(message: string): Omit<SalesChatMessage, "id" | "role"> {
   const normalized = message.toLowerCase();
 
   if (includesAny(normalized, ["install", "shopify app", "app store", "get started", "start", "sign up", "signup"])) {
@@ -49,7 +57,6 @@ function buildReply(message: string): Omit<SalesChatMessage, "id" | "role"> & { 
         "Install RegardsKim from the Shopify App Store, approve the Shopify connection, then connect your support inbox. After that, Regards Kim starts sorting customer emails and matching Shopify context.",
       actionLabel: "Install on Shopify",
       actionUrl: SHOPIFY_APP_STORE_INSTALL_URL,
-      needsEmailCapture: false,
     };
   }
 
@@ -58,7 +65,6 @@ function buildReply(message: string): Omit<SalesChatMessage, "id" | "role"> & { 
       content: "$49/month with a 7-day free trial. Billing runs through Shopify, and you can cancel anytime.",
       actionLabel: "Install on Shopify",
       actionUrl: SHOPIFY_APP_STORE_INSTALL_URL,
-      needsEmailCapture: false,
     };
   }
 
@@ -67,7 +73,6 @@ function buildReply(message: string): Omit<SalesChatMessage, "id" | "role"> & { 
       content: "There’s a 7-day free trial. Billing is handled by Shopify, and you can cancel anytime from your Shopify admin.",
       actionLabel: "Start free trial",
       actionUrl: SHOPIFY_APP_STORE_INSTALL_URL,
-      needsEmailCapture: false,
     };
   }
 
@@ -75,7 +80,6 @@ function buildReply(message: string): Omit<SalesChatMessage, "id" | "role"> & { 
     return {
       content:
         "Setup is simple: connect Shopify, connect Gmail, and confirm your store policies. RegardsKim then gives you AI triage, Shopify context, saved replies, and reply helpers for tracking, returns, exchanges, order updates, and product questions.",
-      needsEmailCapture: false,
     };
   }
 
@@ -83,7 +87,6 @@ function buildReply(message: string): Omit<SalesChatMessage, "id" | "role"> & { 
     return {
       content:
         "RegardsKim is built for Shopify stores and connects to Gmail for your support inbox. It uses store context to organise support and help you reply faster.",
-      needsEmailCapture: false,
     };
   }
 
@@ -91,7 +94,6 @@ function buildReply(message: string): Omit<SalesChatMessage, "id" | "role"> & { 
     return {
       content:
         "You keep the final say. Regards Kim sorts the work, shows the order context, and gives AI reply help, but you decide what gets sent.",
-      needsEmailCapture: false,
     };
   }
 
@@ -99,7 +101,6 @@ function buildReply(message: string): Omit<SalesChatMessage, "id" | "role"> & { 
     return {
       content:
         "RegardsKim gives Shopify stores an AI-powered support inbox for repetitive customer emails: shipping questions, returns, exchanges, order updates, tracking info, sales questions, and product questions using your real store data.",
-      needsEmailCapture: false,
     };
   }
 
@@ -107,21 +108,14 @@ function buildReply(message: string): Omit<SalesChatMessage, "id" | "role"> & { 
     return {
       content:
         "RegardsKim only asks for the access needed to organise support, match Shopify context, and power reply helpers. Nothing is sent without your permission.",
-      needsEmailCapture: false,
     };
   }
 
   if (includesAny(normalized, ["human", "someone", "contact", "talk to sales", "talk to a person", "demo", "call"])) {
-    return {
-      content: "Sure — leave your email and we’ll follow up personally.",
-      needsEmailCapture: true,
-    };
+    return supportEmailReply(`Sure — email ${SUPPORT_EMAIL} and we’ll help personally.`);
   }
 
-  return {
-    content: UNKNOWN_REPLY,
-    needsEmailCapture: true,
-  };
+  return supportEmailReply(UNKNOWN_REPLY);
 }
 
 function SalesMessageBubble({ message }: { message: SalesChatMessage }) {
@@ -160,10 +154,7 @@ export function SalesChatPanel({ onClose }: Props) {
     },
   ]);
   const [input, setInput] = useState("");
-  const [email, setEmail] = useState("");
   const [isTyping, setIsTyping] = useState(false);
-  const [showEmailCapture, setShowEmailCapture] = useState(false);
-  const [emailSubmitted, setEmailSubmitted] = useState(false);
   const [limitNoticeShown, setLimitNoticeShown] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
 
@@ -171,7 +162,7 @@ export function SalesChatPanel({ onClose }: Props) {
     const node = scrollRef.current;
     if (!node) return;
     node.scrollTop = node.scrollHeight;
-  }, [messages, isTyping, showEmailCapture, emailSubmitted]);
+  }, [messages, isTyping]);
 
   const userMessageCount = useMemo(() => messages.filter((message) => message.role === "user").length, [messages]);
   const reachedLimit = userMessageCount >= MAX_MESSAGES;
@@ -188,10 +179,11 @@ export function SalesChatPanel({ onClose }: Props) {
           {
             id: crypto.randomUUID(),
             role: "assistant",
-            content: "This chat is capped at 20 messages per session. Leave your email and we’ll get back to you.",
+            content: `This chat is capped at 20 messages per session. Email ${SUPPORT_EMAIL} and we’ll help directly.`,
+            actionLabel: "Email support",
+            actionUrl: SUPPORT_MAILTO,
           },
         ]);
-        setShowEmailCapture(true);
         setLimitNoticeShown(true);
       }
       setInput("");
@@ -209,7 +201,7 @@ export function SalesChatPanel({ onClose }: Props) {
     setIsTyping(true);
 
     window.setTimeout(() => {
-      const { needsEmailCapture, ...reply } = buildReply(text);
+      const reply = buildReply(text);
 
       setMessages((prev) => [
         ...prev,
@@ -219,39 +211,8 @@ export function SalesChatPanel({ onClose }: Props) {
           ...reply,
         },
       ]);
-      setShowEmailCapture(needsEmailCapture);
-      if (!needsEmailCapture) {
-        setEmailSubmitted(false);
-      }
       setIsTyping(false);
     }, 250);
-  };
-
-  const submitEmail = async () => {
-    const trimmedEmail = email.trim();
-    if (!trimmedEmail) return;
-
-    try {
-      await fetch("/api/subscribe", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email: trimmedEmail, source: "sales-chat" }),
-      });
-    } catch {
-      // Keep the visitor experience smooth even if the lead capture backend is unavailable.
-    }
-
-    setEmail("");
-    setShowEmailCapture(false);
-    setEmailSubmitted(true);
-    setMessages((prev) => [
-      ...prev,
-      {
-        id: crypto.randomUUID(),
-        role: "assistant",
-        content: EMAIL_CONFIRMATION,
-      },
-    ]);
   };
 
   return (
@@ -296,28 +257,6 @@ export function SalesChatPanel({ onClose }: Props) {
             </div>
           )}
 
-          {showEmailCapture ? (
-            <div className="rounded-2xl border border-forest/10 bg-cream p-3 shadow-sm dark:bg-[#252E42]">
-              <p className="mb-2 text-sm font-medium text-ink">{EMAIL_PROMPT}</p>
-              <div className="flex flex-col gap-2 sm:flex-row">
-                <Input
-                  type="email"
-                  value={email}
-                  onChange={(event) => setEmail(event.target.value)}
-                  placeholder="you@example.com"
-                  className="h-11 rounded-xl border-forest/15 bg-paper"
-                />
-                <Button
-                  type="button"
-                  onClick={submitEmail}
-                  disabled={!email.trim()}
-                  className="h-11 rounded-xl bg-brass px-4 text-white hover:bg-oxblood sm:self-auto"
-                >
-                  Send
-                </Button>
-              </div>
-            </div>
-          ) : null}
         </div>
       </CardContent>
 
