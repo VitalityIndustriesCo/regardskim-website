@@ -13,6 +13,191 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "shopify-order-tracking-emails",
+    title: "Shopify Order Tracking Emails: What Customers Actually Need to Know",
+    date: "June 3, 2026",
+    image: "/blog/shopify-order-tracking-emails.png",
+    meta:
+      "Write clearer Shopify order tracking emails with the order status, tracking link, timing, and next step customers need.",
+    content: (
+      <>
+        <p>
+          Shopify order tracking emails work best when they answer four questions quickly: where the order is, what the
+          tracking link shows, when the customer should expect movement, and what to do if something looks wrong.
+        </p>
+        <p>
+          Most customers are not asking for a long explanation. They want reassurance that their order exists, that it is
+          moving, and that your store knows what to do if the carrier update looks confusing.
+        </p>
+        <p>
+          For small Shopify stores, tracking questions can become one of the biggest sources of repetitive support. The
+          answer is rarely complicated, but the same message gets written again and again across Gmail, Shopify, and
+          carrier tracking pages.
+        </p>
+        <p>
+          A clearer order tracking email saves time for the merchant and lowers anxiety for the customer. It also helps
+          reduce follow-up emails because the customer knows what happens next.
+        </p>
+
+        <h2>Start with the customer&apos;s order status</h2>
+        <p>
+          A good tracking reply should not start with a vague apology or a generic line about shipping delays. Start with
+          what you can confirm from Shopify.
+        </p>
+        <p>
+          The useful details are usually the order number, fulfilment status, shipping date, carrier, tracking link, and
+          any current tracking event. You do not need to include every field. You do need to make the status clear enough
+          that the customer does not have to guess.
+        </p>
+        <p>For example:</p>
+        <blockquote>
+          <p>
+            Thanks for checking in. I looked up order {"{{order_number}}"} and it has been fulfilled with {"{{carrier}}"}.
+            Your tracking link is here: {"{{tracking_link}}"}.
+          </p>
+        </blockquote>
+        <p>
+          That opening tells the customer the store has checked the real order, not just sent a canned answer.
+        </p>
+
+        <h2>Explain tracking delays before they create worry</h2>
+        <p>
+          Many tracking emails happen because the parcel is between steps. The label exists, but the carrier has not
+          scanned it yet. The parcel is moving, but the tracking page has not updated. The package reached a sorting
+          facility, but the next event has not appeared.
+        </p>
+        <p>
+          Customers often read that silence as a problem. Your reply should explain the normal delay in plain language.
+        </p>
+        <p>Use wording like:</p>
+        <blockquote>
+          <p>
+            Tracking can take 24 to 48 hours to update after the carrier receives or scans the parcel. If there is still
+            no movement after that window, reply here and we can take another look.
+          </p>
+        </blockquote>
+        <p>
+          This gives the customer a real timeframe and a next step. It is more useful than saying, &quot;Please be
+          patient,&quot; because it tells them when patience stops being the right answer.
+        </p>
+
+        <h2>Say what the customer should do next</h2>
+        <p>
+          Tracking replies often fail because they only send a link. A link is helpful, but it does not always answer the
+          customer&apos;s concern.
+        </p>
+        <p>
+          If the order is still processing, say when it is expected to ship. If the tracking link has not updated, say
+          when to check again. If the parcel is delayed, say whether the store is watching it or whether the customer
+          should contact you after a certain date.
+        </p>
+        <p>Useful next steps include:</p>
+        <ul>
+          <li>Check the tracking link again after 24 to 48 hours.</li>
+          <li>Reply if the tracking has not moved by a specific date.</li>
+          <li>Check safe places around the delivery address if it says delivered.</li>
+          <li>Confirm the shipping address if the carrier shows an exception.</li>
+          <li>Wait for the shipping confirmation email if the order is still being packed.</li>
+        </ul>
+        <p>
+          The more specific the next step, the less likely the customer is to send a second email asking what they should
+          do.
+        </p>
+
+        <h2>Use different replies for different tracking situations</h2>
+        <p>
+          One tracking template will not cover every case. A customer whose order has not shipped needs a different
+          answer from a customer whose parcel says delivered but cannot be found.
+        </p>
+        <p>Most Shopify stores need saved reply patterns for these common situations:</p>
+        <ul>
+          <li>Order is paid but not fulfilled yet.</li>
+          <li>Tracking label has been created but has not updated.</li>
+          <li>Parcel is in transit but delayed.</li>
+          <li>Parcel is marked delivered but the customer cannot find it.</li>
+          <li>Carrier shows an address issue or delivery exception.</li>
+        </ul>
+        <p>
+          Saved replies make these cases faster, but they should still be checked against the order. The guide to{" "}
+          <Link href="/blog/customer-service-email-templates-sound-human">
+            customer service email templates that still sound human
+          </Link>{" "}
+          covers how to keep templates flexible instead of robotic.
+        </p>
+
+        <h2>Keep the language calm and concrete</h2>
+        <p>
+          Customers often email about tracking when they feel uncertain. Overly casual replies can sound dismissive, and
+          overly formal replies can make a simple question feel like a claim process.
+        </p>
+        <p>
+          The safest tone is calm, clear, and specific. Avoid vague reassurance like &quot;It should arrive soon&quot; if
+          you can give a better answer from the tracking page.
+        </p>
+        <p>Better wording sounds like:</p>
+        <blockquote>
+          <p>
+            Your order is currently in transit. The latest carrier update shows it reached {"{{location}}"} on
+            {"{{date}}"}. The tracking link should show the next scan once the parcel moves to the next facility.
+          </p>
+        </blockquote>
+        <p>
+          That reply does not pretend you control the carrier. It simply shares the known facts and sets the right
+          expectation.
+        </p>
+
+        <h2>Make your post-purchase emails do some of the work</h2>
+        <p>
+          The best tracking support email is often the one the customer never has to send. If your order confirmation and
+          shipping emails are clear, many customers will answer their own question before contacting support.
+        </p>
+        <p>
+          Your order confirmation should explain your processing timeline. Your shipping confirmation should make the
+          tracking link obvious. If tracking often takes a day or two to update, say that in the shipping email.
+        </p>
+        <p>
+          For a broader prevention plan, read the guide to{" "}
+          <Link href="/blog/reduce-where-is-my-order-emails">
+            reducing &quot;Where is my order?&quot; emails in your Shopify store
+          </Link>
+          .
+        </p>
+
+        <h2>How RegardsKim helps with Shopify order tracking emails</h2>
+        <p>
+          RegardsKim is AI-powered customer support for Shopify stores. It is built for merchants using a Gmail-based
+          support workflow who want faster answers without moving into a heavy help desk.
+        </p>
+        <p>
+          For order tracking emails, RegardsKim can help sort repetitive tracking questions, bring Shopify order and
+          fulfilment context closer to the customer message, support saved replies, and prepare Shopify-aware draft
+          replies for a human to review.
+        </p>
+        <p>
+          The merchant keeps the final say. RegardsKim helps reduce searching, context switching, and rewriting around
+          the email. It does not need to turn tracking support into a fully autonomous process.
+        </p>
+        <p>
+          If repetitive customer emails are eating your week, RegardsKim gives your Shopify store AI-powered customer
+          support inside a Gmail-based workflow. Join the Founding 100 if you want early access at the founding price.
+        </p>
+
+        <h2>The best tracking email removes uncertainty</h2>
+        <p>
+          Order tracking support is not just about copying a carrier link. It is about helping the customer understand
+          what the link means and what should happen next.
+        </p>
+        <p>
+          Start with the real Shopify order status, explain normal tracking delays, give a clear next step, and use
+          different reply patterns for different situations. That is how tracking emails become faster for the merchant
+          and clearer for the customer.
+        </p>
+        <p>Kind regards, Kim</p>
+      </>
+    ),
+  },
+
+  {
     slug: "shopify-returns-emails-reply-faster",
     title: "Shopify Returns Emails: How to Reply Faster Without Sounding Robotic",
     date: "May 27, 2026",

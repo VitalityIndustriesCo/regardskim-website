@@ -7,6 +7,11 @@ import { blogPosts, getBlogPost } from "@/lib/blog-posts";
 import { absoluteUrl, siteConfig } from "@/lib/seo";
 
 const relatedPostsMap: Record<string, string[]> = {
+  "shopify-order-tracking-emails": [
+    "reduce-where-is-my-order-emails",
+    "shopify-returns-emails-reply-faster",
+    "customer-service-email-templates-sound-human",
+  ],
   "best-shopify-customer-service-apps-2026": [
     "automate-shopify-support-emails",
     "true-cost-of-shopify-customer-support",
@@ -43,9 +48,9 @@ const relatedPostsMap: Record<string, string[]> = {
     "automate-shopify-support-emails",
   ],
   "reduce-where-is-my-order-emails": [
+    "shopify-order-tracking-emails",
     "automate-shopify-support-emails",
     "customer-support-solo-shopify-founder",
-    "scale-customer-support-without-hiring",
   ],
   "scale-customer-support-without-hiring": [
     "customer-support-solo-shopify-founder",
