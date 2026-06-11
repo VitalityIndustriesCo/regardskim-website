@@ -1,6 +1,6 @@
 "use client";
 
-import { Check } from "lucide-react";
+import { Check, ShieldCheck } from "lucide-react";
 import FadeIn from "@/components/ui/FadeIn";
 import { SHOPIFY_APP_STORE_INSTALL_URL } from "@/lib/shopify-install";
 
@@ -13,6 +13,13 @@ const inclusions = [
   "You keep the final say of every message sent from Gmail",
 ];
 
+const reassurance = [
+  "7-day free trial",
+  "Billed through Shopify",
+  "Cancel anytime",
+  "No automatic customer replies",
+];
+
 export default function Pricing() {
   const price = 49;
   const period = "/month";
@@ -23,17 +30,19 @@ export default function Pricing() {
       <div className="section-shell text-center">
         <FadeIn>
           <h2 className="font-display font-bold text-4xl tracking-normal text-ink md:text-6xl">
-            Pricing
+            Simple pricing that only has to save one hour.
           </h2>
-          <p className="mt-4 text-base text-slate md:text-lg">
-            The AI customer support app for stores ready to draft better replies from real Shopify context.
+          <p className="mx-auto mt-4 max-w-2xl text-base leading-8 text-slate md:text-lg">
+            Regards Kim is for Shopify merchants who want a faster support inbox without hiring, migrating to a heavy
+            help desk, or letting AI send customer replies on its own.
           </p>
           <p className="mt-2 text-sm font-semibold uppercase tracking-[0.16em] text-brass">
-            Simple monthly pricing
+            If it saves one support hour a month, it pays for itself.
           </p>
         </FadeIn>
 
-        <FadeIn delay={0.06} className="mx-auto mt-10 w-full max-w-md rounded-[1.5rem] border border-slate/12 bg-white p-5 text-left shadow-[0_10px_28px_rgba(35,53,71,0.18),0_2px_6px_rgba(35,53,71,0.10)] dark:bg-[#1D2840] dark:border-slate/20 dark:shadow-[0_8px_40px_rgba(0,0,0,0.3),0_2px_6px_rgba(0,0,0,0.2)] md:rounded-[2rem] md:p-10">
+        <FadeIn delay={0.06} className="mx-auto mt-10 grid w-full max-w-5xl gap-6 text-left lg:grid-cols-[0.9fr_1.1fr]">
+          <div className="rounded-[1.5rem] border border-slate/12 bg-white p-5 shadow-[0_10px_28px_rgba(35,53,71,0.18),0_2px_6px_rgba(35,53,71,0.10)] dark:border-slate/20 dark:bg-[#1D2840] dark:shadow-[0_8px_40px_rgba(0,0,0,0.3),0_2px_6px_rgba(0,0,0,0.2)] md:rounded-[2rem] md:p-10">
           <p className="text-sm uppercase tracking-[0.16em] text-slate">Regards Kim</p>
           <div className="mt-4 flex items-end gap-2 text-ink">
             <span className="font-display font-bold text-5xl leading-none sm:text-6xl md:text-7xl">${price}</span>
@@ -57,11 +66,40 @@ export default function Pricing() {
           <a href={SHOPIFY_APP_STORE_INSTALL_URL} className="btn-primary mt-8 inline-flex w-full justify-center sm:w-auto">
             Install on Shopify
           </a>
+
+            <div className="mt-5 flex flex-wrap gap-2">
+              {reassurance.map((item) => (
+                <span key={item} className="rounded-full border border-[#E3D3C6] bg-[#FFF9F3] px-3 py-1.5 text-xs font-bold text-slate dark:border-slate/15 dark:bg-[#20283A]">
+                  {item}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <div className="rounded-[1.5rem] border border-brass/20 bg-white p-5 shadow-[0_8px_22px_rgba(35,53,71,0.13),0_2px_5px_rgba(35,53,71,0.08)] dark:border-slate/20 dark:bg-[#1D2840] md:rounded-[2rem] md:p-8">
+            <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-brass/10 text-brass">
+              <ShieldCheck size={24} />
+            </div>
+            <h3 className="mt-5 font-display text-3xl font-bold text-ink">What you are paying for</h3>
+            <div className="mt-5 space-y-4 text-sm leading-7 text-slate md:text-base">
+              <p>
+                The expensive part of support is not the reply box. It is finding the order, checking tracking,
+                remembering the policy, deciding what matters, and writing a clear customer response.
+              </p>
+              <p>
+                Regards Kim removes that repeated searching and rewriting. Your existing Gmail workflow stays in place,
+                and your team keeps control of every message that leaves the inbox.
+              </p>
+              <p className="font-semibold text-ink">
+                For a busy founder or small team, one saved hour a month is enough to justify the plan.
+              </p>
+            </div>
+          </div>
         </FadeIn>
 
         <FadeIn delay={0.09}>
           <p className="mt-6 text-sm font-semibold uppercase tracking-[0.16em] text-slate">
-            Starting with a 7-day free trial
+            Start with a 7-day free trial. Keep it only if it makes support lighter.
           </p>
         </FadeIn>
       </div>

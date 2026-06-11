@@ -9,9 +9,9 @@ const navLinks = [
   { href: "/#how-it-works", label: "How it works" },
   { href: "/#pricing", label: "Pricing" },
   { href: "/#compare", label: "Compare" },
+  { href: "/security", label: "Security" },
   { href: "/#faq", label: "FAQ" },
   { href: "/about", label: "About" },
-  { href: "/affiliate", label: "Affiliate" },
   { href: "/blog", label: "Blog" },
 ];
 
@@ -56,11 +56,11 @@ export default function Navbar() {
         }`}
       >
         <nav className="section-shell flex h-20 items-center justify-between" aria-label="Primary">
-          <Link href="/" className="font-display text-3xl font-extrabold tracking-tight text-ink">
+          <Link href="/" className="font-display text-2xl font-extrabold tracking-normal text-ink lg:text-3xl">
             Regards Kim
           </Link>
 
-          <div className="hidden items-center gap-8 text-sm font-semibold text-slate md:flex">
+          <div className="hidden items-center gap-5 text-sm font-semibold text-slate lg:gap-7 md:flex">
             {navLinks.map((link) => (
               <Link key={link.href} href={link.href} className="transition-colors hover:text-ink">
                 {link.label}
@@ -69,14 +69,15 @@ export default function Navbar() {
           </div>
 
           <div className="hidden items-center gap-4 md:flex">
-            <ThemeToggle />
+            <div className="hidden lg:block">
+              <ThemeToggle />
+            </div>
             <Link href={SHOPIFY_APP_STORE_INSTALL_URL} className="btn-primary">
               Install on Shopify
             </Link>
           </div>
 
           <div className="flex items-center gap-2 md:hidden">
-            <ThemeToggle />
           <button
             type="button"
             className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate/15 bg-white dark:bg-[#1D2840] text-ink transition-all duration-200 hover:border-brass/40 hover:bg-[#FFF0ED] dark:hover:bg-[#1E293B] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brass focus-visible:ring-offset-2"
@@ -150,6 +151,7 @@ export default function Navbar() {
           </div>
 
           <div className="mt-8 flex flex-col gap-3 border-t border-slate/10 pt-6">
+            <ThemeToggle />
             <Link href={SHOPIFY_APP_STORE_INSTALL_URL} className="btn-primary w-full" onClick={closeMobileMenu}>
               Install on Shopify
             </Link>

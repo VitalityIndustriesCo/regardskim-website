@@ -15,6 +15,26 @@ export const faqItems: FAQItem[] = [
       "No. You keep the final say of what leaves your inbox. Regards Kim helps organise the work, surface the right context, draft or improve replies, and speed up sending from Gmail.",
   },
   {
+    question: "Does Regards Kim replace our team?",
+    answer:
+      "No. It assists the person handling support. Regards Kim gathers context, sorts the inbox, and prepares drafts so founders, VAs, or support teams can reply faster with better information.",
+  },
+  {
+    question: "Is it safe to use with customer emails?",
+    answer:
+      "Regards Kim is built around human approval and customer-data minimisation. It uses the email and Shopify context needed to help with support, but it does not send customer replies without you and does not sell customer communication data.",
+  },
+  {
+    question: "What happens if an AI draft is wrong?",
+    answer:
+      "You review every draft before it is sent. If the wording is not right, edit it, improve it, use a saved reply, or write your own response. The product is designed to speed up support, not remove judgment.",
+  },
+  {
+    question: "Do we have to move away from Gmail?",
+    answer:
+      "No. Regards Kim is built for Shopify merchants who already use Gmail for support. The goal is to keep your existing inbox workflow while adding Shopify context, triage, and drafting help.",
+  },
+  {
     question: "What kinds of emails can Regards Kim help with?",
     answer:
       "It helps with tracking questions, refunds and exchanges, order changes, shipping address issues, product questions, sales questions, complaints, and messages that need no reply.",
@@ -36,7 +56,7 @@ export const faqItems: FAQItem[] = [
   },
   {
     question: "How much does it cost?",
-    answer: "There is one plan: $49 per month.",
+    answer: "There is one plan: $49 per month, billed through Shopify. If it saves one support hour a month, it has likely paid for itself.",
   },
   {
     question: "Who is Regards Kim best for?",

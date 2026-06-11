@@ -3,7 +3,14 @@ import FAQ from "@/components/sections/FAQ";
 import GettingStarted from "@/components/sections/GettingStarted";
 import Pricing from "@/components/sections/Pricing";
 import { faqItems } from "@/lib/faq-data";
-import { absoluteUrl, siteConfig } from "@/lib/seo";
+import { absoluteUrl, marketingMetadata, siteConfig } from "@/lib/seo";
+
+export const metadata = marketingMetadata({
+  title: "Pricing - Regards Kim",
+  description:
+    "Regards Kim is $49/month for Shopify email support with Gmail triage, Shopify order context, AI-drafted replies, and human approval before sending.",
+  path: "/pricing",
+});
 
 export default function PricingPage() {
   const softwareApplicationSchema = {

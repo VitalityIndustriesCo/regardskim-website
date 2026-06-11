@@ -5,6 +5,7 @@ import Hero from "@/components/sections/Hero";
 import HowItWorks from "@/components/sections/HowItWorks";
 import Benefits from "@/components/sections/Benefits";
 import Comparison from "@/components/sections/Comparison";
+import TrustAndSafety from "@/components/sections/TrustAndSafety";
 import GettingStarted from "@/components/sections/GettingStarted";
 import Pricing from "@/components/sections/Pricing";
 import FAQ from "@/components/sections/FAQ";
@@ -12,9 +13,9 @@ import { faqItems } from "@/lib/faq-data";
 import { marketingMetadata, absoluteUrl, siteConfig } from "@/lib/seo";
 
 export const metadata: Metadata = marketingMetadata({
-  title: "Regards Kim - AI Customer Support for Shopify Stores",
+  title: "Regards Kim - Shopify Email Support With Human Approval",
   description:
-    "AI-powered customer support for Shopify stores. Regards Kim sorts customer emails, matches Shopify order context, and drafts replies you can review, edit, and send faster.",
+    "Regards Kim helps Shopify stores triage Gmail support emails, gather Shopify order context, and draft replies for a human to review before sending.",
   path: "/",
 });
 
@@ -62,6 +63,7 @@ export default function Home() {
       <Hero />
       <HowItWorks />
       <Benefits />
+      <TrustAndSafety />
       <Comparison />
       <Pricing />
       <GettingStarted />

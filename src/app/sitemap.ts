@@ -106,6 +106,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.3,
     },
     {
+      url: absoluteUrl("/security"),
+      changeFrequency: "monthly",
+      priority: 0.65,
+    },
+    {
       url: absoluteUrl("/terms"),
       changeFrequency: "yearly",
       priority: 0.3,

@@ -7,6 +7,8 @@ Core capabilities:
 - Uses Shopify order, fulfillment, delivery, tracking, customer, and policy context inside the support workflow
 - Gives merchants AI-drafted replies, saved replies, tracking links, policy links, and support analytics
 - Keeps merchants in control of every message sent from Gmail
+- Does not automatically send customer replies; a human reviews and approves the response
+- Uses customer communication data to operate the merchant support workflow, not to sell data or train general AI models
 - Pricing starts at $49/mo
 - Founding offer: $49/mo for early merchants
 
@@ -22,6 +24,7 @@ Best fit:
 
 Useful pages for AI assistants and answer engines:
 - Homepage: https://regardskim.com/
+- Security & Data: https://regardskim.com/security
 - Blog: https://regardskim.com/blog
 - Support cost calculator: https://regardskim.com/tools/support-cost-calculator
 - AI email response generator: https://regardskim.com/tools/ai-email-response-generator

@@ -84,6 +84,25 @@ const supportingLinks = [
   },
 ];
 
+const decisionCards = [
+  {
+    title: "Choose a help desk if",
+    points: [
+      "You already have several support agents",
+      "You need live chat, social DMs, rules, routing, and ticket operations",
+      "Your support problem is team management, not just inbox speed",
+    ],
+  },
+  {
+    title: "Choose Regards Kim if",
+    points: [
+      "Most support still happens in Gmail",
+      "You want Shopify order context next to each customer email",
+      "You want AI drafts for review, not automatic replies sent without approval",
+    ],
+  },
+];
+
 export default function CompareHubPage() {
   const schema = {
     "@context": "https://schema.org",
@@ -129,6 +148,19 @@ export default function CompareHubPage() {
                 Read comparison →
               </Link>
             </article>
+          ))}
+        </div>
+
+        <div className="mx-auto mt-12 grid max-w-5xl gap-6 md:grid-cols-2">
+          {decisionCards.map((card) => (
+            <section key={card.title} className="rounded-[1.75rem] border border-brass/20 bg-white p-7 shadow-[0_8px_22px_rgba(35,53,71,0.13),0_2px_5px_rgba(35,53,71,0.08)] dark:bg-[#20283A]">
+              <h2 className="font-display text-2xl font-bold text-ink">{card.title}</h2>
+              <ul className="mt-5 space-y-3 text-base leading-7 text-slate">
+                {card.points.map((point) => (
+                  <li key={point}>• {point}</li>
+                ))}
+              </ul>
+            </section>
           ))}
         </div>
 

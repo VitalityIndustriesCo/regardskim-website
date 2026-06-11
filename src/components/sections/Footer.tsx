@@ -52,6 +52,7 @@ const secondaryColumns = [
     title: "Company",
     links: [
       { href: "/privacy", label: "Privacy Policy" },
+      { href: "/security", label: "Security & Data" },
       { href: "/terms", label: "Terms of Service" },
       { href: "/affiliate", label: "Affiliate Program" },
     ],
@@ -100,7 +101,7 @@ export default function Footer() {
           <div>
             <p className="font-display text-2xl font-bold text-ink">RegardsKim</p>
             <p className="mt-3 max-w-sm text-sm leading-6 text-slate-600 dark:text-white/80">
-              AI-powered customer support for Shopify stores.
+              AI-powered customer support for Shopify stores, with every customer reply reviewed by a human before it is sent.
             </p>
 
             <form onSubmit={handleSubscribe} className="mt-6 max-w-sm">

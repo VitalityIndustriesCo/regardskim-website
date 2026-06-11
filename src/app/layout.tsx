@@ -21,11 +21,11 @@ const geistMono = localFont({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: "Regards Kim - AI Customer Support for Shopify Stores",
+    default: "Regards Kim - Shopify Email Support With Human Approval",
     template: "%s | RegardsKim",
   },
   description:
-    "Regards Kim gives Shopify stores AI-powered customer support: email triage, Shopify order context, AI-drafted replies, and support analytics for $49/mo.",
+    "Regards Kim helps Shopify stores triage Gmail support emails, gather Shopify order context, and draft replies for a human to review before sending.",
   applicationName: siteConfig.name,
   keywords: [
     "Shopify customer support",
@@ -38,8 +38,8 @@ export const metadata: Metadata = {
     canonical: siteConfig.url,
   },
   openGraph: {
-    title: "Regards Kim - AI Customer Support for Shopify Stores",
-    description: "Regards Kim gives Shopify stores AI-powered customer support: email triage, Shopify order context, AI-drafted replies, and support analytics for $49/mo.",
+    title: "Regards Kim - Shopify Email Support With Human Approval",
+    description: "Regards Kim helps Shopify stores triage Gmail support emails, gather Shopify order context, and draft replies for a human to review before sending.",
     url: siteConfig.url,
     siteName: siteConfig.name,
     images: [
@@ -52,8 +52,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Regards Kim - AI Customer Support for Shopify Stores",
-    description: "Regards Kim gives Shopify stores AI-powered customer support: email triage, Shopify order context, AI-drafted replies, and support analytics for $49/mo.",
+    title: "Regards Kim - Shopify Email Support With Human Approval",
+    description: "Regards Kim helps Shopify stores triage Gmail support emails, gather Shopify order context, and draft replies for a human to review before sending.",
     images: [absoluteUrl(siteConfig.ogImage)],
   },
 };
