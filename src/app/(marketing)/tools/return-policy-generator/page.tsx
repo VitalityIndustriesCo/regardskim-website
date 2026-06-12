@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 
 import StructuredData from "@/components/seo/StructuredData";
 import FinalCTA from "@/components/sections/FinalCTA";
+import ToolEmailCapture from "@/components/ui/ToolEmailCapture";
 import { absoluteUrl, siteConfig } from "@/lib/seo";
 
 import ReturnPolicyGeneratorClient from "./ReturnPolicyGeneratorClient";
@@ -105,6 +106,9 @@ export default function ReturnPolicyGeneratorPage() {
         </div>
       </section>
 
+      <div className="section-shell pb-4">
+        <ToolEmailCapture />
+      </div>
       <FinalCTA />
     </main>
   );

@@ -7,6 +7,7 @@ import { SHOPIFY_APP_STORE_INSTALL_URL } from "@/lib/shopify-install";
 
 const navLinks = [
   { href: "/#how-it-works", label: "How it works" },
+  { href: "/demo", label: "Demo" },
   { href: "/#pricing", label: "Pricing" },
   { href: "/#compare", label: "Compare" },
   { href: "/security", label: "Security" },

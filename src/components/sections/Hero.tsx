@@ -32,8 +32,8 @@ export default function Hero() {
               <a href={SHOPIFY_APP_STORE_INSTALL_URL} className="btn-primary">
                 Install on Shopify
               </a>
-              <Link href="/#how-it-works" className="btn-secondary">
-                See how it works
+              <Link href="/demo" className="btn-secondary">
+                Watch the demo
               </Link>
             </div>
 

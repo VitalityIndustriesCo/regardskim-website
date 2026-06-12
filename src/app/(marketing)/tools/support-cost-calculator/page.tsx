@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import StructuredData from "@/components/seo/StructuredData";
 import FinalCTA from "@/components/sections/FinalCTA";
+import ToolEmailCapture from "@/components/ui/ToolEmailCapture";
 import { absoluteUrl, siteConfig } from "@/lib/seo";
 
 import SupportCostCalculatorClient from "./SupportCostCalculatorClient";
@@ -113,6 +114,9 @@ export default function SupportCostCalculatorPage() {
         </div>
       </section>
 
+      <div className="section-shell pb-4">
+        <ToolEmailCapture />
+      </div>
       <FinalCTA />
     </main>
   );

@@ -11,6 +11,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
+      url: absoluteUrl("/demo"),
+      changeFrequency: "monthly",
+      priority: 0.85,
+    },
+    {
       url: absoluteUrl("/about"),
       changeFrequency: "monthly",
       priority: 0.7,
