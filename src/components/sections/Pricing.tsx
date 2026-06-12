@@ -30,11 +30,11 @@ export default function Pricing() {
       <div className="section-shell text-center">
         <FadeIn>
           <h2 className="font-display font-bold text-4xl tracking-normal text-ink md:text-6xl">
-            One plan. Less than an hour of a VA.
+            One plan. A fraction of your first support hire.
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-base leading-8 text-slate md:text-lg">
-            A VA costs $800+ a month. Your own time costs more. Regards Kim is $49 — working the moment you connect,
-            and it never calls in sick.
+            A part-time VA starts around $800 a month. Your own time costs more than you think. Regards Kim is $49 —
+            working the moment you connect, and it never calls in sick.
           </p>
         </FadeIn>
 

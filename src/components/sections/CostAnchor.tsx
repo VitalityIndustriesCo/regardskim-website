@@ -11,9 +11,9 @@ const options = [
     highlight: false,
   },
   {
-    title: "Hiring a VA",
+    title: "A part-time VA",
     cost: "$800+/mo",
-    body: "Plus hiring, training, management, and time-zone gaps. Worth it eventually — but a big step while support is still mostly repetitive email.",
+    body: "Roughly 20 hours a week at typical VA rates — plus hiring, training, management, and time-zone gaps. Worth it eventually, but a big step while support is still mostly repetitive email.",
     icon: Users,
     highlight: false,
   },
