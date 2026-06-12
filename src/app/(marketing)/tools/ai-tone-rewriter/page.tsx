@@ -8,7 +8,7 @@ import { absoluteUrl, siteConfig } from "@/lib/seo";
 import AIToneRewriterClient from "./AIToneRewriterClient";
 
 export const metadata: Metadata = {
-  title: "AI Tone Rewriter for Support Emails | RegardsKim",
+  title: "AI Tone Rewriter for Support Emails",
   description:
     "Rewrite customer support drafts to sound more friendly, professional, apologetic, concise, or empathetic.",
   alternates: {

@@ -8,7 +8,7 @@ import { absoluteUrl, siteConfig } from "@/lib/seo";
 import CSEmailTemplatesClient from "./CSEmailTemplatesClient";
 
 export const metadata: Metadata = {
-  title: "Customer Service Email Templates | RegardsKim",
+  title: "Customer Service Email Templates",
   description:
     "Browse free customer service email templates for shipping, returns, refunds, order changes, apologies, follow-ups, and AI drafting prompts.",
   alternates: {

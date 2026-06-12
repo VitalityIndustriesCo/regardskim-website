@@ -8,7 +8,7 @@ import { absoluteUrl, siteConfig } from "@/lib/seo";
 import AIEmailResponseGeneratorClient from "./AIEmailResponseGeneratorClient";
 
 export const metadata: Metadata = {
-  title: "AI Email Response Generator for Customer Support | RegardsKim",
+  title: "AI Email Response Generator for Customer Support",
   description:
     "Generate polished customer service email replies for shipping delays, refunds, exchanges, and more with this free template-based tool.",
   alternates: {

@@ -6,7 +6,7 @@ import { faqItems } from "@/lib/faq-data";
 import { absoluteUrl, marketingMetadata, siteConfig } from "@/lib/seo";
 
 export const metadata = marketingMetadata({
-  title: "Pricing - Regards Kim",
+  title: "Pricing",
   description:
     "Regards Kim is $49/month for Shopify email support with Gmail triage, Shopify order context, AI-drafted replies, and human approval before sending.",
   path: "/pricing",

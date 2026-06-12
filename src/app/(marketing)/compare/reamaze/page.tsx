@@ -8,7 +8,7 @@ import { SHOPIFY_APP_STORE_INSTALL_URL } from "@/lib/shopify-install";
 export const metadata: Metadata = marketingMetadata({
   title: "RegardsKim vs Reamaze",
   description:
-    "Compare RegardsKim and Reamaze for ecommerce support. See where Reamaze is stronger as a help desk and where RegardsKim wins on focus, speed, and AI customer support.",
+    "Compare RegardsKim and Reamaze for ecommerce support. See where Reamaze is stronger as a help desk and where RegardsKim wins on focus and speed.",
   path: "/compare/reamaze",
 });
 

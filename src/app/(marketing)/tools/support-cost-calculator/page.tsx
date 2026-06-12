@@ -9,7 +9,7 @@ import { absoluteUrl, siteConfig } from "@/lib/seo";
 import SupportCostCalculatorClient from "./SupportCostCalculatorClient";
 
 export const metadata: Metadata = {
-  title: "Shopify Support Cost Calculator | RegardsKim",
+  title: "Shopify Support Cost Calculator",
   description:
     "Estimate how much customer support is costing your Shopify store each month, then compare it with RegardsKim at $49/month.",
   alternates: {

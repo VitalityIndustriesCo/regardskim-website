@@ -7,7 +7,7 @@ import FinalCTA from "@/components/sections/FinalCTA";
 import { absoluteUrl, marketingMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = marketingMetadata({
-  title: "Security & Data - Regards Kim",
+  title: "Security & Data",
   description:
     "How Regards Kim handles Gmail access, Shopify permissions, customer communications, AI drafts, and human approval for Shopify support teams.",
   path: "/security",

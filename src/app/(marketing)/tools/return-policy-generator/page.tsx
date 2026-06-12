@@ -8,7 +8,7 @@ import { absoluteUrl, siteConfig } from "@/lib/seo";
 import ReturnPolicyGeneratorClient from "./ReturnPolicyGeneratorClient";
 
 export const metadata: Metadata = {
-  title: "Return & Refund Policy Generator | RegardsKim",
+  title: "Return & Refund Policy Generator",
   description:
     "Create a clean return and refund policy for your store with this free generator for ecommerce brands.",
   alternates: {
