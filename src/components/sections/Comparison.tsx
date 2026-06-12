@@ -1,35 +1,16 @@
 import { Check, X } from "lucide-react";
 import FadeIn from "@/components/ui/FadeIn";
-
-const genericToolPoints = [
-  "Built for every inbox, not ecommerce",
-  "Can't access your order or tracking data",
-  "Doesn't know your store policies",
-  "Gives generic answers without support context",
-  "No understanding of ecommerce support patterns",
-];
-
-const kimPoints = [
-  "Built specifically for Shopify stores",
-  "Connects support conversations to orders, tracking, and products",
-  "Uses your actual store policies and saved replies",
-  "Drafts Shopify-aware replies inside your normal workflow",
-  "Understands WISMO, returns, exchanges, order changes, and escalations",
-];
-
-const customerEmail =
-  '"Hi, just checking on order #4721 — the tracking link hasn\'t updated in three days. Has it actually shipped?"';
-
-const genericReply =
-  "Hi there, thanks for reaching out. I'm sorry for the confusion. Shipping updates can sometimes take a little longer than expected. Please keep an eye on your tracking link, and if it still doesn't update soon, contact the shipping carrier or reply here for further help.";
+import { enHomeCopy } from "@/lib/i18n/home/en";
+import type { HomeCopy } from "@/lib/i18n/types";
 
 type ComparisonCardProps = {
   title: string;
   items: string[];
   tone: "generic" | "kim";
+  badge: string;
 };
 
-function ComparisonCard({ title, items, tone }: ComparisonCardProps) {
+function ComparisonCard({ title, items, tone, badge }: ComparisonCardProps) {
   const isKim = tone === "kim";
   const Icon = isKim ? Check : X;
 
@@ -50,7 +31,7 @@ function ComparisonCard({ title, items, tone }: ComparisonCardProps) {
             isKim ? "bg-brass/15 text-brass" : "bg-slate/10 text-slate",
           ].join(" ")}
         >
-          {isKim ? "Built for ecommerce" : "One-size-fits-all"}
+          {badge}
         </span>
       </div>
 
@@ -79,9 +60,10 @@ type ReplyCardProps = {
   label: string;
   body: string;
   tone: "generic" | "kim";
+  copy: HomeCopy["comparison"];
 };
 
-function ReplyCard({ label, body, tone }: ReplyCardProps) {
+function ReplyCard({ label, body, tone, copy }: ReplyCardProps) {
   const isKim = tone === "kim";
 
   if (!isKim) {
@@ -104,7 +86,7 @@ function ReplyCard({ label, body, tone }: ReplyCardProps) {
           {label}
         </span>
         <span className="rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700 dark:border-emerald-800 dark:bg-emerald-950 dark:text-emerald-400">
-          AI-drafted reply
+          {copy.draftedReplyLabel}
         </span>
       </div>
 
@@ -112,29 +94,29 @@ function ReplyCard({ label, body, tone }: ReplyCardProps) {
       <div className="mt-5 rounded-[1.25rem] border border-slate/10 bg-[#F5F0EB] p-5 md:p-6 dark:bg-[#111625] dark:border-slate/15">
         <div className="space-y-3 text-sm md:text-[0.95rem]">
           <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:gap-3">
-            <span className="text-xs font-semibold uppercase tracking-[0.14em] text-slate">To</span>
-            <span className="font-medium text-ink">Sarah M.</span>
+            <span className="text-xs font-semibold uppercase tracking-[0.14em] text-slate">{copy.replyToLabel}</span>
+            <span className="font-medium text-ink">{copy.replyRecipient}</span>
           </div>
           <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:gap-3">
-            <span className="text-xs font-semibold uppercase tracking-[0.14em] text-slate">Subject</span>
-            <span className="font-medium text-ink">Re: Order #4721 - Shipping Update</span>
+            <span className="text-xs font-semibold uppercase tracking-[0.14em] text-slate">{copy.replySubjectLabel}</span>
+            <span className="font-medium text-ink">{copy.replySubject}</span>
           </div>
         </div>
 
         <div className="my-5 h-px bg-slate/10" />
 
         <div className="space-y-4 text-sm leading-7 text-ink md:text-base">
-          <p>Hey Sarah, thanks for checking in.</p>
-          <p>I looked up order #4721 — it was dispatched from our warehouse on March 29 via Australia Post. Tracking is currently showing <span className="font-medium">&ldquo;label created&rdquo;</span>, which means the carrier hasn&apos;t scanned it yet. This usually updates within 24–48 hours, but three days is longer than expected.</p>
-          <p>I&apos;ll keep an eye on it from our side — if it hasn&apos;t moved by tomorrow afternoon, I&apos;ll follow up with the carrier directly and let you know.</p>
+          {copy.productReplyParagraphs.map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
+          ))}
 
           <span className="inline-flex items-center rounded-full border border-brass/30 bg-brass/10 px-4 py-2 text-sm font-semibold text-brass">
-            View tracking →
+            {copy.trackingCta}
           </span>
 
           <div className="pt-2 text-ink">
-            <p>Kind regards,</p>
-            <p className="font-medium">Kim</p>
+            <p>{copy.signoffLineOne}</p>
+            <p className="font-medium">{copy.signoffName}</p>
           </div>
         </div>
       </div>
@@ -142,44 +124,48 @@ function ReplyCard({ label, body, tone }: ReplyCardProps) {
   );
 }
 
-export default function Comparison() {
+type ComparisonProps = {
+  copy?: HomeCopy["comparison"];
+};
+
+export default function Comparison({ copy = enHomeCopy.comparison }: ComparisonProps) {
   return (
     <section id="compare" className="bg-paper py-16 md:py-24">
       <div className="section-shell">
         <FadeIn>
           <div className="mx-auto max-w-3xl text-center">
-            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-brass">See the difference</p>
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-brass">{copy.eyebrow}</p>
             <h2 className="mt-3 font-display text-4xl font-bold tracking-normal text-ink md:text-5xl">
-              Regards Kim knows your store.
+              {copy.heading}
             </h2>
             <p className="mt-4 text-base text-slate md:text-lg">
-              Same customer question. Very different level of control.
+              {copy.subheading}
             </p>
           </div>
         </FadeIn>
 
         <div className="mt-10 grid gap-6 lg:grid-cols-2">
           <FadeIn delay={0.04}>
-            <ComparisonCard title="Generic AI email tools" items={genericToolPoints} tone="generic" />
+            <ComparisonCard title={copy.genericTitle} items={copy.genericPoints} tone="generic" badge={copy.genericBadge} />
           </FadeIn>
           <FadeIn delay={0.08}>
-            <ComparisonCard title="Regards Kim" items={kimPoints} tone="kim" />
+            <ComparisonCard title={copy.productTitle} items={copy.productPoints} tone="kim" badge={copy.productBadge} />
           </FadeIn>
         </div>
 
         <FadeIn delay={0.12}>
           <div className="mx-auto mt-10 max-w-4xl rounded-[1.75rem] border border-slate/12 bg-white px-6 py-5 text-center shadow-[0_8px_22px_rgba(35,53,71,0.13),0_2px_5px_rgba(35,53,71,0.08)] dark:bg-[#20283A] dark:shadow-[0_4px_20px_rgba(0,0,0,0.24)] md:px-8 md:py-6">
-            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate">Customer email</p>
-            <p className="mt-3 text-base leading-7 text-ink md:text-lg">{customerEmail}</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate">{copy.customerEmailLabel}</p>
+            <p className="mt-3 text-base leading-7 text-ink md:text-lg">{copy.customerEmail}</p>
           </div>
         </FadeIn>
 
         <div className="mt-6 grid gap-6 lg:grid-cols-2">
           <FadeIn delay={0.16}>
-            <ReplyCard label="Generic AI" body={genericReply} tone="generic" />
+            <ReplyCard label={copy.genericReplyLabel} body={copy.genericReply} tone="generic" copy={copy} />
           </FadeIn>
           <FadeIn delay={0.2}>
-            <ReplyCard label="Regards Kim" body="" tone="kim" />
+            <ReplyCard label={copy.productReplyLabel} body="" tone="kim" copy={copy} />
           </FadeIn>
         </div>
       </div>

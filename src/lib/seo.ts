@@ -18,11 +18,15 @@ export function marketingMetadata({
   description,
   path = "/",
   image = siteConfig.ogImage,
+  languages,
+  locale = "en_AU",
 }: {
   title: string;
   description: string;
   path?: string;
   image?: string;
+  languages?: Record<string, string>;
+  locale?: string;
 }): Metadata {
   const url = absoluteUrl(path);
 
@@ -31,6 +35,7 @@ export function marketingMetadata({
     description,
     alternates: {
       canonical: url,
+      languages,
     },
     openGraph: {
       title,
@@ -42,7 +47,7 @@ export function marketingMetadata({
           url: absoluteUrl(image),
         },
       ],
-      locale: "en_AU",
+      locale,
       type: "website",
     },
     twitter: {

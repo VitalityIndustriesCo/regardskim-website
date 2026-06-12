@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 
 import { blogPosts } from "@/lib/blog-posts";
+import { locales } from "@/lib/i18n/home";
 import { absoluteUrl } from "@/lib/seo";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -128,5 +129,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  return [...staticRoutes, ...blogRoutes];
+  const localeRoutes: MetadataRoute.Sitemap = locales.map((locale) => ({
+    url: absoluteUrl(`/${locale}`),
+    changeFrequency: "weekly",
+    priority: 0.9,
+  }));
+
+  return [...staticRoutes, ...localeRoutes, ...blogRoutes];
 }

@@ -1,47 +1,22 @@
 import Image from "next/image";
 import FadeIn from "@/components/ui/FadeIn";
+import { enHomeCopy } from "@/lib/i18n/home/en";
+import type { HomeCopy } from "@/lib/i18n/types";
 
-const steps = [
-  {
-    number: "01",
-    title: "Connect Gmail and Shopify",
-    body: "Two minutes to connect. Regards Kim starts sorting customer emails by issue and filtering out the junk — sales pitches, notifications, and bounces never touch your queue.",
-    image: "/images/how-it-works/step-1-inbox.png",
-    alt: "Regards Kim inbox sorting customer emails: a tracking question, a return, an order change, and a newsletter marked no reply needed",
-    width: 860,
-    height: 728,
-  },
-  {
-    number: "02",
-    title: "Every email arrives with its order attached",
-    body: "Order, delivery status, tracking links, policy links, and customer details sit beside the conversation. No more hunting through tabs.",
-    image: "/images/how-it-works/step-2-context.png",
-    alt: "A customer email asking where their order is, automatically matched to Shopify order 1842 with fulfillment status, carrier, and tracking number",
-    width: 1748,
-    height: 530,
-  },
-  {
-    number: "03",
-    title: "Click Suggest reply — the draft is written",
-    body: "One click, and Regards Kim writes a reply grounded in the real order — not guesswork. It never drafts or sends anything without you asking. Edit it, or just press send from Gmail.",
-    video: {
-      mp4: "/media/step3-loop.mp4",
-      ariaLabel:
-        "The merchant clicks Suggest reply, Regards Kim reads the matched Shopify order, and a friendly draft with the real tracking number types out, ready to review, edit, or send",
-    },
-  },
-];
+type HowItWorksProps = {
+  copy?: HomeCopy["howItWorks"];
+};
 
-export default function HowItWorks() {
+export default function HowItWorks({ copy = enHomeCopy.howItWorks }: HowItWorksProps) {
   return (
     <section id="how-it-works" className="bg-[#FFF9F3] py-16 md:py-24 dark:bg-[#090C14]">
       <div className="section-shell">
         <FadeIn className="mx-auto max-w-5xl text-center">
-          <p className="font-display text-5xl font-extrabold tracking-tight text-brass md:text-7xl">How it works</p>
+          <p className="font-display text-5xl font-extrabold tracking-tight text-brass md:text-7xl">{copy.heading}</p>
         </FadeIn>
 
         <div className="mt-10 space-y-6 md:mt-14 md:space-y-8">
-          {steps.map((step, idx) => (
+          {copy.steps.map((step, idx) => (
             <FadeIn key={step.number} delay={idx * 0.06}>
               <article className="rounded-[2rem] border border-[#E3D3C6] bg-white p-4 shadow-[0_14px_32px_rgba(35,53,71,0.18),0_3px_8px_rgba(35,53,71,0.10)] dark:border-slate/15 dark:bg-[#20283A] dark:shadow-[0_16px_44px_rgba(0,0,0,0.28),0_1px_4px_rgba(0,0,0,0.18)] sm:p-5 md:rounded-[2.5rem] md:p-6 lg:p-8">
                 <div className="mb-5 px-1 md:mb-6 md:px-2">
@@ -64,10 +39,10 @@ export default function HowItWorks() {
                     </video>
                   ) : (
                     <Image
-                      src={step.image}
-                      alt={step.alt}
-                      width={step.width}
-                      height={step.height}
+                      src={step.image ?? ""}
+                      alt={step.alt ?? ""}
+                      width={step.width ?? 1}
+                      height={step.height ?? 1}
                       className="mx-auto w-full max-w-3xl rounded-[1rem] border border-[#E9DCD1] bg-white shadow-[0_10px_26px_rgba(35,53,71,0.14)] dark:border-slate/12"
                     />
                   )}
