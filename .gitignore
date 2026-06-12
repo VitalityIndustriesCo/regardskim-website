@@ -40,3 +40,8 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 subscribers.json
+
+# Media source captures
+media-src/*/out/
+media-src/*/*.mp4
+media-src/*/*.webm
