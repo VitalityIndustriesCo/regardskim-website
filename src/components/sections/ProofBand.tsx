@@ -6,16 +6,19 @@ const reviews = [
     quote:
       "We were spending hours every week digging through Gmail, Shopify orders, tracking pages and customer notes just to answer simple questions. Regards Kim pulls everything together and gives us a draft reply that's usually 90% there. It's cut our support workload dramatically without taking control away from our team.",
     name: "Sarah M.",
+    store: "Marlo & Co",
   },
   {
     quote:
       "As a founder handling customer support myself, Regards Kim feels like having a support assistant sitting beside me. It quickly shows which emails actually need attention and saves me from constantly jumping between Shopify and Gmail. The time savings add up fast.",
     name: "James R.",
+    store: "Cozie Co",
   },
   {
     quote:
       "We tested a few AI support tools and most wanted to automate replies completely. That wasn't something we were comfortable with. Regards Kim keeps us in control while doing all the heavy lifting behind the scenes. We reply faster, miss fewer emails and still know every message has been reviewed by a real person.",
     name: "Adam W.",
+    store: "JOOSY Beverages",
   },
 ];
 
@@ -48,7 +51,10 @@ export default function ProofBand() {
                 <blockquote className="mt-4 flex-1 text-sm leading-7 text-slate md:text-base">
                   &ldquo;{review.quote}&rdquo;
                 </blockquote>
-                <figcaption className="mt-5 text-sm font-bold text-ink">— {review.name}</figcaption>
+                <figcaption className="mt-5 text-sm">
+                  <span className="font-bold text-ink">— {review.name}</span>
+                  <span className="ml-2 font-semibold text-slate">{review.store}</span>
+                </figcaption>
               </figure>
             </FadeIn>
           ))}
