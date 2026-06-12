@@ -30,14 +30,11 @@ export default function Pricing() {
       <div className="section-shell text-center">
         <FadeIn>
           <h2 className="font-display font-bold text-4xl tracking-normal text-ink md:text-6xl">
-            Simple pricing that only has to save one hour.
+            One plan. Less than an hour of a VA.
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-base leading-8 text-slate md:text-lg">
-            Regards Kim is for Shopify merchants who want a faster support inbox without hiring, migrating to a heavy
-            help desk, or letting AI send customer replies on its own.
-          </p>
-          <p className="mt-2 text-sm font-semibold uppercase tracking-[0.16em] text-brass">
-            If it saves one support hour a month, it pays for itself.
+            A VA costs $800+ a month. Your own time costs more. Regards Kim is $49 — working the moment you connect,
+            and it never calls in sick.
           </p>
         </FadeIn>
 
@@ -49,8 +46,7 @@ export default function Pricing() {
             <span className="mb-1.5 text-sm text-slate sm:mb-2 sm:text-base">{period}</span>
           </div>
           <div className="mt-2 flex items-center gap-2">
-            <span className="text-sm text-slate line-through">$98/month</span>
-            <span className="rounded-full bg-brass/12 px-2.5 py-0.5 text-xs font-semibold text-brass">50% off — forever</span>
+            <span className="rounded-full bg-brass/12 px-2.5 py-0.5 text-xs font-semibold text-brass">Early merchant rate — locked in for life</span>
           </div>
           <p className="mt-1 text-xs text-slate">{billingNote}</p>
 

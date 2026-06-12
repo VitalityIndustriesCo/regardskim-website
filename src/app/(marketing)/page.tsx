@@ -3,19 +3,22 @@ import type { Metadata } from "next";
 import StructuredData from "@/components/seo/StructuredData";
 import Hero from "@/components/sections/Hero";
 import HowItWorks from "@/components/sections/HowItWorks";
-import Benefits from "@/components/sections/Benefits";
 import Comparison from "@/components/sections/Comparison";
+import ProofBand from "@/components/sections/ProofBand";
+import CostAnchor from "@/components/sections/CostAnchor";
 import TrustAndSafety from "@/components/sections/TrustAndSafety";
+import FounderNote from "@/components/sections/FounderNote";
 import GettingStarted from "@/components/sections/GettingStarted";
 import Pricing from "@/components/sections/Pricing";
 import FAQ from "@/components/sections/FAQ";
+import FinalCTA from "@/components/sections/FinalCTA";
 import { faqItems } from "@/lib/faq-data";
 import { marketingMetadata, absoluteUrl, siteConfig } from "@/lib/seo";
 
 export const metadata: Metadata = marketingMetadata({
-  title: "Regards Kim - Shopify Email Support With Human Approval",
+  title: "Regards Kim - Your Shopify Support Inbox, Already Answered",
   description:
-    "Regards Kim helps Shopify stores triage Gmail support emails, gather Shopify order context, and draft replies for a human to review before sending.",
+    "Regards Kim reads every customer email, pulls the Shopify order context, and drafts the reply. You review and press send from Gmail. No auto-sending, ever.",
   path: "/",
 });
 
@@ -62,12 +65,15 @@ export default function Home() {
       <StructuredData data={[organizationSchema, softwareApplicationSchema, faqSchema]} />
       <Hero />
       <HowItWorks />
-      <Benefits />
-      <TrustAndSafety />
       <Comparison />
+      <ProofBand />
+      <CostAnchor />
+      <TrustAndSafety />
+      <FounderNote />
       <Pricing />
       <GettingStarted />
       <FAQ />
+      <FinalCTA />
     </main>
   );
 }

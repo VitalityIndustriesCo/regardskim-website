@@ -1,6 +1,6 @@
 import FadeIn from "@/components/ui/FadeIn";
 import { ShopifyLogo, GmailLogo } from "@/components/ui/BrandLogos";
-import IntegrationHeroPreview from "@/components/ui/IntegrationHeroPreview";
+import HeroLoopVideo from "@/components/sections/HeroLoopVideo";
 import { SHOPIFY_APP_STORE_INSTALL_URL } from "@/lib/shopify-install";
 import Link from "next/link";
 
@@ -18,14 +18,14 @@ export default function Hero() {
         <FadeIn className="mx-auto max-w-5xl text-center">
           <div className="mx-auto max-w-4xl pt-12 md:pt-28">
             <h1 className="mx-auto max-w-[22rem] font-display text-3xl font-extrabold leading-[1.08] tracking-normal text-ink sm:max-w-3xl sm:text-5xl md:text-7xl">
-              Clear your Shopify support inbox faster, without auto-sending replies.
+              Your support inbox, already answered.
             </h1>
             <div className="mx-auto mt-6 flex flex-wrap items-center justify-center gap-3">
               <span className="inline-flex max-w-full items-center gap-2 rounded-full border border-[#E3D3C6] bg-white/80 px-4 py-2 text-xs font-bold uppercase tracking-[0.08em] text-[#8A6F61] shadow-sm backdrop-blur dark:border-slate/15 dark:bg-[#1D2840]/80 dark:text-brass"><ShopifyLogo className="h-5 w-5 shrink-0" /> Built for Shopify</span>
               <span className="inline-flex max-w-full items-center gap-2 rounded-full border border-[#E3D3C6] bg-white/80 px-4 py-2 text-xs font-bold uppercase tracking-[0.08em] text-[#8A6F61] shadow-sm backdrop-blur dark:border-slate/15 dark:bg-[#1D2840]/80 dark:text-brass"><GmailLogo className="h-4 w-4 shrink-0" /> Works with Gmail</span>
             </div>
             <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-slate md:text-xl">
-              Regards Kim sorts customer emails, gathers Shopify order context, and prepares helpful drafts for you or your team to review, edit, and send from Gmail.
+              Regards Kim reads every customer email, pulls the Shopify order, and writes the reply. You review and press send — from Gmail.
             </p>
 
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row md:mt-10">
@@ -46,13 +46,13 @@ export default function Hero() {
             </div>
 
             <p className="mx-auto mt-4 max-w-2xl text-sm font-semibold text-slate md:mt-5">
-              If Regards Kim saves one support hour a month, the app has already paid for itself.
+              No auto-sending · No credit card · Billed through Shopify only if you stay
             </p>
           </div>
         </FadeIn>
 
         <FadeIn delay={0.08} className="py-6 md:py-14">
-          <IntegrationHeroPreview />
+          <HeroLoopVideo />
         </FadeIn>
       </div>
     </section>

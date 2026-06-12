@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Regards Kim — Hero Loop</title>
+<style>
+  /* ============ Brand tokens ============ */
+  :root {
+    --cream: #FFF9F3;
+    --paper: #F8F1E7;
+    --ink: #233547;
+    --slate: #5C6B7A;
+    --coral: #E97C6B;
+    --coral-deep: #B85345;
+    --coral-soft: #FFF0ED;
+    --brass: #B08D57;
+    --line: #E9DCD1;
+    --line2: #E3D3C6;
+    --green: #2E7D42;
+    --green-soft: #EAF6EC;
+    --green-line: #B7D8BC;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1600px; height: 900px; overflow: hidden; }
+  body {
+    font-family: -apple-system, "SF Pro Text", "Segoe UI", Helvetica, Arial, sans-serif;
+    background:
+      radial-gradient(circle at 18% 12%, rgba(233,124,107,0.10), transparent 34%),
+      radial-gradient(circle at 85% 90%, rgba(176,141,87,0.08), transparent 40%),
+      linear-gradient(180deg, var(--cream), var(--paper));
+    color: var(--ink);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* ============ App window ============ */
+  .window {
+    width: 1380px;
+    height: 760px;
+    background: var(--cream);
+    border: 1px solid var(--line2);
+    border-radius: 28px;
+    box-shadow: 0 30px 70px rgba(35,53,71,0.28), 0 8px 20px rgba(35,53,71,0.12);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .titlebar {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 18px 28px;
+    background: rgba(255,255,255,0.75);
+    border-bottom: 1px solid var(--line);
+  }
+  .brandside { display: flex; align-items: center; gap: 14px; }
+  .kmark {
+    width: 40px; height: 40px; border-radius: 14px;
+    background: var(--coral); color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 900; font-size: 18px;
+    box-shadow: 0 10px 24px rgba(233,124,107,0.30);
+  }
+  .brandname { font-weight: 800; font-size: 19px; letter-spacing: -0.01em; }
+  .brandsub { font-size: 12px; color: var(--slate); font-weight: 500; margin-top: 1px; }
+  .pills { display: flex; gap: 10px; }
+  .pill {
+    display: inline-flex; align-items: center; gap: 7px;
+    font-size: 12.5px; font-weight: 700;
+    padding: 7px 14px; border-radius: 999px;
+    border: 1px solid var(--line);
+    background: #fff;
+  }
+  .pill.shopify { color: #386D34; background: #F3FAF2; border-color: #CFE3D1; }
+  .dot { width: 8px; height: 8px; border-radius: 50%; background: #3BAE5C; }
+
+  /* ============ Main grid ============ */
+  .main {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 430px 1fr;
+    gap: 22px;
+    padding: 22px 26px 26px;
+  }
+  .panel {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    box-shadow: 0 12px 28px rgba(35,53,71,0.10);
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+  .panel-label {
+    font-size: 11px; font-weight: 800; letter-spacing: 0.14em;
+    text-transform: uppercase; color: #8A6F61;
+    margin-bottom: 14px;
+  }
+
+  /* ============ Inbox list (left) ============ */
+  .mailrow {
+    display: flex; gap: 12px; align-items: flex-start;
+    padding: 14px;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    margin-bottom: 10px;
+    background: #fff;
+  }
+  .avatar {
+    width: 38px; height: 38px; border-radius: 50%;
+    color: #fff; font-weight: 800; font-size: 15px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .mailrow .meta { min-width: 0; flex: 1; }
+  .mailrow .who { font-size: 13.5px; font-weight: 700; }
+  .mailrow .subj { font-size: 13px; color: var(--slate); margin-top: 3px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .tag {
+    font-size: 10.5px; font-weight: 800; padding: 4px 10px; border-radius: 999px;
+    flex-shrink: 0;
+  }
+  .tag.track { background: var(--green-soft); color: var(--green); border: 1px solid var(--green-line); }
+  .tag.return { background: #FDF2E3; color: #9A6B1F; border: 1px solid #EBD7B4; }
+  .tag.noreply { background: #F1F2F4; color: var(--slate); border: 1px solid #E0E2E6; }
+
+  /* New email — slides in */
+  .mailrow.new {
+    border-color: var(--coral);
+    box-shadow: 0 10px 26px rgba(233,124,107,0.18);
+    opacity: 0;
+    transform: translateY(-18px);
+    animation: mailIn 0.55s cubic-bezier(0.22, 1, 0.36, 1) 0.5s forwards;
+  }
+  @keyframes mailIn { to { opacity: 1; transform: translateY(0); } }
+  .mailrow.new .tag.track {
+    opacity: 0;
+    animation: fadeUp 0.4s ease 1.5s forwards;
+  }
+  .newflag {
+    font-size: 10px; font-weight: 800; color: #fff;
+    background: var(--coral);
+    padding: 3px 8px; border-radius: 999px;
+    margin-left: 8px;
+    vertical-align: 2px;
+  }
+
+  .dimrow { opacity: 0.55; }
+
+  /* ============ Right panel — detail ============ */
+  .detail { display: flex; flex-direction: column; gap: 14px; }
+
+  .emailcard {
+    background: var(--cream);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 16px 18px;
+    opacity: 0;
+    animation: fadeUp 0.5s ease 1.1s forwards;
+  }
+  .emailcard .from { display: flex; align-items: center; gap: 10px; }
+  .emailcard .subj { font-size: 15px; font-weight: 800; margin-top: 10px; }
+  .emailcard .body { font-size: 13.5px; line-height: 1.55; color: var(--slate); margin-top: 6px; }
+
+  /* Order match strip */
+  .orderstrip {
+    display: flex; gap: 10px;
+    opacity: 0;
+    animation: fadeUp 0.55s ease 2.2s forwards;
+  }
+  .ordercell {
+    flex: 1;
+    background: var(--green-soft);
+    border: 1px solid var(--green-line);
+    border-radius: 12px;
+    padding: 10px 14px;
+  }
+  .ordercell .k { font-size: 10px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: #6B8D60; }
+  .ordercell .v { font-size: 13.5px; font-weight: 800; margin-top: 3px; }
+  .matchedline {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 12.5px; font-weight: 800; color: var(--coral-deep);
+    background: var(--coral-soft);
+    padding: 7px 14px; border-radius: 999px;
+    width: fit-content;
+    opacity: 0;
+    animation: fadeUp 0.45s ease 1.9s forwards;
+  }
+  .spark { display: inline-block; animation: sparkle 1.6s ease-in-out infinite; }
+  @keyframes sparkle { 0%,100% { transform: scale(1); } 50% { transform: scale(1.25); } }
+
+  /* Draft card */
+  .draftcard {
+    flex: 1;
+    background: #fff;
+    border: 1.5px solid var(--line2);
+    border-radius: 16px;
+    padding: 18px 20px;
+    position: relative;
+    opacity: 0;
+    animation: fadeUp 0.5s ease 3.0s forwards;
+  }
+  .drafthead { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+  .draftbadge {
+    font-size: 11px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase;
+    color: #fff; background: var(--brass);
+    padding: 5px 12px; border-radius: 999px;
+  }
+  .readybadge {
+    font-size: 11.5px; font-weight: 800;
+    color: var(--green); background: var(--green-soft);
+    border: 1px solid var(--green-line);
+    padding: 5px 12px; border-radius: 999px;
+    opacity: 0;
+    animation: fadeUp 0.4s ease 5.6s forwards;
+  }
+
+  /* Typing text */
+  .typeline { font-size: 14px; line-height: 1.7; color: var(--ink); overflow: hidden; white-space: nowrap; max-width: 0; }
+  .t1 { animation: typew 0.7s steps(30) 3.4s forwards; }
+  .t2 { animation: typew 1.1s steps(60) 4.1s forwards; }
+  .t3 { animation: typew 1.0s steps(55) 5.2s forwards; }
+  .typesign { font-size: 14px; line-height: 1.7; opacity: 0; animation: fadeUp 0.3s ease 5.9s forwards; }
+  @keyframes typew { to { max-width: 100%; } }
+
+  .caret {
+    display: inline-block; width: 2px; height: 16px; background: var(--coral);
+    vertical-align: -2px; margin-left: 2px;
+    animation: blink 0.7s step-end 3.4s 4, hide 0.1s linear 6.2s forwards;
+  }
+  @keyframes blink { 50% { opacity: 0; } }
+  @keyframes hide { to { opacity: 0; } }
+
+  /* Send button */
+  .actions { display: flex; align-items: center; gap: 12px; margin-top: 16px; }
+  .sendbtn {
+    display: inline-flex; align-items: center; gap: 9px;
+    font-size: 15px; font-weight: 800; color: #fff;
+    background: var(--coral);
+    border-radius: 999px;
+    padding: 12px 28px;
+    box-shadow: 0 12px 28px rgba(233,124,107,0.35);
+    position: relative;
+    opacity: 0;
+    animation: fadeUp 0.4s ease 5.9s forwards, press 0.35s ease 6.9s;
+  }
+  @keyframes press { 40% { transform: scale(0.94); } 100% { transform: scale(1); } }
+  .editbtn {
+    font-size: 14px; font-weight: 700; color: var(--slate);
+    border: 1px solid var(--line2); border-radius: 999px;
+    padding: 11px 22px; background: #fff;
+    opacity: 0;
+    animation: fadeUp 0.4s ease 6.0s forwards;
+  }
+
+  /* Sent confirmation overlay */
+  .sentwrap {
+    position: absolute; inset: 0;
+    background: rgba(255,255,255,0.94);
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px;
+    border-radius: 16px;
+    opacity: 0;
+    pointer-events: none;
+    animation: fadeIn 0.35s ease 7.15s forwards;
+  }
+  .senttick {
+    width: 64px; height: 64px; border-radius: 50%;
+    background: var(--green-soft); border: 2px solid var(--green-line);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .senttick svg { stroke: var(--green); }
+  .senttick svg path {
+    stroke-dasharray: 30; stroke-dashoffset: 30;
+    animation: draw 0.45s ease 7.35s forwards;
+  }
+  @keyframes draw { to { stroke-dashoffset: 0; } }
+  .sentmsg { font-size: 19px; font-weight: 800; }
+  .sentsub { font-size: 13.5px; color: var(--slate); font-weight: 600; }
+
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+</style>
+</head>
+<body>
+  <div class="window">
+    <div class="titlebar">
+      <div class="brandside">
+        <div class="kmark">K</div>
+        <div>
+          <div class="brandname">Regards Kim</div>
+          <div class="brandsub">Inside your Shopify admin</div>
+        </div>
+      </div>
+      <div class="pills">
+        <span class="pill shopify">Shopify connected</span>
+        <span class="pill"><span class="dot"></span> Gmail connected</span>
+      </div>
+    </div>
+
+    <div class="main">
+      <!-- LEFT: inbox -->
+      <div class="panel">
+        <div class="panel-label">Needs reply</div>
+
+        <div class="mailrow new">
+          <div class="avatar" style="background:var(--coral)">S</div>
+          <div class="meta">
+            <div class="who">Sarah M. <span class="newflag">NEW</span></div>
+            <div class="subj">Where is my order #1842?</div>
+          </div>
+          <span class="tag track">Tracking</span>
+        </div>
+
+        <div class="mailrow dimrow">
+          <div class="avatar" style="background:#7E9AB8">J</div>
+          <div class="meta">
+            <div class="who">James K.</div>
+            <div class="subj">Wrong size — can I swap for a large?</div>
+          </div>
+          <span class="tag return">Return</span>
+        </div>
+
+        <div class="mailrow dimrow">
+          <div class="avatar" style="background:#B08D57">E</div>
+          <div class="meta">
+            <div class="who">Emma R.</div>
+            <div class="subj">Can I change my shipping address?</div>
+          </div>
+          <span class="tag return">Order change</span>
+        </div>
+
+        <div class="mailrow dimrow">
+          <div class="avatar" style="background:#9DA8B5">N</div>
+          <div class="meta">
+            <div class="who">Newsletter Weekly</div>
+            <div class="subj">10 growth hacks for your store…</div>
+          </div>
+          <span class="tag noreply">No reply needed</span>
+        </div>
+      </div>
+
+      <!-- RIGHT: detail -->
+      <div class="panel detail">
+        <div class="emailcard">
+          <div class="from">
+            <div class="avatar" style="background:var(--coral); width:32px; height:32px; font-size:13px;">S</div>
+            <div>
+              <div style="font-size:13.5px; font-weight:700;">sarah@gmail.com</div>
+              <div style="font-size:11.5px; color:var(--slate);">2 minutes ago</div>
+            </div>
+          </div>
+          <div class="subj">Where is my order #1842?</div>
+          <div class="body">Hi, I ordered the weighted blanket last week and haven’t received tracking yet. Has it shipped?</div>
+        </div>
+
+        <div class="matchedline"><span class="spark">✦</span> Matched to Shopify order #1842</div>
+
+        <div class="orderstrip">
+          <div class="ordercell"><div class="k">Order</div><div class="v">#1842</div></div>
+          <div class="ordercell"><div class="k">Status</div><div class="v">Fulfilled</div></div>
+          <div class="ordercell"><div class="k">Carrier</div><div class="v">Australia Post</div></div>
+          <div class="ordercell"><div class="k">Tracking</div><div class="v">AP4821093AU</div></div>
+        </div>
+
+        <div class="draftcard">
+          <div class="drafthead">
+            <span class="draftbadge">Draft prepared</span>
+            <span class="readybadge">Ready for your review</span>
+          </div>
+          <div class="typeline t1">Hey Sarah, thanks for checking in.</div>
+          <div class="typeline t2">Good news — order #1842 shipped with Australia Post.</div>
+          <div class="typeline t3">Here’s your tracking link: AP4821093AU. It’s on the way!</div>
+          <div class="typesign">Kind regards,<br><b>Kim</b><span class="caret"></span></div>
+
+          <div class="actions">
+            <span class="sendbtn">Send reply ➤</span>
+            <span class="editbtn">Edit first</span>
+          </div>
+
+          <div class="sentwrap">
+            <div class="senttick">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>
+            </div>
+            <div class="sentmsg">Reply sent from Gmail</div>
+            <div class="sentsub">You approved it. Kim did the rest.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
