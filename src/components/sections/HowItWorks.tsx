@@ -26,8 +26,8 @@ const steps = [
     body: "One click, and Kim writes a reply grounded in the real order — not guesswork. It never drafts or sends anything without you asking. Edit it, or just press send from Gmail.",
     image: "/images/how-it-works/step-3-draft.png",
     alt: "A suggested reply generated after clicking Suggest reply, with the real tracking number, and Send reply and Edit first buttons",
-    width: 1664,
-    height: 698,
+    width: 1728,
+    height: 636,
   },
 ];
 
