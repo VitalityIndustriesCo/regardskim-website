@@ -5,10 +5,10 @@ import { SHOPIFY_APP_STORE_INSTALL_URL } from "@/lib/shopify-install";
 import Link from "next/link";
 
 const workflowPoints = [
-  "Triage the inbox",
-  "Pull Shopify context",
-  "Draft for review",
-  "You approve and send",
+  "Kim sorts the inbox",
+  "Order context attached",
+  "Click Suggest reply",
+  "You review and send",
 ];
 
 export default function Hero() {
@@ -18,14 +18,14 @@ export default function Hero() {
         <FadeIn className="mx-auto max-w-5xl text-center">
           <div className="mx-auto max-w-4xl pt-12 md:pt-28">
             <h1 className="mx-auto max-w-[22rem] font-display text-3xl font-extrabold leading-[1.08] tracking-normal text-ink sm:max-w-3xl sm:text-5xl md:text-7xl">
-              Your support inbox, already answered.
+              Your support inbox, answered in one click.
             </h1>
             <div className="mx-auto mt-6 flex flex-wrap items-center justify-center gap-3">
               <span className="inline-flex max-w-full items-center gap-2 rounded-full border border-[#E3D3C6] bg-white/80 px-4 py-2 text-xs font-bold uppercase tracking-[0.08em] text-[#8A6F61] shadow-sm backdrop-blur dark:border-slate/15 dark:bg-[#1D2840]/80 dark:text-brass"><ShopifyLogo className="h-5 w-5 shrink-0" /> Built for Shopify</span>
               <span className="inline-flex max-w-full items-center gap-2 rounded-full border border-[#E3D3C6] bg-white/80 px-4 py-2 text-xs font-bold uppercase tracking-[0.08em] text-[#8A6F61] shadow-sm backdrop-blur dark:border-slate/15 dark:bg-[#1D2840]/80 dark:text-brass"><GmailLogo className="h-4 w-4 shrink-0" /> Works with Gmail</span>
             </div>
             <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-slate md:text-xl">
-              Regards Kim reads every customer email, pulls the Shopify order, and writes the reply. You review and press send — from Gmail.
+              Regards Kim sorts every customer email and attaches the Shopify order. Click Suggest reply and the draft is written — you review, edit, and send from Gmail.
             </p>
 
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row md:mt-10">

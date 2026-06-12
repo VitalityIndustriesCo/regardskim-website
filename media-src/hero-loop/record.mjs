@@ -15,7 +15,7 @@ const context = await browser.newContext({
 const page = await context.newPage();
 await page.goto(htmlPath);
 // Animation timeline runs ~8.5s; record 9.5s to capture the sent state hold.
-await page.waitForTimeout(9500);
+await page.waitForTimeout(11500);
 await context.close();
 await browser.close();
 console.log("Recorded to", outDir);

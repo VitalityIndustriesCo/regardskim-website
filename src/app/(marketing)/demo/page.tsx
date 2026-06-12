@@ -28,11 +28,11 @@ const moments = [
   },
   {
     time: "0:04",
-    title: "The reply writes itself",
-    body: "A draft grounded in the real order — not a generic template. Real tracking number, real carrier, your tone.",
+    title: "You click Suggest reply",
+    body: "The draft only happens when you ask for it. One click, and Kim writes a reply grounded in the real order — real tracking number, real carrier, your tone.",
   },
   {
-    time: "0:07",
+    time: "0:08",
     title: "You press send",
     body: "Review it, tweak a word if you like, and send from Gmail. Nothing ever goes out without you.",
   },
@@ -49,8 +49,8 @@ export default function DemoPage() {
               Watch a support email answer itself.
             </h1>
             <p className="mx-auto mt-5 max-w-2xl text-base leading-8 text-slate md:text-lg">
-              This is the whole loop: a customer email arrives, Regards Kim matches the Shopify order and drafts the
-              reply, and you press send. About forty seconds of your day.
+              This is the whole loop: a customer email arrives, Regards Kim matches the Shopify order, you click
+              Suggest reply, and the draft is ready to send. About forty seconds of your day.
             </p>
           </FadeIn>
 

@@ -16,9 +16,9 @@ import { faqItems } from "@/lib/faq-data";
 import { marketingMetadata, absoluteUrl, siteConfig } from "@/lib/seo";
 
 export const metadata: Metadata = marketingMetadata({
-  title: "Regards Kim - Your Shopify Support Inbox, Already Answered",
+  title: "Regards Kim - Shopify Support Replies in One Click",
   description:
-    "Regards Kim reads every customer email, pulls the Shopify order context, and drafts the reply. You review and press send from Gmail. No auto-sending, ever.",
+    "Regards Kim sorts customer emails and attaches the Shopify order. Click Suggest reply for a draft grounded in real order data, then review and send from Gmail.",
   path: "/",
 });
 

@@ -187,6 +187,35 @@
   .spark { display: inline-block; opacity:1; }
   @keyframes sparkle { 0%,100% { transform: scale(1); } 50% { transform: scale(1.25); } }
 
+  /* Suggest reply button — the merchant's click */
+  .suggestwrap {
+    display: flex; align-items: center; gap: 12px;
+    opacity:1;
+    opacity:1;
+  }
+  .suggestbtn {
+    display: inline-flex; align-items: center; gap: 9px;
+    font-size: 15px; font-weight: 800; color: #fff;
+    background: var(--coral);
+    border-radius: 999px;
+    padding: 12px 26px;
+    box-shadow: 0 12px 28px rgba(233,124,107,0.35);
+    opacity:1;
+  }
+  .suggesthint {
+    font-size: 13px; font-weight: 700; color: var(--slate);
+  }
+  .cursor {
+    position: absolute;
+    width: 22px; height: 22px;
+    left: 118px; top: 0;
+    opacity:1;
+    opacity:1;
+    z-index: 5;
+  }
+  @keyframes cursorIn { from { opacity:1; transform: translate(60px, 50px); } to { opacity: 1; transform: translate(0, 0); } }
+  @keyframes fadeOutBtn { to { opacity:1; visibility: hidden; height: 0; margin: 0; } }
+
   /* Draft card */
   .draftcard {
     flex: 1;
@@ -360,9 +389,15 @@
           <div class="ordercell"><div class="k">Tracking</div><div class="v">AP4821093AU</div></div>
         </div>
 
+        <div class="suggestwrap" style="position:relative;">
+          <span class="suggestbtn">✦ Suggest reply</span>
+          <span class="suggesthint">You ask for the draft — it never writes without you</span>
+          <svg style="display:none" class="cursor" viewBox="0 0 24 24" fill="#233547" stroke="#fff" stroke-width="1.5"><path d="M5 3l14 8-6.5 1.5L9 19z"/></svg>
+        </div>
+
         <div class="draftcard">
           <div class="drafthead">
-            <span class="draftbadge">Draft prepared</span>
+            <span class="draftbadge">Suggested reply</span>
             <span class="readybadge">Ready for your review</span>
           </div>
           <div class="typeline t1">Hey Sarah, thanks for checking in.</div>

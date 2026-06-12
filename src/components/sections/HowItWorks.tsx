@@ -22,10 +22,10 @@ const steps = [
   },
   {
     number: "03",
-    title: "The reply is already drafted",
-    body: "Grounded in the real order, not guesswork. Edit it, or just press send from Gmail. Your customers see your store, never us.",
+    title: "Click Suggest reply — the draft is written",
+    body: "One click, and Kim writes a reply grounded in the real order — not guesswork. It never drafts or sends anything without you asking. Edit it, or just press send from Gmail.",
     image: "/images/how-it-works/step-3-draft.png",
-    alt: "A drafted reply ready for review with the real tracking number, and Send reply and Edit first buttons",
+    alt: "A suggested reply generated after clicking Suggest reply, with the real tracking number, and Send reply and Edit first buttons",
     width: 1664,
     height: 698,
   },
