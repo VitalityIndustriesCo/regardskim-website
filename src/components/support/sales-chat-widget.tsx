@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { MessageCircleQuestion, X } from "lucide-react";
+import { Mail, X } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { SalesChatPanel } from "./sales-chat-panel";
@@ -15,11 +15,11 @@ export function SalesChatWidget() {
 
       <Button
         onClick={() => setOpen((prev) => !prev)}
-        aria-label={open ? "Close sales support chat" : "Open sales support chat"}
+        aria-label={open ? "Close contact form" : "Open contact form"}
         className="fixed right-4 bottom-4 z-50 min-h-[48px] min-w-[48px] rounded-full bg-brass px-4 py-3 text-white shadow-[0_14px_40px_rgba(176,141,87,0.35)] transition hover:-translate-y-0.5 hover:bg-oxblood"
       >
-        {open ? <X className="mr-1 h-4 w-4" /> : <MessageCircleQuestion className="mr-1 h-4 w-4" />}
-        SALES SUPPORT
+        {open ? <X className="mr-1 h-4 w-4" /> : <Mail className="mr-1 h-4 w-4" />}
+        CONTACT US
       </Button>
     </>
   );
