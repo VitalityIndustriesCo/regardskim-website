@@ -25,7 +25,6 @@ const steps = [
     title: "Click Suggest reply — the draft is written",
     body: "One click, and Regards Kim writes a reply grounded in the real order — not guesswork. It never drafts or sends anything without you asking. Edit it, or just press send from Gmail.",
     video: {
-      webm: "/media/step3-loop.webm",
       mp4: "/media/step3-loop.mp4",
       ariaLabel:
         "The merchant clicks Suggest reply, Regards Kim reads the matched Shopify order, and a friendly draft with the real tracking number types out, ready to review, edit, or send",
@@ -61,7 +60,6 @@ export default function HowItWorks() {
                       aria-label={step.video.ariaLabel}
                       className="mx-auto w-full max-w-3xl rounded-[1rem] border border-[#E9DCD1] bg-white shadow-[0_10px_26px_rgba(35,53,71,0.14)] dark:border-slate/12"
                     >
-                      <source src={step.video.webm} type="video/webm" />
                       <source src={step.video.mp4} type="video/mp4" />
                     </video>
                   ) : (
