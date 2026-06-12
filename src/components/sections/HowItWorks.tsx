@@ -1,38 +1,33 @@
+import Image from "next/image";
 import FadeIn from "@/components/ui/FadeIn";
-import MockupWindow from "@/components/ui/MockupWindow";
-import MockupInbox from "@/components/ui/MockupInbox";
-import MockupDetail from "@/components/ui/MockupDetail";
 
 const steps = [
   {
     number: "01",
     title: "Connect Gmail and Shopify",
     body: "Two minutes to connect. Regards Kim starts sorting customer emails by issue and filtering out the junk — sales pitches, notifications, and bounces never touch your queue.",
-    mockup: (
-      <MockupWindow title="Inbox">
-        <MockupInbox />
-      </MockupWindow>
-    ),
+    image: "/images/how-it-works/step-1-inbox.png",
+    alt: "Regards Kim inbox sorting customer emails: a tracking question, a return, an order change, and a newsletter marked no reply needed",
+    width: 860,
+    height: 728,
   },
   {
     number: "02",
     title: "Every email arrives with its order attached",
     body: "Order, delivery status, tracking links, policy links, and customer details sit beside the conversation. No more hunting through tabs.",
-    mockup: (
-      <MockupWindow title="Inbox">
-        <MockupDetail mode="draft" />
-      </MockupWindow>
-    ),
+    image: "/images/how-it-works/step-2-context.png",
+    alt: "A customer email asking where their order is, automatically matched to Shopify order 1842 with fulfillment status, carrier, and tracking number",
+    width: 1748,
+    height: 530,
   },
   {
     number: "03",
     title: "The reply is already drafted",
     body: "Grounded in the real order, not guesswork. Edit it, or just press send from Gmail. Your customers see your store, never us.",
-    mockup: (
-      <MockupWindow title="Inbox">
-        <MockupDetail mode="approval" />
-      </MockupWindow>
-    ),
+    image: "/images/how-it-works/step-3-draft.png",
+    alt: "A drafted reply ready for review with the real tracking number, and Send reply and Edit first buttons",
+    width: 1664,
+    height: 698,
   },
 ];
 
@@ -54,7 +49,13 @@ export default function HowItWorks() {
                   <p className="mt-3 max-w-2xl text-sm text-slate md:text-base">{step.body}</p>
                 </div>
                 <div className="rounded-[1.5rem] border border-[#E9DCD1] bg-[#F8F1E7] p-3 dark:border-slate/12 dark:bg-[#111625] sm:p-4 md:rounded-[2rem] md:p-5 lg:p-6">
-                  {step.mockup}
+                  <Image
+                    src={step.image}
+                    alt={step.alt}
+                    width={step.width}
+                    height={step.height}
+                    className="mx-auto w-full max-w-3xl rounded-[1rem] border border-[#E9DCD1] bg-white shadow-[0_10px_26px_rgba(35,53,71,0.14)] dark:border-slate/12"
+                  />
                 </div>
               </article>
             </FadeIn>

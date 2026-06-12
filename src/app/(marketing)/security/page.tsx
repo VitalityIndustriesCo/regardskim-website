@@ -36,6 +36,27 @@ const principles = [
   },
 ];
 
+const trustFacts: { title: string; body: string; href?: string; linkLabel?: string }[] = [
+  {
+    title: "Google-verified Gmail access",
+    body: "Regards Kim's Gmail access has passed Google's OAuth App Verification — an independent review of how the app requests, uses, and protects Gmail data.",
+  },
+  {
+    title: "Listed on the Shopify App Store",
+    body: "The app is distributed and billed through Shopify. You never hand us a credit card, and you can uninstall from your Shopify admin at any time.",
+  },
+  {
+    title: "60-day email retention",
+    body: "Processed email data is retained for 60 days to power your support workflow, then removed. We keep what the inbox needs, not an archive of your customers' lives.",
+  },
+  {
+    title: "Incident response policy",
+    body: "We maintain a written security incident response policy covering detection, containment, and merchant notification.",
+    href: "/security-incident-response-policy.md",
+    linkLabel: "Read the policy",
+  },
+];
+
 const sections = [
   {
     title: "What Regards Kim connects to",
@@ -102,6 +123,23 @@ export default function SecurityPage() {
               </article>
             );
           })}
+        </div>
+
+        <div className="mx-auto mt-12 max-w-6xl">
+          <h2 className="text-center font-display text-3xl font-bold text-ink md:text-4xl">Independent checks, in plain English</h2>
+          <div className="mt-8 grid gap-5 md:grid-cols-2">
+            {trustFacts.map((fact) => (
+              <article key={fact.title} className="rounded-3xl border border-brass/20 bg-white p-6 shadow-[0_8px_22px_rgba(35,53,71,0.12),0_2px_5px_rgba(35,53,71,0.08)] dark:bg-[#20283A]">
+                <h3 className="font-display text-xl font-bold text-ink">{fact.title}</h3>
+                <p className="mt-3 text-sm leading-7 text-slate">{fact.body}</p>
+                {fact.href ? (
+                  <a href={fact.href} className="mt-3 inline-block text-sm font-semibold text-brass hover:underline">
+                    {fact.linkLabel} →
+                  </a>
+                ) : null}
+              </article>
+            ))}
+          </div>
         </div>
 
         <div className="mx-auto mt-12 grid max-w-5xl gap-6">
