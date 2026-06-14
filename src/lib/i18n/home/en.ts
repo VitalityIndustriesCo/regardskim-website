@@ -377,6 +377,7 @@ export const enHomeCopy = {
         title: "How It Works",
         links: [
           { href: "/#how-it-works", label: "How It Works" },
+          { href: "/demo", label: "Demo" },
           { href: "/blog", label: "Blog" },
           { href: "/about", label: "About" },
           { href: "/#faq", label: "FAQ" },
