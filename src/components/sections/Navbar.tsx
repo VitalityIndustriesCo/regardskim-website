@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { ChevronDown } from "lucide-react";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { getHomeCopy, isLocale, languageOptions } from "@/lib/i18n/home";
@@ -73,25 +74,31 @@ export default function Navbar({ copy: copyProp, locale: localeProp }: NavbarPro
             ))}
           </div>
 
-          <div className="hidden items-center gap-3 md:flex">
+          <div className="ml-4 hidden items-center gap-3 md:flex lg:ml-6">
             <label className="sr-only" htmlFor="language-switcher">
               {copy.languageLabel}
             </label>
-            <select
-              id="language-switcher"
-              value={locale}
-              onChange={(event) => {
-                window.location.href = languageOptions.find((language) => language.code === event.target.value)?.href ?? "/";
-              }}
-              className="rounded-full border border-slate/15 bg-white px-3 py-2 text-sm font-semibold text-slate shadow-sm transition-colors hover:text-ink dark:bg-[#1D2840]"
-              aria-label={copy.languageLabel}
-            >
-              {languageOptions.map((language) => (
-                <option key={language.code} value={language.code}>
-                  {language.label}
-                </option>
-              ))}
-            </select>
+            <div className="relative shrink-0">
+              <select
+                id="language-switcher"
+                value={locale}
+                onChange={(event) => {
+                  window.location.href = languageOptions.find((language) => language.code === event.target.value)?.href ?? "/";
+                }}
+                className="h-11 w-[7.25rem] appearance-none rounded-full border border-slate/15 bg-white py-2 pl-4 pr-8 text-sm font-semibold text-slate shadow-sm transition-colors hover:text-ink dark:bg-[#1D2840]"
+                aria-label={copy.languageLabel}
+              >
+                {languageOptions.map((language) => (
+                  <option key={language.code} value={language.code}>
+                    {language.label}
+                  </option>
+                ))}
+              </select>
+              <ChevronDown
+                className="pointer-events-none absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate"
+                aria-hidden="true"
+              />
+            </div>
             <Link href={SHOPIFY_APP_STORE_INSTALL_URL} className="btn-primary">
               {copy.installCta}
             </Link>
