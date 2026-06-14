@@ -9,9 +9,9 @@ import { SHOPIFY_APP_STORE_INSTALL_URL } from "@/lib/shopify-install";
 import { marketingMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = marketingMetadata({
-  title: "Demo - See Regards Kim Handle a Support Email",
+  title: "Demo - Shopify Support Email Drafted From Order Context",
   description:
-    "Watch Regards Kim sort a Shopify support inbox, match a customer email to the order, and draft the reply — ready for you to review and send from Gmail.",
+    "Watch Regards Kim match a customer email to the Shopify order, draft from real order context, and leave the reply ready for you to review and send from Gmail.",
   path: "/demo",
 });
 
@@ -19,22 +19,22 @@ const moments = [
   {
     time: "0:00",
     title: "The email arrives",
-    body: "A customer asks where their order is. Regards Kim has already sorted it into Needs reply and tagged it as a tracking question — while the junk went straight to No reply needed.",
+    body: "A customer asks where their order is. Regards Kim keeps Gmail as the inbox, then brings the message into a Shopify-aware queue.",
   },
   {
     time: "0:02",
     title: "The order is matched",
-    body: "No searching. The Shopify order, fulfillment status, carrier, and tracking number are already attached to the conversation.",
+    body: "No searching. The Shopify order, fulfillment status, carrier, tracking number, and customer details are already attached to the conversation.",
   },
   {
     time: "0:04",
-    title: "You click Suggest reply",
-    body: "The draft only happens when you ask for it. One click, and Kim writes a reply grounded in the real order — real tracking number, real carrier, your tone.",
+    title: "You draft from real context",
+    body: "The draft only happens when you ask for it. One click, and Regards Kim writes a reply grounded in the real order, tracking status, and your support rules.",
   },
   {
     time: "0:08",
-    title: "You press send",
-    body: "Review it, tweak a word if you like, and send from Gmail. Nothing ever goes out without you.",
+    title: "You approve and send",
+    body: "Review it, tweak a word if you like, and send from Gmail. Nothing ever goes out without your approval.",
   },
 ];
 
@@ -46,11 +46,11 @@ export default function DemoPage() {
           <FadeIn className="mx-auto max-w-3xl pt-12 text-center md:pt-20">
             <p className="text-sm font-bold uppercase tracking-[0.14em] text-brass">Demo</p>
             <h1 className="mt-4 font-display text-4xl font-extrabold leading-[1.08] text-ink md:text-6xl">
-              Watch a support email answer itself.
+              Watch a Shopify support email become a ready-to-review reply.
             </h1>
             <p className="mx-auto mt-5 max-w-2xl text-base leading-8 text-slate md:text-lg">
-              This is the whole loop: a customer email arrives, Regards Kim matches the Shopify order, you click
-              Suggest reply, and the draft is ready to send. About forty seconds of your day.
+              This is the whole loop: a customer email arrives in Gmail, Regards Kim matches the Shopify order,
+              you draft from real store context, and you decide what gets sent.
             </p>
           </FadeIn>
 
@@ -83,7 +83,7 @@ export default function DemoPage() {
 
           <FadeIn delay={0.2} className="mt-12 text-center">
             <p className="text-base font-semibold text-ink">
-              Want to see it on your own inbox? That&apos;s what the free trial is for.
+              Want to see it with your own Shopify orders and Gmail inbox? That&apos;s what the free trial is for.
             </p>
             <div className="mt-5 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <a href={SHOPIFY_APP_STORE_INSTALL_URL} className="btn-primary">

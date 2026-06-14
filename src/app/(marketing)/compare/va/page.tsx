@@ -8,7 +8,7 @@ import { SHOPIFY_APP_STORE_INSTALL_URL } from "@/lib/shopify-install";
 export const metadata: Metadata = marketingMetadata({
   title: "RegardsKim vs Hiring a Virtual Assistant",
   description:
-    "Compare RegardsKim with hiring a virtual assistant for Shopify support. See the tradeoffs on price, coverage, training, and flexibility.",
+    "Compare RegardsKim with hiring a VA for Shopify support. Keep the judgment, remove the repeat order-lookup and reply-writing work.",
   path: "/compare/va",
 });
 
@@ -35,12 +35,12 @@ const comparisonRows = [
   },
   {
     label: "Best at",
-    kim: "Repeatable support emails, AI triage, and Shopify-aware draft replies",
+    kim: "Post-purchase email replies drafted from Shopify order, tracking, and policy context",
     competitor: "Nuanced human judgment, relationship handling, edge cases",
   },
   {
     label: "Where it is stronger",
-    kim: "Price, speed, AI drafting help",
+    kim: "Price, Shopify order context, approve-first email replies",
     competitor: "Human empathy, custom judgment, cross-functional help",
   },
 ];

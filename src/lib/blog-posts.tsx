@@ -165,8 +165,8 @@ export const blogPosts: BlogPost[] = [
 
         <h2>How RegardsKim helps with Shopify order tracking emails</h2>
         <p>
-          RegardsKim is AI-powered customer support for Shopify stores. It is built for merchants using a Gmail-based
-          support workflow who want faster answers without moving into a heavy help desk.
+          RegardsKim is AI email support for Shopify stores. It is built for merchants using a Gmail-based
+          support workflow who want faster answers without moving into a full helpdesk.
         </p>
         <p>
           For order tracking emails, RegardsKim can help sort repetitive tracking questions, bring Shopify order and
@@ -361,8 +361,8 @@ export const blogPosts: BlogPost[] = [
 
         <h2>How RegardsKim helps with Shopify returns emails</h2>
         <p>
-          RegardsKim is AI-powered customer support for Shopify stores. It is built for merchants who use a Gmail-based
-          support workflow and want faster answers without moving into a heavy help desk.
+          RegardsKim is AI email support for Shopify stores. It is built for merchants who use a Gmail-based
+          support workflow and want faster answers without moving into a full helpdesk.
         </p>
         <p>
           For returns emails, RegardsKim can help by sorting repetitive support messages, bringing Shopify order and
@@ -423,7 +423,7 @@ export const blogPosts: BlogPost[] = [
           That is not bad work. It is just slow work. If you pay by the hour, slow support turns into real monthly cost.
         </p>
         <p>
-          RegardsKim is built for that exact gap. It is AI-powered customer support for Shopify stores that helps your
+          RegardsKim is built for that exact gap. It is AI email support for Shopify stores that helps your
           VA get through Gmail-based support faster, with Shopify-aware drafts close at hand and the merchant still in
           control of what gets sent.
         </p>
@@ -459,7 +459,7 @@ export const blogPosts: BlogPost[] = [
           RegardsKim works with the support workflow many Shopify stores already use: Gmail plus Shopify.
         </p>
         <p>
-          Instead of forcing your VA into a heavy help desk, RegardsKim helps organise the email work around the details
+          Instead of forcing your VA into a full helpdesk, RegardsKim helps organise the email work around the details
           they need to answer well.
         </p>
         <p>The biggest time savings usually come from five areas.</p>
@@ -645,7 +645,7 @@ export const blogPosts: BlogPost[] = [
           complaint log, and mental to-do list all at once.
         </p>
         <p>
-          If you are a solo founder or a small ecommerce team, you probably do not need a heavy help desk on day one.
+          If you are a solo founder or a small ecommerce team, you probably do not need a full helpdesk on day one.
           You need a simple way to see what needs a reply, find the right order details, avoid missing customers, and
           stop rewriting the same answers every morning.
         </p>
@@ -781,7 +781,7 @@ export const blogPosts: BlogPost[] = [
           answering customers, the workflow needs help.
         </p>
         <p>
-          That does not always mean moving to a full help desk. Sometimes the better next step is support automation
+          That does not always mean moving to a full helpdesk. Sometimes the better next step is support automation
           that works with the way you already handle email.
         </p>
         <p>
@@ -991,7 +991,7 @@ export const blogPosts: BlogPost[] = [
         </p>
         <p>
           RegardsKim is built for Shopify merchants who want help with customer email without setting up a heavy
-          help desk. It can bring Shopify order context, saved replies, and AI-drafted replies into one AI-assisted workflow, so repetitive emails move faster while you keep the final say.
+          helpdesk. It can bring Shopify order context, saved replies, and AI-drafted replies into one AI-assisted workflow, so repetitive emails move faster while you keep the final say.
         </p>
         <p>
           If you are still building the basics, our guide to <Link href="/blog/automate-shopify-support-emails">automating
@@ -1017,7 +1017,7 @@ export const blogPosts: BlogPost[] = [
     date: "April 29, 2026",
     image: "/blog/ecommerce-customer-service-best-practices-small-shopify-teams.png",
     meta:
-      "Practical ecommerce customer service best practices for small Shopify teams that want faster replies without a heavy help desk.",
+      "Practical ecommerce customer service best practices for small Shopify teams that want faster replies without a full helpdesk.",
     content: (
       <>
         <p>
@@ -1148,7 +1148,7 @@ export const blogPosts: BlogPost[] = [
         </p>
         <p>
           RegardsKim is built for Shopify merchants who want help with customer email without setting up a heavy
-          help desk. If repetitive customer emails are eating your week, RegardsKim can sort the queue, surface Shopify context, and help you answer with AI tools, so you keep the final say while the boring parts move faster.
+          helpdesk. If repetitive customer emails are eating your week, RegardsKim can sort the queue, surface Shopify context, and help you answer with AI tools, so you keep the final say while the boring parts move faster.
         </p>
 
         <h2>7. Measure the simple things first</h2>
@@ -1165,7 +1165,7 @@ export const blogPosts: BlogPost[] = [
           These numbers tell you where the real friction is. If most emails are order tracking questions, improve
           order communication first. If returns dominate the inbox, tighten the policy and reply flow. If replies
           are slow because you are switching between Shopify and Gmail all day, fix that workflow before buying a
-          bigger help desk.
+          bigger helpdesk.
         </p>
 
         <h2>The best support system is the one your team will actually use</h2>
@@ -1217,7 +1217,7 @@ export const blogPosts: BlogPost[] = [
         <h2>1. RegardsKim</h2>
         <p>
           RegardsKim is the lightest option on this list, which is also the point. It is made for Shopify stores
-          that mainly want help with customer email without setting up a full help desk operation.
+          that mainly want help with customer email without setting up a full helpdesk operation.
         </p>
         <p>
           It connects to your store, reads incoming support emails, pulls in order details, tracking status, and
@@ -1300,7 +1300,7 @@ export const blogPosts: BlogPost[] = [
 
         <h2>5. Reamaze</h2>
         <p>
-          Reamaze sits in a nice middle ground. It gives you a help desk, chat, FAQ tools, and decent ecommerce
+          Reamaze sits in a nice middle ground. It gives you a helpdesk, chat, FAQ tools, and decent ecommerce
           support features without feeling quite as heavy as Zendesk.
         </p>
         <p>
@@ -1309,12 +1309,12 @@ export const blogPosts: BlogPost[] = [
         </p>
         <p>
           The main question is whether you want to build around a broader support platform or solve a narrower
-          problem first. If you need multiple channels and a more classic support desk experience, Reamaze is a
+          problem first. If you need multiple channels and a more classic helpdesk experience, Reamaze is a
           solid option. If you mainly want repetitive email replies off your plate, it may still be more tool than
           you need.
         </p>
         <p>
-          <strong>Best for:</strong> small to mid-sized stores that want a balanced help desk with chat and FAQ
+          <strong>Best for:</strong> small to mid-sized stores that want a balanced helpdesk with chat and FAQ
           tools.
         </p>
 
@@ -1324,10 +1324,10 @@ export const blogPosts: BlogPost[] = [
         </p>
         <ul>
           <li>If you want the cheapest, simplest way to handle repetitive Shopify emails, start with RegardsKim.</li>
-          <li>If you have a support team and need ecommerce-focused help desk software, look at Gorgias.</li>
+          <li>If you have a support team and need ecommerce-focused helpdesk software, look at Gorgias.</li>
           <li>If you need a full-scale customer service platform, Zendesk is stronger.</li>
           <li>If live chat is the main priority, Tidio is worth a close look.</li>
-          <li>If you want a balanced support desk without going fully enterprise, Reamaze sits nicely in the middle.</li>
+          <li>If you want a balanced helpdesk without going fully enterprise, Reamaze sits nicely in the middle.</li>
         </ul>
         <p>
           There is no universal winner because support gets more complicated as a store grows. The right question
@@ -1776,7 +1776,7 @@ export const blogPosts: BlogPost[] = [
 
         <h2>Cost 4: support software bloat</h2>
         <p>
-          Some stores try to solve the problem with a bigger help desk stack. That can work, but it often introduces
+          Some stores try to solve the problem with a bigger helpdesk stack. That can work, but it often introduces
           another kind of cost: complexity.
         </p>
         <p>
@@ -2174,7 +2174,7 @@ export const blogPosts: BlogPost[] = [
         </p>
         <p>
           <strong>
-            <a href="https://regardskim.com">Regards Kim gives Shopify stores AI-powered customer support.</a>
+            <a href="https://regardskim.com">Regards Kim drafts Shopify support email replies from real order context.</a>
           </strong>
         </p>
         <p>Kind regards, Kim</p>
@@ -2656,7 +2656,7 @@ export const blogPosts: BlogPost[] = [
           <li>Proactive updates when things go wrong</li>
         </ul>
         <p>
-          That is how you reduce WISMO emails without becoming a full-time customer support desk.
+          That is how you reduce WISMO emails without becoming a full-time customer helpdesk.
         </p>
       </>
     ),
@@ -2865,7 +2865,7 @@ export const blogPosts: BlogPost[] = [
         <p>That could mean:</p>
         <ul>
           <li>Auto-sending order and shipping updates</li>
-          <li>Using a help desk with saved replies</li>
+          <li>Using a helpdesk with saved replies</li>
           <li>Routing emails by topic</li>
           <li>Drafting responses using store data</li>
         </ul>

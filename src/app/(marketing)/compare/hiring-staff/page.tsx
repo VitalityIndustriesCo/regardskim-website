@@ -8,7 +8,7 @@ import { SHOPIFY_APP_STORE_INSTALL_URL } from "@/lib/shopify-install";
 export const metadata: Metadata = marketingMetadata({
   title: "RegardsKim vs Hiring Support Staff",
   description:
-    "Compare RegardsKim with hiring part-time or full-time customer support staff for your Shopify store.",
+    "Compare RegardsKim with hiring support staff for your Shopify store. Remove repetitive order-lookup work before you commit to payroll.",
   path: "/compare/hiring-staff",
 });
 
@@ -35,12 +35,12 @@ const comparisonRows = [
   },
   {
     label: "Best at",
-    kim: "Repetitive support emails, AI triage, and Shopify-aware draft replies",
+    kim: "Post-purchase email replies drafted from Shopify order, tracking, and policy context",
     competitor: "Complex issues, relationship handling, brand nuance",
   },
   {
     label: "Where it is stronger",
-    kim: "Price, AI drafting help, no training burden",
+    kim: "Price, Shopify order context, approve-first replies, no training burden",
     competitor: "Human judgment, escalation handling, broader customer relationships",
   },
 ];

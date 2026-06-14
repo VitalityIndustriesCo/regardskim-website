@@ -54,7 +54,7 @@ export default function BlogPostLayout({
               Ready to spend less time on support emails?
             </h2>
             <p className="mt-3 max-w-xl text-base leading-7 text-slate">
-              See how Regards Kim gives Shopify stores AI-powered customer support without losing the human touch.
+              See how Regards Kim drafts Shopify support email replies from real order context, with every send reviewed by you.
             </p>
             <Link href={SHOPIFY_APP_STORE_INSTALL_URL} className="btn-primary mt-6">
               Install on Shopify

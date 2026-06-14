@@ -8,7 +8,7 @@ import { absoluteUrl, marketingMetadata, siteConfig } from "@/lib/seo";
 export const metadata = marketingMetadata({
   title: "Pricing",
   description:
-    "Regards Kim is $49/month for Shopify email support with Gmail triage, Shopify order context, AI-drafted replies, and human approval before sending.",
+    "Regards Kim is $49/month for Shopify support emails: keep Gmail, work from Shopify order context, and approve every AI-drafted reply before sending.",
   path: "/pricing",
 });
 

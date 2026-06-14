@@ -8,7 +8,7 @@ import { SHOPIFY_APP_STORE_INSTALL_URL } from "@/lib/shopify-install";
 export const metadata: Metadata = marketingMetadata({
   title: "RegardsKim vs Reamaze",
   description:
-    "Compare RegardsKim and Reamaze for ecommerce support. See where Reamaze is stronger as a help desk and where RegardsKim wins on focus and speed.",
+    "Compare RegardsKim and Reamaze for ecommerce support. See where Reamaze is stronger as a helpdesk and where RegardsKim wins on focus and speed.",
   path: "/compare/reamaze",
 });
 
@@ -16,12 +16,12 @@ const comparisonRows = [
   {
     label: "Starting price",
     kim: "$49/month",
-    competitor: "Higher monthly pricing tied to help desk plans and users",
+    competitor: "Higher monthly pricing tied to helpdesk plans and users",
   },
   {
     label: "Best for",
     kim: "Lean Shopify stores that want email help without much setup",
-    competitor: "Ecommerce teams wanting a broader support desk with more channels",
+    competitor: "Ecommerce teams wanting a broader helpdesk with more channels",
   },
   {
     label: "Setup time",
@@ -30,8 +30,8 @@ const comparisonRows = [
   },
   {
     label: "Core strength",
-    kim: "Simple email-first support inbox with Shopify context",
-    competitor: "Multi-channel support, FAQ builder, and a more mature help desk layer",
+    kim: "Email replies drafted from Shopify order, tracking, and policy context",
+    competitor: "Multi-channel support, FAQ builder, and a more mature helpdesk layer",
   },
   {
     label: "Training needed",
@@ -41,20 +41,20 @@ const comparisonRows = [
   {
     label: "Where it is stronger",
     kim: "Price, simplicity, faster time to value",
-    competitor: "Multi-channel operations, FAQ tooling, help desk maturity",
+    competitor: "Multi-channel operations, FAQ tooling, helpdesk maturity",
   },
 ];
 
 const pros = {
   kim: [
-    "Cheaper and easier to justify for smaller stores",
-    "Faster setup when your main pain is repetitive customer emails",
-    "No need to build out a full support process before getting value",
-    "Strong fit when you want Shopify context, AI helpers, and control in one inbox",
+    "Drafts replies from real Shopify order data without a helpdesk migration",
+    "Faster setup when your main pain is post-purchase support emails",
+    "Gmail stays in place — no channel migration needed",
+    "Approve every reply before it reaches the customer",
   ],
   competitor: [
     "Better for teams handling support across more than just email",
-    "Includes features like FAQ builder and broader help desk workflows",
+    "Includes features like FAQ builder and broader helpdesk workflows",
     "A more mature platform if you want a traditional customer support hub",
   ],
 };
@@ -90,7 +90,7 @@ export default function RegardsKimVsReamazePage() {
             RegardsKim vs Reamaze
           </h1>
           <p className="mt-6 max-w-3xl text-lg leading-8 text-slate">
-            Reamaze is a capable ecommerce help desk with more surface area. RegardsKim takes a narrower path:
+            Reamaze is a capable ecommerce helpdesk with more surface area. RegardsKim takes a narrower path:
             help Shopify stores clear repetitive support email faster without needing a bigger operations setup.
           </p>
         </div>
@@ -132,7 +132,7 @@ export default function RegardsKimVsReamazePage() {
 
         <div className="mx-auto mt-12 max-w-4xl space-y-6 text-lg leading-8 text-slate">
           <p>
-            Reamaze makes sense when you want a broader support home base with more traditional help desk tools.
+            Reamaze makes sense when you want a broader support home base with more traditional helpdesk tools.
             It can cover more channels and gives teams more structure as support volume grows.
           </p>
           <p>
@@ -146,7 +146,7 @@ export default function RegardsKimVsReamazePage() {
             cost of handling support manually, try the <Link href="/tools/support-cost-calculator" className="font-medium text-brass hover:text-oxblood">support cost calculator</Link>.
           </p>
           <p>
-            In short: Reamaze is the better fit if you want a more mature help desk. RegardsKim is the better fit
+            In short: Reamaze is the better fit if you want a more mature helpdesk. RegardsKim is the better fit
             if you want fewer support hours without becoming a support-ops manager first.
           </p>
         </div>

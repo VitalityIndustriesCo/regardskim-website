@@ -6,7 +6,7 @@ import { marketingMetadata } from "@/lib/seo";
 export const metadata: Metadata = marketingMetadata({
   title: "About RegardsKim",
   description:
-    "The story behind RegardsKim - why we built an AI-powered customer support centre for Shopify stores.",
+    "The story behind RegardsKim - why we built Shopify-aware email support that keeps merchants in control.",
   path: "/about",
   image: "/images/about-hero.jpg",
 });
@@ -62,7 +62,7 @@ export default function AboutPage() {
 
           <p>
             There&apos;s a real art to that. And for most small Shopify stores, that level of care is
-            out of reach. Too expensive, too hard to find, too much to manage.
+            hard to maintain when every reply means jumping between Gmail, Shopify, tracking pages, and policies.
           </p>
 
           <p>

@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const siteConfig = {
   name: "RegardsKim",
   url: "https://regardskim.com",
-  description: "AI-powered Shopify email support that triages Gmail, shows order context, and drafts replies for human review",
+  description: "AI email replies for Shopify support, drafted from real order context and reviewed before sending",
   ogImage: "/logo/kim-og-logo.jpg",
   price: "$49/mo",
   foundingPrice: "$49/mo founding offer",

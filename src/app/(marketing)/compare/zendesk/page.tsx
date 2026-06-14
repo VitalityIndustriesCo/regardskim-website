@@ -102,7 +102,7 @@ export default function RegardsKimVsZendeskPage() {
             <h2 className="font-display text-2xl font-bold text-ink">Where RegardsKim wins</h2>
             <div className="mt-5 space-y-4 text-slate">
               <p>
-                For a small store, the biggest win is not having to become a help desk admin just to answer
+                For a small store, the biggest win is not having to become a helpdesk admin just to answer
                 support emails well. RegardsKim is lighter, cheaper, and easier to get value from quickly.
               </p>
               <p>

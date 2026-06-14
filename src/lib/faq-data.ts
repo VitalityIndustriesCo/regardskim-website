@@ -7,7 +7,7 @@ export const faqItems: FAQItem[] = [
   {
     question: "What does Regards Kim do?",
     answer:
-      "Regards Kim connects to your Shopify store and support inbox, sorts customer emails into clear support buckets, matches them to order context, and drafts Shopify-aware replies you can review, edit, and send faster.",
+      "Regards Kim connects Shopify and Gmail, matches customer emails to real orders, and drafts Shopify-aware replies you can review, edit, and send faster.",
   },
   {
     question: "Does Regards Kim send replies automatically?",
@@ -17,7 +17,12 @@ export const faqItems: FAQItem[] = [
   {
     question: "Does Regards Kim replace our team?",
     answer:
-      "No. It assists the person handling support. Regards Kim gathers context, sorts the inbox, and prepares drafts so founders, VAs, or support teams can reply faster with better information.",
+      "No. It assists the person handling support. Regards Kim gathers Shopify context, sorts the inbox, and prepares drafts so founders, VAs, or support teams can reply faster with better information.",
+  },
+  {
+    question: "Is Regards Kim a helpdesk?",
+    answer:
+      "No. Regards Kim is for Shopify merchants who want faster support email replies without moving into a full helpdesk. It does not replace team ticketing, live chat, social inboxes, or phone support.",
   },
   {
     question: "Is it safe to use with customer emails?",
@@ -37,7 +42,7 @@ export const faqItems: FAQItem[] = [
   {
     question: "What kinds of emails can Regards Kim help with?",
     answer:
-      "It helps with tracking questions, refunds and exchanges, order changes, shipping address issues, product questions, sales questions, complaints, and messages that need no reply.",
+      "It helps with tracking questions, returns, refunds, exchanges, cancellations, order changes, shipping address issues, product questions, complaints, and messages that need no reply.",
   },
   {
     question: "Is this a live chat widget?",
@@ -45,7 +50,7 @@ export const faqItems: FAQItem[] = [
       "No. Regards Kim works behind the scenes with your support email and Shopify admin, not as a chat bubble on your storefront.",
   },
   {
-    question: "Does our agent have to be called Kim?",
+    question: "Does our agent have to be called Regards Kim?",
     answer:
       "Nope. You can change the sign-off name in your settings so replies go out under your brand or team name.",
   },
@@ -61,6 +66,6 @@ export const faqItems: FAQItem[] = [
   {
     question: "Who is Regards Kim best for?",
     answer:
-      "Shopify stores that have outgrown a messy Gmail inbox but do not want a heavy help desk yet. If support is stealing founder time, Regards Kim is for you.",
+      "Shopify stores that have outgrown a messy Gmail inbox but do not want a full helpdesk yet. If support is stealing founder or operator time, Regards Kim is for you.",
   },
 ];

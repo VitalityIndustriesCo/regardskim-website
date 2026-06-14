@@ -3,9 +3,9 @@ import type { HomeCopy } from "@/lib/i18n/types";
 export const enHomeCopy = {
   locale: "en",
   metadata: {
-    title: "Regards Kim - Shopify Support Replies in One Click",
+    title: "Regards Kim - Answer Shopify Customer Emails Faster",
     description:
-      "Regards Kim sorts customer emails and attaches the Shopify order. Click Suggest reply for a draft grounded in real order data, then review and send from Gmail.",
+      "Regards Kim connects Shopify and Gmail, matches customer emails to real orders, and drafts replies you can review, edit, and send.",
     ogLocale: "en_AU",
   },
   nav: {
@@ -27,31 +27,31 @@ export const enHomeCopy = {
     languageLabel: "Language",
   },
   hero: {
-    title: "Your support inbox, answered in one click.",
+    title: "Answer Shopify customer emails faster.",
     badges: {
       shopify: "Built for Shopify",
       gmail: "Works with Gmail",
     },
     body:
-      "Regards Kim sorts every customer email and attaches the Shopify order. Click Suggest reply and the draft is written — you review, edit, and send from Gmail.",
+      "Regards Kim connects Shopify and Gmail, matches customer emails to real orders, and drafts replies you can review, edit, and send. Built for tracking questions, returns, refunds, exchanges, cancellations, and order updates.",
     primaryCta: "Install on Shopify",
     secondaryCta: "Watch the demo",
     workflowPoints: [
-      "Regards Kim sorts the inbox",
-      "Order context attached",
-      "Click Suggest reply",
-      "You review and send",
+      "Keep Gmail as your inbox",
+      "Shopify order context attached",
+      "Draft from real store data",
+      "Approve every reply",
     ],
     reassurance: "No auto-sending · No credit card · Billed through Shopify only if you stay",
   },
   howItWorks: {
-    heading: "How it works",
+    heading: "How Regards Kim answers with Shopify context",
     steps: [
       {
         number: "01",
         title: "Connect Gmail and Shopify",
         body:
-          "Two minutes to connect. Regards Kim starts sorting customer emails by issue and filtering out the junk — sales pitches, notifications, and bounces never touch your queue.",
+          "Two minutes to connect. Regards Kim keeps Gmail as your support inbox and brings the work into a Shopify-aware queue.",
         image: "/images/how-it-works/step-1-inbox.png",
         alt:
           "Regards Kim inbox sorting customer emails: a tracking question, a return, an order change, and a newsletter marked no reply needed",
@@ -60,9 +60,9 @@ export const enHomeCopy = {
       },
       {
         number: "02",
-        title: "Every email arrives with its order attached",
+        title: "Every support email gets matched to Shopify context",
         body:
-          "Order, delivery status, tracking links, policy links, and customer details sit beside the conversation. No more hunting through tabs.",
+          "Order, delivery status, tracking links, policy links, and customer details sit beside the conversation. No more copying between Gmail, Shopify, and tracking pages.",
         image: "/images/how-it-works/step-2-context.png",
         alt:
           "A customer email asking where their order is, automatically matched to Shopify order 1842 with fulfillment status, carrier, and tracking number",
@@ -71,9 +71,9 @@ export const enHomeCopy = {
       },
       {
         number: "03",
-        title: "Click Suggest reply — the draft is written",
+        title: "Draft the reply, then approve it yourself",
         body:
-          "One click, and Regards Kim writes a reply grounded in the real order — not guesswork. It never drafts or sends anything without you asking. Edit it, or just press send from Gmail.",
+          "One click, and Regards Kim writes a reply grounded in the real order, tracking, policies, and saved replies. It never drafts or sends anything without you asking.",
         video: {
           mp4: "/media/step3-loop.mp4",
           ariaLabel:
@@ -84,8 +84,8 @@ export const enHomeCopy = {
   },
   comparison: {
     eyebrow: "See the difference",
-    heading: "Regards Kim knows your store.",
-    subheading: "Same customer question. Very different level of control.",
+    heading: "Generic AI writes. Regards Kim checks Shopify first.",
+    subheading: "Same customer question. Very different source of truth.",
     genericBadge: "One-size-fits-all",
     productBadge: "Built for ecommerce",
     genericTitle: "Generic AI email tools",
@@ -101,7 +101,7 @@ export const enHomeCopy = {
       "Built specifically for Shopify stores",
       "Connects support conversations to orders, tracking, and products",
       "Uses your actual store policies and saved replies",
-      "Drafts Shopify-aware replies inside your normal workflow",
+      "Drafts Shopify-aware replies without a helpdesk migration",
       "Understands WISMO, returns, exchanges, order changes, and escalations",
     ],
     customerEmailLabel: "Customer email",
@@ -191,7 +191,7 @@ export const enHomeCopy = {
         title: "Regards Kim",
         cost: "$49/mo",
         body:
-          "Sorting, order context, and drafted replies from the moment you connect. It never calls in sick, and you still approve every send.",
+          "Gmail stays in place, Shopify context sits beside every email, and you still approve every send.",
         highlight: true,
       },
     ],
@@ -199,9 +199,9 @@ export const enHomeCopy = {
   },
   trustAndSafety: {
     eyebrow: "Trust first",
-    heading: "AI help for customer emails, with humans in control.",
+    heading: "AI help for Shopify emails, with humans in control.",
     body:
-      "Regards Kim is designed for Shopify merchants who want faster replies without handing customer conversations to an unsupervised bot.",
+      "Regards Kim is designed for Shopify merchants who want faster email replies without handing customer conversations to an unsupervised bot or migrating into a helpdesk.",
     points: [
       {
         title: "No automatic sending",
@@ -237,9 +237,9 @@ export const enHomeCopy = {
     link: "Read the whole story →",
   },
   pricing: {
-    heading: "One plan. A fraction of your first support hire.",
+    heading: "One plan for Shopify support emails.",
     body:
-      "A part-time VA starts around $800 a month. Your own time costs more than you think. Regards Kim is $49 — working the moment you connect, and it never calls in sick.",
+      "Regards Kim is for stores that need faster post-purchase replies, not a full helpdesk rollout. Keep Gmail, work from Shopify context, and approve every reply.",
     planName: "Regards Kim",
     price: "$49",
     period: "/month",
@@ -247,7 +247,7 @@ export const enHomeCopy = {
     billingNote: "Billed monthly through your Shopify account",
     inclusions: [
       "Connects to your Shopify store and Gmail",
-      "AI support buckets for tracking, returns, order changes, sales, and escalations",
+      "Sorts tracking, returns, order changes, sales, and escalations",
       "Shopify order, customer, delivery, tracking, and policy context in the inbox",
       "AI-drafted replies, saved replies, tracking links, and policy helpers",
       "Support analytics that show where the inbox pressure is coming from",
@@ -263,7 +263,7 @@ export const enHomeCopy = {
     explainerHeading: "What you are paying for",
     explainerParagraphs: [
       "The expensive part of support is not the reply box. It is finding the order, checking tracking, remembering the policy, deciding what matters, and writing a clear customer response.",
-      "Regards Kim removes that repeated searching and rewriting. Your existing Gmail workflow stays in place, and your team keeps control of every message that leaves the inbox.",
+      "Regards Kim removes that repeated searching and rewriting without forcing you into a helpdesk. Your existing Gmail workflow stays in place, and your team keeps control of every message that leaves the inbox.",
       "For a busy founder or small team, one saved hour a month is enough to justify the plan.",
     ],
     finalNote: "Start with a 7-day free trial. Keep it only if it makes support lighter.",
@@ -272,12 +272,12 @@ export const enHomeCopy = {
     eyebrow: "Getting Started",
     heading: "Install from Shopify and get running in minutes",
     body:
-      "Start by installing RegardsKim from the Shopify App Store, then connect your inbox and confirm your store policies so the AI has the right context.",
+      "Start by installing RegardsKim from the Shopify App Store, then connect Gmail and confirm your store policies so every draft has the right Shopify context.",
     steps: [
       { number: "01", title: "Install RegardsKim from the Shopify App Store" },
       { number: "02", title: "Connect your email" },
       { number: "03", title: "Confirm your store policies" },
-      { number: "04", title: "Open your AI support inbox" },
+      { number: "04", title: "Review Shopify-aware draft replies" },
     ],
   },
   faq: {
@@ -286,7 +286,7 @@ export const enHomeCopy = {
       {
         question: "What does Regards Kim do?",
         answer:
-          "Regards Kim connects to your Shopify store and support inbox, sorts customer emails into clear support buckets, matches them to order context, and drafts Shopify-aware replies you can review, edit, and send faster.",
+          "Regards Kim connects Shopify and Gmail, matches customer emails to real orders, and drafts Shopify-aware replies you can review, edit, and send faster.",
       },
       {
         question: "Does Regards Kim send replies automatically?",
@@ -296,7 +296,12 @@ export const enHomeCopy = {
       {
         question: "Does Regards Kim replace our team?",
         answer:
-          "No. It assists the person handling support. Regards Kim gathers context, sorts the inbox, and prepares drafts so founders, VAs, or support teams can reply faster with better information.",
+          "No. It assists the person handling support. Regards Kim gathers Shopify context, sorts the inbox, and prepares drafts so founders, VAs, or support teams can reply faster with better information.",
+      },
+      {
+        question: "Is Regards Kim a helpdesk?",
+        answer:
+          "No. Regards Kim is for Shopify merchants who want faster support email replies without moving into a full helpdesk. It does not replace team ticketing, live chat, social inboxes, or phone support.",
       },
       {
         question: "Is it safe to use with customer emails?",
@@ -316,7 +321,7 @@ export const enHomeCopy = {
       {
         question: "What kinds of emails can Regards Kim help with?",
         answer:
-          "It helps with tracking questions, refunds and exchanges, order changes, shipping address issues, product questions, sales questions, complaints, and messages that need no reply.",
+          "It helps with tracking questions, returns, refunds, exchanges, cancellations, order changes, shipping address issues, product questions, complaints, and messages that need no reply.",
       },
       {
         question: "Is this a live chat widget?",
@@ -341,20 +346,20 @@ export const enHomeCopy = {
       {
         question: "Who is Regards Kim best for?",
         answer:
-          "Shopify stores that have outgrown a messy Gmail inbox but do not want a heavy help desk yet. If support is stealing founder time, Regards Kim is for you.",
+          "Shopify stores that have outgrown a messy Gmail inbox but do not want a full helpdesk yet. If support is stealing founder or operator time, Regards Kim is for you.",
       },
     ],
   },
   finalCta: {
-    heading: "Your inbox, handled.",
+    heading: "Keep Gmail. Work from Shopify. Approve every reply.",
     body:
-      "Install free. If the first week doesn't make support lighter, walk away — no card, no lock-in.",
+      "Install free. If the first week does not make Shopify support emails faster to answer, walk away — no card, no lock-in.",
     cta: "Install free on Shopify",
     signoff: "Kind regards, Kim",
   },
   footer: {
     description:
-      "AI-powered customer support for Shopify stores, with every customer reply reviewed by a human before it is sent.",
+      "AI email replies for Shopify support, drafted from real order data and reviewed by a human before sending.",
     subscribeHeading: "Stay in the loop",
     emailPlaceholder: "you@store.com",
     subscribeCta: "Subscribe",
@@ -422,7 +427,7 @@ export const enHomeCopy = {
       },
     ],
     languageHeading: "Language",
-    tagline: "Your support inbox, powered by AI.",
+    tagline: "Shopify support emails, drafted with order context.",
     signoff: "Kind regards, Kim",
     copyright: "© RegardsKim 2026. All rights reserved.",
   },

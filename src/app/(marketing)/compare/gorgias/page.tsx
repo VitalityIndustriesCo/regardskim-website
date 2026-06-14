@@ -8,7 +8,7 @@ import { SHOPIFY_APP_STORE_INSTALL_URL } from "@/lib/shopify-install";
 export const metadata: Metadata = marketingMetadata({
   title: "RegardsKim vs Gorgias",
   description:
-    "An honest look at RegardsKim vs Gorgias for Shopify support, including price, setup time, AI customer support, and where each tool fits best.",
+    "An honest look at RegardsKim vs Gorgias for Shopify support emails, including setup, pricing, order context, and where each tool fits best.",
   path: "/compare/gorgias",
 });
 
@@ -16,40 +16,40 @@ const comparisonRows = [
   {
     label: "Starting price",
     kim: "$49/month",
-    competitor: "Typically much higher once you add seats and automation",
+    competitor: "Lower entry tier available, then higher plans as ticket volume and automation grow",
   },
   {
     label: "Best for",
-    kim: "Shopify stores that want fast email support help without a big setup",
+    kim: "Shopify stores that want faster support email replies without a helpdesk migration",
     competitor: "Larger support teams managing multiple channels and agents",
   },
   {
     label: "Setup time",
-    kim: "Quick Shopify + inbox connection",
+    kim: "Quick Shopify + Gmail connection",
     competitor: "More configuration, workflows, macros, routing, and training",
   },
   {
     label: "Support style",
-    kim: "Drafts accurate replies using Shopify context",
-    competitor: "Full help desk built around tickets and team workflows",
+    kim: "Drafts email replies from Shopify order context for human review",
+    competitor: "Full helpdesk built around tickets and team workflows",
   },
   {
     label: "Inbox support",
-    kim: "AI triage and Shopify context prepare the queue before you reply",
+    kim: "Gmail stays in place while Shopify context prepares the reply",
     competitor: "Possible, but usually depends on team coverage and setup",
   },
   {
     label: "Where it is stronger",
-    kim: "Price, simplicity, speed to value",
+    kim: "Simplicity, Gmail continuity, speed to value",
     competitor: "Team management, omnichannel support, advanced support ops",
   },
 ];
 
 const pros = {
   kim: [
-    "Much lower monthly cost for small stores",
-    "Fast to set up if your main pain is customer emails",
+    "Fast to set up if your main pain is Shopify support emails",
     "Built around Shopify support questions like tracking, returns, and order changes",
+    "Keeps Gmail in place instead of forcing a helpdesk migration",
     "Useful for founders who still want approval before replies go out",
   ],
   competitor: [
@@ -91,8 +91,8 @@ export default function RegardsKimVsGorgiasPage() {
           </h1>
           <p className="mt-6 max-w-3xl text-lg leading-8 text-slate">
             If you run a Shopify store, these two tools solve different versions of the same problem.
-            Gorgias is a full support platform. RegardsKim is a simpler, lower-cost way to handle the
-            repetitive customer emails that usually eat your day.
+            Gorgias is a full support platform. RegardsKim is a Shopify-aware way to answer support emails
+            faster while Gmail stays your inbox.
           </p>
         </div>
 
@@ -142,25 +142,25 @@ export default function RegardsKimVsGorgiasPage() {
           <p>
             But a lot of Shopify stores are not there. They are founder-led, lean, and mostly dealing with
             email questions like tracking, returns, refunds, and product follow-ups. In that setup, Gorgias
-            can feel like buying a whole support department when what you really need is help clearing the
-            inbox without losing quality.
+            can feel like buying a whole support department when what you really need is help matching emails to
+            Shopify orders and drafting accurate replies without losing control.
           </p>
           <p>
-            RegardsKim is stronger when you want speed, simplicity, and a price that makes sense early. At
+            RegardsKim is stronger when you want speed, simplicity, and a Shopify-email workflow that makes sense early. At
             <strong> $49/month</strong>, it is often cheaper than one missed hour of founder time each week.
-            It plugs into your Shopify store, uses real order and tracking context, and helps draft replies fast. If you want to sanity-check that math for your own store, try the <Link href="/tools/support-cost-calculator" className="font-medium text-brass hover:text-oxblood">support cost calculator</Link>.
+            It plugs into your Shopify store and Gmail, uses real order and tracking context, and helps draft replies fast. If you want to sanity-check that math for your own store, try the <Link href="/tools/support-cost-calculator" className="font-medium text-brass hover:text-oxblood">support cost calculator</Link>.
           </p>
           <p>
             That does not make it a universal winner. It just makes it a better fit for stores that do not
-            need the weight of a full help desk yet.
+            need the weight of a full helpdesk yet.
           </p>
         </div>
 
         <div className="mx-auto mt-12 max-w-4xl rounded-[1.75rem] border border-brass/20 bg-white dark:bg-[#20283A] p-8 text-center shadow-[0_10px_26px_rgba(35,53,71,0.15),0_2px_6px_rgba(35,53,71,0.08)]">
-          <h2 className="font-display text-3xl font-bold text-ink">Best for small Shopify teams</h2>
+          <h2 className="font-display text-3xl font-bold text-ink">Best before you need a helpdesk</h2>
           <p className="mt-4 text-lg leading-8 text-slate">
-            If your biggest support problem is repetitive email, not managing a full team, RegardsKim is the
-            lighter and cheaper option.
+            If your biggest support problem is repetitive Shopify email, not managing a full support team,
+            RegardsKim is the lighter option.
           </p>
           <Link href={SHOPIFY_APP_STORE_INSTALL_URL} className="btn-primary mt-8 inline-flex">
             Install Regards Kim on Shopify

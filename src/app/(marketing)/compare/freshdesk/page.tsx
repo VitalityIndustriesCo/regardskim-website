@@ -8,7 +8,7 @@ import { SHOPIFY_APP_STORE_INSTALL_URL } from "@/lib/shopify-install";
 export const metadata: Metadata = marketingMetadata({
   title: "RegardsKim vs Freshdesk",
   description:
-    "Compare RegardsKim and Freshdesk for Shopify support. See where Freshdesk is stronger for service teams and where RegardsKim wins on Shopify-native customer support.",
+    "Compare RegardsKim and Freshdesk for Shopify support. See where Freshdesk is stronger for service teams and where RegardsKim wins on Shopify order context without a support platform rollout.",
   path: "/compare/freshdesk",
 });
 
@@ -20,7 +20,7 @@ const comparisonRows = [
   },
   {
     label: "Best for",
-    kim: "Shopify brands that want simpler email support help",
+    kim: "Shopify stores that want email replies drafted from order context, not a service platform",
     competitor: "Teams needing enterprise-style ticketing and multi-channel service",
   },
   {
@@ -30,7 +30,7 @@ const comparisonRows = [
   },
   {
     label: "Core strength",
-    kim: "Shopify-native email customer support",
+    kim: "Email replies drafted from Shopify order, tracking, and policy context",
     competitor: "Enterprise ticketing, phone support, and broad customer service tooling",
   },
   {
@@ -47,10 +47,10 @@ const comparisonRows = [
 
 const pros = {
   kim: [
-    "Built around Shopify support questions instead of generic ticket workflows",
-    "Much easier to set up if your support is mostly email",
+    "Drafts email replies from real Shopify order and tracking data instead of generic ticket workflows",
+    "Keeps Gmail in place — no helpdesk migration needed",
     "Lower cost for small stores and lean teams",
-    "No need to manage a full enterprise-style service desk",
+    "Approve every reply before it reaches the customer",
   ],
   competitor: [
     "Better if you need advanced ticketing, phone support, and admin controls",
@@ -90,8 +90,8 @@ export default function RegardsKimVsFreshdeskPage() {
             RegardsKim vs Freshdesk
           </h1>
           <p className="mt-6 max-w-3xl text-lg leading-8 text-slate">
-            Freshdesk is a broad customer service platform. RegardsKim is much more focused. It is designed for
-            Shopify merchants who want faster, more accurate email support without the complexity of a full service desk.
+            Freshdesk is a broad customer service platform. RegardsKim is deliberately narrower: Shopify order context
+            next to each customer email, draft replies from real data, and human approval before anything sends.
           </p>
         </div>
 
@@ -141,8 +141,8 @@ export default function RegardsKimVsFreshdeskPage() {
             drag.
           </p>
           <p>
-            RegardsKim fits that use case better. It plugs into Shopify, understands order context, and focuses on
-            the inbox. That makes it easier to adopt, easier to justify, and easier to keep using. If you want to
+            RegardsKim fits that use case better. It connects Gmail and Shopify, matches customer emails to orders,
+            and drafts replies from real tracking, policy, and order context. No tickets, no agents, no migration. If you want to
             pressure-test the economics, the <Link href="/tools/support-cost-calculator" className="font-medium text-brass hover:text-oxblood">support cost calculator</Link> is a good place to start.
           </p>
           <p>
@@ -152,9 +152,9 @@ export default function RegardsKimVsFreshdeskPage() {
         </div>
 
         <div className="mx-auto mt-12 max-w-4xl rounded-[1.75rem] border border-brass/20 bg-white dark:bg-[#20283A] p-8 text-center shadow-[0_10px_26px_rgba(35,53,71,0.15),0_2px_6px_rgba(35,53,71,0.08)]">
-          <h2 className="font-display text-3xl font-bold text-ink">Shopify-native beats generic for many teams</h2>
+          <h2 className="font-display text-3xl font-bold text-ink">Shopify order context without a service platform</h2>
           <p className="mt-4 text-lg leading-8 text-slate">
-            If your support world revolves around Shopify orders and customer emails, Regards Kim is the more focused fit.
+            If your support is mostly post-purchase email, Regards Kim drafts from real Shopify data without the overhead of enterprise service software.
           </p>
           <Link href={SHOPIFY_APP_STORE_INSTALL_URL} className="btn-primary mt-8 inline-flex">
             Install Regards Kim on Shopify

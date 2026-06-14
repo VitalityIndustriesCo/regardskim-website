@@ -9,7 +9,7 @@ import { absoluteUrl, marketingMetadata } from "@/lib/seo";
 export const metadata: Metadata = marketingMetadata({
   title: "Security & Data",
   description:
-    "How Regards Kim handles Gmail access, Shopify permissions, customer communications, AI drafts, and human approval for Shopify support teams.",
+    "How Regards Kim uses Gmail access, Shopify order context, customer communications, AI drafts, and human approval for Shopify support emails.",
   path: "/security",
 });
 
@@ -20,7 +20,7 @@ const principles = [
     icon: UserCheck,
   },
   {
-    title: "Context is used for support",
+    title: "Shopify context stays visible",
     body: "Customer emails, Shopify order details, tracking, and policy links are used to help the merchant handle support more accurately.",
     icon: CheckCircle2,
   },
@@ -62,14 +62,14 @@ const sections = [
     title: "What Regards Kim connects to",
     items: [
       "Your Shopify store, so customer emails can be matched to relevant order and customer context.",
-      "Your Gmail support inbox, so customer emails can be sorted and handled where your team already works.",
+      "Your Gmail support inbox, so customer emails can stay in Gmail while Regards Kim brings them into a Shopify-aware workflow.",
       "Your store policies, so drafts can reference your actual returns, shipping, and support rules instead of guessing.",
     ],
   },
   {
     title: "What Regards Kim does with that access",
     items: [
-      "Sorts support emails into practical ecommerce buckets such as tracking, returns, refunds, order changes, sales, and escalations.",
+      "Sorts support emails into practical Shopify buckets such as tracking, returns, refunds, order changes, sales, and escalations.",
       "Shows Shopify order, customer, delivery, tracking, and policy context near the email.",
       "Prepares draft replies, saved-reply helpers, tracking links, and policy links for human review.",
     ],
@@ -102,11 +102,11 @@ export default function SecurityPage() {
         <div className="mx-auto max-w-4xl text-center">
           <p className="text-sm font-semibold uppercase tracking-[0.16em] text-brass">Security & Data</p>
           <h1 className="mt-4 font-display text-4xl font-bold tracking-normal text-ink sm:text-5xl">
-            AI support help, without giving up control of customer conversations.
+            Shopify support email help, without giving up control of customer conversations.
           </h1>
           <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate">
-            Regards Kim is built for Shopify merchants who want faster support replies while keeping a human responsible
-            for what customers actually receive.
+            Regards Kim is built for Shopify merchants who want Gmail support replies drafted from real order context,
+            while keeping a human responsible for what customers actually receive.
           </p>
         </div>
 
@@ -162,8 +162,9 @@ export default function SecurityPage() {
           <h2 className="font-display text-3xl font-bold text-ink">Plain-English install expectation</h2>
           <p className="mt-4 text-base leading-8 text-slate">
             After installing, you connect Gmail and confirm the policy links Regards Kim should use. The app then helps
-            organise incoming support work and prepare replies. Your current support workflow stays familiar: you still
-            review the message, adjust the answer if needed, and send only when you are comfortable.
+            organise incoming support work, match customer emails to Shopify context, and prepare replies. Your current
+            support workflow stays familiar: you still review the message, adjust the answer if needed, and send only
+            when you are comfortable.
           </p>
           <p className="mt-4 text-sm leading-7 text-slate">
             For the formal legal wording, read the <Link href="/privacy" className="font-semibold text-brass hover:text-oxblood">Privacy Policy</Link> and <Link href="/terms" className="font-semibold text-brass hover:text-oxblood">Terms of Service</Link>.

@@ -259,7 +259,7 @@ function ConnectionsContent() {
           Connections
         </h1>
         <p className="text-sm text-muted-foreground">
-          Connected integrations and services that power your AI support inbox.
+          Connected integrations and services that power your Shopify-aware support inbox.
         </p>
       </div>
 
@@ -271,7 +271,7 @@ function ConnectionsContent() {
         <EmptyState
           icon={Store}
           title="No connections yet"
-          description="Connect your Shopify store and email provider to enable AI-powered customer support."
+          description="Connect your Shopify store and email provider to enable Shopify-aware email support."
         />
       ) : (
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

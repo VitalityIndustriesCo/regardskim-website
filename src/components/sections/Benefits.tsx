@@ -3,18 +3,18 @@ import FadeIn from "@/components/ui/FadeIn";
 
 const benefits = [
   {
-    title: "AI triage built for ecommerce",
-    body: "Tracking questions, returns, order changes, product help, sales, and escalations are sorted into clear buckets before they become inbox chaos.",
+    title: "AI triage built for Shopify support",
+    body: "Tracking questions, returns, order changes, product help, sales, and escalations are sorted before they become inbox chaos.",
     icon: LayoutDashboard,
   },
   {
     title: "Shopify context beside every reply",
-    body: "Regards Kim pulls order, customer, tracking, and policy context into the workflow so your team is not hunting through tabs.",
+    body: "Regards Kim pulls order, customer, tracking, and policy context into the workflow so your team is not copying between Gmail and Shopify.",
     icon: BookOpen,
   },
   {
     title: "AI-drafted replies you control",
-    body: "Generate Shopify-aware drafts, improve your wording, add tracking or policy links, and send from Gmail only when you are ready.",
+    body: "Generate Shopify-aware drafts, improve your wording, add tracking or policy links, and send from Gmail only after review.",
     icon: ShieldCheck,
   },
 ];

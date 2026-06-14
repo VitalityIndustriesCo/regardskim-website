@@ -8,7 +8,7 @@ import { absoluteUrl, marketingMetadata } from "@/lib/seo";
 export const metadata: Metadata = marketingMetadata({
   title: "How RegardsKim Compares",
   description:
-    "Explore RegardsKim comparison pages for Gorgias, Zendesk, and hiring a virtual assistant, plus guides to pick the right support setup.",
+    "Explore RegardsKim comparison pages for helpdesks, live chat tools, VAs, and the manual Gmail-plus-Shopify support workflow.",
   path: "/compare",
 });
 
@@ -17,13 +17,13 @@ const comparisonPages = [
     href: "/compare/gorgias",
     title: "RegardsKim vs Gorgias",
     description:
-      "Best if you want AI-powered customer support without committing to a full ecommerce help desk yet.",
+      "Best if you want Shopify-aware email replies before committing to a full ecommerce helpdesk.",
   },
   {
     href: "/compare/zendesk",
     title: "RegardsKim vs Zendesk",
     description:
-      "Useful when you are weighing simple Shopify email support against a broader, more operational service platform.",
+      "Useful when you are weighing Shopify email support against a broader service platform.",
   },
   {
     href: "/compare/tidio",
@@ -35,13 +35,13 @@ const comparisonPages = [
     href: "/compare/reamaze",
     title: "RegardsKim vs Reamaze",
     description:
-      "Helpful if you are deciding between an AI support inbox and a more mature ecommerce help desk.",
+      "Helpful if you are deciding between Shopify-aware Gmail support and a mature ecommerce helpdesk.",
   },
   {
     href: "/compare/richpanel",
     title: "RegardsKim vs Richpanel",
     description:
-      "Best for comparing Shopify-aware inbox control against a self-service portal and customer dashboard approach.",
+      "Best for comparing Shopify-aware email replies against a self-service portal and customer dashboard approach.",
   },
   {
     href: "/compare/freshdesk",
@@ -65,7 +65,7 @@ const comparisonPages = [
     href: "/compare/diy",
     title: "RegardsKim vs Doing It Yourself",
     description:
-      "A reality check on the hidden cost of founder-led support compared with an AI-powered customer support layer.",
+      "A reality check on the hidden cost of manually copying between Gmail, Shopify, tracking pages, and policies.",
   },
 ];
 
@@ -86,7 +86,7 @@ const supportingLinks = [
 
 const decisionCards = [
   {
-    title: "Choose a help desk if",
+    title: "Choose a helpdesk if",
     points: [
       "You already have several support agents",
       "You need live chat, social DMs, rules, routing, and ticket operations",
@@ -98,7 +98,7 @@ const decisionCards = [
     points: [
       "Most support still happens in Gmail",
       "You want Shopify order context next to each customer email",
-      "You want AI drafts for review, not automatic replies sent without approval",
+      "You want draft replies for review, not automatic replies sent without approval",
     ],
   },
 ];
@@ -110,7 +110,7 @@ export default function CompareHubPage() {
     name: "How RegardsKim Compares",
     url: absoluteUrl("/compare"),
     description:
-      "Comparison hub for RegardsKim against help desks, live chat tools, hiring options, and the DIY support approach.",
+      "Comparison hub for RegardsKim against helpdesks, live chat tools, hiring options, and the DIY support approach.",
     hasPart: comparisonPages.map((page) => ({
       "@type": "WebPage",
       name: page.title,
@@ -130,8 +130,8 @@ export default function CompareHubPage() {
             How RegardsKim Compares
           </h1>
           <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate">
-            If you are choosing between Regards Kim, a help desk, or hiring support, start here. These pages break down
-            the tradeoffs without pretending every store needs the same setup.
+            If you are choosing between Regards Kim, a helpdesk, live chat, or hiring support, start here. These pages
+            break down the tradeoffs without pretending every store needs the same setup.
           </p>
         </div>
 

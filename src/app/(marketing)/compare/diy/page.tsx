@@ -8,7 +8,7 @@ import { SHOPIFY_APP_STORE_INSTALL_URL } from "@/lib/shopify-install";
 export const metadata: Metadata = marketingMetadata({
   title: "RegardsKim vs Doing It Yourself",
   description:
-    "Compare RegardsKim with the DIY approach to Shopify customer support, where the founder handles the inbox manually.",
+    "Compare RegardsKim with the DIY approach to Shopify support. Stop copying between Gmail, Shopify, and tracking pages for every customer email.",
   path: "/compare/diy",
 });
 
@@ -20,7 +20,7 @@ const comparisonRows = [
   },
   {
     label: "Availability",
-    kim: "AI support workflow ready when you open the inbox",
+    kim: "Shopify order context and draft replies ready when you open the inbox",
     competitor: "Only when you are online and have the energy for it",
   },
   {
@@ -40,17 +40,17 @@ const comparisonRows = [
   },
   {
     label: "Where it is stronger",
-    kim: "Time savings, AI drafting help, reduced support drag",
+    kim: "Shopify context in one place, draft replies from order data, fewer tab switches",
     competitor: "Zero software spend, total control, personal customer connection",
   },
 ];
 
 const pros = {
   kim: [
-    "Wins back founder time every week",
-    "Helps keep replies fast and consistent even when the inbox spikes",
-    "Reduces the chance that support becomes a constant background drain",
-    "Still lets you approve replies rather than giving up control entirely",
+    "Stops the copy-paste loop between Gmail, Shopify admin, and tracking pages",
+    "Drafts replies from real Shopify order and tracking data",
+    "Sorts emails so you know what actually needs a reply",
+    "You still approve every send — control stays with you",
   ],
   competitor: [
     "Costs nothing extra in software",
@@ -140,8 +140,8 @@ export default function RegardsKimVsDIYPage() {
             phone becomes a constant mental tab you never really close. That is where burnout creeps in.
           </p>
           <p>
-            RegardsKim is built for that exact moment. It keeps the founder in control, but removes a lot of the
-            repetitive sorting, context-checking, and AI draft prep so support stops eating the day. If you want to quantify what DIY support is
+            RegardsKim is built for that exact moment. It connects Gmail and Shopify, matches each email to the
+            right order, and drafts replies from real tracking, policy, and order context — so support stops eating the day. If you want to quantify what DIY support is
             really costing you, the <Link href="/tools/support-cost-calculator" className="font-medium text-brass hover:text-oxblood">support cost calculator</Link> is a useful gut check.
           </p>
           <p>

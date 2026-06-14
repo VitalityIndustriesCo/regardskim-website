@@ -8,7 +8,7 @@ import { SHOPIFY_APP_STORE_INSTALL_URL } from "@/lib/shopify-install";
 export const metadata: Metadata = marketingMetadata({
   title: "RegardsKim vs Richpanel",
   description:
-    "Compare RegardsKim and Richpanel for ecommerce support. See where Richpanel is stronger on self-service and where RegardsKim wins on AI-powered email support.",
+    "Compare RegardsKim and Richpanel for ecommerce support. See where Richpanel is stronger on self-service portals and where RegardsKim wins on Shopify-aware email replies drafted from order data.",
   path: "/compare/richpanel",
 });
 
@@ -20,7 +20,7 @@ const comparisonRows = [
   },
   {
     label: "Best for",
-    kim: "Stores that mainly want help with repetitive support email",
+    kim: "Stores that want email replies drafted from Shopify order context",
     competitor: "Brands investing in self-service and a customer portal experience",
   },
   {
@@ -30,7 +30,7 @@ const comparisonRows = [
   },
   {
     label: "Core strength",
-    kim: "Email support inbox with Shopify context",
+    kim: "Email replies drafted from Shopify order, tracking, and policy context",
     competitor: "Self-service portal and customer-facing dashboard experience",
   },
   {
@@ -40,17 +40,17 @@ const comparisonRows = [
   },
   {
     label: "Where it is stronger",
-    kim: "Price, simplicity, email-first support",
+    kim: "Price, Shopify order context, approve-first email replies",
     competitor: "Self-service experiences and customer portal tooling",
   },
 ];
 
 const pros = {
   kim: [
-    "A lot cheaper if your main need is email support help",
-    "Keeps the workflow lightweight for small Shopify teams",
-    "Good fit when order-status, returns, and refunds dominate your inbox",
-    "No need to build out a customer portal to see value",
+    "Drafts replies from real Shopify order and tracking data, not generic templates",
+    "Keeps Gmail in place and the workflow lightweight for small teams",
+    "Good fit when tracking, returns, refunds, and order changes dominate the inbox",
+    "No customer portal needed — value starts with the first matched email",
   ],
   competitor: [
     "Better if reducing tickets through self-service is a major goal",
@@ -91,7 +91,7 @@ export default function RegardsKimVsRichpanelPage() {
           </h1>
           <p className="mt-6 max-w-3xl text-lg leading-8 text-slate">
             Richpanel is more ambitious as a support platform. RegardsKim is deliberately narrower. It focuses on
-            helping Shopify stores answer repetitive customer emails quickly without forcing a bigger support
+            helping Shopify stores draft email replies from real order context without forcing a bigger support
             system around the problem.
           </p>
         </div>
