@@ -71,7 +71,7 @@ export const enHomeCopy = {
       },
       {
         number: "03",
-        title: "Draft the reply, then approve it yourself",
+        title: "AI drafts the reply, you review and send",
         body:
           "One click, and Regards Kim writes a reply grounded in the real order, tracking, policies, and saved replies. It never drafts or sends anything without you asking.",
         video: {
