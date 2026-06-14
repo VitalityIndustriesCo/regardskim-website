@@ -99,7 +99,7 @@ export default function Navbar({ copy: copyProp, locale: localeProp }: NavbarPro
                 aria-hidden="true"
               />
             </div>
-            <Link href={SHOPIFY_APP_STORE_INSTALL_URL} className="btn-primary">
+            <Link href={SHOPIFY_APP_STORE_INSTALL_URL} className="btn-primary min-w-[9.5rem] px-5 text-center leading-none">
               {copy.installCta}
             </Link>
           </div>
