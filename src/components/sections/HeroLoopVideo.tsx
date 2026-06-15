@@ -1,18 +1,39 @@
-export default function HeroLoopVideo() {
+type HeroLoopVideoProps = {
+  ariaLabel?: string;
+  autoPlay?: boolean;
+  controls?: boolean;
+  loop?: boolean;
+  muted?: boolean;
+  mp4Src?: string;
+  preload?: "none" | "metadata" | "auto";
+  webmSrc?: string;
+};
+
+export default function HeroLoopVideo({
+  ariaLabel = "Regards Kim demo: a customer email arrives, is matched to the Shopify order, a reply is drafted, and the merchant approves and sends it from Gmail.",
+  autoPlay = true,
+  controls = false,
+  loop = true,
+  muted = true,
+  mp4Src = "/media/hero-loop.mp4",
+  preload = "metadata",
+  webmSrc = "/media/hero-loop.webm",
+}: HeroLoopVideoProps) {
   return (
     <div className="relative mx-auto max-w-6xl">
       <div className="overflow-hidden rounded-[2rem] border border-[#E3D3C6] bg-[#FFF9F3] shadow-[0_22px_58px_rgba(35,53,71,0.30),0_6px_16px_rgba(35,53,71,0.14)] dark:border-slate/15 dark:bg-[#20283A]">
         <video
-          autoPlay
-          muted
-          loop
+          autoPlay={autoPlay}
+          controls={controls}
+          muted={muted}
+          loop={loop}
           playsInline
-          preload="metadata"
-          aria-label="Regards Kim demo: a customer email arrives, is matched to the Shopify order, a reply is drafted, and the merchant approves and sends it from Gmail."
+          preload={preload}
+          aria-label={ariaLabel}
           className="block w-full"
         >
-          <source src="/media/hero-loop.webm" type="video/webm" />
-          <source src="/media/hero-loop.mp4" type="video/mp4" />
+          {webmSrc ? <source src={webmSrc} type="video/webm" /> : null}
+          <source src={mp4Src} type="video/mp4" />
         </video>
       </div>
     </div>

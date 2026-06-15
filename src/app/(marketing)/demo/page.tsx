@@ -18,23 +18,23 @@ export const metadata: Metadata = marketingMetadata({
 const moments = [
   {
     time: "0:00",
-    title: "The email arrives",
-    body: "A customer asks where their order is. Regards Kim keeps Gmail as the inbox, then brings the message into a Shopify-aware queue.",
+    title: "The priority queue opens",
+    body: "Regards Kim shows the customer emails that need attention first, with separate views for messages that can wait and shipping address issues.",
   },
   {
-    time: "0:02",
-    title: "The order is matched",
-    body: "No searching. The Shopify order, fulfillment status, carrier, tracking number, and customer details are already attached to the conversation.",
+    time: "0:24",
+    title: "Store notifications are cleared out",
+    body: "Automatic store emails are filtered away so the inbox stays focused on real customer support work.",
   },
   {
-    time: "0:04",
-    title: "You draft from real context",
-    body: "The draft only happens when you ask for it. One click, and Regards Kim writes a reply grounded in the real order, tracking status, and your support rules.",
+    time: "0:42",
+    title: "The order context is already attached",
+    body: "Open a customer email and the Shopify order, customer details, fulfillment state, and tracking context are there beside the conversation.",
   },
   {
-    time: "0:08",
-    title: "You approve and send",
-    body: "Review it, tweak a word if you like, and send from Gmail. Nothing ever goes out without your approval.",
+    time: "1:03",
+    title: "Replies stay merchant-approved",
+    body: "Suggest Reply drafts from the real order, saved replies fill reusable answers with placeholders, and address confirmations can be sent for flagged orders.",
   },
 ];
 
@@ -55,7 +55,15 @@ export default function DemoPage() {
           </FadeIn>
 
           <FadeIn delay={0.08} className="py-8 md:py-12">
-            <HeroLoopVideo />
+            <HeroLoopVideo
+              ariaLabel="Regards Kim full product demo showing priority buckets, automatic notification filtering, order context, AI reply suggestions, saved replies, and address issue workflows."
+              autoPlay={false}
+              controls
+              loop={false}
+              muted={false}
+              mp4Src="/media/regards-kim-demo.mp4"
+              webmSrc=""
+            />
           </FadeIn>
         </div>
       </section>
