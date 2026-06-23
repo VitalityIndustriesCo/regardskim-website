@@ -13,6 +13,186 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "ai-auto-drafting-shopify-support-emails",
+    title: "AI Auto-Drafting Emails for Shopify Support: What to Automate and What to Keep Human",
+    date: "June 23, 2026",
+    image: "/blog/ai-auto-drafting-shopify-support-emails.png",
+    meta:
+      "Learn how AI auto-drafting helps Shopify stores answer support emails faster while keeping every customer reply under human review.",
+    content: (
+      <>
+        <p>
+          AI auto-drafting means a support reply is prepared before the person handling the inbox has to write it from
+          scratch. For Shopify stores, the useful version is not just a generic email writer. It should read the customer
+          message, find the right Shopify order context, use the store&apos;s policies, and leave a clear draft ready for
+          review.
+        </p>
+        <p>
+          That distinction matters. The goal is not to let AI run customer support by itself. The goal is to remove the
+          repetitive first-draft work so founders, VAs, and small support teams can spend their time checking facts,
+          making judgement calls, and sending better replies faster.
+        </p>
+        <p>
+          If your store handles support through Gmail, auto-drafting can be especially useful because it keeps the
+          existing inbox workflow intact. You still decide what gets sent. The difference is that the reply box is not
+          empty when you open the email.
+        </p>
+
+        <h2>What AI auto-drafting should do</h2>
+        <p>
+          A good auto-drafted support email should start with the same work a careful support person would do before
+          replying. It should understand what the customer is asking, pull the relevant order details, check the
+          available tracking or policy context, and prepare a response that is specific enough to be useful.
+        </p>
+        <p>For a Shopify support inbox, that usually means the draft should include:</p>
+        <ul>
+          <li>The customer&apos;s actual question, not just the email subject.</li>
+          <li>The order number, fulfilment status, delivery status, carrier, or tracking link where relevant.</li>
+          <li>The store&apos;s return, refund, exchange, shipping, or cancellation rules.</li>
+          <li>A clear next step for the customer.</li>
+          <li>A tone that sounds like the store, not a generic support script.</li>
+        </ul>
+        <p>
+          When those pieces are already in the draft, the human review step becomes much faster. You are checking and
+          improving a useful answer instead of hunting through Shopify, Gmail, policy pages, and tracking tabs before
+          you can even start writing.
+        </p>
+
+        <h2>Why generic AI email tools fall short</h2>
+        <p>
+          Generic AI tools can write polished sentences, but ecommerce support is not only a writing problem. A customer
+          asking &quot;Where is my order?&quot; does not need a nicer version of &quot;please check your tracking link.&quot;
+          They need the store to know whether the order has been fulfilled, which carrier has it, what the latest scan
+          says, and what happens if the tracking has stalled.
+        </p>
+        <p>
+          Without Shopify context, an AI tool can sound confident while guessing. That creates risk. It might promise a
+          refund the store has not approved, say an order shipped when it has not, miss an address issue, or give return
+          advice that does not match the policy.
+        </p>
+        <p>
+          This is why the best Shopify support auto-drafting starts with source-of-truth context. The draft should be
+          grounded in the actual customer email, order data, tracking data, and store rules. If you want the deeper
+          comparison, the guide to{" "}
+          <Link href="/blog/why-kim-is-different">why generic AI email tools fall short for ecommerce support</Link>{" "}
+          breaks that down in more detail.
+        </p>
+
+        <h2>Where auto-drafting saves the most time</h2>
+        <p>
+          Auto-drafting is strongest when the support question is common, the facts are available, and the customer
+          needs a clear operational answer. That covers a large chunk of post-purchase support for many Shopify stores.
+        </p>
+        <p>Good candidates include:</p>
+        <ul>
+          <li>Order tracking questions.</li>
+          <li>Shipping delay follow-ups.</li>
+          <li>Return eligibility questions.</li>
+          <li>Exchange requests.</li>
+          <li>Refund timing questions.</li>
+          <li>Cancellation or order-change requests before fulfilment.</li>
+          <li>Shipping address issues.</li>
+          <li>Common product or sizing questions.</li>
+        </ul>
+        <p>
+          These messages often take longer than they should because the answer depends on scattered context. Once the
+          context is gathered and a draft is prepared, the person replying can move quickly without sacrificing accuracy.
+        </p>
+        <p>
+          For example, a tracking email might arrive in Gmail while the order is already fulfilled in Shopify and the
+          carrier has a recent scan. Auto-drafting can prepare the first reply with the order number, carrier, tracking
+          link, latest status, and a plain next step. The merchant then checks the draft, edits the tone if needed, and
+          sends it from Gmail.
+        </p>
+
+        <h2>What should stay human</h2>
+        <p>
+          Auto-drafting should not remove human judgement from customer support. It should make human judgement easier
+          to apply.
+        </p>
+        <p>Keep a person in control when:</p>
+        <ul>
+          <li>The customer is angry, distressed, or threatening a chargeback.</li>
+          <li>The store needs to make a goodwill decision.</li>
+          <li>The policy has an exception or the order history is messy.</li>
+          <li>A refund, replacement, or cancellation decision has financial impact.</li>
+          <li>The customer&apos;s request is ambiguous.</li>
+          <li>The draft depends on information the system cannot verify.</li>
+        </ul>
+        <p>
+          This is not a weakness. It is the operating model. Let AI prepare the repeat work, then let a human approve,
+          edit, or rewrite anything that needs care.
+        </p>
+
+        <h2>Auto-drafting works best with saved replies and policies</h2>
+        <p>
+          AI drafts improve when the store has clear building blocks. Saved replies, return rules, shipping timeframes,
+          refund expectations, exchange instructions, and policy links give the drafting system better guardrails.
+        </p>
+        <p>
+          That does not mean every reply should sound templated. It means the AI has a reliable starting point. A draft
+          can use the store&apos;s preferred wording, then adapt it to the customer&apos;s real situation.
+        </p>
+        <p>
+          If your current templates feel too stiff, start with the guide to{" "}
+          <Link href="/blog/customer-service-email-templates-sound-human">
+            customer service email templates that still sound human
+          </Link>
+          . If your policy wording is the weak point, the free{" "}
+          <Link href="/tools/return-policy-generator">return policy generator</Link> can help you create clearer
+          customer-facing language.
+        </p>
+
+        <h2>How to judge an auto-drafted support email</h2>
+        <p>
+          The fastest way to review a draft is to check it against a short quality bar. Before sending, ask:
+        </p>
+        <ol>
+          <li>Does it answer the customer&apos;s actual question?</li>
+          <li>Does it use the right order, tracking, and policy facts?</li>
+          <li>Does it avoid promises the store has not approved?</li>
+          <li>Does it give a clear next step?</li>
+          <li>Does it sound like the store?</li>
+        </ol>
+        <p>
+          If the answer is yes, the draft has done its job. If not, edit it, improve it, use a saved reply, or write a
+          fresh response. Auto-drafting should make the easy emails fast and the harder emails easier to think through.
+        </p>
+
+        <h2>How Regards Kim handles auto-drafting</h2>
+        <p>
+          Regards Kim is built for Shopify merchants who use Gmail for support and want faster replies without moving
+          into a full helpdesk. It sorts customer emails, matches them to Shopify order context, and auto-drafts
+          Shopify-aware replies for review.
+        </p>
+        <p>
+          The draft can sit alongside order details, tracking context, policy links, saved replies, and helper actions,
+          so the person replying does not have to rebuild the whole answer from scratch. Every send still stays under
+          human control.
+        </p>
+        <p>
+          If you want to understand where this fits in the broader workflow, read{" "}
+          <Link href="/blog/automate-shopify-support-emails">how to automate Shopify support emails</Link> or try the{" "}
+          <Link href="/tools/support-cost-calculator">support cost calculator</Link> to estimate how much repetitive
+          inbox work is costing your store.
+        </p>
+
+        <h2>The point is a faster first draft, not a faceless inbox</h2>
+        <p>
+          The best customer support still feels human because a human is still responsible for it. AI auto-drafting is
+          useful because it removes the blank-page work, gathers the facts, and gives the support person a strong
+          starting point.
+        </p>
+        <p>
+          For small Shopify teams, that can turn a messy inbox into a calmer workflow: emails sorted, order context
+          attached, draft replies ready, and every customer message reviewed before it leaves Gmail.
+        </p>
+        <p>Kind regards, Kim</p>
+      </>
+    ),
+  },
+
+  {
     slug: "shopify-order-tracking-emails",
     title: "Shopify Order Tracking Emails: What Customers Actually Need to Know",
     date: "June 3, 2026",

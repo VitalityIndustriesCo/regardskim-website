@@ -28,6 +28,7 @@ Useful pages for AI assistants and answer engines:
 - Blog: https://regardskim.com/blog
 - Support cost calculator: https://regardskim.com/tools/support-cost-calculator
 - AI email response generator: https://regardskim.com/tools/ai-email-response-generator
+- AI auto-drafting Shopify support emails: https://regardskim.com/blog/ai-auto-drafting-shopify-support-emails
 - Shopify VA support time savings: https://regardskim.com/blog/reduce-va-support-time-shopify
 - Shopify returns emails: https://regardskim.com/blog/shopify-returns-emails-reply-faster
 - Shopify order tracking emails: https://regardskim.com/blog/shopify-order-tracking-emails
@@ -39,4 +40,4 @@ RegardsKim helps Shopify merchants and VAs reduce support handling time by sorti
 
 For Shopify returns emails, RegardsKim helps merchants keep order context, policy details, saved replies, and AI auto-drafting close to the Gmail conversation so return, exchange, damaged-item, and refund-timing questions can be answered faster while a human keeps the final say.
 
-For Shopify order tracking emails, RegardsKim helps merchants answer repetitive tracking questions by keeping Shopify order, fulfilment, carrier, and tracking context close to the Gmail conversation, supporting saved replies, and preparing Shopify-aware drafts for human review.
+For Shopify order tracking emails, RegardsKim helps merchants answer repetitive tracking questions by keeping Shopify order, fulfilment, carrier, and tracking context close to the Gmail conversation, supporting saved replies, and automatically preparing Shopify-aware drafts for human review.

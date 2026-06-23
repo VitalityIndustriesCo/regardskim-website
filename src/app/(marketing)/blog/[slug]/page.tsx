@@ -7,10 +7,15 @@ import { blogPosts, getBlogPost } from "@/lib/blog-posts";
 import { absoluteUrl, siteConfig } from "@/lib/seo";
 
 const relatedPostsMap: Record<string, string[]> = {
+  "ai-auto-drafting-shopify-support-emails": [
+    "automate-shopify-support-emails",
+    "why-kim-is-different",
+    "use-gmail-shopify-customer-support",
+  ],
   "shopify-order-tracking-emails": [
+    "ai-auto-drafting-shopify-support-emails",
     "reduce-where-is-my-order-emails",
     "shopify-returns-emails-reply-faster",
-    "customer-service-email-templates-sound-human",
   ],
   "best-shopify-customer-service-apps-2026": [
     "automate-shopify-support-emails",
@@ -18,9 +23,9 @@ const relatedPostsMap: Record<string, string[]> = {
     "ai-vs-virtual-assistant-ecommerce-support",
   ],
   "automate-shopify-support-emails": [
+    "ai-auto-drafting-shopify-support-emails",
     "reduce-where-is-my-order-emails",
     "scale-customer-support-without-hiring",
-    "true-cost-of-shopify-customer-support",
   ],
   "ai-vs-virtual-assistant-ecommerce-support": [
     "true-cost-of-shopify-customer-support",
@@ -58,9 +63,9 @@ const relatedPostsMap: Record<string, string[]> = {
     "true-cost-of-shopify-customer-support",
   ],
   "why-kim-is-different": [
+    "ai-auto-drafting-shopify-support-emails",
     "best-shopify-customer-service-apps-2026",
     "automate-shopify-support-emails",
-    "ai-storefront-post-sale-support",
   ],
 };
 
