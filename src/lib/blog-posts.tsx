@@ -13,6 +13,217 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "what-to-automate-first-ecommerce-customer-service",
+    title: "What to Automate First in Ecommerce Customer Service",
+    date: "June 24, 2026",
+    image: "/blog/what-to-automate-first-ecommerce-customer-service.png",
+    meta:
+      "Learn what ecommerce customer service work to automate first, from email sorting to tracking replies, without losing human review.",
+    content: (
+      <>
+        <p>
+          The best place to start automating ecommerce customer service is not the most sensitive decision in the inbox.
+          Start with repetitive, fact-based work: sorting emails, finding order context, preparing tracking answers,
+          using saved replies, and showing the next step clearly for a person to review.
+        </p>
+        <p>
+          For a Shopify store, that usually means support questions about order tracking, delivery timing, returns,
+          exchanges, address changes, cancellations, and refund timing. These emails are common, time-consuming, and
+          often need the same pieces of context from Shopify, Gmail, policy pages, and carrier tracking links.
+        </p>
+        <p>
+          The goal is not to remove the merchant from customer support. The useful goal is to make the repeat work
+          faster so the person handling support can check the facts, adjust the tone, make judgement calls, and keep the
+          final say.
+        </p>
+
+        <h2>Start with sorting, not sending</h2>
+        <p>
+          If your support inbox is messy, start by automating the way emails are sorted. A customer asking about a late
+          order needs a different response than someone asking for a size recommendation, reporting a damaged item, or
+          asking to cancel before fulfilment.
+        </p>
+        <p>
+          Sorting gives the rest of the workflow a cleaner starting point. It helps you see which messages are simple,
+          which need an order lookup, and which need a decision from the store owner.
+        </p>
+        <p>Useful support buckets for Shopify stores include:</p>
+        <ul>
+          <li>Tracking and delivery questions.</li>
+          <li>Returns and exchanges.</li>
+          <li>Refund timing questions.</li>
+          <li>Address changes, cancellations, and order edits before fulfilment.</li>
+          <li>Product questions and sizing help.</li>
+          <li>Damaged, missing, or incorrect item reports.</li>
+          <li>Angry customers, chargeback risk, or anything that needs careful human judgement.</li>
+        </ul>
+        <p>
+          Once the inbox is grouped this way, a small team can work faster without treating every email as the same
+          kind of problem.
+        </p>
+
+        <h2>Automate order context lookup next</h2>
+        <p>
+          A lot of ecommerce support time disappears into tab switching. Someone reads a Gmail message, searches
+          Shopify for the customer or order number, checks fulfilment status, opens a tracking link, looks at the return
+          policy, and then finally writes the reply.
+        </p>
+        <p>
+          That lookup work is a good automation candidate because it is repetitive and factual. The support person still
+          needs to review the answer, but they should not have to rebuild the same context for every tracking or return
+          email.
+        </p>
+        <p>
+          For example, if a customer asks &quot;Where is my order?&quot;, the useful context is usually the order number,
+          fulfilment status, carrier, tracking link, latest tracking event, shipping address, and any known delay
+          window. If that information is already visible beside the email, the reply is faster and less likely to miss
+          something important.
+        </p>
+        <p>
+          This is one reason Gmail-based Shopify support can become hard to manage as volume grows. Gmail is familiar,
+          but it does not know the order on its own. The guide to{" "}
+          <Link href="/blog/use-gmail-shopify-customer-support">using Gmail for Shopify customer support</Link> covers
+          the workflow problems that appear when those systems are disconnected.
+        </p>
+
+        <h2>Handle tracking questions before harder policy decisions</h2>
+        <p>
+          Tracking emails are usually the safest first customer-service automation area because the answer depends on
+          verifiable facts. The customer wants to know whether the order shipped, where the parcel is, why tracking has
+          not moved, and what happens if the carrier status stays unclear.
+        </p>
+        <p>
+          A helpful automation can gather the tracking details, suggest plain wording, and remind the merchant of the
+          next step. It should not invent carrier updates or promise outcomes the store has not approved.
+        </p>
+        <p>
+          Good tracking support should answer:
+        </p>
+        <ul>
+          <li>Has the order been fulfilled?</li>
+          <li>Which carrier has the parcel?</li>
+          <li>Is there a tracking link?</li>
+          <li>When should the customer expect the next update?</li>
+          <li>What should they do if there is still no movement?</li>
+        </ul>
+        <p>
+          If tracking questions are a major support load, read{" "}
+          <Link href="/blog/reduce-where-is-my-order-emails">
+            how to reduce &quot;Where is my order?&quot; emails
+          </Link>{" "}
+          and the guide to{" "}
+          <Link href="/blog/shopify-order-tracking-emails">what customers actually need in Shopify order tracking emails</Link>
+          .
+        </p>
+
+        <h2>Use saved replies for repeat wording</h2>
+        <p>
+          Saved replies are still one of the simplest customer service automations. They work well for repeat answers
+          that should stay consistent, such as return instructions, exchange steps, shipping timeframes, refund timing,
+          warranty information, or product care advice.
+        </p>
+        <p>
+          The mistake is letting saved replies become stiff scripts. A good saved reply gives the support person a clean
+          starting point, then leaves room to adapt the wording to the customer&apos;s actual situation.
+        </p>
+        <p>Useful saved replies include:</p>
+        <ul>
+          <li>A tracking update reply for orders with normal carrier movement.</li>
+          <li>A tracking delay reply for labels that have not scanned yet.</li>
+          <li>A return eligibility reply that points to the policy and next step.</li>
+          <li>An exchange reply that asks for the new size, colour, or product choice.</li>
+          <li>A damaged item reply that asks for photos and confirms the review process.</li>
+          <li>A refund timing reply that explains processing time without overpromising.</li>
+        </ul>
+        <p>
+          If your templates sound too robotic, the guide to{" "}
+          <Link href="/blog/customer-service-email-templates-sound-human">
+            customer service email templates that still sound human
+          </Link>{" "}
+          gives a practical way to rewrite them.
+        </p>
+
+        <h2>Add AI reply help after the workflow is clear</h2>
+        <p>
+          AI is most useful once the store knows its common support buckets, order context, and policy rules. Then AI can
+          help prepare a reply, improve wording, or pull the right saved reply into the conversation.
+        </p>
+        <p>
+          This is different from asking a generic writing tool to answer customer emails from scratch. Ecommerce support
+          is not only a writing problem. A reply about a refund, return window, damaged item, or missing parcel depends
+          on the store&apos;s real order and policy context.
+        </p>
+        <p>
+          Treat AI reply help as a support helper inside a broader workflow. It can reduce blank-page time, keep tone
+          consistent, and make repeat emails easier to clear. The merchant still reviews the facts, adjusts the wording,
+          and decides what gets sent.
+        </p>
+
+        <h2>Keep decision-heavy support under human review</h2>
+        <p>
+          Some parts of customer service should stay closer to the store owner or a trained support person. That includes
+          angry customers, chargeback threats, expensive refunds, damaged item edge cases, unusual return requests, VIP
+          customers, and any situation where a policy exception might be the right call.
+        </p>
+        <p>
+          Automation can still help by gathering context and showing the relevant policy, but the decision belongs with
+          the merchant. That is especially important for small Shopify stores where customer relationships, margins, and
+          brand trust are tightly connected.
+        </p>
+        <p>
+          A simple rule works well: automate the gathering, sorting, and repeat wording first. Keep money decisions,
+          exceptions, and sensitive replies under clear human review.
+        </p>
+
+        <h2>A practical first-week automation plan</h2>
+        <p>
+          If you are starting from a busy Gmail inbox, do not try to redesign support in one afternoon. Pick one narrow
+          workflow and make it faster.
+        </p>
+        <ol>
+          <li>List the five support questions you answer most often.</li>
+          <li>Group those emails into tracking, returns, exchanges, refunds, product questions, and urgent issues.</li>
+          <li>Write or clean up saved replies for the most common two buckets.</li>
+          <li>Make sure the order, tracking, and policy context is easy to see before replying.</li>
+          <li>Use AI to help prepare or improve repeat replies, then review every message before sending.</li>
+        </ol>
+        <p>
+          This gives you a better workflow without pretending every customer message can be treated the same way.
+        </p>
+
+        <h2>Where RegardsKim fits</h2>
+        <p>
+          RegardsKim is built for Shopify merchants who want AI-powered customer support without moving into a heavy
+          help desk. It connects Gmail-based support with Shopify context so repetitive emails can be sorted, understood,
+          and answered faster while the merchant keeps control.
+        </p>
+        <p>
+          RegardsKim can help with support buckets, Shopify order context, tracking details, saved replies, AI-assisted
+          reply preparation, and support analytics. It is designed for the practical parts of ecommerce customer service:
+          fewer tab switches, clearer replies, and faster handling of common customer questions.
+        </p>
+        <p>
+          If repetitive customer emails are eating your week,{" "}
+          <Link href="/#founding-100">join the Founding 100</Link> for early access at the founding price, or use the{" "}
+          <Link href="/tools/support-cost-calculator">support cost calculator</Link> to estimate how much time support
+          is taking from your store.
+        </p>
+
+        <h2>Automate the repeat work before the risky work</h2>
+        <p>
+          Ecommerce customer service automation works best when it starts with the least controversial work: sorting the
+          inbox, finding order context, showing tracking details, using saved replies, and preparing better answers for
+          review.
+        </p>
+        <p>
+          Once that foundation is in place, small Shopify teams can answer more customers without losing the human care
+          that keeps people coming back.
+        </p>
+      </>
+    ),
+  },
+
+  {
     slug: "ai-auto-drafting-shopify-support-emails",
     title: "AI Auto-Drafting Emails for Shopify Support: What to Automate and What to Keep Human",
     date: "June 23, 2026",
