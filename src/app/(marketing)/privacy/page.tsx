@@ -19,7 +19,7 @@ export default function PrivacyPage() {
         RegardsKim is an AI email support app for Shopify stores. It connects to your Shopify
         account and your email account (such as Gmail), reads incoming customer support
         emails, sorts them into support workflows, uses relevant store information to provide
-        AI-drafted reply assistance from Shopify context, and keeps you in control before anything is sent.
+        AI auto-drafted reply assistance from Shopify context, and keeps you in control before anything is sent.
       </p>
       <p>By using RegardsKim, you agree to the practices described in this Privacy Policy.</p>
 
@@ -63,7 +63,7 @@ export default function PrivacyPage() {
       </ul>
       <p>
         We only access Shopify data that is reasonably necessary to provide support context,
-        AI-drafted reply assistance, and operate the service.
+        AI auto-drafted reply assistance, and operate the service.
       </p>
 
       <h3>2.3 Email and Support Content</h3>
@@ -108,7 +108,7 @@ export default function PrivacyPage() {
         <li>Connect with your Shopify store and email provider</li>
         <li>Read incoming support emails and sort them into support workflows</li>
         <li>
-          Use order, tracking, and policy data to make AI-drafted reply assistance more accurate and useful
+          Use order, tracking, and policy data to make AI auto-drafted reply assistance more accurate and useful
         </li>
         <li>Queue customer conversations with context for your review and response</li>
         <li>Provide account access and customer support</li>
@@ -181,7 +181,7 @@ export default function PrivacyPage() {
       <h3>6.2 Shopify</h3>
       <p>
         We connect to the Shopify API to access store and order data needed to provide support
-        context and AI-drafted reply assistance. Data that may be received from Shopify includes:
+        context and AI auto-drafted reply assistance. Data that may be received from Shopify includes:
       </p>
       <ul>
         <li>Order information</li>

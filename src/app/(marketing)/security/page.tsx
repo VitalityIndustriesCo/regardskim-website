@@ -9,14 +9,14 @@ import { absoluteUrl, marketingMetadata } from "@/lib/seo";
 export const metadata: Metadata = marketingMetadata({
   title: "Security & Data",
   description:
-    "How Regards Kim uses Gmail access, Shopify order context, customer communications, AI drafts, and human approval for Shopify support emails.",
+    "How Regards Kim uses Gmail access, Shopify order context, customer communications, AI auto-drafts, and human approval for Shopify support emails.",
   path: "/security",
 });
 
 const principles = [
   {
     title: "Humans approve replies",
-    body: "Regards Kim can draft and improve support replies, but it does not send customer emails without a person reviewing and choosing to send.",
+    body: "Regards Kim can automatically draft and improve support replies, but it does not send customer emails without a person reviewing and choosing to send.",
     icon: UserCheck,
   },
   {
@@ -71,7 +71,7 @@ const sections = [
     items: [
       "Sorts support emails into practical Shopify buckets such as tracking, returns, refunds, order changes, sales, and escalations.",
       "Shows Shopify order, customer, delivery, tracking, and policy context near the email.",
-      "Prepares draft replies, saved-reply helpers, tracking links, and policy links for human review.",
+      "Automatically prepares draft replies, saved-reply helpers, tracking links, and policy links for human review.",
     ],
   },
   {
@@ -105,7 +105,7 @@ export default function SecurityPage() {
             Shopify support email help, without giving up control of customer conversations.
           </h1>
           <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate">
-            Regards Kim is built for Shopify merchants who want Gmail support replies drafted from real order context,
+            Regards Kim is built for Shopify merchants who want Gmail support replies auto-drafted from real order context,
             while keeping a human responsible for what customers actually receive.
           </p>
         </div>

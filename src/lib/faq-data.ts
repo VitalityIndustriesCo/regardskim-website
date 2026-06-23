@@ -7,17 +7,17 @@ export const faqItems: FAQItem[] = [
   {
     question: "What does Regards Kim do?",
     answer:
-      "Regards Kim connects Shopify and Gmail, matches customer emails to real orders, and drafts Shopify-aware replies you can review, edit, and send faster.",
+      "Regards Kim connects Shopify and Gmail, matches customer emails to real orders, and auto-drafts Shopify-aware replies you can review, edit, and send faster.",
   },
   {
     question: "Does Regards Kim send replies automatically?",
     answer:
-      "No. You keep the final say of what leaves your inbox. Regards Kim helps organise the work, surface the right context, draft or improve replies, and speed up sending from Gmail.",
+      "No. You keep the final say of what leaves your inbox. Regards Kim helps organise the work, surface the right context, auto-draft or improve replies, and speed up sending from Gmail.",
   },
   {
     question: "Does Regards Kim replace our team?",
     answer:
-      "No. It assists the person handling support. Regards Kim gathers Shopify context, sorts the inbox, and prepares drafts so founders, VAs, or support teams can reply faster with better information.",
+      "No. It assists the person handling support. Regards Kim gathers Shopify context, sorts the inbox, and prepares AI drafts automatically so founders, VAs, or support teams can reply faster with better information.",
   },
   {
     question: "Is Regards Kim a helpdesk?",
@@ -37,7 +37,7 @@ export const faqItems: FAQItem[] = [
   {
     question: "Do we have to move away from Gmail?",
     answer:
-      "No. Regards Kim is built for Shopify merchants who already use Gmail for support. The goal is to keep your existing inbox workflow while adding Shopify context, triage, and drafting help.",
+      "No. Regards Kim is built for Shopify merchants who already use Gmail for support. The goal is to keep your existing inbox workflow while adding Shopify context, triage, and automatic drafting help.",
   },
   {
     question: "What kinds of emails can Regards Kim help with?",

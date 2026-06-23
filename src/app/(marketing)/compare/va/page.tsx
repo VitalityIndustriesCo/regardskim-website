@@ -141,11 +141,11 @@ export default function RegardsKimVsVirtualAssistantPage() {
           <p>
             For many Shopify stores, there is a stage before a VA makes sense. That stage is when support volume
             is real, but most of it is still predictable. In that zone, RegardsKim is often the better move.
-            It gives you faster replies, better consistency, and draft support whenever you open the inbox without adding another salary.
+            It gives you faster replies, better consistency, and auto-draft support whenever you open the inbox without adding another salary.
           </p>
           <p>
             Later on, you may still hire a VA. In fact, the two can work well together. Let Regards Kim handle the
-            repetitive sorting, context, and reply drafting, and let a human step in for the sensitive or complicated conversations.
+            repetitive sorting, context, and reply auto-drafting, and let a human step in for the sensitive or complicated conversations.
             We unpack that sequence more in our guide to <Link href="/blog/ai-vs-virtual-assistant-ecommerce-support" className="font-medium text-brass hover:text-oxblood">AI vs virtual assistant for ecommerce support</Link>.
           </p>
         </div>

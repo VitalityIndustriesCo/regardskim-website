@@ -30,7 +30,7 @@ const comparisonRows = [
   },
   {
     label: "Core strength",
-    kim: "Email replies drafted from Shopify order, tracking, and policy context",
+    kim: "Email replies auto-drafted from Shopify order, tracking, and policy context",
     competitor: "Multi-channel support, FAQ builder, and a more mature helpdesk layer",
   },
   {
@@ -47,7 +47,7 @@ const comparisonRows = [
 
 const pros = {
   kim: [
-    "Drafts replies from real Shopify order data without a helpdesk migration",
+    "Auto-drafts replies from real Shopify order data without a helpdesk migration",
     "Faster setup when your main pain is post-purchase support emails",
     "Gmail stays in place — no channel migration needed",
     "Approve every reply before it reaches the customer",

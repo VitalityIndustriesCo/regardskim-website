@@ -35,7 +35,7 @@ const comparisonRows = [
   },
   {
     label: "Daily workflow",
-    kim: "Use AI triage, Shopify context, and AI-drafted replies",
+    kim: "Use AI triage, Shopify context, and auto-drafted AI replies",
     competitor: "Manage chats, bot flows, and messages across channels",
   },
   {
@@ -92,7 +92,7 @@ export default function RegardsKimVsTidioPage() {
           <p className="mt-6 max-w-3xl text-lg leading-8 text-slate">
             These tools overlap a bit, but they are built with different priorities. Tidio leans hard into live
             chat and chatbot experiences. RegardsKim is more focused: it helps Shopify stores answer repetitive
-            support emails faster with store-aware context and AI-drafted replies.
+            support emails faster with store-aware context and auto-drafted AI replies.
           </p>
         </div>
 

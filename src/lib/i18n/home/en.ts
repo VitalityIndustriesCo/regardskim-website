@@ -5,7 +5,7 @@ export const enHomeCopy = {
   metadata: {
     title: "Regards Kim - Answer Shopify Customer Emails Faster",
     description:
-      "Regards Kim connects Shopify and Gmail, matches customer emails to real orders, and drafts replies you can review, edit, and send.",
+      "Regards Kim connects Shopify and Gmail, matches customer emails to real orders, and auto-drafts replies you can review, edit, and send.",
     ogLocale: "en_AU",
   },
   nav: {
@@ -33,13 +33,13 @@ export const enHomeCopy = {
       gmail: "Works with Gmail",
     },
     body:
-      "Regards Kim connects Shopify and Gmail, matches customer emails to real orders, and drafts replies you can review, edit, and send. Built for tracking questions, returns, refunds, exchanges, cancellations, and order updates.",
+      "Regards Kim connects Shopify and Gmail, matches customer emails to real orders, and auto-drafts replies you can review, edit, and send. Built for tracking questions, returns, refunds, exchanges, cancellations, and order updates.",
     primaryCta: "Install on Shopify",
     secondaryCta: "Watch the demo",
     workflowPoints: [
       "Keep Gmail as your inbox",
       "Shopify order context attached",
-      "Draft from real store data",
+      "Auto-drafts from real store data",
       "Approve every reply",
     ],
     reassurance: "No auto-sending · No credit card · Billed through Shopify only if you stay",
@@ -71,13 +71,13 @@ export const enHomeCopy = {
       },
       {
         number: "03",
-        title: "AI drafts the reply, you review and send",
+        title: "AI drafts the reply before you open it",
         body:
-          "One click, and Regards Kim writes a reply grounded in the real order, tracking, policies, and saved replies. It never drafts or sends anything without you asking.",
+          "As support emails come in, Regards Kim prepares replies grounded in the real order, tracking, policies, and saved replies. It never sends anything without your review.",
         video: {
           mp4: "/media/step3-loop.mp4",
           ariaLabel:
-            "The merchant clicks Suggest reply, Regards Kim reads the matched Shopify order, and a friendly draft with the real tracking number types out, ready to review, edit, or send",
+            "Regards Kim reads the matched Shopify order and prepares a friendly draft with the real tracking number, ready to review, edit, or send",
         },
       },
     ],
@@ -101,7 +101,7 @@ export const enHomeCopy = {
       "Built specifically for Shopify stores",
       "Connects support conversations to orders, tracking, and products",
       "Uses your actual store policies and saved replies",
-      "Drafts Shopify-aware replies without a helpdesk migration",
+      "Auto-drafts Shopify-aware replies without a helpdesk migration",
       "Understands WISMO, returns, exchanges, order changes, and escalations",
     ],
     customerEmailLabel: "Customer email",
@@ -286,17 +286,17 @@ export const enHomeCopy = {
       {
         question: "What does Regards Kim do?",
         answer:
-          "Regards Kim connects Shopify and Gmail, matches customer emails to real orders, and drafts Shopify-aware replies you can review, edit, and send faster.",
+          "Regards Kim connects Shopify and Gmail, matches customer emails to real orders, and auto-drafts Shopify-aware replies you can review, edit, and send faster.",
       },
       {
         question: "Does Regards Kim send replies automatically?",
         answer:
-          "No. You keep the final say of what leaves your inbox. Regards Kim helps organise the work, surface the right context, draft or improve replies, and speed up sending from Gmail.",
+          "No. You keep the final say of what leaves your inbox. Regards Kim helps organise the work, surface the right context, auto-draft or improve replies, and speed up sending from Gmail.",
       },
       {
         question: "Does Regards Kim replace our team?",
         answer:
-          "No. It assists the person handling support. Regards Kim gathers Shopify context, sorts the inbox, and prepares drafts so founders, VAs, or support teams can reply faster with better information.",
+          "No. It assists the person handling support. Regards Kim gathers Shopify context, sorts the inbox, and prepares AI drafts automatically so founders, VAs, or support teams can reply faster with better information.",
       },
       {
         question: "Is Regards Kim a helpdesk?",
@@ -316,7 +316,7 @@ export const enHomeCopy = {
       {
         question: "Do we have to move away from Gmail?",
         answer:
-          "No. Regards Kim is built for Shopify merchants who already use Gmail for support. The goal is to keep your existing inbox workflow while adding Shopify context, triage, and drafting help.",
+          "No. Regards Kim is built for Shopify merchants who already use Gmail for support. The goal is to keep your existing inbox workflow while adding Shopify context, triage, and automatic drafting help.",
       },
       {
         question: "What kinds of emails can Regards Kim help with?",

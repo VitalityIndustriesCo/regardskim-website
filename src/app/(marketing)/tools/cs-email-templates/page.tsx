@@ -61,7 +61,7 @@ export default function CSEmailTemplatesPage() {
     {
       question: "Can I use these templates with AI support tools?",
       answer:
-        "Yes. Templates make good source material for AI drafting because they define your preferred wording and support process. Regards Kim can help turn store context and support patterns into draft replies.",
+        "Yes. Templates make good source material for AI drafting because they define your preferred wording and support process. Regards Kim can help turn store context and support patterns into auto-drafted replies.",
     },
   ];
 
@@ -192,7 +192,7 @@ export default function CSEmailTemplatesPage() {
               <li>Write one template per situation. A broad all-purpose reply usually becomes vague.</li>
               <li>Review templates after busy seasons, carrier delays, or policy changes so the wording stays accurate.</li>
               <li>Use the <Link href="/tools/ai-email-response-generator" className="font-medium text-brass hover:text-oxblood">AI email response generator</Link> for quick drafts and the <Link href="/tools/return-policy-generator" className="font-medium text-brass hover:text-oxblood">return policy generator</Link> if your returns wording needs cleanup.</li>
-              <li>For a bigger support workflow, read <Link href="/blog/customer-service-email-templates-sound-human" className="font-medium text-brass hover:text-oxblood">how to make templates sound human</Link> and <Link href="/blog/ecommerce-customer-service-best-practices-small-shopify-teams" className="font-medium text-brass hover:text-oxblood">customer service best practices for small Shopify teams</Link>. Regards Kim helps bring these patterns into AI-drafted replies with Shopify context.</li>
+              <li>For a bigger support workflow, read <Link href="/blog/customer-service-email-templates-sound-human" className="font-medium text-brass hover:text-oxblood">how to make templates sound human</Link> and <Link href="/blog/ecommerce-customer-service-best-practices-small-shopify-teams" className="font-medium text-brass hover:text-oxblood">customer service best practices for small Shopify teams</Link>. Regards Kim helps bring these patterns into auto-drafted AI replies with Shopify context.</li>
             </ul>
           </div>
 

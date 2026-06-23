@@ -18,7 +18,7 @@ export default function TermsPage() {
       <p>
         RegardsKim is an AI email support app for Shopify stores. It connects to your Shopify
         account and your email account, reads incoming customer support emails, sorts them into
-        support workflows, uses order data, tracking details, and store policies to provide AI-drafted
+        support workflows, uses order data, tracking details, and store policies to provide AI auto-drafted
         reply assistance, and keeps you in control before anything is sent.
       </p>
       <p>
@@ -78,7 +78,7 @@ export default function TermsPage() {
         <li>Reads inbound customer support emails</li>
         <li>
           Uses relevant order, tracking, product, and policy information to organise support
-          workflows and provide AI-drafted reply assistance
+          workflows and provide AI auto-drafting assistance
         </li>
         <li>Presents customer conversations, context, and helper output for your review</li>
         <li>Supports subscription management, usage monitoring, and related account functions</li>
@@ -203,9 +203,9 @@ export default function TermsPage() {
       </p>
 
       <h2>9. AI-Generated Content Disclaimer</h2>
-      <p>RegardsKim uses AI to generate suggested support replies. You understand and agree that:</p>
+      <p>RegardsKim uses AI to draft support replies for your review. You understand and agree that:</p>
       <ul>
-        <li>AI-generated or AI-assisted output is <strong>suggestions only</strong></li>
+        <li>AI-generated or AI-assisted output is <strong>draft assistance only</strong></li>
         <li>
           AI output may be incomplete, inaccurate, inappropriate, or unsuitable in some cases
         </li>

@@ -7,7 +7,7 @@ export const frHomeCopy = {
   metadata: {
     title: "Regards Kim - Réponses support Shopify en un clic",
     description:
-      "Regards Kim trie les emails clients et joint la commande Shopify. Clique sur Suggérer une réponse, relis le brouillon, puis envoie depuis Gmail.",
+      "Regards Kim trie les emails clients, joint la commande Shopify et prépare des brouillons IA à relire puis envoyer depuis Gmail.",
     ogLocale: "fr_FR",
   },
   nav: {
@@ -34,10 +34,10 @@ export const frHomeCopy = {
     title: "Ta boîte support, répondue en un clic.",
     badges: { shopify: "Conçu pour Shopify", gmail: "Fonctionne avec Gmail" },
     body:
-      "Regards Kim trie chaque email client et joint la commande Shopify. Clique sur Suggérer une réponse et le brouillon est prêt. Tu le relis, le modifies et l'envoies depuis Gmail.",
+      "Regards Kim trie chaque email client, joint la commande Shopify et prépare le brouillon automatiquement. Tu le relis, le modifies et l'envoies depuis Gmail.",
     primaryCta: "Installer sur Shopify",
     secondaryCta: "Voir la démo",
-    workflowPoints: ["Regards Kim trie la boîte", "Contexte commande joint", "Clic sur Suggérer une réponse", "Tu relis et envoies"],
+    workflowPoints: ["Regards Kim trie la boîte", "Contexte commande joint", "Brouillon IA prêt", "Tu relis et envoies"],
     reassurance: "Pas d'envoi automatique · Pas de carte bancaire · Facturé par Shopify seulement si tu restes",
   },
   howItWorks: {
@@ -45,7 +45,7 @@ export const frHomeCopy = {
     steps: [
       { ...enHomeCopy.howItWorks.steps[0], title: "Connecte Gmail et Shopify", body: "Deux minutes pour connecter. Regards Kim commence à trier les emails par sujet et filtre le bruit : prospection, notifications et rebonds ne touchent pas ta file.", alt: "Regards Kim trie des emails clients : suivi, retour, modification de commande et newsletter marquée sans réponse nécessaire" },
       { ...enHomeCopy.howItWorks.steps[1], title: "Chaque email arrive avec sa commande", body: "Commande, statut de livraison, liens de suivi, politiques et détails client restent à côté de la conversation. Plus besoin de fouiller dans les onglets.", alt: "Un email client est relié automatiquement à la commande Shopify 1842 avec statut, transporteur et numéro de suivi" },
-      { ...enHomeCopy.howItWorks.steps[2], title: "Clique sur Suggérer une réponse et le brouillon s'écrit", body: "Un clic, et Regards Kim rédige une réponse basée sur la vraie commande. Pas de devinette. Rien n'est rédigé ni envoyé sans ta demande. Modifie-la ou envoie depuis Gmail.", video: { ...enHomeCopy.howItWorks.steps[2].video!, ariaLabel: "Le marchand clique sur Suggérer une réponse, Regards Kim lit la commande Shopify liée et prépare un brouillon avec le vrai numéro de suivi" } },
+      { ...enHomeCopy.howItWorks.steps[2], title: "L'IA prépare le brouillon avant que tu ouvres l'email", body: "Quand les emails de support arrivent, Regards Kim prépare une réponse basée sur la vraie commande. Pas de devinette. Rien n'est envoyé sans ta validation.", video: { ...enHomeCopy.howItWorks.steps[2].video!, ariaLabel: "Regards Kim lit la commande Shopify liée et prépare un brouillon avec le vrai numéro de suivi" } },
     ],
   },
   comparison: {

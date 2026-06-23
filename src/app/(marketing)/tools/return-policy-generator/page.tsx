@@ -180,7 +180,7 @@ export default function ReturnPolicyGeneratorPage() {
               <li>Keep refund timing realistic by separating &quot;we process the refund&quot; from &quot;your bank shows the refund&quot;.</li>
               <li>Link the policy from support replies so customers can check the full wording themselves.</li>
               <li>Use the <Link href="/tools/ai-email-response-generator" className="font-medium text-brass hover:text-oxblood">AI email response generator</Link> for refund replies and the <Link href="/tools/cs-email-templates" className="font-medium text-brass hover:text-oxblood">customer service email templates</Link> for reusable return wording.</li>
-              <li>For more context, read our guide to <Link href="/blog/shopify-returns-emails-reply-faster" className="font-medium text-brass hover:text-oxblood">replying faster to Shopify returns emails</Link> or <Link href="/blog/customer-service-email-templates-sound-human" className="font-medium text-brass hover:text-oxblood">support templates that still sound human</Link>. Regards Kim can use your store policy as context when drafting replies.</li>
+              <li>For more context, read our guide to <Link href="/blog/shopify-returns-emails-reply-faster" className="font-medium text-brass hover:text-oxblood">replying faster to Shopify returns emails</Link> or <Link href="/blog/customer-service-email-templates-sound-human" className="font-medium text-brass hover:text-oxblood">support templates that still sound human</Link>. Regards Kim can use your store policy as context when auto-drafting replies.</li>
             </ul>
           </div>
 

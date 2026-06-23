@@ -7,7 +7,7 @@ export const ptBrHomeCopy = {
   metadata: {
     title: "Regards Kim - Respostas de suporte Shopify em um clique",
     description:
-      "Regards Kim organiza emails de clientes e anexa o pedido da Shopify. Clique em Sugerir resposta, revise o rascunho e envie pelo Gmail.",
+      "Regards Kim organiza emails de clientes, anexa o pedido da Shopify e prepara rascunhos com IA para revisar e enviar pelo Gmail.",
     ogLocale: "pt_BR",
   },
   nav: {
@@ -34,10 +34,10 @@ export const ptBrHomeCopy = {
     title: "Sua caixa de suporte, respondida em um clique.",
     badges: { shopify: "Feito para Shopify", gmail: "Funciona com Gmail" },
     body:
-      "Regards Kim organiza cada email de cliente e anexa o pedido da Shopify. Clique em Sugerir resposta e o rascunho aparece. Você revisa, edita e envia pelo Gmail.",
+      "Regards Kim organiza cada email de cliente, anexa o pedido da Shopify e prepara o rascunho automaticamente. Você revisa, edita e envia pelo Gmail.",
     primaryCta: "Instalar na Shopify",
     secondaryCta: "Ver a demo",
-    workflowPoints: ["Regards Kim organiza a caixa", "Contexto do pedido anexado", "Clique em Sugerir resposta", "Você revisa e envia"],
+    workflowPoints: ["Regards Kim organiza a caixa", "Contexto do pedido anexado", "Rascunho com IA pronto", "Você revisa e envia"],
     reassurance: "Sem envio automático · Sem cartão · Cobrado pela Shopify só se você ficar",
   },
   howItWorks: {
@@ -45,7 +45,7 @@ export const ptBrHomeCopy = {
     steps: [
       { ...enHomeCopy.howItWorks.steps[0], title: "Conecte Gmail e Shopify", body: "Leva dois minutos para conectar. Regards Kim começa a organizar emails por assunto e filtra o lixo: propostas, notificações e retornos não entram na fila.", alt: "Regards Kim organizando emails de clientes: pergunta de rastreio, devolução, alteração de pedido e newsletter marcada como sem resposta necessária" },
       { ...enHomeCopy.howItWorks.steps[1], title: "Cada email chega com o pedido anexado", body: "Pedido, status de entrega, links de rastreio, políticas e dados do cliente ficam ao lado da conversa. Chega de procurar em várias abas.", alt: "Email de cliente sobre um pedido combinado automaticamente ao pedido Shopify 1842 com status, transportadora e código de rastreio" },
-      { ...enHomeCopy.howItWorks.steps[2], title: "Clique em Sugerir resposta e o rascunho é escrito", body: "Um clique e Regards Kim escreve uma resposta baseada no pedido real. Nada de chute. Regards Kim nunca redige nem envia sem você pedir. Edite ou envie pelo Gmail.", video: { ...enHomeCopy.howItWorks.steps[2].video!, ariaLabel: "O lojista clica em Sugerir resposta, Regards Kim lê o pedido Shopify vinculado e prepara um rascunho amigável com rastreio real" } },
+      { ...enHomeCopy.howItWorks.steps[2], title: "A IA prepara o rascunho antes de você abrir o email", body: "Quando emails de suporte chegam, Regards Kim prepara uma resposta baseada no pedido real. Nada de chute. Nada é enviado sem sua revisão.", video: { ...enHomeCopy.howItWorks.steps[2].video!, ariaLabel: "Regards Kim lê o pedido Shopify vinculado e prepara um rascunho amigável com rastreio real" } },
     ],
   },
   comparison: {

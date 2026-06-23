@@ -201,7 +201,7 @@ export default function AIToneRewriterPage() {
               <li>Do not over-apologise when the store has done nothing wrong. Acknowledge the frustration, then give the next step.</li>
               <li>Keep policy language consistent with your published return policy and saved support templates.</li>
               <li>Use the <Link href="/tools/ai-email-response-generator" className="font-medium text-brass hover:text-oxblood">AI email response generator</Link> when you need a full draft, and the <Link href="/tools/cs-email-templates" className="font-medium text-brass hover:text-oxblood">customer service email templates</Link> when you want reusable wording.</li>
-              <li>For a bigger support system, read our guide to <Link href="/blog/customer-service-email-templates-sound-human" className="font-medium text-brass hover:text-oxblood">templates that still sound human</Link> or the guide to <Link href="/blog/automate-shopify-support-emails" className="font-medium text-brass hover:text-oxblood">automating Shopify support emails</Link>. Regards Kim can then draft replies with Shopify context inside your support workflow.</li>
+              <li>For a bigger support system, read our guide to <Link href="/blog/customer-service-email-templates-sound-human" className="font-medium text-brass hover:text-oxblood">templates that still sound human</Link> or the guide to <Link href="/blog/automate-shopify-support-emails" className="font-medium text-brass hover:text-oxblood">automating Shopify support emails</Link>. Regards Kim can then auto-draft replies with Shopify context inside your support workflow.</li>
             </ul>
           </div>
 

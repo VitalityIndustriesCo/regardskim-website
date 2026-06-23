@@ -98,7 +98,7 @@ const decisionCards = [
     points: [
       "Most support still happens in Gmail",
       "You want Shopify order context next to each customer email",
-      "You want draft replies for review, not automatic replies sent without approval",
+      "You want auto-drafted replies for review, not automatic replies sent without approval",
     ],
   },
 ];

@@ -51,7 +51,7 @@ export default function AIEmailResponseGeneratorPage() {
     {
       question: "Can it work as an AI powered customer support email generator?",
       answer:
-        "It can give you the shape of a good customer support reply, but it does not read your Shopify order data. For AI drafts that use order, tracking, and customer context, use a connected support workflow like Regards Kim.",
+        "It can give you the shape of a good customer support reply, but it does not read your Shopify order data. For AI auto-drafts that use order, tracking, and customer context, use a connected support workflow like Regards Kim.",
     },
     {
       question: "Should I use generated email responses for every customer?",
@@ -190,7 +190,7 @@ export default function AIEmailResponseGeneratorPage() {
               <li>Keep apology language proportional. A small delay needs empathy; a store error needs ownership.</li>
               <li>Save your best replies in a template library so the team answers common questions consistently.</li>
               <li>Pair this with the <Link href="/tools/return-policy-generator" className="font-medium text-brass hover:text-oxblood">return policy generator</Link> when refund wording depends on your policy, or the <Link href="/tools/cs-email-templates" className="font-medium text-brass hover:text-oxblood">customer service email templates</Link> when you need reusable replies.</li>
-              <li>For a fuller system, read <Link href="/blog/automate-shopify-support-emails" className="font-medium text-brass hover:text-oxblood">how to automate Shopify support emails</Link> and <Link href="/blog/use-gmail-shopify-customer-support" className="font-medium text-brass hover:text-oxblood">how to use Gmail for Shopify customer support</Link>. Regards Kim connects draft replies with Shopify context so the answer is easier to verify.</li>
+              <li>For a fuller system, read <Link href="/blog/automate-shopify-support-emails" className="font-medium text-brass hover:text-oxblood">how to automate Shopify support emails</Link> and <Link href="/blog/use-gmail-shopify-customer-support" className="font-medium text-brass hover:text-oxblood">how to use Gmail for Shopify customer support</Link>. Regards Kim connects auto-drafted replies with Shopify context so the answer is easier to verify.</li>
             </ul>
           </div>
 

@@ -7,7 +7,7 @@ export const zhCnHomeCopy = {
   metadata: {
     title: "Regards Kim - 一键生成 Shopify 客服回复",
     description:
-      "Regards Kim 会整理客户邮件并附上对应的 Shopify 订单。点击建议回复，检查基于真实订单数据的草稿，然后从 Gmail 发送。",
+      "Regards Kim 会整理客户邮件、附上对应的 Shopify 订单，并自动准备 AI 回复草稿，供你检查后从 Gmail 发送。",
     ogLocale: "zh_CN",
   },
   nav: {
@@ -34,10 +34,10 @@ export const zhCnHomeCopy = {
     title: "你的客服收件箱，一键写好回复。",
     badges: { shopify: "为 Shopify 打造", gmail: "支持 Gmail" },
     body:
-      "Regards Kim 会整理每一封客户邮件，并附上对应的 Shopify 订单。点击建议回复后，草稿就会生成。你负责检查、编辑，再从 Gmail 发送。",
+      "Regards Kim 会整理每一封客户邮件，附上对应的 Shopify 订单，并自动准备回复草稿。你负责检查、编辑，再从 Gmail 发送。",
     primaryCta: "安装到 Shopify",
     secondaryCta: "观看演示",
-    workflowPoints: ["Regards Kim 整理收件箱", "附上订单上下文", "点击建议回复", "你检查并发送"],
+    workflowPoints: ["Regards Kim 整理收件箱", "附上订单上下文", "AI 草稿已准备", "你检查并发送"],
     reassurance: "不会自动发送 · 不需要信用卡 · 继续使用才通过 Shopify 计费",
   },
   howItWorks: {
@@ -45,7 +45,7 @@ export const zhCnHomeCopy = {
     steps: [
       { ...enHomeCopy.howItWorks.steps[0], title: "连接 Gmail 和 Shopify", body: "两分钟即可连接。Regards Kim 会按问题类型整理客户邮件，并过滤无关内容。推销、通知和退信不会进入你的处理队列。", alt: "Regards Kim 正在整理客户邮件：物流查询、退货、订单修改，以及标记为无需回复的 newsletter" },
       { ...enHomeCopy.howItWorks.steps[1], title: "每封邮件都会带上对应订单", body: "订单、配送状态、物流链接、政策链接和客户信息会显示在对话旁边。不用再来回切换标签页。", alt: "客户询问订单去向的邮件自动匹配到 Shopify 订单 1842，并显示履约状态、承运商和物流单号" },
-      { ...enHomeCopy.howItWorks.steps[2], title: "点击建议回复，草稿立即生成", body: "点击一次，Regards Kim 就会根据真实订单写出回复，不靠猜测。没有你的请求，它不会起草或发送任何内容。你可以编辑，也可以直接从 Gmail 发送。", video: { ...enHomeCopy.howItWorks.steps[2].video!, ariaLabel: "商家点击建议回复，Regards Kim 读取匹配的 Shopify 订单，并生成带有真实物流单号的友好草稿，等待检查、编辑或发送" } },
+      { ...enHomeCopy.howItWorks.steps[2], title: "AI 会在你打开邮件前准备好草稿", body: "客户支持邮件到达时，Regards Kim 会根据真实订单准备回复草稿，不靠猜测。没有你的审核，它不会发送任何内容。", video: { ...enHomeCopy.howItWorks.steps[2].video!, ariaLabel: "Regards Kim 读取匹配的 Shopify 订单，并生成带有真实物流单号的友好草稿，等待检查、编辑或发送" } },
     ],
   },
   comparison: {

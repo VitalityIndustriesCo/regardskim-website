@@ -5,9 +5,9 @@ export const deHomeCopy = {
   ...enHomeCopy,
   locale: "de",
   metadata: {
-    title: "Regards Kim - Shopify-Supportantworten mit einem Klick",
+    title: "Regards Kim - Automatische KI-Entwürfe für Shopify-Support",
     description:
-      "Regards Kim sortiert Kunden-E-Mails und hängt die passende Shopify-Bestellung an. Klicke auf Antwort vorschlagen, prüfe den Entwurf und sende ihn aus Gmail.",
+      "Regards Kim sortiert Kunden-E-Mails, hängt die passende Shopify-Bestellung an und bereitet KI-Entwürfe vor, die du aus Gmail prüfen und senden kannst.",
     ogLocale: "de_DE",
   },
   nav: {
@@ -31,16 +31,16 @@ export const deHomeCopy = {
   },
   hero: {
     ...enHomeCopy.hero,
-    title: "Dein Support-Postfach, mit einem Klick beantwortet.",
+    title: "Dein Support-Postfach, mit KI-Entwürfen vorbereitet.",
     badges: { shopify: "Für Shopify gebaut", gmail: "Funktioniert mit Gmail" },
     body:
-      "Regards Kim sortiert jede Kunden-E-Mail und hängt die passende Shopify-Bestellung an. Klicke auf Antwort vorschlagen und der Entwurf ist fertig. Du prüfst, bearbeitest und sendest aus Gmail.",
+      "Regards Kim sortiert jede Kunden-E-Mail, hängt die passende Shopify-Bestellung an und bereitet den Antwortentwurf automatisch vor. Du prüfst, bearbeitest und sendest aus Gmail.",
     primaryCta: "Auf Shopify installieren",
     secondaryCta: "Demo ansehen",
     workflowPoints: [
       "Regards Kim sortiert das Postfach",
       "Bestellkontext ist angehängt",
-      "Antwort vorschlagen klicken",
+      "KI-Entwurf ist bereit",
       "Du prüfst und sendest",
     ],
     reassurance: "Kein automatisches Senden · Keine Kreditkarte · Abrechnung über Shopify nur, wenn du bleibst",
@@ -66,13 +66,13 @@ export const deHomeCopy = {
       },
       {
         ...enHomeCopy.howItWorks.steps[2],
-        title: "Klicke auf Antwort vorschlagen und der Entwurf steht",
+        title: "Der KI-Entwurf ist bereit, bevor du die E-Mail öffnest",
         body:
-          "Ein Klick, und Regards Kim schreibt eine Antwort auf Basis der echten Bestellung. Kein Raten. Ohne deine Aufforderung wird nichts entworfen oder gesendet. Bearbeite den Text oder sende ihn direkt aus Gmail.",
+          "Wenn Support-E-Mails eingehen, bereitet Regards Kim eine Antwort auf Basis der echten Bestellung vor. Kein Raten. Gesendet wird nichts ohne deine Prüfung.",
         video: {
           ...enHomeCopy.howItWorks.steps[2].video!,
           ariaLabel:
-            "Der Händler klickt auf Antwort vorschlagen, Regards Kim liest die zugeordnete Shopify-Bestellung und ein freundlicher Entwurf mit echter Trackingnummer wird zur Prüfung geschrieben",
+            "Regards Kim liest die zugeordnete Shopify-Bestellung und bereitet einen freundlichen Entwurf mit echter Trackingnummer zur Prüfung vor",
         },
       },
     ],

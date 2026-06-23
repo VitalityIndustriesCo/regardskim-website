@@ -5,9 +5,9 @@ export const esHomeCopy = {
   ...enHomeCopy,
   locale: "es",
   metadata: {
-    title: "Regards Kim - Respuestas de soporte para Shopify con un clic",
+    title: "Regards Kim - Borradores automáticos con IA para soporte Shopify",
     description:
-      "Regards Kim ordena los correos de clientes y adjunta el pedido de Shopify. Haz clic en Sugerir respuesta, revisa el borrador y envíalo desde Gmail.",
+      "Regards Kim ordena los correos de clientes, adjunta el pedido de Shopify y prepara borradores con IA para revisar y enviar desde Gmail.",
     ogLocale: "es_ES",
   },
   nav: {
@@ -31,13 +31,13 @@ export const esHomeCopy = {
   },
   hero: {
     ...enHomeCopy.hero,
-    title: "Tu bandeja de soporte, respondida con un clic.",
+    title: "Tu bandeja de soporte, preparada con borradores de IA.",
     badges: { shopify: "Hecho para Shopify", gmail: "Funciona con Gmail" },
     body:
-      "Regards Kim ordena cada correo de cliente y adjunta el pedido de Shopify. Haz clic en Sugerir respuesta y el borrador queda listo. Tú lo revisas, editas y envías desde Gmail.",
+      "Regards Kim ordena cada correo de cliente, adjunta el pedido de Shopify y prepara el borrador automáticamente. Tú lo revisas, editas y envías desde Gmail.",
     primaryCta: "Instalar en Shopify",
     secondaryCta: "Ver la demo",
-    workflowPoints: ["Regards Kim ordena la bandeja", "Contexto del pedido adjunto", "Clic en Sugerir respuesta", "Tú revisas y envías"],
+    workflowPoints: ["Regards Kim ordena la bandeja", "Contexto del pedido adjunto", "Borrador con IA listo", "Tú revisas y envías"],
     reassurance: "Sin envío automático · Sin tarjeta · Cobro por Shopify solo si te quedas",
   },
   howItWorks: {
@@ -45,7 +45,7 @@ export const esHomeCopy = {
     steps: [
       { ...enHomeCopy.howItWorks.steps[0], title: "Conecta Gmail y Shopify", body: "Conectar lleva dos minutos. Regards Kim empieza a ordenar correos por tipo de consulta y filtra lo que sobra: ventas, notificaciones y rebotes no llegan a tu cola.", alt: "Regards Kim ordena correos de clientes: seguimiento, devolución, cambio de pedido y newsletter marcado como sin respuesta necesaria" },
       { ...enHomeCopy.howItWorks.steps[1], title: "Cada correo llega con su pedido adjunto", body: "Pedido, estado de entrega, enlaces de seguimiento, políticas y datos del cliente aparecen junto a la conversación. Se acabó saltar entre pestañas.", alt: "Un correo de cliente sobre su pedido se vincula automáticamente al pedido de Shopify 1842 con estado, transportista y número de seguimiento" },
-      { ...enHomeCopy.howItWorks.steps[2], title: "Haz clic en Sugerir respuesta y el borrador aparece", body: "Un clic y Regards Kim escribe una respuesta basada en el pedido real. No adivina. Nunca redacta ni envía nada sin que tú lo pidas. Edítala o envíala desde Gmail.", video: { ...enHomeCopy.howItWorks.steps[2].video!, ariaLabel: "El comerciante hace clic en Sugerir respuesta, Regards Kim lee el pedido de Shopify vinculado y prepara un borrador amable con el número de seguimiento real" } },
+      { ...enHomeCopy.howItWorks.steps[2], title: "La IA prepara el borrador antes de que abras el correo", body: "Cuando llegan correos de soporte, Regards Kim prepara una respuesta basada en el pedido real. No adivina. Nunca envía nada sin tu revisión.", video: { ...enHomeCopy.howItWorks.steps[2].video!, ariaLabel: "Regards Kim lee el pedido de Shopify vinculado y prepara un borrador amable con el número de seguimiento real" } },
     ],
   },
   comparison: {

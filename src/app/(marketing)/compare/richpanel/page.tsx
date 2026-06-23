@@ -8,7 +8,7 @@ import { SHOPIFY_APP_STORE_INSTALL_URL } from "@/lib/shopify-install";
 export const metadata: Metadata = marketingMetadata({
   title: "RegardsKim vs Richpanel",
   description:
-    "Compare RegardsKim and Richpanel for ecommerce support. See where Richpanel is stronger on self-service portals and where RegardsKim wins on Shopify-aware email replies drafted from order data.",
+    "Compare RegardsKim and Richpanel for ecommerce support. See where Richpanel is stronger on self-service portals and where RegardsKim wins on Shopify-aware email replies auto-drafted from order data.",
   path: "/compare/richpanel",
 });
 
@@ -20,7 +20,7 @@ const comparisonRows = [
   },
   {
     label: "Best for",
-    kim: "Stores that want email replies drafted from Shopify order context",
+    kim: "Stores that want email replies auto-drafted from Shopify order context",
     competitor: "Brands investing in self-service and a customer portal experience",
   },
   {
@@ -30,7 +30,7 @@ const comparisonRows = [
   },
   {
     label: "Core strength",
-    kim: "Email replies drafted from Shopify order, tracking, and policy context",
+    kim: "Email replies auto-drafted from Shopify order, tracking, and policy context",
     competitor: "Self-service portal and customer-facing dashboard experience",
   },
   {
@@ -47,7 +47,7 @@ const comparisonRows = [
 
 const pros = {
   kim: [
-    "Drafts replies from real Shopify order and tracking data, not generic templates",
+    "Auto-drafts replies from real Shopify order and tracking data, not generic templates",
     "Keeps Gmail in place and the workflow lightweight for small teams",
     "Good fit when tracking, returns, refunds, and order changes dominate the inbox",
     "No customer portal needed — value starts with the first matched email",

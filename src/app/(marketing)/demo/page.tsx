@@ -11,7 +11,7 @@ import { marketingMetadata } from "@/lib/seo";
 export const metadata: Metadata = marketingMetadata({
   title: "Demo - Shopify Support Email Drafted From Order Context",
   description:
-    "Watch Regards Kim match a customer email to the Shopify order, draft from real order context, and leave the reply ready for you to review and send from Gmail.",
+    "Watch Regards Kim match a customer email to the Shopify order, auto-draft from real order context, and leave the reply ready for you to review and send from Gmail.",
   path: "/demo",
 });
 
@@ -34,7 +34,7 @@ const moments = [
   {
     time: "1:03",
     title: "Replies stay merchant-approved",
-    body: "Suggest Reply drafts from the real order, saved replies fill reusable answers with placeholders, and address confirmations can be sent for flagged orders.",
+    body: "AI drafts are already prepared from the real order, saved replies fill reusable answers with placeholders, and address confirmations can be sent for flagged orders.",
   },
 ];
 
@@ -50,13 +50,13 @@ export default function DemoPage() {
             </h1>
             <p className="mx-auto mt-5 max-w-2xl text-base leading-8 text-slate md:text-lg">
               This is the whole loop: a customer email arrives in Gmail, Regards Kim matches the Shopify order,
-              you draft from real store context, and you decide what gets sent.
+              Regards Kim auto-drafts from real store context, and you decide what gets sent.
             </p>
           </FadeIn>
 
           <FadeIn delay={0.08} className="py-8 md:py-12">
             <HeroLoopVideo
-              ariaLabel="Regards Kim full product demo showing priority buckets, automatic notification filtering, order context, AI reply suggestions, saved replies, and address issue workflows."
+              ariaLabel="Regards Kim full product demo showing priority buckets, automatic notification filtering, order context, auto-drafted replies, saved replies, and address issue workflows."
               autoPlay={false}
               controls
               loop={false}

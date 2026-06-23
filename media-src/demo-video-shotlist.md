@@ -20,7 +20,7 @@
 
 **Shot 3 — Order context (8s):** Slowly move the cursor over the order panel — order number, fulfillment status, tracking number, Order Details. Pause on the tracking link.
 
-**Shot 4 — Suggest reply (12s):** Click Suggest reply. Let the draft generate completely. Don't move the mouse while it generates. Pause 3s on the finished draft.
+**Shot 4 — AI draft ready (12s):** Open the prepared draft. Let the draft display completely. Don't move the mouse while it appears. Pause 3s on the finished draft.
 
 **Shot 5 — Edit moment (8s):** Click into the draft, change one small phrase (shows the human-in-control moment), pause.
 
@@ -36,7 +36,7 @@
 1. "Monday morning. 6 customer emails." 
 2. "Regards Kim already sorted them — and filtered out the junk."
 3. "Open one. The Shopify order is already matched."
-4. "One click. The reply is written — with real tracking."
+4. "Already drafted — with real tracking."
 5. "Edit if you want. Nothing sends without you."
 6. "Send from Gmail. Done in 40 seconds."
 7. Close: "Your inbox, already answered. — Kind regards, Kim" + Install CTA

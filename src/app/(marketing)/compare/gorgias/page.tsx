@@ -148,7 +148,7 @@ export default function RegardsKimVsGorgiasPage() {
           <p>
             RegardsKim is stronger when you want speed, simplicity, and a Shopify-email workflow that makes sense early. At
             <strong> $49/month</strong>, it is often cheaper than one missed hour of founder time each week.
-            It plugs into your Shopify store and Gmail, uses real order and tracking context, and helps draft replies fast. If you want to sanity-check that math for your own store, try the <Link href="/tools/support-cost-calculator" className="font-medium text-brass hover:text-oxblood">support cost calculator</Link>.
+            It plugs into your Shopify store and Gmail, uses real order and tracking context, and auto-drafts replies fast. If you want to sanity-check that math for your own store, try the <Link href="/tools/support-cost-calculator" className="font-medium text-brass hover:text-oxblood">support cost calculator</Link>.
           </p>
           <p>
             That does not make it a universal winner. It just makes it a better fit for stores that do not

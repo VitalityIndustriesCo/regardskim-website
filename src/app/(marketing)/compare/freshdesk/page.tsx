@@ -20,7 +20,7 @@ const comparisonRows = [
   },
   {
     label: "Best for",
-    kim: "Shopify stores that want email replies drafted from order context, not a service platform",
+    kim: "Shopify stores that want email replies auto-drafted from order context, not a service platform",
     competitor: "Teams needing enterprise-style ticketing and multi-channel service",
   },
   {
@@ -30,7 +30,7 @@ const comparisonRows = [
   },
   {
     label: "Core strength",
-    kim: "Email replies drafted from Shopify order, tracking, and policy context",
+    kim: "Email replies auto-drafted from Shopify order, tracking, and policy context",
     competitor: "Enterprise ticketing, phone support, and broad customer service tooling",
   },
   {
@@ -47,7 +47,7 @@ const comparisonRows = [
 
 const pros = {
   kim: [
-    "Drafts email replies from real Shopify order and tracking data instead of generic ticket workflows",
+    "Auto-drafts email replies from real Shopify order and tracking data instead of generic ticket workflows",
     "Keeps Gmail in place — no helpdesk migration needed",
     "Lower cost for small stores and lean teams",
     "Approve every reply before it reaches the customer",
@@ -91,7 +91,7 @@ export default function RegardsKimVsFreshdeskPage() {
           </h1>
           <p className="mt-6 max-w-3xl text-lg leading-8 text-slate">
             Freshdesk is a broad customer service platform. RegardsKim is deliberately narrower: Shopify order context
-            next to each customer email, draft replies from real data, and human approval before anything sends.
+            next to each customer email, auto-drafted replies from real data, and human approval before anything sends.
           </p>
         </div>
 
@@ -142,7 +142,7 @@ export default function RegardsKimVsFreshdeskPage() {
           </p>
           <p>
             RegardsKim fits that use case better. It connects Gmail and Shopify, matches customer emails to orders,
-            and drafts replies from real tracking, policy, and order context. No tickets, no agents, no migration. If you want to
+            and auto-drafts replies from real tracking, policy, and order context. No tickets, no agents, no migration. If you want to
             pressure-test the economics, the <Link href="/tools/support-cost-calculator" className="font-medium text-brass hover:text-oxblood">support cost calculator</Link> is a good place to start.
           </p>
           <p>
@@ -154,7 +154,7 @@ export default function RegardsKimVsFreshdeskPage() {
         <div className="mx-auto mt-12 max-w-4xl rounded-[1.75rem] border border-brass/20 bg-white dark:bg-[#20283A] p-8 text-center shadow-[0_10px_26px_rgba(35,53,71,0.15),0_2px_6px_rgba(35,53,71,0.08)]">
           <h2 className="font-display text-3xl font-bold text-ink">Shopify order context without a service platform</h2>
           <p className="mt-4 text-lg leading-8 text-slate">
-            If your support is mostly post-purchase email, Regards Kim drafts from real Shopify data without the overhead of enterprise service software.
+            If your support is mostly post-purchase email, Regards Kim auto-drafts from real Shopify data without the overhead of enterprise service software.
           </p>
           <Link href={SHOPIFY_APP_STORE_INSTALL_URL} className="btn-primary mt-8 inline-flex">
             Install Regards Kim on Shopify

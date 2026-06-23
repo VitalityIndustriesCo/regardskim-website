@@ -20,7 +20,7 @@ const comparisonRows = [
   },
   {
     label: "Availability",
-    kim: "Shopify order context and draft replies ready when you open the inbox",
+    kim: "Shopify order context and auto-drafted replies ready when you open the inbox",
     competitor: "Only when you are online and have the energy for it",
   },
   {
@@ -40,7 +40,7 @@ const comparisonRows = [
   },
   {
     label: "Where it is stronger",
-    kim: "Shopify context in one place, draft replies from order data, fewer tab switches",
+    kim: "Shopify context in one place, auto-drafted replies from order data, fewer tab switches",
     competitor: "Zero software spend, total control, personal customer connection",
   },
 ];
@@ -48,7 +48,7 @@ const comparisonRows = [
 const pros = {
   kim: [
     "Stops the copy-paste loop between Gmail, Shopify admin, and tracking pages",
-    "Drafts replies from real Shopify order and tracking data",
+    "Auto-drafts replies from real Shopify order and tracking data",
     "Sorts emails so you know what actually needs a reply",
     "You still approve every send — control stays with you",
   ],
@@ -141,7 +141,7 @@ export default function RegardsKimVsDIYPage() {
           </p>
           <p>
             RegardsKim is built for that exact moment. It connects Gmail and Shopify, matches each email to the
-            right order, and drafts replies from real tracking, policy, and order context — so support stops eating the day. If you want to quantify what DIY support is
+            right order, and auto-drafts replies from real tracking, policy, and order context — so support stops eating the day. If you want to quantify what DIY support is
             really costing you, the <Link href="/tools/support-cost-calculator" className="font-medium text-brass hover:text-oxblood">support cost calculator</Link> is a useful gut check.
           </p>
           <p>
@@ -153,7 +153,7 @@ export default function RegardsKimVsDIYPage() {
         <div className="mx-auto mt-12 max-w-4xl rounded-[1.75rem] border border-brass/20 bg-white dark:bg-[#20283A] p-8 text-center shadow-[0_10px_26px_rgba(35,53,71,0.15),0_2px_6px_rgba(35,53,71,0.08)]">
           <h2 className="font-display text-3xl font-bold text-ink">Keep the control, lose the drag</h2>
           <p className="mt-4 text-lg leading-8 text-slate">
-            If you are still doing support yourself, Regards Kim helps you draft replies faster without taking the inbox fully out of your hands.
+            If you are still doing support yourself, Regards Kim auto-drafts replies faster without taking the inbox fully out of your hands.
           </p>
           <Link href={SHOPIFY_APP_STORE_INSTALL_URL} className="btn-primary mt-8 inline-flex">
             Install Regards Kim on Shopify

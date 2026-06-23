@@ -10,7 +10,7 @@ type HeroLoopVideoProps = {
 };
 
 export default function HeroLoopVideo({
-  ariaLabel = "Regards Kim demo: a customer email arrives, is matched to the Shopify order, a reply is drafted, and the merchant approves and sends it from Gmail.",
+  ariaLabel = "Regards Kim demo: a customer email arrives, is matched to the Shopify order, a reply is auto-drafted, and the merchant approves and sends it from Gmail.",
   autoPlay = true,
   controls = false,
   loop = true,
