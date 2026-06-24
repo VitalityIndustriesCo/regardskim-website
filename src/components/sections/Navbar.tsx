@@ -62,19 +62,19 @@ export default function Navbar({ copy: copyProp, locale: localeProp }: NavbarPro
         }`}
       >
         <nav className="section-shell flex h-20 items-center justify-between" aria-label="Primary">
-          <Link href="/" className="font-display text-2xl font-extrabold tracking-normal text-ink lg:text-3xl">
+          <Link href="/" className="shrink-0 font-display text-2xl font-extrabold tracking-normal text-ink lg:text-3xl">
             Regards Kim
           </Link>
 
-          <div className="hidden items-center gap-5 text-sm font-semibold text-slate lg:gap-7 md:flex">
+          <div className="hidden items-center gap-4 text-[13px] font-semibold text-slate lg:gap-5 lg:text-sm min-[1120px]:flex">
             {copy.links.map((link) => (
-              <Link key={link.href} href={link.href} className="transition-colors hover:text-ink">
+              <Link key={link.href} href={link.href} className="whitespace-nowrap transition-colors hover:text-ink">
                 {link.label}
               </Link>
             ))}
           </div>
 
-          <div className="ml-4 hidden items-center gap-3 md:flex lg:ml-6">
+          <div className="ml-4 hidden shrink-0 items-center gap-3 lg:ml-6 min-[1120px]:flex">
             <label className="sr-only" htmlFor="language-switcher">
               {copy.languageLabel}
             </label>
@@ -99,12 +99,12 @@ export default function Navbar({ copy: copyProp, locale: localeProp }: NavbarPro
                 aria-hidden="true"
               />
             </div>
-            <Link href={SHOPIFY_APP_STORE_INSTALL_URL} className="btn-primary min-w-[9.5rem] px-5 text-center leading-none">
+            <Link href={SHOPIFY_APP_STORE_INSTALL_URL} className="btn-primary min-w-[9.5rem] whitespace-nowrap px-5 text-center leading-none">
               {copy.installCta}
             </Link>
           </div>
 
-          <div className="flex items-center gap-2 md:hidden">
+          <div className="flex items-center gap-2 min-[1120px]:hidden">
           <button
             type="button"
             className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate/15 bg-white dark:bg-[#1D2840] text-ink transition-all duration-200 hover:border-brass/40 hover:bg-[#FFF0ED] dark:hover:bg-[#1E293B] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brass focus-visible:ring-offset-2"
@@ -139,14 +139,14 @@ export default function Navbar({ copy: copyProp, locale: localeProp }: NavbarPro
       <div
         className={`fixed inset-0 z-40 bg-black/40 transition-opacity duration-300 md:hidden ${
           mobileMenuOpen ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"
-        }`}
+        } min-[1120px]:hidden`}
         aria-hidden="true"
         onClick={closeMobileMenu}
       />
 
       <div
         id="mobile-navigation"
-        className={`fixed right-0 top-0 z-50 flex h-screen w-full max-w-sm flex-col border-l border-slate/10 bg-white dark:bg-[#20283A] shadow-[-8px_0_32px_rgba(0,0,0,0.12)] dark:shadow-[-8px_0_32px_rgba(0,0,0,0.4)] transition-transform duration-300 ease-out md:hidden ${
+        className={`fixed right-0 top-0 z-50 flex h-screen w-full max-w-sm flex-col border-l border-slate/10 bg-white dark:bg-[#20283A] shadow-[-8px_0_32px_rgba(0,0,0,0.12)] dark:shadow-[-8px_0_32px_rgba(0,0,0,0.4)] transition-transform duration-300 ease-out min-[1120px]:hidden ${
           mobileMenuOpen ? "translate-x-0" : "translate-x-full"
         }`}
         aria-hidden={!mobileMenuOpen}
