@@ -12,6 +12,12 @@ await page.evaluate(() => {
   document.querySelector(".sentwrap")?.remove();
   // step 2 variant: hide draft card so panel = email + match + order strip only
   const d = document.querySelector(".draftcard"); if (d) d.style.display = "none";
+  const detail = document.querySelector(".panel.detail");
+  if (detail) {
+    detail.style.flex = "0 0 auto";
+    detail.style.height = "auto";
+    detail.style.alignSelf = "flex-start";
+  }
 });
 await page.locator(".panel.detail").screenshot({ path: path.join(out, "step-2-context.png") });
 await browser.close();

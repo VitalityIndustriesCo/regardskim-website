@@ -67,7 +67,7 @@ export const enHomeCopy = {
         alt:
           "A customer email asking where their order is, automatically matched to Shopify order 1842 with fulfillment status, carrier, and tracking number",
         width: 1748,
-        height: 530,
+        height: 636,
       },
       {
         number: "03",
