@@ -8,7 +8,7 @@ Per blueprint §4. Replaces current section copy. Structure: Hero → Before/Aft
 **Sub:** Regards Kim reads every customer email, pulls the Shopify order, and writes the reply. You review and press send — from Gmail.
 **CTA primary:** Install free on Shopify
 **CTA secondary:** Watch the demo (45 sec)
-**Microline:** No auto-sending · No credit card · Billed through Shopify only if you stay
+**Microline:** Removed from the hero.
 **Media:** hero-loop video (autoplay, muted, loop) — /media/hero-loop.mp4 + .webm
 **Badges:** Built for Shopify · Works with Gmail (keep current chips)
 

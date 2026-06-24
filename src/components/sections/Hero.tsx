@@ -44,9 +44,6 @@ export default function Hero({ copy = enHomeCopy.hero }: HeroProps) {
               ))}
             </div>
 
-            <p className="mx-auto mt-4 max-w-2xl text-sm font-semibold text-slate md:mt-5">
-              {copy.reassurance}
-            </p>
           </div>
         </FadeIn>
 

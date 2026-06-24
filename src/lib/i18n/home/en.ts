@@ -42,7 +42,7 @@ export const enHomeCopy = {
       "Drafts ready when you open",
       "Approve every reply",
     ],
-    reassurance: "No auto-sending · No credit card · Billed through Shopify only if you stay",
+    reassurance: "",
   },
   howItWorks: {
     heading: "How Regards Kim answers with Shopify context",
