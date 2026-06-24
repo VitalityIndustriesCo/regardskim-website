@@ -39,7 +39,7 @@ export const enHomeCopy = {
     workflowPoints: [
       "Keep Gmail as your inbox",
       "Shopify order context attached",
-      "Auto-drafts from real store data",
+      "Drafts ready when you open",
       "Approve every reply",
     ],
     reassurance: "No auto-sending · No credit card · Billed through Shopify only if you stay",
@@ -51,7 +51,7 @@ export const enHomeCopy = {
         number: "01",
         title: "Connect Gmail and Shopify",
         body:
-          "Two minutes to connect. Regards Kim keeps Gmail as your support inbox and brings the work into a Shopify-aware queue.",
+          "Two minutes to connect. Regards Kim keeps Gmail as your support inbox, sorts incoming customer emails, and filters out the messages that do not need a reply.",
         image: "/images/how-it-works/step-1-inbox.png",
         alt:
           "Regards Kim inbox sorting customer emails: a tracking question, a return, an order change, and a newsletter marked no reply needed",
@@ -71,9 +71,9 @@ export const enHomeCopy = {
       },
       {
         number: "03",
-        title: "AI drafts the reply before you open it",
+        title: "Your draft is waiting when you open the email",
         body:
-          "As support emails come in, Regards Kim prepares replies grounded in the real order, tracking, policies, and saved replies. It never sends anything without your review.",
+          "As support emails come in, Regards Kim prepares Shopify-aware replies from the real order, tracking, policies, and saved replies. You review, edit, and send from Gmail.",
         video: {
           mp4: "/media/step3-loop.mp4",
           ariaLabel:

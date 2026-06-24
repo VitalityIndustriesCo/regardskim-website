@@ -191,30 +191,56 @@
   .suggestwrap {
     display: flex; align-items: center; gap: 12px;
     opacity: 0;
-    animation: fadeUp 0.45s ease 2.9s forwards, fadeOutBtn 0.35s ease 4.0s forwards;
+    animation: fadeUp 0.45s ease 2.9s forwards;
   }
   .suggestbtn {
     display: inline-flex; align-items: center; gap: 9px;
-    font-size: 15px; font-weight: 800; color: #fff;
-    background: var(--coral);
+    font-size: 13.5px; font-weight: 800; color: var(--coral-deep);
+    background: var(--coral-soft);
+    border: 1px solid #F0B8AD;
     border-radius: 999px;
-    padding: 12px 26px;
-    box-shadow: 0 12px 28px rgba(233,124,107,0.35);
-    animation: press 0.35s ease 3.55s;
+    padding: 9px 15px;
   }
   .suggesthint {
+    font-size: 13px; font-weight: 700; color: var(--green);
+    background: var(--green-soft);
+    border: 1px solid var(--green-line);
+    border-radius: 999px;
+    padding: 9px 15px;
+  }
+  .reviewhint {
     font-size: 13px; font-weight: 700; color: var(--slate);
+    background: #F7F7F8;
+    border: 1px solid #E2E4E7;
+    border-radius: 999px;
+    padding: 9px 15px;
   }
-  .cursor {
+  .draftpulse {
     position: absolute;
-    width: 22px; height: 22px;
-    left: 118px; top: 0;
+    right: 22px;
+    top: 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 11.5px;
+    font-weight: 800;
+    color: var(--coral-deep);
+    background: var(--coral-soft);
+    border: 1px solid #F0B8AD;
+    border-radius: 999px;
+    padding: 6px 11px;
     opacity: 0;
-    animation: cursorIn 0.7s ease 3.0s forwards, fadeOutBtn 0.3s ease 4.0s forwards;
-    z-index: 5;
+    animation: fadeUp 0.35s ease 3.55s forwards, fadeOut 0.3s ease 4.25s forwards;
   }
-  @keyframes cursorIn { from { opacity: 0; transform: translate(60px, 50px); } to { opacity: 1; transform: translate(0, 0); } }
-  @keyframes fadeOutBtn { to { opacity: 0; visibility: hidden; height: 0; margin: 0; } }
+  .draftpulse .dotspin {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--coral);
+    animation: pulse 0.9s ease-in-out infinite;
+  }
+  @keyframes pulse { 50% { transform: scale(1.5); opacity: 0.45; } }
+  @keyframes fadeOut { to { opacity: 0; visibility: hidden; } }
 
   /* Draft card */
   .draftcard {
@@ -225,7 +251,7 @@
     padding: 18px 20px;
     position: relative;
     opacity: 0;
-    animation: fadeUp 0.5s ease 4.3s forwards;
+    animation: fadeUp 0.5s ease 4.35s forwards;
   }
   .drafthead { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
   .draftbadge {
@@ -239,21 +265,21 @@
     border: 1px solid var(--green-line);
     padding: 5px 12px; border-radius: 999px;
     opacity: 0;
-    animation: fadeUp 0.4s ease 7.3s forwards;
+    animation: fadeUp 0.4s ease 7.15s forwards;
   }
 
   /* Typing text */
   .typeline { font-size: 14px; line-height: 1.7; color: var(--ink); overflow: hidden; white-space: nowrap; max-width: 0; }
-  .t1 { animation: typew 0.7s steps(30) 4.7s forwards; }
-  .t2 { animation: typew 1.1s steps(60) 5.4s forwards; }
-  .t3 { animation: typew 1.0s steps(55) 6.5s forwards; }
-  .typesign { font-size: 14px; line-height: 1.7; opacity: 0; animation: fadeUp 0.3s ease 7.2s forwards; }
+  .t1 { animation: typew 0.7s steps(30) 4.75s forwards; }
+  .t2 { animation: typew 1.1s steps(60) 5.45s forwards; }
+  .t3 { animation: typew 1.0s steps(55) 6.55s forwards; }
+  .typesign { font-size: 14px; line-height: 1.7; opacity: 0; animation: fadeUp 0.3s ease 7.05s forwards; }
   @keyframes typew { to { max-width: 100%; } }
 
   .caret {
     display: inline-block; width: 2px; height: 16px; background: var(--coral);
     vertical-align: -2px; margin-left: 2px;
-    animation: blink 0.7s step-end 4.7s 4, hide 0.1s linear 7.5s forwards;
+    animation: blink 0.7s step-end 4.75s 4, hide 0.1s linear 7.35s forwards;
   }
   @keyframes blink { 50% { opacity: 0; } }
   @keyframes hide { to { opacity: 0; } }
@@ -269,7 +295,7 @@
     box-shadow: 0 12px 28px rgba(233,124,107,0.35);
     position: relative;
     opacity: 0;
-    animation: fadeUp 0.4s ease 7.5s forwards, press 0.35s ease 8.6s;
+    animation: fadeUp 0.4s ease 7.45s forwards, press 0.35s ease 8.6s;
   }
   @keyframes press { 40% { transform: scale(0.94); } 100% { transform: scale(1); } }
   .editbtn {
@@ -277,7 +303,7 @@
     border: 1px solid var(--line2); border-radius: 999px;
     padding: 11px 22px; background: #fff;
     opacity: 0;
-    animation: fadeUp 0.4s ease 7.6s forwards;
+    animation: fadeUp 0.4s ease 7.55s forwards;
   }
 
   /* Sent confirmation overlay */
@@ -390,12 +416,13 @@
         </div>
 
         <div class="suggestwrap" style="position:relative;">
-          <span class="suggestbtn">✦ AI draft ready</span>
-          <span class="suggesthint">Prepared from Shopify context — you review before sending</span>
-          <svg class="cursor" viewBox="0 0 24 24" fill="#233547" stroke="#fff" stroke-width="1.5"><path d="M5 3l14 8-6.5 1.5L9 19z"/></svg>
+          <span class="suggestbtn">Tracking question</span>
+          <span class="suggesthint">Draft prepared automatically</span>
+          <span class="reviewhint">Human review required</span>
         </div>
 
         <div class="draftcard">
+          <span class="draftpulse"><span class="dotspin"></span> Writing with order context</span>
           <div class="drafthead">
             <span class="draftbadge">Auto-drafted reply</span>
             <span class="readybadge">Ready for your review</span>
@@ -415,7 +442,7 @@
               <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>
             </div>
             <div class="sentmsg">Reply sent from Gmail</div>
-            <div class="sentsub">You approved it. Kim did the rest.</div>
+            <div class="sentsub">You approved it. Regards Kim did the rest.</div>
           </div>
         </div>
       </div>
