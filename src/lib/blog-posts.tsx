@@ -13,6 +13,190 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "cheapest-way-handle-more-shopify-support-emails",
+    title: "The Cheapest Way to Handle More Shopify Support Emails",
+    date: "July 1, 2026",
+    image: "/blog/cheapest-way-handle-more-shopify-support-emails.png",
+    meta:
+      "Learn the cheapest way to handle more Shopify support emails by fixing workflow, templates, triage, and AI assistance before hiring.",
+    content: (
+      <>
+        <p>
+          The cheapest way to handle more Shopify support emails is usually to improve the workflow before adding a new
+          person. Start by grouping repeat questions, making order context easier to find, writing better saved replies,
+          and using AI assistance for sorting and reply preparation while a human keeps control of the final message.
+        </p>
+        <p>
+          Hiring can be the right move later. But many small Shopify stores reach for extra help before they have fixed
+          the support habits that make every email slower than it needs to be. If the inbox is messy, templates are
+          stale, and every tracking question requires five tab switches, a new VA or part-time support hire inherits the
+          same friction.
+        </p>
+        <p>
+          A cheaper support setup does not mean giving customers worse answers. It means removing repeated lookup and
+          writing work so the person handling support can spend more time checking facts, using judgement, and sending
+          clear replies.
+        </p>
+
+        <h2>First, measure what support is really costing</h2>
+        <p>
+          Before choosing a tool or hiring help, work out where support time is going. A founder may feel like support
+          takes "a bit of time each day," but the real cost often shows up in broken focus, delayed fulfilment work,
+          slower marketing, and customer replies sent late at night.
+        </p>
+        <p>
+          For one week, track the number of support emails and the rough time spent answering them. Separate the emails
+          into buckets such as tracking, returns, exchanges, refund timing, order changes, product questions, and
+          complaints. The support load is easier to reduce once you can see which questions repeat.
+        </p>
+        <p>
+          If you want a quick estimate, the{" "}
+          <Link href="/tools/support-cost-calculator">support cost calculator</Link> can help turn weekly support hours
+          into a clearer monthly cost.
+        </p>
+
+        <h2>Fix the repeat questions before hiring</h2>
+        <p>
+          The lowest-cost improvement is usually a better answer to the questions customers ask every day. For many
+          Shopify stores, the first three buckets are tracking, returns, and simple order changes.
+        </p>
+        <p>
+          Look at your last 50 support emails and write down the questions that appear more than once. Then create a
+          clean reply for each one. The goal is not to paste the same cold script into every conversation. The goal is
+          to avoid writing the same explanation from scratch when the facts are similar.
+        </p>
+        <p>Good saved replies should include:</p>
+        <ul>
+          <li>A plain answer to the customer&apos;s actual question.</li>
+          <li>The order, tracking, policy, or product detail that needs to be checked before sending.</li>
+          <li>A next step the customer can understand.</li>
+          <li>A sentence that can be adjusted for tone, delay, frustration, or urgency.</li>
+        </ul>
+        <p>
+          If your current replies sound stiff, use the guide to{" "}
+          <Link href="/blog/customer-service-email-templates-sound-human">
+            customer service email templates that still sound human
+          </Link>{" "}
+          to refresh them.
+        </p>
+
+        <h2>Make order context easier to find</h2>
+        <p>
+          Shopify support gets expensive when every email becomes a search job. A customer asks where an order is, and
+          the person answering has to search Gmail, open Shopify, find the order, check fulfilment, open tracking, check
+          the policy, and then come back to write the reply.
+        </p>
+        <p>
+          That work is not difficult, but it adds up quickly. The cheaper workflow is to keep the customer message,
+          Shopify order details, tracking status, and relevant saved replies close together. Even if one person still
+          reviews every email, cutting the lookup time can make the whole inbox feel lighter.
+        </p>
+        <p>
+          This matters most for{" "}
+          <Link href="/blog/shopify-order-tracking-emails">Shopify order tracking emails</Link>, because customers
+          usually need the same facts: whether the order has shipped, which carrier has it, whether tracking has moved,
+          and what to do if the parcel seems delayed.
+        </p>
+
+        <h2>Use triage so every email is not treated the same</h2>
+        <p>
+          A cheap support workflow needs basic triage. Not every customer message deserves the same level of effort, and
+          not every message should be answered in the same order.
+        </p>
+        <p>
+          Simple tracking questions can often be handled with order context and a saved reply. Return requests need the
+          policy and order date checked. Angry customers, expensive refunds, damaged item claims, chargeback threats,
+          and VIP customers should stay closer to the store owner or a trained support person.
+        </p>
+        <p>
+          Triage helps a small store avoid two common mistakes: spending too much time on simple repeat emails, and
+          rushing sensitive emails that need judgement.
+        </p>
+
+        <h2>Use AI for support help, not unchecked sending</h2>
+        <p>
+          AI can reduce support cost when it helps with the repetitive parts of the workflow: sorting emails, finding
+          context, preparing a draft, improving tone, or suggesting the right saved reply. That is different from letting
+          AI make every decision or send customer replies without review.
+        </p>
+        <p>
+          For Shopify merchants, support answers depend on real order and policy context. A refund timing email, damaged
+          item report, address change, or late parcel question needs facts from the store before the answer is useful.
+          AI assistance works best when those facts are visible and the merchant still checks the reply.
+        </p>
+        <p>
+          If you are deciding where AI belongs, start with the safe workflow steps in{" "}
+          <Link href="/blog/what-to-automate-first-ecommerce-customer-service">
+            what to automate first in ecommerce customer service
+          </Link>
+          .
+        </p>
+
+        <h2>Know when a VA is still worth it</h2>
+        <p>
+          A virtual assistant or part-time support person can be a good investment once the store has repeatable support
+          rules. The expensive version is hiring someone into a messy inbox with no saved replies, unclear policies, and
+          no easy way to see Shopify order context.
+        </p>
+        <p>
+          Before handing over support, prepare the basics: common support buckets, saved replies, refund and return
+          rules, escalation examples, and a list of messages the VA should never answer without approval.
+        </p>
+        <p>
+          The guide on how{" "}
+          <Link href="/blog/reduce-va-support-time-shopify">
+            RegardsKim helps your VA clear Shopify support faster
+          </Link>{" "}
+          explains how the same workflow improvements can make hired support time more useful.
+        </p>
+
+        <h2>A low-cost support plan for this week</h2>
+        <p>
+          If your Shopify support inbox is growing, do not try to rebuild everything at once. A practical first week can
+          be simple:
+        </p>
+        <ol>
+          <li>Count support emails for seven days and group them by question type.</li>
+          <li>Write or improve saved replies for the top three repeat questions.</li>
+          <li>Make sure tracking, order status, and policy context are easy to check before replying.</li>
+          <li>Create escalation rules for refunds, angry customers, damaged items, and unusual cases.</li>
+          <li>Use AI assistance to sort, prepare, or improve replies, then review every message before sending.</li>
+        </ol>
+        <p>
+          This plan keeps the work small, but it usually reveals where the real support cost is hiding.
+        </p>
+
+        <h2>Where RegardsKim fits</h2>
+        <p>
+          RegardsKim is AI-powered customer support for Shopify stores that want faster email handling without setting
+          up a heavy help desk. It helps turn Gmail-based support into a Shopify-aware workflow with email sorting,
+          order context, saved replies, AI-assisted reply preparation, and support analytics.
+        </p>
+        <p>
+          The merchant stays in control. RegardsKim is designed to help you understand the email, see the Shopify
+          context, prepare a better answer, and review what gets sent. It is a practical way to handle more repetitive
+          support before adding another person to the team.
+        </p>
+        <p>
+          If repetitive customer emails are eating your week,{" "}
+          <Link href="/#founding-100">join the Founding 100</Link> for early access at the founding price.
+        </p>
+
+        <h2>Cheap support is really clear support</h2>
+        <p>
+          The cheapest way to handle more Shopify support emails is not to make customers wait longer or send worse
+          replies. It is to make the repeat work easier: clearer buckets, better saved replies, faster order lookup,
+          careful triage, and AI support that leaves the final decision with a person.
+        </p>
+        <p>
+          Once those pieces are in place, hiring help or adding more tooling becomes a cleaner decision instead of an
+          expensive patch for a messy inbox.
+        </p>
+      </>
+    ),
+  },
+
+  {
     slug: "what-to-automate-first-ecommerce-customer-service",
     title: "What to Automate First in Ecommerce Customer Service",
     date: "June 24, 2026",
